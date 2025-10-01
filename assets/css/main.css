@@ -3951,3 +3951,37 @@ input, select, textarea {
 			visibility: visible;
 		}
 
+
+	/* Use the figcaption.annotation class as the single hook for annotation styling
+	   and make figures with annotations centered and consistent across columns. */
+
+	/* Center figures globally so figcaptions align beneath images. This keeps layout
+	   consistent for annotated figures in .col-6, .col-3, etc. */
+	figure {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		margin: 0 0 1.25em 0;
+	}
+
+	/* When a figure contains an annotation, remove the bottom margin of the image
+	   so the caption sits visually close to the photo. Targets the common .image.fit
+	   wrapper used throughout the site. */
+	figure > .image.fit {
+		margin: 0;
+		max-width: 100%;
+	}
+
+	/* Style the annotation itself (central hook). This ensures captions look the same
+	   regardless of which column size (col-6, col-3, etc.) contains the figure. */
+	figcaption.annotation {
+		display: block;
+		text-align: center;
+		margin-top: 0.4em; /* slightly closer to image */
+		margin-bottom: 0.9em; /* breathing room before next paragraph */
+		color: #666;
+		font-size: 0.95em;
+	}
+
