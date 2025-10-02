@@ -32,7 +32,8 @@
 							<li><a href="Educational.html">Educational</a></li>
 							<li><a href="Professional.html">Professional</a></li>
 							<li><a href="Amateurs.html">Amateurs</a></li>
-							<li><a href="Educational.html">Sharing</a></li>
+							<li><a href="Resume.html">Resume</a></li>
+							<li><a href="Sharing.html">Sharing</a></li>
 						</ul>
 						<ul class="actions stacked">
 							<li><a href="#" class="button primary fit">Get Started</a></li>
@@ -50,7 +51,7 @@
 								<p>"Making My Dream Come True,<br />
 								On Fifth Avenue."</p>
 								<ul class="actions">
-									<li><a href="#one" class="button next scrolly">Resume</a></li>
+									<li><a href="Resume.html" class="button next scrolly">Resume</a></li>
 								</ul>
 							</div>
 						</div>
@@ -58,46 +59,6 @@
 
 				<!-- Main -->
 					<div id="main">
-
-						<!-- One -->
-							<section id="one" class="tiles">
-								<article>
-									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="Educational.html" class="link">Educational</a></h3>
-										<p>Logics and Society</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="Professional.html" class="link">Professional</a></h3>
-										<p>Understand and Create</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="Amateurs.html" class="link">Amateurs</a></h3>
-										<p>"Arise"</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="Educational.html" class="link">Sharing</a></h3>
-										<p>Thoughts and Experiences</p>
-									</header>
-								</article>
-							</section>
 
 						<!-- Two -->
 							<section id="two">
@@ -124,7 +85,47 @@
 							</figure>
 						</div>
 					</div>
-										
+					
+					<!-- One -->
+					<section id="one" class="tiles">
+						<article>
+							<span class="image">
+								<img src="images/pic01.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h3><a href="Educational.html" class="link">Educational</a></h3>
+								<p>Logics and Society</p>
+							</header>
+						</article>
+						<article>
+							<span class="image">
+								<img src="images/pic02.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h3><a href="Professional.html" class="link">Professional</a></h3>
+								<p>Understand and Create</p>
+							</header>
+						</article>
+						<article>
+							<span class="image">
+								<img src="images/pic03.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h3><a href="Amateurs.html" class="link">Amateurs</a></h3>
+								<p>"Arise"</p>
+							</header>
+						</article>
+						<article>
+							<span class="image">
+								<img src="images/pic04.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h3><a href="Educational.html" class="link">Sharing</a></h3>
+								<p>Thoughts and Experiences</p>
+							</header>
+						</article>
+					</section>
+
 					<h2>Educational Experience</h2>
 					<p>I grew up in China on a traditional school track but spent after-school time exploring “interest classes” — drawing, calligraphy, creative thinking, and sports — rather than just test prep. In middle school, a kind science teacher opened her office to my questions; physics and chemistry clicked, math followed, and I learned to study from first principles rather than memorize.</p>
 					<p>High school brought competition and noise. Physics Olympiad training reframed science for me as a coherent system, not a bag of formulas. I later returned to the standard track with about 100 days to prep for the Gaokao, built my own plan, and finished around the top 0.37% in my province. When it came time to choose a university, I picked Westlake for its research-driven culture and room to build. That choice led to deep lab work, student leadership, and eventually an exchange at Cornell.</p>
@@ -158,26 +159,50 @@
 					<section id="contact">
 						<div class="inner">
 							<section>
-								<form method="post" action="#">
+								<form action="https://formspree.io/f/xwprbnzl" method="POST" id="contact-form">
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
+											<input type="text" name="name" id="name" required />
 										</div>
 										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
+											<label for="email">Your email</label>
+											<input type="email" name="email" id="email" required />
 										</div>
 										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
+											<label for="message">Your message</label>
+											<textarea name="message" id="message" rows="6" required></textarea>
 										</div>
 									</div>
 									<ul class="actions">
 										<li><input type="submit" value="Send Message" class="primary" /></li>
 										<li><input type="reset" value="Clear" /></li>
 									</ul>
+									<div id="form-success" style="display:none;color:#4caf50;margin-top:1em;">Thank you! Your message has been sent.</div>
 								</form>
+								<script>
+								document.getElementById('contact-form').addEventListener('submit', function(e) {
+								  var form = this;
+								  e.preventDefault();
+								  var data = new FormData(form);
+								  fetch(form.action, {
+								    method: form.method,
+								    body: data,
+								    headers: { 'Accept': 'application/json' }
+								  }).then(function(response) {
+								    if (response.ok) {
+								      form.reset();
+								      document.getElementById('form-success').style.display = 'block';
+								    } else {
+								      response.json().then(function(data){
+								        alert(data.errors ? data.errors.map(e => e.message).join(', ') : 'Oops! There was a problem.');
+								      });
+								    }
+								  }).catch(function() {
+								    alert('Oops! There was a problem.');
+								  });
+								});
+								</script>
 							</section>
 							<section class="split">
 								<section>
@@ -231,29 +256,6 @@
 				<!-- toast for copy confirmations -->
 				<div id="copy-toast" aria-live="polite" aria-atomic="true"></div>
 
-				<style>
-		/* small toast for copy confirmation */
-		#copy-toast {
-			position: fixed;
-			right: 20px;
-			bottom: 20px;
-			min-width: 160px;
-			max-width: 320px;
-			padding: 10px 14px;
-			background: rgba(0,0,0,0.86);
-			color: #fff;
-			border-radius: 6px;
-			box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-			font-size: 14px;
-			line-height: 1.2;
-			display: none;
-			z-index: 9999;
-		}
-		#copy-toast.show { display: block; animation: fadeinout 2.2s ease forwards; }
-		@keyframes fadeinout { 0% { opacity: 0; transform: translateY(6px); } 10% { opacity: 1; transform: translateY(0); } 90% { opacity: 1; } 100% { opacity: 0; transform: translateY(-6px); } }
-		.copy-id { cursor: pointer; }
-				</style>
-
 				<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -262,8 +264,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-			
+			<script src="assets/js/copy-id.js"></script>
 
 	</body>
 </html>

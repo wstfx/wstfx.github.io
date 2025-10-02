@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Zebang's portfolio-Educational</title>
+		<title>Zebang's Portfolio - Educational</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -32,7 +32,8 @@
 							<li><a href="Educational.html">Educational</a></li>
 							<li><a href="Professional.html">Professional</a></li>
 							<li><a href="Amateurs.html">Amateurs</a></li>
-							<li><a href="Educational.html">Sharing</a></li>
+							<li><a href="Resume.html">Resume</a></li>
+							<li><a href="Sharing.html">Sharing</a></li>
 						</ul>
 						<ul class="actions stacked">
 							<li><a href="#" class="button primary fit">Get Started</a></li>
@@ -253,26 +254,50 @@
 					<section id="contact">
 						<div class="inner">
 							<section>
-								<form method="post" action="#">
+								<form action="https://formspree.io/f/xwprbnzl" method="POST" id="contact-form">
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
+											<input type="text" name="name" id="name" required />
 										</div>
 										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
+											<label for="email">Your email</label>
+											<input type="email" name="email" id="email" required />
 										</div>
 										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
+											<label for="message">Your message</label>
+											<textarea name="message" id="message" rows="6" required></textarea>
 										</div>
 									</div>
 									<ul class="actions">
 										<li><input type="submit" value="Send Message" class="primary" /></li>
 										<li><input type="reset" value="Clear" /></li>
 									</ul>
+									<div id="form-success" style="display:none;color:#4caf50;margin-top:1em;">Thank you! Your message has been sent.</div>
 								</form>
+								<script>
+								document.getElementById('contact-form').addEventListener('submit', function(e) {
+								  var form = this;
+								  e.preventDefault();
+								  var data = new FormData(form);
+								  fetch(form.action, {
+								    method: form.method,
+								    body: data,
+								    headers: { 'Accept': 'application/json' }
+								  }).then(function(response) {
+								    if (response.ok) {
+								      form.reset();
+								      document.getElementById('form-success').style.display = 'block';
+								    } else {
+								      response.json().then(function(data){
+								        alert(data.errors ? data.errors.map(e => e.message).join(', ') : 'Oops! There was a problem.');
+								      });
+								    }
+								  }).catch(function() {
+								    alert('Oops! There was a problem.');
+								  });
+								});
+								</script>
 							</section>
 							<section class="split">
 								<section>
@@ -335,66 +360,7 @@
 			<!-- toast for copy confirmations -->
 			<div id="copy-toast" aria-live="polite" aria-atomic="true"></div>
 
-			<style>
-	/* small toast for copy confirmation */
-	#copy-toast {
-		position: fixed;
-		right: 20px;
-		bottom: 20px;
-		min-width: 160px;
-		max-width: 320px;
-		padding: 10px 14px;
-		background: rgba(0,0,0,0.86);
-		color: #fff;
-		border-radius: 6px;
-		box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-		font-size: 14px;
-		line-height: 1.2;
-		display: none;
-		z-index: 9999;
-	}
-	#copy-toast.show { display: block; animation: fadeinout 2.2s ease forwards; }
-	@keyframes fadeinout { 0% { opacity: 0; transform: translateY(6px); } 10% { opacity: 1; transform: translateY(0); } 90% { opacity: 1; } 100% { opacity: 0; transform: translateY(-6px); } }
-	.copy-id { cursor: pointer; }
-			</style>
-
-			<script>
-	// Copy-to-clipboard for QQ / WeChat icons
-	(function(){
-		function showToast(text){
-			var toast = document.getElementById('copy-toast');
-			if(!toast) return;
-			toast.textContent = text;
-			toast.classList.add('show');
-			clearTimeout(toast._hideTimeout);
-			toast._hideTimeout = setTimeout(function(){ toast.classList.remove('show'); }, 2200);
-		}
-
-		function copyText(text){
-			if(navigator.clipboard && navigator.clipboard.writeText){
-				return navigator.clipboard.writeText(text);
-			}
-			var ta = document.createElement('textarea');
-			ta.value = text; ta.style.position='fixed'; ta.style.left='-9999px';
-			document.body.appendChild(ta); ta.select();
-			try{ document.execCommand('copy'); document.body.removeChild(ta); return Promise.resolve(); }
-			catch(e){ document.body.removeChild(ta); return Promise.reject(e); }
-		}
-
-		document.addEventListener('click', function(e){
-			var el = e.target.closest && e.target.closest('.copy-id');
-			if(!el) return;
-			e.preventDefault();
-			var data = el.getAttribute('data-copy') || '';
-			if(!data) return;
-			copyText(data).then(function(){
-				showToast('Copied: ' + data);
-			}).catch(function(){
-				showToast('Copy failed — please select and copy manually.');
-			});
-		});
-	})();
-	</script>
+			<script src="assets/js/copy-id.js"></script>
 
 	</body>
 </html>
