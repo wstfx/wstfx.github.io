@@ -158,6 +158,71 @@
 									<p>I didn’t start with a perfectly defined research agenda. Westlake encourages every undergraduate to join a lab, so I began by learning how research is actually done. I joined an AI-for-Science group focused on materials discovery. My first months were apprenticeship: reading, reproducing code, and getting comfortable with the practical backbone of ML work—Conda environments, SSH, GitHub workflows, and keeping experiments reproducible. We explored diffusion-based generative pipelines for inverse crystal design, and I learned how ideas move from paper to a working code path.</p>
 									<p>Out of a personal itch I spun up an ASR training project (as a stepping stone to an audio-based mosquito detector). Cleaning and relabeling data to match a model’s pretraining regime sounds unglamorous, but it taught me a core lesson: small, correct choices on data often move accuracy more than another clever tweak. Seeing recognition performance jump after the relabeling pass made that point very real.</p>
 									<p>I then wandered, deliberately, through active learning. I prototyped a neural-network/RL query policy for operator error reduction and ran into the usual gremlins—catastrophic forgetting, data hunger, brittle gains. I pivoted to a semi-supervised, error-prediction angle and got promising but incremental results. That chapter mattered because it matured my taste: I learned the difference between “clever” and “consequential,” and why publication-worthy work often starts from problem selection, not just method invention.</p>
+									<header class="major">
+										<h4>Results from "Neural-Network Based Adaptive Active Learning for Continuous Sample Space" project</h4>
+									</header>
+									<div class="row">
+										<div class="col-8 col-12-medium">
+											<figure>
+												<span class="image fit"><img src="images/Educational/ActiveLearning2.PNG" alt="Active Learning Mind Map" /></span>
+												<figcaption class="annotation">Algorithm: Neural-Network Based Adaptive Active Learning for Continuous Sample Space</figcaption>
+											</figure>
+										</div>
+										<div class="col-4 col-12-medium">
+											<figure>
+												<span class="image fit"><img src="images/Educational/ActiveLearning1.PNG" alt="Active Learning Algorithm: NN based query function" /></span>
+												<figcaption class="annotation">Mindmap for Active Learning</figcaption>
+											</figure>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-7 col-12-medium">
+											<figure>
+												<span class="image fit"><img src="images/Educational/ActiveLearning3.PNG" alt="Active Learning Mind Map" /></span>
+												<figcaption class="annotation">The quality of samples proposed by the Active Learning Network in its learning phase</figcaption>
+											</figure>
+										</div>
+										<div class="col-5 col-12-medium">
+											<figure>
+												<span class="image fit"><img src="images/Educational/ActiveLearning7.PNG" alt="Active Learning Algorithm: NN based query function" /></span>
+												<figcaption class="annotation">A section view of training process: efficiency of the Active Learning Network and the efficiency of the points sampled by uniform distribution</figcaption>
+											</figure>
+										</div>
+									</div>
+
+									<header class="major">
+										<h4>Results from "Self-Supervised Error Reduction Active Learning for Optimal Training Batch Completion" project</h4>
+									</header>
+
+									<div class="row">
+										<div class="col-6 col-12-medium">
+											<figure>
+												<span class="image fit"><img src="images/Educational/ActiveLearning4.PNG" alt="Active Learning Mind Map" /></span>
+												<figcaption class="annotation">Training and evaluation loss for the different active learning method. Self-supervised error reduction sampling is proven to be efficient and improves model performance. MLP + transcendental-equation toy model</figcaption>
+											</figure>
+										</div>
+										<div class="col-6 col-12-medium">
+											<figure>
+												<span class="image fit"><img src="images/Educational/ActiveLearning5.PNG" alt="Active Learning Algorithm: NN based query function" /></span>
+												<figcaption class="annotation">Training and evaluation loss for the different active learning method. Fourier Neural Operator + Burger's differential equation model.</figcaption>
+											</figure>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-5 col-12-medium">
+											<figure>
+												<span class="image fit"><img src="images/Educational/ActiveLearning6.PNG" alt="Active Learning Mind Map" /></span>
+												<figcaption class="annotation">Samples proposed by the self-supervised error reduction sampling</figcaption>
+											</figure>
+										</div>
+										<div class="col-7 col-12-medium">
+											<figure>
+												<span class="image fit"><img src="images/Educational/ActiveLearning8.PNG" alt="Active Learning Algorithm: NN based query function" /></span>
+												<figcaption class="annotation">Improved active learning strategy: using self-supervised error reduction sampling to improve the effect of a training batch generated by other active learning method(Coreset method is found to be the optimal as the base active learning strategy)</figcaption>
+											</figure>
+										</div>
+									</div>
+									
 									<p>Recently my projects have become more grounded. At Westlake I’ve been learning ABAQUS to study creep at lattice scales and implementing symmetry constraints to keep simulations physically honest. At Cornell, in the Virtual Embodiment Lab, I’m helping design a VR teaching experience for special relativity—verifying the physics, tuning interaction flow, and measuring whether students actually understand more by the end. Both lines scratch the same itch: take rigorous ideas, respect the constraints that make them true, and build something people can learn from or use.</p>
 									<p>Why this path makes sense for me: I value research that changes how someone does a task tomorrow—better decisions, clearer understanding, safer processes, smoother operations. I’m less attached to any single subfield than to that through-line of tangible effect.</p>
 								</section>
