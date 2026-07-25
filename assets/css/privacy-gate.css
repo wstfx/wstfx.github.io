@@ -1,0 +1,160 @@
+html.privacy-locked {
+	overflow: hidden;
+	background: #17242f;
+}
+
+html.privacy-locked body > * {
+	visibility: hidden;
+}
+
+html.privacy-locked body > #privacy-gate {
+	visibility: visible;
+}
+
+#privacy-gate {
+	position: fixed;
+	inset: 0;
+	z-index: 100000;
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	min-height: 100dvh;
+	padding: 24px;
+	overflow-y: auto;
+	color: #f4f7f8;
+	background:
+		radial-gradient(circle at 18% 14%, rgba(118, 170, 164, 0.2), transparent 31rem),
+		radial-gradient(circle at 86% 86%, rgba(139, 119, 168, 0.22), transparent 28rem),
+		linear-gradient(145deg, #182832, #202432 56%, #18262d);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.privacy-gate-card {
+	width: min(100%, 540px);
+	padding: clamp(28px, 6vw, 48px);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 22px;
+	background: rgba(17, 26, 34, 0.82);
+	box-shadow: 0 30px 90px rgba(0, 0, 0, 0.38);
+	backdrop-filter: blur(18px);
+	-webkit-backdrop-filter: blur(18px);
+}
+
+.privacy-gate-kicker {
+	margin: 0 0 12px;
+	color: #94c9bb;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+
+.privacy-gate-card h1 {
+	margin: 0 0 12px;
+	color: #fff;
+	font-size: clamp(2rem, 8vw, 3.35rem);
+	line-height: 1.05;
+}
+
+.privacy-gate-intro {
+	margin: 0 0 28px;
+	color: #c8d2d5;
+	font-size: 0.96rem;
+	line-height: 1.7;
+}
+
+.privacy-gate-field {
+	display: block;
+	margin-top: 18px;
+}
+
+.privacy-gate-field span {
+	display: block;
+	margin-bottom: 8px;
+	color: #eef4f3;
+	font-size: 0.88rem;
+	font-weight: 650;
+}
+
+.privacy-gate-field input {
+	width: 100%;
+	height: 50px;
+	padding: 0 15px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 10px;
+	color: #fff;
+	background: rgba(255, 255, 255, 0.07);
+	font: inherit;
+	outline: none;
+}
+
+.privacy-gate-field input:focus {
+	border-color: #8bc4b5;
+	box-shadow: 0 0 0 3px rgba(139, 196, 181, 0.18);
+}
+
+.privacy-gate-submit {
+	width: 100%;
+	min-height: 50px;
+	margin-top: 24px;
+	border: 0;
+	border-radius: 10px;
+	color: #15252b;
+	background: #a9d7c9;
+	font: inherit;
+	font-weight: 800;
+	cursor: pointer;
+	transition: transform 160ms ease, background 160ms ease;
+}
+
+.privacy-gate-submit:hover {
+	background: #c0e6db;
+	transform: translateY(-1px);
+}
+
+.privacy-gate-submit:focus-visible {
+	outline: 3px solid rgba(192, 230, 219, 0.45);
+	outline-offset: 3px;
+}
+
+.privacy-gate-submit:disabled {
+	opacity: 0.62;
+	cursor: wait;
+	transform: none;
+}
+
+.privacy-gate-error {
+	min-height: 1.5em;
+	margin: 12px 0 0;
+	color: #ffb8b0;
+	font-size: 0.82rem;
+	line-height: 1.5;
+}
+
+.privacy-gate-note {
+	margin: 20px 0 0;
+	padding-top: 18px;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	color: #91a1a7;
+	font-size: 0.73rem;
+	line-height: 1.6;
+}
+
+@media (max-width: 520px) {
+	#privacy-gate {
+		align-items: start;
+		padding: 16px;
+	}
+
+	.privacy-gate-card {
+		margin: max(18px, env(safe-area-inset-top)) 0 max(18px, env(safe-area-inset-bottom));
+		padding: 27px 20px;
+		border-radius: 17px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.privacy-gate-submit {
+		transition: none;
+	}
+}
