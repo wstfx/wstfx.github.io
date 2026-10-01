@@ -1,13 +1,23 @@
-Rebuild: python3 tools/build_site.py
-Preview: python3 -m http.server 8091 --bind 127.0.0.1
+BUILD
+  python3 tools/build_site.py
+  python3 tools/check_site.py
 
-Static HTML output is committed for GitHub Pages. No runtime package dependencies.
-Project list: content/projects.json
-Shared template, page copy, project sections: tools/build_site.py
-Styling: assets/css/portfolio.css
+PREVIEW
+  python3 -m http.server 8091 --bind 127.0.0.1
+  Open http://127.0.0.1:8091/
 
-Editorial inventory and intake notes live outside this repository in ../website-planning/.
-The existing access gate is preserved. It is a client-side visitor gate, not server-side access control.
-Legacy HTML pages remain available while their material is reviewed and migrated.
-Current CV is HTML; the old PDF has not been promoted as a current download.
-Initial project summaries still need the evidence and demos tracked in the collection board.
+EDITING
+  content/portfolio-v2.json    Project copy, roles, tags, periods, timeline, interests
+  tools/build_site.py         Shared layouts, home/about/CV copy, media slots
+  assets/css/portfolio.css    Color, type, spacing, responsive layouts, motion
+  assets/js/portfolio.js      Navigation, filtering, image viewer, reading progress
+  assets/art/                Original vector identity graphics
+  content/abandon-body.html  Preserved existing AI conversation, attributed in page
+
+Static HTML is committed for GitHub Pages; no runtime packages required.
+Home, Work, About, Writing and CV share navigation and page components.
+The older capitalized URLs redirect to the new destinations. Original source remains in Git history.
+Images from the old site remain available; new media slots are explicitly empty until authentic captures exist.
+The existing client-side access gate remains; it is not server-side access control.
+Print / Save as PDF uses the current HTML CV. The old PDF is not promoted as current.
+Private material collection notes remain outside the website repository in ../website-planning/.

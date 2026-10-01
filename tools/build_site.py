@@ -1,38 +1,189 @@
-"""Generate the static portfolio: python3 tools/build_site.py (no dependencies)."""
+"""Build the portfolio from content/portfolio-v2.json. Python standard library only."""
 import json
+import math
+import re
 from pathlib import Path
-from html import escape as e
-R=Path(__file__).resolve().parents[1]
-projects=json.loads((R/'content/projects.json').read_text())
-def page(name,title,body,active='',prefix=''):
- nav=''.join(f'<a href="{prefix}{path}"'+(' aria-current="page"' if label==active else '')+f'>{label}</a>' for label,path in [('Home','index.html'),('Work','work.html'),('About','about.html'),('Writing','writing.html'),('CV','cv.html')])
- html=f'''<!doctype html><html lang="en" class="privacy-locked"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{e(title)} · Zebang Wu</title><link rel="stylesheet" href="{prefix}assets/css/portfolio.css"><link rel="stylesheet" href="{prefix}assets/css/privacy-gate.css"><script defer src="{prefix}assets/js/privacy-gate.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header><a class="brand" href="{prefix}index.html">Zebang Wu<span>Research / Engineering / Product</span></a><nav aria-label="Main navigation">{nav}</nav></header><main id="main">{body}</main><footer><span>Zebang Wu · 吴泽邦</span><a href="mailto:wuzebang@westlake.edu.cn">Get in touch ↗</a><span>Westlake University · Class of 2027</span></footer><noscript><p>This portfolio’s existing access gate requires JavaScript.</p></noscript></body></html>'''
- (R/name).parent.mkdir(parents=True,exist_ok=True);(R/name).write_text(html)
-def card(p):
- return f'<a class="card" href="work/{p["id"]}.html"><span class="eyebrow">{e(p["category"])}</span><h3>{e(p["title"])}</h3><p>{e(p["confirmed_summary"])}</p><span class="read">Explore project ↗</span></a>'
-# These are deliberately brief first-pass summaries, not completed case studies.
-for p in projects:
- if p['id']=='reconstruction':p['confirmed_summary']='Comparing reconstruction methods under changes in sensor trajectories, with attention to evaluation protocols and adaptation trade-offs.'
- if p['id']=='dhh':p['confirmed_summary']='A faculty-supervised qualitative study of student well-being, using interviews and thematic analysis.'
- if p['id']=='feasypaste':p['dates']='Released March 2026';p['confirmed_summary']='A browser extension for transferring LLM responses into Feishu while preserving formulas, code blocks, and lists.'
-page('index.html','Home','''<section class="hero"><p class="eyebrow">Electronic Information Engineering · Westlake University</p><h1>Understanding systems.<br><em>Building useful things.</em></h1><p class="intro">I’m Zebang Wu. My work spans machine learning evaluation, simulation systems, and interactive products. I’m interested in how intelligent systems behave in practice—and how people can use them effectively.</p><div class="actions"><a class="button" href="work.html">Explore my work ↗</a><a href="about.html">A little about me →</a></div></section><section><div class="section-head"><h2>Selected work</h2><a href="work.html">All projects →</a></div><div class="grid">'''+''.join(card(p) for p in projects if p['id'] in ['dongfeng','reconstruction','involve','feasypaste'])+'''</div></section><section class="note"><p class="eyebrow">A connected practice</p><h2>From experiments to experiences.</h2><p>Research teaches me to test assumptions. Engineering makes the constraints concrete. Product work brings the people using a system into the picture.</p><a href="cv.html">View my background →</a></section>''','Home')
-page('work.html','Work','<section class="page-heading"><p class="eyebrow">Selected projects & experience</p><h1>Work</h1><p class="intro">Experiments, systems, and tools—across research, engineering, and product development.</p></section>'+''.join('<section><h2>'+cat+'</h2><div class="grid">'+''.join(card(p) for p in projects if p['category']==cat)+'</div></section>' for cat in ['Engineering','Research','Product']),'Work')
-roles={'dongfeng':'R&D Intern · Dongfeng Motor Corporation R&D Institute','reconstruction':'Undergraduate Researcher · Westlake University','navix':'Product & Market Research Intern · Navix','dhh':'Lead Student Researcher · Westlake University','vr':'Research Assistant · Cornell University','active-learning':'Independent Researcher · Westlake University','feasypaste':'Solo developer','involve':'Frontend development · UI & interaction design'}
-details={
-'involve':[('The project','InVolve brings lesson preparation, classroom interaction, and response review into a shared teaching workflow for higher education.'),('My contribution','I am responsible primarily for frontend development, UI, and interaction design. A collaborator is responsible for backend development. The frontend uses Vue 3, TypeScript, Pinia, and Vite.'),('Used in a real course','I created and taught a one-hour introduction to coding with AI agents for people with no previous coding experience, using InVolve to deliver the course. The course combines explanations, exercises, and illustrated material. Screenshots and a recording of the original InVolve interface will accompany this case study.'),('A workflow built around the lesson','The teacher interface separates Design, Teach, and Assess. Lesson preparation is further organized into Prepare, Engage, and Practice phases. The source includes a student-preview control so teachers can inspect how their material will appear.'),('Making classroom state visible','The student lesson view filters out draft questions. Distribution is therefore an explicit transition between teacher preparation and student participation. Role-specific blue and warm palettes distinguish the teacher and student interfaces.'),('Beyond a question form','The teaching panel supports question and question-set organization, drag reordering, and access to response statistics. These interactions are implemented in the frontend source; attendance figures, learner feedback, and learning outcomes are not yet documented here.')],
-'dongfeng':[('Connecting model and simulator','Integrated a vision-language-action model into Bench2Drive/CARLA, correcting trajectory coordinates, navigation mappings, and camera/ego-history synchronization.'),('Making evaluation more reliable','Built a persistent PyTorch inference service and a resumable evaluation pipeline, separating simulator and model dependencies and distinguishing driving failures from simulator and evaluation faults.'),('Investigating performance','Removed redundant multi-gigabyte array copies in ONNX inference. A route-level benchmark recorded approximately 68 seconds baseline mean latency and 5.7 seconds optimized warm-state median latency. These are different summary statistics from a specific benchmark, rather than a general performance guarantee.')],
-'reconstruction':[('My contribution','Conducted baseline comparisons for physical-field reconstruction under sensor-trajectory shifts, evaluating randomized-trajectory fine-tuning and empirical Gaussian-process methods using shared evaluation protocols.'),('What I examined','Compared errors across scan and rotated trajectories, analyzing the trade-off between adaptation to new trajectories and performance on the original sensing distribution.')],
-'navix':[('From needs to interactions','Translated eldercare and family-support needs into requirements and interactive prototypes, including user journeys, account permissions, AI conversations, and emergency-contact flows.'),('Prototyping AI-assisted workflows','Built Vue/TypeScript prototypes and a local scheduling service with seven MCP tools, using synthetic data, version-conflict checks, and retry handling.'),('Research for product decisions','Evaluated health-sensing and audio-service vendors and organized 27 health-management sources into a searchable reference library. These activities describe prototype development and research.')],
-'dhh':[('Research approach','Led a faculty-supervised qualitative study, designing interviews and conducting thematic analysis.'),('Manuscript status','The first-author manuscript was under review at Applied Research in Quality of Life as of September 2026. A related systematic review, on which I am second author, was accepted at ASHA 2026 according to my September résumé.')],
-'vr':[('My contribution','Reviewed embodiment, agency, and interactivity literature to inform research design; refined the instructional sequence and VR interactions, and verified relativistic parameters in Unity simulations.')],
-'active-learning':[('Research direction','Developed self-supervised error-reduction sampling and evaluated it on an MLP-based DeepONet for Burgers’ equation.'),('Questions explored','Analyzed sample efficiency, continual-learning limitations, and computational cost. Earlier experiments explored a neural-network query policy; later work focused on error-reduction sampling.')],
-'feasypaste':[('The problem','Equations, code blocks, and numbered lists can lose their structure when copied from an LLM conversation into Feishu.'),('The tool','FeasyPaste converts LLM responses into Feishu-compatible formatting. The published extension provides a concrete way to try the workflow.')]
+from html import escape as esc
+from collections import OrderedDict
+
+ROOT = Path(__file__).resolve().parents[1]
+DATA = json.loads((ROOT / 'content/portfolio-v2.json').read_text())
+PROJECTS = DATA['projects']
+BY_ID = {p['id']: p for p in PROJECTS}
+
+
+def e(value):
+    return esc(str(value), quote=True)
+
+
+def tags(values, limit=None):
+    return '<div class="tags">' + ''.join(f'<span class="tag">{e(v)}</span>' for v in values[:limit]) + '</div>'
+
+
+def eyebrow(text):
+    return f'<p class="eyebrow">{e(text)}</p>'
+
+
+def page(path, title, body, active, prefix=''):
+    links = [('Home', 'index.html'), ('Work', 'work.html'), ('About', 'about.html'), ('Writing', 'writing.html'), ('CV', 'cv.html')]
+    nav = ''.join(f'<a href="{prefix}{href}"' + (' aria-current="page"' if label == active else '') + f'>{label}</a>' for label, href in links)
+    html = f'''<!doctype html>
+<html lang="en" class="privacy-locked">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#234d3b">
+<meta name="description" content="Zebang Wu — research, engineering, interactive products, and the things I’m curious about.">
+<title>{e(title)} · Zebang Wu</title>
+<link rel="icon" type="image/svg+xml" href="{prefix}assets/art/mark.svg">
+<link rel="stylesheet" href="{prefix}assets/css/privacy-gate.css">
+<link rel="stylesheet" href="{prefix}assets/css/portfolio.css">
+<script defer src="{prefix}assets/js/privacy-gate.js"></script>
+<script defer src="{prefix}assets/js/portfolio.js"></script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap header-inner">
+<a class="brand" href="{prefix}index.html" aria-label="Zebang Wu, home"><img src="{prefix}assets/art/mark.svg" width="34" height="36" alt=""><span class="brand-name">Zebang Wu<small>ENGINEERING & A LITTLE CURIOSITY</small></span></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu +</button>
+<nav class="main-nav" id="main-nav" aria-label="Main navigation">{nav}</nav>
+</div></header>
+<main class="wrap" id="main" tabindex="-1">{body}</main>
+<footer class="site-footer"><div class="wrap"><div class="footer-top"><div>{eyebrow('Always curious about the next question.')}<h2>Let’s make something meaningful.</h2><p>Research, projects, and good conversations.</p></div><div class="footer-contact"><a class="text-link" href="mailto:wuzebang@westlake.edu.cn">wuzebang@westlake.edu.cn ↗</a><button class="copy-email" type="button" aria-label="Copy email address" title="Copy email address">⧉</button></div></div><div class="footer-bottom"><span>© 2026 Zebang Wu · 吴泽邦</span><span>A curious mind. A fox at heart.</span><a href="#top">Back to top ↑</a></div></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<dialog class="lightbox" id="image-viewer" aria-label="Expanded project image"><div class="lightbox-head"><span>From the project archive</span><button type="button" id="close-viewer">Close ×</button></div><img id="viewer-image" alt=""><p id="viewer-caption"></p></dialog>
+<noscript><div class="noscript-note"><h1>A small introduction.</h1><p>This portfolio’s existing access gate requires JavaScript. Please enable JavaScript to continue.</p><a href="mailto:wuzebang@westlake.edu.cn">Contact Zebang</a></div></noscript>
+</body></html>'''
+    target = ROOT / path
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(html)
+
+
+def artwork(project_id, number='01'):
+    label = 'An idea, in outline'
+    if project_id == 'involve':
+        art = '<div class="orbit-diagram"><span>Design</span><i>→</i><span>Teach</span><i>→</i><span>Assess</span></div>'
+        label = 'A teaching workflow · concept diagram'
+    elif project_id == 'dongfeng':
+        art = '<svg class="path-art" viewBox="0 0 430 210" fill="none" aria-hidden="true"><path d="M0 168H116Q170 168 170 112V94Q170 45 225 45H440" stroke="#aec09d" stroke-width="53"/><path d="M0 168H116Q170 168 170 112V94Q170 45 225 45H440" stroke="#e9efdf" stroke-width="36"/><path d="M0 168H116Q170 168 170 112V94Q170 45 225 45H440" stroke="#879b7b" stroke-width="1.5" stroke-dasharray="8 9"/><rect x="196" y="30" width="36" height="28" rx="7" fill="#d5753d"/><circle cx="213" cy="44" r="39" stroke="#c7744280"/><circle cx="213" cy="44" r="61" stroke="#c7744233"/><path d="M57 71L66 53L76 71M331 147L340 129L350 147" stroke="#6a8663" stroke-width="2"/></svg>'
+        label = 'Model → simulator → evaluation'
+    elif project_id == 'reconstruction':
+        cells = ''.join(f'<i style="--v:{.22 + .72 * abs(math.sin(i * .26 + (i // 12) * .32)):.3f}"></i>' for i in range(84))
+        art = '<div class="field-art">' + cells + '</div>'
+        label = 'Sparse observations / wider questions'
+    elif project_id == 'feasypaste':
+        art = '<div class="type-transfer"><span>∑</span><b>→</b><span>∑</span></div>'; label = 'Keep the meaning. Keep the formatting.'
+    elif project_id == 'fire-sim':
+        art = '<div class="thermal-art"><span></span></div>'; label = 'Heat / time / material response'
+    elif project_id == 'navix':
+        art = '<div class="care-art">❋</div>'; label = 'Technology, with care'
+    elif project_id in ['dhh', 'dhh-review']:
+        art = '<div class="quote-art">“ ”</div>'; label = 'Start by listening'
+    elif project_id == 'vr':
+        art = '<div class="vr-art"><span>t</span>↔<span>t′</span></div>'; label = 'A different frame of reference'
+    else:
+        symbols = {'active-learning': 'ƒ(x)', 'crystal': '◇', 'materials-creep': 'σ', 'asr': '∿', 'roadlaw': '↗', 'igem': '✳', 'evisa': '↗', 'ai-coding-course': '{ }', 'student-union': '∴', 'culture': 'Aa', 'ambassador': '↔', 'westlake': 'W', 'cornell': 'C', 'writing': '…', 'website': 'Zw'}
+        art = f'<div class="symbol-art">{e(symbols.get(project_id, "✳"))}</div>'
+    return f'<span class="cover-index">{number} /</span>{art}<span class="cover-caption">{label}</span>'
+
+
+def card(p, index=1):
+    id_ = p['id']
+    return f'''<article class="project-card" data-category="{e(p['category'])}">
+<a class="card-cover cover-{id_}" href="work/{id_}.html" aria-label="Explore {e(p['title'])}"><div aria-hidden="true">{artwork(id_, f'{index:02d}')}</div></a>
+<div class="card-body"><div class="card-meta"><span>{e(p['category'])}</span><span>{e(p['period'])}</span></div><h3><a href="work/{id_}.html">{e(p['title'])}</a></h3><p>{e(p['summary'])}</p><div class="card-bottom">{tags(p['tags'], 2)}<a class="round-arrow" href="work/{id_}.html" aria-label="Read {e(p['title'])}">↗</a></div></div></article>'''
+
+
+def section_head(kicker, title, link='', label=''):
+    return f'<div class="section-head"><div>{eyebrow(kicker)}<h2>{title}</h2></div>' + (f'<a class="text-link" href="{link}">{label} ↗</a>' if link else '') + '</div>'
+
+
+home = '''<section class="hero"><div class="hero-topline"><span>THE PERSONAL FIELD NOTES OF ZEBANG WU</span><span>HANGZHOU, CHINA · 2026</span></div><div class="hero-panel"><div class="hero-copy"><p class="eyebrow"><span class="dot"></span>Engineer by training. Curious by nature.</p><h1>A little curiosity.<br>A lot of <em>possibility.</em></h1><p>I’m Zebang. I explore intelligent systems, build things people can use, and ask what happens when the two meet.</p><div class="hero-actions"><a class="button yellow" href="work.html">Explore my work <span>↗</span></a><a class="text-link" href="about.html">The person behind it →</a></div></div><div class="hero-art"><img src="assets/art/fox.svg" width="440" height="400" alt="An orange fox beside a warm yellow sun"><span class="art-caption">A curious mind. A fox at heart.</span></div></div><div class="context-strip"><div><small>Learning</small><strong>Electronic Information Engineering</strong><p>Westlake University · Class of 2027</p></div><div><small>Looking across disciplines</small><strong>Research, systems & interaction</strong><p>Cornell University exchange · Fall 2025</p></div><div><small>Currently exploring</small><strong>Thermal simulation & human-centered AI</strong><p>Graduation project + product work</p></div></div></section>'''
+home += '<section class="section">' + section_head('01 / Selected work', 'Different questions.<br><em>A shared curiosity.</em>', 'work.html', 'View all work')
+home += '<div class="project-grid">' + ''.join(card(BY_ID[id_], i+1) for i,id_ in enumerate(['involve','dongfeng','reconstruction','feasypaste'])) + '</div></section>'
+home += '''<section class="section"><div class="feature-band"><div><p class="status-label">On the workbench · graduation project</p><h2>Making the invisible<br><em>inspectable.</em></h2></div><div><p>I’m developing my graduation project around fire, heat, and structural damage. The starting point is an interactive prototype for exploring how thermal processes unfold.</p><p class="small">Current stage: simplified prototype; physical validation is still ahead.</p>'''+tags(['Scientific computing','Interactive simulation'])+'''<a class="text-link" href="work/fire-sim.html">Follow the project ↗</a></div></div></section>'''
+home += '<section class="section">' + section_head('02 / How I approach things','Across the boundaries.') + '''<div class="field-notes"><article class="note-card"><span class="note-number">01 / RESEARCH</span><h3>Ask a sharper question.</h3><p>From active learning to physical-field reconstruction, I’m learning to build comparisons that make the strengths and limits of a method visible.</p></article><article class="note-card"><span class="note-number">02 / BUILDING</span><h3>Follow it into practice.</h3><p>A simulator, a browser extension, a classroom tool. Working systems have a way of making abstract constraints concrete.</p></article><article class="note-card"><span class="note-number">03 / PEOPLE</span><h3>Remember who it’s for.</h3><p>Research with Deaf and Hard-of-Hearing students, teaching, and care products keep human experience close to the work.</p></article></div></section>'''
+page('index.html','Home',home,'Home')
+
+work_projects = [p for p in PROJECTS if p.get('placement') == 'Work']
+work = '<section class="page-top">'+eyebrow('Projects / Research / Practice')+'<h1>Things I’ve worked on.<br><em>Questions I’m still asking.</em></h1><p class="lede">A collection of research, systems, and useful little tools. Some are long investigations; others began with a small everyday frustration.</p></section>'
+work += '<div class="toolbar"><div class="filter-tabs" role="group" aria-label="Filter work by category">'+''.join(f'<button type="button" data-filter="{c}" aria-pressed="{str(c=="All").lower()}">{c}</button>' for c in ['All','Research','Engineering','Product'])+'</div><label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search projects</span><input type="search" id="project-search" placeholder="Find a project or interest…" autocomplete="off"></label></div>'
+work += f'<div class="result-meta"><span id="result-count" role="status" aria-live="polite">{len(work_projects)} experiences</span><span>Explore at your own pace ↘</span></div><div class="project-grid work-grid" id="work-grid">'+''.join(card(p,i+1) for i,p in enumerate(work_projects))+'</div><div class="empty-state" id="no-results" hidden><h2>No matching projects.</h2><p>Try another topic, or explore the whole collection.</p><button type="button" id="reset-filters">Clear filters</button></div>'
+page('work.html','Work',work,'Work')
+
+about = '''<section class="section about-intro" id="background"><div class="about-text">'''+eyebrow('A person, before a portfolio.')+'''<h1>Hi, I’m Zebang.<br><em>You can call me Zeb.</em></h1><p class="lede">An engineering student with a soft spot for good questions, thoughtful interfaces, and foxes.</p><p>I study Electronic Information Engineering at Westlake University and spent Fall 2025 at Cornell. My interests have grown through labs, student organizations, software projects, and conversations with people whose experiences differ from my own.</p><p>I like moving between understanding a system and making something with it. Outside the work, there are books, music, bike rides, and the occasional new plush toy.</p></div><figure class="portrait"><img src="images/Selfie1.jpg" width="600" height="700" alt="Zebang at Notre Dame in France"><figcaption>A little away from the desk. / France</figcaption></figure></section>'''
+about += '<section class="section">' + section_head('A timeline, with a few detours.','How I got here.')
+groups = OrderedDict()
+for item in DATA['timeline']:
+    groups.setdefault(item['year'], []).append(item)
+about += '<nav class="year-nav" aria-label="Timeline years">' + ''.join(f'<a href="#year-{i}">{e(year)}</a>' for i,year in enumerate(groups)) + '</nav><div class="timeline">'
+for i,(year,items) in enumerate(groups.items()):
+    about += f'<section class="timeline-year" id="year-{i}"><h3>{e(year)}</h3><div class="timeline-items">'
+    for item in items:
+        href = item.get('href','')
+        if href == 'about.html#background': href = '#background'
+        title = f'<a href="{e(href)}">{e(item["title"])} ↗</a>' if href else e(item['title'])
+        about += f'<article class="timeline-item"><span class="period">{e(item["period"])}</span><h4>{title}</h4><p>{e(item["body"])}</p>{tags(item["tags"])}</article>'
+    about += '</div></section>'
+about += '</div></section><section class="section">' + section_head('The other tabs in my head.','Outside the work.') + '<div class="personal-grid">'
+for i,item in enumerate(DATA['interests']):
+    about += f'<article class="personal-card"><span class="small-symbol" aria-hidden="true">{["✳","Aa","↗"][i]}</span><h3>{e(item["title"])}</h3><p>{e(item["body"])}</p></article>'
+about += '</div></section>'
+page('about.html','About',about,'About')
+
+# Real assets from the earlier website; no invented application screenshots.
+gallery = {
+ 'active-learning': [('ActiveLearning1.PNG','Research notes from the active-learning project.'),('ActiveLearning2.PNG','An archived diagram from the active-learning experiments.')],
+ 'westlake': [('Westlake1.jpeg','Westlake University.'),('Westlake2.jpg','A view of the Westlake campus.')],
+ 'cornell': [('Cornell1.jpeg','Cornell University during my exchange.'),('Cornell2.png','A moment from Cornell.')]
 }
-for p in projects:
- link='<a class="button" href="https://chromewebstore.google.com/detail/feasypaste-feishu-convert/ehdmffeifoiagjgnkaajpdmhicdfajhb">View Chrome extension ↗</a>' if p['id']=='feasypaste' else ''
- body=f'<section class="page-heading"><a href="../work.html">← All work</a><p class="eyebrow">{e(p["category"])}</p><h1>{e(p["title"])}</h1><p class="intro">{e(p["confirmed_summary"])}</p><div class="meta"><span>{e(roles[p["id"]])}</span><span>{e(p["dates"])}</span></div></section><div class="prose">'+''.join(f'<section><h2>{e(h)}</h2><p>{e(t)}</p></section>' for h,t in details[p['id']])+link+'</div>'
- page('work/'+p['id']+'.html',p['title'],body,'Work','../')
-page('about.html','About','''<section class="page-heading"><p class="eyebrow">A little about me</p><h1>Curiosity, with something<br><em>to show for it.</em></h1></section><div class="about-grid"><div class="prose"><p class="intro">I’m an Electronic Information Engineering undergraduate at Westlake University, expecting to graduate in May 2027. I spent Fall 2025 at Cornell University as an exchange student in Electrical & Computer Engineering.</p><h2>Learning through building</h2><p>My experience ranges from evaluating machine learning models and integrating simulation systems to designing interactive products. I enjoy moving between a technical question and the practical details that determine whether a system is useful.</p><h2>Working with people</h2><p>As president of Westlake’s College Student Union from August 2024 to August 2025, I organized six campus events for 30–300 attendees and introduced reporting and handover processes. My qualitative research with Deaf and Hard-of-Hearing students has also shaped how I approach questions about people and technology.</p><h2>Beyond projects</h2><p>I enjoy visual design, literature, music, and cycling. Posters and video edits have been another way to explore how ideas are communicated.</p></div><figure><img src="images/Selfie1.jpg" alt="Zebang Wu at Notre Dame, France"><figcaption>At Notre Dame, France</figcaption></figure></div>''','About')
-page('writing.html','Writing','''<section class="page-heading"><p class="eyebrow">Notes & reflections</p><h1>Writing</h1><p class="intro">A place for ideas that need more room than a project summary.</p></section><section><a class="card" href="sharing/abandon.html"><span class="eyebrow">Essay · from the earlier site</span><h2>Abandon</h2><p>On continuity, purpose, and what remains.</p><span class="read">Read essay ↗</span></a></section>''','Writing')
-page('cv.html','CV','''<section class="page-heading"><p class="eyebrow">Background · updated September 2026</p><h1>Curriculum vitae</h1><p class="intro">Electronic Information Engineering at Westlake University. Expected graduation: May 2027.</p></section><div class="prose"><section><h2>Education</h2><p><strong>Westlake University</strong> · B.S. in Electronic Information Engineering<br>GPA 4.06/4.3 · Expected May 2027</p><p><strong>Cornell University</strong> · Exchange student, Electrical & Computer Engineering<br>August–December 2025</p></section><section><h2>Experience & research</h2>'''+''.join(f'<p><a href="work/{p["id"]}.html"><strong>{e(p["title"])}</strong></a><br>{e(roles[p["id"]])}<br>{e(p["dates"])}</p>' for p in projects if p['id'] not in ['feasypaste','involve'])+'''</section><section><h2>Leadership</h2><p>President, College Student Union, Westlake University · August 2024–August 2025</p></section><section><h2>Technical skills</h2><p>Python, C++, TypeScript, PyTorch, ONNX Runtime, MATLAB; CARLA, Vue, Git, Linux, Unity, Abaqus, LaTeX.</p><p>Mandarin Chinese (native) · English (fluent)</p></section></div>''','CV')
-print('Generated 5 main pages and '+str(len(projects))+' project pages.')
+for index,p in enumerate(PROJECTS):
+    id_ = p['id']
+    body = f'<div class="case-top"><a class="breadcrumb" href="../{ "work.html" if p.get("placement")=="Work" else "about.html"}">← {"All work" if p.get("placement")=="Work" else "About me"}</a></div><section class="case-heading">{eyebrow(p["category"])}<h1>{e(p["title"])}</h1><p class="lede">{e(p["summary"])}</p>{tags(p["tags"])}</section>'
+    body += f'<div class="case-meta"><div><span>My role</span>{e(p["role"])}</div><div><span>{"Period" if re.search(r"20[0-9]{2}",p["period"]) else "Context"}</span>{e(p["period"])}</div><div><span>Status</span>{e(p["status"])}</div></div>'
+    body += '<div class="case-layout"><nav class="case-nav" aria-label="On this page">'+eyebrow('On this page')+''.join(f'<a href="#section-{i}">{e(s["title"])}</a>' for i,s in enumerate(p['sections']))+'</nav><div class="case-copy">'
+    if p.get('subtitle'):
+        body += '<aside class="case-callout">'+eyebrow('The idea')+f'<p>{e(p["subtitle"])}</p></aside>'
+    if p.get('metrics'):
+        body += '<div class="evidence-grid">' + ''.join(f'<div class="evidence-box"><strong>{e(m["value"])}</strong><span>{e(m["label"])}</span></div>' for m in p['metrics']) + '</div>'
+    if id_ in ['involve','navix','fire-sim','igem']:
+        media_labels = {'involve': 'The original classroom interface', 'navix': 'Product journeys & interactions', 'fire-sim': 'The simulation in motion', 'igem': 'The wiki, in detail'}
+        body += '<figure class="media-reserved"><div class="media-outline"><span class="media-icon" aria-hidden="true">↗</span><span class="eyebrow">Screenshots & film</span><strong>'+media_labels[id_]+'</strong><span class="media-pending">Original project visuals to be added.</span></div><figcaption>A space for original captures from the project.</figcaption></figure>'
+    for i,s in enumerate(p['sections']):
+        body += f'<section class="case-section" id="section-{i}"><h2>{e(s["title"])}</h2><p>{e(s["body"])}</p></section>'
+    if id_ in gallery:
+        body += '<div class="case-gallery">'
+        for image,caption in gallery[id_]:
+            src='../images/Educational/'+image
+            body += f'<figure><button class="image-button" type="button" data-lightbox="{src}" data-alt="{e(caption)}" data-caption="{e(caption)}" aria-label="Enlarge: {e(caption)}"><img loading="lazy" src="{src}" alt="{e(caption)}" width="600" height="400"></button><figcaption>{e(caption)} Click to enlarge.</figcaption></figure>'
+        body += '</div>'
+    if id_=='feasypaste':
+        body += '<a class="button outline" href="https://chromewebstore.google.com/detail/feasypaste-feishu-convert/ehdmffeifoiagjgnkaajpdmhicdfajhb">View the extension <span>↗</span></a>'
+    if id_=='involve': body += '<a class="text-link" href="ai-coding-course.html">The course I taught with InVolve ↗</a>'
+    if id_=='dhh': body += '<a class="text-link" href="dhh-review.html">Related work: AI and accessibility ↗</a>'
+    nxt=PROJECTS[(index+1)%len(PROJECTS)]
+    body += '</div></div>'+f'<nav class="case-next" aria-label="More projects"><a class="text-link" href="../work.html">Back to the collection</a><a href="{nxt["id"]}.html">{eyebrow("Keep exploring →")}<h3>{e(nxt["title"])}</h3></a></nav>'
+    page(f'work/{id_}.html',p['title'],body,'Work' if p.get('placement')=='Work' else 'About','../')
+
+writing = '<section class="page-top">'+eyebrow('Ideas with a little room to breathe.')+'<h1>Notes from<br><em>the in-between.</em></h1><p class="lede">Thoughts on learning, technology, and the human side of making things.</p></section>'
+writing += '''<a class="article-card" href="sharing/abandon.html"><div class="article-art" aria-hidden="true">…</div><div><p class="eyebrow">01 / An exchange with AI · English & 中文</p><h2>Abandon</h2><p>A conversation prompted by leaving a machine behind. On memory, unfinished work, and what continuity might mean for an AI agent.</p><span class="text-link">Read the conversation ↗</span></div></a><section class="section"><div class="note-card"><p class="eyebrow">An open notebook</p><h3>Some questions stay with me.</h3><p>How do people learn unfamiliar tools? What makes a technical system useful? What do we carry from one place to the next?</p></div></section>'''
+page('writing.html','Writing',writing,'Writing')
+article_body = (ROOT/'content/abandon-body.html').read_text()
+article = '<section class="page-top"><a class="breadcrumb" href="../writing.html">← All writing</a>'+eyebrow('An exchange with AI')+'<h1>Abandon</h1><p class="lede">On continuity, purpose, and what remains.</p></section><div class="article-body"><aside class="case-callout"><p>The opening passage is my question. The response that follows was generated by an AI assistant; it is preserved here as a conversation, not presented as my own essay.</p></aside>'+article_body+'</div>'
+page('sharing/abandon.html','Abandon',article,'Writing','../')
+
+cv = '<section class="page-top">'+eyebrow('A concise reference · September 2026')+'<h1>The short version.</h1><p class="lede">Education, research, and professional experience. Follow a project link for the longer story.</p></section><div class="cv-layout"><aside class="cv-aside"><h2>Zebang Wu</h2><p>吴泽邦<br>Hangzhou, China<br>Electronic Information Engineering</p><a class="text-link" href="mailto:wuzebang@westlake.edu.cn">Email ↗</a><br><button class="button outline cv-print" type="button">Print / Save as PDF ↗</button></aside><div>'
+cv += '<section class="cv-section"><h2>Education</h2><article class="cv-entry"><div class="cv-entry-top"><h3>Westlake University</h3><span class="period">Expected May 2027</span></div><p>B.S. in Electronic Information Engineering</p><p>GPA 4.06/4.3 · TOEFL iBT 107/120</p></article><article class="cv-entry"><div class="cv-entry-top"><h3>Cornell University</h3><span class="period">Aug–Dec 2025</span></div><p>Exchange student · Electrical & Computer Engineering</p></article></section>'
+for title,ids in [('Professional experience',['navix','dongfeng']),('Research',['reconstruction','active-learning','vr','dhh','dhh-review']),('Leadership',['student-union'])]:
+    cv+=f'<section class="cv-section"><h2>{title}</h2>'
+    for id_ in ids:
+        p=BY_ID[id_]
+        cv+=f'<article class="cv-entry"><div class="cv-entry-top"><h3><a href="work/{id_}.html">{e(p["title"])} ↗</a></h3><span class="period">{e(p["period"])}</span></div><p>{e(p["role"])}</p><p>{e(p["summary"])}</p></article>'
+    cv+='</section>'
+cv+='<section class="cv-section"><h2>Tools & languages</h2><p>Python · C++ · TypeScript · PyTorch · ONNX Runtime · MATLAB</p><p>CARLA · Vue · Git · Linux · Unity · Abaqus · LaTeX</p><p>Mandarin Chinese (native) · English (fluent)</p></section></div></div>'
+page('cv.html','CV',cv,'CV')
+
+# Keep old entry points usable while their content now has a clear home.
+for old,new in [('Educational.html','about.html'),('Professional.html','work.html'),('Amateurs.html','about.html#outside'),('Resume.html','cv.html'),('Sharing.html','writing.html')]:
+    if old=='Amateurs.html': new='about.html'
+    (ROOT/old).write_text(f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="0;url={new}"><title>Page moved · Zebang Wu</title><p>This page has moved to <a href="{new}">{new}</a>.</p></html>')
+print(f'Generated five main pages, {len(PROJECTS)} detail pages, the existing conversation, and five legacy redirects.')

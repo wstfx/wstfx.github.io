@@ -1,0 +1,1226 @@
+{
+  "schemaVersion": 2,
+  "updated": "2026-10-01",
+  "language": "en",
+  "person": {
+    "name": "Zebang Wu",
+    "nameChinese": "吴泽邦",
+    "email": "wuzebang@westlake.edu.cn",
+    "location": "Hangzhou, China",
+    "headline": "Curious about how things work. Interested in what they can become.",
+    "intro": "I’m an Electronic Information Engineering undergraduate at Westlake University. I work across machine learning, simulation, and interactive products, with a growing interest in how people learn and use intelligent systems.",
+    "educationSummary": "Westlake University · Class of 2027 / Cornell exchange · 2025"
+  },
+  "editorialPrinciples": [
+    "Describe individual contributions separately from a team’s work.",
+    "Keep uncertain dates separate from dated chronology.",
+    "Use actual InVolve screenshots and recordings; do not replace its interface with an imitation.",
+    "Show the fire project as a planned graduation project with an exploratory, unvalidated prototype.",
+    "Keep prototype behavior, measured results, and deployed capabilities distinct."
+  ],
+  "categories": [
+    "Research",
+    "Engineering",
+    "Product",
+    "Teaching",
+    "Leadership",
+    "Education",
+    "Writing"
+  ],
+  "projects": [
+    {
+      "id": "fire-sim",
+      "title": "Fire, heat & structural damage",
+      "subtitle": "An interactive starting point for my graduation project.",
+      "category": "Research",
+      "tags": [
+        "Graduation project",
+        "Scientific computing",
+        "Interactive simulation"
+      ],
+      "period": "From Sep 2026",
+      "status": "Planned graduation project · prototype in development",
+      "role": "Graduation project student",
+      "summary": "Exploring how a thermal field, component temperature, and accumulated damage can be made inspectable in an interactive simulation.",
+      "sections": [
+        {
+          "title": "From exploration to a graduation project",
+          "body": "This work is becoming my undergraduate graduation project. The current prototype brings a changing thermal field, component heating, and cumulative damage into one interactive environment, providing a starting point for a more rigorous investigation."
+        },
+        {
+          "title": "Making a process visible",
+          "body": "The prototype lets a viewer inspect how a thermal process develops over time and how components respond. Its purpose at this stage is to make relationships and behavior visible enough to explore, compare, and discuss."
+        },
+        {
+          "title": "Current scope",
+          "body": "The model currently uses simplified, uncalibrated demonstration parameters. Its visual behavior has not been physically validated, and it should be read as an exploratory prototype rather than a predictive engineering system."
+        }
+      ],
+      "featured": true,
+      "placement": "Work",
+      "evidenceStatus": "Prototype; no physical validation claimed",
+      "dateNote": "A prototype is recorded in September 2026. Graduation-project direction confirmed by the author on October 1, 2026.",
+      "mediaType": "simulation-capture"
+    },
+    {
+      "id": "involve",
+      "title": "InVolve",
+      "subtitle": "Designing the interaction between a lesson, a teacher, and a classroom.",
+      "category": "Product",
+      "tags": [
+        "Interaction design",
+        "Frontend engineering",
+        "Education technology"
+      ],
+      "period": "Collaborative project",
+      "status": "In development · used in teaching",
+      "role": "Frontend development, UI & interaction design",
+      "summary": "Classroom interaction software for higher education. I lead the frontend, UI, and interaction design; my collaborator develops the backend.",
+      "sections": [
+        {
+          "title": "A workflow built around teaching",
+          "body": "InVolve brings lesson preparation, live classroom interaction, and response review into a connected workflow. The teacher interface is organized around Design, Teach, and Assess, with Prepare, Engage, and Practice phases within the lesson."
+        },
+        {
+          "title": "My contribution",
+          "body": "I am primarily responsible for the frontend, UI, and interaction design. My work includes the teaching interface, question and question-set organization, student preview, and the transitions between preparing and distributing classroom content. A collaborator is responsible for backend development."
+        },
+        {
+          "title": "Keeping classroom state understandable",
+          "body": "Draft questions stay out of the student lesson view until they are distributed. Student preview gives teachers a way to inspect the receiving experience, while question organization and statistics entry points help connect preparation, participation, and review."
+        },
+        {
+          "title": "Used in my own course",
+          "body": "I created and delivered an introductory course on coding with AI agents through InVolve for people with no previous coding experience. This provided a real teaching context for the product, connecting my interface work with the task of helping beginners take their first steps."
+        }
+      ],
+      "featured": true,
+      "placement": "Work",
+      "relatedIds": [
+        "ai-coding-course"
+      ],
+      "mediaType": "authentic-product-capture",
+      "presentationNote": "Show original application screenshots or recordings. Do not recreate or imitate the application UI.",
+      "dateNote": "Development dates are not yet established. A saved course record is from spring 2026."
+    },
+    {
+      "id": "dongfeng",
+      "title": "VLA models in the driving loop",
+      "subtitle": "Connecting model inference to reliable autonomous-driving evaluation.",
+      "category": "Engineering",
+      "tags": [
+        "Autonomous driving",
+        "Systems integration",
+        "Inference optimization",
+        "Evaluation"
+      ],
+      "period": "Jul–Aug 2026",
+      "status": "Completed internship",
+      "role": "R&D Intern · Dongfeng Motor Corporation R&D Institute",
+      "summary": "Integrated a vision-language-action model into Bench2Drive/CARLA and worked on the performance and reliability of its closed-loop evaluation pipeline.",
+      "sections": [
+        {
+          "title": "Integration is part of the experiment",
+          "body": "I integrated a vision-language-action model with Bench2Drive and CARLA for closed-loop evaluation. This required correcting trajectory coordinates and navigation mappings, and synchronizing camera inputs with ego-vehicle history so the model and simulator described the same state."
+        },
+        {
+          "title": "Tracing inference overhead",
+          "body": "I identified and removed redundant multi-gigabyte array copies in the ONNX inference path. A route-level benchmark recorded approximately 68 seconds of baseline mean latency and 5.7 seconds of optimized warm-state median latency. These use different summary statistics and operating conditions, so they are reported as observations rather than a universal speedup ratio."
+        },
+        {
+          "title": "Making evaluation recoverable",
+          "body": "I built a persistent PyTorch inference service and a resumable evaluation pipeline. Isolating simulator and model dependencies helped make the system easier to operate and diagnose, while distinguishing driving failures from simulator and evaluation faults made the resulting evidence more interpretable."
+        }
+      ],
+      "featured": true,
+      "placement": "Work",
+      "mediaType": "video-or-system-diagram",
+      "metrics": [
+        {
+          "value": "Jul–Aug 2026",
+          "label": "R&D internship"
+        },
+        {
+          "value": "CARLA + Bench2Drive",
+          "label": "Closed-loop evaluation environment"
+        }
+      ]
+    },
+    {
+      "id": "reconstruction",
+      "title": "Reconstruction beyond one sensor path",
+      "subtitle": "Baseline evaluation under changes in sensing trajectories.",
+      "category": "Research",
+      "tags": [
+        "AI for science",
+        "Baseline evaluation",
+        "Generalization",
+        "Scientific computing"
+      ],
+      "period": "Jan 2026–present",
+      "status": "Ongoing research",
+      "role": "Undergraduate Researcher · Westlake University",
+      "summary": "Comparing physical-field reconstruction baselines when sensors follow trajectories different from the original sensing distribution.",
+      "sections": [
+        {
+          "title": "The evaluation question",
+          "body": "A reconstruction method can perform differently when the sensing trajectory changes. My work examines this shift through baseline comparisons, using shared evaluation protocols to make the behavior of different methods comparable."
+        },
+        {
+          "title": "My contribution",
+          "body": "I evaluated randomized-trajectory fine-tuning and empirical Gaussian-process methods, and compared reconstruction errors across scan and rotated trajectories. My contribution is centered on these baseline experiments and their analysis, rather than ownership of the overall paper method."
+        },
+        {
+          "title": "Reading the trade-off",
+          "body": "The comparison considers both adaptation to new trajectories and performance on the original sensing distribution. This makes the trade-off visible: an adaptation strategy needs to be assessed for what it gains under a new trajectory and what it may lose under the original one."
+        }
+      ],
+      "featured": true,
+      "placement": "Work",
+      "mediaType": "comparison-figure",
+      "evidenceStatus": "Personal contribution: baseline comparisons; paper status and authorship not asserted"
+    },
+    {
+      "id": "navix",
+      "title": "AI support for family care",
+      "subtitle": "Turning family needs into product requirements and interactive prototypes.",
+      "category": "Product",
+      "tags": [
+        "Product design",
+        "Human–robot interaction",
+        "Prototyping",
+        "User journeys"
+      ],
+      "period": "Sep 2026–present",
+      "status": "Ongoing internship",
+      "role": "Product & Market Research Intern · Navix",
+      "summary": "Product exploration for a family-care robot, spanning requirements, account permissions, AI conversations, scheduling prototypes, and technology research.",
+      "sections": [
+        {
+          "title": "Starting with the family",
+          "body": "I translate eldercare and family-support needs into product requirements and user journeys. The interaction work includes account permissions, AI conversations, and emergency-contact flows, connecting a family situation to the actions and information the product needs to support."
+        },
+        {
+          "title": "Making workflows tangible",
+          "body": "I built Vue and TypeScript prototypes and a local scheduling service with seven MCP tools. Synthetic data, version-conflict checks, and retry handling allowed AI-assisted workflows to be demonstrated while exploring how the system should respond to changing or interrupted requests."
+        },
+        {
+          "title": "Research that informs decisions",
+          "body": "I evaluated health-sensing and audio-service vendors, and organized 27 health-management sources into a searchable reference library. This work supports product design and integration planning; the prototypes are described as prototypes, without implying that every capability has been deployed."
+        }
+      ],
+      "featured": true,
+      "placement": "Work",
+      "mediaType": "product-screens",
+      "metrics": [
+        {
+          "value": "7",
+          "label": "MCP tools in the scheduling prototype"
+        },
+        {
+          "value": "27",
+          "label": "Sources in the health-management reference library"
+        }
+      ]
+    },
+    {
+      "id": "dhh",
+      "title": "Listening to student well-being",
+      "subtitle": "A qualitative study with Deaf and Hard-of-Hearing students.",
+      "category": "Research",
+      "tags": [
+        "Qualitative research",
+        "Accessibility",
+        "Interview design",
+        "Thematic analysis"
+      ],
+      "period": "May 2024–present",
+      "status": "Manuscript under review",
+      "role": "Lead Student Researcher · Westlake University",
+      "summary": "A faculty-supervised study of Deaf and Hard-of-Hearing students’ well-being, from interview design and fieldwork coordination to thematic analysis and writing.",
+      "sections": [
+        {
+          "title": "Understanding lived experience",
+          "body": "This study approaches student well-being through qualitative research. Working under faculty supervision, I helped turn a broad question about happiness into an interview-based study that could attend to participants’ own accounts."
+        },
+        {
+          "title": "My contribution",
+          "body": "I led the student research work, designed interviews, coordinated interview arrangements and fieldwork, organized research materials, and conducted thematic analysis. The work involved both keeping the research process moving and interpreting what emerged from it."
+        },
+        {
+          "title": "Writing the study",
+          "body": "I am the first author of the resulting manuscript. As recorded in my September 2026 résumé, it is under review at Applied Research in Quality of Life. This project is distinct from the related systematic review of AI for Deaf and Hard-of-Hearing people."
+        }
+      ],
+      "featured": true,
+      "placement": "Work",
+      "relatedIds": [
+        "dhh-review"
+      ],
+      "mediaType": "research-process-or-thematic-map",
+      "dateNote": "Manuscript status reflects the September 29, 2026 résumé."
+    },
+    {
+      "id": "active-learning",
+      "title": "Choosing what a model learns next",
+      "subtitle": "From neural query policies to self-supervised error-reduction sampling.",
+      "category": "Research",
+      "tags": [
+        "Active learning",
+        "Neural operators",
+        "Experiment design",
+        "Sample efficiency"
+      ],
+      "period": "Dec 2024–Jul 2025",
+      "status": "Research project completed",
+      "role": "Independent Researcher · Westlake University",
+      "summary": "An investigation of sample selection for neural-operator learning, including neural query strategies and a later error-reduction approach.",
+      "sections": [
+        {
+          "title": "Beginning with a query policy",
+          "body": "The early phase explored neural-network-based query strategies for selecting useful training samples in a continuous sample space. The work connected sample selection with the behavior of the model being trained, and exposed questions about data requirements and continual learning."
+        },
+        {
+          "title": "Moving toward error reduction",
+          "body": "I subsequently developed self-supervised error-reduction sampling. My résumé documents evaluation on an MLP-based DeepONet for Burgers’ equation, with attention to how the sampling approach affected learning."
+        },
+        {
+          "title": "What the experiments asked",
+          "body": "The analysis considered sample efficiency alongside computational cost and continual-learning limitations. The two phases belong to one research trajectory: an initial strategy, the constraints it exposed, and a revised approach to choosing training data."
+        }
+      ],
+      "featured": false,
+      "placement": "Work",
+      "mediaType": "experiment-figures",
+      "dateNote": "The legacy site also contains toy-model and FNO figures; each figure should retain its own experimental context."
+    },
+    {
+      "id": "vr",
+      "title": "Relativity you can interact with",
+      "subtitle": "Connecting scientific accuracy with a VR learning experience.",
+      "category": "Research",
+      "tags": [
+        "VR",
+        "Learning sciences",
+        "Interaction design",
+        "Physics education"
+      ],
+      "period": "Sep–Dec 2025",
+      "status": "Research assistantship completed",
+      "role": "Research Assistant · Cornell University",
+      "summary": "Research support for teaching special relativity through VR, combining literature review, instructional sequencing, and verification of simulation parameters.",
+      "sections": [
+        {
+          "title": "From an abstract concept to an experience",
+          "body": "The project explores how special relativity can be taught through an interactive virtual environment. My work drew on literature about embodiment, agency, and interactivity to inform the research design."
+        },
+        {
+          "title": "My contribution",
+          "body": "I helped refine the instructional sequence and VR interactions, and verified relativistic parameters in Unity simulations. This connected the intended learning experience with the physical behavior being represented."
+        },
+        {
+          "title": "A research contribution with a defined scope",
+          "body": "My contribution concerns research design support, instructional interaction, and scientific consistency. The work is presented on those terms, without claiming a measured improvement in learning outcomes."
+        }
+      ],
+      "featured": false,
+      "placement": "Work",
+      "relatedIds": [
+        "cornell"
+      ],
+      "mediaType": "authentic-vr-capture"
+    },
+    {
+      "id": "feasypaste",
+      "title": "FeasyPaste",
+      "subtitle": "Keep the ideas. Keep the formatting.",
+      "category": "Product",
+      "tags": [
+        "Independent development",
+        "Browser extension",
+        "AI workflows",
+        "Everyday tools"
+      ],
+      "period": "Released by Mar 2026",
+      "status": "Public browser extension",
+      "role": "Solo developer",
+      "summary": "A browser extension for moving LLM responses into Feishu while preserving equations, code blocks, and lists.",
+      "sections": [
+        {
+          "title": "A small but persistent frustration",
+          "body": "An answer can be useful and still become difficult to use when copying it into another editor breaks its equations, numbering, or code. FeasyPaste addresses this handoff between an LLM response and a Feishu document."
+        },
+        {
+          "title": "The product",
+          "body": "I independently developed the extension to convert LLM output into Feishu-compatible formatting. Its focus is a short, practical workflow: copy an answer and preserve the structure that makes it readable."
+        },
+        {
+          "title": "Designed around a concrete task",
+          "body": "The project is intentionally focused on a recurring task. It reflects my interest in building small tools that remove repeated friction from learning and working with AI."
+        }
+      ],
+      "featured": true,
+      "placement": "Work",
+      "links": [
+        {
+          "label": "Chrome Web Store",
+          "url": "https://chromewebstore.google.com/detail/feasypaste-feishu-convert/ehdmffeifoiagjgnkaajpdmhicdfajhb"
+        }
+      ],
+      "dateNote": "March 2026 is a store-version reference, not a confirmed development start date.",
+      "mediaType": "before-and-after"
+    },
+    {
+      "id": "roadlaw",
+      "title": "RoadLaw",
+      "subtitle": "A learning map for the rules of the road.",
+      "category": "Product",
+      "tags": [
+        "Independent development",
+        "Information design",
+        "Interactive learning"
+      ],
+      "period": "Independent project",
+      "status": "Public learning tool",
+      "role": "Solo developer",
+      "summary": "A free, structured, interactive learning map for mainland China’s C1/C2 Subject One traffic-law examination.",
+      "sections": [
+        {
+          "title": "Organizing a body of rules",
+          "body": "RoadLaw approaches preparation for the C1/C2 Subject One examination as a learning map. It organizes traffic regulations into a structured, interactive resource that learners can navigate."
+        },
+        {
+          "title": "My contribution",
+          "body": "I independently developed the site. The project brings together website development, information organization, and a learning-oriented presentation of the material."
+        }
+      ],
+      "featured": false,
+      "placement": "Work",
+      "links": [
+        {
+          "label": "Visit RoadLaw",
+          "url": "https://wstfx.github.io/RoadLaw/"
+        }
+      ],
+      "mediaType": "site-capture"
+    },
+    {
+      "id": "igem",
+      "title": "Westlake iGEM 2024 wiki",
+      "subtitle": "A website for communicating a student science project.",
+      "category": "Engineering",
+      "tags": [
+        "Website development",
+        "Information design",
+        "Science communication"
+      ],
+      "period": "2024",
+      "status": "Original site completed · maintenance planned",
+      "role": "Solo website developer",
+      "summary": "Independent website development for Westlake’s 2024 iGEM project.",
+      "sections": [
+        {
+          "title": "A home for the project",
+          "body": "The wiki provides a web presentation for Westlake’s 2024 iGEM project. It sits at the intersection of website construction and the communication of scientific work."
+        },
+        {
+          "title": "My contribution",
+          "body": "I independently developed the website. This credit concerns the site itself; the wider iGEM research project is a team effort."
+        },
+        {
+          "title": "An ongoing responsibility",
+          "body": "The existing site is due for fixes and a hosting review. Maintaining it is part of the project’s next chapter, alongside preserving the work it was built to communicate."
+        }
+      ],
+      "featured": false,
+      "placement": "Work",
+      "mediaType": "site-capture"
+    },
+    {
+      "id": "evisa",
+      "title": "eVisaHelper",
+      "subtitle": "An independently developed web project.",
+      "category": "Product",
+      "tags": [
+        "Independent development",
+        "Web development"
+      ],
+      "period": "Independent project",
+      "status": "Project in portfolio inventory",
+      "role": "Solo developer",
+      "summary": "An independently developed web project, included alongside my other practical software tools.",
+      "sections": [
+        {
+          "title": "The project",
+          "body": "eVisaHelper is one of my independently developed web projects. It forms part of the broader set of tools I build around practical tasks."
+        },
+        {
+          "title": "My contribution",
+          "body": "I developed the site myself, taking responsibility for its implementation as an independent project."
+        }
+      ],
+      "featured": false,
+      "placement": "Work",
+      "links": [
+        {
+          "label": "Visit eVisaHelper",
+          "url": "https://evisa-helper.vercel.app/"
+        }
+      ],
+      "mediaType": "site-capture",
+      "detailLevel": "compact",
+      "evidenceStatus": "Feature scope is intentionally not inferred from the name."
+    },
+    {
+      "id": "dhh-review",
+      "title": "AI for Deaf and Hard-of-Hearing people",
+      "subtitle": "A systematic review of applications, challenges, and future directions.",
+      "category": "Research",
+      "tags": [
+        "Systematic review",
+        "Accessibility",
+        "Artificial intelligence"
+      ],
+      "period": "Accepted for ASHA 2026",
+      "status": "Accepted · ASHA 2026",
+      "role": "Second author",
+      "summary": "Second author of “Landscape of Artificial Intelligence for the Deaf and Hard-of-Hearing: Applications, Challenges and Future Directions.”",
+      "sections": [
+        {
+          "title": "The review",
+          "body": "This systematic review considers the landscape of artificial intelligence for Deaf and Hard-of-Hearing people through its applications, challenges, and future directions."
+        },
+        {
+          "title": "A related research strand",
+          "body": "I am the second author, and my September 2026 résumé records acceptance at ASHA 2026. The review is a separate work from my qualitative study of student well-being, while sharing a sustained interest in accessibility."
+        }
+      ],
+      "featured": false,
+      "placement": "Work",
+      "relatedIds": [
+        "dhh"
+      ],
+      "mediaType": "publication-card",
+      "dateNote": "Acceptance status is recorded in the September 29, 2026 résumé; exact project dates are not established."
+    },
+    {
+      "id": "materials-creep",
+      "title": "Material behavior under constraints",
+      "subtitle": "Learning to build mechanical simulations around physical boundary conditions.",
+      "category": "Research",
+      "tags": [
+        "Computational mechanics",
+        "Abaqus",
+        "Materials"
+      ],
+      "period": "From Jul 2025",
+      "status": "Early research experience",
+      "role": "Undergraduate Researcher",
+      "summary": "Research exploration of material creep and mechanics, including Abaqus and crystal-symmetry boundary conditions.",
+      "sections": [
+        {
+          "title": "Working with a physical model",
+          "body": "This work introduced me to mechanical simulation at the lattice scale and to the practical use of Abaqus. It expanded my research experience beyond model training into setting up physically constrained simulations."
+        },
+        {
+          "title": "My contribution",
+          "body": "I worked on applying crystal-symmetry boundary conditions through coupling constraints. The experience emphasized how the definition of a simulation, including its boundaries, shapes the behavior it can meaningfully represent."
+        }
+      ],
+      "featured": false,
+      "placement": "Work",
+      "mediaType": "simulation-figure",
+      "dateNote": "The legacy site records work beginning in July 2025; an end date is not established."
+    },
+    {
+      "id": "asr",
+      "title": "Wav2Vec ASR experiments",
+      "subtitle": "Preparing data for a model is part of building the model.",
+      "category": "Research",
+      "tags": [
+        "Speech recognition",
+        "Data preparation",
+        "Model fine-tuning"
+      ],
+      "period": "Jul–Aug 2024",
+      "status": "Early research experience",
+      "role": "Undergraduate Researcher",
+      "summary": "Deployment and fine-tuning experiments with Wav2Vec, including Python-based data cleaning and relabeling.",
+      "sections": [
+        {
+          "title": "The experiment",
+          "body": "I worked on deploying and fine-tuning an automatic speech-recognition model. The experience involved understanding the model’s expectations and preparing data to fit its training setup."
+        },
+        {
+          "title": "My contribution",
+          "body": "I used Python to clean and relabel data and worked through the experimental pipeline. This was an early encounter with the close relationship between data preparation and model behavior."
+        }
+      ],
+      "featured": false,
+      "placement": "Work",
+      "mediaType": "process-diagram",
+      "dateNote": "Dates come from the legacy résumé page. No accuracy figure is asserted."
+    },
+    {
+      "id": "crystal",
+      "title": "Diffusion for inverse crystal design",
+      "subtitle": "My first steps into AI-for-materials research.",
+      "category": "Research",
+      "tags": [
+        "AI for science",
+        "Materials",
+        "Research foundations"
+      ],
+      "period": "Dec 2023–Feb 2024",
+      "status": "Early research experience",
+      "role": "Undergraduate Researcher",
+      "summary": "An introduction to AI-for-materials literature and experimental workflows through a crystal inverse-design project.",
+      "sections": [
+        {
+          "title": "Entering research",
+          "body": "This early experience introduced me to literature at the intersection of artificial intelligence and materials. It provided a starting point for understanding how a research question becomes an experimental workflow."
+        },
+        {
+          "title": "My contribution",
+          "body": "I participated in literature study and experimental-pipeline work, and learned the tools needed for remote research, including Conda, Git, and SSH. My contribution was early research training and pipeline participation, rather than ownership of the diffusion-model method."
+        }
+      ],
+      "featured": false,
+      "placement": "Work",
+      "mediaType": "research-note",
+      "dateNote": "Dates come from the legacy résumé page."
+    },
+    {
+      "id": "ai-coding-course",
+      "title": "A first encounter with AI coding",
+      "subtitle": "Teaching beginners to take their first steps with coding agents.",
+      "category": "Teaching",
+      "tags": [
+        "Course design",
+        "Teaching",
+        "AI literacy",
+        "Learning by doing"
+      ],
+      "period": "Spring 2026 course record",
+      "status": "Delivered through InVolve",
+      "role": "Course creator & instructor",
+      "summary": "I created and taught an introduction to coding with AI agents for people with no prior programming experience, using InVolve.",
+      "sections": [
+        {
+          "title": "Starting from zero",
+          "body": "The course was designed for people who had no prior coding experience. Its focus was using an AI coding agent to begin working with code, with explanations and exercises delivered through InVolve."
+        },
+        {
+          "title": "Teaching with a tool I helped build",
+          "body": "I created the course and taught it through InVolve. This joined two responsibilities: shaping the learning material, and using the classroom interactions that I had worked on as the product’s frontend and interaction designer."
+        },
+        {
+          "title": "A concrete teaching artifact",
+          "body": "The saved lesson includes written explanations, an exercise, and illustrated material. It provides a real teaching case alongside the software project, without treating sample classroom responses as evidence of actual student outcomes."
+        }
+      ],
+      "featured": false,
+      "placement": "About / InVolve case study",
+      "relatedIds": [
+        "involve"
+      ],
+      "mediaType": "authentic-course-capture",
+      "dateNote": "The stored lesson is in a Spring 2026 record and carries a May 12 date. The actual delivery date is not confirmed. The user described one hour; the stored title says three hours, so no exact duration is asserted in body copy."
+    },
+    {
+      "id": "student-union",
+      "title": "Making a student organization work",
+      "subtitle": "Events, coordination, and practices that survive a handover.",
+      "category": "Leadership",
+      "tags": [
+        "Leadership",
+        "Campus community",
+        "Team coordination"
+      ],
+      "period": "Aug 2024–Aug 2025",
+      "status": "Completed term",
+      "role": "President · College Student Union, Westlake University",
+      "summary": "Organized six campus events for 30–300 attendees each and introduced recurring reports and handover summaries.",
+      "sections": [
+        {
+          "title": "From planning to participation",
+          "body": "As president of the College Student Union, I organized six campus events, with each serving roughly 30 to 300 attendees. The role involved coordinating preparation and keeping the team’s work moving toward a shared event."
+        },
+        {
+          "title": "Building continuity",
+          "body": "I introduced biweekly reports and term-end handover summaries. These practices made ongoing work easier to follow and helped the next group inherit more than a list of unfinished tasks."
+        }
+      ],
+      "featured": false,
+      "placement": "About",
+      "mediaType": "event-gallery",
+      "metrics": [
+        {
+          "value": "6",
+          "label": "Campus events"
+        },
+        {
+          "value": "30–300",
+          "label": "Attendees per event"
+        }
+      ]
+    },
+    {
+      "id": "culture",
+      "title": "Visual work for campus life",
+      "subtitle": "Posters, video, and the organization behind an event.",
+      "category": "Leadership",
+      "tags": [
+        "Visual design",
+        "Video",
+        "Campus community",
+        "Organization"
+      ],
+      "period": "Aug 2023–Aug 2024",
+      "status": "Completed term",
+      "role": "Section Chief · Cultural Construction Department",
+      "summary": "Campus creative and organizational work spanning poster design, filming, video editing, and event coordination.",
+      "sections": [
+        {
+          "title": "Making an event visible",
+          "body": "My work in the Cultural Construction Department combined creative production with campus-event support. Posters, photographs, and video helped present events and communicate campus life."
+        },
+        {
+          "title": "My contribution",
+          "body": "Alongside organizational responsibilities, I worked with visual design and video editing. This period connected my interest in aesthetics with the practical constraints of creating material for a team and an audience."
+        }
+      ],
+      "featured": false,
+      "placement": "About",
+      "mediaType": "design-gallery",
+      "dateNote": "Role and dates come from the legacy résumé page."
+    },
+    {
+      "id": "ambassador",
+      "title": "Introducing Westlake",
+      "subtitle": "Helping visitors understand the university through a student’s perspective.",
+      "category": "Leadership",
+      "tags": [
+        "Public service",
+        "Communication",
+        "Campus community"
+      ],
+      "period": "Aug 2023–Aug 2024",
+      "status": "Completed term",
+      "role": "Student Ambassador · Westlake University",
+      "summary": "Campus tours and visitor communication, including sharing the experience of choosing and studying at Westlake.",
+      "sections": [
+        {
+          "title": "A student’s point of view",
+          "body": "As a student ambassador, I guided campus visitors and helped introduce Westlake through the experience of a student. The work included discussing what drew me to the university and what studying there was like."
+        },
+        {
+          "title": "Learning through communication",
+          "body": "The role required turning a personal experience into an explanation that made sense to someone encountering the university for the first time."
+        }
+      ],
+      "featured": false,
+      "placement": "About",
+      "mediaType": "photo-and-caption",
+      "dateNote": "Role and dates come from the legacy résumé page."
+    },
+    {
+      "id": "westlake",
+      "title": "Westlake University",
+      "subtitle": "Electronic Information Engineering, with room to cross disciplines.",
+      "category": "Education",
+      "tags": [
+        "Electronic information engineering",
+        "Undergraduate education"
+      ],
+      "period": "Expected May 2027",
+      "status": "Undergraduate study",
+      "role": "B.S. student · School of Engineering",
+      "summary": "Studying Electronic Information Engineering while working across machine learning, physical simulation, interaction design, and human-centered research.",
+      "sections": [
+        {
+          "title": "My academic home",
+          "body": "I study Electronic Information Engineering at Westlake University, with graduation expected in May 2027. The degree provides the engineering foundation for work that has moved between models, systems, products, and the people who use them."
+        },
+        {
+          "title": "A widening set of questions",
+          "body": "My university experience includes laboratory research, independent software, student leadership, and teaching. These are connected by an interest in understanding a problem deeply enough to build something useful around it."
+        }
+      ],
+      "featured": false,
+      "placement": "About / CV",
+      "metrics": [
+        {
+          "value": "4.06 / 4.3",
+          "label": "GPA, September 2026 résumé"
+        },
+        {
+          "value": "May 2027",
+          "label": "Expected graduation"
+        }
+      ],
+      "dateNote": "Current materials do not establish an exact start month."
+    },
+    {
+      "id": "cornell",
+      "title": "Cornell University",
+      "subtitle": "An exchange semester in Electrical & Computer Engineering.",
+      "category": "Education",
+      "tags": [
+        "Exchange study",
+        "Electrical & computer engineering",
+        "Interdisciplinary learning"
+      ],
+      "period": "Aug–Dec 2025",
+      "status": "Exchange completed",
+      "role": "Exchange Student · College of Engineering",
+      "summary": "An exchange semester that extended my engineering studies and connected them with research in VR and learning.",
+      "sections": [
+        {
+          "title": "A different academic setting",
+          "body": "I spent an exchange semester in Cornell’s College of Engineering as an Electrical & Computer Engineering student. The experience broadened the academic settings and disciplines through which I approached engineering."
+        },
+        {
+          "title": "Learning across boundaries",
+          "body": "Alongside exchange study, I worked on VR-assisted teaching of special relativity. This brought scientific concepts, interaction, and learning into the same research setting."
+        }
+      ],
+      "featured": false,
+      "placement": "About / CV",
+      "relatedIds": [
+        "vr"
+      ]
+    },
+    {
+      "id": "writing",
+      "title": "Writing & visual expression",
+      "subtitle": "A place for thoughts that do not fit a résumé.",
+      "category": "Writing",
+      "tags": [
+        "Writing",
+        "Visual design",
+        "Literature"
+      ],
+      "period": "Ongoing interests",
+      "status": "Selected personal work",
+      "role": "Personal writing, conversations & visual work",
+      "summary": "Personal notes, conversations with AI, visual work, and an interest in literature and the experience of learning.",
+      "sections": [
+        {
+          "title": "Writing as a way of thinking",
+          "body": "My existing website includes “Abandon,” an exchange with an AI assistant about memory, continuity, and unfinished work. My question and the AI-generated response are attributed separately. The writing section also leaves room for future personal essays and reflections."
+        },
+        {
+          "title": "Beyond the project list",
+          "body": "I enjoy literature, visual design, music, and cycling. A preference for clear lines, warm greens and yellows, orange, and a little fox-like playfulness also informs how I want this website to feel."
+        }
+      ],
+      "featured": false,
+      "placement": "Writing / About",
+      "mediaType": "essay-and-design-gallery"
+    },
+    {
+      "id": "website",
+      "title": "This personal website",
+      "subtitle": "A living collection of work, questions, and experiences.",
+      "category": "Product",
+      "tags": [
+        "Web design",
+        "Information architecture",
+        "Personal expression"
+      ],
+      "period": "Ongoing",
+      "status": "Portfolio reconstruction",
+      "role": "Designer & developer",
+      "summary": "Reorganizing a personal website into a readable account of research, engineering, product work, and the experiences behind them.",
+      "sections": [
+        {
+          "title": "More than a résumé",
+          "body": "The website creates room for project context, individual contributions, design decisions, and the development of interests over time. Its structure connects a chronological account of my experience with thematic ways of exploring the work."
+        },
+        {
+          "title": "A living document",
+          "body": "The current reconstruction brings existing writing and recent projects into one system. It is intended to remain editable as the work grows, with careful typography and interaction supporting the content."
+        }
+      ],
+      "featured": false,
+      "placement": "About",
+      "mediaType": "site-capture"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "Before university",
+      "period": "Before university",
+      "title": "Learning through physics, art, and independent choices",
+      "body": "Drawing and calligraphy, physics-competition study, and independent preparation helped shape how I learn. Choosing Westlake grew from an interest in a research environment where I could explore across boundaries.",
+      "tags": [
+        "Personal background",
+        "Physics",
+        "Self-directed learning"
+      ],
+      "href": "about.html#background"
+    },
+    {
+      "year": "2023",
+      "period": "Undergraduate years",
+      "title": "Westlake University",
+      "body": "Studying Electronic Information Engineering while working across machine learning, physical simulation, interaction design, and human-centered research.",
+      "tags": [
+        "Electronic information engineering",
+        "Undergraduate education"
+      ],
+      "href": "work/westlake.html",
+      "projectId": "westlake",
+      "sortNote": "The exact enrollment month is not established."
+    },
+    {
+      "year": "2023",
+      "period": "Aug 2023–Aug 2024",
+      "title": "Visual work for campus life",
+      "body": "Campus creative and organizational work spanning poster design, filming, video editing, and event coordination.",
+      "tags": [
+        "Visual design",
+        "Video",
+        "Campus community",
+        "Organization"
+      ],
+      "href": "work/culture.html",
+      "projectId": "culture"
+    },
+    {
+      "year": "2023",
+      "period": "Aug 2023–Aug 2024",
+      "title": "Introducing Westlake",
+      "body": "Campus tours and visitor communication, including sharing the experience of choosing and studying at Westlake.",
+      "tags": [
+        "Public service",
+        "Communication",
+        "Campus community"
+      ],
+      "href": "work/ambassador.html",
+      "projectId": "ambassador"
+    },
+    {
+      "year": "2023",
+      "period": "Dec 2023–Feb 2024",
+      "title": "Diffusion for inverse crystal design",
+      "body": "An introduction to AI-for-materials literature and experimental workflows through a crystal inverse-design project.",
+      "tags": [
+        "AI for science",
+        "Materials",
+        "Research foundations"
+      ],
+      "href": "work/crystal.html",
+      "projectId": "crystal"
+    },
+    {
+      "year": "2024",
+      "period": "May 2024–present",
+      "title": "Listening to student well-being",
+      "body": "A faculty-supervised study of Deaf and Hard-of-Hearing students’ well-being, from interview design and fieldwork coordination to thematic analysis and writing.",
+      "tags": [
+        "Qualitative research",
+        "Accessibility",
+        "Interview design",
+        "Thematic analysis"
+      ],
+      "href": "work/dhh.html",
+      "projectId": "dhh"
+    },
+    {
+      "year": "2024",
+      "period": "Jul–Aug 2024",
+      "title": "Wav2Vec ASR experiments",
+      "body": "Deployment and fine-tuning experiments with Wav2Vec, including Python-based data cleaning and relabeling.",
+      "tags": [
+        "Speech recognition",
+        "Data preparation",
+        "Model fine-tuning"
+      ],
+      "href": "work/asr.html",
+      "projectId": "asr"
+    },
+    {
+      "year": "2024",
+      "period": "2024",
+      "title": "Westlake iGEM 2024 wiki",
+      "body": "Independent website development for Westlake’s 2024 iGEM project.",
+      "tags": [
+        "Website development",
+        "Information design",
+        "Science communication"
+      ],
+      "href": "work/igem.html",
+      "projectId": "igem",
+      "sortNote": "Only the year is established."
+    },
+    {
+      "year": "2024",
+      "period": "Aug 2024–Aug 2025",
+      "title": "Making a student organization work",
+      "body": "Organized six campus events for 30–300 attendees each and introduced recurring reports and handover summaries.",
+      "tags": [
+        "Leadership",
+        "Campus community",
+        "Team coordination"
+      ],
+      "href": "work/student-union.html",
+      "projectId": "student-union"
+    },
+    {
+      "year": "2024",
+      "period": "Dec 2024–Jul 2025",
+      "title": "Choosing what a model learns next",
+      "body": "An investigation of sample selection for neural-operator learning, including neural query strategies and a later error-reduction approach.",
+      "tags": [
+        "Active learning",
+        "Neural operators",
+        "Experiment design",
+        "Sample efficiency"
+      ],
+      "href": "work/active-learning.html",
+      "projectId": "active-learning"
+    },
+    {
+      "year": "2025",
+      "period": "From Jul 2025",
+      "title": "Material behavior under constraints",
+      "body": "Research exploration of material creep and mechanics, including Abaqus and crystal-symmetry boundary conditions.",
+      "tags": [
+        "Computational mechanics",
+        "Abaqus",
+        "Materials"
+      ],
+      "href": "work/materials-creep.html",
+      "projectId": "materials-creep"
+    },
+    {
+      "year": "2025",
+      "period": "Aug–Dec 2025",
+      "title": "Cornell University",
+      "body": "An exchange semester that extended my engineering studies and connected them with research in VR and learning.",
+      "tags": [
+        "Exchange study",
+        "Electrical & computer engineering",
+        "Interdisciplinary learning"
+      ],
+      "href": "work/cornell.html",
+      "projectId": "cornell"
+    },
+    {
+      "year": "2025",
+      "period": "Sep–Dec 2025",
+      "title": "Relativity you can interact with",
+      "body": "Research support for teaching special relativity through VR, combining literature review, instructional sequencing, and verification of simulation parameters.",
+      "tags": [
+        "VR",
+        "Learning sciences",
+        "Interaction design",
+        "Physics education"
+      ],
+      "href": "work/vr.html",
+      "projectId": "vr"
+    },
+    {
+      "year": "2026",
+      "period": "Jan 2026–present",
+      "title": "Reconstruction beyond one sensor path",
+      "body": "Comparing physical-field reconstruction baselines when sensors follow trajectories different from the original sensing distribution.",
+      "tags": [
+        "AI for science",
+        "Baseline evaluation",
+        "Generalization",
+        "Scientific computing"
+      ],
+      "href": "work/reconstruction.html",
+      "projectId": "reconstruction"
+    },
+    {
+      "year": "2026",
+      "period": "Released by Mar 2026",
+      "title": "FeasyPaste",
+      "body": "A browser extension for moving LLM responses into Feishu while preserving equations, code blocks, and lists.",
+      "tags": [
+        "Independent development",
+        "Browser extension",
+        "AI workflows",
+        "Everyday tools"
+      ],
+      "href": "work/feasypaste.html",
+      "projectId": "feasypaste",
+      "sortNote": "Store-version reference; not a project start date."
+    },
+    {
+      "year": "2026",
+      "period": "Spring 2026 course record",
+      "title": "A first encounter with AI coding",
+      "body": "I created and taught an introduction to coding with AI agents for people with no prior programming experience, using InVolve.",
+      "tags": [
+        "Course design",
+        "Teaching",
+        "AI literacy",
+        "Learning by doing"
+      ],
+      "href": "work/ai-coding-course.html",
+      "projectId": "ai-coding-course",
+      "sortNote": "Saved lesson record; actual delivery date is not confirmed."
+    },
+    {
+      "year": "2026",
+      "period": "Jul–Aug 2026",
+      "title": "VLA models in the driving loop",
+      "body": "Integrated a vision-language-action model into Bench2Drive/CARLA and worked on the performance and reliability of its closed-loop evaluation pipeline.",
+      "tags": [
+        "Autonomous driving",
+        "Systems integration",
+        "Inference optimization",
+        "Evaluation"
+      ],
+      "href": "work/dongfeng.html",
+      "projectId": "dongfeng"
+    },
+    {
+      "year": "2026",
+      "period": "Sep 2026–present",
+      "title": "AI support for family care",
+      "body": "Product exploration for a family-care robot, spanning requirements, account permissions, AI conversations, scheduling prototypes, and technology research.",
+      "tags": [
+        "Product design",
+        "Human–robot interaction",
+        "Prototyping",
+        "User journeys"
+      ],
+      "href": "work/navix.html",
+      "projectId": "navix"
+    },
+    {
+      "year": "2026",
+      "period": "From Sep 2026",
+      "title": "Fire, heat & structural damage",
+      "body": "An interactive thermal-damage prototype is becoming my undergraduate graduation project. Current simulation parameters are exploratory and have not been physically validated.",
+      "tags": [
+        "Graduation project",
+        "Scientific computing",
+        "Interactive simulation"
+      ],
+      "href": "work/fire-sim.html",
+      "projectId": "fire-sim"
+    },
+    {
+      "year": "Alongside the timeline",
+      "period": "Independent project",
+      "title": "InVolve",
+      "body": "Classroom interaction software for higher education. I lead the frontend, UI, and interaction design; my collaborator develops the backend.",
+      "tags": [
+        "Interaction design",
+        "Frontend engineering",
+        "Education technology"
+      ],
+      "href": "work/involve.html",
+      "projectId": "involve",
+      "undated": true
+    },
+    {
+      "year": "Alongside the timeline",
+      "period": "Independent project",
+      "title": "RoadLaw",
+      "body": "A free, structured, interactive learning map for mainland China’s C1/C2 Subject One traffic-law examination.",
+      "tags": [
+        "Independent development",
+        "Information design",
+        "Interactive learning"
+      ],
+      "href": "work/roadlaw.html",
+      "projectId": "roadlaw",
+      "undated": true
+    },
+    {
+      "year": "Alongside the timeline",
+      "period": "Independent project",
+      "title": "eVisaHelper",
+      "body": "An independently developed web project, included alongside my other practical software tools.",
+      "tags": [
+        "Independent development",
+        "Web development"
+      ],
+      "href": "work/evisa.html",
+      "projectId": "evisa",
+      "undated": true
+    },
+    {
+      "year": "Alongside the timeline",
+      "period": "Accepted for ASHA 2026",
+      "title": "AI for Deaf and Hard-of-Hearing people",
+      "body": "Second author of “Landscape of Artificial Intelligence for the Deaf and Hard-of-Hearing: Applications, Challenges and Future Directions.”",
+      "tags": [
+        "Systematic review",
+        "Accessibility",
+        "Artificial intelligence"
+      ],
+      "href": "work/dhh-review.html",
+      "projectId": "dhh-review",
+      "undated": true
+    },
+    {
+      "year": "Alongside the timeline",
+      "period": "Ongoing interests",
+      "title": "Writing & visual expression",
+      "body": "Essays, visual work, and interests in literature, music, and the everyday experience of learning.",
+      "tags": [
+        "Writing",
+        "Visual design",
+        "Literature"
+      ],
+      "href": "work/writing.html",
+      "projectId": "writing",
+      "undated": true
+    },
+    {
+      "year": "Alongside the timeline",
+      "period": "Ongoing",
+      "title": "This personal website",
+      "body": "Reorganizing a personal website into a readable account of research, engineering, product work, and the experiences behind them.",
+      "tags": [
+        "Web design",
+        "Information architecture",
+        "Personal expression"
+      ],
+      "href": "work/website.html",
+      "projectId": "website",
+      "undated": true
+    }
+  ],
+  "interests": [
+    {
+      "title": "Visual expression",
+      "body": "Posters, photography, and video; a preference for clear lines, lively color, and carefully judged playfulness.",
+      "tags": [
+        "Design",
+        "Photography",
+        "Video"
+      ]
+    },
+    {
+      "title": "Reading & writing",
+      "body": "Literature and essays, alongside questions about learning, society, and how people make choices.",
+      "tags": [
+        "Literature",
+        "Writing"
+      ]
+    },
+    {
+      "title": "Away from the desk",
+      "body": "Music, cycling, time with friends, and a soft spot for foxes and plush toys.",
+      "tags": [
+        "Music",
+        "Cycling",
+        "Everyday life"
+      ]
+    }
+  ],
+  "sourceNotes": {
+    "primary": "September 29, 2026 updated résumé; existing website; experience inventory; author clarifications in this conversation.",
+    "publicStatus": "A draft content foundation for the portfolio prototype. Dates and publication statuses are preserved at the precision supported by these materials."
+  }
+}
