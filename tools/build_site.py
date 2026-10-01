@@ -10,6 +10,35 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'content/portfolio-v2.json').read_text())
 PROJECTS = DATA['projects']
 BY_ID = {p['id']: p for p in PROJECTS}
+STORY_THREADS = {
+    'dhh': ('notice', 'Notice · Start with someone'),
+    'dhh-review': ('notice', 'Notice · Start with someone'),
+    'feasypaste': ('notice', 'Notice · Start with someone'),
+    'active-learning': ('test', 'Test · Give curiosity something to push against'),
+    'reconstruction': ('test', 'Test · Give curiosity something to push against'),
+    'crystal': ('test', 'Test · Give curiosity something to push against'),
+    'materials-creep': ('test', 'Test · Give curiosity something to push against'),
+    'involve': ('build', 'Build · Let the world push back'),
+    'dongfeng': ('build', 'Build · Let the world push back'),
+    'asr': ('build', 'Build · Let the world push back'),
+    'igem': ('build', 'Build · Let the world push back'),
+    'ai-coding-course': ('return', 'Return · Bring it back to people'),
+    'fire-sim': ('return', 'Return · Bring it back to people'),
+    'navix': ('return', 'Return · Bring it back to people'),
+    'vr': ('return', 'Return · Bring it back to people'),
+    'roadlaw': ('return', 'Return · Bring it back to people'),
+}
+RELATED_NEXT = {
+    'fire-sim': 'reconstruction', 'involve': 'ai-coding-course',
+    'dongfeng': 'involve', 'reconstruction': 'active-learning',
+    'active-learning': 'reconstruction', 'dhh': 'dhh-review',
+    'dhh-review': 'dhh', 'navix': 'involve', 'vr': 'fire-sim',
+    'ai-coding-course': 'vr', 'feasypaste': 'roadlaw', 'roadlaw': 'involve',
+    'igem': 'feasypaste', 'crystal': 'materials-creep', 'materials-creep': 'fire-sim',
+    'asr': 'dongfeng', 'evisa': 'feasypaste', 'westlake': 'cornell',
+    'cornell': 'vr', 'culture': 'student-union', 'student-union': 'ambassador',
+    'ambassador': 'culture', 'writing': 'website', 'website': 'involve',
+}
 
 
 def e(value):
@@ -25,6 +54,7 @@ def eyebrow(text):
 
 
 def page(path, title, body, active, prefix=''):
+    story_assets = '<link rel="stylesheet" href="assets/css/story.css"><script defer src="assets/js/story.js"></script>' if path == 'index.html' else ''
     links = [('Home', 'index.html'), ('Work', 'work.html'), ('About', 'about.html'), ('Writing', 'writing.html'), ('CV', 'cv.html')]
     nav = ''.join(f'<a href="{prefix}{href}"' + (' aria-current="page"' if label == active else '') + f'>{label}</a>' for label, href in links)
     html = f'''<!doctype html>
@@ -34,16 +64,17 @@ def page(path, title, body, active, prefix=''):
 <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#234d3b">
 <meta name="description" content="Zebang Wu — research, engineering, interactive products, and the things I’m curious about.">
 <title>{e(title)} · Zebang Wu</title>
-<link rel="icon" type="image/svg+xml" href="{prefix}assets/art/mark.svg">
+<link rel="icon" type="image/svg+xml" href="{prefix}assets/art/geometric-mark.svg">
 <link rel="stylesheet" href="{prefix}assets/css/privacy-gate.css">
 <link rel="stylesheet" href="{prefix}assets/css/portfolio.css">
 <script defer src="{prefix}assets/js/privacy-gate.js"></script>
 <script defer src="{prefix}assets/js/portfolio.js"></script>
+{story_assets}
 </head>
-<body id="top">
+<body id="top" class="{'story-page' if path == 'index.html' else 'collection-page'}">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap header-inner">
-<a class="brand" href="{prefix}index.html" aria-label="Zebang Wu, home"><img src="{prefix}assets/art/mark.svg" width="34" height="36" alt=""><span class="brand-name">Zebang Wu<small>ENGINEERING & A LITTLE CURIOSITY</small></span></a>
+<a class="brand" href="{prefix}index.html" aria-label="Zebang Wu, home"><img src="{prefix}assets/art/geometric-mark.svg" width="34" height="36" alt=""><span class="brand-name">Zebang Wu<small>ENGINEERING & A LITTLE CURIOSITY</small></span></a>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu +</button>
 <nav class="main-nav" id="main-nav" aria-label="Main navigation">{nav}</nav>
 </div></header>
@@ -97,15 +128,11 @@ def section_head(kicker, title, link='', label=''):
     return f'<div class="section-head"><div>{eyebrow(kicker)}<h2>{title}</h2></div>' + (f'<a class="text-link" href="{link}">{label} ↗</a>' if link else '') + '</div>'
 
 
-home = '''<section class="hero"><div class="hero-topline"><span>THE PERSONAL FIELD NOTES OF ZEBANG WU</span><span>HANGZHOU, CHINA · 2026</span></div><div class="hero-panel"><div class="hero-copy"><p class="eyebrow"><span class="dot"></span>Engineer by training. Curious by nature.</p><h1>A little curiosity.<br>A lot of <em>possibility.</em></h1><p>I’m Zebang. I explore intelligent systems, build things people can use, and ask what happens when the two meet.</p><div class="hero-actions"><a class="button yellow" href="work.html">Explore my work <span>↗</span></a><a class="text-link" href="about.html">The person behind it →</a></div></div><div class="hero-art"><img src="assets/art/fox.svg" width="440" height="400" alt="An orange fox beside a warm yellow sun"><span class="art-caption">A curious mind. A fox at heart.</span></div></div><div class="context-strip"><div><small>Learning</small><strong>Electronic Information Engineering</strong><p>Westlake University · Class of 2027</p></div><div><small>Looking across disciplines</small><strong>Research, systems & interaction</strong><p>Cornell University exchange · Fall 2025</p></div><div><small>Currently exploring</small><strong>Thermal simulation & human-centered AI</strong><p>Graduation project + product work</p></div></div></section>'''
-home += '<section class="section">' + section_head('01 / Selected work', 'Different questions.<br><em>A shared curiosity.</em>', 'work.html', 'View all work')
-home += '<div class="project-grid">' + ''.join(card(BY_ID[id_], i+1) for i,id_ in enumerate(['involve','dongfeng','reconstruction','feasypaste'])) + '</div></section>'
-home += '''<section class="section"><div class="feature-band"><div><p class="status-label">On the workbench · graduation project</p><h2>Making the invisible<br><em>inspectable.</em></h2></div><div><p>I’m developing my graduation project around fire, heat, and structural damage. The starting point is an interactive prototype for exploring how thermal processes unfold.</p><p class="small">Current stage: simplified prototype; physical validation is still ahead.</p>'''+tags(['Scientific computing','Interactive simulation'])+'''<a class="text-link" href="work/fire-sim.html">Follow the project ↗</a></div></div></section>'''
-home += '<section class="section">' + section_head('02 / How I approach things','Across the boundaries.') + '''<div class="field-notes"><article class="note-card"><span class="note-number">01 / RESEARCH</span><h3>Ask a sharper question.</h3><p>From active learning to physical-field reconstruction, I’m learning to build comparisons that make the strengths and limits of a method visible.</p></article><article class="note-card"><span class="note-number">02 / BUILDING</span><h3>Follow it into practice.</h3><p>A simulator, a browser extension, a classroom tool. Working systems have a way of making abstract constraints concrete.</p></article><article class="note-card"><span class="note-number">03 / PEOPLE</span><h3>Remember who it’s for.</h3><p>Research with Deaf and Hard-of-Hearing students, teaching, and care products keep human experience close to the work.</p></article></div></section>'''
+home = (ROOT / 'content/home-story.html').read_text()
 page('index.html','Home',home,'Home')
 
 work_projects = [p for p in PROJECTS if p.get('placement') == 'Work']
-work = '<section class="page-top">'+eyebrow('Projects / Research / Practice')+'<h1>Things I’ve worked on.<br><em>Questions I’m still asking.</em></h1><p class="lede">A collection of research, systems, and useful little tools. Some are long investigations; others began with a small everyday frustration.</p></section>'
+work = '<section class="page-top">'+eyebrow('Projects / Research / Practice')+'<h1>Things I’ve worked on.<br><em>Questions I’m still asking.</em></h1><p class="lede">A collection of research, systems, and useful little tools. Some are long investigations; others began with a small everyday frustration.</p><a class="text-link collection-story-link" href="index.html#notice">Follow the thread through the work ↗</a></section>'
 work += '<div class="toolbar"><div class="filter-tabs" role="group" aria-label="Filter work by category">'+''.join(f'<button type="button" data-filter="{c}" aria-pressed="{str(c=="All").lower()}">{c}</button>' for c in ['All','Research','Engineering','Product'])+'</div><label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search projects</span><input type="search" id="project-search" placeholder="Find a project or interest…" autocomplete="off"></label></div>'
 work += f'<div class="result-meta"><span id="result-count" role="status" aria-live="polite">{len(work_projects)} experiences</span><span>Explore at your own pace ↘</span></div><div class="project-grid work-grid" id="work-grid">'+''.join(card(p,i+1) for i,p in enumerate(work_projects))+'</div><div class="empty-state" id="no-results" hidden><h2>No matching projects.</h2><p>Try another topic, or explore the whole collection.</p><button type="button" id="reset-filters">Clear filters</button></div>'
 page('work.html','Work',work,'Work')
@@ -140,6 +167,9 @@ for index,p in enumerate(PROJECTS):
     id_ = p['id']
     body = f'<div class="case-top"><a class="breadcrumb" href="../{ "work.html" if p.get("placement")=="Work" else "about.html"}">← {"All work" if p.get("placement")=="Work" else "About me"}</a></div><section class="case-heading">{eyebrow(p["category"])}<h1>{e(p["title"])}</h1><p class="lede">{e(p["summary"])}</p>{tags(p["tags"])}</section>'
     body += f'<div class="case-meta"><div><span>My role</span>{e(p["role"])}</div><div><span>{"Period" if re.search(r"20[0-9]{2}",p["period"]) else "Context"}</span>{e(p["period"])}</div><div><span>Status</span>{e(p["status"])}</div></div>'
+    if id_ in STORY_THREADS:
+        chapter, label = STORY_THREADS[id_]
+        body += f'<a class="case-story-thread" href="../index.html#{chapter}"><img src="../assets/art/geometric-mark.svg" width="30" height="30" alt=""><span><small>PART OF THE STORY</small>{e(label)}</span><span aria-hidden="true">↗</span></a>'
     body += '<div class="case-layout"><nav class="case-nav" aria-label="On this page">'+eyebrow('On this page')+''.join(f'<a href="#section-{i}">{e(s["title"])}</a>' for i,s in enumerate(p['sections']))+'</nav><div class="case-copy">'
     if p.get('subtitle'):
         body += '<aside class="case-callout">'+eyebrow('The idea')+f'<p>{e(p["subtitle"])}</p></aside>'
@@ -160,7 +190,7 @@ for index,p in enumerate(PROJECTS):
         body += '<a class="button outline" href="https://chromewebstore.google.com/detail/feasypaste-feishu-convert/ehdmffeifoiagjgnkaajpdmhicdfajhb">View the extension <span>↗</span></a>'
     if id_=='involve': body += '<a class="text-link" href="ai-coding-course.html">The course I taught with InVolve ↗</a>'
     if id_=='dhh': body += '<a class="text-link" href="dhh-review.html">Related work: AI and accessibility ↗</a>'
-    nxt=PROJECTS[(index+1)%len(PROJECTS)]
+    nxt=BY_ID[RELATED_NEXT[id_]]
     body += '</div></div>'+f'<nav class="case-next" aria-label="More projects"><a class="text-link" href="../work.html">Back to the collection</a><a href="{nxt["id"]}.html">{eyebrow("Keep exploring →")}<h3>{e(nxt["title"])}</h3></a></nav>'
     page(f'work/{id_}.html',p['title'],body,'Work' if p.get('placement')=='Work' else 'About','../')
 

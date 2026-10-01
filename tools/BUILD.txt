@@ -12,6 +12,9 @@ EDITING
   assets/css/portfolio.css    Color, type, spacing, responsive layouts, motion
   assets/js/portfolio.js      Navigation, filtering, image viewer, reading progress
   assets/art/                Original vector identity graphics
+  content/home-story.html    The continuous homepage narrative and scene drawings
+  assets/css/story.css       Story stage, editorial layout and mobile companion
+  assets/js/story.js         Scroll-linked fox, chapter state and motion control
   content/abandon-body.html  Preserved existing AI conversation, attributed in page
 
 Static HTML is committed for GitHub Pages; no runtime packages required.
@@ -21,3 +24,13 @@ Images from the old site remain available; new media slots are explicitly empty 
 The existing client-side access gate remains; it is not server-side access control.
 Print / Save as PDF uses the current HTML CV. The old PDF is not promoted as current.
 Private material collection notes remain outside the website repository in ../website-planning/.
+
+DESIGN BRANCHES
+  website-rebuild    Preserved first layout prototype (11bfdac).
+  website-story      Continuous narrative exploration using the author’s geometric fox.
+
+The geometric fox is mathematically reconstructed from the supplied raster on a
+30/60-degree lattice, with the original three colors and silhouette. It is not
+the original vector source. Homepage scene drawings are editorial illustrations,
+not product screenshots or scientific outputs. The story follows themes; the
+About timeline holds chronology. Main has not been replaced by this prototype.

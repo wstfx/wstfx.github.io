@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-112.145188433 -8 824.290376865 824.290376865" role="img" aria-labelledby="geometric-mark-title">
+  <title id="geometric-mark-title">Zebang Wu’s geometric fox mark</title>
+  <!-- Small-size full-silhouette version of geometric-fox.svg. Same original
+       sampled palette and 30-degree lattice: u=100, h=100/sqrt(3).
+       Three compound color paths retain every vertex; square optical framing
+       adds breathing room without changing the user's original geometry. -->
+  <path fill="#feb272" d="M0 404.145188433 L200 288.675134595 L200 519.615242271 L0 635.085296109Z" />
+  <path fill="#fd7e14" d="M0 635.085296109 L300 461.880215352 L600 635.085296109 L300 808.290376865Z M100 230.940107676 L300 115.470053838 L500 230.940107676 L300 346.410161514Z" />
+  <path fill="#ffe5d0" d="M100 0.000000000 L300 115.470053838 L100 230.940107676Z M500 0.000000000 L500 230.940107676 L300 115.470053838Z M500 577.350269190 L600 635.085296109 L500 692.820323028Z" />
+</svg>
