@@ -1,0 +1,13 @@
+Rebuild: python3 tools/build_site.py
+Preview: python3 -m http.server 8091 --bind 127.0.0.1
+
+Static HTML output is committed for GitHub Pages. No runtime package dependencies.
+Project list: content/projects.json
+Shared template, page copy, project sections: tools/build_site.py
+Styling: assets/css/portfolio.css
+
+Editorial inventory and intake notes live outside this repository in ../website-planning/.
+The existing access gate is preserved. It is a client-side visitor gate, not server-side access control.
+Legacy HTML pages remain available while their material is reviewed and migrated.
+Current CV is HTML; the old PDF has not been promoted as a current download.
+Initial project summaries still need the evidence and demos tracked in the collection board.

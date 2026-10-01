@@ -1,0 +1,58 @@
+[
+  {
+    "id": "dongfeng",
+    "title": "VLA closed-loop evaluation",
+    "category": "Engineering",
+    "dates": "Jul\u2013Aug 2026",
+    "confirmed_summary": "Integration, inference optimization, resumable evaluation and failure diagnosis."
+  },
+  {
+    "id": "reconstruction",
+    "title": "Physical-field reconstruction baselines",
+    "category": "Research",
+    "dates": "Jan 2026\u2013present",
+    "confirmed_summary": "Baseline comparisons under sensor-trajectory shifts; not ownership of the whole paper method."
+  },
+  {
+    "id": "navix",
+    "title": "Family-care robot product development",
+    "category": "Product",
+    "dates": "Sep 2026\u2013present",
+    "confirmed_summary": "Requirements, interactive prototypes, scheduling service and vendor research."
+  },
+  {
+    "id": "dhh",
+    "title": "Well-being of Deaf and Hard-of-Hearing students",
+    "category": "Research",
+    "dates": "May 2024\u2013present",
+    "confirmed_summary": "Faculty-supervised interviews and thematic analysis; first-author manuscript under review as of r\u00e9sum\u00e9."
+  },
+  {
+    "id": "feasypaste",
+    "title": "FeasyPaste",
+    "category": "Product",
+    "dates": "Store release Mar 2026; project dates to confirm",
+    "confirmed_summary": "Browser extension converting LLM outputs to Feishu-compatible formatting."
+  },
+  {
+    "id": "vr",
+    "title": "VR-assisted teaching of special relativity",
+    "category": "Research",
+    "dates": "Sep\u2013Dec 2025",
+    "confirmed_summary": "Literature review, instructional interactions and verification of relativistic parameters."
+  },
+  {
+    "id": "active-learning",
+    "title": "Active learning for neural operators",
+    "category": "Research",
+    "dates": "Dec 2024\u2013Jul 2025",
+    "confirmed_summary": "Neural query policy and later error-reduction sampling; sample efficiency and continual-learning limitations."
+  },
+  {
+    "id": "involve",
+    "title": "InVolve classroom interaction",
+    "category": "Product",
+    "dates": "In development",
+    "confirmed_summary": "Classroom interaction software for higher education, with a focus on frontend, UI, and interaction design."
+  }
+]
