@@ -22,8 +22,8 @@
 .type-demo { display:grid; grid-template-columns:200px 1fr; align-items:baseline; gap:30px; border-bottom:1px solid var(--line); padding:26px 0; }
 .type-demo>span { color:var(--muted); font-size:var(--type-small); }
 .type-demo p { margin:0; color:var(--ink); }
-.type-demo .sample-display { font-size:var(--type-display); line-height:1.1; }
-.type-demo .sample-title { font-size:var(--type-title); line-height:1.15; }
+.type-demo .sample-display { font-family:var(--sans); font-size:var(--type-display); font-weight:900; line-height:var(--type-heading-line-height); }
+.type-demo .sample-title { font-size:var(--type-title); line-height:var(--type-heading-line-height); }
 .type-demo .sample-subhead { font-size:var(--type-subhead); }
 .type-demo .sample-lead { font-size:var(--type-lead); }
 .type-demo .sample-body { font-size:var(--type-body); }

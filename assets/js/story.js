@@ -27,7 +27,8 @@
   const poses = [[300, 330, 1], [170, 380, .72], [165, 385, .75], [300, 310, .95], [170, 405, .72]];
   let userPaused = false;
   try { userPaused = localStorage.getItem(preferenceKey) === 'true'; } catch { /* Storage is optional. */ }
-  const paused = () => reduced.matches || userPaused;
+  let ready = false;
+  const paused = () => !ready || reduced.matches || userPaused;
   let active = -1, scheduled = false, positions = [], visible = true;
   function measure() { positions = steps.map(step => step.getBoundingClientRect().top + scrollY); }
   function ambientState() {
@@ -68,7 +69,7 @@
   function motionState() {
     document.body.classList.toggle('motion-paused', paused());
     control.setAttribute('aria-pressed', String(paused()));
-    control.disabled = reduced.matches;
+    control.disabled = !ready || reduced.matches;
     control.setAttribute('aria-label', reduced.matches ? 'Animations disabled by system preference' : (userPaused ? 'Resume animations' : 'Pause animations'));
     control.title = reduced.matches ? 'Animations are off to match your system preference.' : (userPaused ? 'Resume animations' : 'Pause animations');
     control.querySelector('.motion-state').textContent = paused() ? 'off' : 'on';
@@ -90,6 +91,20 @@
     ambientState();
   }, { threshold:0 }).observe(stage);
   if ('ResizeObserver' in window) new ResizeObserver(() => { measure(); requestRender(); }).observe(document.querySelector('.story-pages'));
-  document.fonts?.ready.then(() => { measure(); requestRender(); });
+  // Reading and anchor links work immediately. Motion starts only after its
+  // first layout is measured; a slow font request never blocks the whole page.
+  function activate() {
+    if (ready) return;
+    ready = true;
+    measure(); motionState(); render();
+    document.body.classList.add('story-ready');
+    control.hidden = false;
+  }
+  const fontWait = setTimeout(activate, 1200);
+  if (document.fonts) document.fonts.ready.then(() => {
+    clearTimeout(fontWait);
+    activate(); measure(); requestRender();
+  }, activate);
+  else { clearTimeout(fontWait); activate(); }
   measure(); motionState(); ambientState(); render();
 })();

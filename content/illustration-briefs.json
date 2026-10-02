@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-10-02",
+  "title": "The curious fox — illustration production briefs",
+  "purpose": "Create recognizable, project-connected editorial scenes for the homepage. These are concepts for image generation and art direction, not replacements for authentic project screenshots or records.",
+  "style": {
+    "name": "Warm geometry, a curious fox",
+    "character": "One elegant orange fox throughout: a slender torso, long tapered legs, pointed ears and muzzle, a small dark nose, a calm almond-shaped eye, and a generous sweeping brush tail with a cream tip. Its silhouette is agile and readable. The face is friendly without a large baby-like head, round cheeks, or a permanent grin. Keep the same head, tail proportions, and orange placement across all five scenes.",
+    "geometry": "Use flowing geometric color planes built from a few decisive arcs and tapered curves, with pointed accents at ears, muzzle, paws, and tail tip. Prefer three to five large planes within the fox to many tiny facets. Use sparse forest-green contour lines for secondary details. No wireframe construction circles in the finished scenes.",
+    "palette": [
+      { "name": "Paper", "hex": "#F7F5ED", "role": "Open background and generous negative space" },
+      { "name": "Forest", "hex": "#193D30", "role": "Grounding lines, small facial details, and restrained dark objects" },
+      { "name": "Fox orange", "hex": "#F47B20", "role": "Fox and one narrative accent" },
+      { "name": "Burnt orange", "hex": "#D84B12", "role": "Small shadow planes" },
+      { "name": "Apricot", "hex": "#FFAF6A", "role": "Lit planes and a supporting highlight" },
+      { "name": "Cream", "hex": "#FFF0DA", "role": "Fox chest, muzzle, and tail tip" },
+      { "name": "Sage", "hex": "#B7C4A5", "role": "Supporting objects and people" }
+    ],
+    "composition": "One near-square illustration per chapter, composed for a 600 × 560 website canvas. Ask the generator for the closest available landscape or square size, then crop deliberately. Keep the important action within the central 80%, with approximately one third of the picture left open. Use a shallow three-quarter view rather than a deep environment. One action, one recognizable setting, and at most three supporting objects per image.",
+    "typography": "Generate no text. Headlines and short explanatory labels remain real HTML in Garet and Best Swashed. The scene should embody the subtitle through posture and objects, rather than repeat it as lettering inside an image.",
+    "referenceUse": "Attach the selected fox reference to every generation. The first and third supplied references guide silhouette, orange color planes, and the sweeping tail; the second guides the optional contour edition. Do not ask for a contact sheet or multiple poses in the scene itself.",
+    "lineEdition": "After a filled scene is approved, derive a separate contour edition from its approved silhouette. Use forest or burnt-orange strokes, paper-colored negative space, and a single orange accent; omit internal color-plane boundaries that do not explain the form. Simplify again for small decorative use. A recolored edge-detection filter is not the target.",
+    "avoid": [
+      "Photorealism, shiny 3D rendering, dense faceting, fuzzy fur, airbrushed glow, or heavy gradients",
+      "Chibi anatomy, giant eyes, human hands on the fox, clothing, or a fox performing a complicated human hand gesture",
+      "Decorative houses, forests, floating symbols, and orbital diagrams that do not explain the action",
+      "Invented application interfaces, project logos, data values, research results, speech text, or code",
+      "Automatic disability markers or sign-language poses without a verified reason",
+      "Checkerboard transparency drawn into the picture, mock layers, collage panels, grids, and presentation boards"
+    ]
+  },
+  "workflow": [
+    {
+      "step": "Choose one direction",
+      "description": "Begin with the Notice scene because attentive body language, fox anatomy, and human proportions are all visible. Generate the main prompt and the three composition variants separately. Choose a silhouette and composition before generating the full set."
+    },
+    {
+      "step": "Lock the fox",
+      "description": "Keep the chosen image as a character reference. Generate one isolated filled fox and one contour version for approval. Record its proportions and palette; reuse this reference in every chapter instead of independently reinventing the mascot."
+    },
+    {
+      "step": "Approve the scene",
+      "description": "Check whether an unfamiliar viewer can name the action in a few seconds without reading the caption. Select for composition and storytelling first. Small edge defects can be repaired later; a confusing scene should be regenerated."
+    },
+    {
+      "step": "Clean and separate",
+      "description": "Clean selected shapes, remove unwanted texture, and manually correct vector paths after tracing when necessary. A generated PNG is a flat image, and converting it to SVG does not automatically produce meaningful editable layers. Separate only the parts needed for motion; reconstruct pixels or vector shapes hidden behind moving parts."
+    },
+    {
+      "step": "Prepare the handoff",
+      "description": "Deliver the approved composite preview plus either an SVG with clearly named groups or separate transparent PNG/WebP parts on the same canvas. Include a clean static background, full shapes behind overlaps, intended pivot locations, and a flattened fallback. Verify real alpha transparency rather than a painted checkerboard. Retain the layered editable master separately."
+    },
+    {
+      "step": "Animate the meaning",
+      "description": "Animate at most three elements per scene. Use a 6–10 second cycle with a clear resting period, quiet fox breathing or tail movement, and one purposeful action. Keep people and the overall composition stable. Pause off-screen scenes and provide both a motion control and a reduced-motion still."
+    }
+  ],
+  "approval": {
+    "readabilityTest": "Without seeing the heading, can a viewer describe the action as exploring, listening, testing, operating, or teaching?",
+    "checks": [
+      "The fox reads as the same character in every scene, including muzzle, legs, and tail.",
+      "The key object connects to a named project without needing a caption to rescue an unrelated image.",
+      "The illustration adds context to the headline and leaves the website typography readable.",
+      "No illustrated screen could be mistaken for a capture of InVolve or another real product.",
+      "The still composition works before animation; motion clarifies the action instead of supplying missing meaning.",
+      "Each moving part can be isolated and moved without exposing a hole or cutting across another object."
+    ]
+  },
+  "scenes": [
+    {
+      "id": "beginning",
+      "chapter": "00 · Beginning",
+      "heading": "Follow a question. See where it leads.",
+      "concept": "A workbench opens into a path",
+      "intent": "Curiosity is an invitation to investigate something tangible. The fox discovers a rolled sheet that becomes a small working landscape, foreshadowing research, engineering, and learning without displaying a catalogue of projects.",
+      "anchors": [
+        { "projectId": "website", "name": "This personal website", "why": "The opening introduces the shared habit of following questions across different kinds of work." },
+        { "projectId": "dongfeng", "name": "VLA models in the driving loop", "why": "One tiny model car at the far end of the unfolding path foreshadows a concrete engineering chapter." }
+      ],
+      "recognizableElements": ["An elegant fox investigating a curled sheet", "A low workbench", "A small model car on the path that unfurls from the sheet"],
+      "prompt": "Create one finished editorial illustration for a personal research-and-design portfolio, one single frame, near-square composition suitable for a 600 × 560 canvas. On a warm paper background (#F7F5ED), an elegant orange fox stands beside a low, simply drawn sage workbench and touches the curled edge of a broad cream sheet with one front paw. The sheet gently unrolls from the workbench into a short, shallow, winding path in the foreground; one very small model car sits at the far end. Make the fox's focused gaze and the sheet opening into an unexpected route the main story: curiosity leads into making and testing. The fox has a slender torso, long tapered legs, pointed ears and muzzle, a small dark nose, a calm almond eye, and a large flowing brush tail with a cream tip. Use the attached approved fox reference consistently. Build the fox from a few precise curved geometric color planes in warm orange #F47B20, burnt orange #D84B12, apricot #FFAF6A, and cream #FFF0DA. Supporting shapes are forest green #193D30 and sage #B7C4A5. Keep the drawing modern, succinct, vivid, and elegant, with clean edges, a shallow three-quarter view, and generous open paper around the action. This is conceptual editorial art, not a product screenshot. No text, lettering, question-mark symbols, interface, logos, decorative orb diagrams, collage, grid, presentation board, textured fur, giant eyes, photorealism, or checkerboard. Show only this one scene, not multiple versions.",
+      "variants": [
+        { "name": "Unrolling discovery", "direction": "Keep the fox in side profile on the left; place the rolled paper near its paw and allow the path to sweep toward the lower right." },
+        { "name": "A peek around the bend", "direction": "The fox lowers its head around the upright paper curl; the tiny car becomes visible just beyond the curve. Preserve a large open upper half." },
+        { "name": "The first step", "direction": "The sheet is already partly unfurled. The fox takes one tentative step onto it while its tail balances behind; the workbench remains a single minimal supporting shape." }
+      ],
+      "layers": ["background-paper", "bench-and-static-sheet", "path-and-model-car", "sheet-curl-complete-shape", "fox-body", "fox-head-and-neck", "fox-tail-full-root"],
+      "motionTargets": [
+        { "part": "sheet-curl-complete-shape", "action": "A small 3–5 degree roll and settle around its contact point; do not reveal new scene content during the loop." },
+        { "part": "fox-head-and-neck", "action": "A small curious tilt toward the opening, followed by a long resting pause." },
+        { "part": "fox-tail-full-root", "action": "A slow shallow sweep, with the root hidden behind the body." }
+      ],
+      "avoid": ["A magical portal or floating question mark replacing the concrete workbench", "Many miniature project symbols competing with the first action", "A scene dependent on text to explain the path"]
+    },
+    {
+      "id": "notice",
+      "chapter": "01 · Notice",
+      "heading": "Start with someone.",
+      "concept": "Make room for a conversation",
+      "intent": "The scene should communicate attentive listening before it communicates research. An adult student and a fox meet at eye level around a modest conversation setting; the space between them is open and welcoming.",
+      "anchors": [
+        { "projectId": "dhh", "name": "Listening to student well-being", "why": "Interview design and attention to individual accounts are the chapter's concrete starting point. The illustration depicts the act of listening, not a verified participant or a particular communication method." }
+      ],
+      "recognizableElements": ["One adult student seated comfortably", "A fox sitting attentively beside an empty chair", "One open notebook on a small side table"],
+      "prompt": "Create one finished editorial illustration, a single near-square frame for a personal portfolio chapter about listening to a student's experience. On warm paper #F7F5ED, place one adult university student seated comfortably on a simple sage chair at the right. At the left, an elegant orange fox sits on a low platform beside a second empty chair so its attentive face is close to the student's eye level. The student leans forward slightly with relaxed open posture; the fox looks toward the student, ears gently alert, with no exaggerated smile. Between them is a small low side table carrying one open notebook with blank cream pages. The notebook is peripheral; their attentive facing posture and the open space between them carry the story. Use the attached approved fox reference: slender curved-geometric body, long graceful forelegs, pointed muzzle, small dark nose and almond eye, large sweeping orange-and-cream brush tail resting naturally along the platform. Use only a few crisp flowing planes, fox orange #F47B20, burnt orange #D84B12, apricot #FFAF6A, cream #FFF0DA, forest #193D30, and sage #B7C4A5. Render the person as a dignified adult editorial figure with simple clothing and restrained facial detail. This is conceptual art about listening, not a portrait or documentary reconstruction. Keep a shallow view, clean contours, a quiet asymmetrical composition, and at least a third of the canvas open. No words, speech bubbles, sound waves, headphones, disability symbols, sign-language gestures, medical cues, fake interface, logos, grids, boards, collage, chibi anatomy, photographic rendering, or checkerboard. One scene only.",
+      "variants": [
+        { "name": "At eye level", "direction": "Use the facing side-profile composition in the main prompt; this makes mutual attention immediately legible." },
+        { "name": "An open place", "direction": "Move the empty chair slightly into the foreground and have the fox sit beside it, creating a visual invitation to join the conversation." },
+        { "name": "A shared pause", "direction": "Use a closer crop of the seated adult and fox, with the notebook only partly visible at the lower edge; retain generous negative space between their faces." }
+      ],
+      "layers": ["background-paper", "chairs-platform-table", "adult-student-static", "notebook-static", "fox-body", "fox-head-and-neck", "fox-tail-full-root"],
+      "motionTargets": [
+        { "part": "fox-head-and-neck", "action": "A gentle 2 degree attentive tilt once per cycle, not constant nodding." },
+        { "part": "fox-tail-full-root", "action": "A small resting tail-tip lift and settle." },
+        { "part": "fox-body", "action": "Subtle breathing with less than 1% scale change around the lower torso." }
+      ],
+      "avoid": ["A childlike student or a fox delivering a lecture", "Invented signs of disability or a claim about actual participants' appearance", "Bouncing speech bubbles or sound-based imagery standing in for listening"]
+    },
+    {
+      "id": "test",
+      "chapter": "02 · Test",
+      "heading": "Give curiosity something to push against.",
+      "concept": "Choose the next place to measure",
+      "intent": "Make investigation tangible: the fox chooses a measurement point on a partly understood surface. Viewers should see an experiment and a decision, rather than an abstract network. The miniature landscape is a metaphor for sampling a continuous field, not a claim that a physical experiment took place.",
+      "anchors": [
+        { "projectId": "active-learning", "name": "Choosing what a model learns next", "why": "Selecting an informative next sample provides a clear physical action for the fox." },
+        { "projectId": "reconstruction", "name": "Reconstruction beyond one sensor path", "why": "A sparse measured path across a field connects to the ongoing interest in sensing and comparison without inventing a research result." }
+      ],
+      "recognizableElements": ["A shallow tabletop landscape with a few smooth contour bands", "Several small measurement pins", "A fox examining a new location through a simple freestanding lens"],
+      "prompt": "Create one finished conceptual editorial illustration for a portfolio chapter about testing an idea and choosing what to measure next. One single near-square frame, suitable for a 600 × 560 canvas. On a paper #F7F5ED background, an elegant orange fox leans toward a low round examination table. The table holds a shallow miniature landscape made from just three or four smooth sage contour bands. A few tiny dark measurement pins occupy an already explored part of the surface; the far side is simpler, paler, and less described. At the boundary between these regions, one distinct orange measurement pin sits beneath a freestanding circular magnifying lens. The fox gently touches the base of this pin with a front paw while looking through the lens. The gesture must clearly read as choosing and examining a particular next place, not playing with a toy or following a treasure map. Keep the lens plain, the sampling surface tactile and restrained, and the fox as the principal figure. Use the attached approved fox silhouette: slender body, graceful long legs, pointed ears and muzzle, small dark nose, almond eye, broad flowing cream-tipped tail. Use crisp curved geometric planes, orange #F47B20, burnt orange #D84B12, apricot #FFAF6A, cream #FFF0DA, forest #193D30, and sage #B7C4A5. Modern succinct editorial vector character, shallow three-quarter view, clean edges, generous open space. This is a visual metaphor for computational sampling, not a scientific figure or a physical apparatus record. No text, numbers, axes, charts, plotted results, performance claims, equation marks, computer dashboards, generic network diagrams, grids, boards, collage, photorealism, chibi eyes, or checkerboard. One scene only.",
+      "variants": [
+        { "name": "The next measurement", "direction": "Use the main prompt with the fox at the left and the selected point near the center; the lens creates one strong circular focal shape." },
+        { "name": "Look closer", "direction": "Use a lower side view: the fox's muzzle approaches the lens while the orange pin remains visible through it. Keep the terrain shallow rather than mountainous." },
+        { "name": "A deliberate choice", "direction": "Show the fox's paw just short of the orange pin, emphasizing the moment before committing to the next measurement; simplify the lens to a thin forest contour." }
+      ],
+      "layers": ["background-paper", "table-and-contour-field", "existing-measurement-pins", "lens-frame-and-base", "selected-pin", "fox-body", "fox-head-and-neck", "fox-tail-full-root"],
+      "motionTargets": [
+        { "part": "selected-pin", "action": "Rise 4 pixels, settle into place, and rest; add one restrained outline pulse only if it remains readable." },
+        { "part": "fox-head-and-neck", "action": "Lean a few pixels toward the lens, synchronized with the measurement and then pause." },
+        { "part": "fox-tail-full-root", "action": "A slow counterbalancing sweep behind the fox." }
+      ],
+      "avoid": ["Presenting the sampled surface as real measured project data", "A winner-versus-loser comparison implying unverified performance", "Floating equations, laboratory spectacle, or a generic constellation of nodes"]
+    },
+    {
+      "id": "build",
+      "chapter": "03 · Build",
+      "heading": "Then, let the world push back.",
+      "concept": "The road is the test",
+      "intent": "A model car encounters the constraints of a small test road. The fox examines the point where the planned path meets a bend and an obstacle, making integration, feedback, and adjustment concrete.",
+      "anchors": [
+        { "projectId": "dongfeng", "name": "VLA models in the driving loop", "why": "The driving-simulator integration work gives this chapter a readily identifiable system and environment. The miniature track is a conceptual depiction of simulation, not physical vehicle testing." }
+      ],
+      "recognizableElements": ["A small unbranded model car", "A compact curved road in a shallow test tray", "One traffic cone and a fox inspecting the turn"],
+      "prompt": "Create one finished editorial illustration for a portfolio chapter about a working system meeting real constraints. One single near-square frame, suitable for a 600 × 560 canvas. On a warm paper #F7F5ED background, draw a low shallow test tray containing a compact sage road with one clear curve. A small unbranded cream-and-forest model car approaches the curve; a single burnt-orange traffic cone creates a visible constraint near the inside of the bend. A thin orange planned-path line on the road curves around the cone. Beside the tray, an elegant orange fox bends forward in a focused inspecting pose, one front paw resting gently on the tray's edge, nose directed toward the car and the bend. Make the relationship unmistakable: the path has to work with the road and obstacle. The fox is investigating, not driving the car or holding tools with human hands. Use the attached approved fox reference: slender torso, long tapered legs, pointed ears and muzzle, calm almond eye, small dark nose, and a generous sweeping cream-tipped brush tail that balances the forward lean. Render with a few clean curved geometric planes in #F47B20 orange, #D84B12 burnt orange, #FFAF6A apricot, #FFF0DA cream, #193D30 forest, and #B7C4A5 sage. Keep the perspective shallow, the setting compact, and around one third of the canvas open. This miniature road is conceptual editorial imagery for driving simulation; it is not a photograph of hardware or a product screenshot. No words, numbers, logos, car branding, cockpit, dashboard, screen UI, decorative city, grid, board, collage, crash, flames, speed streaks, photorealism, large cartoon eyes, or checkerboard. One scene only.",
+      "variants": [
+        { "name": "At the bend", "direction": "Keep the fox left and road right, with the car just before the cone; make the turn and inspection the visual center." },
+        { "name": "Check the alignment", "direction": "Use a lower viewpoint that emphasizes the fox inspecting the car's heading relative to the road. The planned line remains one quiet curve." },
+        { "name": "Run, observe, adjust", "direction": "Place the fox behind the shallow tray and the car in the near foreground, preserving its visible path around the one cone; do not add new tools or screens." }
+      ],
+      "layers": ["background-paper", "test-tray-road", "planned-path", "traffic-cone", "car-complete-shape", "fox-body", "fox-head-and-neck", "fox-tail-full-root"],
+      "motionTargets": [
+        { "part": "car-complete-shape", "action": "Travel a short distance toward the bend, pause, and continue gently around it; reset only when hidden or between chapter visits." },
+        { "part": "planned-path", "action": "Reveal one short route segment just ahead of the car, then leave it still." },
+        { "part": "fox-head-and-neck", "action": "Track the car with a small controlled tilt, then settle." }
+      ],
+      "avoid": ["Implying the internship involved building or testing a physical toy car", "A car racing, drifting, crashing, or continuously circling the reader's peripheral vision", "A large cityscape that overwhelms the simple test"]
+    },
+    {
+      "id": "return",
+      "chapter": "04 · Return",
+      "heading": "Bring it back to people.",
+      "concept": "A tool becomes a learning moment",
+      "intent": "Show the transition from building an interface to teaching with it: adult beginners gather around a laptop, one tries something, another asks a question, and the fox turns toward that person. The human exchange is the point of the picture.",
+      "anchors": [
+        { "projectId": "ai-coding-course", "name": "A first encounter with AI coding", "why": "The author taught people with no prior coding experience using InVolve; this supplies a real context for learning by doing." },
+        { "projectId": "involve", "name": "InVolve", "why": "The author designs the frontend and interactions, then uses the tool in teaching. The scene conveys that relationship without inventing the product's actual interface." }
+      ],
+      "recognizableElements": ["Two adult learners at one modest worktable", "One open laptop viewed mainly from behind", "A fox turning toward the learner who is asking a question"],
+      "prompt": "Create one finished editorial illustration for a personal portfolio chapter about bringing a tool back to the people who use it. One single near-square frame, suitable for a 600 × 560 canvas. On warm paper #F7F5ED, two adult university-age learners sit at a modest shared sage worktable with one open laptop. View the laptop mainly from the back so no application interface is visible. One learner is trying something on the keyboard with focused relaxed posture. The other turns slightly toward a graceful orange fox beside the table and raises one hand a little in a natural question gesture. The fox stands on a low simple platform, turns its head toward this learner, and meets their gaze. Their interaction should feel reciprocal: a question arising during learning, and someone attending to it. One blank folded lesson sheet lies on the table; use no other props. The people are dignified adults, with simple contemporary clothing and restrained facial detail. Use the attached approved fox reference: slender body, long tapered legs, pointed ears and muzzle, small dark nose, calm almond eye, and a broad sweeping cream-tipped tail. Draw with a few flowing geometric color planes in orange #F47B20, burnt orange #D84B12, apricot #FFAF6A, cream #FFF0DA, forest #193D30, and sage #B7C4A5. Keep clean edges, shallow three-quarter perspective, a legible human exchange, and generous paper negative space. This is conceptual editorial art inspired by a real introductory AI-coding course, not a reconstruction of its classroom or its software UI. No text, code, speech bubbles, app interface, logos, outcome badges, robots, lightbulb symbols, graduation caps, children, grids, boards, collage, photorealism, cartoon giant eyes, or checkerboard. One scene only.",
+      "variants": [
+        { "name": "The next question", "direction": "Use the main prompt. Place the questioning learner at the right, keyboard learner at the center, and fox at the left turning toward the question." },
+        { "name": "Learning side by side", "direction": "Use a closer view around the table with the fox between the two adult figures in the composition, while keeping the laptop's back visible and the gaze exchange unobstructed." },
+        { "name": "An invitation to try", "direction": "One learner has just moved their hands toward the keyboard while the other watches; the fox gives them space and looks on attentively. Keep the action modest, with no invented success signal." }
+      ],
+      "layers": ["background-paper", "table-seats-platform", "laptop-static", "two-adult-learners-static", "lesson-sheet-complete-shape", "fox-body", "fox-head-and-neck", "fox-tail-full-root"],
+      "motionTargets": [
+        { "part": "fox-head-and-neck", "action": "Turn a few degrees toward the questioning learner, hold, and return slowly." },
+        { "part": "lesson-sheet-complete-shape", "action": "A barely lifted corner settles once, providing a quiet sign of use without animating a fictional interface." },
+        { "part": "fox-tail-full-root", "action": "One slow relaxed sweep under or beside the platform; keep it clear of the people." }
+      ],
+      "avoid": ["An imitation of InVolve UI, invented classroom responses, or a claimed student outcome", "A one-way fox lecture in front of passive children", "A decorative house, garden, robot, or floating network unrelated to the teaching moment"]
+    }
+  ]
+}

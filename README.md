@@ -25,3 +25,7 @@ Review `visual-system.html` for the mascot, downloadable SVG poses, palette, typ
 `assets/css/type-system.css` defines seven semantic text sizes and the two local font families. Source notes are in `assets/fonts/manifest.txt`; the supplied font notices are preserved. The unused desktop font formats and poster images remain local and are ignored by Git.
 
 Scene motion follows the headline’s action: listening, comparison, crossing a threshold, and returning feedback. SVG tokens provide their own motion paths; all labels stay still. The fox retains separate head, tail, and eye pivots, so future poses can use the same animation rules.
+
+Illustration production now starts from `illustration-briefs.html`: five project-connected scene prompts, composition alternatives, official cleanup-tool references, and a layer/motion handoff. The source is `content/illustration-briefs.json`; `illustration-prompts.txt` is generated for download. Approve one concept before replacing the current artwork.
+
+Display text uses Garet Heavy, and Display/Title line-height is 1.4. The prologue's minimum height is capped for tall CSS viewports (including zoomed-out browsers). Story motion waits for font readiness, with a 1.2-second maximum wait; reading and links remain available. The motion control stays hidden and disabled until initialization. Run `node tools/check_story_startup.cjs` for delayed/failed-font and early-navigation coverage.

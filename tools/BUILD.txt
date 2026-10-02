@@ -1,6 +1,7 @@
 BUILD
   python3 tools/build_site.py
   python3 tools/check_site.py
+  node tools/check_story_startup.cjs
 
 PREVIEW
   python3 -m http.server 8091 --bind 127.0.0.1
@@ -57,3 +58,12 @@ VISUAL STANDARD
   assets/garet/*.woff2               Garet Book and Heavy, locally hosted
   assets/best_swashed/*.otf          Supplied Best Swashed, locally hosted
 All fox poses use 400 x 300 coordinates. The word-mark tail uses 150 x 70.
+
+ILLUSTRATION WORKSHOP
+  content/illustration-briefs.json  Prompts, composition options, layers and motion
+  illustration-briefs.html        Generated review/copy workspace
+  illustration-prompts.txt        Generated plain-text prompt download
+  assets/js/illustration-briefs.js Copy actions with native-select fallback
+Story startup is progressive: a static first illustration precedes motion, and
+interactive motion controls appear after initialization. A 1.2s font wait cap
+keeps enhancement available if a font response is slow; no page-wide loader.

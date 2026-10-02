@@ -7,7 +7,8 @@ display, title, subheading, lead, body, small, label.
 
 Garet — Type Forward, copyright 2022.
 Local web sources: Garet-Book.woff2 and Garet-Heavy.woff2.
-Book is mapped to CSS normal/400; Heavy is mapped to CSS strong/900.
+Book is mapped to CSS normal/400; Heavy is mapped to CSS display/strong/900.
+Display and Title use a shared 1.4 line-height; Best Swashed remains upright400.
 The original font metadata records Book at weight 300 and Heavy at 850.
 License metadata refers to http://typeforward.com/.
 

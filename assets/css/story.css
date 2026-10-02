@@ -31,6 +31,7 @@ html:has(.story-page) { scroll-padding-top:0; }
 .stage-thought { font:italic 15px/1.4 var(--serif); color:var(--muted); }
 .motion-toggle { display:flex; align-items:center; gap:5px; border:0; padding:10px 0 10px 10px; background:none; font-size:10px; color:var(--muted); white-space:nowrap; min-height:44px; }
 .motion-toggle { min-width:44px; }
+.motion-toggle[hidden] { display:none; }
 .motion-symbol { width:11px; height:12px; margin-left:5px; position:relative; }
 .motion-symbol:before,.motion-symbol:after { content:""; position:absolute; width:2px; height:9px; background:currentColor; top:1px; left:2px; }
 .motion-symbol:after { left:7px; }
@@ -44,7 +45,7 @@ html:has(.story-page) { scroll-padding-top:0; }
 .story-waypoints a[aria-current="location"] { color:var(--ink); }
 .story-waypoints a[aria-current="location"]:before { transform:scaleX(1); }
 .story-waypoints a:hover { color:var(--orange); }
-.story-prologue { padding-top:40px; padding-bottom:110px; min-height:calc(100svh - 138px); display:flex; flex-direction:column; align-items:flex-start; justify-content:center; }
+.story-prologue { padding-top:40px; padding-bottom:110px; min-height:min(850px,calc(100svh - 138px)); display:flex; flex-direction:column; align-items:flex-start; justify-content:center; }
 .story-prologue>.eyebrow { font-size:9px; margin:0 0 22px; letter-spacing:.13em; }
 .story-prologue h1 { font-size:clamp(62px,6.8vw,100px); line-height:.98; letter-spacing:-.062em; margin:0 0 28px; }
 .story-prologue h1 em { line-height:1.01; color:#59765b; letter-spacing:-.057em; }
@@ -136,6 +137,8 @@ html:has(.story-page) { scroll-padding-top:0; }
 .motion-feedback,.motion-comparison { animation:trace-flow 10s linear infinite; }
 .world-scene [class*="motion-"] { animation-play-state:paused; }
 .world-scene.is-current [class*="motion-"] { animation-play-state:running; }
+.story-page:not(.story-ready) .story-stage *,
+.story-page:not(.story-ready) .tail-punctuation *,
 .story-page.motion-paused .story-stage *,
 .story-page.motion-paused .tail-punctuation *,
 .story-page.scene-asleep .story-stage *,
