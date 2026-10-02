@@ -17,14 +17,14 @@
   const labels = ['A QUESTION TAKES SHAPE', '01 / START BY LISTENING', '02 / LOOK FOR THE EVIDENCE', '03 / FOLLOW IT INTO PRACTICE', '04 / THE NEXT QUESTION'];
   const thoughts = ['Every path starts with curiosity.', 'Whose experience needs a closer look?', 'What would make the answer convincing?', 'What happens outside the experiment?', 'What could this help someone understand?'];
   const descriptions = [
-    'A curious fox with a field notebook, on a quiet woodland path.',
-    'An attentive fox listening beside birds and folded conversation ribbons.',
-    'A fox inspecting observations over a layered geometric landscape.',
-    'A fox carrying a piece toward a bridge of connected building blocks.',
-    'A fox sharing a small new possibility beside a sunlit exploratory structure.'
+    'An alert orange fox follows an open, curving question through a field of possibilities.',
+    'An attentive fox listens as a path begins with a person and their perspective.',
+    'A curious fox watches an idea meet a comparison, bend, and become a better question.',
+    'A fox leaps across a threshold: try, observe, and revise form a returning path.',
+    'A useful idea reaches two people; their response returns to its maker as the next question.'
   ];
-  // Mascot and illustration use ONE SVG coordinate system, including at short heights.
-  const poses = [[300, 295, 1.10], [430, 380, .80], [165, 390, .80], [150, 340, .79], [155, 385, .80]];
+  // The fox and its illustration share one coordinate system.
+  const poses = [[300, 330, 1], [170, 380, .72], [165, 385, .75], [300, 310, .95], [170, 405, .72]];
   let userPaused = false;
   try { userPaused = localStorage.getItem(preferenceKey) === 'true'; } catch { /* Storage is optional. */ }
   const paused = () => reduced.matches || userPaused;
@@ -49,9 +49,9 @@
       characters.forEach((character, i) => character.classList.toggle('is-current', i === index));
       links.forEach((link, i) => { if (i + 1 === index) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
     }
-    world.setAttribute('viewBox', compact.matches ? '45 25 250 250' : '0 0 600 560');
+    world.setAttribute('viewBox', compact.matches ? '0 0 400 300' : '0 0 600 560');
     if (compact.matches) {
-      fox.setAttribute('transform', 'translate(150 155) scale(1.08)');
+      fox.setAttribute('transform', 'translate(200 150) scale(1)');
     } else {
       const distance = Math.min(380, innerHeight * .48);
       const raw = index ? Math.max(0, Math.min(1, (cursor - positions[index]) / distance)) : 1;
@@ -69,6 +69,7 @@
     document.body.classList.toggle('motion-paused', paused());
     control.setAttribute('aria-pressed', String(paused()));
     control.disabled = reduced.matches;
+    control.setAttribute('aria-label', reduced.matches ? 'Animations disabled by system preference' : (userPaused ? 'Resume animations' : 'Pause animations'));
     control.title = reduced.matches ? 'Animations are off to match your system preference.' : (userPaused ? 'Resume animations' : 'Pause animations');
     control.querySelector('.motion-state').textContent = paused() ? 'off' : 'on';
     requestRender();

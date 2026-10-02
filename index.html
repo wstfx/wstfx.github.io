@@ -10,7 +10,10 @@
 <link rel="stylesheet" href="assets/css/portfolio.css?v=51e2fea264">
 <script defer src="assets/js/privacy-gate.js"></script>
 <script defer src="assets/js/portfolio.js?v=e6f92f06c3"></script>
-<link rel="stylesheet" href="assets/css/story.css?v=2e9a393e26"><script defer src="assets/js/story.js?v=298007e6ad"></script>
+<link rel="stylesheet" href="assets/css/story.css?v=29f67649f3"><script defer src="assets/js/story.js?v=d35e5cb46a"></script>
+<link rel="preload" href="assets/garet/Garet-Book.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/best_swashed/BestSwashed_PERSONAL_USE_ONLY.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="assets/css/type-system.css?v=1b9d0119d0">
 </head>
 <body id="top" class="story-page">
 <a class="skip" href="#main">Skip to content</a>
@@ -23,580 +26,484 @@
 <div class="story-layout" id="journey">
   <aside class="story-stage" aria-label="A geometric fox accompanies the story" data-scene="0">
     <div class="stage-top"><span class="stage-label">A QUESTION TAKES SHAPE</span><span class="stage-count" aria-hidden="true">00 / 04</span></div>
-    <div class="story-canvas" role="img" aria-label="A curious geometric fox at the beginning of a woodland path">
+    <div class="story-canvas" role="img" aria-label="An alert orange fox following an open path toward a question">
       <svg class="world-drawing" viewBox="0 0 600 560" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <!--
-    A field guide in five scenes: a clearing, a conversation, a field notebook,
-    a bridge under construction, and a greenhouse for the next question.
-    The fox is a separate foreground character. Reserved centers (x,y):
-    0=(300,290), 1=(420,370), 2=(170,380), 3=(155,325), 4=(155,390).
-    Ambient groups: .ambient-leaf (rotate +-2deg, bottom-center origin),
-    .ambient-bird / .ambient-paper (translate 0,-3px), .ambient-glint
-    (slow opacity), .ambient-observation (slow opacity), .ambient-flow
-    (slow dashed stroke offset), .ambient-warmth (slow opacity).
-    Every scene must remain comprehensible with all animation disabled.
+    Five visual verbs: follow, listen, compare, iterate, return.
+    The separate fox lives in the open foreground; these scenes explain titles.
+    Motion: .motion-token uses the motion-path custom property, offset-distance:0..100%.
+    Its translated parent anchors a relative path; the static state is the path start.
+    .motion-orbit rotates about 300px 280px; .motion-response has transform-box:fill-box
+    and transform-origin:center; .motion-membrane has transform-origin:350px 248px.
+    .motion-feedback and .motion-comparison can animate stroke-dashoffset.
+    All ideas remain readable when motion is paused.
   -->
   <defs>
-    <linearGradient id="world-field" x1="200" y1="130" x2="470" y2="325" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#e9d789"/><stop offset=".48" stop-color="#cbd4a3"/><stop offset="1" stop-color="#7d9978"/>
+    <linearGradient id="world-ribbon" x1="90" y1="300" x2="500" y2="150" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f5b575"/><stop offset=".55" stop-color="#ed843e"/><stop offset="1" stop-color="#dc632a"/>
     </linearGradient>
-    <linearGradient id="world-glass" x1="280" y1="145" x2="450" y2="335" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#f6e5a9" stop-opacity=".75"/><stop offset="1" stop-color="#c3d1af" stop-opacity=".35"/>
+    <linearGradient id="world-paper" x1="300" y1="120" x2="380" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#eef0df"/><stop offset="1" stop-color="#c7d4c0"/>
     </linearGradient>
-    <radialGradient id="world-sun">
-      <stop stop-color="#ead074" stop-opacity=".28"/><stop offset="1" stop-color="#ead074" stop-opacity="0"/>
+    <linearGradient id="world-thought" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f6c28c"/><stop offset="1" stop-color="#ef8a42"/>
+    </linearGradient>
+    <radialGradient id="world-halo">
+      <stop stop-color="#eddba7" stop-opacity=".46"/><stop offset="1" stop-color="#eddba7" stop-opacity="0"/>
     </radialGradient>
-    <pattern id="world-notebook-grid" width="14" height="14" patternUnits="userSpaceOnUse">
-      <path d="M14 0H0V14" stroke="#a0b194" stroke-width=".55" opacity=".55"/>
-    </pattern>
-    <g id="world-spark" stroke="#ae8043" stroke-width="1.3" stroke-linecap="round">
-      <path d="M0-6V6M-6 0H6"/>
+    <g id="world-cross" stroke="#9eafa2" stroke-width=".85">
+      <path d="M-7 0H7M0-7V7"/>
     </g>
-    <g id="world-sprig">
-      <path d="M0 0V-34" stroke="#5e7c59" stroke-width="1.2"/>
-      <path d="M0-16L-16-27L-13-12Z" fill="#b8c7a3"/>
-      <path d="M0-24L14-35L11-19Z" fill="#7d9978"/>
-      <path d="M0-5L13-16L11-1Z" fill="#a2b38c"/>
+    <g id="world-arrow" stroke="#d77d43" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-5-4L0 0L-5 4"/>
     </g>
   </defs>
 
-  <path class="world-route" d="M44 466C-5 324 177 529 293 428S556 352 493 227S158 79 251 171S478 231 551 94"/>
-  <path class="world-route route-ink" id="route-ink" d="M44 466C-5 324 177 529 293 428S556 352 493 227S158 79 251 171S478 231 551 94" pathLength="1"/>
-  <path class="shared-ground" d="M57 469H543" stroke="#a9b79c" stroke-width=".7" opacity=".42"/>
+  <!-- One continuous route under all five chapters. -->
+  <path class="world-route" d="M78 430C124 487 231 481 311 431S551 319 504 191S260 65 193 171S341 259 504 105"/>
+  <path class="world-route route-ink" id="route-ink" d="M78 430C124 487 231 481 311 431S551 319 504 191S260 65 193 171S341 259 504 105" pathLength="1"/>
+  <path class="shared-ground" d="M62 474H540" stroke="#a9b6a2" stroke-width=".7" opacity=".4"/>
 
-  <!-- 00 / A clearing. A map is an invitation, not a prescribed route. -->
+  <!-- 00 / Follow a question: an opening, a loose path, an unexpected direction. -->
   <g class="world-scene scene-0">
-    <circle cx="451" cy="115" r="77" fill="url(#world-sun)"/>
-    <circle cx="451" cy="115" r="33" fill="#ead074"/>
-    <path d="M90 417L209 386L300 414L422 385L526 420L417 455L276 464L147 449Z" fill="#e7ebd7"/>
-    <path d="M157 446L268 400L313 408L242 447L280 469H199Z" fill="#f7f5ed"/>
-    <path d="M135 456L268 401" stroke="#b3bba0" stroke-width=".9" stroke-dasharray="2 5"/>
-    <path d="M281 466L249 448L315 410" stroke="#b3bba0" stroke-width=".9" stroke-dasharray="2 5"/>
-
-    <g class="ambient-leaf">
-      <path d="M92 310V176" stroke="#678361" stroke-width="2"/>
-      <path d="M92 88L35 210H92Z" fill="#b8c7a3"/>
-      <path d="M92 88L143 210H92Z" fill="#7d9978"/>
-      <path d="M92 153L24 274H92Z" fill="#a5b794"/>
-      <path d="M92 153L156 274H92Z" fill="#769470"/>
-      <path d="M92 211L46 300H92Z" fill="#c6d0af"/>
-      <path d="M92 211L138 300H92Z" fill="#92a783"/>
-      <path d="M92 153V299M58 260L92 278L121 261" stroke="#58744f" stroke-width=".75" opacity=".4"/>
+    <circle cx="448" cy="122" r="101" fill="url(#world-halo)"/>
+    <path d="M126 328A191 191 0 1 1 488 310" stroke="#bccabd" stroke-width=".9"/>
+    <path d="M165 173A174 174 0 0 1 457 172" stroke="#b9c8b9" stroke-width=".8" stroke-dasharray="1 8" stroke-linecap="round"/>
+    <path d="M300 75V117M101 280H141M461 280H514" stroke="#c4cfc0" stroke-width=".8"/>
+    <g class="motion-orbit" stroke="#a1b9a6" stroke-width="1">
+      <path d="M129 233A178 178 0 0 1 155 184"/>
+      <circle cx="155" cy="184" r="3" fill="#a1b9a6" stroke="none"/>
     </g>
-    <g class="ambient-leaf">
-      <path d="M485 354V223" stroke="#698460" stroke-width="2"/>
-      <path d="M484 180L439 261H484Z" fill="#c3cdaa"/>
-      <path d="M484 180L533 261H484Z" fill="#8fa57e"/>
-      <path d="M484 234L426 329H484Z" fill="#adbf98"/>
-      <path d="M484 234L542 329H484Z" fill="#7d9978"/>
-      <path d="M484 257V328M455 312L484 324L512 309" stroke="#58744f" stroke-width=".75" opacity=".38"/>
+    <path d="M111 361C105 278 136 208 208 178C270 152 317 177 350 189C388 202 418 177 455 126C428 190 393 231 346 221C299 211 267 180 213 200C159 220 127 287 111 361Z" fill="url(#world-ribbon)" opacity=".73"/>
+    <path d="M111 361C125 275 155 222 210 196C268 169 309 200 351 209C394 218 428 181 455 126" stroke="#c26d3d" stroke-width=".8"/>
+    <path d="M455 126C444 152 429 175 412 192C423 170 425 144 422 124C433 130 444 130 455 126Z" fill="#f6d8b5"/>
+    <path d="M84 416C124 465 206 466 259 433" stroke="#adbea7" stroke-width="1"/>
+    <path d="M107 430C147 463 211 455 241 438" stroke="#adbea7" stroke-width=".7" stroke-dasharray="2 6"/>
+    <circle cx="455" cy="126" r="11" fill="#fff5db" stroke="#d5a66c" stroke-width=".8"/>
+    <circle cx="455" cy="126" r="4" fill="#e59c51"/>
+    <g transform="translate(111 361)">
+      <g class="motion-token motion-question" style="--motion-path:path('M0 0C14 -86 44 -139 99 -165C157 -192 198 -161 240 -152C283 -143 317 -180 344 -235')">
+        <circle r="5" fill="#fff6de" stroke="#d46e31" stroke-width="1.4"/>
+      </g>
     </g>
-    <path d="M71 324L93 312L116 325L94 337Z" fill="#d4ddc4"/>
-    <path d="M466 367L485 355L506 366L486 378Z" fill="#d4ddc4"/>
-
-    <g transform="translate(88 397) rotate(-9)">
-      <path d="M0 3L54-5L87 15L132 9L131 77L87 82L54 65L0 76Z" fill="#9fae8d" opacity=".16" transform="translate(4 5)"/>
-      <path d="M0 0L54-9L87 11L132 5L132 71L87 78L54 58L0 69Z" fill="#fffbeb"/>
-      <path d="M54-9L87 11V78L54 58Z" fill="#eee9ca"/>
-      <path d="M54-9V58M87 11V78" stroke="#c5cba8" stroke-width=".8"/>
-      <path d="M10 52L23 33L36 41L48 20L63 24L77 40L96 31L120 34" stroke="#7d9978" stroke-width="1.6" stroke-dasharray="3 4"/>
-      <path d="M20 13L24 23L16 23Z" fill="#a7b993"/>
-      <path d="M104 48L110 59L98 59Z" fill="#bac9a6"/>
-      <circle cx="119" cy="34" r="3" fill="#d47b38"/>
-    </g>
-    <g class="ambient-bird">
-      <path d="M286 92L317 80L300 103Z" fill="#bac8a5"/>
-      <path d="M300 103L317 80L330 101Z" fill="#7d9978"/>
-      <path d="M299 101L312 95L317 107Z" fill="#f2eac9"/>
-      <path d="M300 103L292 115" stroke="#9aad89" stroke-width=".8" stroke-dasharray="2 4"/>
-    </g>
-    <g class="ambient-glint"><use href="#world-spark" x="182" y="149"/><use href="#world-spark" x="435" y="366" transform="translate(174 146) scale(.6)"/></g>
-    <g class="ambient-leaf"><use href="#world-sprig" x="373" y="450"/><use href="#world-sprig" transform="translate(411 440) scale(.65)"/></g>
-    <path d="M109 363L123 347L132 365Z" fill="#cbd5b6"/>
-    <path d="M523 390L531 376L541 392Z" fill="#ead074" opacity=".75"/>
-    <circle cx="370" cy="111" r="2" fill="#c3d0ad"/>
-    <circle cx="143" cy="119" r="2" fill="#c3d0ad"/>
+    <path d="M381 410A88 88 0 0 0 462 338" stroke="#becbb6" stroke-width=".8"/>
+    <path d="M389 433A111 111 0 0 0 486 341" stroke="#becbb6" stroke-width=".7" stroke-dasharray="1 7"/>
+    <use href="#world-cross" x="91" y="233"/><use href="#world-cross" x="493" y="377"/>
+    <text x="86" y="396">a little curiosity</text>
+    <text x="369" y="94">an open question</text>
   </g>
 
-  <!-- 01 / Listening. Two small birds and ribbons share a space. -->
+  <!-- 01 / Start with someone: the person is the origin of the inquiry. -->
   <g class="world-scene scene-1">
-    <path d="M64 396L153 350L280 373L350 420L258 469L134 451Z" fill="#e7ebd7"/>
-    <path d="M111 337Q187 293 276 354T483 322" stroke="#c6d1b8" stroke-width="20" opacity=".65"/>
-    <path d="M111 337Q187 293 276 354T483 322" stroke="#8eaa82" stroke-width=".85" stroke-dasharray="2 6"/>
-    <path d="M92 392Q185 346 262 393T488 360" stroke="#bc9f69" stroke-width=".8" opacity=".7"/>
-
-    <path d="M97 267L155 249L225 267L182 285Z" fill="#adbf98"/>
-    <path d="M97 267V281L182 302V285Z" fill="#d1dabe"/>
-    <path d="M182 285L225 267V282L182 302Z" fill="#b8c7a3"/>
-    <path d="M297 241L348 221L408 237L364 258Z" fill="#b6c6a1"/>
-    <path d="M297 241V253L364 271V258Z" fill="#d7dfc5"/>
-    <path d="M364 258L408 237V250L364 271Z" fill="#a2b790"/>
-
-    <g class="ambient-bird">
-      <path d="M155 196L192 224L165 247L130 224Z" fill="#ead074"/>
-      <path d="M155 196L165 247L130 224Z" fill="#d4b861"/>
-      <path d="M155 196L173 177L192 184V224Z" fill="#f0df9e"/>
-      <path d="M192 184L204 193L192 197Z" fill="#d77c36"/>
-      <path d="M130 224L113 202L125 239Z" fill="#a9ba91"/>
-      <path d="M143 214L163 220L156 238Z" fill="#f7eaba"/>
-      <circle cx="184" cy="188" r="2" fill="#4d694c"/>
-      <path d="M162 244V254L171 257M149 239V254L157 257" stroke="#687b50" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M423 242L158 129C100 194 87 274 124 341Z" fill="#e7ecdf"/>
+    <path d="M423 242L158 129M423 242L124 341" stroke="#aaba9f" stroke-width=".85"/>
+    <path d="M191 146A200 200 0 0 0 163 323M236 165A153 153 0 0 0 212 308M282 184A102 102 0 0 0 265 288" stroke="#b5c5ac" stroke-width=".8" fill="none"/>
+    <path d="M329 203A58 58 0 0 0 318 270" stroke="#a0b798" stroke-width="1.2" fill="none"/>
+    <path d="M375 233C324 204 274 211 256 245C238 279 193 288 159 263" stroke="#e19b64" stroke-width="2"/>
+    <path d="M373 256C325 282 293 286 263 270" stroke="#c4a776" stroke-width=".9" stroke-dasharray="3 6"/>
+    <g transform="translate(375 233)">
+      <g class="motion-token motion-listen" style="--motion-path:path('M0 0C-51 -29 -101 -22 -119 12C-137 46 -182 55 -216 30')">
+        <circle r="5" fill="#e88742" stroke="#f7f5ed" stroke-width="2"/>
+      </g>
     </g>
-    <g class="ambient-bird">
-      <path d="M350 157L316 192L340 222L374 195Z" fill="#a4b996"/>
-      <path d="M350 157L340 222L374 195Z" fill="#7d9978"/>
-      <path d="M350 157L331 143L315 157L316 192Z" fill="#c7d3b4"/>
-      <path d="M315 157L302 168L316 171Z" fill="#d9aa58"/>
-      <path d="M374 195L389 174L381 208Z" fill="#688966"/>
-      <path d="M363 183L340 191L350 210Z" fill="#dce4c9"/>
-      <circle cx="324" cy="160" r="2" fill="#476644"/>
-      <path d="M337 219V231L329 234M350 214V231L343 234" stroke="#687b50" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M145 135C123 156 110 182 103 213" stroke="#9eb198" stroke-width="1.2"/>
+    <path d="M98 225V248M99 260L103 278" stroke="#9eb198" stroke-width=".9"/>
+    <circle cx="423" cy="199" r="26" fill="#d3dec9"/>
+    <path d="M410 184C421 177 431 180 438 190" stroke="#8ba280" stroke-width="1"/>
+    <path d="M414 233C392 244 389 275 391 306C393 337 410 363 410 400H451C451 367 476 338 469 293C464 261 448 240 438 235" fill="url(#world-paper)"/>
+    <path d="M438 235C458 247 468 267 469 293C473 333 451 367 451 400" stroke="#7f9b76" stroke-width="1.2"/>
+    <path d="M409 250C392 258 390 282 372 297C359 308 349 309 336 307" stroke="#789873" stroke-width="2" stroke-linecap="round"/>
+    <path d="M441 267C435 289 423 302 406 309" stroke="#94ad86" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M429 339V402M402 403H461" stroke="#93ab88" stroke-width="1"/>
+    <g class="motion-response">
+      <circle cx="380" cy="205" r="5" fill="#f1c58c"/>
+      <path d="M375 192C378 188 383 187 388 188M366 187C373 177 384 173 395 177" stroke="#c79864" stroke-width=".9" stroke-linecap="round"/>
     </g>
-    <g class="ambient-paper">
-      <path d="M134 130L198 110L218 122L154 145Z" fill="#f5e7b2"/>
-      <path d="M154 145L163 155L162 143Z" fill="#d9be76"/>
-      <path d="M146 130L180 119M159 133L194 122" stroke="#b69c63" stroke-width="1" stroke-linecap="round"/>
-      <path d="M362 107L412 116L440 99L390 92Z" fill="#d8e0c9"/>
-      <path d="M362 107L370 120L374 109Z" fill="#a9bc94"/>
-      <path d="M382 102L413 107M392 98L423 103" stroke="#8ba278" stroke-width="1" stroke-linecap="round"/>
-    </g>
-    <g class="ambient-flow" stroke="#89a17b" stroke-width="1" stroke-dasharray="2 6">
-      <path d="M210 177Q253 133 294 161"/>
-      <path d="M288 196Q255 225 212 211"/>
-    </g>
-    <path d="M244 143L252 129L261 144Z" fill="#e5ce84"/>
-    <path d="M246 142L252 148L261 144Z" fill="#d2ba78"/>
-    <g transform="translate(129 413)">
-      <path d="M0 0L43-18L89 3L45 22Z" fill="#fdf8e4"/>
-      <path d="M43-18L45 22L89 3Z" fill="#eee7c7"/>
-      <path d="M13 0L34-9M22 6L36 0M56-6L74 2M54 2L64 6" stroke="#a7b491" stroke-width="1"/>
-      <path d="M45 22L45 28" stroke="#c98746" stroke-width="2"/>
-    </g>
-    <g class="ambient-leaf"><use href="#world-sprig" transform="translate(79 430) scale(.95)"/><use href="#world-sprig" transform="translate(274 444) scale(1.1)"/></g>
-    <g class="ambient-glint"><use href="#world-spark" x="470" y="213"/><circle cx="249" cy="291" r="3" fill="#d9b55a"/></g>
-    <path d="M490 242L500 216L513 235L502 257Z" fill="#d5dec3"/>
-    <path d="M500 216L502 257" stroke="#97ae86" stroke-width=".8"/>
+    <path d="M327 431H468" stroke="#b1c0a6" stroke-width=".8"/>
+    <path d="M342 446H443" stroke="#c5cebc" stroke-width=".8"/>
+    <circle cx="159" cy="263" r="16" stroke="#d8a777" stroke-width=".8"/>
+    <circle cx="159" cy="263" r="3" fill="#dd965d"/>
+    <use href="#world-cross" x="290" y="112"/><use href="#world-cross" x="509" y="311"/>
+    <text x="354" y="156">listen</text>
+    <text x="123" y="107">understand</text>
+    <text x="353" y="465">a person's perspective</text>
   </g>
 
-  <!-- 02 / Evidence. Observation points meet a layered, imperfect field. -->
+  <!-- 02 / Give curiosity something to push against: a claim meets comparison. -->
   <g class="world-scene scene-2">
-    <path d="M231 392L421 289L550 366L360 469Z" fill="#e7ebd7"/>
-    <path d="M205 288L356 376L529 277" stroke="#b9c9a9" stroke-width="1"/>
-    <path d="M205 326L356 414L529 315" stroke="#b9c9a9" stroke-width="1"/>
-    <path d="M205 256V326M356 344V414M529 245V315" stroke="#b9c9a9" stroke-width=".8" stroke-dasharray="2 5"/>
-    <path d="M204 204L365 110L529 205L367 300Z" fill="url(#world-field)"/>
-    <path d="M204 204L259 172L261 237Z" fill="#eadb9b"/>
-    <path d="M259 172L313 143L314 208Z" fill="#d9d99f"/>
-    <path d="M313 143L365 110L369 176Z" fill="#eddda0"/>
-    <path d="M365 110L418 141L369 176Z" fill="#dfd38e"/>
-    <path d="M418 141L474 173L422 206Z" fill="#c2c891"/>
-    <path d="M474 173L529 205L476 235Z" fill="#9eb38c"/>
-    <path d="M261 237L314 208L315 269Z" fill="#b7c493"/>
-    <path d="M314 208L369 176L367 237Z" fill="#d5d89e"/>
-    <path d="M369 176L422 206L367 237Z" fill="#bed09d"/>
-    <path d="M422 206L476 235L422 269Z" fill="#91ac83"/>
-    <path d="M367 237L422 269L367 300Z" fill="#a3b889"/>
-    <path d="M204 204L367 300L529 205M259 172L422 269M313 143L476 235M261 237L418 141M315 269L474 173M204 204L365 110L529 205M369 176L367 237L261 237M314 208L422 206" stroke="#f7f5ed" stroke-width="1.25" opacity=".75"/>
-    <path d="M231 263L366 342L501 264" stroke="#95ad86" stroke-width=".9"/>
-    <path d="M257 293L366 356L481 290" stroke="#b2c3a0" stroke-width=".8"/>
-
-    <path d="M259 172L314 208L418 141L476 235" stroke="#52754e" stroke-width="1.6"/>
-    <g fill="#59794f" stroke="#f7f5ed" stroke-width="2.5">
-      <circle cx="259" cy="172" r="4"/><circle cx="314" cy="208" r="4"/><circle cx="418" cy="141" r="4"/><circle cx="476" cy="235" r="4"/>
+    <path d="M307 123L370 140L417 358L351 385Z" fill="#e3e9db" opacity=".65"/>
+    <path d="M308 121L371 137M351 386L419 359M318 147L318 167M405 336L409 351" stroke="#b1bea7" stroke-width=".8"/>
+    <g class="motion-membrane">
+      <path d="M344 125C316 178 372 205 373 250C374 299 323 324 351 387L392 363C373 321 413 289 414 248C415 203 366 174 382 137Z" fill="url(#world-paper)"/>
+      <path d="M344 125C316 178 372 205 373 250C374 299 323 324 351 387" stroke="#779771" stroke-width="1.4"/>
+      <path d="M358 129C332 179 385 205 386 250C387 297 338 325 365 379M371 133C348 180 399 206 399 250C399 295 352 326 378 372" stroke="#a3b497" stroke-width=".75"/>
+      <path d="M337 169L376 179M353 205L397 209M373 250L414 248M353 297L396 292M339 338L379 328" stroke="#b8c5ab" stroke-width=".75"/>
     </g>
-    <g class="ambient-observation" stroke="#a98940" stroke-width="1" opacity=".65">
-      <circle cx="259" cy="172" r="9"/><circle cx="418" cy="141" r="9"/>
+    <path d="M110 243C177 215 230 217 279 243C307 258 336 259 369 249C344 218 330 184 365 158C409 125 462 152 490 180" stroke="#e5a46b" stroke-width="13" stroke-linecap="round" opacity=".16"/>
+    <path d="M110 243C177 215 230 217 279 243C307 258 336 259 369 249C344 218 330 184 365 158C409 125 462 152 490 180" stroke="#da7a3a" stroke-width="1.7"/>
+    <path class="motion-comparison" d="M110 277C180 249 236 256 285 277C340 301 429 293 491 251" stroke="#8da284" stroke-width="1.1" stroke-dasharray="3 7"/>
+    <path d="M369 249L409 250M384 242L392 250L384 258" stroke="#cc7946" stroke-width="1"/>
+    <circle cx="369" cy="249" r="9" fill="#f4c799" stroke="#c88951" stroke-width=".9"/>
+    <circle cx="490" cy="180" r="13" fill="#f5d9aa"/>
+    <circle cx="490" cy="180" r="4" fill="#d98b44"/>
+    <g transform="translate(110 243)">
+      <g class="motion-token motion-evidence" style="--motion-path:path('M0 0C67 -28 120 -26 169 0C197 15 226 16 259 6C234 -25 220 -59 255 -85C299 -118 352 -91 380 -63')">
+        <circle r="5" fill="#e07830" stroke="#fff3dd" stroke-width="2"/>
+      </g>
     </g>
-    <g class="ambient-observation">
-      <path d="M314 209V246M418 141V185" stroke="#617e55" stroke-width=".8" stroke-dasharray="2 4"/>
-      <circle cx="314" cy="246" r="2.5" fill="#ce964e"/><circle cx="418" cy="185" r="2.5" fill="#ce964e"/>
-    </g>
-
-    <g transform="translate(76 140) rotate(-8)">
-      <path d="M3 3H107V132H3Z" fill="#bdc9aa" opacity=".28"/>
-      <path d="M0 0H105V126H0Z" fill="#fffae9"/>
-      <path d="M13 19H94V108H13Z" fill="url(#world-notebook-grid)"/>
-      <path d="M13 14H47" stroke="#93a681" stroke-width="1.2"/>
-      <path d="M13 97L29 80L41 84L55 60L70 69L87 42" stroke="#69865d" stroke-width="1.5"/>
-      <path d="M13 97L29 89L41 72L55 73L70 59L87 60" stroke="#c79950" stroke-width="1" stroke-dasharray="3 3"/>
-      <path d="M13 111H57M13 116H38" stroke="#b9c5a6" stroke-width="1"/>
-      <path d="M6 4V121" stroke="#d8d8b8" stroke-width=".6"/>
-      <path d="M0 0H9V8H0Z" fill="#e5cf8a"/>
-    </g>
-    <g transform="translate(362 399)"><g class="ambient-paper">
-      <path d="M0 0L62-26L119 8L56 35Z" fill="#fdf8e3"/>
-      <path d="M15 1L45-12M21 7L60-10M28 14L57 1" stroke="#a3b690" stroke-width="1"/>
-      <path d="M71-3L93 9L76 16L55 4Z" fill="#dce2c7"/>
-      <path d="M71 1L76 8L88 6" stroke="#64865d" stroke-width="1"/>
-    </g></g>
-    <path d="M501 128V163M495 134H507M495 157H507M497 144H505" stroke="#8da67b" stroke-width=".9"/>
-    <path d="M237 99H274M243 94V104M267 94V104M256 96V102" stroke="#b09c62" stroke-width=".9"/>
-    <g class="ambient-glint"><use href="#world-spark" x="180" y="99"/><circle cx="529" cy="352" r="3" fill="#d5b360"/></g>
-    <g class="ambient-leaf"><use href="#world-sprig" transform="translate(285 454) scale(.8)"/></g>
+    <path d="M107 182V305M100 194H114M100 291H114" stroke="#c1cbb8" stroke-width=".8"/>
+    <path d="M440 346V404M432 351H448M432 397H448M436 364H444M436 377H444M436 389H444" stroke="#a9b99f" stroke-width=".9"/>
+    <path d="M270 418H406M282 413V423M394 413V423" stroke="#b9c5ad" stroke-width=".8"/>
+    <use href="#world-cross" x="255" y="139"/>
+    <text x="116" y="205">an idea</text>
+    <text x="155" y="305">a comparison</text>
+    <text x="397" y="119">a better question</text>
+    <text x="338" y="451">tested, not assumed</text>
   </g>
 
-  <!-- 03 / Build. A bridge is assembled, tested, and connected to a loop. -->
+  <!-- 03 / Let the world push back: try, encounter a threshold, take a new route. -->
   <g class="world-scene scene-3">
-    <path d="M67 431L222 362L295 398L171 461Z" fill="#e7ebd7"/>
-    <path d="M307 385L454 311L550 353L410 428Z" fill="#e4e8d1"/>
-    <path d="M256 420Q333 368 388 384T509 424" stroke="#c6d5bb" stroke-width="14" opacity=".7"/>
-    <path d="M250 419Q330 367 390 384T516 424" stroke="#8ca582" stroke-width=".85" stroke-dasharray="2 5"/>
-    <path d="M253 443Q330 391 390 408T516 448" stroke="#b9c9aa" stroke-width=".8"/>
-
-    <path d="M184 227L249 190L313 227L249 264Z" fill="#d5dec2"/>
-    <path d="M184 227V280L249 317V264Z" fill="#a8bd97"/>
-    <path d="M249 264L313 227V281L249 317Z" fill="#7d9978"/>
-    <path d="M249 190L313 153L378 190L313 227Z" fill="#e4e6c9"/>
-    <path d="M313 227L378 190V243L313 280Z" fill="#92ab84"/>
-    <path d="M249 190V202M263 197V214M281 207V224M298 217V233" stroke="#acbb94" stroke-width=".8"/>
-    <path d="M393 181L457 144L522 181L457 218Z" fill="#d5ddbc"/>
-    <path d="M393 181V235L457 271V218Z" fill="#a8bd92"/>
-    <path d="M457 218L522 181V235L457 271Z" fill="#7d9978"/>
-    <path d="M393 181L378 190M393 235L378 244" stroke="#ba9b58" stroke-width=".9" stroke-dasharray="2 3"/>
-    <path d="M378 190L393 198V235L378 243Z" fill="#f5e5b4" opacity=".5"/>
-
-    <g class="ambient-paper">
-      <path d="M329 120L366 98L404 119L367 141Z" fill="#ead074"/>
-      <path d="M329 120V132L367 153V141Z" fill="#c8b266"/>
-      <path d="M367 141L404 119V131L367 153Z" fill="#d9be6b"/>
-      <path d="M347 119L366 109L385 120L367 131Z" stroke="#b7a25f" stroke-width=".8"/>
+    <path d="M86 393C134 351 169 341 218 350L244 373C179 362 138 385 103 418Z" fill="#d8e1ce"/>
+    <path d="M387 348C433 335 482 352 526 392L511 419C469 378 423 366 372 375Z" fill="#d8e1ce"/>
+    <path d="M87 393C135 351 171 342 218 350M388 348C433 335 482 352 526 392" stroke="#93ab87" stroke-width="1"/>
+    <path d="M221 153C257 180 268 222 246 258M381 153C345 180 334 222 356 258" stroke="#bdc9b1" stroke-width="1"/>
+    <path d="M235 164C263 191 266 220 253 244M367 164C339 191 337 221 349 244" stroke="#d0d9c4" stroke-width=".8"/>
+    <g class="motion-response">
+      <path d="M252 228L262 241L264 225M348 228L338 241L336 225" stroke="#a1b793" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
-    <path d="M368 153L382 190" stroke="#c0a468" stroke-width="1" stroke-dasharray="2 4"/>
-    <path d="M378 185L382 192L386 184" stroke="#c0a468" stroke-width="1"/>
-    <path d="M215 227L313 170L365 201" stroke="#6c885f" stroke-width="1.4"/>
-    <path d="M408 181L457 162L487 180" stroke="#6c885f" stroke-width="1.4"/>
-    <path d="M482 174L489 181L479 181" stroke="#6c885f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M218 216V204L228 199V211" stroke="#65845b" stroke-width="1.5"/>
-    <path d="M452 150V136L461 131V146" stroke="#65845b" stroke-width="1.5"/>
-    <path d="M190 281L247 315M458 272L517 238" stroke="#668b64" stroke-width=".8"/>
-
-    <path d="M472 288Q550 336 469 370T342 380" stroke="#a9bc99" stroke-width="1.2"/>
-    <path class="ambient-flow" d="M472 288Q550 336 469 370T342 380" stroke="#688c63" stroke-width="1.5" stroke-dasharray="2 11"/>
-    <path d="M349 375L340 380L349 384" stroke="#688c63" stroke-width="1.1" stroke-linecap="round"/>
-    <g transform="translate(439 325)">
-      <path d="M0 0L27-15L51-1L25 14Z" fill="#f5eac8"/>
-      <path d="M0 0V8L25 22V14Z" fill="#ddcd99"/>
-      <path d="M25 14L51-1V7L25 22Z" fill="#b7bc92"/>
-      <path d="M16 0L23 5L36-4" stroke="#65895d" stroke-width="1.7" stroke-linecap="round"/>
+    <path d="M109 368C154 342 191 317 218 276C262 209 317 203 363 265C393 305 444 334 497 360" stroke="#e6ad74" stroke-width="18" opacity=".12"/>
+    <path d="M109 368C154 342 191 317 218 276C262 209 317 203 363 265C393 305 444 334 497 360" stroke="#cf8b51" stroke-width="1.5"/>
+    <path class="motion-feedback" d="M497 389C521 449 441 475 360 450C289 428 231 447 181 459C119 474 79 443 109 402" stroke="#819b78" stroke-width="1.1" stroke-dasharray="3 6"/>
+    <path d="M104 410L109 402L110 412" stroke="#819b78" stroke-width="1.1"/>
+    <circle cx="497" cy="360" r="9" fill="#edbd84"/>
+    <circle cx="109" cy="368" r="4" fill="#da8a48"/>
+    <g transform="translate(109 368)">
+      <g class="motion-token motion-trial" style="--motion-path:path('M0 0C45 -26 82 -51 109 -92C153 -159 208 -165 254 -103C284 -63 335 -34 388 -8')">
+        <circle r="5" fill="#e6873d" stroke="#f9f2dc" stroke-width="2"/>
+      </g>
     </g>
-    <g transform="translate(304 439) rotate(-28)">
-      <path d="M0 0H55V10H0Z" fill="#e9d592"/>
-      <path d="M6 0V5M14 0V4M22 0V5M30 0V4M38 0V5M46 0V4" stroke="#ac985e" stroke-width=".9"/>
-    </g>
-    <path d="M267 407L276 402L296 414L287 419Z" fill="#a8b992"/>
-    <path d="M276 402V396L298 409V415" stroke="#819c70" stroke-width="1.2"/>
-    <g class="ambient-leaf"><use href="#world-sprig" transform="translate(81 432) scale(.8)"/><use href="#world-sprig" transform="translate(521 393) scale(.85)"/></g>
-    <g class="ambient-glint"><use href="#world-spark" x="294" y="99"/><circle cx="531" cy="282" r="2.5" fill="#d6b761"/></g>
-    <path d="M135 161L149 153L164 162L150 170Z" fill="#dbe1c8"/>
-    <path d="M150 170V182L164 174V162" fill="#bccbaa"/>
+    <path d="M218 376V395M372 376V395M232 388H358" stroke="#c1cbb3" stroke-width=".85"/>
+    <path d="M239 385L231 388L239 391M352 385L360 388L352 391" stroke="#c1cbb3" stroke-width=".85"/>
+    <circle cx="301" cy="144" r="5" stroke="#bdac83" stroke-width=".85"/>
+    <path d="M301 115V125M301 164V174M272 144H282M321 144H331" stroke="#c4ba99" stroke-width=".7"/>
+    <use href="#world-cross" x="146" y="210"/><use href="#world-cross" x="466" y="216"/>
+    <text x="89" y="338">try</text>
+    <text x="474" y="338">observe</text>
+    <text x="290" y="483">revise</text>
   </g>
 
-  <!-- 04 / Return. A greenhouse keeps a question open to inspection. -->
+  <!-- 04 / Bring it back to people: make → use → learn, and begin again. -->
   <g class="world-scene scene-4">
-    <circle class="ambient-warmth" cx="443" cy="146" r="106" fill="url(#world-sun)"/>
-    <circle cx="461" cy="129" r="34" fill="#ead074"/>
-    <path d="M217 396L358 326L525 396L381 474Z" fill="#e5e9d2"/>
-    <path d="M242 430L355 374L410 390L302 446L349 468H290Z" fill="#f7f5ed"/>
-    <path d="M217 361L352 438L509 349L376 272Z" fill="#ccd7b9"/>
-    <path d="M217 361V371L352 448V438Z" fill="#bacba7"/>
-    <path d="M352 438L509 349V361L352 448Z" fill="#9fb68f"/>
-
-    <path d="M248 246L352 306L466 240V344L352 410L248 350Z" fill="url(#world-glass)"/>
-    <path d="M248 246L298 151L413 86L466 240L352 306Z" fill="#e7ebd7" opacity=".8"/>
-    <path d="M298 151L352 306L466 240L413 86Z" fill="#f2e9bd" opacity=".72"/>
-    <path d="M248 246L298 151L352 306Z" fill="#d3dec2" opacity=".66"/>
-    <path d="M352 306L466 240V344L352 410Z" fill="#e8e5bb" opacity=".35"/>
-    <path d="M248 246V350L352 410L466 344V240L413 86L298 151L248 246Z" stroke="#7c9970" stroke-width="1.65" stroke-linejoin="round"/>
-    <path d="M298 151L352 306L466 240M248 246L352 306V410M298 151L413 86M274 197L324 278L440 212M381 104L437 257V361M328 134L382 289V393M300 276V380" stroke="#91a77d" stroke-width="1.15"/>
-    <path d="M250 299L352 359L466 293" stroke="#99ad83" stroke-width="1"/>
-    <path d="M311 388V327L337 342V403" stroke="#708e66" stroke-width="1.2"/>
-    <circle cx="332" cy="374" r="1.5" fill="#709164"/>
-    <path d="M409 146L423 186M398 153L414 198" stroke="#fffcdf" stroke-width="3" opacity=".72"/>
-    <path d="M364 188L380 230" stroke="#fffcdf" stroke-width="2" opacity=".55"/>
-
-    <g opacity=".75">
-      <path d="M371 361L404 342L428 356L395 375Z" fill="#d3b278"/>
-      <path d="M371 361V372L395 386V375Z" fill="#b99b65"/>
-      <path d="M395 375L428 356V367L395 386Z" fill="#bfa96f"/>
-      <path d="M395 369V327M410 360V314M380 360V335" stroke="#84915c" stroke-width="1.1"/>
-      <path d="M395 343L382 331L388 349Z" fill="#9faf75"/>
-      <path d="M395 333L407 321L404 341Z" fill="#93a66c"/>
-      <path d="M410 331L423 322L418 338Z" fill="#aab582"/>
-      <path d="M380 347L369 337L373 352Z" fill="#b5bf8a"/>
+    <path d="M171 218C240 150 353 140 428 189C471 217 474 265 457 305L428 293C444 258 438 231 406 211C341 171 249 179 187 236Z" fill="#e7ead7"/>
+    <path d="M171 218C240 150 353 140 428 189" stroke="#bac6aa" stroke-width=".8"/>
+    <path d="M186 234C250 176 342 170 406 211" stroke="#ced5bb" stroke-width=".8"/>
+    <circle cx="405" cy="242" r="20" fill="#a8bd9b"/>
+    <path d="M389 268C365 293 373 330 381 349C385 361 385 382 385 401H421C421 365 443 341 431 307C426 290 416 277 410 271" fill="#d1dec5"/>
+    <path d="M389 268C373 282 370 301 374 321M422 401C422 364 443 339 431 307" stroke="#8aa47b" stroke-width="1.15"/>
+    <path d="M390 291C380 311 363 320 344 319" stroke="#718f64" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M407 348L405 402M379 402H430" stroke="#95ad84" stroke-width=".9"/>
+    <circle cx="490" cy="273" r="17" fill="#d1b97e"/>
+    <path d="M480 296C460 309 452 328 455 351C458 371 468 386 466 408H503C501 386 516 366 512 343C509 321 498 304 494 299" fill="#ebe0b9"/>
+    <path d="M494 299C505 311 512 327 512 343C516 366 501 386 503 408" stroke="#b3a472" stroke-width="1"/>
+    <path d="M478 317C469 331 453 336 436 330" stroke="#ae9b67" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M487 365V409M461 409H511" stroke="#b6a779" stroke-width=".8"/>
+    <path d="M141 288C192 252 232 257 272 286C294 302 316 316 344 319" stroke="#d98c51" stroke-width="1.8"/>
+    <path d="M141 288C192 252 232 257 272 286C294 302 316 316 344 319" stroke="#eca568" stroke-width="17" opacity=".1"/>
+    <path d="M295 286L312 274L330 288L313 303Z" fill="url(#world-thought)"/>
+    <path d="M295 286L313 293L330 288M313 293V303" stroke="#cb8147" stroke-width=".8"/>
+    <path d="M295 271L291 265M312 262V255M329 271L335 266" stroke="#dab588" stroke-width=".9" stroke-linecap="round"/>
+    <g class="motion-response">
+      <path d="M421 215C427 203 440 201 450 207M427 221C431 213 439 212 446 216" stroke="#b9a170" stroke-width="1" stroke-linecap="round"/>
     </g>
-    <g class="ambient-warmth" stroke="#d7a45c" stroke-width="1" opacity=".58">
-      <path d="M278 335Q268 320 279 309T279 280"/>
-      <path d="M288 342Q278 327 290 316T290 290"/>
-      <path d="M430 315Q420 302 432 290T432 267"/>
-    </g>
-    <g transform="translate(476 422)">
-      <path d="M-24-3L0-15L25-2L0 12Z" fill="#e5d7a3"/>
-      <path d="M-24-3L-16 15L0 24V12Z" fill="#c4b378"/>
-      <path d="M0 12L25-2L17 15L0 24Z" fill="#ab9a67"/>
-      <g class="ambient-leaf">
-        <path d="M0 1V-48" stroke="#67875f" stroke-width="1.4"/>
-        <path d="M0-19L-24-41L-19-12Z" fill="#bacba5"/>
-        <path d="M0-19L-24-41L-7-28Z" fill="#d3dcc0"/>
-        <path d="M0-33L22-56L18-29Z" fill="#7d9978"/>
-        <path d="M0-33L22-56L6-43Z" fill="#a9bb92"/>
+    <path class="motion-feedback" d="M484 432C446 485 320 487 259 447C210 415 243 366 294 367" stroke="#829a75" stroke-width="1.1" stroke-dasharray="3 6"/>
+    <path d="M287 363L295 367L287 371" stroke="#829a75" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M307 367C324 367 327 352 318 346C311 341 304 345 304 351M310 376V377" stroke="#d49551" stroke-width="1.6" stroke-linecap="round"/>
+    <g transform="translate(141 288)">
+      <g class="motion-token motion-use" style="--motion-path:path('M0 0C51 -36 91 -31 131 -2C153 14 175 28 203 31')">
+        <circle r="5" fill="#e58d44" stroke="#fff1d6" stroke-width="2"/>
       </g>
     </g>
-    <g transform="translate(149 225) rotate(9)"><g class="ambient-paper">
-      <path d="M0 0H60V77H0Z" fill="#fff9e6"/>
-      <path d="M8 13H40M8 19H28" stroke="#a8b891" stroke-width="1"/>
-      <path d="M10 53L28 40L45 48L30 63Z" fill="#dce2c5"/>
-      <path d="M10 53L28 27L45 48M28 27V40L30 63" stroke="#91a579" stroke-width=".9"/>
-      <path d="M43 0V16L48 12L53 16V0Z" fill="#e8cd82"/>
-    </g></g>
-    <path d="M99 287Q86 253 119 240" stroke="#aab99a" stroke-width=".9" stroke-dasharray="2 5"/>
-    <g class="ambient-glint"><use href="#world-spark" x="214" y="136"/><use href="#world-spark" x="515" y="290"/></g>
-    <g class="ambient-leaf"><use href="#world-sprig" transform="translate(372 469) scale(.8)"/></g>
-    <path d="M483 184L495 171L503 184L494 197Z" fill="#e5d392"/>
-    <path d="M494 174V194" stroke="#b4a66d" stroke-width=".7"/>
+    <g transform="translate(484 432)">
+      <g class="motion-token motion-learn" style="--motion-path:path('M0 0C-38 53 -164 55 -225 15C-274 -17 -241 -66 -190 -65')">
+        <circle r="4" fill="#9eaf86" stroke="#f7f5ed" stroke-width="1.5"/>
+      </g>
+    </g>
+    <circle cx="141" cy="288" r="10" stroke="#dfbd91" stroke-width=".8"/>
+    <use href="#world-cross" x="134" y="177"/><use href="#world-cross" x="524" y="213"/>
+    <text x="121" y="250">make</text>
+    <text x="438" y="256">use</text>
+    <text x="341" y="490">learn</text>
+    <text x="243" y="132">what happens in someone's hands?</text>
   </g>
-<g class="travelling-fox" transform="translate(300 295) scale(1.1)"><g class="fox-breathe"><svg x="-150" y="-150" width="300" height="300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-labelledby="mascot-title mascot-desc">
-  <title id="mascot-title">A curious little fox</title>
-  <desc id="mascot-desc">A friendly orange fox with triangular ears, cream cheeks and a generous brush tail. Five poses accompany the story: curious, listening, examining, building and nurturing.</desc>
-  <style>.mascot-pose{display:none}.pose-0{display:inline}</style>
-  <!--
-    Original vector character inspired by Zebang's triangular fox identity.
-    This is a new mascot, not a reconstruction of his original logo.
-    Five equal-size poses are switched by the host page; no external assets.
-    Animation hooks are real groups, not shadow-tree symbols:
-      .fox-tail  origin 181 230 — a slow, small tail sway
-      .fox-head  origin 150 147 — a gentle attentive tilt
-      .fox-eyes  origin 148 124 — an occasional blink
-      .fox-body  origin 149 247 — a quiet breath
-    Static pose transforms sit on parent groups so CSS can animate the hooks.
-    Every expression and prop remains within the 300×300 artboard.
-  -->
-  <g class="mascot-pose pose-0" data-pose="curious">
-    <g transform="translate(0 0)">
-      <g class="fox-tail" style="transform-origin:181px 230px">
-        <path fill="#ed893e" d="M171 233q17 31 52 16l26-20 25-50-15-53-27 32-9 43-30 8Z"/>
-        <path fill="#d96f34" d="m171 233 52-32 26 28-26 20q-35 15-52-16Z"/>
-        <path fill="#ffad67" d="m232 158 27-32-7 49-29 26Z"/>
-        <path fill="#fff1d8" d="m259 126 15 53-10 20-12-16-12 7 5-25-13-7Z"/>
-        <path fill="#ffe4bf" d="m259 126 15 53-10 20-12-16Z"/>
-      </g>
-    </g>    <g class="fox-body" style="transform-origin:149px 247px">
-      <path fill="#ed893e" d="M120 162q28-19 55 4l16 54q8 22-13 31l-33 6-30-9q-17-11-8-33Z"/>
-      <path fill="#fd7e14" d="m154 162 21 4 16 54q8 22-13 31l-33 6 12-36Z"/>
-      <path fill="#fff1d8" d="m126 174 27 10 19-15 0 29-20 37-25-29Z"/>
-      <path fill="#ffe4bf" d="m153 184 19-15v29l-20 37Z"/>
-      <path fill="#d96f34" d="m124 213 8 33-12 9-15-5q-7-18 5-32Z"/>
-      <path fill="#ed893e" d="m173 210 9 9q12 16 1 31l-14 5-10-9Z"/>
-      <path fill="#fff1d8" d="M112 249q10-6 19-1l3 7q-12 6-27 0Zm51 0q11-6 20-1l4 7q-14 6-28 0Z"/>
-      <path d="m117 251 1 4m8-4 1 4m42-4 1 4m8-4 1 4" stroke="#e1bf9f" stroke-width="1.2" stroke-linecap="round"/>
-    </g>    <g transform="rotate(-4 150 147)">
-      <g class="fox-head" style="transform-origin:150px 147px">
-
-        <!-- Angular ears and cheek planes retain the original logo's triangular vocabulary. -->
-        <path fill="#ed893e" d="M85 111 83 48Q83 43 88 47L122 77Q145 68 173 75L207 42Q212 38 212 45L209 106 220 120 205 149 153 179 99 153 77 124Z"/>
-        <path fill="#fd7e14" d="m122 77 26 10 25-12 36 31 11 14-15 29-52 30-5-92-49 66-22-29 8-13Z"/>
-        <path fill="#ffd6b7" d="m92 61 25 23-25 20Z"/>
-        <path fill="#ffd6b7" d="m202 56-22 27 22 17Z"/>
-        <path fill="#c96430" d="m93 77 12 13-13 11Zm108-5-10 17 10 9Z" opacity=".56"/>
-        <path fill="#fff1d8" d="m82 124 28-12 38 24 36-24 31 9-13 25-49 28-51-25Z"/>
-        <path fill="#ffe4bf" d="m148 136 5 38 49-28 13-25-31-9Z"/>
-
-        <path d="m110 111 11-2m48 0 11 2" fill="none" stroke="#b8562d" stroke-width="2" stroke-linecap="round" opacity=".65"/>
-        <g class="fox-eyes" style="transform-origin:148px 124px"><ellipse cx="119" cy="124" rx="4.8" ry="6.4" fill="#264638"/><ellipse cx="176" cy="123" rx="4.8" ry="6.4" fill="#264638"/><circle cx="117.8" cy="122" r="1.45" fill="#fff8e9"/><circle cx="174.8" cy="121" r="1.45" fill="#fff8e9"/></g>
-        <path fill="#264638" d="M142 142q6-3 12 0l-4 5q-2 2-4 0Z"/>
-        <path d="M148 148v4m0 0q-4 4-8 0m8 0q4 4 8 0" fill="none" stroke="#8a5035" stroke-width="1.7" stroke-linecap="round"/>
-        <path d="m106 138 10 2m65-1 10-3" fill="none" stroke="#edb297" stroke-width="3" stroke-linecap="round" opacity=".75"/>
-      </g>
-    </g>
-  </g>
-  <g class="mascot-pose pose-1" data-pose="listening">
-    <g transform="rotate(-9 181 230)">
-      <g class="fox-tail" style="transform-origin:181px 230px">
-        <path fill="#ed893e" d="M171 233q17 31 52 16l26-20 25-50-15-53-27 32-9 43-30 8Z"/>
-        <path fill="#d96f34" d="m171 233 52-32 26 28-26 20q-35 15-52-16Z"/>
-        <path fill="#ffad67" d="m232 158 27-32-7 49-29 26Z"/>
-        <path fill="#fff1d8" d="m259 126 15 53-10 20-12-16-12 7 5-25-13-7Z"/>
-        <path fill="#ffe4bf" d="m259 126 15 53-10 20-12-16Z"/>
-      </g>
-    </g>    <g class="fox-body" style="transform-origin:149px 247px">
-      <path fill="#ed893e" d="M120 162q28-19 55 4l16 54q8 22-13 31l-33 6-30-9q-17-11-8-33Z"/>
-      <path fill="#fd7e14" d="m154 162 21 4 16 54q8 22-13 31l-33 6 12-36Z"/>
-      <path fill="#fff1d8" d="m126 174 27 10 19-15 0 29-20 37-25-29Z"/>
-      <path fill="#ffe4bf" d="m153 184 19-15v29l-20 37Z"/>
-      <path fill="#d96f34" d="m124 213 8 33-12 9-15-5q-7-18 5-32Z"/>
-      <path fill="#ed893e" d="m173 210 9 9q12 16 1 31l-14 5-10-9Z"/>
-      <path fill="#fff1d8" d="M112 249q10-6 19-1l3 7q-12 6-27 0Zm51 0q11-6 20-1l4 7q-14 6-28 0Z"/>
-      <path d="m117 251 1 4m8-4 1 4m42-4 1 4m8-4 1 4" stroke="#e1bf9f" stroke-width="1.2" stroke-linecap="round"/>
-    </g>    <g transform="translate(-3 3) rotate(9 150 147)">
-      <g class="fox-head" style="transform-origin:150px 147px">
-
-        <!-- Angular ears and cheek planes retain the original logo's triangular vocabulary. -->
-        <path fill="#ed893e" d="M85 111 83 48Q83 43 88 47L122 77Q145 68 173 75L207 42Q212 38 212 45L209 106 220 120 205 149 153 179 99 153 77 124Z"/>
-        <path fill="#fd7e14" d="m122 77 26 10 25-12 36 31 11 14-15 29-52 30-5-92-49 66-22-29 8-13Z"/>
-        <path fill="#ffd6b7" d="m92 61 25 23-25 20Z"/>
-        <path fill="#ffd6b7" d="m202 56-22 27 22 17Z"/>
-        <path fill="#c96430" d="m93 77 12 13-13 11Zm108-5-10 17 10 9Z" opacity=".56"/>
-        <path fill="#fff1d8" d="m82 124 28-12 38 24 36-24 31 9-13 25-49 28-51-25Z"/>
-        <path fill="#ffe4bf" d="m148 136 5 38 49-28 13-25-31-9Z"/>
-
-
-        <g class="fox-eyes" style="transform-origin:148px 124px"><ellipse cx="119" cy="124" rx="4.8" ry="6.4" fill="#264638"/><ellipse cx="176" cy="123" rx="4.8" ry="6.4" fill="#264638"/><circle cx="117.8" cy="122" r="1.45" fill="#fff8e9"/><circle cx="174.8" cy="121" r="1.45" fill="#fff8e9"/></g>
-        <path fill="#264638" d="M142 142q6-3 12 0l-4 5q-2 2-4 0Z"/>
-        <path d="M148 148v4m0 0q-4 4-8 0m8 0q4 4 8 0" fill="none" stroke="#8a5035" stroke-width="1.7" stroke-linecap="round"/>
-        <path d="m106 138 10 2m65-1 10-3" fill="none" stroke="#edb297" stroke-width="3" stroke-linecap="round" opacity=".75"/>
-      </g>
-    </g>
-    <!-- A lifted paw reads as listening, without turning the fox into a human. -->
-    <path fill="#d96f34" d="m177 209 7-35 13-6 7 11-10 32q-8 11-17-2Z"/>
-    <path fill="#fff1d8" d="M184 174q1-12 11-12 10 2 10 13l-4 7-17-1Z"/>
-    <path d="m190 167 0 7m7-8 0 7" stroke="#e1bf9f" stroke-width="1.3" stroke-linecap="round"/>
-
-  </g>
-  <g class="mascot-pose pose-2" data-pose="examining">
-    <g transform="rotate(6 181 230)">
-      <g class="fox-tail" style="transform-origin:181px 230px">
-        <path fill="#ed893e" d="M171 233q17 31 52 16l26-20 25-50-15-53-27 32-9 43-30 8Z"/>
-        <path fill="#d96f34" d="m171 233 52-32 26 28-26 20q-35 15-52-16Z"/>
-        <path fill="#ffad67" d="m232 158 27-32-7 49-29 26Z"/>
-        <path fill="#fff1d8" d="m259 126 15 53-10 20-12-16-12 7 5-25-13-7Z"/>
-        <path fill="#ffe4bf" d="m259 126 15 53-10 20-12-16Z"/>
-      </g>
-    </g>    <g class="fox-body" style="transform-origin:149px 247px">
-      <path fill="#ed893e" d="M120 162q28-19 55 4l16 54q8 22-13 31l-33 6-30-9q-17-11-8-33Z"/>
-      <path fill="#fd7e14" d="m154 162 21 4 16 54q8 22-13 31l-33 6 12-36Z"/>
-      <path fill="#fff1d8" d="m126 174 27 10 19-15 0 29-20 37-25-29Z"/>
-      <path fill="#ffe4bf" d="m153 184 19-15v29l-20 37Z"/>
-      <path fill="#d96f34" d="m124 213 8 33-12 9-15-5q-7-18 5-32Z"/>
-      <path fill="#ed893e" d="m173 210 9 9q12 16 1 31l-14 5-10-9Z"/>
-      <path fill="#fff1d8" d="M112 249q10-6 19-1l3 7q-12 6-27 0Zm51 0q11-6 20-1l4 7q-14 6-28 0Z"/>
-      <path d="m117 251 1 4m8-4 1 4m42-4 1 4m8-4 1 4" stroke="#e1bf9f" stroke-width="1.2" stroke-linecap="round"/>
-    </g>    <g transform="translate(7 9) rotate(-10 150 147)">
-      <g class="fox-head" style="transform-origin:150px 147px">
-
-        <!-- Angular ears and cheek planes retain the original logo's triangular vocabulary. -->
-        <path fill="#ed893e" d="M85 111 83 48Q83 43 88 47L122 77Q145 68 173 75L207 42Q212 38 212 45L209 106 220 120 205 149 153 179 99 153 77 124Z"/>
-        <path fill="#fd7e14" d="m122 77 26 10 25-12 36 31 11 14-15 29-52 30-5-92-49 66-22-29 8-13Z"/>
-        <path fill="#ffd6b7" d="m92 61 25 23-25 20Z"/>
-        <path fill="#ffd6b7" d="m202 56-22 27 22 17Z"/>
-        <path fill="#c96430" d="m93 77 12 13-13 11Zm108-5-10 17 10 9Z" opacity=".56"/>
-        <path fill="#fff1d8" d="m82 124 28-12 38 24 36-24 31 9-13 25-49 28-51-25Z"/>
-        <path fill="#ffe4bf" d="m148 136 5 38 49-28 13-25-31-9Z"/>
-
-        <path d="m110 111 11-2m48 0 11 2" fill="none" stroke="#b8562d" stroke-width="2" stroke-linecap="round" opacity=".65"/>
-        <g class="fox-eyes" style="transform-origin:148px 124px"><ellipse cx="119" cy="124" rx="4.8" ry="6.4" fill="#264638"/><ellipse cx="176" cy="123" rx="4.8" ry="6.4" fill="#264638"/><circle cx="117.8" cy="122" r="1.45" fill="#fff8e9"/><circle cx="174.8" cy="121" r="1.45" fill="#fff8e9"/></g>
-        <path fill="#264638" d="M142 142q6-3 12 0l-4 5q-2 2-4 0Z"/>
-        <path d="M148 148v4m0 0q-4 4-8 0m8 0q4 4 8 0" fill="none" stroke="#8a5035" stroke-width="1.7" stroke-linecap="round"/>
-        <path d="m106 138 10 2m65-1 10-3" fill="none" stroke="#edb297" stroke-width="3" stroke-linecap="round" opacity=".75"/>
-      </g>
-    </g>
-    <!-- Glass is held beside the face so the expression stays readable at thumbnail size. -->
-    <g class="fox-prop prop-lens" transform="rotate(20 204 184)">
-      <path d="M204 199v31" stroke="#4c6d54" stroke-width="9" stroke-linecap="round"/>
-      <circle cx="204" cy="179" r="23" fill="#cee0c4" fill-opacity=".56" stroke="#365d48" stroke-width="4.5"/>
-      <path d="M191 174q3-10 13-10" fill="none" stroke="#fff8e9" stroke-width="3" stroke-linecap="round"/>
-      <path d="m198 180 6-4 6 4-6 8Z" fill="#a5ba87"/>
-    </g>
-    <path fill="#ed893e" d="m171 212 26-5 8 9-8 9-27 3q-10-5 1-16Z"/>
-    <path fill="#fff1d8" d="m197 207 8 2 5 8-9 8-8-3Z"/>
-
-  </g>
-  <g class="mascot-pose pose-3" data-pose="building">
-    <g transform="translate(-4 1) rotate(-4 181 230)">
-      <g class="fox-tail" style="transform-origin:181px 230px">
-        <path fill="#ed893e" d="M171 233q17 31 52 16l26-20 25-50-15-53-27 32-9 43-30 8Z"/>
-        <path fill="#d96f34" d="m171 233 52-32 26 28-26 20q-35 15-52-16Z"/>
-        <path fill="#ffad67" d="m232 158 27-32-7 49-29 26Z"/>
-        <path fill="#fff1d8" d="m259 126 15 53-10 20-12-16-12 7 5-25-13-7Z"/>
-        <path fill="#ffe4bf" d="m259 126 15 53-10 20-12-16Z"/>
-      </g>
-    </g>    <g class="fox-body" style="transform-origin:149px 247px">
-      <path fill="#ed893e" d="M120 162q28-19 55 4l16 54q8 22-13 31l-33 6-30-9q-17-11-8-33Z"/>
-      <path fill="#fd7e14" d="m154 162 21 4 16 54q8 22-13 31l-33 6 12-36Z"/>
-      <path fill="#fff1d8" d="m126 174 27 10 19-15 0 29-20 37-25-29Z"/>
-      <path fill="#ffe4bf" d="m153 184 19-15v29l-20 37Z"/>
-      <path fill="#d96f34" d="m124 213 8 33-12 9-15-5q-7-18 5-32Z"/>
-      <path fill="#ed893e" d="m173 210 9 9q12 16 1 31l-14 5-10-9Z"/>
-      <path fill="#fff1d8" d="M112 249q10-6 19-1l3 7q-12 6-27 0Zm51 0q11-6 20-1l4 7q-14 6-28 0Z"/>
-      <path d="m117 251 1 4m8-4 1 4m42-4 1 4m8-4 1 4" stroke="#e1bf9f" stroke-width="1.2" stroke-linecap="round"/>
-    </g>    <g transform="translate(-5 -2) rotate(2 150 147)">
-      <g class="fox-head" style="transform-origin:150px 147px">
-
-        <!-- Angular ears and cheek planes retain the original logo's triangular vocabulary. -->
-        <path fill="#ed893e" d="M85 111 83 48Q83 43 88 47L122 77Q145 68 173 75L207 42Q212 38 212 45L209 106 220 120 205 149 153 179 99 153 77 124Z"/>
-        <path fill="#fd7e14" d="m122 77 26 10 25-12 36 31 11 14-15 29-52 30-5-92-49 66-22-29 8-13Z"/>
-        <path fill="#ffd6b7" d="m92 61 25 23-25 20Z"/>
-        <path fill="#ffd6b7" d="m202 56-22 27 22 17Z"/>
-        <path fill="#c96430" d="m93 77 12 13-13 11Zm108-5-10 17 10 9Z" opacity=".56"/>
-        <path fill="#fff1d8" d="m82 124 28-12 38 24 36-24 31 9-13 25-49 28-51-25Z"/>
-        <path fill="#ffe4bf" d="m148 136 5 38 49-28 13-25-31-9Z"/>
-
-
-        <g class="fox-eyes" style="transform-origin:148px 124px"><ellipse cx="119" cy="124" rx="4.8" ry="6.4" fill="#264638"/><ellipse cx="176" cy="123" rx="4.8" ry="6.4" fill="#264638"/><circle cx="117.8" cy="122" r="1.45" fill="#fff8e9"/><circle cx="174.8" cy="121" r="1.45" fill="#fff8e9"/></g>
-        <path fill="#264638" d="M142 142q6-3 12 0l-4 5q-2 2-4 0Z"/>
-        <path d="M148 148v4m0 0q-4 4-8 0m8 0q4 4 8 0" fill="none" stroke="#8a5035" stroke-width="1.7" stroke-linecap="round"/>
-        <path d="m106 138 10 2m65-1 10-3" fill="none" stroke="#edb297" stroke-width="3" stroke-linecap="round" opacity=".75"/>
-      </g>
-    </g>
-    <g class="fox-prop prop-piece">
-      <path fill="#62805c" d="m151 194 34-25 35 21-7 42-46 5Z"/>
-      <path fill="#9eb68c" d="m151 194 34-25 6 34-24 34Z"/>
-      <path fill="#c9d5ac" d="m185 169 35 21-29 13Z"/>
-      <path d="m191 204 22 28" stroke="#f2f1d9" stroke-width="1" opacity=".4"/>
-    </g>
-    <path fill="#d96f34" d="m122 201 29 8 10 13-8 10-29-11q-13-12-2-20Z"/>
-    <path fill="#fff1d8" d="m149 209 10 5 5 9-10 7-10-8Z"/>
-    <path fill="#ed893e" d="m181 214 29-10 9 10-8 14-24 4Z"/>
-    <path fill="#fff1d8" d="m209 204 9 5 4 8-12 12-8-10Z"/>
-
-  </g>
-  <g class="mascot-pose pose-4" data-pose="nurturing">
-    <g transform="rotate(-11 181 230)">
-      <g class="fox-tail" style="transform-origin:181px 230px">
-        <path fill="#ed893e" d="M171 233q17 31 52 16l26-20 25-50-15-53-27 32-9 43-30 8Z"/>
-        <path fill="#d96f34" d="m171 233 52-32 26 28-26 20q-35 15-52-16Z"/>
-        <path fill="#ffad67" d="m232 158 27-32-7 49-29 26Z"/>
-        <path fill="#fff1d8" d="m259 126 15 53-10 20-12-16-12 7 5-25-13-7Z"/>
-        <path fill="#ffe4bf" d="m259 126 15 53-10 20-12-16Z"/>
-      </g>
-    </g>    <g class="fox-body" style="transform-origin:149px 247px">
-      <path fill="#ed893e" d="M120 162q28-19 55 4l16 54q8 22-13 31l-33 6-30-9q-17-11-8-33Z"/>
-      <path fill="#fd7e14" d="m154 162 21 4 16 54q8 22-13 31l-33 6 12-36Z"/>
-      <path fill="#fff1d8" d="m126 174 27 10 19-15 0 29-20 37-25-29Z"/>
-      <path fill="#ffe4bf" d="m153 184 19-15v29l-20 37Z"/>
-      <path fill="#d96f34" d="m124 213 8 33-12 9-15-5q-7-18 5-32Z"/>
-      <path fill="#ed893e" d="m173 210 9 9q12 16 1 31l-14 5-10-9Z"/>
-      <path fill="#fff1d8" d="M112 249q10-6 19-1l3 7q-12 6-27 0Zm51 0q11-6 20-1l4 7q-14 6-28 0Z"/>
-      <path d="m117 251 1 4m8-4 1 4m42-4 1 4m8-4 1 4" stroke="#e1bf9f" stroke-width="1.2" stroke-linecap="round"/>
-    </g>    <g transform="translate(-5 0) rotate(3 150 147)">
-      <g class="fox-head" style="transform-origin:150px 147px">
-
-        <!-- Angular ears and cheek planes retain the original logo's triangular vocabulary. -->
-        <path fill="#ed893e" d="M85 111 83 48Q83 43 88 47L122 77Q145 68 173 75L207 42Q212 38 212 45L209 106 220 120 205 149 153 179 99 153 77 124Z"/>
-        <path fill="#fd7e14" d="m122 77 26 10 25-12 36 31 11 14-15 29-52 30-5-92-49 66-22-29 8-13Z"/>
-        <path fill="#ffd6b7" d="m92 61 25 23-25 20Z"/>
-        <path fill="#ffd6b7" d="m202 56-22 27 22 17Z"/>
-        <path fill="#c96430" d="m93 77 12 13-13 11Zm108-5-10 17 10 9Z" opacity=".56"/>
-        <path fill="#fff1d8" d="m82 124 28-12 38 24 36-24 31 9-13 25-49 28-51-25Z"/>
-        <path fill="#ffe4bf" d="m148 136 5 38 49-28 13-25-31-9Z"/>
-
-
-        <g class="fox-eyes" style="transform-origin:148px 124px"><path d="M112 126q6-7 12 0m46 0q6-7 12 0" fill="none" stroke="#264638" stroke-width="4" stroke-linecap="round"/></g>
-        <path fill="#264638" d="M142 142q6-3 12 0l-4 5q-2 2-4 0Z"/>
-        <path d="M148 148v4m0 0q-4 4-8 0m8 0q4 4 8 0" fill="none" stroke="#8a5035" stroke-width="1.7" stroke-linecap="round"/>
-        <path d="m106 138 10 2m65-1 10-3" fill="none" stroke="#edb297" stroke-width="3" stroke-linecap="round" opacity=".75"/>
-      </g>
-    </g>
-    <g class="fox-prop prop-seedling">
-      <path d="M210 212v-39" stroke="#456846" stroke-width="3.2" stroke-linecap="round"/>
-      <path fill="#7e9b68" d="m210 184-17-3-10-15 18 2 9 8Z"/>
-      <path fill="#557853" d="m210 190 15-5 11-18-19 5-7 9Z"/>
-      <path fill="#ead074" d="m191 205 37-1-7 27-23 1Z"/>
-      <path fill="#c6aa53" d="m210 205 18-1-7 27-11 1Z"/>
-      <path fill="#f2de9a" d="m191 205 37-1-4 5-29 1Z"/>
-    </g>
-    <path fill="#ed893e" d="m173 216 25 5 6 8-7 8-27-5q-8-8 3-16Z"/>
-    <path fill="#fff1d8" d="m196 220 8 3 3 7-8 7-7-5Z"/>
-
-  </g>
+<g class="travelling-fox" transform="translate(300 330) scale(1)"><g class="fox-breathe"><svg x="-200" y="-150" width="400" height="300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Elegant fox companion">
+<title>Elegant fox companion</title>
+<desc>An original orange fox built from long, interlocking curves: a sweeping brush tail, poised legs and a pointed profile. Five poses trace curiosity, attention, investigation, action and return.</desc>
+<style>.mascot-pose{display:none}.pose-0{display:inline}</style>
+<!-- Original SVG artwork. Static pose transforms wrap animation hooks. Tail / head / body pivots are local SVG coordinates, defined on each group. All poses share a 400×300 artboard; no external assets, symbols or IDs. -->
+<g class="mascot-pose pose-0" data-pose="stand">
+<g transform="translate(0 0)">
+<g class="fox-tail" style="transform-origin:182px 150px">
+<path d="M183 151C137 155 132 95 83 81C53 72 28 82 14 94C53 88 56 139 96 158C122 171 155 166 183 151Z" fill="#f47b20"/>
+<path d="M14 94C52 57 98 72 123 103C141 126 152 148 183 151C142 151 122 122 89 108C58 94 37 86 14 94Z" fill="#ffaf6a"/>
+<path d="M63 103C95 101 113 119 134 136C154 151 168 153 183 151C151 176 123 166 109 151C91 135 88 113 63 103Z" fill="#d84b12"/>
+<path d="M14 94C38 87 60 90 82 101C65 111 45 112 14 94Z" fill="#fff1db"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-back" style="transform-origin:190px 178px">
+<path d="M191 168C203 184 206 202 196 220C192 229 195 240 207 256Q224 258 223 265L206 265C190 251 176 236 181 222C187 208 182 196 176 188Z" fill="#30483e"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:268px 170px">
+<path d="M280 143C277 172 285 194 299 202C314 211 313 227 303 237Q298 238 299 229C305 213 290 214 280 207C258 193 260 177 258 164Z" fill="#30483e"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:234px 166px">
+<path d="M174 145C205 142 234 155 260 136C281 129 279 114 286 104C299 114 310 126 309 140C306 165 287 180 265 181C239 185 218 171 202 181C186 198 168 210 145 214L154 183Z" fill="#f47b20"/>
+<path d="M174 145C200 141 226 151 246 144C221 154 202 170 184 189C171 202 157 209 145 214L154 183Z" fill="#ffaf6a"/>
+<path d="M246 144C268 137 280 129 286 104C294 129 282 151 266 164C247 181 220 168 202 181C212 166 225 150 246 144Z" fill="#d84b12"/>
+<path d="M286 114C287 137 278 157 265 167C281 174 301 157 309 140C310 127 305 117 298 106Z" fill="#fff1db"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-back" style="transform-origin:177px 176px">
+<path d="M181 170C179 193 163 208 146 214C135 226 123 245 113 257C125 257 128 263 123 267L103 267C101 262 104 253 108 246C121 221 135 197 151 184Z" fill="#30483e"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:252px 177px">
+<path d="M261 156C266 177 266 200 271 220C275 236 284 247 296 258C311 256 317 261 316 266L295 266C281 255 271 245 263 227C252 203 245 190 234 184Z" fill="#30483e"/>
+</g>
+</g>
+<path d="M234 154C251 154 262 168 265 186C250 187 243 178 231 177C220 175 211 176 202 181C215 166 221 158 234 154Z" fill="#f47b20"/>
+<g transform="translate(299 109) rotate(0) scale(0.82 0.82)">
+<g class="fox-head" style="transform-origin:0px 32px">
+<path d="M-5-36 4-59Q12-48 15-28Z" fill="#d84b12"/>
+<path d="M-41 59C-16 36-19 4-24-14C-31-30-25-55-18-66L-4-40Q1-33 9-32C23-35 30-18 43-16L62-18C59-6 44-4 31 1C20 5 10 13 7 27C2 48-11 60-41 59Z" fill="#f47b20"/>
+<path d="M62-16C45-12 34-18 24-16C7-11-1 10-2 29C-3 44-14 56-41 59C-11 60 2 48 7 27C10 13 20 5 31 1C44-4 59-6 62-16Z" fill="#fff1db"/>
+<path d="M-18-61C-18-44-10-37-4-35L-15-23C-24-36-23-49-18-61Z" fill="#fff1db"/>
+<path d="M-18-66C-23-56-27-46-26-36L-17-34C-19-45-20-55-18-66Z" fill="#30483e"/>
+<path d="M-41 59C-16 36-19 4-24-14C-21 6-9 20-2 29C-3 44-14 56-41 59Z" fill="#d84b12"/>
+<path d="M56-17 62-18Q61-11 58-9Z" fill="#30483e"/>
+<g transform="translate(0 0)">
+<g class="fox-eyes" style="transform-origin:28px -23px">
+<path d="M23-23Q28-27 33-23" fill="none" stroke="#30483e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g class="mascot-pose pose-1" data-pose="sit">
+<g transform="translate(0 0)">
+<g class="fox-tail" style="transform-origin:227px 250px">
+<path d="M228 252C168 250 101 267 76 218C59 184 72 144 95 126C79 164 99 185 130 197C173 213 189 240 228 252Z" fill="#f47b20"/>
+<path d="M95 126C64 159 91 188 130 197C170 207 188 241 228 252C177 246 139 222 105 213C76 205 60 164 95 126Z" fill="#ffaf6a"/>
+<path d="M79 211C98 249 166 238 228 252C172 260 105 267 79 228Z" fill="#d84b12"/>
+<path d="M95 126C84 153 91 173 108 185C80 181 73 154 95 126Z" fill="#fff1db"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:219px 246px">
+<path d="M210 255C184 252 166 244 165 222C164 201 181 179 201 153C219 129 219 102 238 91C258 101 269 126 262 153C257 172 247 191 244 211C242 228 247 243 258 256Z" fill="#f47b20"/>
+<path d="M210 255C184 252 166 244 165 222C164 201 181 179 201 153C202 181 181 209 190 231C195 245 208 251 221 255Z" fill="#ffaf6a"/>
+<path d="M238 91C234 129 256 128 246 154C236 180 220 206 221 225C225 215 232 204 241 201C245 182 257 172 262 153C269 126 258 101 238 91Z" fill="#d84b12"/>
+<path d="M246 111C265 132 254 157 244 178C235 197 236 217 241 238C222 224 224 205 232 184C241 162 250 141 246 111Z" fill="#fff1db"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:234px 179px">
+<path d="M237 165C228 198 234 229 253 254Q270 253 271 260L251 260C236 251 226 230 219 210C213 194 219 176 225 167Z" fill="#30483e"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:247px 177px">
+<path d="M247 164C241 195 246 230 264 254Q280 253 282 260L263 260C248 251 238 230 232 210C226 194 233 176 239 167Z" fill="#f47b20"/>
+</g>
+</g>
+<path d="M258 245 264 254Q280 253 282 260L263 260Q258 256 255 252Z" fill="#30483e"/>
+<g transform="translate(247 89) rotate(-6) scale(0.83 0.83)">
+<g class="fox-head" style="transform-origin:0px 32px">
+<path d="M-5-36 4-59Q12-48 15-28Z" fill="#d84b12"/>
+<path d="M-41 59C-16 36-19 4-24-14C-31-30-25-55-18-66L-4-40Q1-33 9-32C23-35 30-18 43-16L62-18C59-6 44-4 31 1C20 5 10 13 7 27C2 48-11 60-41 59Z" fill="#f47b20"/>
+<path d="M62-16C45-12 34-18 24-16C7-11-1 10-2 29C-3 44-14 56-41 59C-11 60 2 48 7 27C10 13 20 5 31 1C44-4 59-6 62-16Z" fill="#fff1db"/>
+<path d="M-18-61C-18-44-10-37-4-35L-15-23C-24-36-23-49-18-61Z" fill="#fff1db"/>
+<path d="M-18-66C-23-56-27-46-26-36L-17-34C-19-45-20-55-18-66Z" fill="#30483e"/>
+<path d="M-41 59C-16 36-19 4-24-14C-21 6-9 20-2 29C-3 44-14 56-41 59Z" fill="#d84b12"/>
+<path d="M56-17 62-18Q61-11 58-9Z" fill="#30483e"/>
+<g transform="translate(0 0)">
+<g class="fox-eyes" style="transform-origin:28px -23px">
+<path d="M23-23Q28-27 33-23" fill="none" stroke="#30483e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g class="mascot-pose pose-2" data-pose="inspect">
+<g transform="translate(0 0)">
+<g class="fox-tail" style="transform-origin:176px 143px">
+<path d="M178 146C134 145 143 93 99 66C66 46 40 62 21 79C53 72 45 120 79 137C105 151 143 159 178 146Z" fill="#f47b20"/>
+<path d="M21 79C52 41 100 44 122 81C144 114 147 141 178 146C137 143 116 110 89 91C65 75 43 69 21 79Z" fill="#ffaf6a"/>
+<path d="M69 84C87 96 89 122 114 137C133 147 154 151 178 146C122 168 91 149 81 129Z" fill="#d84b12"/>
+<path d="M21 79C35 65 64 67 82 80C62 88 46 90 21 79Z" fill="#fff1db"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-back" style="transform-origin:185px 163px">
+<path d="M187 155C196 178 192 201 183 219C183 231 190 248 202 258Q217 258 219 265L200 265C186 249 173 234 172 218C179 195 178 181 172 166Z" fill="#30483e"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:222px 169px">
+<path d="M171 139C202 132 228 145 247 149C269 154 283 164 294 182L277 213C262 196 247 183 230 182C208 183 191 171 179 186C170 199 157 207 145 210L153 177Z" fill="#f47b20"/>
+<path d="M171 139C202 132 228 145 247 149C218 147 197 170 179 186C169 200 157 207 145 210L153 177Z" fill="#ffaf6a"/>
+<path d="M247 149C269 154 283 164 294 182L277 213C262 196 247 183 230 182C213 182 204 175 193 178C218 158 222 147 247 149Z" fill="#d84b12"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-back" style="transform-origin:169px 177px">
+<path d="M178 166C175 189 155 206 143 211C132 228 130 245 120 258Q135 256 138 265L117 265C111 260 114 253 116 245C120 222 133 197 147 186Z" fill="#30483e"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:259px 189px">
+<path d="M259 178C261 201 265 224 278 245L300 254Q312 253 315 261L295 262C277 257 262 245 254 224L243 198Z" fill="#30483e"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:271px 193px">
+<path d="M269 180C279 204 288 224 309 233L328 241Q341 240 342 248L325 250C301 244 283 235 272 218L258 198Z" fill="#f47b20"/>
+</g>
+</g>
+<path d="M310 233 328 241Q341 240 342 248L325 250Q311 246 302 241Z" fill="#30483e"/>
+<g transform="translate(294 175) rotate(52) scale(0.76 0.76)">
+<g class="fox-head" style="transform-origin:0px 32px">
+<path d="M-5-36 4-59Q12-48 15-28Z" fill="#d84b12"/>
+<path d="M-41 59C-16 36-19 4-24-14C-31-30-25-55-18-66L-4-40Q1-33 9-32C23-35 30-18 43-16L62-18C59-6 44-4 31 1C20 5 10 13 7 27C2 48-11 60-41 59Z" fill="#f47b20"/>
+<path d="M62-16C45-12 34-18 24-16C7-11-1 10-2 29C-3 44-14 56-41 59C-11 60 2 48 7 27C10 13 20 5 31 1C44-4 59-6 62-16Z" fill="#fff1db"/>
+<path d="M-18-61C-18-44-10-37-4-35L-15-23C-24-36-23-49-18-61Z" fill="#fff1db"/>
+<path d="M-18-66C-23-56-27-46-26-36L-17-34C-19-45-20-55-18-66Z" fill="#30483e"/>
+<path d="M-41 59C-16 36-19 4-24-14C-21 6-9 20-2 29C-3 44-14 56-41 59Z" fill="#d84b12"/>
+<path d="M56-17 62-18Q61-11 58-9Z" fill="#30483e"/>
+<g transform="translate(0 0)">
+<g class="fox-eyes" style="transform-origin:28px -23px">
+<path d="M23-23Q28-27 33-23" fill="none" stroke="#30483e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g class="mascot-pose pose-3" data-pose="leap">
+<g transform="translate(0 0)">
+<g class="fox-tail" style="transform-origin:176px 154px">
+<path d="M177 154C130 157 119 117 76 111C47 107 23 121 9 139C42 127 65 171 102 170C130 170 152 164 177 154Z" fill="#f47b20"/>
+<path d="M9 139C39 99 81 96 112 123C137 144 153 153 177 154C144 162 116 145 87 137C60 127 31 125 9 139Z" fill="#ffaf6a"/>
+<path d="M66 133C86 144 94 163 116 165C137 167 157 162 177 154C145 176 112 181 92 166Z" fill="#d84b12"/>
+<path d="M9 139C26 120 47 123 67 132C46 144 30 145 9 139Z" fill="#fff1db"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-back" style="transform-origin:190px 176px">
+<path d="M199 165C197 185 186 197 169 204C169 220 180 229 188 238Q201 240 201 247L186 246C170 235 156 220 154 203C168 193 176 179 177 170Z" fill="#30483e"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:266px 170px">
+<path d="M265 161C285 167 291 183 306 190L338 194Q346 202 344 208C326 207 307 204 293 198C278 192 264 184 253 178Z" fill="#30483e"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:235px 167px">
+<path d="M170 149C202 138 226 164 249 152C267 140 268 119 283 105C303 115 309 136 301 150C288 171 268 184 245 181C220 178 209 165 192 180C173 196 155 199 136 199C150 183 157 164 170 149Z" fill="#f47b20"/>
+<path d="M170 149C197 139 223 159 241 155C215 151 189 180 174 188C160 197 149 199 136 199C150 183 157 164 170 149Z" fill="#ffaf6a"/>
+<path d="M241 155C267 151 265 122 283 105C293 129 279 151 264 165C245 184 222 163 208 170C219 159 229 154 241 155Z" fill="#d84b12"/>
+<path d="M281 124C285 145 273 160 263 169C279 171 295 162 301 150C307 139 300 125 293 119Z" fill="#fff1db"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-back" style="transform-origin:178px 182px">
+<path d="M187 172C179 187 160 197 143 202C124 216 108 222 93 233Q89 244 81 245C79 236 85 228 93 222C115 206 129 193 150 186Z" fill="#30483e"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:254px 178px">
+<path d="M248 159C265 172 270 188 289 198C310 208 324 221 337 236Q350 239 355 247C346 250 338 247 332 241C317 230 304 223 285 216C263 210 252 192 236 181Z" fill="#30483e"/>
+</g>
+</g>
+<path d="M237 160C251 159 262 173 269 187C254 183 244 173 229 173C218 173 209 173 192 180C210 162 223 158 237 160Z" fill="#f47b20"/>
+<g transform="translate(300 121) rotate(9) scale(0.79 0.79)">
+<g class="fox-head" style="transform-origin:0px 32px">
+<path d="M-5-36 4-59Q12-48 15-28Z" fill="#d84b12"/>
+<path d="M-41 59C-16 36-19 4-24-14C-31-30-25-55-18-66L-4-40Q1-33 9-32C23-35 30-18 43-16L62-18C59-6 44-4 31 1C20 5 10 13 7 27C2 48-11 60-41 59Z" fill="#f47b20"/>
+<path d="M62-16C45-12 34-18 24-16C7-11-1 10-2 29C-3 44-14 56-41 59C-11 60 2 48 7 27C10 13 20 5 31 1C44-4 59-6 62-16Z" fill="#fff1db"/>
+<path d="M-18-61C-18-44-10-37-4-35L-15-23C-24-36-23-49-18-61Z" fill="#fff1db"/>
+<path d="M-18-66C-23-56-27-46-26-36L-17-34C-19-45-20-55-18-66Z" fill="#30483e"/>
+<path d="M-41 59C-16 36-19 4-24-14C-21 6-9 20-2 29C-3 44-14 56-41 59Z" fill="#d84b12"/>
+<path d="M56-17 62-18Q61-11 58-9Z" fill="#30483e"/>
+<g transform="translate(0 0)">
+<g class="fox-eyes" style="transform-origin:28px -23px">
+<path d="M23-23Q28-27 33-23" fill="none" stroke="#30483e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g class="mascot-pose pose-4" data-pose="return">
+<g transform="translate(0 0)">
+<g class="fox-tail" style="transform-origin:182px 150px">
+<path d="M183 151C137 155 132 95 83 81C53 72 28 82 14 94C53 88 56 139 96 158C122 171 155 166 183 151Z" fill="#f47b20"/>
+<path d="M14 94C52 57 98 72 123 103C141 126 152 148 183 151C142 151 122 122 89 108C58 94 37 86 14 94Z" fill="#ffaf6a"/>
+<path d="M63 103C95 101 113 119 134 136C154 151 168 153 183 151C151 176 123 166 109 151C91 135 88 113 63 103Z" fill="#d84b12"/>
+<path d="M14 94C38 87 60 90 82 101C65 111 45 112 14 94Z" fill="#fff1db"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-back" style="transform-origin:190px 178px">
+<path d="M191 168C203 184 206 202 196 220C192 229 195 240 207 256Q224 258 223 265L206 265C190 251 176 236 181 222C187 208 182 196 176 188Z" fill="#30483e"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:268px 170px">
+<path d="M280 143C277 172 285 194 299 202C314 211 313 227 303 237Q298 238 299 229C305 213 290 214 280 207C258 193 260 177 258 164Z" fill="#30483e"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:234px 166px">
+<path d="M174 145C205 142 234 155 260 136C281 129 279 114 286 104C299 114 310 126 309 140C306 165 287 180 265 181C239 185 218 171 202 181C186 198 168 210 145 214L154 183Z" fill="#f47b20"/>
+<path d="M174 145C200 141 226 151 246 144C221 154 202 170 184 189C171 202 157 209 145 214L154 183Z" fill="#ffaf6a"/>
+<path d="M246 144C268 137 280 129 286 104C294 129 282 151 266 164C247 181 220 168 202 181C212 166 225 150 246 144Z" fill="#d84b12"/>
+<path d="M286 114C287 137 278 157 265 167C281 174 301 157 309 140C310 127 305 117 298 106Z" fill="#fff1db"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-back" style="transform-origin:177px 176px">
+<path d="M181 170C179 193 163 208 146 214C135 226 123 245 113 257C125 257 128 263 123 267L103 267C101 262 104 253 108 246C121 221 135 197 151 184Z" fill="#30483e"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:252px 177px">
+<path d="M261 156C266 177 266 200 271 220C275 236 284 247 296 258C311 256 317 261 316 266L295 266C281 255 271 245 263 227C252 203 245 190 234 184Z" fill="#30483e"/>
+</g>
+</g>
+<path d="M234 154C251 154 262 168 265 186C250 187 243 178 231 177C220 175 211 176 202 181C215 166 221 158 234 154Z" fill="#f47b20"/>
+<g transform="translate(283 109) rotate(0) scale(-0.82 0.82)">
+<g class="fox-head" style="transform-origin:0px 32px">
+<path d="M-5-36 4-59Q12-48 15-28Z" fill="#d84b12"/>
+<path d="M-41 59C-16 36-19 4-24-14C-31-30-25-55-18-66L-4-40Q1-33 9-32C23-35 30-18 43-16L62-18C59-6 44-4 31 1C20 5 10 13 7 27C2 48-11 60-41 59Z" fill="#f47b20"/>
+<path d="M62-16C45-12 34-18 24-16C7-11-1 10-2 29C-3 44-14 56-41 59C-11 60 2 48 7 27C10 13 20 5 31 1C44-4 59-6 62-16Z" fill="#fff1db"/>
+<path d="M-18-61C-18-44-10-37-4-35L-15-23C-24-36-23-49-18-61Z" fill="#fff1db"/>
+<path d="M-18-66C-23-56-27-46-26-36L-17-34C-19-45-20-55-18-66Z" fill="#30483e"/>
+<path d="M-41 59C-16 36-19 4-24-14C-21 6-9 20-2 29C-3 44-14 56-41 59Z" fill="#d84b12"/>
+<path d="M56-17 62-18Q61-11 58-9Z" fill="#30483e"/>
+<g transform="translate(0 0)">
+<g class="fox-eyes" style="transform-origin:28px -23px">
+<path d="M23-23Q28-27 33-23" fill="none" stroke="#30483e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
 </svg>
 </g></g></svg>
       <span class="canvas-note">A fox, following a question.</span>
@@ -607,14 +514,13 @@
   <div class="story-pages">
     <header class="story-prologue story-step" data-step="0" id="beginning">
       <p class="eyebrow">ZEBANG WU · ENGINEERING, WITH CURIOSITY</p>
-      <h1>Follow<br>a question<span class="tail-punctuation" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 74" aria-hidden="true">
-  <!-- A fox brush curling upward from the baseline, independent of the original logo. -->
-  <g class="punctuation-tail" style="transform-origin:12px 64px">
-    <path fill="#fd7e14" d="M8 63q28 7 41-18l10-25L49 4 31 24l-3 18-15 9Z"/>
-    <path fill="#ed893e" d="m13 51 24-8 12 2Q36 70 8 63Z"/>
-    <path fill="#ffb370" d="m31 24 18-20-8 30-13 8Z"/>
-    <path fill="#fff1d8" d="m49 4 10 16-7 18-11-4-6 5 2-13-6-2Z"/>
-  </g>
+      <h1>Follow<br>a question<span class="tail-punctuation" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 70" aria-hidden="true">
+<g class="punctuation-tail" style="transform-origin:143px 52px">
+<path d="M143 52C105 55 100 22 63 14C39 9 19 17 6 29C35 21 45 53 75 59C99 64 126 58 143 52Z" fill="#f47b20"/>
+<path d="M6 29C30 1 65 6 86 26C109 48 125 52 143 52C109 57 89 39 65 30C42 22 22 20 6 29Z" fill="#ffaf6a"/>
+<path d="M51 27C72 30 77 51 97 54C112 58 131 55 143 52C111 70 84 62 71 48Z" fill="#d84b12"/>
+<path d="M6 29C19 17 42 20 59 27C42 37 25 38 6 29Z" fill="#fff1db"/>
+</g>
 </svg>
 </span><span class="sr-only">.</span><br><em>See where<br>it leads.</em></h1>
       <p class="story-intro">Between understanding a system<br class="desktop-break"> and making it useful, there’s a story.</p>
@@ -661,7 +567,7 @@
     </section>
   </div>
 </div>
-<section class="story-coda" aria-labelledby="coda-heading"><div class="coda-thread" aria-hidden="true"></div><p class="eyebrow">THE THREAD CONTINUES</p><h2 id="coda-heading">Understand more.<br>Make something useful.<br><em>Find the next question.</em></h2><p>Different disciplines, a shared direction.<br>That’s the kind of work I want to keep doing.</p><div class="coda-links"><a href="work.html">Explore all work <span>↗</span></a><a href="about.html">Meet the person behind it <span>↗</span></a><a href="cv.html">The résumé version <span>↗</span></a></div><span class="coda-signature">Zebang Wu <i>吴泽邦</i><img src="assets/art/geometric-mark.svg" width="40" height="40" alt=""></span><a class="coda-contact" href="mailto:wuzebang@westlake.edu.cn">wuzebang@westlake.edu.cn ↗</a></section>
+<section class="story-coda" aria-labelledby="coda-heading"><img class="coda-fox-line" src="assets/art/fox-line-leap.svg" width="400" height="300" alt="" loading="lazy"><div class="coda-thread" aria-hidden="true"></div><p class="eyebrow">THE THREAD CONTINUES</p><h2 id="coda-heading">Understand more.<br>Make something useful.<br><em>Find the next question.</em></h2><p>Different disciplines, a shared direction.<br>That’s the kind of work I want to keep doing.</p><div class="coda-links"><a href="work.html">Explore all work <span>↗</span></a><a href="about.html">Meet the person behind it <span>↗</span></a><a href="cv.html">The résumé version <span>↗</span></a></div><span class="coda-signature">Zebang Wu <i>吴泽邦</i><img src="assets/art/geometric-mark.svg" width="40" height="40" alt=""></span><a class="coda-contact" href="mailto:wuzebang@westlake.edu.cn">wuzebang@westlake.edu.cn ↗</a></section>
 </main>
 <footer class="site-footer"><div class="wrap"><div class="footer-top"><div><p class="eyebrow">Always curious about the next question.</p><h2>Let’s make something meaningful.</h2><p>Research, projects, and good conversations.</p></div><div class="footer-contact"><a class="text-link" href="mailto:wuzebang@westlake.edu.cn">wuzebang@westlake.edu.cn ↗</a><button class="copy-email" type="button" aria-label="Copy email address" title="Copy email address">⧉</button></div></div><div class="footer-bottom"><span>© 2026 Zebang Wu · 吴泽邦</span><span>A curious mind. A fox at heart.</span><a href="#top">Back to top ↑</a></div></div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>

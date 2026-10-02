@@ -62,6 +62,8 @@ def asset(path):
 
 def page(path, title, body, active, prefix=''):
     story_assets = f'<link rel="stylesheet" href="{asset("assets/css/story.css")}"><script defer src="{asset("assets/js/story.js")}"></script>' if path == 'index.html' else ''
+    if path == 'visual-system.html':
+        story_assets = f'<link rel="stylesheet" href="{asset("assets/css/visual-system.css")}">'
     links = [('Home', 'index.html'), ('Work', 'work.html'), ('About', 'about.html'), ('Writing', 'writing.html'), ('CV', 'cv.html')]
     nav = ''.join(f'<a href="{prefix}{href}"' + (' aria-current="page"' if label == active else '') + f'>{label}</a>' for label, href in links)
     html = f'''<!doctype html>
@@ -77,6 +79,9 @@ def page(path, title, body, active, prefix=''):
 <script defer src="{prefix}assets/js/privacy-gate.js"></script>
 <script defer src="{prefix}{asset('assets/js/portfolio.js')}"></script>
 {story_assets}
+<link rel="preload" href="{prefix}assets/garet/Garet-Book.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{prefix}assets/best_swashed/BestSwashed_PERSONAL_USE_ONLY.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="{prefix}{asset('assets/css/type-system.css')}">
 </head>
 <body id="top" class="{'story-page' if path == 'index.html' else 'collection-page'}">
 <a class="skip" href="#main">Skip to content</a>
@@ -138,11 +143,36 @@ def section_head(kicker, title, link='', label=''):
 home = (ROOT / 'content/home-story.html').read_text()
 world = (ROOT / 'assets/art/story-world.svg').read_text()
 mascot = (ROOT / 'assets/art/fox-mascot.svg').read_text()
-mascot = re.sub(r'<svg\b', '<svg x="-150" y="-150" width="300" height="300"', mascot, count=1)
-world = world.rsplit('</svg>', 1)[0] + '<g class="travelling-fox" transform="translate(300 295) scale(1.1)"><g class="fox-breathe">' + mascot + '</g></g></svg>'
+_, _, fox_width, fox_height = map(float, re.search(r'viewBox="([^"]+)"', mascot).group(1).split())
+mascot = re.sub(r'<svg\b', f'<svg x="{-fox_width / 2:g}" y="{-fox_height / 2:g}" width="{fox_width:g}" height="{fox_height:g}"', mascot, count=1)
+world = world.rsplit('</svg>', 1)[0] + '<g class="travelling-fox" transform="translate(300 330) scale(1)"><g class="fox-breathe">' + mascot + '</g></g></svg>'
 tail = (ROOT / 'assets/art/tail-punctuation.svg').read_text()
 home = home.replace('<!-- STORY_SCENE -->', world).replace('<!-- TAIL_PUNCTUATION -->', tail)
 page('index.html','Home',home,'Home')
+
+# A reviewable visual standard with reusable filled and contour assets.
+visual = '<section class="visual-intro"><a class="breadcrumb" href="index.html">← Back to the story</a>'+eyebrow('Zebang Wu / Visual language / 2026')+'<h1>A little wild.<br><em>Carefully drawn.</em></h1><p class="lede">An orange fox, a clear line, and room for curiosity. A shared language for character, illustration, typography, and motion.</p></section>'
+visual += '<section class="visual-section">'+eyebrow('01 / One character, two voices')+'<h2>Filled with energy.<br><em>Light on its feet.</em></h2><p>A tapered muzzle, long limbs, pointed ears, and a broad flowing tail define the silhouette. Curves carry the movement; a few colored planes give it depth.</p><div class="visual-duet">'
+for style, label in [('filled','Filled · the storyteller'),('line','Contour · the quieter voice')]:
+    src=f'assets/art/fox-{style}-stand.svg'
+    visual+=f'<figure class="visual-specimen"><img src="{src}" width="400" height="300" alt="{label} fox"><figcaption><span>{label}</span><a href="{src}" download>SVG ↓</a></figcaption></figure>'
+visual+='</div><div class="visual-note"><p>Use the filled fox as a focal point. Use its contour counterpart in margins, transitions, and supporting decoration. Keep both silhouettes clear and give the tail room to move.</p></div></section>'
+visual+='<section class="visual-section">'+eyebrow('02 / A small vocabulary of gestures')+'<h2>Presence through posture.</h2><p>Alert, attentive, curious, in motion, and turning back. Each pose keeps the same anatomy, color rhythm, and line character.</p>'
+for style in ['filled','line']:
+    visual+=f'<h3>{"Color forms" if style=="filled" else "Contour forms"}</h3><div class="visual-pose-row">'
+    for pose,label in [('stand','Alert'),('sit','Listen'),('inspect','Investigate'),('leap','Move'),('return','Return')]:
+        src=f'assets/art/fox-{style}-{pose}.svg'
+        visual+=f'<figure class="visual-pose"><img src="{src}" width="400" height="300" alt="{label}, {style} fox" loading="lazy"><figcaption><span>{label}</span><a href="{src}" download aria-label="Download {label} {style} SVG">↓</a></figcaption></figure>'
+    visual+='</div>'
+visual+='</section><section class="visual-section">'+eyebrow('03 / The palette')+'<h2>Warm movement.<br><em>Quiet surroundings.</em></h2><div class="visual-palette">'
+for name,color,light in [('Forest','#193d30',True),('Paper','#f7f5ed',False),('Fox orange','#f47b20',False),('Burnt orange','#d84b12',True),('Apricot','#ffaf6a',False),('Sage','#b7c4a5',False)]:
+    visual+=f'<div class="palette-chip" style="background:{color};'+('color:#fff8ee' if light else '')+f'"><strong>{name}</strong><code>{color}</code></div>'
+visual+='</div></section><section class="visual-section">'+eyebrow('04 / Seven typographic roles')+'<h2>Garet, with a little<br><em>Best Swashed.</em></h2><p>Garet holds the structure. Best Swashed marks a short phrase worth lingering on. Supporting labels stay legible; body copy gets a steady rhythm.</p>'
+for role,cls,sample in [('Display','display','Follow a question.'),('Title','title','<span class="type-accent">See where it leads.</span>'),('Subheading','subhead','A question becomes a comparison.'),('Lead','lead','An invitation to follow the question.'),('Body','body','Good interfaces make complex things approachable.'),('Supporting','small','Context, captions, roles, and dates.'),('Label','label','Notice / Test / Build / Return')]:
+    visual+=f'<div class="type-demo"><span>{role}</span><p class="sample-{cls}">{sample}</p></div>'
+visual+='<p class="visual-font-note">The supplied font files are retained with their source notes. Best Swashed is marked “personal use only”; commercial use requires the corresponding license.</p></section>'
+visual+='<section class="visual-section">'+eyebrow('05 / Illustration and motion')+'<h2>Make the idea<br><em>visible.</em></h2><div class="visual-rules"><article><h3>Start with the headline.</h3><p>Listening begins with a person. A question meets resistance. A useful thing reaches someone, and a response comes back. Every scene expresses the chapter’s central action.</p></article><article><h3>Let motion explain.</h3><p>A token follows an idea, a boundary responds, and a feedback path returns. Character gestures stay smaller than the scene’s main action.</p></article><article><h3>Leave room to read.</h3><p>Use one principal motion at a time. Keep labels still, respect reduced-motion preferences, and pause scenes when they are out of view.</p></article></div><a class="button outline" href="index.html">See the language in the story ↗</a></section>'
+page('visual-system.html','Visual system',visual,'')
 
 work_projects = [p for p in PROJECTS if p.get('placement') == 'Work']
 work = '<section class="page-top">'+eyebrow('Projects / Research / Practice')+'<h1>Things I’ve worked on.<br><em>Questions I’m still asking.</em></h1><p class="lede">A collection of research, systems, and useful little tools. Some are long investigations; others began with a small everyday frustration.</p><a class="text-link collection-story-link" href="index.html#notice">Follow the thread through the work ↗</a></section>'
@@ -229,4 +259,4 @@ page('cv.html','CV',cv,'CV')
 for old,new in [('Educational.html','about.html'),('Professional.html','work.html'),('Amateurs.html','about.html#outside'),('Resume.html','cv.html'),('Sharing.html','writing.html')]:
     if old=='Amateurs.html': new='about.html'
     (ROOT/old).write_text(f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="0;url={new}"><title>Page moved · Zebang Wu</title><p>This page has moved to <a href="{new}">{new}</a>.</p></html>')
-print(f'Generated five main pages, {len(PROJECTS)} detail pages, the existing conversation, and five legacy redirects.')
+print(f'Generated five main pages, the visual standard, {len(PROJECTS)} detail pages, the existing conversation, and five legacy redirects.')

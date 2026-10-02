@@ -1,0 +1,23 @@
+Portfolio typography
+====================
+
+The supplied originals remain in ../garet/ and ../best_swashed/.
+assets/css/type-system.css is loaded last and defines seven semantic roles:
+display, title, subheading, lead, body, small, label.
+
+Garet — Type Forward, copyright 2022.
+Local web sources: Garet-Book.woff2 and Garet-Heavy.woff2.
+Book is mapped to CSS normal/400; Heavy is mapped to CSS strong/900.
+The original font metadata records Book at weight 300 and Heavy at 850.
+License metadata refers to http://typeforward.com/.
+
+Best Swashed PERSONAL USE — Mans Greback AB, copyright 2025.
+Local source: BestSwashed_PERSONAL_USE_ONLY.otf.
+Upright Regular; used only for selected display-title emphasis.
+No synthetic italic or bold is applied.
+The supplied READ_BEFORE_ANY_USE.txt states PERSONAL USE ONLY and requires
+a license for commercial use. Preserve that supplied notice with the font.
+The prototype uses the font supplied and explicitly requested by the owner;
+this manifest does not assert broader web-embedding or commercial rights.
+
+No font is fetched from an external host. No font binary has been modified.

@@ -1,0 +1,325 @@
+/* Seven roles, two families. Load after portfolio.css and story.css. */
+@font-face {
+  font-family: 'Garet';
+  src: url('../garet/Garet-Book.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Garet';
+  src: url('../garet/Garet-Heavy.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Best Swashed';
+  src: url('../best_swashed/BestSwashed_PERSONAL_USE_ONLY.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --sans: 'Garet', 'Avenir Next', 'Segoe UI', sans-serif;
+  --accent: 'Best Swashed', Georgia, serif;
+  --serif: var(--accent);
+  --type-display: clamp(2.625rem, 1.35rem + 3.8vw, 4.75rem);
+  --type-title: clamp(1.875rem, 1.2rem + 2.1vw, 3rem);
+  --type-subheading: clamp(1.25rem, 1.1rem + .45vw, 1.5rem);
+  --type-subhead: var(--type-subheading);
+  --type-lead: clamp(1.125rem, 1.05rem + .25vw, 1.3125rem);
+  --type-body: 1.0625rem;
+  --type-small: .875rem;
+  --type-label: .75rem;
+}
+
+body,
+#privacy-gate {
+  font-family: var(--sans);
+  font-size: var(--type-body);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.65;
+  font-synthesis: none;
+}
+
+button, input, select, textarea { font-family: var(--sans); }
+b, strong { font-weight: 900; }
+h1, h2, h3, h4 { font-family: var(--sans); font-weight: 400; }
+em { font-family: var(--sans); font-style: normal; font-weight: 900; }
+
+/* The display accent is an upright face. Do not synthesize slanted swashes. */
+h1 em, h2 em, .type-accent, .type-demo .sample-title em {
+  font-family: var(--accent);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-kerning: normal;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+}
+/* Swash ascenders need an optical pause after the preceding Garet line. */
+h1 em, h2 em {
+  display: inline-block;
+  font-size: .82em;
+  max-width: 100%;
+  margin-top: .13em;
+  line-height: 1.18;
+  vertical-align: baseline;
+}
+
+h1,
+.page-top h1,
+.case-heading h1,
+.hero-copy h1,
+.story-prologue h1,
+.story-chapter h2,
+.story-coda h2 {
+  font-size: var(--type-display);
+  line-height: 1.12;
+  letter-spacing: -.045em;
+  overflow-wrap: break-word;
+}
+.story-prologue h1 em,
+.hero-copy h1 em,
+.story-chapter h2 em,
+.story-coda h2 em { letter-spacing: 0; line-height: 1.18; }
+
+h2,
+.section-head h2,
+.feature-band h2,
+.footer-top h2,
+.privacy-gate-card h1 {
+  font-family: var(--sans);
+  font-size: var(--type-title);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: -.035em;
+}
+
+h3, h4,
+.work-grid h3,
+.card-body h3,
+.note-card h3,
+.personal-card h3,
+.case-section h2,
+.case-next h3,
+.cv-aside h2,
+.cv-section h2,
+.next-question h3,
+.timeline-year > h3,
+.evidence-box strong,
+.media-outline strong,
+.coda-signature {
+  font-family: var(--sans);
+  font-size: var(--type-subheading);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.35;
+  letter-spacing: -.025em;
+}
+
+.lede,
+.story-intro,
+.story-chapter > .chapter-lead,
+.case-callout p,
+.story-bridge p,
+.story-bridge em {
+  font-family: var(--sans);
+  font-size: var(--type-lead);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: -.02em;
+}
+.story-bridge em { font-weight: 900; }
+
+.hero-copy p,
+.story-bio,
+.story-chapter > p:not(.chapter-lead):not(.story-aside),
+.story-coda > p:not(.eyebrow),
+.case-section p,
+.case-meta,
+.feature-band p,
+.next-question p,
+.personal-card p,
+.article-card p,
+.article-body p,
+.timeline-item p {
+  font-size: var(--type-body);
+  line-height: 1.75;
+  letter-spacing: -.012em;
+}
+
+.brand-name,
+.context-strip strong,
+.timeline-item h4,
+.cv-entry h3,
+.story-evidence strong {
+  font-family: var(--sans);
+  font-size: var(--type-lead);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -.025em;
+}
+.brand-name { font-weight: 900; font-size: var(--type-body); }
+
+.main-nav a,
+.menu-toggle,
+.button,
+.text-link,
+.section-head .text-link,
+.story-start,
+.story-shortcut,
+.story-evidence > span:last-child,
+.story-chapter > .story-aside,
+.story-stage .stage-thought,
+.card-body p,
+.note-card p,
+.portrait figcaption,
+.case-nav a,
+.case-story-thread,
+.case-thread,
+.case-meta span,
+.breadcrumb,
+.next-question a,
+.coda-links a,
+.coda-contact,
+.footer-top p,
+.cv-aside p,
+.cv-entry p,
+.context-strip p,
+.evidence-box span,
+.privacy-gate-intro,
+.privacy-gate-field span,
+.privacy-gate-error,
+.filter-tabs button,
+.search-box input,
+.year-nav a,
+.toast,
+.lightbox-head,
+.lightbox p {
+  font-family: var(--sans);
+  font-size: var(--type-small);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0;
+}
+
+.eyebrow,
+.hero-copy .eyebrow,
+.story-prologue > .eyebrow,
+.story-coda > .eyebrow,
+.next-question .eyebrow,
+.case-callout .eyebrow,
+.media-outline .eyebrow,
+.mono,
+.brand-name small,
+.hero-topline,
+.art-caption,
+.cover-caption,
+.cover-index,
+.card-meta,
+.tag,
+.status-label,
+.note-number,
+.context-strip small,
+.timeline-item .period,
+.cv-entry .period,
+.result-meta,
+.case-story-thread small,
+.media-pending,
+.story-masthead,
+.story-stage .stage-top,
+.canvas-note,
+.chapter-kicker > span,
+.chapter-kicker p,
+.evidence-type,
+.thought-sequence,
+.next-question small,
+.motion-toggle,
+.coda-signature i,
+.footer-bottom,
+figcaption,
+.privacy-gate-kicker,
+.privacy-gate-note {
+  font-family: var(--sans);
+  font-size: var(--type-label);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: .035em;
+}
+.eyebrow, .chapter-kicker p, .privacy-gate-kicker {
+  font-weight: 900;
+  letter-spacing: .07em;
+}
+.story-stage .story-waypoints a,
+.story-stage .story-waypoints a span {
+  font-family: var(--sans);
+  font-size: var(--type-label);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.world-drawing text {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .025em;
+}
+.cover-index,
+.chapter-kicker > span,
+.stage-count,
+.timeline-item .period,
+.cv-entry .period,
+.evidence-box strong {
+  font-family: var(--sans);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Diagrams remain readable without acquiring decorative title swashes. */
+.orbit-diagram span,
+.type-transfer,
+.type-transfer b,
+.care-art,
+.quote-art,
+.vr-art,
+.symbol-art,
+.article-art {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-style: normal;
+}
+code, pre, kbd, samp { font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace; }
+.article-body code { font-size: var(--type-small); }
+
+@media (max-width: 900px) {
+  :root {
+    --type-display: clamp(2.625rem, 6.3vw, 3.5rem);
+    --type-body: 1rem;
+  }
+  .story-stage .stage-top { letter-spacing: .015em; }
+  .story-stage .stage-thought { font-size: var(--type-small); line-height: 1.4; }
+  .story-stage .story-waypoints a { gap: 4px; }
+  .story-stage .story-waypoints a span { display: none; }
+}
+@media (max-width: 700px) {
+  .brand-name small { font-size: 11px; letter-spacing: .02em; line-height: 1.4; max-width: 185px; }
+  .story-masthead { gap: 12px; letter-spacing: 0; }
+  .story-masthead span:last-child { max-width: 150px; }
+  .story-prologue > .eyebrow { letter-spacing: .04em; }
+  .filter-tabs { gap: 5px; }
+  .filter-tabs button { padding-inline: 10px; }
+  .section-head .text-link { white-space: normal; }
+}
+@media (max-width: 390px) {
+  .story-stage .stage-top { font-size: 11px; letter-spacing: 0; }
+  .story-stage .story-waypoints a { font-size: 11px; }
+}
+@media print {
+  :root { --type-body: 11pt; --type-small: 10pt; --type-label: 9pt; }
+  .cv-entry p { font-size: var(--type-small); }
+}

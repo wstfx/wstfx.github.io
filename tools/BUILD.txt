@@ -13,6 +13,8 @@ EDITING
   assets/js/portfolio.js      Navigation, filtering, image viewer, reading progress
   assets/art/                Original vector identity graphics
   content/home-story.html    The continuous homepage narrative and scene drawings
+  assets/css/type-system.css Local fonts and seven shared typography roles
+  assets/css/visual-system.css Visual standards page
   assets/css/story.css       Story stage, editorial layout and mobile companion
   assets/js/story.js         Scroll-linked fox, chapter state and motion control
   content/abandon-body.html  Preserved existing AI conversation, attributed in page
@@ -28,7 +30,8 @@ Private material collection notes remain outside the website repository in ../we
 DESIGN BRANCHES
   website-rebuild    Preserved first layout prototype (11bfdac).
   website-story      Preserved narrative prototype (9080200).
-  website-companion  Expressive fox mascot, chapter illustrations and quiet motion.
+  website-companion  Preserved companion prototype (d68692d).
+  website-visual-system  Agile fox family, headline-led art, typography and motion.
 
 The geometric fox is mathematically reconstructed from the supplied raster on a
 30/60-degree lattice, with the original three colors and silhouette. It is not
@@ -38,9 +41,19 @@ About timeline holds chronology. Main has not been replaced by this prototype.
 
 COMPANION ART
   assets/art/fox-mascot.svg       Five expressive poses, with head/eye/tail hooks
-  assets/art/story-world.svg      Five geometric chapter environments
+  assets/art/story-world.svg      Five conceptual chapter illustrations
   assets/art/tail-punctuation.svg The headline’s small fox tail
 The builder inlines these SVGs so CSS can animate their parts. Static placement
 transforms stay on wrappers, separate from animated groups. The world and fox
 share one SVG coordinate system. Keep all illustrations readable without motion.
 Asset content hashes are included in CSS/JS URLs to avoid outdated browser caches.
+
+VISUAL STANDARD
+  visual-system.html                 Specimens, downloads, palette and type roles
+  assets/art/fox-filled-{pose}.svg    Five independent filled SVGs
+  assets/art/fox-line-{pose}.svg      Five matching contour SVGs
+  assets/art/fox-line-art.svg         Combined contour pose source
+  assets/fonts/manifest.txt          Font provenance and original notice references
+  assets/garet/*.woff2               Garet Book and Heavy, locally hosted
+  assets/best_swashed/*.otf          Supplied Best Swashed, locally hosted
+All fox poses use 400 x 300 coordinates. The word-mark tail uses 150 x 70.

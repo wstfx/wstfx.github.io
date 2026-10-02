@@ -1,0 +1,7 @@
+.DS_Store
+# Keep the supplied desktop font formats and specimen posters locally.
+# The WOFF2 faces and the supplied Best Swashed OTF are the web assets.
+assets/garet/*.ttf
+assets/garet/*.otf
+assets/garet/*.woff
+assets/best_swashed/img/
