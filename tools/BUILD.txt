@@ -27,10 +27,20 @@ Private material collection notes remain outside the website repository in ../we
 
 DESIGN BRANCHES
   website-rebuild    Preserved first layout prototype (11bfdac).
-  website-story      Continuous narrative exploration using the author’s geometric fox.
+  website-story      Preserved narrative prototype (9080200).
+  website-companion  Expressive fox mascot, chapter illustrations and quiet motion.
 
 The geometric fox is mathematically reconstructed from the supplied raster on a
 30/60-degree lattice, with the original three colors and silhouette. It is not
 the original vector source. Homepage scene drawings are editorial illustrations,
 not product screenshots or scientific outputs. The story follows themes; the
 About timeline holds chronology. Main has not been replaced by this prototype.
+
+COMPANION ART
+  assets/art/fox-mascot.svg       Five expressive poses, with head/eye/tail hooks
+  assets/art/story-world.svg      Five geometric chapter environments
+  assets/art/tail-punctuation.svg The headline’s small fox tail
+The builder inlines these SVGs so CSS can animate their parts. Static placement
+transforms stay on wrappers, separate from animated groups. The world and fox
+share one SVG coordinate system. Keep all illustrations readable without motion.
+Asset content hashes are included in CSS/JS URLs to avoid outdated browser caches.

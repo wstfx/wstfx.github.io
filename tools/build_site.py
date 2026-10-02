@@ -1,5 +1,6 @@
 """Build the portfolio from content/portfolio-v2.json. Python standard library only."""
 import json
+import hashlib
 import math
 import re
 from pathlib import Path
@@ -53,8 +54,14 @@ def eyebrow(text):
     return f'<p class="eyebrow">{e(text)}</p>'
 
 
+def asset(path):
+    """Changed assets receive fresh URLs; unchanged builds keep the same URLs."""
+    version = hashlib.sha256((ROOT / path).read_bytes()).hexdigest()[:10]
+    return f'{path}?v={version}'
+
+
 def page(path, title, body, active, prefix=''):
-    story_assets = '<link rel="stylesheet" href="assets/css/story.css"><script defer src="assets/js/story.js"></script>' if path == 'index.html' else ''
+    story_assets = f'<link rel="stylesheet" href="{asset("assets/css/story.css")}"><script defer src="{asset("assets/js/story.js")}"></script>' if path == 'index.html' else ''
     links = [('Home', 'index.html'), ('Work', 'work.html'), ('About', 'about.html'), ('Writing', 'writing.html'), ('CV', 'cv.html')]
     nav = ''.join(f'<a href="{prefix}{href}"' + (' aria-current="page"' if label == active else '') + f'>{label}</a>' for label, href in links)
     html = f'''<!doctype html>
@@ -66,9 +73,9 @@ def page(path, title, body, active, prefix=''):
 <title>{e(title)} · Zebang Wu</title>
 <link rel="icon" type="image/svg+xml" href="{prefix}assets/art/geometric-mark.svg">
 <link rel="stylesheet" href="{prefix}assets/css/privacy-gate.css">
-<link rel="stylesheet" href="{prefix}assets/css/portfolio.css">
+<link rel="stylesheet" href="{prefix}{asset('assets/css/portfolio.css')}">
 <script defer src="{prefix}assets/js/privacy-gate.js"></script>
-<script defer src="{prefix}assets/js/portfolio.js"></script>
+<script defer src="{prefix}{asset('assets/js/portfolio.js')}"></script>
 {story_assets}
 </head>
 <body id="top" class="{'story-page' if path == 'index.html' else 'collection-page'}">
@@ -129,6 +136,12 @@ def section_head(kicker, title, link='', label=''):
 
 
 home = (ROOT / 'content/home-story.html').read_text()
+world = (ROOT / 'assets/art/story-world.svg').read_text()
+mascot = (ROOT / 'assets/art/fox-mascot.svg').read_text()
+mascot = re.sub(r'<svg\b', '<svg x="-150" y="-150" width="300" height="300"', mascot, count=1)
+world = world.rsplit('</svg>', 1)[0] + '<g class="travelling-fox" transform="translate(300 295) scale(1.1)"><g class="fox-breathe">' + mascot + '</g></g></svg>'
+tail = (ROOT / 'assets/art/tail-punctuation.svg').read_text()
+home = home.replace('<!-- STORY_SCENE -->', world).replace('<!-- TAIL_PUNCTUATION -->', tail)
 page('index.html','Home',home,'Home')
 
 work_projects = [p for p in PROJECTS if p.get('placement') == 'Work']

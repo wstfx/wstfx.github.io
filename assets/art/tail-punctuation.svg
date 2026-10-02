@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 74" aria-hidden="true">
+  <!-- A fox brush curling upward from the baseline, independent of the original logo. -->
+  <g class="punctuation-tail" style="transform-origin:12px 64px">
+    <path fill="#fd7e14" d="M8 63q28 7 41-18l10-25L49 4 31 24l-3 18-15 9Z"/>
+    <path fill="#ed893e" d="m13 51 24-8 12 2Q36 70 8 63Z"/>
+    <path fill="#ffb370" d="m31 24 18-20-8 30-13 8Z"/>
+    <path fill="#fff1d8" d="m49 4 10 16-7 18-11-4-6 5 2-13-6-2Z"/>
+  </g>
+</svg>

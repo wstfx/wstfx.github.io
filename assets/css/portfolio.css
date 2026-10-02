@@ -162,6 +162,8 @@ p {
   color:#fffef3;
 }
 .menu-toggle {
+  white-space:nowrap;
+  flex-shrink:0;
   display:none;
   background:transparent;
   border:1px solid var(--line);
