@@ -19,9 +19,16 @@ html:has(.story-page) { scroll-padding-top:0; }
 .world-drawing { position:absolute; width:100%; height:100%; overflow:visible; color:var(--ink); }
 .opening-art { position:absolute; inset:-24px -8px 16px; opacity:0; visibility:hidden; transition:opacity 650ms ease,visibility 650ms; pointer-events:none; }
 .opening-art>svg { display:block; width:100%; height:100%; overflow:visible; }
-.compact-companion,.mobile-opening-art { display:none; }
+.chapter-art { position:absolute; inset:-12px -8px 8px; opacity:0; visibility:hidden; pointer-events:none; transition:opacity 650ms ease,visibility 650ms; }
+.chapter-art>svg { display:block; width:100%; height:100%; overflow:visible; }
+.chapter-art.is-current { opacity:1; visibility:visible; }
+.story-stage.has-chapter-art .world-drawing { visibility:hidden; }
+.story-stage.has-chapter-art .story-canvas:before { opacity:0; }
+.compact-companion,.mobile-opening-art,.mobile-chapter-art { display:none; }
 .story-stage[data-scene="0"] .opening-art { opacity:1; visibility:visible; }
 .story-stage[data-scene="0"] .world-drawing { visibility:hidden; }
+.story-stage[data-scene="0"] .world-drawing *,
+.story-stage.has-chapter-art .world-drawing * { animation-play-state:paused !important; }
 .story-stage[data-scene="0"] .story-canvas:before { opacity:0; }
 /* Preserve the supplied geometry. Only separable details move; attached
    anatomy stays still, with every pivot kept in Illustrator coordinates. */
@@ -36,6 +43,27 @@ html:has(.story-page) { scroll-padding-top:0; }
 .opening-art .fw-plant-vine-leaf-middle { animation-delay:-4s; }
 .story-stage:not([data-scene="0"]) .opening-art * { animation-play-state:paused; }
 .story-page.motion-paused .opening-art { transition:none; }
+/* Each scene keeps its ground and people still. The SVG supplies local pivots
+   for complete movable shapes, so no animation needs to cut up the picture. */
+.chapter-art .scene-fox-tail,.chapter-art .scene-fox-eye,
+.chapter-art .scene-gesture,.chapter-art .scene-paper,
+.chapter-art .scene-leaf { transform-box:view-box; }
+.chapter-art .scene-fox-tail { animation:chapter-tail 9s ease-in-out infinite; }
+.chapter-art .scene-fox-eye { animation:workbench-blink 11s linear infinite; }
+.chapter-art .scene-gesture { animation:chapter-attention 10s ease-in-out infinite; }
+.chapter-art .scene-paper { animation:chapter-notebook 8s ease-in-out infinite; }
+.chapter-art .scene-pin { animation:chapter-measure 9s ease-in-out infinite; }
+.chapter-art .scene-car { animation:chapter-car 12s ease-in-out infinite; }
+.chapter-art .scene-leaf { animation:chapter-leaf 7s ease-in-out infinite; }
+.chapter-art:not(.is-current) * { animation-play-state:paused; }
+.chapter-art.is-current * { animation-play-state:running; }
+.story-page.motion-paused .chapter-art { transition:none; }
+@keyframes chapter-tail { 0%,12%,100% { transform:rotate(0); } 42% { transform:rotate(2.5deg); } 72% { transform:rotate(-2deg); } }
+@keyframes chapter-attention { 0%,30%,100% { transform:rotate(0); } 48%,65% { transform:rotate(1.2deg); } }
+@keyframes chapter-notebook { 0%,20%,100% { transform:rotate(0); } 55% { transform:rotate(-1.2deg); } }
+@keyframes chapter-measure { 0%,20%,75%,100% { transform:translateY(0); } 45%,55% { transform:translateY(-4px); } }
+@keyframes chapter-car { 0%,18%,100% { transform:translate(0,0); } 46%,67% { transform:translate(-40px,10px); } }
+@keyframes chapter-leaf { 0%,100% { transform:rotate(-3deg); } 50% { transform:rotate(3deg); } }
 /* A small inward translation keeps the tail's root underneath the body as
    the larger sweep changes the angle of their original shared edge. */
 @keyframes workbench-tail { 0%,8%,100% { transform:translateX(0) rotate(0); } 38% { transform:translateX(4px) rotate(3deg); } 72% { transform:translateX(4px) rotate(-2.5deg); } }
@@ -203,11 +231,14 @@ html:has(.story-page.motion-paused) { scroll-behavior:auto; }
   .canvas-note { display:none; }
   .world-drawing .world-scene,.world-drawing .world-route,.world-drawing .world-grid,.world-drawing .shared-ground { display:none; }
   .world-drawing { display:block; }
-  .story-stage .world-drawing,.story-stage .opening-art { display:none; }
+  .story-stage .world-drawing,.story-stage .opening-art,.story-stage .chapter-art { display:none; }
+  .story-stage .world-drawing *,.story-stage .opening-art *,.story-stage .chapter-art * { animation:none; }
   .compact-companion { display:block; width:100%; height:100%; object-fit:contain; }
   .mobile-opening-art { display:block; width:100%; max-width:540px; margin:-28px auto 28px; }
   .mobile-opening-art img { display:block; width:100%; height:auto; }
   .mobile-opening-art figcaption { text-align:center; color:var(--muted); margin-top:-12px; }
+  .mobile-chapter-art { display:block; width:100%; max-width:540px; margin:6px auto 28px; }
+  .mobile-chapter-art img { display:block; width:100%; height:auto; }
   .world-drawing .world-scene [class*="motion-"] { animation:none; }
   .story-canvas:before { width:95px; opacity:.6; }
 

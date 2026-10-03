@@ -20,6 +20,13 @@
 .visual-concept-sheet img { display:block; width:100%; height:auto; border-radius:4px; }
 .visual-concept-sheet figcaption { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:18px 0; border-bottom:1px solid var(--line); }
 .visual-duet { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.visual-chapter-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:42px 36px; margin:24px 0 40px; }
+.visual-chapter { margin:0; min-width:0; }
+.visual-chapter img { display:block; width:100%; height:auto; }
+.visual-chapter figcaption { border-top:1px solid var(--line); padding-top:22px; }
+.visual-chapter h3 { margin:0 0 12px; }
+.visual-chapter p { font-size:var(--type-small); color:var(--muted); }
+@media(max-width:680px) { .visual-chapter-grid { grid-template-columns:1fr; gap:26px; } }
 .visual-specimen { margin:0; background:#efeede; padding:28px; border-radius:3px 48px 3px 3px; }
 .visual-specimen:nth-child(2) { background:#f7ede2; }
 .visual-specimen img { width:100%; aspect-ratio:4/3; object-fit:contain; }

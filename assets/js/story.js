@@ -9,6 +9,7 @@
   const world = document.querySelector('.world-drawing');
   const scenes = [...document.querySelectorAll('.world-scene')];
   const characters = [...document.querySelectorAll('.mascot-pose')];
+  const chapterArt = [...document.querySelectorAll('.chapter-art')];
   const route = document.querySelector('#route-ink');
   const control = document.querySelector('.motion-toggle');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -18,10 +19,10 @@
   const thoughts = ['Every path starts with curiosity.', 'Whose experience needs a closer look?', 'What would make the answer convincing?', 'What happens outside the experiment?', 'What could this help someone understand?'];
   const descriptions = [
     'An orange fox at a workbench unrolls a paper road, with a small car exploring where it leads.',
-    'An attentive fox listens as a path begins with a person and their perspective.',
-    'A curious fox watches an idea meet a comparison, bend, and become a better question.',
-    'A fox leaps across a threshold: try, observe, and revise form a returning path.',
-    'A useful idea reaches two people; their response returns to its maker as the next question.'
+    'An attentive orange fox and an adult student face each other beside an open notebook: making room for a conversation.',
+    'An orange fox examines a measurement point on a small contour landscape through a freestanding lens.',
+    'An orange fox inspects a model car approaching a bend and a traffic cone on a small test road.',
+    'Two adult learners try a laptop together while an orange fox turns toward the learner asking a question.'
   ];
   // The fox and its illustration share one coordinate system.
   const poses = [[300, 330, 1], [170, 380, .72], [165, 385, .75], [300, 310, .95], [170, 405, .72]];
@@ -51,12 +52,14 @@
       stage.querySelector('.stage-thought').textContent = thoughts[index];
       scenes.forEach((scene, i) => scene.classList.toggle('is-current', i === index));
       characters.forEach((character, i) => character.classList.toggle('is-current', i === index));
+      chapterArt.forEach(art => art.classList.toggle('is-current', Number(art.dataset.artScene) === index));
+      stage.classList.toggle('has-chapter-art', chapterArt.some(art => Number(art.dataset.artScene) === index));
       links.forEach((link, i) => { if (i + 1 === index) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
     }
-    world.setAttribute('viewBox', compact.matches ? '0 0 400 300' : '0 0 600 560');
-    if (compact.matches) {
+    if (world) world.setAttribute('viewBox', compact.matches ? '0 0 400 300' : '0 0 600 560');
+    if (fox && compact.matches) {
       fox.setAttribute('transform', 'translate(200 150) scale(1)');
-    } else {
+    } else if (fox) {
       const distance = Math.min(380, innerHeight * .48);
       const raw = index ? Math.max(0, Math.min(1, (cursor - positions[index]) / distance)) : 1;
       const t = paused() ? 1 : raw * raw * (3 - 2 * raw);

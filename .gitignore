@@ -1,4 +1,6 @@
 .DS_Store
+__pycache__/
+*.pyc
 # Keep the supplied desktop font formats and specimen posters locally.
 # The WOFF2 faces and the supplied Best Swashed OTF are the web assets.
 assets/garet/*.ttf
