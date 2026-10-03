@@ -173,10 +173,10 @@ def prepare() -> None:
         "part_fragments": dict(fragments),
         "root_coordinate_pivots": PIVOTS,
         "motion_notes": {
-            "fox-tail": "Use a restrained rotation, within about 1 degree; root joins the body.",
+            "fox-tail": "A +3/-2.5 degree sweep needs 4 units of inward X translation at extrema to keep the root under the body. Return to zero at rest.",
             "fox-forepaw": "Two fragments must share a transform; keep the paw touching paper.",
             "fox-eye": "A brief vertical squash can blink; forehead highlight stays still.",
-            "car": "Includes original car shadow, suitable for a short 8–16 unit roll.",
+            "car": "Includes original car shadow; a -55,+18 unit roll stays on the paper road.",
             "static_anatomy": "Head, throat and body overlap; do not rotate them independently.",
             "static_vine": "Some vine geometry is fused to the bench; animate only named individual leaves.",
         },

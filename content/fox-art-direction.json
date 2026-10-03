@@ -20,7 +20,15 @@
     ],
     "geometry": "All 176 scene paths and the ellipse preserve original painter order and geometry; 42 fox paths plus the highlight ellipse are isolated for references.",
     "motion": "Independent tail, eye, paper curl, car and leaf groups; connected head, neck and body remain static. Pause/reduced-motion/startup guards apply. Mobile uses a full still illustration and a compact source fox companion.",
-    "homepageStatus": "New supplied opening scene integrated; subsequent four chapter scenes retain previous studies until replacement art is selected."
+    "homepageStatus": "New supplied opening scene integrated; subsequent four chapter scenes retain previous studies until replacement art is selected.",
+    "headlineTail": "assets/art/tail-punctuation.svg: a complete upright brush tail with a smooth closed root, source orange/cream color planes, and no flat cut edge.",
+    "motionAmplitude": {
+      "tail": "9-second +3/-2.5 degree sweep, 4 source-unit inward X compensation at extrema",
+      "car": "12-second cycle, -55,+18 source-unit travel with resting pauses",
+      "paperCurl": "7-second cycle, 6 degrees",
+      "leaves": "6-second staggered cycle, -6 to +6 degrees",
+      "guards": "Existing pause control, delayed startup, off-screen/hidden-page pause and reduced-motion preference preserved."
+    }
   },
   "conceptSheet": {
     "file": "assets/art/fox-pose-concepts-v1.png",
@@ -34,7 +42,12 @@
       "Move — bounding leap",
       "Return — seated looking back"
     ],
-    "nextStep": "Select successful poses and fix anatomy before tracing and preparing complete overlapped layers. Do not auto-trace or rig the whole sheet without selection."
+    "nextStep": "Select successful poses and fix anatomy before tracing and preparing complete overlapped layers. Do not auto-trace or rig the whole sheet without selection.",
+    "review": {
+      "date": "2026-10-03",
+      "direction": "User considers the reference sheet generally good.",
+      "requiredRefinement": "The generated eyes differ from the original design. Preserve the original SVG eye shape, iris/pupil and highlight geometry in production poses, using fox-reference-detail.svg as the close reference; do not replace it with a generic almond eye."
+    }
   },
   "type": {
     "garetDisplayWeight": 900,

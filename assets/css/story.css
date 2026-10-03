@@ -36,11 +36,13 @@ html:has(.story-page) { scroll-padding-top:0; }
 .opening-art .fw-plant-vine-leaf-middle { animation-delay:-4s; }
 .story-stage:not([data-scene="0"]) .opening-art * { animation-play-state:paused; }
 .story-page.motion-paused .opening-art { transition:none; }
-@keyframes workbench-tail { 0%,100% { transform:rotate(0); } 38% { transform:rotate(.8deg); } 72% { transform:rotate(-.6deg); } }
+/* A small inward translation keeps the tail's root underneath the body as
+   the larger sweep changes the angle of their original shared edge. */
+@keyframes workbench-tail { 0%,8%,100% { transform:translateX(0) rotate(0); } 38% { transform:translateX(4px) rotate(3deg); } 72% { transform:translateX(4px) rotate(-2.5deg); } }
 @keyframes workbench-blink { 0%,42%,45%,100% { transform:scaleY(1); } 43.5% { transform:scaleY(.08); } }
-@keyframes workbench-curl { 0%,100% { transform:rotate(0); } 50% { transform:rotate(-2deg); } }
-@keyframes workbench-car { 0%,18%,100% { transform:translate(0,0); } 46%,67% { transform:translate(-14px,5px); } }
-@keyframes workbench-leaf { 0%,100% { transform:rotate(-1deg); } 50% { transform:rotate(2deg); } }
+@keyframes workbench-curl { 0%,12%,100% { transform:rotate(0); } 55% { transform:rotate(6deg); } }
+@keyframes workbench-car { 0%,18%,100% { transform:translate(0,0); } 46%,67% { transform:translate(-55px,18px); } }
+@keyframes workbench-leaf { 0%,100% { transform:rotate(-6deg); } 50% { transform:rotate(6deg); } }
 .world-drawing text { font:11px ui-monospace,SFMono-Regular,monospace; letter-spacing:.025em; fill:#526f59; }
 .world-route { stroke:#65816c; stroke-width:1.2; stroke-dasharray:2 7; opacity:.26; }
 .route-ink { stroke:#c36b37; stroke-dasharray:1; stroke-dashoffset:1; opacity:.6; }
@@ -73,7 +75,7 @@ html:has(.story-page) { scroll-padding-top:0; }
 .story-prologue>.eyebrow { font-size:9px; margin:0 0 22px; letter-spacing:.13em; }
 .story-prologue h1 { font-size:clamp(62px,6.8vw,100px); line-height:.98; letter-spacing:-.062em; margin:0 0 28px; }
 .story-prologue h1 em { line-height:1.01; color:#59765b; letter-spacing:-.057em; }
-.tail-punctuation { display:inline-block; width:.82em; height:.39em; margin-left:.055em; vertical-align:.015em; }
+.tail-punctuation { display:inline-block; width:.92em; height:.835em; margin-left:.095em; vertical-align:-.075em; }
 .tail-punctuation svg { width:100%; height:100%; overflow:visible; }
 .story-intro { font-size:clamp(18px,1.6vw,22px); line-height:1.5; color:var(--ink); letter-spacing:-.025em; margin-bottom:16px; }
 .story-bio { font-size:14px; line-height:1.75; max-width:440px; margin-bottom:22px; }
