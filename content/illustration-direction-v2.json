@@ -6,8 +6,8 @@
     "en": "One fox, different moments"
   },
   "status": {
-    "zh": "第二版文字分镜，供用户继续创作。开场保留原稿并增加装饰；Notice 已采用用户提供的三分之四近景 PNG，在本地转成 SVG 并加上开放线框。Test、Build 和 Return 的新稿仍在制作中。",
-    "en": "Second-round written storyboards for continued user-led artwork. The opening preserves the supplied original with added decoration; Notice now uses the supplied three-quarter close-up PNG, converted locally to SVG and set in an open frame. New Test, Build and Return artwork is still in preparation."
+    "zh": "第二版文字分镜，供用户继续创作。开场保留原稿并增加装饰；Notice 已采用用户提供的近景图，转成带开放线框、手书组合与尾巴动效的 SVG。Test 已采用用户提供的俯视采样图，并强调路径与下一个样本。Build 和 Return 的新稿仍在制作中。",
+    "en": "Second-round written storyboards for continued user-led artwork. The opening preserves the supplied original with added decoration. Notice uses the supplied close-up as a framed SVG, with a coupled hand-and-notebook gesture and tail sway. Test uses the supplied overhead sampling scene, emphasizing the route and next sample. New Build and Return artwork is still in preparation."
   },
   "premise": {
     "zh": "用景别、视点、动作方向和主角权重制造变化，而不靠换一批道具。五幕依次是展开世界、靠近一个人的细节、俯看并选择、进入约束、退后让别人尝试。狐狸始终是同一个角色，但不必每次占据画面中心。",
@@ -367,7 +367,7 @@
         "zh": "换一个高度：下一次测量放在哪里",
         "en": "Change the viewpoint: where to measure next"
       },
-      "status": "written-concept-for-user-svg",
+      "status": "supplied-png-converted-to-native-svg-with-sampling-motion",
       "projectAnchors": [
         "Active learning — selecting the next sample",
         "Physical-field reconstruction — comparing sampling paths"
@@ -474,6 +474,11 @@
       "prompt": {
         "zh": "创作“Give curiosity something to push against”的单幅现代几何插画。用约 60 度鸟瞰视角，优雅橙色狐狸从右下向左上弯身探看地上展开的一片不规则奶油色地形纸。背部、耳朵、长腿与反向舒展的宽尾巴形成鲜明的逗号式轮廓；前爪停在一枚橙色候选取样点上方，四肢结构准确。纸面只有三条宽的鼠尾草绿等高带、最多四枚深绿已知点与一段短的断续采样轨迹；另一边留白，表达还需要了解的区域。没有桌子、放大镜或第二个人物。沿用作者狐狸原稿的比例、大曲面配色、奶油尾尖与深绿腿；适应俯视角度重画面部，眼睛看不见也无需强行添加。行动明确，斜向重心，留出空气。场景是主动学习与采样选择的编辑比喻，不是科学数据、实测地形或验证结果。无文字、数字、坐标、曲线图、网络、魔法或结果徽章。真透明背景，采样点、轨迹、尾巴独立成组。",
         "en": "Create one modern geometric illustration for “Give curiosity something to push against.” Use a roughly 60-degree bird’s-eye view: an elegant orange fox bends diagonally from lower right toward upper left around an irregular cream terrain sheet unfolded on the ground. Its back, ears, long legs and broad tail extending the other way form a strong comma-like silhouette. One forepaw pauses above an orange candidate sampling point; show anatomically correct limbs. The sheet contains only three broad sage contour bands, at most four dark-green known points and one short interrupted sampling trace. Leave the other side open to suggest what is not yet understood. No table, magnifying glass or second figure. Preserve the author’s fox proportions, broad colour planes, cream tail tip and dark-green legs; redraw the head for the elevated view without forcing a visible eye. Use a decisive diagonal and generous air. This is an editorial metaphor for active learning and sampling choices, not scientific data, measured terrain or validation. No text, numbers, axes, charts, networks, magic or result badges. Real transparency; group the candidate, trace and complete tail separately."
+      },
+      "currentArtwork": {
+        "source": "assets/art/chapter-sources/test-overhead.png",
+        "vector": "assets/art/scene-test-overhead.svg",
+        "web": "assets/art/scene-test-overhead.svg"
       }
     },
     {

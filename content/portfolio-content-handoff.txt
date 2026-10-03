@@ -1,20 +1,19 @@
-Work / About 内容代理任务
+并行更新约定 / Parallel update boundaries — 2026-10-03
 
-目标：与插画和动效工作并行，补充个人经历、Work 项目叙述、About 时间线与介绍。以用户提供的事实、已有履历和可核验材料为依据。信息不足先列出具体空缺，不虚构成果或数字。
+当前允许 Work 内容与 UI 和首页插画同时开发。
+- Work agent：work.html、work/ 下的项目页面、content/work-intro.html、项目内容源，及 Work 专用 CSS/JS/图片目录。可以新建 assets/css/work-ui.css 和 assets/js/work-ui.js；选择器限定在 Work 页面内。
+- 首页视觉 agent：index.html、content/home-story.html、assets/art/、assets/css/story.css、assets/js/story.js、插画规范与制作脚本。
+- 共享的 assets/css/portfolio.css、全站导航和 tools/build_site.py 同一时间只由一位整合者修改。本轮构建脚本由首页视觉 agent 维护；Work 页面需要新的构建入口时先约定接口。
+- 可以只生成指定页面：python3 tools/build_site.py --only index.html visual-system.html illustration-direction.html。该命令不会写入 Work/About 页面。
+- 不要在另一位 agent 直接修改生成页面期间运行无 --only 的全站构建。Work 的长期修改应回到内容源/页面模板，以免下次全站构建覆盖它们；现有未提交页面改动应保留。
+- 共用 checkout 时，不切换分支、不 reset/stash 对方改动、不 git add .。只提交自己明确负责的文件；推送同一分支时串行进行。独立 worktree 可减少冲突，但共享文件仍需由一人整合。
 
-内容源文件（负责这些文件）：
-- content/portfolio-v2.json：projects、timeline、interests、person 等结构化资料。
-- content/work-intro.html：Work 开场文案。
-- content/about-intro.html：About 开场介绍与照片说明。
+Work UI/content and homepage illustration can proceed in parallel. Keep Work styles and scripts page-scoped. Only one owner edits shared CSS/navigation/build files at a time. Build selected pages with --only; never overwrite another agent’s generated-page edits with a full build. Preserve ongoing changes and stage explicit owned files only.
 
-视觉代理负责：assets/css、assets/js、assets/art、content/home-story.html、插画设计稿及 tools/build_site.py。需要新的内容展示组件时先提出组件需求，避免同时改同一构建文件。
+内容依据 / Content principles
 
-about.html、work.html、work/*.html 等是生成文件，请勿直接编辑。一次只由一个整合者运行 python3 tools/build_site.py、python3 tools/check_site.py 并提交生成结果。若在独立 worktree 中工作，提交上述内容源文件，再由整合者合并和重新构建。
+以用户提供的事实、已有履历和可核验材料为依据。信息不足先列出具体空缺，不虚构成果或数字。About 另可维护 content/about-intro.html 与 content/portfolio-v2.json 的 timeline/person/interests，先与 Work 内容代理约定同一 JSON 的编辑归属。
 
-已确认的归属：InVolve 的前端、UI 与交互设计主要由 Zebang 完成，另有合作者负责后端；FeasyPaste、RoadLaw、eVisaHelper、iGEM wiki 由本人开发。AI-agent 编程入门课程确实通过 InVolve 开设。火灾／热损伤探索是毕业设计方向，目前仍需物理验证。不要把概念插画当作产品界面或项目证据。
+已确认：InVolve 的前端、UI 与交互设计主要由 Zebang 完成，另有合作者负责后端；FeasyPaste、RoadLaw、eVisaHelper、iGEM wiki 由本人开发。AI-agent 编程入门课程确实通过 InVolve 开设。火灾／热损伤探索是毕业设计方向，目前仍需物理验证。不要把概念插画当作产品界面或项目证据。
 
-开始前先读取当前源文件与相关经历材料，列出需要用户补充的事实与证据；可同时改写已有充分依据的内容。不要等待插画全部完成。
-
-English handoff
-
-Own the three content sources above: project narratives, chronology, biography and interests. Ground statements in supplied evidence; record missing facts rather than inventing outcomes. The visual agent owns art, CSS, JavaScript, homepage composition and the build system. Request new presentation components instead of editing the shared builder concurrently. Generated HTML belongs to one integration owner, who rebuilds and validates after content changes are merged.
+Ground statements in supplied evidence; record missing facts rather than inventing outcomes. Work narratives and UI can progress now, without waiting for illustrations.

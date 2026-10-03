@@ -20,7 +20,7 @@
   const descriptions = [
     'An orange fox at a workbench unrolls a paper road, with a small car exploring where it leads.',
     'An attentive orange fox looks toward a hand offering an open notebook through the left edge of a fine, open frame.',
-    'An orange fox examines a measurement point on a small contour landscape through a freestanding lens.',
+    'Viewed from above, an orange fox reaches toward a selected orange sample on a contour map, linked to an earlier observation by a short dashed route.',
     'An orange fox inspects a model car approaching a bend and a traffic cone on a small test road.',
     'Two adult learners try a laptop together while an orange fox turns toward the learner asking a question.'
   ];

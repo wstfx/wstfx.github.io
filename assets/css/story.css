@@ -55,6 +55,21 @@ html:has(.story-page) { scroll-padding-top:0; }
 .chapter-art .scene-pin { animation:chapter-measure 9s ease-in-out infinite; }
 .chapter-art .scene-car { animation:chapter-car 12s ease-in-out infinite; }
 .chapter-art .scene-leaf { animation:chapter-leaf 7s ease-in-out infinite; }
+/* Native Notice rig: the sleeve and book share one gentle lift. The tail's
+   masked root stays beneath the body throughout the tested two-degree arc. */
+.chapter-art .notice-tail { animation:notice-tail-sway 9s ease-in-out infinite; }
+.chapter-art .notice-offering { animation:notice-offering-lift 9s ease-in-out infinite; }
+.chapter-art .notice-decor-leaf { animation:notice-leaf-turn 8s ease-in-out infinite; }
+.chapter-art .notice-decor-arc,.chapter-art .notice-decor-arc-inner { animation:notice-listening-breath 11s ease-in-out infinite; }
+@keyframes notice-tail-sway { 0%,10%,100% { transform:rotate(0); } 42% { transform:rotate(2deg); } 74% { transform:rotate(-2deg); } }
+@keyframes notice-offering-lift { 0%,16%,100% { transform:rotate(0); } 42%,55% { transform:rotate(-.8deg); } }
+@keyframes notice-leaf-turn { 0%,100% { transform:rotate(-3deg); } 50% { transform:rotate(3deg); } }
+@keyframes notice-listening-breath { 0%,100% { opacity:.35; } 50% { opacity:.65; } }
+/* Supplied overhead scene: the route leads attention to the next sample. */
+.chapter-art .test-sample-route { animation:test-route-emphasis 9s ease-in-out infinite; animation-delay:calc(var(--route-step,0) * .3s); }
+.chapter-art .test-sample-point { animation:test-sample-attention 9s ease-in-out infinite; }
+@keyframes test-route-emphasis { 0%,12%,55%,100% { opacity:.65; } 24%,34% { opacity:1; } }
+@keyframes test-sample-attention { 0%,36%,76%,100% { transform:scale(1); } 49%,58% { transform:scale(1.18); } }
 .chapter-art:not(.is-current) * { animation-play-state:paused; }
 .chapter-art.is-current * { animation-play-state:running; }
 .story-page.motion-paused .chapter-art { transition:none; }

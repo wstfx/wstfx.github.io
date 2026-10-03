@@ -50,7 +50,7 @@ function currentArtwork(run) { return run.chapterArt.filter(art=>art.classList.c
   assert.equal(slow.stage.dataset.scene,'2','Native reading may move to another chapter before readiness');
   assert.deepEqual(currentArtwork(slow),[2],'The matching illustration must be readable before motion starts');
   assert.equal(slow.stage.classList.contains('has-chapter-art'),true);
-  assert.match(slow.canvas.getAttribute('aria-label'),/measurement point/);
+  assert.match(slow.canvas.getAttribute('aria-label'),/selected orange sample/);
   slow.resolveFonts();await Promise.resolve();slow.flush();
   assert.equal(slow.body.classList.contains('story-ready'),true);
   assert.equal(slow.control.hidden,false);
