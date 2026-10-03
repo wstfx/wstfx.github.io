@@ -6,6 +6,7 @@ import re
 from pathlib import Path
 from html import escape as esc
 from collections import OrderedDict
+from build_art_direction import render_direction
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'content/portfolio-v2.json').read_text())
@@ -61,11 +62,13 @@ def asset(path):
 
 
 def page(path, title, body, active, prefix=''):
-    story_assets = f'<link rel="stylesheet" href="{asset("assets/css/story.css")}"><script defer src="{asset("assets/js/story.js")}"></script>' if path == 'index.html' else ''
+    story_assets = f'<link rel="stylesheet" href="{asset("assets/css/story.css")}"><link rel="stylesheet" href="{asset("assets/css/opening-decor.css")}"><script defer src="{asset("assets/js/story.js")}"></script>' if path == 'index.html' else ''
     if path == 'visual-system.html':
         story_assets = f'<link rel="stylesheet" href="{asset("assets/css/visual-system.css")}">'
-    if path == 'illustration-briefs.html':
+    if path in ('illustration-briefs.html', 'illustration-direction.html'):
         story_assets = f'<link rel="stylesheet" href="{asset("assets/css/illustration-briefs.css")}"><script defer src="{asset("assets/js/illustration-briefs.js")}"></script>'
+        if path == 'illustration-direction.html':
+            story_assets += f'<link rel="stylesheet" href="{asset("assets/css/illustration-direction.css")}">'
     links = [('Home', 'index.html'), ('Work', 'work.html'), ('About', 'about.html'), ('Writing', 'writing.html'), ('CV', 'cv.html')]
     nav = ''.join(f'<a href="{prefix}{href}"' + (' aria-current="page"' if label == active else '') + f'>{label}</a>' for label, href in links)
     html = f'''<!doctype html>
@@ -155,12 +158,12 @@ def inline_art(filename):
 
 chapter_names = ['notice', 'test', 'build', 'return']
 chapter_art = ''.join(f'<div class="chapter-art" data-art-scene="{i}" aria-hidden="true">{inline_art(f"scene-{name}.svg")}</div>' for i, name in enumerate(chapter_names, 1))
-home = home.replace('<!-- OPENING_ART -->', inline_art('fox-workbench.svg')).replace('<!-- CHAPTER_ART -->', chapter_art).replace('<!-- TAIL_PUNCTUATION -->', tail)
+home = home.replace('<!-- OPENING_ART -->', inline_art('opening-decor.svg') + inline_art('fox-workbench.svg')).replace('<!-- CHAPTER_ART -->', chapter_art).replace('<!-- TAIL_PUNCTUATION -->', tail)
 page('index.html','Home',home,'Home')
 
 # A reviewable visual standard with reusable filled and contour assets.
 visual = '<section class="visual-intro"><a class="breadcrumb" href="index.html">← Back to the story</a>'+eyebrow('Zebang Wu / Visual language / 2026')+'<h1>A little wild.<br><em>Carefully drawn.</em></h1><p class="lede">An orange fox, a clear line, and room for curiosity. A shared language for character, illustration, typography, and motion.</p></section>'
-visual += '<nav class="visual-index" aria-label="Visual reference sections"><a href="#source">The supplied scene ↘</a><a href="#references">Vector references ↘</a><a href="#chapters">Chapter scenes ↘</a><a href="#pose-concepts">Early pose concepts ↘</a></nav>'
+visual += '<nav class="visual-index" aria-label="Visual reference sections"><a href="#source">The supplied scene ↘</a><a href="#references">Vector references ↘</a><a href="#chapters">Chapter scenes ↘</a><a href="illustration-direction.html">Next art direction · 中 / EN ↗</a><a href="#pose-concepts">Early pose concepts ↘</a></nav>'
 visual += '<section class="visual-section" id="source">'+eyebrow('01 / The supplied illustration')+'<h2>A question becomes<br><em>a road to explore.</em></h2><div class="visual-master"><figure><img src="assets/art/fox-workbench.svg" width="1298" height="1212" alt="The source fox rests a paw on a workbench; paper unfolds into a road carrying a small orange car"><figcaption>FoxHomepage_0 · supplied artwork · now on the homepage</figcaption></figure><div><h3>The character to carry forward.</h3><p>Long legs, an attentive gaze, a cream chest, and a broad, sweeping tail. Orange planes carry the fox; sage and forest green give its surroundings a quieter voice.</p><p>The paper road makes the opening invitation concrete: follow a question and see where it leads. The workbench and small car connect making with exploration.</p><div class="visual-downloads"><a href="assets/IllustratorWorkspace/FoxHomepage_0.svg" download>Original SVG ↓</a><a href="assets/IllustratorWorkspace/FoxHomepage_0.ai" download>Illustrator source ↓</a><a href="assets/art/fox-workbench.svg" download>Web SVG ↓</a></div><p class="visual-production-note">The web derivative retains every source path. Tail, eye, paper curl, car, and individual leaves have restrained motion; connected anatomy stays intact.</p></div></div></section>'
 visual += '<section class="visual-section" id="references">'+eyebrow('02 / Reusable vector references')+'<h2>One silhouette.<br><em>Two voices.</em></h2><p>Extracted directly from the supplied drawing. These are reusable treatments of its original reaching pose, with shared proportions and a transparent artboard.</p><div class="visual-duet">'
 for name, label in [('reaching','Color · the storyteller'),('contour','Contour · a quieter presence')]:
@@ -196,6 +199,7 @@ page('visual-system.html','Visual system',visual,'')
 BRIEFS = json.loads((ROOT / 'content/illustration-briefs.json').read_text())
 briefs = '<section class="brief-intro"><a class="breadcrumb" href="visual-system.html">← Visual standard</a>'+eyebrow('Illustration workshop / concept → clean shapes → motion')+'<h1>First the idea.<br><em>Then the movement.</em></h1><p class="lede">Choose the art before we animate it. Five concrete scenes, grounded in the work, with ready-to-copy generation prompts and a practical cleanup workflow.</p><p class="brief-meta">Art-direction briefs · not project screenshots · 2 October 2026</p></section>'
 briefs += '<nav class="brief-nav" aria-label="Illustration brief sections"><a href="#workflow">Workflow</a><a href="#tools">Cleanup tools</a>'+''.join(f'<a href="#{e(s["id"])}">{e(s["chapter"])}</a>' for s in BRIEFS['scenes'])+'</nav>'
+briefs += '<div class="brief-callout"><strong>新一轮构图方向 / Art direction V2</strong><p>五幕的视角与动作重新拉开距离，由你创作主体 SVG，再补装饰和动画。<a href="illustration-direction.html">查看中英文设计稿与结尾线稿方案 / Open the bilingual direction ↗</a></p></div>'
 briefs += '<div class="brief-callout"><strong>Five scenes on the homepage · 3 October 2026</strong><p>Your FoxHomepage_0 artwork opens the story; four new vector scenes now accompany the chapters. <a href="visual-system.html#chapters">Review the new scenes, source PNGs, and editable SVGs ↗</a>. The briefs below remain available for the next art-direction pass.</p></div>'
 briefs += '<section class="brief-section" id="workflow">'+eyebrow('01 / One image first')+'<h2>A scene you can understand<br><em>before reading its caption.</em></h2><p>Start with the listening scene. It tests the fox’s character, human body language, and clarity together. Generate separate alternatives, choose one, and use it as the reference for the rest.</p><div class="brief-steps">'
 for i,step in enumerate(BRIEFS['workflow'],1):
@@ -218,15 +222,16 @@ for s in BRIEFS['scenes']:
     briefs+='<details class="brief-details"><summary>Three compositions to explore</summary><ol>'+''.join(f'<li><strong>{e(v["name"])}</strong> — {e(v["direction"])}</li>' for v in s['variants'])+'</ol></details><div class="brief-plan"><div><h3>Movement after approval</h3><ul>'+''.join(f'<li><strong>{e(m["part"].replace("-"," "))}</strong> — {e(m["action"])}</li>' for m in s['motionTargets'])+'</ul></div><div><h3>Keep out of the image</h3><ul>'+''.join(f'<li>{e(x)}</li>' for x in s['avoid'])+'</ul></div></div><details class="brief-details"><summary>Layer handoff for production</summary><p>These are the desired final groups, not layers the image generator is expected to create automatically.</p><div class="brief-layer-list">'+''.join(f'<code>{e(x)}</code>' for x in s['layers'])+'</div><p>Preserve the full form behind overlaps, keep a shared canvas, and include a flattened reference for comparison.</p></details></section>'
 briefs += '<section class="brief-section"><h2>Pick for the still.<br><em>Animate for the meaning.</em></h2><p>'+e(BRIEFS['approval']['readabilityTest'])+'</p><ul>'+''.join(f'<li>{e(x)}</li>' for x in BRIEFS['approval']['checks'])+'</ul><a class="button outline" href="illustration-prompts.txt" download>Download all five prompts ↓</a></section>'
 page('illustration-briefs.html','Illustration workshop',briefs,'')
+page('illustration-direction.html','Illustration direction V2',render_direction(),'')
 (ROOT/'illustration-prompts.txt').write_text(BRIEFS['title']+'\n\n'+BRIEFS['purpose']+'\n\n'+'\n\n'.join(s['chapter']+' / '+s['heading']+'\n\n'+s['prompt'] for s in BRIEFS['scenes']))
 
 work_projects = [p for p in PROJECTS if p.get('placement') == 'Work']
-work = '<section class="page-top">'+eyebrow('Projects / Research / Practice')+'<h1>Things I’ve worked on.<br><em>Questions I’m still asking.</em></h1><p class="lede">A collection of research, systems, and useful little tools. Some are long investigations; others began with a small everyday frustration.</p><a class="text-link collection-story-link" href="index.html#notice">Follow the thread through the work ↗</a></section>'
+work = (ROOT / 'content/work-intro.html').read_text()
 work += '<div class="toolbar"><div class="filter-tabs" role="group" aria-label="Filter work by category">'+''.join(f'<button type="button" data-filter="{c}" aria-pressed="{str(c=="All").lower()}">{c}</button>' for c in ['All','Research','Engineering','Product'])+'</div><label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search projects</span><input type="search" id="project-search" placeholder="Find a project or interest…" autocomplete="off"></label></div>'
 work += f'<div class="result-meta"><span id="result-count" role="status" aria-live="polite">{len(work_projects)} experiences</span><span>Explore at your own pace ↘</span></div><div class="project-grid work-grid" id="work-grid">'+''.join(card(p,i+1) for i,p in enumerate(work_projects))+'</div><div class="empty-state" id="no-results" hidden><h2>No matching projects.</h2><p>Try another topic, or explore the whole collection.</p><button type="button" id="reset-filters">Clear filters</button></div>'
 page('work.html','Work',work,'Work')
 
-about = '''<section class="section about-intro" id="background"><div class="about-text">'''+eyebrow('A person, before a portfolio.')+'''<h1>Hi, I’m Zebang.<br><em>You can call me Zeb.</em></h1><p class="lede">An engineering student with a soft spot for good questions, thoughtful interfaces, and foxes.</p><p>I study Electronic Information Engineering at Westlake University and spent Fall 2025 at Cornell. My interests have grown through labs, student organizations, software projects, and conversations with people whose experiences differ from my own.</p><p>I like moving between understanding a system and making something with it. Outside the work, there are books, music, bike rides, and the occasional new plush toy.</p></div><figure class="portrait"><img src="images/Selfie1.jpg" width="600" height="700" alt="Zebang at Notre Dame in France"><figcaption>A little away from the desk. / France</figcaption></figure></section>'''
+about = (ROOT / 'content/about-intro.html').read_text()
 about += '<section class="section">' + section_head('A timeline, with a few detours.','How I got here.')
 groups = OrderedDict()
 for item in DATA['timeline']:
@@ -305,4 +310,4 @@ page('cv.html','CV',cv,'CV')
 for old,new in [('Educational.html','about.html'),('Professional.html','work.html'),('Amateurs.html','about.html#outside'),('Resume.html','cv.html'),('Sharing.html','writing.html')]:
     if old=='Amateurs.html': new='about.html'
     (ROOT/old).write_text(f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="0;url={new}"><title>Page moved · Zebang Wu</title><p>This page has moved to <a href="{new}">{new}</a>.</p></html>')
-print(f'Generated five main pages, the visual standard and illustration workshop, {len(PROJECTS)} detail pages, the existing conversation, and five legacy redirects.')
+print(f'Generated five main pages, the visual standard and two illustration workshops, {len(PROJECTS)} detail pages, the existing conversation, and five legacy redirects.')

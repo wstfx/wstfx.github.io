@@ -29,7 +29,13 @@
       "leaves": "6-second staggered cycle, -6 to +6 degrees",
       "guards": "Existing pause control, delayed startup, off-screen/hidden-page pause and reduced-motion preference preserved."
     },
-    "chapterRecord": "content/chapter-art-production.json"
+    "chapterRecord": "content/chapter-art-production.json",
+    "openingDecoration": {
+      "svg": "assets/art/opening-decor.svg",
+      "css": "assets/css/opening-decor.css",
+      "treatment": "Separate transparent layer behind the unmodified supplied scene: paper-road continuation, growing-line motif and foliage. Static companion layer on mobile; desktop motion respects all existing guards."
+    },
+    "nextDirection": "content/illustration-direction-v2.json: bilingual written briefs for user-authored SVGs, with varied viewpoints and a coda contour background."
   },
   "conceptSheet": {
     "file": "assets/art/fox-pose-concepts-v1.png",

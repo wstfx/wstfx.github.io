@@ -1,0 +1,20 @@
+Work / About 内容代理任务
+
+目标：与插画和动效工作并行，补充个人经历、Work 项目叙述、About 时间线与介绍。以用户提供的事实、已有履历和可核验材料为依据。信息不足先列出具体空缺，不虚构成果或数字。
+
+内容源文件（负责这些文件）：
+- content/portfolio-v2.json：projects、timeline、interests、person 等结构化资料。
+- content/work-intro.html：Work 开场文案。
+- content/about-intro.html：About 开场介绍与照片说明。
+
+视觉代理负责：assets/css、assets/js、assets/art、content/home-story.html、插画设计稿及 tools/build_site.py。需要新的内容展示组件时先提出组件需求，避免同时改同一构建文件。
+
+about.html、work.html、work/*.html 等是生成文件，请勿直接编辑。一次只由一个整合者运行 python3 tools/build_site.py、python3 tools/check_site.py 并提交生成结果。若在独立 worktree 中工作，提交上述内容源文件，再由整合者合并和重新构建。
+
+已确认的归属：InVolve 的前端、UI 与交互设计主要由 Zebang 完成，另有合作者负责后端；FeasyPaste、RoadLaw、eVisaHelper、iGEM wiki 由本人开发。AI-agent 编程入门课程确实通过 InVolve 开设。火灾／热损伤探索是毕业设计方向，目前仍需物理验证。不要把概念插画当作产品界面或项目证据。
+
+开始前先读取当前源文件与相关经历材料，列出需要用户补充的事实与证据；可同时改写已有充分依据的内容。不要等待插画全部完成。
+
+English handoff
+
+Own the three content sources above: project narratives, chronology, biography and interests. Ground statements in supplied evidence; record missing facts rather than inventing outcomes. The visual agent owns art, CSS, JavaScript, homepage composition and the build system. Request new presentation components instead of editing the shared builder concurrently. Generated HTML belongs to one integration owner, who rebuilds and validates after content changes are merged.

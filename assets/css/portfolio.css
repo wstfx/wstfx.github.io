@@ -785,8 +785,8 @@ p {
 }
 .about-intro {
   display:grid;
-  grid-template-columns:1.4fr 1fr;
-  gap:80px;
+  grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);
+  gap:32px;
   align-items:start;
 }
 .portrait {
@@ -796,8 +796,9 @@ p {
   padding:13px 13px 35px;
   background:#fffef9;
   box-shadow:0 10px 35px #193d3010;
+  width:100%;
   max-width:370px;
-  justify-self:end;
+  justify-self:start;
   border:1px solid #e6e3d9;
 }
 .portrait img {
@@ -1366,7 +1367,7 @@ dialog.lightbox::backdrop {
     gap:35px;
   }
   .about-intro {
-    gap:35px;
+    gap:24px;
   }
   .portrait img {
     height:290px;

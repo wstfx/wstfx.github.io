@@ -1,0 +1,48 @@
+/* Insert the decoration before the supplied SVG inside .opening-art. Both
+   share a 1298 × 1212 artboard, so the fox itself needs no geometry changes. */
+.opening-art > .opening-decoration {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  pointer-events:none;
+}
+.opening-art > .fox-workbench-art { position:relative; }
+.opening-decoration .od-leaf,
+.opening-decoration .od-seed,
+.opening-decoration .od-sprig { transform-box:view-box; }
+.opening-decoration .od-leaf { animation:opening-leaf-turn 9s ease-in-out infinite; }
+.opening-decoration .od-seed { animation:opening-seed-drift 11s ease-in-out infinite; }
+.opening-decoration .od-sprig { animation:opening-sprig-sway 10s ease-in-out -3s infinite; }
+.opening-decoration .od-road-trace { animation:opening-road-flow 24s linear infinite; }
+.story-page:not(.story-ready) .opening-decoration *,
+.story-page.motion-paused .opening-decoration *,
+.story-page.scene-asleep .opening-decoration *,
+.story-stage:not([data-scene="0"]) .opening-decoration * { animation-play-state:paused !important; }
+@keyframes opening-leaf-turn {
+  0%,100% { transform:rotate(-5deg); }
+  50% { transform:rotate(9deg); }
+}
+@keyframes opening-seed-drift {
+  0%,100% { transform:translate(0,0) rotate(-5deg); }
+  50% { transform:translate(12px,-13px) rotate(13deg); }
+}
+@keyframes opening-sprig-sway {
+  0%,100% { transform:rotate(-2deg); }
+  50% { transform:rotate(4deg); }
+}
+@keyframes opening-road-flow { to { stroke-dashoffset:-102; } }
+@media(max-width:900px) {
+  /* The compact companion uses its own small artboard. */
+  .story-stage .opening-decoration { display:none; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .opening-decoration * { animation:none !important; }
+}
+@media print { .opening-decoration { display:none; } }
+
+/* The full mobile illustration retains the decoration as a quiet still. */
+.mobile-opening-scene { position:relative; }
+.mobile-opening-scene > img { position:relative; }
+.mobile-opening-scene > .mobile-opening-decoration { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }

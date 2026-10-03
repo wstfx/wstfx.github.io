@@ -6,7 +6,7 @@ html:has(.story-page) { scroll-padding-top:0; }
 .story-page .header-inner { height:72px; }
 .story-masthead { display:flex; justify-content:space-between; gap:24px; padding:24px 0 18px; font:10px/1.6 ui-monospace,SFMono-Regular,monospace; letter-spacing:.11em; color:var(--muted); border-bottom:1px solid var(--line); }
 .story-masthead i { color:var(--orange); padding:0 9px; font-style:normal; }
-.story-layout { display:grid; grid-template-columns:minmax(0,1.04fr) minmax(0,1fr); gap:60px; position:relative; }
+.story-layout { display:grid; grid-template-columns:minmax(0,1.04fr) minmax(0,1fr); gap:20px; position:relative; }
 .story-pages { grid-column:1; grid-row:1; min-width:0; }
 .story-stage { grid-column:2; grid-row:1; position:sticky; top:94px; align-self:start; margin-top:32px; height:calc(100svh - 185px); max-height:720px; min-height:440px; display:flex; flex-direction:column; }
 .stage-top { display:flex; justify-content:space-between; gap:16px; font:10px/1.5 ui-monospace,SFMono-Regular,monospace; letter-spacing:.12em; color:var(--muted); }
@@ -208,7 +208,7 @@ html:has(.story-page.motion-paused) { scroll-behavior:auto; }
 @keyframes membrane-bend { 0%,100% { transform:scaleX(1); } 48% { transform:scaleX(.9) skewY(1.5deg); } }
 @keyframes response-pulse { 0%,100% { transform:scale(.94); opacity:.6; } 50% { transform:scale(1.06); opacity:1; } }
 @keyframes trace-flow { to { stroke-dashoffset:-90; } }
-@media(min-width:1500px) { .story-layout { gap:105px; } }
+@media(min-width:1500px) { .story-layout { gap:35px; } }
 @media(min-width:901px) and (max-height:760px) {
   .story-stage { top:89px; min-height:380px; height:calc(100svh - 185px); margin-top:28px; }
   .story-prologue h1 { font-size:clamp(62px,5.4vw,77px); margin-bottom:20px; }
@@ -216,7 +216,8 @@ html:has(.story-page.motion-paused) { scroll-behavior:auto; }
 }
 @media(max-width:1100px) and (min-width:901px) {
   .story-page #main { width:calc(100% - 64px); }
-  .story-layout { gap:35px; }
+  .story-layout { gap:12px; }
+  .story-canvas { margin-inline:-18px; }
   .stage-thought { font-size:12px; }
   .story-waypoints a { font-size:11px; gap:5px; }
   .story-prologue h1 { font-size:70px; }
