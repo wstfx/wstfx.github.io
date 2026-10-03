@@ -33,7 +33,9 @@
   --type-body: 1.0625rem;
   --type-small: .875rem;
   --type-label: .75rem;
-  --type-heading-line-height: 1.4;
+  --type-garet-line-height: 1.15;
+  --type-swash-line-height: 1.4;
+  --type-accent-color: #59765b;
 }
 
 body,
@@ -56,17 +58,19 @@ h1 em, h2 em, .type-accent, .type-demo .sample-title em {
   font-family: var(--accent);
   font-style: normal;
   font-weight: 400;
+  color: var(--type-accent-color);
+  line-height: var(--type-swash-line-height);
   letter-spacing: 0;
   font-kerning: normal;
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
 }
-/* Both heading faces share the same open rhythm, including multiline swashes. */
+/* Garet stays compact; tall swashes keep their own breathing room. */
 h1 em, h2 em {
   display: inline-block;
   font-size: .82em;
   max-width: 100%;
   margin-top: .13em;
-  line-height: var(--type-heading-line-height);
+  line-height: var(--type-swash-line-height);
   vertical-align: baseline;
 }
 
@@ -80,14 +84,18 @@ h1,
   font-family: var(--sans);
   font-size: var(--type-display);
   font-weight: 900;
-  line-height: var(--type-heading-line-height);
+  line-height: var(--type-garet-line-height);
   letter-spacing: -.045em;
   overflow-wrap: break-word;
 }
 .story-prologue h1 em,
 .hero-copy h1 em,
 .story-chapter h2 em,
-.story-coda h2 em { letter-spacing: 0; line-height: var(--type-heading-line-height); }
+.story-coda h2 em {
+  color: var(--type-accent-color);
+  letter-spacing: 0;
+  line-height: var(--type-swash-line-height);
+}
 
 h2,
 .section-head h2,
@@ -98,7 +106,7 @@ h2,
   font-size: var(--type-title);
   font-weight: 400;
   font-style: normal;
-  line-height: var(--type-heading-line-height);
+  line-height: var(--type-garet-line-height);
   letter-spacing: -.035em;
 }
 

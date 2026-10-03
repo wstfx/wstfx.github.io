@@ -17,7 +17,7 @@
   const labels = ['A QUESTION TAKES SHAPE', '01 / START BY LISTENING', '02 / LOOK FOR THE EVIDENCE', '03 / FOLLOW IT INTO PRACTICE', '04 / THE NEXT QUESTION'];
   const thoughts = ['Every path starts with curiosity.', 'Whose experience needs a closer look?', 'What would make the answer convincing?', 'What happens outside the experiment?', 'What could this help someone understand?'];
   const descriptions = [
-    'An alert orange fox follows an open, curving question through a field of possibilities.',
+    'An orange fox at a workbench unrolls a paper road, with a small car exploring where it leads.',
     'An attentive fox listens as a path begins with a person and their perspective.',
     'A curious fox watches an idea meet a comparison, bend, and become a better question.',
     'A fox leaps across a threshold: try, observe, and revise form a returning path.',
@@ -29,7 +29,7 @@
   try { userPaused = localStorage.getItem(preferenceKey) === 'true'; } catch { /* Storage is optional. */ }
   let ready = false;
   const paused = () => !ready || reduced.matches || userPaused;
-  let active = -1, scheduled = false, positions = [], visible = true;
+  let active = -1, describedCompact = null, scheduled = false, positions = [], visible = true;
   function measure() { positions = steps.map(step => step.getBoundingClientRect().top + scrollY); }
   function ambientState() {
     document.body.classList.toggle('scene-asleep', document.hidden || !visible);
@@ -39,13 +39,16 @@
     const cursor = scrollY + (compact.matches ? stage.getBoundingClientRect().bottom + 35 : innerHeight * .44);
     let index = 0;
     positions.forEach((top, i) => { if (cursor >= top) index = i; });
+    if (index !== active || describedCompact !== compact.matches) {
+      canvas.setAttribute('aria-label', compact.matches ? 'An orange fox accompanies the story.' : descriptions[index]);
+      describedCompact = compact.matches;
+    }
     if (index !== active) {
       active = index;
       stage.dataset.scene = String(index);
       stage.querySelector('.stage-label').textContent = labels[index];
       stage.querySelector('.stage-count').textContent = `0${index} / 04`;
       stage.querySelector('.stage-thought').textContent = thoughts[index];
-      canvas.setAttribute('aria-label', descriptions[index]);
       scenes.forEach((scene, i) => scene.classList.toggle('is-current', i === index));
       characters.forEach((character, i) => character.classList.toggle('is-current', i === index));
       links.forEach((link, i) => { if (i + 1 === index) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });

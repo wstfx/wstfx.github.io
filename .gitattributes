@@ -1,0 +1,3 @@
+# Illustrator masters may begin with text-based PDF metadata. Preserve their
+# bytes and treat them as binary so Git never normalizes or line-merges them.
+*.ai binary

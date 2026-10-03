@@ -1,0 +1,45 @@
+{
+  "title": "Fox mascot — source and concept references",
+  "date": "2026-10-03",
+  "source": {
+    "svg": "assets/IllustratorWorkspace/FoxHomepage_0.svg",
+    "illustrator": "assets/IllustratorWorkspace/FoxHomepage_0.ai",
+    "conceptImage": "assets/IllustratorWorkspace/Fox and the Unrolling Paper Path.png",
+    "treatment": "Preserve supplied originals unchanged; derive namespaced web vectors from SVG."
+  },
+  "production": {
+    "scene": "assets/art/fox-workbench.svg",
+    "prepare": "python3 tools/prepare_fox_art.py",
+    "references": "python3 tools/build_fox_references.py",
+    "build": "python3 tools/build_site.py",
+    "referenceVariants": [
+      "fox-reference-reaching.svg",
+      "fox-reference-reaching-left.svg",
+      "fox-reference-contour.svg",
+      "fox-reference-detail.svg"
+    ],
+    "geometry": "All 176 scene paths and the ellipse preserve original painter order and geometry; 42 fox paths plus the highlight ellipse are isolated for references.",
+    "motion": "Independent tail, eye, paper curl, car and leaf groups; connected head, neck and body remain static. Pause/reduced-motion/startup guards apply. Mobile uses a full still illustration and a compact source fox companion.",
+    "homepageStatus": "New supplied opening scene integrated; subsequent four chapter scenes retain previous studies until replacement art is selected."
+  },
+  "conceptSheet": {
+    "file": "assets/art/fox-pose-concepts-v1.png",
+    "status": "New raster pose concepts for user review; not production vectors or animation frames.",
+    "tool": "Built-in image_gen via imagegen skill",
+    "referenceRole": "Reference image for character identity and style; not an edit target.",
+    "prompt": "Use case: stylized-concept. Asset type: a polished mascot reference concept sheet for this existing personal portfolio. Input image is a REFERENCE IMAGE, not an edit target. Develop four NEW poses of exactly the same elegant orange fox illustrated in the reference. Preserve the fox identity closely: long slender dark-forest-green legs, pointed tall ears with dark backs and cream interiors, small tapered muzzle and dark nose, almond dark eye, slender neck, cream chest, huge broad flame-shaped tail built from flowing orange/peach/cream geometric color planes. Animal anatomy, agile and graceful; NOT humanoid, NOT chibi, NOT a dog or red panda. Modern succinct vector-like editorial illustration; clean precise curves, layered simple color planes, very restrained soft shading; no noisy texture. Four distinct full-body foxes evenly spaced in a 2 by 2 arrangement, on solid warm ivory background #f7f5ec, generous blank space separating all bodies and tails. Top left: listening, sitting tall in side view, head slightly tilted toward an unseen person, tail swept around feet. Top right: investigating, standing side view with one paw raised and nose lowered toward an unseen detail, tail lifted into a broad flowing plume. Bottom left: a light horizontal bounding leap, stretched graceful torso, elegant front and back leg silhouettes, broad tail flowing behind. Bottom right: calm seated resting pose, tail curled loosely around body, head turned attentively over shoulder. Do not include workbench, car, plant, tools, props, construction lines, shadows under figures, border, text, labels, or watermark. Consistency across all four: exact reference fox palette, proportion of small head to long legs, same triangular ear geometry and pointed cream tail tip. This is a concept art sheet for design review, not an animation spritesheet.",
+    "poses": [
+      "Listen — seated attentive",
+      "Investigate — raised paw, lowered head",
+      "Move — bounding leap",
+      "Return — seated looking back"
+    ],
+    "nextStep": "Select successful poses and fix anatomy before tracing and preparing complete overlapped layers. Do not auto-trace or rig the whole sheet without selection."
+  },
+  "type": {
+    "garetDisplayWeight": 900,
+    "garetHeadingLineHeight": 1.15,
+    "bestSwashedLineHeight": 1.4,
+    "bestSwashedColor": "#59765b"
+  }
+}
