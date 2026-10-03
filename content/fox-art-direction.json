@@ -20,7 +20,7 @@
     ],
     "geometry": "All 176 scene paths and the ellipse preserve original painter order and geometry; 42 fox paths plus the highlight ellipse are isolated for references.",
     "motion": "Independent tail, eye, paper curl, car and leaf groups; connected head, neck and body remain static. Pause/reduced-motion/startup guards apply. Mobile uses a full still illustration and a compact source fox companion.",
-    "homepageStatus": "Supplied opening scene preserved; four generated chapter concepts traced to native SVG with original eye paths, named motion groups, desktop animation and mobile stills.",
+    "homepageStatus": "Supplied opening scene preserved. Notice uses the newly supplied three-quarter close-up PNG converted locally to native paths/gradients and a framed homepage derivative, preserving both incoming eyes. Test, Build and Return retain the previous generated and traced studies pending further user-authored illustrations.",
     "headlineTail": "assets/art/tail-punctuation.svg: a complete upright brush tail with a smooth closed root, source orange/cream color planes, and no flat cut edge.",
     "motionAmplitude": {
       "tail": "9-second +3/-2.5 degree sweep, 4 source-unit inward X compensation at extrema",
@@ -35,7 +35,19 @@
       "css": "assets/css/opening-decor.css",
       "treatment": "Separate transparent layer behind the unmodified supplied scene: paper-road continuation, growing-line motif and foliage. Static companion layer on mobile; desktop motion respects all existing guards."
     },
-    "nextDirection": "content/illustration-direction-v2.json: bilingual written briefs for user-authored SVGs, with varied viewpoints and a coda contour background."
+    "nextDirection": "content/illustration-direction-v2.json: bilingual written briefs for user-authored SVGs, with varied viewpoints and a coda contour background.",
+    "noticeReplacement": {
+      "date": "2026-10-03",
+      "source": "assets/art/chapter-sources/notice-closeup.png",
+      "rawVector": "assets/art/scene-notice-closeup.svg",
+      "homepageVector": "assets/art/scene-notice-framed.svg",
+      "prepare": "tools/prepare_notice_art.py (local VTracer 0.6.15 and Sharp)",
+      "sourcePreservation": "Original PNG remains byte-for-byte unchanged; raw SVG and framed homepage composition are separate derivatives.",
+      "geometry": "1298×1212 source coordinates; 114 spline paths and 6 fitted native linear gradients; no raster image embedded in either vector artwork.",
+      "eyeTreatment": "Preserve both supplied three-quarter eyes, including iris, pupil and catchlights. Do not transplant the older side-profile eye onto this pose.",
+      "motion": "Source-eye blink only within the fox; connected body/tail, hand and book stay still. The homepage may animate separate decorative framing elements under existing motion safeguards.",
+      "history": "The former generated Notice PNG/SVG and its original prompt remain recorded in content/chapter-art-production.json."
+    }
   },
   "conceptSheet": {
     "file": "assets/art/fox-pose-concepts-v1.png",
@@ -53,7 +65,8 @@
     "review": {
       "date": "2026-10-03",
       "direction": "User considers the reference sheet generally good.",
-      "requiredRefinement": "The generated eyes differ from the original design. Preserve the original SVG eye shape, iris/pupil and highlight geometry in production poses, using fox-reference-detail.svg as the close reference; do not replace it with a generic almond eye."
+      "requiredRefinement": "The generated eyes differ from the original design. Preserve the original SVG eye shape, iris/pupil and highlight geometry in production poses, using fox-reference-detail.svg as the close reference; do not replace it with a generic almond eye.",
+      "subsequentProductionNote": "The later user-supplied Notice close-up is authoritative for its own three-quarter eye geometry. Its eyes are preserved rather than replaced with the earlier profile-eye reference; the concept-sheet review above remains the historical feedback on that generated sheet."
     }
   },
   "type": {

@@ -1,5 +1,6 @@
 """Build the portfolio from content/portfolio-v2.json. Python standard library only."""
 import json
+import argparse
 import hashlib
 import math
 import re
@@ -9,6 +10,10 @@ from collections import OrderedDict
 from build_art_direction import render_direction
 
 ROOT = Path(__file__).resolve().parents[1]
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--only', nargs='+', metavar='PAGE', help='Generate only these HTML paths, preserving parallel work on other pages.')
+SELECTED = set(parser.parse_args().only or [])
+GENERATED = []
 DATA = json.loads((ROOT / 'content/portfolio-v2.json').read_text())
 PROJECTS = DATA['projects']
 BY_ID = {p['id']: p for p in PROJECTS}
@@ -62,6 +67,8 @@ def asset(path):
 
 
 def page(path, title, body, active, prefix=''):
+    if SELECTED and path not in SELECTED:
+        return
     story_assets = f'<link rel="stylesheet" href="{asset("assets/css/story.css")}"><link rel="stylesheet" href="{asset("assets/css/opening-decor.css")}"><script defer src="{asset("assets/js/story.js")}"></script>' if path == 'index.html' else ''
     if path == 'visual-system.html':
         story_assets = f'<link rel="stylesheet" href="{asset("assets/css/visual-system.css")}">'
@@ -105,6 +112,7 @@ def page(path, title, body, active, prefix=''):
     target = ROOT / path
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(html)
+    GENERATED.append(path)
 
 
 def artwork(project_id, number='01'):
@@ -157,7 +165,9 @@ def inline_art(filename):
     return re.sub(r'(?m)^[ \t]+$', '', art)
 
 chapter_names = ['notice', 'test', 'build', 'return']
-chapter_art = ''.join(f'<div class="chapter-art" data-art-scene="{i}" aria-hidden="true">{inline_art(f"scene-{name}.svg")}</div>' for i, name in enumerate(chapter_names, 1))
+chapter_assets = {name: f'scene-{name}.svg' for name in chapter_names}
+chapter_assets['notice'] = 'scene-notice-framed.svg'
+chapter_art = ''.join(f'<div class="chapter-art" data-art-scene="{i}" aria-hidden="true">{inline_art(chapter_assets[name])}</div>' for i, name in enumerate(chapter_names, 1))
 home = home.replace('<!-- OPENING_ART -->', inline_art('opening-decor.svg') + inline_art('fox-workbench.svg')).replace('<!-- CHAPTER_ART -->', chapter_art).replace('<!-- TAIL_PUNCTUATION -->', tail)
 page('index.html','Home',home,'Home')
 
@@ -174,16 +184,23 @@ for name,label in [('reaching-left','Facing left · mirrored source'),('detail',
     src=f'assets/art/fox-reference-{name}.svg'
     visual+=f'<figure class="visual-pose"><img src="{src}" width="600" height="500" alt="{label}" loading="lazy"><figcaption><span>{label}</span><a href="{src}" download>SVG ↓</a></figcaption></figure>'
 visual+='</div><div class="visual-note"><p>Use color when the fox is the focus. Use the contour in margins and transitions, with fewer internal lines at small sizes. Keep the long-legged proportions and leave room around the tail.</p></div></section>'
-visual+='<section class="visual-section" id="pose-concepts">'+eyebrow('03 / New pose concepts · for review')+'<h2>The same fox.<br><em>More things to say.</em></h2><p>Four proposed poses, generated from the supplied reference: listen, investigate, leap, and turn back. This sheet explores character consistency; these are raster concepts awaiting selection and vector cleanup. Their eye shapes still need to match the original vector detail above.</p><figure class="visual-concept-sheet"><img src="assets/art/fox-pose-concepts-v1.png" width="1298" height="1212" alt="Four orange fox pose concepts: seated listening, investigating with a lifted paw, leaping, and seated looking back" loading="lazy"><figcaption><span>01 Listen · 02 Investigate · 03 Move · 04 Return</span><a href="assets/art/fox-pose-concepts-v1.png" download>Concept sheet ↓</a></figcaption></figure><div class="visual-rules"><article><h3>Keep the character.</h3><p>Small tapered head, tall triangular ears, forest-green legs, cream chest, and the same generous tail. A new pose should still feel like this fox.</p></article><article><h3>Choose the gesture.</h3><p>Listening for the human question; inspecting for research; movement for a working system; turning back for what someone learns from it.</p></article><article><h3>Prepare for motion.</h3><p>Choose the still image first, then clean its shapes and separate only the parts that need to move. The concept sheet is not an animation rig.</p></article></div><p class="visual-production-note">The opening scene uses the supplied artwork. The later chapters now use four new scene studies, generated from this character reference and converted into editable vectors. See the current scenes below. <a href="content/fox-art-direction.json" download>Source notes & generation prompt ↓</a></p></section>'
-visual += '<section class="visual-section" id="chapters">'+eyebrow('04 / Chapter scenes · first integrated set')+'<h2>A character.<br><em>Four conversations.</em></h2><p>Generated concepts, cleaned into native SVG paths, with the original eye geometry carried into each pose. These are editorial illustrations inspired by the work, not depictions of actual participants, interfaces, or research results.</p><div class="visual-chapter-grid">'
+visual+='<section class="visual-section" id="pose-concepts">'+eyebrow('03 / New pose concepts · for review')+'<h2>The same fox.<br><em>More things to say.</em></h2><p>Four proposed poses, generated from the supplied reference: listen, investigate, leap, and turn back. This sheet explores character consistency; these are raster concepts awaiting selection and vector cleanup. Their eye shapes still need to match the original vector detail above.</p><figure class="visual-concept-sheet"><img src="assets/art/fox-pose-concepts-v1.png" width="1298" height="1212" alt="Four orange fox pose concepts: seated listening, investigating with a lifted paw, leaping, and seated looking back" loading="lazy"><figcaption><span>01 Listen · 02 Investigate · 03 Move · 04 Return</span><a href="assets/art/fox-pose-concepts-v1.png" download>Concept sheet ↓</a></figcaption></figure><div class="visual-rules"><article><h3>Keep the character.</h3><p>Small tapered head, tall triangular ears, forest-green legs, cream chest, and the same generous tail. A new pose should still feel like this fox.</p></article><article><h3>Choose the gesture.</h3><p>Listening for the human question; inspecting for research; movement for a working system; turning back for what someone learns from it.</p></article><article><h3>Prepare for motion.</h3><p>Choose the still image first, then clean its shapes and separate only the parts that need to move. The concept sheet is not an animation rig.</p></article></div><p class="visual-production-note">The opening scene uses the supplied artwork. Notice now uses the supplied close-up illustration, converted locally into editable vectors. The remaining chapters retain the earlier scene studies while new artwork is being prepared. See the current scenes below. <a href="content/fox-art-direction.json" download>Source notes & generation prompt ↓</a></p></section>'
+visual += '<section class="visual-section" id="chapters">'+eyebrow('04 / Chapter scenes · first integrated set')+'<h2>A character.<br><em>Four conversations.</em></h2><p>The supplied Notice close-up keeps its own two-eye geometry and enters through an open frame. The other three scenes remain earlier generated concepts, cleaned into native SVG paths. These are editorial illustrations inspired by the work, not depictions of actual participants, interfaces, or research results.</p><div class="visual-chapter-grid">'
 chapter_captions = [
-    ('notice', 'Start with someone.', 'An open notebook, a shared pause, and attention directed toward a person.'),
+    ('notice', 'Start with someone.', 'A three-quarter close-up: an attentive fox, an offered notebook, and a hand entering through an open frame.'),
     ('test', 'Give curiosity something to push against.', 'A lens and measurement markers make the next observation tangible.'),
     ('build', 'Let the world push back.', 'A miniature car meets a bend and an obstacle on a test road.'),
     ('return', 'Bring it back to people.', 'A laptop becomes a shared learning moment; someone has a question.'),
 ]
 for name, title, description in chapter_captions:
-    visual += f'<figure class="visual-chapter"><img src="assets/art/scene-{name}.svg" width="1280" height="1280" loading="lazy" alt="{e(description)}"><figcaption><h3>{e(title)}</h3><p>{e(description)}</p><div class="visual-downloads"><a href="assets/art/scene-{name}.svg" download>Editable SVG ↓</a><a href="assets/art/chapter-sources/{name}.png" download>Generated concept ↓</a></div></figcaption></figure>'
+    art_src = f'assets/art/{chapter_assets[name]}'
+    if name == 'notice':
+        dimensions = 'width="1390" height="1148"'
+        downloads = '<a href="assets/art/scene-notice-closeup.svg" download>Editable SVG ↓</a><a href="assets/art/scene-notice-framed.svg" download>Framed web SVG ↓</a><a href="assets/art/chapter-sources/notice-closeup.png" download>Supplied PNG ↓</a>'
+    else:
+        dimensions = 'width="1280" height="1280"'
+        downloads = f'<a href="{art_src}" download>Editable SVG ↓</a><a href="assets/art/chapter-sources/{name}.png" download>Generated concept ↓</a>'
+    visual += f'<figure class="visual-chapter"><img src="{art_src}" {dimensions} loading="lazy" alt="{e(description)}"><figcaption><h3>{e(title)}</h3><p>{e(description)}</p><div class="visual-downloads">{downloads}</div></figcaption></figure>'
 visual += '</div><p class="visual-production-note">The PNGs remain unchanged. Local vector tracing simplifies the color planes; selected tail, eye, notebook, marker, car, and learner-gesture paths receive motion. These are limited scene rigs, not complete articulated characters. <a href="content/chapter-art-production.json" download>Exact prompts & production record ↓</a></p><a class="text-link" href="index.html#notice">See the scenes in the story ↗</a></section>'
 visual+='<section class="visual-section">'+eyebrow('05 / The palette')+'<h2>Warm movement.<br><em>Quiet surroundings.</em></h2><div class="visual-palette">'
 for name,color,light in [('Forest','#193d30',True),('Paper','#f7f5ed',False),('Fox orange','#f47b20',False),('Burnt orange','#d84b12',True),('Apricot','#ffaf6a',False),('Sage','#b7c4a5',False)]:
@@ -222,8 +239,10 @@ for s in BRIEFS['scenes']:
     briefs+='<details class="brief-details"><summary>Three compositions to explore</summary><ol>'+''.join(f'<li><strong>{e(v["name"])}</strong> — {e(v["direction"])}</li>' for v in s['variants'])+'</ol></details><div class="brief-plan"><div><h3>Movement after approval</h3><ul>'+''.join(f'<li><strong>{e(m["part"].replace("-"," "))}</strong> — {e(m["action"])}</li>' for m in s['motionTargets'])+'</ul></div><div><h3>Keep out of the image</h3><ul>'+''.join(f'<li>{e(x)}</li>' for x in s['avoid'])+'</ul></div></div><details class="brief-details"><summary>Layer handoff for production</summary><p>These are the desired final groups, not layers the image generator is expected to create automatically.</p><div class="brief-layer-list">'+''.join(f'<code>{e(x)}</code>' for x in s['layers'])+'</div><p>Preserve the full form behind overlaps, keep a shared canvas, and include a flattened reference for comparison.</p></details></section>'
 briefs += '<section class="brief-section"><h2>Pick for the still.<br><em>Animate for the meaning.</em></h2><p>'+e(BRIEFS['approval']['readabilityTest'])+'</p><ul>'+''.join(f'<li>{e(x)}</li>' for x in BRIEFS['approval']['checks'])+'</ul><a class="button outline" href="illustration-prompts.txt" download>Download all five prompts ↓</a></section>'
 page('illustration-briefs.html','Illustration workshop',briefs,'')
-page('illustration-direction.html','Illustration direction V2',render_direction(),'')
-(ROOT/'illustration-prompts.txt').write_text(BRIEFS['title']+'\n\n'+BRIEFS['purpose']+'\n\n'+'\n\n'.join(s['chapter']+' / '+s['heading']+'\n\n'+s['prompt'] for s in BRIEFS['scenes']))
+if not SELECTED or 'illustration-direction.html' in SELECTED:
+    page('illustration-direction.html','Illustration direction V2',render_direction(),'')
+if not SELECTED or 'illustration-briefs.html' in SELECTED:
+    (ROOT/'illustration-prompts.txt').write_text(BRIEFS['title']+'\n\n'+BRIEFS['purpose']+'\n\n'+'\n\n'.join(s['chapter']+' / '+s['heading']+'\n\n'+s['prompt'] for s in BRIEFS['scenes']))
 
 work_projects = [p for p in PROJECTS if p.get('placement') == 'Work']
 work = (ROOT / 'content/work-intro.html').read_text()
@@ -308,6 +327,11 @@ page('cv.html','CV',cv,'CV')
 
 # Keep old entry points usable while their content now has a clear home.
 for old,new in [('Educational.html','about.html'),('Professional.html','work.html'),('Amateurs.html','about.html#outside'),('Resume.html','cv.html'),('Sharing.html','writing.html')]:
+    if SELECTED and old not in SELECTED:
+        continue
     if old=='Amateurs.html': new='about.html'
     (ROOT/old).write_text(f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="0;url={new}"><title>Page moved · Zebang Wu</title><p>This page has moved to <a href="{new}">{new}</a>.</p></html>')
-print(f'Generated five main pages, the visual standard and two illustration workshops, {len(PROJECTS)} detail pages, the existing conversation, and five legacy redirects.')
+    GENERATED.append(old)
+if missing := SELECTED - set(GENERATED):
+    raise SystemExit('Unknown page selection: ' + ', '.join(sorted(missing)))
+print('Generated ' + (', '.join(GENERATED) if SELECTED else f'{len(GENERATED)} pages') + '.')

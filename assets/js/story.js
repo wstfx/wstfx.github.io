@@ -19,7 +19,7 @@
   const thoughts = ['Every path starts with curiosity.', 'Whose experience needs a closer look?', 'What would make the answer convincing?', 'What happens outside the experiment?', 'What could this help someone understand?'];
   const descriptions = [
     'An orange fox at a workbench unrolls a paper road, with a small car exploring where it leads.',
-    'An attentive orange fox and an adult student face each other beside an open notebook: making room for a conversation.',
+    'An attentive orange fox looks toward a hand offering an open notebook through the left edge of a fine, open frame.',
     'An orange fox examines a measurement point on a small contour landscape through a freestanding lens.',
     'An orange fox inspects a model car approaching a bend and a traffic cone on a small test road.',
     'Two adult learners try a laptop together while an orange fox turns toward the learner asking a question.'

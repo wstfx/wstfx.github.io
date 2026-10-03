@@ -1,14 +1,40 @@
 {
   "date": "2026-10-03",
-  "tool": "Built-in image_gen",
-  "reference": "User-supplied FoxHomepage_0.svg rendered faithfully, plus exact eye detail.",
-  "status": "First integrated chapter studies for design review. Conceptual editorial scenes, not documentary project images.",
+  "tool": "Initial concepts: built-in image_gen. Current Notice replacement: user-supplied PNG, converted locally with VTracer and native SVG gradient fitting.",
+  "reference": "Original chapter studies referenced the user-supplied FoxHomepage_0.svg and eye detail. The current Notice close-up uses the supplied PNG itself as the authoritative geometry and eye reference.",
+  "status": "Notice now uses a supplied three-quarter close-up, locally converted to native SVG and composed in an open frame. Test, Build and Return retain the first integrated chapter studies pending new user-authored artwork. All are conceptual editorial scenes, not documentary project images.",
   "scenes": [
     {
       "id": "notice",
-      "source": "assets/art/chapter-sources/notice.png",
-      "vector": "assets/art/scene-notice.svg",
-      "prompt": "Use case: illustration-story. Create ONE finished editorial illustration for a portfolio chapter titled \"Start with someone\", with NO text drawn. Reference image 1 is the approved fox illustration, for precise character, palette and flowing geometric style ONLY, not its workbench/car composition. Reference image 2 is the authoritative CLOSE-UP EYE AND FACE reference: copy the small OPEN angular teardrop eye with warm peach iris, a dark angled pupil, tiny cream catchlights and sharp forest-dark outline; NOT a closed crescent, not a generic smiling eye. Keep this face identity.\nScene: a dignified adult university student at the right sits on a simple sage chair, relaxed, gently leaning toward an elegant orange fox at the left. The fox sits upright on a low sage platform, their faces at similar heights, both looking attentively toward one another. Fox has long graceful forelegs, tall sharp ears, small tapered head, cream chest, dark forest legs, a broad flowing orange/cream brush tail resting in clear open space to the far left. One small side table between them carries an open blank cream notebook. Mutual attention and the open space between their faces are the main action. One adult only, simple forest/sage clothing, restrained adult facial detail. Student is a conceptual figure, not an actual research participant.\nProduction style: crisp clean FLAT vector-like color planes, a few elegant decisive curves, shallow side/three-quarter view, minimal geometric forms, no texture/no gradients/no glow. Orange #fb7926, burnt orange #cb4e13, apricot #fdc894, cream #f7e7c9; forest #193d30 and sage #b7c4a5 for surroundings. Match reference proportions; no chibi/cartoon baby head. Deliberately keep the fox tail, notebook top and person's silhouette separate and readable. No excessive overlaps.\nComposition: single near-square scene, complete bodies and furniture, generous transparent space above, below and between subjects. All artwork inside canvas with at least 6% clear edge padding. TRANSPARENT BACKGROUND; no paper rectangle, no painted checkerboard, no scenery. No text, labels, symbols, speech bubbles, sound waves, headphones, disability markers, sign-language gestures, invented interface, grid or contact sheet."
+      "source": "assets/art/chapter-sources/notice-closeup.png",
+      "vector": "assets/art/scene-notice-closeup.svg",
+      "homepageVector": "assets/art/scene-notice-framed.svg",
+      "origin": "PNG illustration supplied by the user on 2026-10-03; no image-generation or external conversion API used for this replacement.",
+      "sourceSha256": "108816e319f8800492c61e9588661fbbab14621ec34049074ddb4a03c4358016",
+      "sourcePreservation": "The supplied PNG is retained byte-for-byte unchanged; raw vector and framed homepage derivative are separate files.",
+      "description": "An attentive three-quarter-view fox looks toward a person holding an open notebook. The arm enters from the left edge; the homepage frame makes the crop part of an intentional close-up composition.",
+      "conversion": {
+        "script": "tools/prepare_notice_art.py",
+        "method": "Local VTracer 0.6.15 spline tracing with a 50% alpha contour, followed by native linear-gradient fitting to visible source pixels. Sharp rasterizes path IDs only for source-color sampling. No embedded raster image in the SVG.",
+        "viewBox": "0 0 1298 1212",
+        "paths": 114,
+        "linearGradients": 6,
+        "rawVectorBytes": 127441,
+        "eye": "Both incoming three-quarter eyes retain their supplied geometry, pupil, iris and catchlights. They are not replaced by older profile-eye paths.",
+        "motion": "Two source-eye groups support a guarded blink. The connected tail/body planes, hand and notebook remain still; framing and decorative motion are separate from the raw conversion.",
+        "visualLimit": "The traced artwork has cleaner, flatter color planes; fitted gradients retain selected shading, without claiming pixel-identical reconstruction."
+      },
+      "history": [
+        {
+          "status": "Superseded homepage Notice study; original PNG, SVG and exact generation prompt retained for provenance.",
+          "record": {
+            "id": "notice",
+            "source": "assets/art/chapter-sources/notice.png",
+            "vector": "assets/art/scene-notice.svg",
+            "prompt": "Use case: illustration-story. Create ONE finished editorial illustration for a portfolio chapter titled \"Start with someone\", with NO text drawn. Reference image 1 is the approved fox illustration, for precise character, palette and flowing geometric style ONLY, not its workbench/car composition. Reference image 2 is the authoritative CLOSE-UP EYE AND FACE reference: copy the small OPEN angular teardrop eye with warm peach iris, a dark angled pupil, tiny cream catchlights and sharp forest-dark outline; NOT a closed crescent, not a generic smiling eye. Keep this face identity.\nScene: a dignified adult university student at the right sits on a simple sage chair, relaxed, gently leaning toward an elegant orange fox at the left. The fox sits upright on a low sage platform, their faces at similar heights, both looking attentively toward one another. Fox has long graceful forelegs, tall sharp ears, small tapered head, cream chest, dark forest legs, a broad flowing orange/cream brush tail resting in clear open space to the far left. One small side table between them carries an open blank cream notebook. Mutual attention and the open space between their faces are the main action. One adult only, simple forest/sage clothing, restrained adult facial detail. Student is a conceptual figure, not an actual research participant.\nProduction style: crisp clean FLAT vector-like color planes, a few elegant decisive curves, shallow side/three-quarter view, minimal geometric forms, no texture/no gradients/no glow. Orange #fb7926, burnt orange #cb4e13, apricot #fdc894, cream #f7e7c9; forest #193d30 and sage #b7c4a5 for surroundings. Match reference proportions; no chibi/cartoon baby head. Deliberately keep the fox tail, notebook top and person's silhouette separate and readable. No excessive overlaps.\nComposition: single near-square scene, complete bodies and furniture, generous transparent space above, below and between subjects. All artwork inside canvas with at least 6% clear edge padding. TRANSPARENT BACKGROUND; no paper rectangle, no painted checkerboard, no scenery. No text, labels, symbols, speech bubbles, sound waves, headphones, disability markers, sign-language gestures, invented interface, grid or contact sheet."
+          }
+        }
+      ]
     },
     {
       "id": "test",
@@ -35,11 +61,12 @@
     "tool": "VTracer 0.6.15, local conversion",
     "script": "tools/prepare_chapter_art.py",
     "method": "Unmodified PNGs retained. Alpha contour threshold 128/255 removes invisible fringe during vector conversion. Paths are grouped manually for a small set of motions; this is not a complete character rig.",
-    "eye": "Original source SVG eye paths reused and positioned per pose."
+    "eye": "Original source SVG eye paths reused for the generated Test, Build and Return studies and the historical Notice study. The current Notice close-up preserves its own supplied three-quarter eyes.",
+    "scope": "Original generated chapter studies, including the retained historical Notice study. The current supplied Notice replacement has its own conversion record above."
   },
   "motion": {
-    "common": "Tail sweep +2.5/-2 degrees over 9 seconds; brief source-eye blink over 11 seconds.",
-    "notice": "Notebook page tilts by 1.2 degrees.",
+    "common": "Test, Build and Return: tail sweep +2.5/-2 degrees over 9 seconds and brief source-eye blink over 11 seconds. Current Notice: supplied close-up eye blink, with tail/body and hand held still.",
+    "notice": "Both supplied three-quarter eyes blink using individually anchored vector groups. The cropped hand, book and connected fox planes remain still; the homepage uses a separately composed open frame.",
     "test": "Selected measurement marker rises by 4 source units.",
     "build": "Car moves -40/+10 source units along the road.",
     "return": "Learner question gesture rotates by 1.2 degrees.",
