@@ -20,13 +20,13 @@
     ],
     "geometry": "All 176 scene paths and the ellipse preserve original painter order and geometry; 42 fox paths plus the highlight ellipse are isolated for references.",
     "motion": "Independent tail, eye, paper curl, car and leaf groups; connected head, neck and body remain static. Pause/reduced-motion/startup guards apply. Mobile uses a full still illustration and a compact source fox companion.",
-    "homepageStatus": "Supplied opening scene preserved. Notice uses the supplied three-quarter close-up with an open-frame derivative, incoming-eye blink, controlled tail/hand-book motion and decorative accents. Test uses the supplied overhead fox/map with animated route and next-sample emphasis. Build and Return retain the previous generated and traced studies pending further user-authored illustrations.",
+    "homepageStatus": "Notice: native hand and notebook held still; corner ticks removed; only larger tail sway and blink. Test: changing sampling journey. New supplied Build and Return static vectors are in ChapterCleanup awaiting user edits.",
     "headlineTail": "assets/art/tail-punctuation.svg: a complete upright brush tail with a smooth closed root, source orange/cream color planes, and no flat cut edge.",
     "motionAmplitude": {
-      "tail": "9-second +3/-2.5 degree sweep, 4 source-unit inward X compensation at extrema",
-      "car": "12-second cycle, -55,+18 source-unit travel with resting pauses",
-      "paperCurl": "7-second cycle, 6 degrees",
-      "leaves": "6-second staggered cycle, -6 to +6 degrees",
+      "tail": "9-second +4.5/-3.75 degree sweep, 6 source-unit inward X compensation at extrema",
+      "car": "12-second cycle, -82.5,+27 source-unit travel with resting pauses",
+      "paperCurl": "7-second cycle, 9 degrees",
+      "leaves": "6-second staggered cycle, -9 to +9 degrees",
       "guards": "Existing pause control, delayed startup, off-screen/hidden-page pause and reduced-motion preference preserved."
     },
     "chapterRecord": "content/chapter-art-production.json",
@@ -45,11 +45,11 @@
       "sourcePreservation": "Original PNG remains byte-for-byte unchanged; raw SVG and framed homepage composition are separate derivatives.",
       "geometry": "1298×1212 source coordinates; 114 spline paths and 6 fitted native linear gradients; no raster image embedded in either vector artwork.",
       "eyeTreatment": "Preserve both supplied three-quarter eyes, including iris, pupil and catchlights. Do not transplant the older side-profile eye onto this pose.",
-      "motion": "Framed homepage derivative: whole tail ±2 degrees/9 seconds; hand-book group 0 to -0.8 degrees/9 seconds; decorative leaf ±3 degrees/8 seconds; arc opacity 0.35–0.65/11 seconds; supplied-eye blink retained. Existing active-scene, startup, pause, hidden/off-screen and reduced-motion guards apply; mobile remains static.",
+      "motion": "Framed homepage derivative: whole tail ±3 degrees over 9 seconds and supplied-eye blink only. The original hand, book and all decorative elements stay still. Existing active-scene, startup, pause, hidden/off-screen and reduced-motion guards apply; mobile remains static.",
       "history": "The former generated Notice PNG/SVG and its original prompt remain recorded in content/chapter-art-production.json.",
       "framePrepare": "tools/frame_notice_art.py",
       "rawMotion": "The raw converted SVG retains its incoming-eye blink groups, with connected tail/body, hand and book unrigged; this file is unchanged by the homepage motion preparation.",
-      "frameTreatment": "Vector clip paths, masks and small hidden vector underlaps let the complete tail and coupled hand-book group move within the restrained range. The open frame receives the cropped arm. Original PNG and raw SVG remain unchanged."
+      "frameTreatment": "Vector clips and masks isolate the complete tail. Hidden curved underlaps continue native tail contours at its root; the original hand/book paint remains stationary. The open frame receives the cropped arm; page-corner ticks are removed. Original PNG and raw SVG remain unchanged."
     },
     "testReplacement": {
       "date": "2026-10-03",
@@ -60,10 +60,14 @@
       "geometry": "80 artwork spline paths, 1 vector-mask path and 4 native linear gradients; no embedded raster image. All artwork stays above source y=1071, inside the cropped export.",
       "faceTreatment": "Preserve the supplied overhead pose and face. No profile-eye replacement or anatomy reconstruction.",
       "cleanup": "The established 50% alpha contour excludes faint transparent residue between legs and tail; a vector mask removes the hidden orange map-edge underpaint.",
-      "motion": "Selected point scales 1→1.18 over 9 seconds at source pivot (557,544). Four original route dashes use opacity 0.65→1 over 9 seconds with 0.3-second stagger. Fox, tail, map and earlier sample points stay still.",
+      "motion": "Five original map points are connected by eight reviewed curves. A marker follows each drawing route; the destination turns orange only on arrival, then the completed route fades. Destinations vary without immediate backtracking. The fox and map stay still.",
       "guards": "Only the active desktop scene animates; startup, user pause, hidden/off-screen and reduced-motion safeguards apply. Mobile displays the complete static scene.",
-      "history": "The former generated Test source, vector, original prompt and anatomy correction remain recorded in content/chapter-art-production.json."
-    }
+      "history": "The former generated Test source, vector, original prompt and anatomy correction remain recorded in content/chapter-art-production.json.",
+      "homepageVector": "assets/art/scene-test-journey.svg",
+      "homepagePrepare": "tools/build_test_journey.py",
+      "runtime": "assets/js/test-journey.js"
+    },
+    "manualCleanup": "assets/IllustratorWorkspace/ChapterCleanup/READ-ME.txt"
   },
   "conceptSheet": {
     "file": "assets/art/fox-pose-concepts-v1.png",

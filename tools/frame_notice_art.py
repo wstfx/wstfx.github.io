@@ -1,8 +1,8 @@
 """Frame and non-destructively rig the supplied vectorized Notice close-up.
 
-The untouched trace remains the authority. Native vector silhouettes define the
-book/hand selection; masks remove their stationary copies before any motion.
-Small hidden vector underlaps reveal table/fox colours at the motion extremes.
+The untouched trace remains the authority. Only the tail is separated for
+motion; the complete native hand, notebook, tabletop and fox body remain in
+one stationary paint layer. The existing eyes retain their blink hooks.
 """
 from copy import deepcopy
 from pathlib import Path
@@ -43,7 +43,7 @@ def prepare():
     sub(svg, 'desc', id='notice-window-description').text = (
         'An attentive orange fox looks toward someone offering an open notebook. '
         'Their forearm enters through the left edge of a fine, open frame; the fox rises above it. '
-        'The whole tail and the hand with its notebook move as separate, coherent vector layers.'
+        'The tail sways behind the still notebook and hand; the fox occasionally blinks.'
     )
     # Native 0-based viewport keeps CSS transform-origin coordinates exact even
     # though the outer presentation viewBox includes extra margin.
@@ -57,29 +57,29 @@ def prepare():
             painted.append(deepcopy(node))
     clip = sub(defs, 'clipPath', id='notice-window-clip', clipPathUnits='userSpaceOnUse')
     sub(clip, 'path', d='M0 0H1298V1080Q1298 1110 1268 1110H30Q0 1110 0 1080Z')
-    book_clip = sub(defs, 'clipPath', id='notice-book-region', clipPathUnits='userSpaceOnUse')
-    sub(book_clip, 'rect', x=0, y=738, width=870, height=400)
-    offering_clip = sub(defs, 'clipPath', id='notice-offering-clip', clipPathUnits='userSpaceOnUse')
-    # Path 4 contains the native sleeve, hand and book cover outline. Path 2's
-    # lower connected cream area supplies the pages; its tail tip is excluded.
-    offering_clip.append(copy_path(paths[4], fill='white'))
-    offering_clip.append(copy_path(paths[14], fill='white'))
-    paper = copy_path(paths[2], fill='white')
-    paper_outline = paths[2].get('d')
-    paper.set('d', 'M-110 305 C-84 306 -59 309 -32 316 ' + paper_outline[paper_outline.index('C-31.02 316.13'):paper_outline.index('C-117.4 305.87')] + 'Z')
-    offering_clip.append(paper)
-    tail_d = 'M105 380H528L630 555L706 691L741 744C727 769 716 791 704 818L694 843H585L379 808L214 692L105 565Z'
-    tail_cut_d = 'M105 380H528L630 555L706 691L727 744C713 769 702 791 690 818L680 843H585L379 808L214 692L105 565Z'
+    # The guard follows the final visible page edge (after all native colour
+    # layers), rather than the larger cream underpaint that also spans the tail.
+    # This is only an occlusion boundary; the notebook is painted entirely from
+    # the unmodified native trace, including its cover, crease and edge pixels.
+    book_edge = [(409, 756), (425, 757), (440, 759), (455, 761), (470, 764),
+                 (485, 767), (500, 772), (515, 775), (530, 780), (545, 786),
+                 (560, 793), (575, 801), (590, 810), (605, 823), (620, 837),
+                 (635, 830), (650, 827), (665, 826), (680, 826), (695, 828),
+                 (710, 830), (725, 833), (740, 836), (755, 839), (770, 843),
+                 (785, 847), (800, 852), (815, 858), (830, 863), (845, 868), (855, 873)]
+    paper = ET.Element(tag('path'), {'fill': 'white', 'd':
+        'M' + 'L'.join(f'{x} {y}' for x, y in book_edge) + 'L781 1085H260V905Z'})
+    tail_d = 'M105 380H528L630 555L706 691L741 744C727 769 716 791 704 818L694 843H585L395 850L205 710L105 565Z'
+    tail_cut_d = 'M105 380H528L630 555L706 691L727 744C713 769 702 791 690 818L680 843H585L395 850L205 710L105 565Z'
     tail_clip = sub(defs, 'clipPath', id='notice-tail-clip', clipPathUnits='userSpaceOnUse')
     sub(tail_clip, 'path', d=tail_d)
     base_mask = sub(defs, 'mask', id='notice-still-mask', maskUnits='userSpaceOnUse', x=-30, y=0, width=1370, height=1212, style='mask-type:luminance')
     sub(base_mask, 'rect', x=-30, y=0, width=1370, height=1212, fill='white')
     sub(base_mask, 'path', d=tail_cut_d, fill='black')
+    # The tail selection overlaps the notebook. Restore the unchanged native
+    # forearm, hand, cover and paper above the moving tail, including edge pixels.
     for shape in (paths[4], paths[14], paper):
-        base_mask.append(copy_path(shape, fill='black', stroke='black', stroke_width=3, stroke_linejoin='round'))
-    under_mask = sub(defs, 'mask', id='notice-offering-underlap-mask', maskUnits='userSpaceOnUse', x=-30, y=0, width=1370, height=1212, style='mask-type:luminance')
-    for shape in (paths[4], paths[14], paper):
-        under_mask.append(copy_path(shape, fill='white', stroke='white', stroke_width=8, stroke_linejoin='round'))
+        base_mask.append(copy_path(shape, fill='white'))
     tail_cream = sub(defs, 'clipPath', id='notice-tail-cream-clip', clipPathUnits='userSpaceOnUse')
     sub(tail_cream, 'rect', x=0, y=0, width=1298, height=735)
 
@@ -95,20 +95,21 @@ def prepare():
     sub(seed, 'path', d='M123 277L120 264M108 286L96 282', stroke='#B8C4AA', stroke_width=2)
 
     window = sub(scene, 'g', clip_path='url(#notice-window-clip)')
-    # Reconstruct only previously hidden material. The hand can lift above the
-    # table without revealing a duplicate sleeve/book silhouette underneath.
-    under = sub(window, 'g', id='notice-motion-underlap', mask='url(#notice-offering-underlap-mask)')
-    sub(under, 'path', d='M249 1023L858 892L1298 925V1145L249 1080Z', fill='#C1C9B3')
-    under_top = sub(under, 'g', clip_path='url(#notice-book-region)')
-    for n in (1, 3):
-        item = copy_path(paths[n], stroke=paths[n].get('fill'), stroke_width=38, stroke_linejoin='round', paint_order='stroke fill')
-        under_top.append(item)
-
     tail = sub(window, 'g', id='notice-tail-rig', class_='notice-tail', style='transform-box:view-box;transform-origin:721px 796px', data_pivot='721 796')
-    # Hidden continuation beneath the notebook: its lift must not uncover the
-    # old paper-shaped cut in the traced tail. These strips share native fills.
-    sub(tail, 'path', d='M348 787L402 746L477 754L489 792L415 780L367 825Z', fill='#FBBD85')
-    sub(tail, 'path', d='M474 733C473 754 477 776 491 791Q555 800 619 822L694 809L703 862H599Q530 815 480 803C469 790 465 760 474 733Z', fill='#BD4713')
+    # Continue the native apricot and dark tail contours underneath the book.
+    # Reusing their exact outer curves avoids visible wedges when the tail rises.
+    apricot_underlap = copy_path(paths[11])
+    apricot_d = paths[11].get('d')
+    apricot_underlap.set('d', apricot_d[:apricot_d.index('C306.65 223.49')] +
+        'C322 258 337 278 340 304 C265 317 220 299 182 254 ' +
+        apricot_d[apricot_d.index('C175 247.22'):])
+    tail.append(apricot_underlap)
+    dark_underlap = copy_path(paths[20])
+    dark_d = paths[20].get('d')
+    dark_underlap.set('d', dark_d[:dark_d.index('C241.43 224.99')] +
+        'C242 259 231 286 215 300 C157 290 70 252 50 223 C40 204 38 187 37 165 ' +
+        dark_d[dark_d.index('C32.36 157.98'):])
+    tail.append(dark_underlap)
     tail_parts = sub(tail, 'g', clip_path='url(#notice-tail-clip)')
     for n in (1, 2, 3, 5, 11, 15, 16, 20, 61, 66, 76, 90):
         item = copy_path(paths[n])
@@ -119,12 +120,6 @@ def prepare():
             tail_parts.append(item)
     still = sub(window, 'g', id='notice-stationary-art', mask='url(#notice-still-mask)')
     sub(still, 'use', href='#notice-native-paint')
-    offering = sub(window, 'g', id='notice-offering-rig', class_='notice-offering', style='transform-box:view-box;transform-origin:0px 881px', data_pivot='0 881')
-    selection = sub(offering, 'g', clip_path='url(#notice-offering-clip)')
-    sub(selection, 'use', href='#notice-native-paint')
-    # Corner ticks belong to the book gesture, outside its native paint.
-    marks = sub(offering, 'g', class_='notice-decor-paper', fill='none', stroke='#9AAB8E', stroke_width=2.4, stroke_linecap='round', opacity=.65)
-    sub(marks, 'path', d='M364 761L376 749L390 751M812 1081L824 1084L831 1070')
 
     frame = sub(svg, 'g', id='notice-window-frame', fill='none', stroke_linecap='round', stroke_linejoin='round')
     sub(frame, 'path', d='M246 350H30Q0 350 0 380V1080Q0 1110 30 1110H1268Q1298 1110 1298 1080V875', stroke='#8D9D87', stroke_width=3.5)

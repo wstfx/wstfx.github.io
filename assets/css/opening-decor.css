@@ -21,16 +21,16 @@
 .story-page.scene-asleep .opening-decoration *,
 .story-stage:not([data-scene="0"]) .opening-decoration * { animation-play-state:paused !important; }
 @keyframes opening-leaf-turn {
-  0%,100% { transform:rotate(-5deg); }
-  50% { transform:rotate(9deg); }
+  0%,100% { transform:rotate(-7.5deg); }
+  50% { transform:rotate(13.5deg); }
 }
 @keyframes opening-seed-drift {
-  0%,100% { transform:translate(0,0) rotate(-5deg); }
-  50% { transform:translate(12px,-13px) rotate(13deg); }
+  0%,100% { transform:translate(0,0) rotate(-7.5deg); }
+  50% { transform:translate(18px,-19.5px) rotate(19.5deg); }
 }
 @keyframes opening-sprig-sway {
-  0%,100% { transform:rotate(-2deg); }
-  50% { transform:rotate(4deg); }
+  0%,100% { transform:rotate(-3deg); }
+  50% { transform:rotate(6deg); }
 }
 @keyframes opening-road-flow { to { stroke-dashoffset:-102; } }
 @media(max-width:900px) {

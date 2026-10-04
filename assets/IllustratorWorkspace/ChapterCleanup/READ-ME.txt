@@ -1,0 +1,16 @@
+ILLUSTRATOR CLEANUP / 插画手修稿
+
+P1-Notice.svg   Start with someone — 手、书、狐狸近景（未加网页线框）
+P2-Test.svg     俯视采样地图 — 保留五个点和原始示例虚线
+P3-Build.svg    狐狸、小车与弯路 — 新转换静态稿，等待手修
+P4-Return.svg   笔记本电脑前的学习者与狐狸 — 新转换静态稿，等待手修
+
+请直接在 Illustrator 中打开这些 SVG，修改后保存到同一个位置；也可另存同名 .ai 母版。它们是供你手修的固定副本，网站构建和矢量转换脚本都不会覆盖这个目录。原始 PNG 保留在 assets/art/chapter-sources/。
+
+尽量保持画布/viewBox 与物体的大致位置。若需要改画布或挪动主体也可以，交回时告诉我，我会重新校准动效。无需手工保留网页动画 class 或复杂遮罩。想独立运动的尾巴、眼睛、人物与道具可以分组，并保留被遮挡部分的形状。
+
+网页派生稿位于 assets/art/scene-notice-framed.svg 和 scene-test-journey.svg；不要用它们作为手修起点，以免把动画遮罩和网页装饰一并带入。完成手修后再从本目录生成新的网页派生稿。
+
+P3/P4 本轮仅转换并供审阅，暂不替换首页或增加角色动画。
+
+These are stable, static vector copies for manual cleanup. Normal site builds do not regenerate them. Save edited SVGs here, optionally with Illustrator masters. Keep artboard coordinates where practical; tell me about layout changes so motion pivots can be updated. Homepage masks and animation derivatives stay separate. The new P3/P4 artwork awaits your cleanup before homepage integration.
