@@ -212,5 +212,11 @@
       "script": "tools/prepare_remaining_art.py",
       "status": "Historical conversion draft; superseded by owner-cleaned FoxIllustration_P3/P4.svg for homepage production."
     }
-  ]
+  ],
+  "motionRefinement": {
+    "date": "2026-10-05",
+    "tail": "P3/P4 keep attachment control points fixed; only the free tail bends. Shared colour planes have 0.8-unit matching under-strokes to prevent anti-alias cracks. The P4 desk continues behind the entire tail motion envelope.",
+    "decoration": "Separate warm-orange open arcs, travelling ink segments, softly pulsing nodes, leaf-shaped sprigs and current lines. Decorative layers sit behind source artwork and share existing pause, offscreen and reduced-motion controls.",
+    "verification": "Rest/up/down vector renders inspected; fixed-root geometry checked for both extrema; browser path interpolation and pause verified. P1 original hand/book remain still; its two tail extrema were inspected."
+  }
 }

@@ -60,6 +60,67 @@ def load(scene):
 def group(scene,kind,pivot):
     return E.Element(N+'g',{'id':f'{scene}-{kind}','class':f'supplied-{scene.lower()}-{kind}','data-motion':kind,'style':f'transform-box:view-box;transform-origin:{pivot[0]}px {pivot[1]}px'})
 
+def flex_tail(tail, anchor, reach, amount):
+    """Bend only the free end; every control point at the attachment stays exact.
+
+    Matching command topology makes CSS interpolate smoothly. Unsupported CSS
+    path animation falls back to the untouched d attribute, not a broken rig.
+    """
+    for path in tail:
+        commands=absolute(path.get('d'))
+        def bent(sign):
+            result=[]
+            for command,values in commands:
+                values=values[:]
+                for j in range(0,len(values),2):
+                    t=max(0,min(1,(anchor-values[j])/reach))
+                    values[j+1]+=sign*amount*t*t*(3-2*t)
+                result.append(command+' '.join(f'{v:.3f}' for v in values))
+            return ' '.join(result)
+        # Subpixel overlap prevents anti-alias seams between adjacent colour planes.
+        path.set('stroke',path.get('fill'))
+        path.set('stroke-width','0.8')
+        path.set('stroke-linejoin','round')
+        path.set('paint-order','stroke fill')
+        path.set('class','authored-tail-flex')
+        path.set('style',f'--tail-rest:path("{bent(0)}");--tail-up:path("{bent(-1)}");--tail-down:path("{bent(1)}")')
+    tail.set('data-fixed-root-x',str(anchor))
+
+def decorations(svg, scene):
+    # One quiet line language: open contours, small nodes, leaf-like terminals.
+    # All secondary motion lives on new art, behind the unchanged source paths.
+    g=E.Element(N+'g',{'id':scene+'-ornament','fill':'none','stroke':'#b78351','stroke-width':'3.2','stroke-linecap':'round','stroke-linejoin':'round','aria-hidden':'true'})
+    svg.insert(list(svg).index(svg.find(N+'defs'))+1,g)
+    if scene=='P3':
+        sub(g,'path',d='M152 637C109 448 182 164 442 136C637 111 760 220 813 290',opacity='.34')
+        sub(g,'path',d='M158 568C141 367 265 191 459 176',stroke_dasharray='2 15',opacity='.5')
+        route='M151 644C115 458 189 169 444 138'
+        sub(g,'path',d=route,stroke='#c7713b',stroke_width=3.2,pathLength=1,stroke_dasharray='.10 .90',class_='ornament-traveller',opacity='.7')
+        for x,y,r in [(150,643,6),(180,350,4),(445,138,5)]:
+            sub(g,'circle',cx=x,cy=y,r=r,fill='#f7f5ed',opacity='.8')
+        sub(g,'circle',cx=445,cy=138,r=15,class_='ornament-pulse',style='transform-box:fill-box;transform-origin:center',opacity='.35')
+        sprig=sub(g,'g',class_='ornament-sprig',style='transform-box:view-box;transform-origin:270px 719px')
+        sub(sprig,'path',d='M270 719C258 685 239 649 211 631M252 683C224 684 211 669 210 654C231 651 247 661 252 683M237 660C240 635 233 618 217 612C207 630 214 650 237 660',opacity='.6')
+        sub(g,'path',d='M771 858C829 821 859 789 863 750M786 873C846 835 881 791 884 758',opacity='.48',class_='ornament-current')
+        sub(g,'path',d='M827 747L837 727L848 748M191 201V225M179 213H203',opacity='.55')
+    else:
+        # A single open loop joins the space above the learner to the fox;
+        # dashes carry the idea onward without drawing another literal UI.
+        sub(g,'path',d='M82 421C13 246 128 92 291 93C327 93 356 101 383 117',opacity='.35')
+        sub(g,'path',d='M794 130C923 93 1133 149 1178 300',opacity='.4')
+        sub(g,'path',d='M831 165C977 139 1096 209 1118 275',stroke_dasharray='2 14',opacity='.48')
+        sub(g,'path',d='M794 130C923 93 1133 149 1178 300',pathLength=1,stroke_dasharray='.12 .88',stroke_width=3.2,class_='ornament-traveller',opacity='.75')
+        sub(g,'circle',cx=794,cy=130,r=5,fill='#c7713b',stroke='none')
+        sub(g,'circle',cx=1178,cy=300,r=7,opacity='.7')
+        sub(g,'circle',cx=1178,cy=300,r=18,class_='ornament-pulse',style='transform-box:fill-box;transform-origin:center',opacity='.3')
+        sprig=sub(g,'g',class_='ornament-sprig',style='transform-box:view-box;transform-origin:214px 1040px')
+        sub(sprig,'path',d='M214 1040C239 1012 245 982 238 950M232 1013C207 1011 193 995 196 980C218 981 231 993 232 1013M241 986C263 974 269 956 260 943C242 951 237 968 241 986',opacity='.65')
+        sub(g,'path',d='M261 1049C310 1076 357 1079 402 1068M273 1068C323 1095 370 1094 415 1081',class_='ornament-current',opacity='.42')
+        sub(g,'path',d='M129 289V313M117 301H141M1066 82V102M1056 92H1076',opacity='.55')
+    for node in g.iter():
+        if node.get('opacity'):node.set('opacity',str(min(.85,float(node.get('opacity'))*1.3)))
+        if 'class-' in node.attrib:node.set('class',node.attrib.pop('class-'))
+
 def prepare_build():
     svg,defs,p=load('P3');assert len(p)==93
     # The traced road includes the car's outline in its cream underpaint. Restore
@@ -75,6 +136,8 @@ def prepare_build():
     for i in sorted(car_indices):car.append(p[i])
     for i in sorted(tail_indices):tail.append(p[i])
     for i in sorted(eye_indices):eye.append(p[i])
+    flex_tail(tail,730,380,27)
+    decorations(svg,'P3')
     for i,path in enumerate(p):
         if i in car_indices|tail_indices|eye_indices:continue
         if i==52:svg.append(tail)
@@ -98,8 +161,10 @@ def prepare_return():
     q=deepcopy(p[0]);q.set('id','P4-tail-cream')
     q.set('d',data([('M',[943.69,835.24])]+commands[34:49]+[('Z',[])]));tail.append(q)
     for i in sorted(tail_indices):tail.append(p[i])
-    desk=commands[:12]+[('L',[440,820]),('L',[635.27,781.72])]+commands[21:31]+[('C',[840,835,650,864,520.92,904.11])]+commands[49:]
+    desk=commands[:12]+[('L',[440,820]),('L',[635.27,781.72])]+commands[21:31]+[('C',[840,930,650,933,520.92,904.11])]+commands[49:]
     p[0].set('d',data(desk))
+    flex_tail(tail,920,430,23)
+    decorations(svg,'P4')
     hand=group('P4','typing',(631,759))
     for i in sorted(hand_indices):hand.append(p[i])
     for i,path in enumerate(p):

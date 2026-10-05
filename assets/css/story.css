@@ -59,16 +59,24 @@ html:has(.story-page) { scroll-padding-top:0; }
 .chapter-art .notice-tail { animation:notice-tail-sway 9s ease-in-out infinite; }
 @keyframes notice-tail-sway { 0%,10%,100% { transform:rotate(0); } 42% { transform:rotate(3deg); } 74% { transform:rotate(-3deg); } }
 /* Owner-cleaned scenes: local groups preserve the original eyes and poses. */
-.chapter-art .supplied-p3-tail { animation:authored-tail 9s ease-in-out infinite; }
+.chapter-art .supplied-p3-tail .authored-tail-flex { animation:authored-tail-flex 9s ease-in-out infinite; }
 .chapter-art .supplied-p3-eye { animation:notice-blink 7.5s linear infinite; }
 .chapter-art .supplied-p3-car { animation:authored-car 12s ease-in-out infinite; }
-.chapter-art .supplied-p4-tail { animation:authored-return-tail 10s ease-in-out infinite; }
+.chapter-art .supplied-p4-tail .authored-tail-flex { animation:authored-tail-flex 10s ease-in-out infinite; }
 .chapter-art .supplied-p4-typing { animation:authored-typing 6s ease-in-out infinite; }
 .chapter-art #notice-stationary-art .scene-fox-eye { animation:notice-blink 6.5s linear infinite; }
 @keyframes notice-blink { 0%,31%,36%,76%,81%,100% { transform:scaleY(1); } 33%,34%,78%,79% { transform:scaleY(.06); } }
-@keyframes authored-tail { 0%,12%,100% { transform:rotate(0); } 42% { transform:rotate(3deg); } 74% { transform:rotate(-2.5deg); } }
+@keyframes authored-tail-flex { 0%,12%,100% { d:var(--tail-rest); } 42% { d:var(--tail-up); } 74% { d:var(--tail-down); } }
 @keyframes authored-car { 0%,15%,100% { transform:translate(0,0); } 48%,67% { transform:translate(-45px,19px); } }
-@keyframes authored-return-tail { 0%,12%,100% { transform:rotate(0); } 44% { transform:rotate(2.5deg); } 76% { transform:rotate(-2deg); } }
+/* Added linework carries the longer motion, without disturbing anatomy. */
+.chapter-art .ornament-traveller { animation:ornament-travel 14s linear infinite; }
+.chapter-art .ornament-pulse { animation:ornament-pulse 7s ease-in-out infinite; }
+.chapter-art .ornament-sprig { animation:ornament-sprig 11s ease-in-out infinite; }
+.chapter-art .ornament-current { animation:ornament-current 9s ease-in-out infinite; }
+@keyframes ornament-travel { from { stroke-dashoffset:1; } to { stroke-dashoffset:0; } }
+@keyframes ornament-pulse { 0%,100% { opacity:.22; transform:scale(.85); } 50% { opacity:.6; transform:scale(1.18); } }
+@keyframes ornament-sprig { 0%,100% { transform:rotate(-2deg); } 50% { transform:rotate(3deg); } }
+@keyframes ornament-current { 0%,100% { opacity:.3; transform:translateY(0); } 50% { opacity:.6; transform:translateY(-5px); } }
 @keyframes authored-typing { 0%,12%,42%,100% { transform:rotate(0); } 18%,30% { transform:rotate(-1.2deg); } 24%,36% { transform:rotate(.25deg); } }
 /* Test's separate sampling journey is driven by test-journey.js. */
 .chapter-art:not(.is-current) * { animation-play-state:paused; }
