@@ -77,13 +77,22 @@
     function snapshot() {
       const progress = phase==='travel' ? ease(elapsed/DURATIONS.travel) : (edge ? 1 : 0);
       const arrived = phase==='hold' || phase==='fade';
+      // Pass the emphasis forward with the marker, rather than retaining both
+      // endpoints until the completed route disappears. Levels are driven by
+      // the same clock as the path, so pause/resume freezes colour as well.
+      const emphasis = Object.fromEntries(Object.keys(NODES).map(node=>[node,0]));
+      if (phase==='travel') {
+        emphasis[current]=1-ease(clamp(progress/.65));
+        emphasis[edge.to]=ease(clamp((progress-.65)/.35));
+      } else emphasis[arrived ? edge.to : current]=1;
       return {
         current, previous, next:edge?.to || null, phase, elapsed, hops,
         path:edge?.d || '', progress,
         opacity:edge ? .72*(phase==='fade' ? 1-ease(elapsed/DURATIONS.fade) : 1) : 0,
         marker:edge ? pointAtDistance(edge.points, progress, edge.distances) : NODES[current],
         markerOpacity:phase==='travel' ? clamp(elapsed/140) : 0,
-        highlighted:arrived ? [current,edge.to] : [current]
+        emphasis,
+        highlighted:Object.keys(emphasis).filter(node=>emphasis[node]>0)
       };
     }
     return {advance, snapshot};
@@ -125,7 +134,7 @@
     if (!fallback || !live || !route || !marker || fragments.length===0) return null;
     const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
     const compact=window.matchMedia('(max-width:900px)');
-    let enhanced=false, lastPath='', lastHighlights='';
+    let enhanced=false, lastPath='';
     const journey=createJourney();
     const paint=state=>{
       if (!enhanced) {
@@ -139,11 +148,17 @@
       marker.setAttribute('cx',state.marker[0].toFixed(2));
       marker.setAttribute('cy',state.marker[1].toFixed(2));
       marker.setAttribute('opacity',String(state.markerOpacity));
-      const highlightKey=state.highlighted.join(',');
-      if (highlightKey!==lastHighlights) {
-        fragments.forEach(fragment=>fragment.shapes.forEach(shape=>shape.setAttribute('fill',shape.getAttribute(state.highlighted.includes(fragment.node) ? 'data-active-fill' : 'data-idle-fill'))));
-        lastHighlights=highlightKey;
-      }
+      fragments.forEach(fragment=>{
+        const level=state.emphasis[fragment.node];
+        if (level===fragment.lastLevel) return;
+        fragment.shapes.forEach(shape=>{
+          const idle=shape.getAttribute('data-idle-fill');
+          const active=shape.getAttribute('data-active-fill');
+          const channels=[1,3,5].map(i=>Math.round(parseInt(idle.slice(i,i+2),16)*(1-level)+parseInt(active.slice(i,i+2),16)*level));
+          shape.setAttribute('fill',level===0 ? idle : level===1 ? active : `rgb(${channels.join(',')})`);
+        });
+        fragment.lastLevel=level;
+      });
     };
     const clock=createClock(journey,window.requestAnimationFrame.bind(window),window.cancelAnimationFrame.bind(window),paint);
     const update=()=>clock.setRunning(allowed({

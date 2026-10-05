@@ -23,11 +23,15 @@ assert.equal(state.progress,.5);
 assert.notDeepEqual(state.marker,NODES.e);
 assert.notDeepEqual(state.marker,NODES.b);
 assert.deepEqual(state.highlighted,['e']);
+assert.ok(state.emphasis.e>0 && state.emphasis.e<.5,'Source orange fades while the marker travels');
+assert.equal(state.emphasis.b,0);
 journey.advance(DURATIONS.travel/2);
 state=journey.snapshot();
 assert.equal(state.phase,'hold');
 assert.deepEqual(state.marker,NODES.b,'Marker and route must end at the actual sample center');
-assert.deepEqual(state.highlighted,['e','b'],'Destination changes color only when reached');
+assert.deepEqual(state.highlighted,['b'],'Only the destination is orange on arrival');
+assert.equal(state.emphasis.e,0);
+assert.equal(state.emphasis.b,1);
 assert.equal(state.markerOpacity,0,'Moving marker merges into the destination');
 journey.advance(DURATIONS.hold+DURATIONS.fade/2);
 assert.equal(journey.snapshot().opacity,.36,'The completed connection fades before the next hop');
@@ -36,6 +40,23 @@ assert.equal(journey.snapshot().current,'b');
 assert.equal(journey.snapshot().opacity,0);
 assert.deepEqual(journey.snapshot().highlighted,['b']);
 assert.equal(journey.snapshot().path,'');
+
+// Both ends hand off continuously; a completed path never holds the old source.
+const handoff=createJourney(()=>.6);
+handoff.advance(DURATIONS.rest);
+let lastSource=1,lastDestination=0;
+for(let i=1;i<=100;i++) {
+  const frame=handoff.advance(DURATIONS.travel/100);
+  assert.ok(frame.emphasis.e<=lastSource,'Source must dim monotonically');
+  assert.ok(frame.emphasis.b>=lastDestination,'Destination must brighten monotonically');
+  assert.ok(!(frame.emphasis.e>0 && frame.emphasis.b>0),'Highlight does not linger on two endpoints');
+  lastSource=frame.emphasis.e;lastDestination=frame.emphasis.b;
+}
+const arrivalEmphasis=handoff.snapshot().emphasis;
+handoff.advance(DURATIONS.hold+DURATIONS.fade);
+assert.deepEqual(handoff.snapshot().emphasis,arrivalEmphasis,'Arrival stays lit through fade and the next rest');
+handoff.advance(DURATIONS.rest);
+assert.deepEqual(handoff.snapshot().emphasis,arrivalEmphasis,'Next departure begins without a colour jump');
 
 // Several route choices are exercised with a fixed pseudo-random sequence.
 let seed=41;
@@ -103,10 +124,17 @@ assert.equal(fallback.attrs.visibility,undefined,'Unready startup preserves the 
 classes.add('story-ready');mutation();tick(0);
 assert.equal(fallback.attrs.visibility,'hidden');
 assert.equal(live.attrs.visibility,'visible');
+assert.equal(shape.attrs.fill,'#F47B20');
+mounted.journey.advance(DURATIONS.rest+DURATIONS.travel/2);tick(0);
+assert.match(shape.attrs.fill,/^rgb\(/,'DOM colour is blended during travel');
+const pausedColour=shape.attrs.fill;
 classes.add('motion-paused');mutation();
 assert.equal(frames.size,0);
 classes.delete('motion-paused');mutation();tick(5000);
-assert.equal(mounted.journey.snapshot().elapsed,0);
+assert.equal(mounted.journey.snapshot().elapsed,DURATIONS.travel/2);
+assert.equal(shape.attrs.fill,pausedColour,'Pause/resume preserves intermediate colour');
+mounted.journey.advance(DURATIONS.travel/2);tick(5000);
+assert.equal(shape.attrs.fill,'#374535','The departed source returns to its original idle colour on arrival');
 media['(prefers-reduced-motion: reduce)'].matches=true;
 media['(prefers-reduced-motion: reduce)'].change();
 assert.equal(frames.size,0);
@@ -128,4 +156,4 @@ assert.equal(derivative.includes('test-sample-point'),false,'Old point pulsing m
 assert.equal((derivative.match(/data-journey-node=/g)||[]).length,9);
 assert.match(derivative,/data-journey-fallback/);
 assert.match(derivative,/data-journey-live="" visibility="hidden"/);
-console.log('PASS: endpoint arrival/color, varied non-backtracking routes, fade/rest phases, deterministic clock, pause without jumps, all activity guards, mount integration, original-source preservation.');
+console.log('PASS: continuous endpoint colour handoff, varied non-backtracking routes, fade/rest phases, deterministic clock, pause without jumps, all activity guards, mount integration, original-source preservation.');
