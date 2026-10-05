@@ -21,8 +21,8 @@
     'An orange fox at a workbench unrolls a paper road, with a small car exploring where it leads.',
     'An attentive orange fox looks toward a hand offering an open notebook through the left edge of a fine, open frame.',
     'An overhead fox studies a contour map while changing routes lead a moving marker to the next selected orange sample.',
-    'An orange fox inspects a model car approaching a bend and a traffic cone on a small test road.',
-    'Two adult learners try a laptop together while an orange fox turns toward the learner asking a question.'
+    'An orange fox looks back toward a car travelling along a curved road beside a traffic cone.',
+    'A learner types at a laptop while a fox watches with its broad tail gently swaying in the foreground.'
   ];
   // The fox and its illustration share one coordinate system.
   const poses = [[300, 330, 1], [170, 380, .72], [165, 385, .75], [300, 310, .95], [170, 405, .72]];

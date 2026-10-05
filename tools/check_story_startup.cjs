@@ -94,7 +94,7 @@ function currentArtwork(run) { return run.chapterArt.filter(art=>art.classList.c
   assert.equal(reordered.canvas.getAttribute('aria-label'),'An orange fox accompanies the story.');
   assert.deepEqual(currentArtwork(reordered),[4],'Responsive changes preserve the reading position');
   reordered.compactMedia.matches=false;reordered.compactMedia.events.change();reordered.flush();
-  assert.match(reordered.canvas.getAttribute('aria-label'),/adult learners/);
+  assert.match(reordered.canvas.getAttribute('aria-label'),/learner types at a laptop/);
   reordered.reducedMedia.matches=true;reordered.reducedMedia.events.change();reordered.flush();
   assert.equal(reordered.control.disabled,true);
   assert.equal(reordered.body.classList.contains('motion-paused'),true);

@@ -14,3 +14,7 @@ P4-Return.svg   笔记本电脑前的学习者与狐狸 — 新转换静态稿�
 P3/P4 本轮仅转换并供审阅，暂不替换首页或增加角色动画。
 
 These are stable, static vector copies for manual cleanup. Normal site builds do not regenerate them. Save edited SVGs here, optionally with Illustrator masters. Keep artboard coordinates where practical; tell me about layout changes so motion pivots can be updated. Homepage masks and animation derivatives stay separate. The new P3/P4 artwork awaits your cleanup before homepage integration.
+
+2026-10-05 更新 / Update
+P3/P4 的作者手修稿已放在上级目录 FoxIllustration_P3.svg 与 FoxIllustration_P4.svg，并已用于首页。这里的 P3-Build.svg / P4-Return.svg 保留为原始转换稿，不覆盖。继续手修请优先编辑上级目录的作者稿；动画派生文件为 assets/art/scene-build-authored.svg 与 scene-return-authored.svg。
+The newer owner-cleaned P3/P4 originals now drive the homepage. These older cleanup drafts remain preserved. Continue editing the originals in the parent folder; web motion derivatives stay separate.

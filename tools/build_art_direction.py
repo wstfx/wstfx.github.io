@@ -67,8 +67,8 @@ def render_direction():
         out += '<h3>静态阅读检查 / Still-image check</h3>' + pair(s['staticRequirement']) + '</details>'
         out += prompts(s['id'], s['prompt']) + '</section>'
     coda = data['codaLineArt']
-    out += '<section class="brief-section" id="line-art"><p class="eyebrow">CODA / LINE-ART BACKGROUND</p><h2>给下一段路<br><em>留一点空间。</em></h2><p class="direction-english-title">Leave room for the next path.</p><blockquote class="direction-coda-quote">Understand more.<br>Make something useful.<br><em>Find the next question.</em></blockquote>' + pair(coda['principle'])
-    out += '<div class="brief-callout"><strong>文字保护区 / Keep the type clear</strong>' + pair(coda['typeSafeZone']) + '</div>' + bilingual_list(coda['renderRules'])
+    out += '<section class="brief-section" id="line-art"><p class="eyebrow">CODA / LINE-ART BACKGROUND</p><h2>以线织狐。<br><em>以纹续篇。</em></h2><p class="direction-english-title">A fox in the thread. A story in the weave.</p><blockquote class="direction-coda-quote">Understand more.<br>Make something useful.<br><em>Find the next question.</em></blockquote>' + pair(coda['principle'])
+    out += '<div class="brief-callout"><strong>线与文字共存 / Let line and type coexist</strong>' + pair(coda['typeSafeZone']) + '</div>' + bilingual_list(coda['renderRules'])
     for option in coda['concepts']:
         out += f'<article class="direction-line-option" id="{e(option["id"])}"><h3 lang="zh-CN">{e(option["title"]["zh"])}</h3><p class="direction-english-title">{e(option["title"]["en"])}</p>' + pair(option['composition']) + pair(option.get('why', option.get('tradeoff')))
         out += '<details class="brief-details"><summary>线稿分组与动态 / Contour groups and motion</summary>' + layers(option['layers']) + pair(option['motion']) + '</details>' + prompts(option['id'], option['prompt']) + '</article>'

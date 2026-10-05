@@ -1,14 +1,14 @@
 schemaVersion:
 2
 updated:
-2026-10-03
+2026-10-05
 title:
 让同一只狐狸，经历不同的时刻
 One fox, different moments
 
 status:
-第二版文字分镜，供用户继续创作。开场保留原稿并增加装饰；Notice 已采用用户提供的近景图，转成带开放线框、手书组合与尾巴动效的 SVG。Test 已采用用户提供的俯视采样图，并强调路径与下一个样本。Build 和 Return 的新稿仍在制作中。
-Second-round written storyboards for continued user-led artwork. The opening preserves the supplied original with added decoration. Notice uses the supplied close-up as a framed SVG, with a coupled hand-and-notebook gesture and tail sway. Test uses the supplied overhead sampling scene, emphasizing the route and next sample. New Build and Return artwork is still in preparation.
+首页已接入作者提供并清理的四幕插画；下方保留主体设计方向，并更新了五组单色橙线狐狸织纹稿，供下一轮创作。线稿阶段先由你确认静态构图，再整合装饰与动画。
+The homepage now uses all four supplied chapter illustrations, including the owner-cleaned Build and Return SVGs. The scene briefs remain as reference; five new single-orange fox filigree briefs guide the next artwork pass. Approve the still line-art composition before decoration and motion integration.
 
 premise:
 用景别、视点、动作方向和主角权重制造变化，而不靠换一批道具。五幕依次是展开世界、靠近一个人的细节、俯看并选择、进入约束、退后让别人尝试。狐狸始终是同一个角色，但不必每次占据画面中心。
@@ -679,127 +679,303 @@ codaLineArt:
   heading:
 Understand more. Make something useful. Find the next question.
   recommendedId:
-open-trail
+woven-fox
   principle:
-这一块的主角是三行字。线稿承担“故事还在继续”的余韵，不再讲一个完整项目；以不闭合的路径、前景与远处的尺度差形成呼吸，既能独立为静态背景，也可轻微流动。
-The three lines of type are the protagonist here. Line art leaves the feeling that the story continues rather than introducing another full project. An open path and a foreground-to-distance scale change provide breathing room and work either still or gently moving.
+这是一套“狐狸织纹”：单色橙线像丝带、雕版花纹和织物纹样一样交错，狐狸从线的走向、疏密和负形中出现。三行文字仍是阅读主角，但花纹可以贯穿字后与行间，不需要挖出一块空白正文区。它既有清晰可辨的狐狸姿态，也有可以近看品味的装饰细节。
+A family of fox filigree: one orange line colour interlaces like ribbon, engraved ornament and woven fabric. The fox emerges through direction, density and negative space. The three lines remain the reading focus, but ornament may pass behind letters and between lines; there is no empty central exclusion zone. The fox should read immediately while the ornament rewards a closer look.
 
   typeSafeZone:
-桌面建议以 1440 × 680 为母版：x=320–1120、y=95–510 为完全无图形的正文保护区。不是在字下画浅线，而是这一区域根本不放路径。实际文字超出时随内容扩大保护区；移动端使用单独裁切，上方或下方保留一条边缘线稿，正文与按钮区域全部清空。
-For a 1440 × 680 desktop master, reserve x=320–1120 and y=95–510 as a genuinely empty type area. Do not merely fade lines beneath the letters: put no paths there. Expand this zone when actual text needs it. Use a separate mobile crop with line work on one outer edge above or below, keeping text and buttons completely clear.
+取消硬性的文字保护框。以 1440×680 的结尾为母版，让 3–5 条长线横穿画面中段，其余纹样在狐狸身体、尾巴和外缘自然聚散；不是只在四角贴图。文字放在图层上方，颜色维持深绿。只在实际叠字后局部减线，避免密集交叉恰好堵住字腔，不抹出矩形空洞。手机用专门重排稿，不把整幅画压成看不清的细丝。
+Remove the fixed type-safe rectangle. On a 1440×680 coda master, let 3–5 long lines cross the middle while the remaining ornament gathers naturally through the fox, tail and edges, rather than decorating four corners. Keep dark-green type above the artwork. After overlaying the real heading, simplify only crowded intersections that obstruct letter counters; never erase a rectangular hole. Recompose for mobile instead of shrinking every filament.
 
   renderRules:
-两级线宽：母版 2.2 px 外轮廓、1.1 px 内部必要线条；全图最多一处 3 px 的橙色短线强调。Web 展示小尺寸时可用非缩放描边或另做简化稿。
-Use two stroke weights on the master: 2.2 px outer contour and 1.1 px essential inner details, with at most one 3 px orange accent. At small web sizes use non-scaling strokes or a separate simplified drawing.
+只用一种纯色橙：建议母版 #CF9768，无填色、渐变、阴影或第二种描边色。网页先以整体透明度 0.7 试排（建议范围 0.6–0.85），在纸色背景上清楚可见，再按实际字体和尺寸调整。不要淡到只剩若有若无的影子。
+Use one flat orange, suggested master colour #CF9768, with no fills, gradients, shadows or second stroke colour. Start the whole layer at 0.7 opacity on the paper background (trial range 0.6–0.85), then tune against the real type and scale. Keep the lines clearly visible.
 
-线稿是有选择的轮廓，不是把每个色块边缘全部描出来。只保留耳朵、鼻口、背部、腿部姿势、尾巴外轮廓及一条胸口分界；后腿与尾巴重叠处可留断口。
-A line edition is a selective contour, not an outline of every colour-plane boundary. Keep ears, muzzle, back, leg pose, tail silhouette and one chest division; allow gaps where rear legs and tail overlap.
+两级线宽：1440 px 母版上主线 2.2 px、内纹 1.2 px，圆头圆接。狐狸每个主体最多用 5–9 条主曲线；宽尾巴内部可有 3–5 条顺着体积走的平行纹，局部形成叶片或编结。不要机械地描出每个色块，也不要满身均匀排线。
+Use two stroke weights: 2.2 px structural lines and 1.2 px inner ornament on a 1440 px master, with round caps and joins. Build each fox from 5–9 main curves; use 3–5 flowing parallel strands through the broad tail, with occasional leaf or knot forms. Avoid tracing every colour plane or uniformly hatching the body.
 
-使用鼠尾草绿或森林绿，最终网页透明度约 0.12–0.2 起步，橙色点缀略高但不能超过正文吸引力。不得借由叠加透明线在字后产生深色结点。
-Use sage or forest green, beginning around 0.12–0.2 opacity on the page. The orange accent may be a little stronger but must remain subordinate to the type. Avoid overlapping transparent paths creating dark knots behind text.
+耳朵尖长、鼻口窄、身形轻盈、腿长、尾巴丰厚，延续现有狐狸的身份。花纹应该顺着身体生长：尾纹延续尾部弧度，胸纹呼应胸口，腿边线保持解剖可读。交织点用 3–5 px 的短断口区分上下穿插，不用白色块盖住下层。
+Keep the established tall pointed ears, narrow muzzle, agile body, long legs and generous tail. Ornament follows the anatomy: tail strands track its volume, chest curves follow its shape, and leg outlines stay readable. At crossings use a 3–5 px interruption to distinguish over and under, rather than white cover shapes.
+
+先完成独立成立的静态稿，再考虑轻动。动效只作用于一簇独立尾纹或末端曲线，慢摆 1–2°、12–16 秒一个周期，长时间停留；不要整张纹样上下漂浮，也不要无限滚动的跑马线。各组共享画布并保留原始坐标。
+Approve a complete still first. Animate only one separate tail-strand cluster or terminal curve, swaying 1–2° over 12–16 seconds with long rests. Do not float the whole pattern or endlessly march lines across the page. Keep named groups on one shared artboard.
 
   concepts:
     id:
-open-trail
+woven-fox
     title:
-推荐：从这里，走向下一段路
-Recommended: from here toward the next path
+01 / 推荐：一线成狐，尾纹成风
+01 / Recommended: a fox woven from a flowing thread
 
     composition:
-左下边缘是一只轻盈走开的狐狸的三分之四背影，仅用轮廓表达，头轻回望读者而非正面卖萌；尾巴宽阔地向左延伸。它前方的细路沿画布底边向右走，随后在右边缘向上拐出画面，始终绕开中央三行文字。右上角只有两片极简芽叶，像道路之外还有未展开的事物。路径不闭合，终点不画问号。
-At the lower-left edge, a light rear three-quarter contour fox walks away, its head glancing back toward the reader without a front-facing cute pose; the broad tail extends left. A fine path ahead of it travels along the bottom edge, then turns upward and exits at the right edge, always clear of the central type. Two minimal leaves at upper right suggest something still to unfold. Keep the route open, with no question mark at its end.
+1440×680 横幅。左下至画面中部是一只三分之四坐姿、头微回望的狐狸；头约在 (420,230)，胸部到 (480,460)，两条前腿清楚落地。宽尾巴从 (510,490) 绕向 (880,540)，展开为 3–5 根长弧线，穿过行间与字后，最后从右上 (1380,120) 离开。尾纹中只有两处小叶形编结；主体附近稍密，向右逐渐疏。不要给狐狸单独套一个封闭外轮廓，至少两条身体线自然延续成花纹。
+A 1440×680 banner. A seated three-quarter fox spans the lower left and centre, glancing back: head near (420,230), chest reaching (480,460), two readable grounded forelegs. Its broad tail curls from (510,490) toward (880,540), then opens into 3–5 long strands that pass between and behind the headline lines and leave at upper right around (1380,120). Include only two small leaf-shaped knots; density gathers around the body and loosens to the right. At least two body lines continue into ornament, rather than enclosing the fox in an independent outline.
 
     why:
-从“Understand”到“Make”再到“Find”是一条继续向外的路。它与开场纸路呼应，又不重复完整插画；狐狸退居边缘，把结束语留给作者。
-Understanding, making and finding form a route continuing outward. It echoes the opening paper road without repeating the full scene; the fox yields the centre to the author’s closing words.
+用于首页结尾。尾纹的向外延伸对应“下一问”，同时保留一只完整可辨的狐狸；优先试这一组。
+For the homepage coda. The outward strands suggest the next question while retaining one recognisable fox; try this option first.
 
     layers:
       id:
-line-fox
+woven-fox-structure
       description:
-静态三分之四背影轮廓狐狸
-Static rear three-quarter contour fox
+狐狸的主要结构线，保持可辨的姿态。
+Structural fox lines defining the readable pose.
 
       movable:
 False
       id:
-line-trail
+woven-fox-weave
       description:
-绕开文字的完整开放路线
-Complete open route clear of type
+主体内部与周围的编织花纹线。
+Woven ornament through and around the body.
 
       movable:
 False
       id:
-line-trace
+woven-fox-terminals
       description:
-路线中一小段独立橙色线
-One short separate orange route segment
-
-      movable:
-True
-      id:
-line-leaves
-      description:
-边缘两片完整芽叶
-Two complete edge leaves
+可选轻动的独立末梢线；静态稿中同样完整。
+Separate terminal strands for optional motion, complete in the still.
 
       movable:
 True
     motion:
-可让一段 24–36 px 的橙色短线沿底部路线走一次，随后在边缘停留；或只让两片叶子慢摆。两种选一种，不做环绕文字的永动粒子。
-Either send one 24–36 px orange segment along the lower route once, then let it rest at the edge, or gently sway the two leaves. Choose one treatment; do not send perpetual particles around the type.
+只让右侧最外两根尾纹轻摆，狐狸本体不动。
+Sway only the two outermost right-hand tail strands; keep the fox still.
 
     prompt:
-画一张 1440×680 的稀疏线稿背景，用于三行大标题。中央 x320–1120、y95–510 完全留白，任何线条都不能进入。左下边缘放一只作者橙色狐狸的三分之四背影轮廓，正在轻盈离开并略微回头；沿用尖耳、细腿、窄腰和宽尾巴，但用低对比鼠尾草绿线而不是色块。狐狸前方的一条开放小路贴底边向右，再沿右边缘向上离开画面。右上只有两片简洁芽叶，一处短橙色线作为轻微点缀。轮廓只保留必要结构，不描每个色块，无文字、问号、星星、圆轨道、网络或填充背景。留真透明。线条分组，路径不闭合，文字保护区绝对干净。
-Draw a sparse 1440×680 line-art background for three large title lines. Keep x320–1120 and y95–510 entirely empty, with no path entering this area. At the lower-left edge, place a rear three-quarter contour of the author’s fox lightly walking away and glancing back. Preserve pointed ears, slim legs, narrow waist and broad tail using low-contrast sage strokes rather than colour fills. An open path ahead travels along the bottom, then exits upward at the right edge. Add only two simple leaves at upper right and one short orange accent. Use essential contours, not every colour-plane edge. No text, question marks, stars, orbital circles, networks or filled background. True transparency, separate named groups, an open path and an absolutely clean type zone.
+统一风格：优雅、现代、简洁的狐狸装饰线稿，使用给定狐狸作为身份参考，保留细长腿、窄鼻口、尖长耳、丰厚尾巴。全画仅用纯橙 #CF9768，无填色、渐变、阴影、文字或背景。主线 2.2 px、内纹 1.2 px，圆头圆接，以长曲线和少量编结构成，不做满幅细密排线或普通卡通轮廓。线条可以穿过画布中央，不要留空白矩形。真透明，交织用短断口，保留可编辑路径。
+
+本组构图：1440×680 横幅。左下至画面中部是一只三分之四坐姿、头微回望的狐狸；头约在 (420,230)，胸部到 (480,460)，两条前腿清楚落地。宽尾巴从 (510,490) 绕向 (880,540)，展开为 3–5 根长弧线，穿过行间与字后，最后从右上 (1380,120) 离开。尾纹中只有两处小叶形编结；主体附近稍密，向右逐渐疏。不要给狐狸单独套一个封闭外轮廓，至少两条身体线自然延续成花纹。
+
+使用场景：用于首页结尾。尾纹的向外延伸对应“下一问”，同时保留一只完整可辨的狐狸；优先试这一组。
+Shared style: elegant, modern, succinct fox ornamental line art. Use the supplied fox as the identity reference: long slender legs, narrow muzzle, tall pointed ears and a generous tail. Use only flat orange #CF9768, no fills, gradients, shadows, lettering or background. Use 2.2 px structural and 1.2 px inner strokes with round caps and joins, long curves and a few woven crossings rather than dense hatching or a generic cartoon outline. Lines may cross the canvas centre; leave no blank rectangular area. True transparency, short gaps at interlacing points, editable paths.
+
+Composition: A 1440×680 banner. A seated three-quarter fox spans the lower left and centre, glancing back: head near (420,230), chest reaching (480,460), two readable grounded forelegs. Its broad tail curls from (510,490) toward (880,540), then opens into 3–5 long strands that pass between and behind the headline lines and leave at upper right around (1380,120). Include only two small leaf-shaped knots; density gathers around the body and loosens to the right. At least two body lines continue into ornament, rather than enclosing the fox in an independent outline.
+
+Use: For the homepage coda. The outward strands suggest the next question while retaining one recognisable fox; try this option first.
 
     id:
-two-edges
+wind-frieze
     title:
-备选：静与动，分居两端
-Alternative: stillness and movement at opposite edges
+02 / 追风长卷
+02 / A running frieze
 
     composition:
-左侧窄边缘是一只安静抬头的坐姿狐狸轮廓；右上角是一段轻跃离开的狐狸背部与尾巴轮廓，只露必要轮廓。两者不是两只现实中的狐狸，而是同一角色的两种边缘速写，代表停下观察与继续探索。底边一条极浅弧线连接，但中央文字区全空。
-A seated fox looking upward occupies the narrow left edge; a partial contour of the same fox’s back and tail lightly bounding away sits at upper right. These are two marginal sketches of one character, suggesting pausing to observe and moving on. A very pale lower arc connects them while the central type remains empty.
+1600×440 长横幅。一只伸展跳跃的狐狸由左下向右上穿过画面，身体水平拉长，四肢明确但不僵直，头在右侧三分之一。尾巴在左侧分成三束回旋长线，经过身体下方的线带，与右侧两片抽象叶纹相接。主体只有一只狐狸，动势来自线的方向；不能用五只重复狐狸凑满长卷。尾线允许贯穿中段，空处大小不均匀，像连续展开的一段织锦。
+A 1600×440 horizontal frieze. One elongated leaping fox moves from lower left to upper right, with four readable relaxed limbs and its head in the right third. The tail divides into three looping strands at left, joins a band beneath the torso, and meets two abstract leaf motifs at right. Use one fox: direction creates movement, not five repeated animals. Let strands cross the middle, with irregular pockets of space like an unfolding textile.
 
-    tradeoff:
-姿态变化更明显，但同时出现两只狐狸容易成为装饰花边，与“一个故事继续”的连贯性弱于推荐方案。适合将来视觉系统展示页，首页结尾优先用开放小路。
-The pose contrast is stronger, but two foxes can become ornamental and feel less continuous than one ongoing story. This is better suited to a future visual-system page; use the open trail for the homepage coda.
+    why:
+用于 Work 列表顶部、宽屏过渡、页脚横带；比坐姿方案更有速度感。
+For the Work index header, wide transitions and footer bands; more energetic than the seated design.
 
     layers:
       id:
-line-seated-fox
+wind-frieze-structure
       description:
-左侧完整静态坐姿轮廓
-Complete static seated contour at left
+狐狸的主要结构线，保持可辨的姿态。
+Structural fox lines defining the readable pose.
 
       movable:
 False
       id:
-line-departing-fox
+wind-frieze-weave
       description:
-右上轻跃轮廓，保持静态
-Static departing contour at upper right
+主体内部与周围的编织花纹线。
+Woven ornament through and around the body.
 
       movable:
 False
       id:
-line-lower-arc
+wind-frieze-terminals
       description:
-避开文字的下缘弧线
-Lower arc clear of type
+可选轻动的独立末梢线；静态稿中同样完整。
+Separate terminal strands for optional motion, complete in the still.
+
+      movable:
+True
+    motion:
+静态优先；若动画，只让一段末梢线在 14 秒内慢摆一次。
+Prefer a still; optionally sway one terminal strand once over 14 seconds.
+
+    prompt:
+统一风格：优雅、现代、简洁的狐狸装饰线稿，使用给定狐狸作为身份参考，保留细长腿、窄鼻口、尖长耳、丰厚尾巴。全画仅用纯橙 #CF9768，无填色、渐变、阴影、文字或背景。主线 2.2 px、内纹 1.2 px，圆头圆接，以长曲线和少量编结构成，不做满幅细密排线或普通卡通轮廓。线条可以穿过画布中央，不要留空白矩形。真透明，交织用短断口，保留可编辑路径。
+
+本组构图：1600×440 长横幅。一只伸展跳跃的狐狸由左下向右上穿过画面，身体水平拉长，四肢明确但不僵直，头在右侧三分之一。尾巴在左侧分成三束回旋长线，经过身体下方的线带，与右侧两片抽象叶纹相接。主体只有一只狐狸，动势来自线的方向；不能用五只重复狐狸凑满长卷。尾线允许贯穿中段，空处大小不均匀，像连续展开的一段织锦。
+
+使用场景：用于 Work 列表顶部、宽屏过渡、页脚横带；比坐姿方案更有速度感。
+Shared style: elegant, modern, succinct fox ornamental line art. Use the supplied fox as the identity reference: long slender legs, narrow muzzle, tall pointed ears and a generous tail. Use only flat orange #CF9768, no fills, gradients, shadows, lettering or background. Use 2.2 px structural and 1.2 px inner strokes with round caps and joins, long curves and a few woven crossings rather than dense hatching or a generic cartoon outline. Lines may cross the canvas centre; leave no blank rectangular area. True transparency, short gaps at interlacing points, editable paths.
+
+Composition: A 1600×440 horizontal frieze. One elongated leaping fox moves from lower left to upper right, with four readable relaxed limbs and its head in the right third. The tail divides into three looping strands at left, joins a band beneath the torso, and meets two abstract leaf motifs at right. Use one fox: direction creates movement, not five repeated animals. Let strands cross the middle, with irregular pockets of space like an unfolding textile.
+
+Use: For the Work index header, wide transitions and footer bands; more energetic than the seated design.
+
+    id:
+tail-rosette
+    title:
+03 / 盘尾花结
+03 / A curled-tail rosette
+
+    composition:
+800×800 方形。狐狸蜷坐成一个不完全闭合的圆形，鼻口向左上回望，耳朵打破圆的上边缘。大尾巴环抱身体，尾内三层宽间距线形成不对称的花瓣回环；每一圈仍然沿着尾巴走，不画成与狐狸无关的曼陀罗。右下留一个开口，两根线从开口伸出。眼睛只用一笔短弧，脸部最简，重点是身体、尾巴与纹样的一体性。
+An 800×800 square. A curled seated fox forms an incomplete circle, muzzle looking back toward upper left, ears breaking the upper boundary. Its generous tail wraps around the body; three widely spaced internal strands form asymmetric petal loops that still follow the tail, rather than an unrelated mandala. Leave an opening at lower right with two strands trailing out. One short arc suggests the eye; keep the face minimal and unite body, tail and ornament.
+
+    why:
+用于 About 引言、卡片背面、章节编号附近、社交分享角标；可单独作为一个完整装饰单元。
+For About introductions, card backs, chapter markers and sharing accents; a self-contained ornament.
+
+    layers:
+      id:
+tail-rosette-structure
+      description:
+狐狸的主要结构线，保持可辨的姿态。
+Structural fox lines defining the readable pose.
+
+      movable:
+False
+      id:
+tail-rosette-weave
+      description:
+主体内部与周围的编织花纹线。
+Woven ornament through and around the body.
+
+      movable:
+False
+      id:
+tail-rosette-terminals
+      description:
+可选轻动的独立末梢线；静态稿中同样完整。
+Separate terminal strands for optional motion, complete in the still.
+
+      movable:
+True
+    motion:
+不要旋转整个花结。仅让开口处两根末梢线轻摆。
+Do not rotate the rosette. Sway only the two terminal strands at the opening.
+
+    prompt:
+统一风格：优雅、现代、简洁的狐狸装饰线稿，使用给定狐狸作为身份参考，保留细长腿、窄鼻口、尖长耳、丰厚尾巴。全画仅用纯橙 #CF9768，无填色、渐变、阴影、文字或背景。主线 2.2 px、内纹 1.2 px，圆头圆接，以长曲线和少量编结构成，不做满幅细密排线或普通卡通轮廓。线条可以穿过画布中央，不要留空白矩形。真透明，交织用短断口，保留可编辑路径。
+
+本组构图：800×800 方形。狐狸蜷坐成一个不完全闭合的圆形，鼻口向左上回望，耳朵打破圆的上边缘。大尾巴环抱身体，尾内三层宽间距线形成不对称的花瓣回环；每一圈仍然沿着尾巴走，不画成与狐狸无关的曼陀罗。右下留一个开口，两根线从开口伸出。眼睛只用一笔短弧，脸部最简，重点是身体、尾巴与纹样的一体性。
+
+使用场景：用于 About 引言、卡片背面、章节编号附近、社交分享角标；可单独作为一个完整装饰单元。
+Shared style: elegant, modern, succinct fox ornamental line art. Use the supplied fox as the identity reference: long slender legs, narrow muzzle, tall pointed ears and a generous tail. Use only flat orange #CF9768, no fills, gradients, shadows, lettering or background. Use 2.2 px structural and 1.2 px inner strokes with round caps and joins, long curves and a few woven crossings rather than dense hatching or a generic cartoon outline. Lines may cross the canvas centre; leave no blank rectangular area. True transparency, short gaps at interlacing points, editable paths.
+
+Composition: An 800×800 square. A curled seated fox forms an incomplete circle, muzzle looking back toward upper left, ears breaking the upper boundary. Its generous tail wraps around the body; three widely spaced internal strands form asymmetric petal loops that still follow the tail, rather than an unrelated mandala. Leave an opening at lower right with two strands trailing out. One short arc suggests the eye; keep the face minimal and unite body, tail and ornament.
+
+Use: For About introductions, card backs, chapter markers and sharing accents; a self-contained ornament.
+
+    id:
+forest-filigree
+    title:
+04 / 林间狐影
+04 / Fox-shaped woodland filigree
+
+    composition:
+900×1200 竖幅。一只站立回望的狐狸占中上部，长腿穿过下方细长的枝叶线。上半部是明确的耳朵、鼻口与背部，下半部让尾线、腿边线和叶脉逐渐相接：远看是一只狐狸，近看是顺着身体方向长出的花纹。只用 4–6 片狭长叶，不加花朵和复杂藤蔓。尾巴向画面右侧形成一个大 S 弧，与左侧细腿形成粗细节奏。
+A 900×1200 vertical composition. A standing fox glances back in the upper middle, long legs passing through slender leaf stems below. Ears, muzzle and back read clearly above; lower down, tail strands, leg outlines and leaf veins gradually connect. From afar it reads as a fox; close up, ornament grows along its anatomy. Use only 4–6 narrow leaves, no flowers or elaborate vines. The tail makes a large S curve to the right, balancing the slender legs at left.
+
+    why:
+用于 About 侧栏、长文章边缘与移动端结尾重排；提供区别于横幅的竖向模块。
+For About sidebars, long-form margins and a recomposed mobile coda; a vertical module distinct from the banners.
+
+    layers:
+      id:
+forest-filigree-structure
+      description:
+狐狸的主要结构线，保持可辨的姿态。
+Structural fox lines defining the readable pose.
+
+      movable:
+False
+      id:
+forest-filigree-weave
+      description:
+主体内部与周围的编织花纹线。
+Woven ornament through and around the body.
+
+      movable:
+False
+      id:
+forest-filigree-terminals
+      description:
+可选轻动的独立末梢线；静态稿中同样完整。
+Separate terminal strands for optional motion, complete in the still.
+
+      movable:
+True
+    motion:
+本体与腿部保持静态；只动最外侧的一片叶和一段尾纹。
+Keep the body and legs still; animate only one outer leaf and one tail strand.
+
+    prompt:
+统一风格：优雅、现代、简洁的狐狸装饰线稿，使用给定狐狸作为身份参考，保留细长腿、窄鼻口、尖长耳、丰厚尾巴。全画仅用纯橙 #CF9768，无填色、渐变、阴影、文字或背景。主线 2.2 px、内纹 1.2 px，圆头圆接，以长曲线和少量编结构成，不做满幅细密排线或普通卡通轮廓。线条可以穿过画布中央，不要留空白矩形。真透明，交织用短断口，保留可编辑路径。
+
+本组构图：900×1200 竖幅。一只站立回望的狐狸占中上部，长腿穿过下方细长的枝叶线。上半部是明确的耳朵、鼻口与背部，下半部让尾线、腿边线和叶脉逐渐相接：远看是一只狐狸，近看是顺着身体方向长出的花纹。只用 4–6 片狭长叶，不加花朵和复杂藤蔓。尾巴向画面右侧形成一个大 S 弧，与左侧细腿形成粗细节奏。
+
+使用场景：用于 About 侧栏、长文章边缘与移动端结尾重排；提供区别于横幅的竖向模块。
+Shared style: elegant, modern, succinct fox ornamental line art. Use the supplied fox as the identity reference: long slender legs, narrow muzzle, tall pointed ears and a generous tail. Use only flat orange #CF9768, no fills, gradients, shadows, lettering or background. Use 2.2 px structural and 1.2 px inner strokes with round caps and joins, long curves and a few woven crossings rather than dense hatching or a generic cartoon outline. Lines may cross the canvas centre; leave no blank rectangular area. True transparency, short gaps at interlacing points, editable paths.
+
+Composition: A 900×1200 vertical composition. A standing fox glances back in the upper middle, long legs passing through slender leaf stems below. Ears, muzzle and back read clearly above; lower down, tail strands, leg outlines and leaf veins gradually connect. From afar it reads as a fox; close up, ornament grows along its anatomy. Use only 4–6 narrow leaves, no flowers or elaborate vines. The tail makes a large S curve to the right, balancing the slender legs at left.
+
+Use: For About sidebars, long-form margins and a recomposed mobile coda; a vertical module distinct from the banners.
+
+    id:
+fox-repeat
+    title:
+05 / 小狐狸织纹
+05 / A repeatable fox textile
+
+    composition:
+960×960 无缝纹样单元，使用两种姿态：细长的回望站姿与盘尾坐姿，按半落位排列，尺寸相同但方向交替。一个单元内最多四只狐狸，以尾部的一根延长曲线和一枚小叶结连接相邻单元，允许线跨边界但不要在边界截断头或脚。每只狐狸内部仅 2–3 根尾纹，主体间距至少一个头长，不堆满。额外提供一个单独站姿单元和一个坐姿单元。
+A 960×960 seamless tile with two poses: a slender standing fox glancing back and a seated fox with a curled tail, arranged in a half-drop repeat at equal scale and alternating direction. Use at most four foxes per tile; one extended tail curve and a small leaf knot connect neighbours. Lines may cross tile boundaries but do not crop heads or feet at an edge. Limit each tail to 2–3 inner strands and leave at least one head-length between figures. Also deliver the standing and seated motifs individually.
+
+    why:
+用于轻纹理背景、项目封底与未来视觉物料。正文区域使用放大的低密度裁切，避免重复纹理造成阅读噪声。
+For quiet texture backgrounds, project end pages and future collateral. Behind prose, use an enlarged sparse crop rather than a busy small-scale repeat.
+
+    layers:
+      id:
+fox-repeat-structure
+      description:
+狐狸的主要结构线，保持可辨的姿态。
+Structural fox lines defining the readable pose.
+
+      movable:
+False
+      id:
+fox-repeat-weave
+      description:
+主体内部与周围的编织花纹线。
+Woven ornament through and around the body.
+
+      movable:
+False
+      id:
+fox-repeat-terminals
+      description:
+可选轻动的独立末梢线；静态稿中同样完整。
+Separate terminal strands for optional motion, complete in the still.
 
       movable:
 False
     motion:
-建议完全静态，依靠两种姿态的对比传递动势，不同时让两只狐狸动起来。
-Prefer a complete still: the contrasting poses convey movement without animating both foxes.
+保持静态。连续背景不需要每只狐狸都动。
+Keep it static; a repeated background does not need every fox to move.
 
     prompt:
-为三行大标题设计稀疏的双边缘狐狸线稿，1440×680，中央 x320–1120、y95–510 完全无图形。左侧窄边缘画同一只狐狸安静抬头的坐姿轮廓，右上边缘画它轻跃离开的背部与宽尾巴轮廓，像一本手稿中的两个姿态速写。沿用作者狐狸的准确比例、耳形与尾形，低对比鼠尾草绿两级线宽，最多一处短橙色线。底边只有一条很浅的开放弧线。不要重复色块边界、文字、问号、图标、网格、填色或密集纹理。真透明背景，完全静态，两个轮廓分别成组。
-Design sparse fox line art on two margins for three large title lines: 1440×680, with x320–1120 and y95–510 entirely free of artwork. At the narrow left margin, draw the same fox seated and looking upward; at upper right, draw its back and broad tail lightly bounding away, like two pose sketches in a notebook. Keep the author’s accurate proportions, ears and tail, with low-contrast sage and two stroke weights plus at most one short orange accent. Use only one very pale open arc along the bottom. No colour-plane edge tracing, text, question marks, icons, grids, fills or dense texture. True transparency, entirely static, separate groups for the two sketches.
+统一风格：优雅、现代、简洁的狐狸装饰线稿，使用给定狐狸作为身份参考，保留细长腿、窄鼻口、尖长耳、丰厚尾巴。全画仅用纯橙 #CF9768，无填色、渐变、阴影、文字或背景。主线 2.2 px、内纹 1.2 px，圆头圆接，以长曲线和少量编结构成，不做满幅细密排线或普通卡通轮廓。线条可以穿过画布中央，不要留空白矩形。真透明，交织用短断口，保留可编辑路径。
+
+本组构图：960×960 无缝纹样单元，使用两种姿态：细长的回望站姿与盘尾坐姿，按半落位排列，尺寸相同但方向交替。一个单元内最多四只狐狸，以尾部的一根延长曲线和一枚小叶结连接相邻单元，允许线跨边界但不要在边界截断头或脚。每只狐狸内部仅 2–3 根尾纹，主体间距至少一个头长，不堆满。额外提供一个单独站姿单元和一个坐姿单元。
+
+使用场景：用于轻纹理背景、项目封底与未来视觉物料。正文区域使用放大的低密度裁切，避免重复纹理造成阅读噪声。
+Shared style: elegant, modern, succinct fox ornamental line art. Use the supplied fox as the identity reference: long slender legs, narrow muzzle, tall pointed ears and a generous tail. Use only flat orange #CF9768, no fills, gradients, shadows, lettering or background. Use 2.2 px structural and 1.2 px inner strokes with round caps and joins, long curves and a few woven crossings rather than dense hatching or a generic cartoon outline. Lines may cross the canvas centre; leave no blank rectangular area. True transparency, short gaps at interlacing points, editable paths.
+
+Composition: A 960×960 seamless tile with two poses: a slender standing fox glancing back and a seated fox with a curled tail, arranged in a half-drop repeat at equal scale and alternating direction. Use at most four foxes per tile; one extended tail curve and a small leaf knot connect neighbours. Lines may cross tile boundaries but do not crop heads or feet at an edge. Limit each tail to 2–3 inner strands and leave at least one head-length between figures. Also deliver the standing and seated motifs individually.
+
+Use: For quiet texture backgrounds, project end pages and future collateral. Behind prose, use an enlarged sparse crop rather than a busy small-scale repeat.
 
 handoff:
 先做五张黑白剪影缩略图，按本稿顺序并排检查。把细节盖住后，五张仍应在景别、轮廓和行动方向上明显不同；如果看起来像同一张换了道具，先改构图。
@@ -839,8 +1015,8 @@ No extra limbs, plausible contact points, and no holes or detached roots after m
 插画能帮助理解标题，并提供项目线索，但不冒充真实界面、受访者、研究结果或课程成果。
 The illustration clarifies its heading and hints at the work without posing as actual UI, participants, research findings or teaching outcomes.
 
-大屏与 320 px 宽下动作都清楚；结尾线稿完全避开文字和按钮。
-Actions remain clear on desktop and at 320 px wide; coda line art stays entirely clear of type and buttons.
+大屏与 320 px 宽下动作都清楚；结尾橙色织纹可以穿过字后，但叠上真实标题检查后，字形与链接仍然一眼可读。
+Actions remain clear on desktop and at 320 px. Orange coda filigree may cross behind type, but the actual heading and links must remain immediately legible.
 
 动画暂停、系统减少动态效果、页面不可见和离屏时有正确静态或暂停状态；主文不会等待图片或脚本才出现。
 Motion pause, reduced-motion preferences, page visibility and offscreen states produce a correct still or paused state; primary text never waits for imagery or scripts to appear.

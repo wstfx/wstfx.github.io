@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-03",
+  "date": "2026-10-05",
   "tool": "Initial concepts: built-in image_gen. Current supplied chapter artwork: user-supplied PNGs converted locally with VTracer and native SVG gradient fitting.",
   "reference": "Original chapter studies referenced the user-supplied FoxHomepage_0.svg and eye detail. The current Notice close-up and Test overhead composition each use the supplied PNG itself as authoritative pose, face and scene geometry.",
-  "status": "Notice uses a supplied close-up with static hand, book and decoration, tail sway and blink. Test uses a changing sample-to-sample journey over the supplied map. Newly supplied Build and Return vectors await manual cleanup; homepage still uses earlier studies.",
+  "status": "All four supplied chapter scenes are integrated. Notice eyes now animate in the live SVG tree, with stationary hand/book. Test retains the sampling journey. Owner-cleaned Build and Return SVGs now use small native vector motion rigs.",
   "scenes": [
     {
       "id": "notice",
@@ -38,7 +38,8 @@
       "homepagePreparation": {
         "script": "tools/frame_notice_art.py",
         "output": "assets/art/scene-notice-framed.svg",
-        "motion": "Tail ±3 degrees over 9 seconds; native incoming-eye blink. Original stationary book/hand paint retained; no offering rig or moving decoration. Hidden tail continuation follows native contour curves."
+        "motion": "Tail ±3 degrees over 9 seconds; native incoming-eye blink. Original stationary book/hand paint retained; no offering rig or moving decoration. Hidden tail continuation follows native contour curves.",
+        "blinkFix": "2026-10-05: native paint inserted directly into the visible SVG tree instead of <use>; eye groups receive a 6.5-second two-blink cycle. Hand/book remain still."
       }
     },
     {
@@ -100,15 +101,49 @@
     },
     {
       "id": "build",
-      "source": "assets/art/chapter-sources/build.png",
-      "vector": "assets/art/scene-build.svg",
-      "prompt": "Use case: illustration-story. ONE finished portfolio editorial illustration, not a screenshot, with NO text. Reference image 1 is the approved fox character and flat flowing geometric style, not a composition to repeat. Reference image 2 is the authoritative face and eye detail. Preserve the small OPEN angular teardrop eye, warm peach iris, dark angled pupil, tiny cream catchlights and sharp forest-dark outline. NO closed smiling eye or generic dark crescent. Same elegant slender orange fox with long forest-green legs, tall triangular ears, small tapered muzzle and cream chest. Large flowing cream-tipped orange brush tail. Crisp CLEAN FLAT color planes, restrained curves, no textures or gradients or airbrushed shading. Orange #fb7926, burnt #cb4e13, apricot #fdc894, cream #f7e7c9, forest #193d30 and sage #b7c4a5. Single near-square scene, complete subjects within canvas, at least 6% empty edge padding and generous upper negative space. TRUE TRANSPARENT background, no background rectangle, no painted checkerboard. No lettering, numbers, logos, symbols, interface UI, plots, arrows, diagrams, board, collage, photorealism or chibi anatomy. Clearly separated silhouettes and props allow later vector cleanup. Scene: testing a working system against constraints. Orange fox at left leans attentively over the rim of a low broad shallow rectangular sage test tray at right. On the tray is a compact cream road with one obvious curved bend. One small orange model car with dark forest wheels approaches the curve, and a single burnt-orange traffic cone stands beside the inside of the bend. The fox looks directly at the car and curve, one paw on the tray edge. Their relationship is unmistakable: the small vehicle must navigate the curve and obstacle. Show ample flat road around the car so it can move a short distance later. Keep the cone separated from the car, no orange planned-path line needed. Broad fox tail clear at left, no overlap with road. This is a conceptual miniature for driving-simulator integration, not physical hardware documentation. Keep the tray shallow and the composition simple, no surrounding city, no driver, no crash or speed effects. Fox and testing setup receive equal visual weight."
+      "source": "assets/IllustratorWorkspace/FoxIllustration_P3.svg",
+      "sourceSha256": "8af3f91ad2d7c19e351900d092c6e5bc17a6bcaff94512a30c4a3bdeebb2a8c3",
+      "vector": "assets/art/scene-build-authored.svg",
+      "origin": "Owner-cleaned Illustrator SVG supplied 2026-10-05; no retracing or image generation.",
+      "homepagePreparation": {
+        "script": "tools/prepare_supplied_scenes.py",
+        "preservation": "Original input bytes retained. Original path palette is scoped to this scene; only hidden underpaint is repaired for movement.",
+        "motion": "Car travels -45/+19 source units over 12 seconds; tail +3/-2.5 degrees over 9 seconds; original eye blinks."
+      },
+      "history": [
+        {
+          "status": "Superseded generated study",
+          "record": {
+            "id": "build",
+            "source": "assets/art/chapter-sources/build.png",
+            "vector": "assets/art/scene-build.svg",
+            "prompt": "Use case: illustration-story. ONE finished portfolio editorial illustration, not a screenshot, with NO text. Reference image 1 is the approved fox character and flat flowing geometric style, not a composition to repeat. Reference image 2 is the authoritative face and eye detail. Preserve the small OPEN angular teardrop eye, warm peach iris, dark angled pupil, tiny cream catchlights and sharp forest-dark outline. NO closed smiling eye or generic dark crescent. Same elegant slender orange fox with long forest-green legs, tall triangular ears, small tapered muzzle and cream chest. Large flowing cream-tipped orange brush tail. Crisp CLEAN FLAT color planes, restrained curves, no textures or gradients or airbrushed shading. Orange #fb7926, burnt #cb4e13, apricot #fdc894, cream #f7e7c9, forest #193d30 and sage #b7c4a5. Single near-square scene, complete subjects within canvas, at least 6% empty edge padding and generous upper negative space. TRUE TRANSPARENT background, no background rectangle, no painted checkerboard. No lettering, numbers, logos, symbols, interface UI, plots, arrows, diagrams, board, collage, photorealism or chibi anatomy. Clearly separated silhouettes and props allow later vector cleanup. Scene: testing a working system against constraints. Orange fox at left leans attentively over the rim of a low broad shallow rectangular sage test tray at right. On the tray is a compact cream road with one obvious curved bend. One small orange model car with dark forest wheels approaches the curve, and a single burnt-orange traffic cone stands beside the inside of the bend. The fox looks directly at the car and curve, one paw on the tray edge. Their relationship is unmistakable: the small vehicle must navigate the curve and obstacle. Show ample flat road around the car so it can move a short distance later. Keep the cone separated from the car, no orange planned-path line needed. Broad fox tail clear at left, no overlap with road. This is a conceptual miniature for driving-simulator integration, not physical hardware documentation. Keep the tray shallow and the composition simple, no surrounding city, no driver, no crash or speed effects. Fox and testing setup receive equal visual weight."
+          }
+        }
+      ]
     },
     {
       "id": "return",
-      "source": "assets/art/chapter-sources/return.png",
-      "vector": "assets/art/scene-return.svg",
-      "prompt": "Use case: illustration-story. ONE finished portfolio editorial illustration, not a screenshot, with NO text. Reference image 1 is the approved fox character and flat flowing geometric style, not a composition to repeat. Reference image 2 is the authoritative face and eye detail. Preserve the small OPEN angular teardrop eye, warm peach iris, dark angled pupil, tiny cream catchlights and sharp forest-dark outline. NO closed smiling eye or generic dark crescent. Same elegant slender orange fox with long forest-green legs, tall triangular ears, small tapered muzzle and cream chest. Large flowing cream-tipped orange brush tail. Crisp CLEAN FLAT color planes, restrained curves, no textures or gradients or airbrushed shading. Orange #fb7926, burnt #cb4e13, apricot #fdc894, cream #f7e7c9, forest #193d30 and sage #b7c4a5. Single near-square scene, complete subjects within canvas, at least 6% empty edge padding and generous upper negative space. TRUE TRANSPARENT background, no background rectangle, no painted checkerboard. No lettering, numbers, logos, symbols, interface UI, plots, arrows, diagrams, board, collage, photorealism or chibi anatomy. Clearly separated silhouettes and props allow later vector cleanup. Scene: a tool becomes a learning moment. Orange fox seated upright on a low sage platform at LEFT faces RIGHT toward two adult university-age learners at a single modest shared sage desk. One learner at far right uses the keyboard of one open laptop, mostly viewed from the back so NO interface is visible. The second learner, seated nearer the fox, turns attentively toward it and raises one open hand just slightly in a natural question gesture, relaxed at chest level. Fox meets this learner's gaze. Two dignified ADULTS, simple contemporary forest/sage clothing and modest facial detail, same restrained editorial style as fox. One blank cream folded lesson sheet lies on desk, with its outer corner unobstructed for later subtle motion. Keep the human exchange open and legible; NO waving enthusiastically or lecturing. The fox has a full large flowing tail resting to far left, separate from chairs and table, long graceful front legs. Laptop should be small supporting object. Concept inspired by an introductory AI-agent coding course taught through InVolve, not a depiction of actual people or the software interface. Exactly two adults, one fox, one laptop, one desk, chairs/plinth, one lesson sheet; no extra props. Make reciprocity and curiosity immediately readable."
+      "source": "assets/IllustratorWorkspace/FoxIllustration_P4.svg",
+      "sourceSha256": "98f9cca488a35c8a17517edcff44a49b96bb09e2b36f5e22392823e59bbe05dc",
+      "vector": "assets/art/scene-return-authored.svg",
+      "origin": "Owner-cleaned Illustrator SVG supplied 2026-10-05; no retracing or image generation.",
+      "homepagePreparation": {
+        "script": "tools/prepare_supplied_scenes.py",
+        "preservation": "Original input bytes retained. Original path palette is scoped to this scene; only hidden underpaint is repaired for movement.",
+        "motion": "Tail +2.5/-2 degrees over 10 seconds; hand has two small typing taps then rests over 6 seconds. Learner head, torso and fox body remain still."
+      },
+      "history": [
+        {
+          "status": "Superseded generated study",
+          "record": {
+            "id": "return",
+            "source": "assets/art/chapter-sources/return.png",
+            "vector": "assets/art/scene-return.svg",
+            "prompt": "Use case: illustration-story. ONE finished portfolio editorial illustration, not a screenshot, with NO text. Reference image 1 is the approved fox character and flat flowing geometric style, not a composition to repeat. Reference image 2 is the authoritative face and eye detail. Preserve the small OPEN angular teardrop eye, warm peach iris, dark angled pupil, tiny cream catchlights and sharp forest-dark outline. NO closed smiling eye or generic dark crescent. Same elegant slender orange fox with long forest-green legs, tall triangular ears, small tapered muzzle and cream chest. Large flowing cream-tipped orange brush tail. Crisp CLEAN FLAT color planes, restrained curves, no textures or gradients or airbrushed shading. Orange #fb7926, burnt #cb4e13, apricot #fdc894, cream #f7e7c9, forest #193d30 and sage #b7c4a5. Single near-square scene, complete subjects within canvas, at least 6% empty edge padding and generous upper negative space. TRUE TRANSPARENT background, no background rectangle, no painted checkerboard. No lettering, numbers, logos, symbols, interface UI, plots, arrows, diagrams, board, collage, photorealism or chibi anatomy. Clearly separated silhouettes and props allow later vector cleanup. Scene: a tool becomes a learning moment. Orange fox seated upright on a low sage platform at LEFT faces RIGHT toward two adult university-age learners at a single modest shared sage desk. One learner at far right uses the keyboard of one open laptop, mostly viewed from the back so NO interface is visible. The second learner, seated nearer the fox, turns attentively toward it and raises one open hand just slightly in a natural question gesture, relaxed at chest level. Fox meets this learner's gaze. Two dignified ADULTS, simple contemporary forest/sage clothing and modest facial detail, same restrained editorial style as fox. One blank cream folded lesson sheet lies on desk, with its outer corner unobstructed for later subtle motion. Keep the human exchange open and legible; NO waving enthusiastically or lecturing. The fox has a full large flowing tail resting to far left, separate from chairs and table, long graceful front legs. Laptop should be small supporting object. Concept inspired by an introductory AI-agent coding course taught through InVolve, not a depiction of actual people or the software interface. Exactly two adults, one fox, one laptop, one desk, chairs/plinth, one lesson sheet; no extra props. Make reciprocity and curiosity immediately readable."
+          }
+        }
+      ]
     }
   ],
   "conversion": {
@@ -122,13 +157,13 @@
     "common": "Existing translation and rotation ranges increased 1.5×; timing retained. Blinks retain their complete natural closure. New Test journey replaces the old opacity-only sample emphasis.",
     "notice": "Only native-eye blink and tail ±3 degrees over 9 seconds. Hand, book and decorative arc/leaf are stationary. Page corner ticks removed.",
     "test": "Five source sample positions, eight reviewed map curves, changing destinations with no immediate backtracking. Route draws with a moving marker; destination turns orange on arrival; completed route fades before next hop. Fox and map stay still.",
-    "build": "Earlier homepage study: car -60/+15 source units; tail +3.75/-3 degrees. New supplied SVG remains static for manual cleanup.",
-    "return": "Earlier homepage study: question gesture1.8 degrees; tail +3.75/-3 degrees. New supplied SVG remains static for manual cleanup.",
+    "build": "Car travels -45/+19 source units over 12 seconds; tail +3/-2.5 degrees over 9 seconds; original eye blinks.",
+    "return": "Tail +2.5/-2 degrees over 10 seconds; hand has two small typing taps then rests over 6 seconds. Learner head, torso and fox body remain still.",
     "guards": "Only the active desktop chapter animates. Paused during startup, off-screen, hidden document, user pause or reduced-motion preference. Mobile shows complete static scenes."
   },
   "manualCleanup": {
     "folder": "assets/IllustratorWorkspace/ChapterCleanup/",
-    "policy": "Stable static copies for user edits, never overwritten by normal site builds or tracing scripts. New P3/P4 artwork is not yet substituted into the homepage.",
+    "policy": "Stable original tracing drafts, never overwritten. The owner supplied newer cleaned P3/P4 files in IllustratorWorkspace; those files now drive the homepage derivatives.",
     "files": [
       {
         "id": "P1",
@@ -165,7 +200,7 @@
       "gradients": 6,
       "viewBox": "0 0 1254 1254",
       "script": "tools/prepare_remaining_art.py",
-      "status": "Static local conversion for manual editing; no animation rig or homepage substitution. Original supplied PNG is unchanged."
+      "status": "Historical conversion draft; superseded by owner-cleaned FoxIllustration_P3/P4.svg for homepage production."
     },
     {
       "source": "assets/art/chapter-sources/return-learning.png",
@@ -175,7 +210,7 @@
       "gradients": 10,
       "viewBox": "0 0 1254 1254",
       "script": "tools/prepare_remaining_art.py",
-      "status": "Static local conversion for manual editing; no animation rig or homepage substitution. Original supplied PNG is unchanged."
+      "status": "Historical conversion draft; superseded by owner-cleaned FoxIllustration_P3/P4.svg for homepage production."
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "title": "Fox mascot — source and concept references",
-  "date": "2026-10-03",
+  "date": "2026-10-05",
   "source": {
     "svg": "assets/IllustratorWorkspace/FoxHomepage_0.svg",
     "illustrator": "assets/IllustratorWorkspace/FoxHomepage_0.ai",
@@ -20,7 +20,7 @@
     ],
     "geometry": "All 176 scene paths and the ellipse preserve original painter order and geometry; 42 fox paths plus the highlight ellipse are isolated for references.",
     "motion": "Independent tail, eye, paper curl, car and leaf groups; connected head, neck and body remain static. Pause/reduced-motion/startup guards apply. Mobile uses a full still illustration and a compact source fox companion.",
-    "homepageStatus": "Notice: native hand and notebook held still; corner ticks removed; only larger tail sway and blink. Test: changing sampling journey. New supplied Build and Return static vectors are in ChapterCleanup awaiting user edits.",
+    "homepageStatus": "All four supplied scenes integrated. Notice blink repaired through direct SVG paint; owner-cleaned P3/P4 sources animate the road/car and learner/fox scenes.",
     "headlineTail": "assets/art/tail-punctuation.svg: a complete upright brush tail with a smooth closed root, source orange/cream color planes, and no flat cut edge.",
     "motionAmplitude": {
       "tail": "9-second +4.5/-3.75 degree sweep, 6 source-unit inward X compensation at extrema",
@@ -45,7 +45,7 @@
       "sourcePreservation": "Original PNG remains byte-for-byte unchanged; raw SVG and framed homepage composition are separate derivatives.",
       "geometry": "1298×1212 source coordinates; 114 spline paths and 6 fitted native linear gradients; no raster image embedded in either vector artwork.",
       "eyeTreatment": "Preserve both supplied three-quarter eyes, including iris, pupil and catchlights. Do not transplant the older side-profile eye onto this pose.",
-      "motion": "Framed homepage derivative: whole tail ±3 degrees over 9 seconds and supplied-eye blink only. The original hand, book and all decorative elements stay still. Existing active-scene, startup, pause, hidden/off-screen and reduced-motion guards apply; mobile remains static.",
+      "motion": "Tail ±3 degrees/9 seconds and two brief eye closures per 6.5 seconds. Eyes live directly in the painted SVG tree; hand, book and decoration stay still.",
       "history": "The former generated Notice PNG/SVG and its original prompt remain recorded in content/chapter-art-production.json.",
       "framePrepare": "tools/frame_notice_art.py",
       "rawMotion": "The raw converted SVG retains its incoming-eye blink groups, with connected tail/body, hand and book unrigged; this file is unchanged by the homepage motion preparation.",
@@ -67,7 +67,12 @@
       "homepagePrepare": "tools/build_test_journey.py",
       "runtime": "assets/js/test-journey.js"
     },
-    "manualCleanup": "assets/IllustratorWorkspace/ChapterCleanup/READ-ME.txt"
+    "manualCleanup": "assets/IllustratorWorkspace/ChapterCleanup/READ-ME.txt",
+    "cleanedChapterSources": [
+      "assets/IllustratorWorkspace/FoxIllustration_P3.svg",
+      "assets/IllustratorWorkspace/FoxIllustration_P4.svg"
+    ],
+    "codaDirection": "Five bilingual single-orange fox filigree briefs in illustration-direction.html#line-art; artwork crosses behind the type without a rectangular exclusion zone."
   },
   "conceptSheet": {
     "file": "assets/art/fox-pose-concepts-v1.png",

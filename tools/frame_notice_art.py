@@ -119,7 +119,11 @@ def prepare():
         else:
             tail_parts.append(item)
     still = sub(window, 'g', id='notice-stationary-art', mask='url(#notice-still-mask)')
-    sub(still, 'use', href='#notice-native-paint')
+    # Render the eye groups in the live SVG tree. Blink animations inside a
+    # <use> shadow tree are not reliably styled by ancestor selectors in Chrome.
+    for node in painted:
+        still.append(deepcopy(node))
+    defs.remove(painted)
 
     frame = sub(svg, 'g', id='notice-window-frame', fill='none', stroke_linecap='round', stroke_linejoin='round')
     sub(frame, 'path', d='M246 350H30Q0 350 0 380V1080Q0 1110 30 1110H1268Q1298 1110 1298 1080V875', stroke='#8D9D87', stroke_width=3.5)
