@@ -218,5 +218,11 @@
     "tail": "P3/P4 keep attachment control points fixed; only the free tail bends. Shared colour planes have 0.8-unit matching under-strokes to prevent anti-alias cracks. The P4 desk continues behind the entire tail motion envelope.",
     "decoration": "Separate warm-orange open arcs, travelling ink segments, softly pulsing nodes, leaf-shaped sprigs and current lines. Decorative layers sit behind source artwork and share existing pause, offscreen and reduced-motion controls.",
     "verification": "Rest/up/down vector renders inspected; fixed-root geometry checked for both extrema; browser path interpolation and pause verified. P1 original hand/book remain still; its two tail extrema were inspected."
+  },
+  "detailCorrections": {
+    "date": "2026-10-06",
+    "build": "Blink compression uses the eye’s -49-degree major axis. Native car shadow path 30 now travels in the car group with the other contact shadows.",
+    "return": "Extract visible skin with the native keyboard contour as a moving mask; retain every original finger shadow above the stationary keyboard, add hidden keyboard/attachment underpaint, and move the complete sprig into clear space below the desk.",
+    "sources": "Original Illustrator SVGs remain unchanged."
   }
 }

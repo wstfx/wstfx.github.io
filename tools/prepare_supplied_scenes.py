@@ -113,7 +113,8 @@ def decorations(svg, scene):
         sub(g,'circle',cx=794,cy=130,r=5,fill='#c7713b',stroke='none')
         sub(g,'circle',cx=1178,cy=300,r=7,opacity='.7')
         sub(g,'circle',cx=1178,cy=300,r=18,class_='ornament-pulse',style='transform-box:fill-box;transform-origin:center',opacity='.3')
-        sprig=sub(g,'g',class_='ornament-sprig',style='transform-box:view-box;transform-origin:214px 1040px')
+        sprig_space=sub(g,'g',id='P4-sprig-space',transform='translate(-18 95)')
+        sprig=sub(sprig_space,'g',class_='ornament-sprig',style='transform-box:view-box;transform-origin:214px 1040px')
         sub(sprig,'path',d='M214 1040C239 1012 245 982 238 950M232 1013C207 1011 193 995 196 980C218 981 231 993 232 1013M241 986C263 974 269 956 260 943C242 951 237 968 241 986',opacity='.65')
         sub(g,'path',d='M261 1049C310 1076 357 1079 402 1068M273 1068C323 1095 370 1094 415 1081',class_='ornament-current',opacity='.42')
         sub(g,'path',d='M129 289V313M117 301H141M1066 82V102M1056 92H1076',opacity='.55')
@@ -129,9 +130,9 @@ def prepare_build():
     commands=absolute(p[0].get('d'));assert abs(commands[19][1][-2]-243.52)<.02 and abs(commands[28][1][-2]-701.03)<.02
     commands=commands[:20]+[('C',[395,940,548,895,701.03,852.04])]+commands[29:]
     p[0].set('d',' '.join(c+' '.join(f'{v:.3f}' for v in vs) for c,vs in commands))
-    car_indices=set(range(1,20))|{21,22,23,25,26,27,28,31,32,34}
+    car_indices=set(range(1,20))|{21,22,23,25,26,27,28,30,31,32,34}
     tail_indices=set(range(46,52));eye_indices={63,64,65}
-    car=group('P3','car',(510,1050));tail=group('P3','tail',(778,412));eye=group('P3','eye',(1004,327))
+    car=group('P3','car',(510,1050));tail=group('P3','tail',(778,412));eye=group('P3','eye',(1007,327.5))
     # Preserve painter order inside each movable group, with the road beneath.
     for i in sorted(car_indices):car.append(p[i])
     for i in sorted(tail_indices):tail.append(p[i])
@@ -166,12 +167,26 @@ def prepare_return():
     flex_tail(tail,920,430,23)
     decorations(svg,'P4')
     hand=group('P4','typing',(631,759))
+    # The exported skin silhouette also spans the keyboard. Extract the skin
+    # using its original keyboard contour, then move that contour with the hand.
+    # Keeping it on the static keyboard used to shear off fingers during a tap.
+    hand_mask=sub(defs,'mask',id='P4-hand-skin-mask',maskUnits='userSpaceOnUse',x=410,y=675,width=245,height=180,style='mask-type:luminance')
+    sub(hand_mask,'rect',x=410,y=675,width=245,height=110,fill='white')
+    keyboard_cut=deepcopy(p[10]);keyboard_cut.attrib.pop('id');keyboard_cut.set('fill','black');hand_mask.append(keyboard_cut)
+    cuff_clip=sub(defs,'clipPath',id='P4-hand-attachment-clip',clipPathUnits='userSpaceOnUse')
+    sub(cuff_clip,'rect',x=410,y=675,width=245,height=63)
+    cuff=deepcopy(p[9]);cuff.set('id','P4-hand-attachment');cuff.set('clip-path','url(#P4-hand-attachment-clip)')
+    p[9].set('mask','url(#P4-hand-skin-mask)')
     for i in sorted(hand_indices):hand.append(p[i])
     for i,path in enumerate(p):
         if i==9:
+            svg.append(cuff)
             # A small skin overlap stays under the shirt and moving wrist.
             sub(svg,'path',id='P4-wrist-underlap',fill='#fdba81',d='M430 706C452 693 470 682 488 694C510 704 527 716 548 716L630 714L637 738L435 730Z')
-            svg.append(hand)
+            # Continue the real keyboard under the fingertips, with no fixed
+            # skin silhouettes. Only this normally hidden region is repaired.
+            sub(svg,'path',id='P4-keyboard-under-fingers',fill='#838d77',d='M440 747L479 741L514 753L519 775L449 792Z')
+        if i==14:svg.append(hand)
         if i==25:svg.append(tail)
         if i not in tail_indices|hand_indices:svg.append(path)
     return svg
