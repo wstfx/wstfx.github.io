@@ -1,22 +1,19 @@
 .cover-dhh{background:#ecebdd}
-.cover-dhh .dhh-cover-art{display:block;width:88%;height:calc(100% - 24px);max-width:360px}
-/* Short, reversible transitions: leaving or changing focus settles from the current pose. */
-.dhh-cover-art :is(.dhh-touch,.dhh-head,.dhh-family,.dhh-happiness,.dhh-ai){transition:transform .75s cubic-bezier(.22,.61,.36,1),opacity .75s ease}
-.dhh-cover-art .dhh-family{transform:translate(-5px,5px) scale(.96)}
-.dhh-cover-art .dhh-happiness{transform:translate(4px,8px) rotate(-8deg)}
-.dhh-cover-art .dhh-ai{transform:translate(-9px,-3px) rotate(-9deg)}
-.project-card:focus-within .dhh-cover-art .dhh-touch{transform:rotate(0deg)}
-.project-card:focus-within .dhh-cover-art .dhh-head{transform:rotate(-2deg)}
-.project-card:focus-within .dhh-cover-art .dhh-family{transform:translate(3px,-3px) scale(1)}
-.project-card:focus-within .dhh-cover-art .dhh-happiness{transform:translate(-3px,-5px) rotate(0deg)}
-.project-card:focus-within .dhh-cover-art .dhh-ai{transform:translate(3px,2px) rotate(3deg)}
+.cover-dhh .dhh-cover-art{display:block;width:94%;height:calc(100% - 24px);max-width:360px}
+/* One gently unfolding group. Exit transitions start at the current pose. */
+.dhh-cover-art :is(.dhh-world,.dhh-family,.dhh-happiness,.dhh-ai,.dhh-ai-core){transition:transform .8s cubic-bezier(.22,.61,.36,1);transform:none}
+.project-card:focus-within .dhh-cover-art .dhh-world{transform:translate(-6px,-3px) scale(1.025)}
+.project-card:focus-within .dhh-cover-art .dhh-family{transform:scale(1.015)}
+.project-card:focus-within .dhh-cover-art .dhh-happiness{transform:translate(-7px,-9px) rotate(-2deg)}
+.project-card:focus-within .dhh-cover-art .dhh-ai{transform:translate(-10px,-5px) rotate(2deg)}
+.project-card:focus-within .dhh-cover-art .dhh-ai-core{transform:scale(1.08)}
 @media(hover:hover){
-  .project-card:hover .dhh-cover-art .dhh-touch{transform:rotate(0deg)}
-  .project-card:hover .dhh-cover-art .dhh-head{transform:rotate(-2deg)}
-  .project-card:hover .dhh-cover-art .dhh-family{transform:translate(3px,-3px) scale(1)}
-  .project-card:hover .dhh-cover-art .dhh-happiness{transform:translate(-3px,-5px) rotate(0deg)}
-  .project-card:hover .dhh-cover-art .dhh-ai{transform:translate(3px,2px) rotate(3deg)}
+  .project-card:hover .dhh-cover-art .dhh-world{transform:translate(-6px,-3px) scale(1.025)}
+  .project-card:hover .dhh-cover-art .dhh-family{transform:scale(1.015)}
+  .project-card:hover .dhh-cover-art .dhh-happiness{transform:translate(-7px,-9px) rotate(-2deg)}
+  .project-card:hover .dhh-cover-art .dhh-ai{transform:translate(-10px,-5px) rotate(2deg)}
+  .project-card:hover .dhh-cover-art .dhh-ai-core{transform:scale(1.08)}
 }
 @media(prefers-reduced-motion:reduce){
-  .project-card .dhh-cover-art :is(.dhh-touch,.dhh-head,.dhh-family,.dhh-happiness,.dhh-ai){transition:none;transform:none}
+  .project-card .dhh-cover-art :is(.dhh-world,.dhh-family,.dhh-happiness,.dhh-ai,.dhh-ai-core){transition:none;transform:none}
 }

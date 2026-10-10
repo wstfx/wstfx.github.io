@@ -15,11 +15,11 @@
     { transform: active, offset: 1 }
   ];
   const poses = [
-    ['.dhh-touch', 'rotate(-5deg)', 'rotate(0deg)', .04, .3],
-    ['.dhh-head', 'rotate(0deg)', 'rotate(-2deg)', .12, .45],
-    ['.dhh-family', 'translate(-5px,5px) scale(.96)', 'translate(8px,-5px) scale(1)', .22, .62],
-    ['.dhh-happiness', 'translate(4px,8px) rotate(-8deg)', 'translate(-5px,-9px) rotate(0deg)', .32, .74],
-    ['.dhh-ai', 'translate(-9px,-3px) rotate(-9deg)', 'translate(7px,4px) rotate(3deg)', .45, .9]
+    ['.dhh-world', 'translate(0px,0px) scale(1)', 'translate(-10px,-4px) scale(1.035)', .04, .5],
+    ['.dhh-family', 'scale(1)', 'scale(1.025)', .12, .55],
+    ['.dhh-happiness', 'translate(0px,0px) rotate(0deg)', 'translate(-10px,-12px) rotate(-3deg)', .2, .65],
+    ['.dhh-ai', 'translate(0px,0px) rotate(0deg)', 'translate(-13px,-7px) rotate(3deg)', .3, .78],
+    ['.dhh-ai-core', 'scale(1)', 'scale(1.12)', .48, .9]
   ];
   const animations = poses.map(([selector, rest, active, start, end]) => {
     const animation = art.querySelector(selector).animate(frames(rest, active, start, end), {
