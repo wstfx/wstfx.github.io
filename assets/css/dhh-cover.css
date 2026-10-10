@@ -1,0 +1,8 @@
+.cover-dhh{background:#e8dfcb}
+.cover-dhh .dhh-cover-art{display:block;width:92%;max-width:365px;height:auto;margin-top:-12px}
+.cover-dhh .dhh-cover-bubble{transform-box:fill-box;transform-origin:50% 100%;transition:transform .5s var(--ease)}
+.cover-dhh .dhh-cover-route{transition:stroke .4s}
+.cover-dhh:focus-visible .dhh-cover-bubble{transform:translateY(-5px) rotate(-3deg)}
+.cover-dhh:focus-visible .dhh-cover-route{stroke:#c45222}
+@media(hover:hover){.project-card:hover .cover-dhh .dhh-cover-bubble{transform:translateY(-5px) rotate(-3deg)}.project-card:hover .cover-dhh .dhh-cover-route{stroke:#c45222}}
+@media(prefers-reduced-motion:reduce){.cover-dhh .dhh-cover-bubble,.cover-dhh .dhh-cover-route{transition:none!important;transform:none!important}}

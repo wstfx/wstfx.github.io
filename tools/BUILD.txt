@@ -146,3 +146,18 @@ the two panels do not depict a shared synchronization convention. Dials show rat
 not cumulative readings when changing speed. Translation is slowed and looped for
 legibility. Fade/loop is illustrative, not a simulation of acceleration or optics.
 Work cover fixes beta=.8 and reserves index/caption space around landscape artwork.
+
+DHH HAPPINESS / SUPPORT / AI CASE STUDY
+  content/dhh-body.html      Graphic elicitation, findings, fieldwork, AI and outcomes
+  assets/art/dhh-life.svg    Native everyday-life illustration with three perspectives
+  assets/art/dhh-cover.svg   Separate landscape composition for the Work card
+  assets/css/dhh*.css        Scoped case-study and Work-card styles
+  assets/js/dhh.js           Perspective selection and visibility-aware motion pause
+  assets/images/dhh/         Original, supplied 52-response preference chart
+  assets/pictures/DHH*       Supplied, identity-obscured fieldwork photographs
+  python3 tools/build_site.py --only work/dhh.html work/dhh-review.html work.html about.html cv.html index.html
+The former review URL redirects to the AI publication within the combined case.
+The manuscript's 39 students, broader 2024 fieldwork, and 52-response survey are
+separate evidence sets. The ~20 interview hours describe the team's fieldwork.
+Keep author positions and statuses aligned with the September 29, 2026 résumé.
+The illustration is conceptual; it does not depict participants or their drawings.

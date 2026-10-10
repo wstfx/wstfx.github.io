@@ -1,0 +1,42 @@
+<svg class="dhh-life-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 450" fill="none" role="img" aria-label="Two people share a table in a garden, connected to a home, a place to learn, and communication tools">
+  <path d="M59 274C21 200 73 95 166 74C276 16 461 52 499 155C565 280 463 383 326 382C218 426 87 369 59 274Z" fill="#e5eadb"/>
+  <ellipse cx="280" cy="337" rx="220" ry="39" fill="#d4dfc8"/>
+  <path d="M109 310C128 360 212 393 301 381C412 366 472 312 446 276" stroke="#f7f5ed" stroke-width="24" stroke-linecap="round"/>
+  <path d="M109 310C128 360 212 393 301 381C412 366 472 312 446 276" stroke="#9aae8e" stroke-width="1.5" stroke-linecap="round"/>
+  <g class="dhh-garden" stroke="#234d3b" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M93 297V185H179V297" fill="#f8f5eb"/><path d="M78 186L134 139L194 186" fill="#e4b48c"/>
+    <path d="M116 297V243Q136 228 155 243V297" fill="#c6d4b7"/><path d="M104 204H132V227H104Z" fill="#edddad"/><path d="M118 204V227M104 215H132"/>
+    <path d="M90 301H182M89 309H172"/><circle cx="148" cy="268" r="2.5" fill="#234d3b" stroke="none"/>
+    <path d="M446 307V214M446 251L420 235M446 268L471 246"/><path class="dhh-leaves" d="M444 159C416 146 398 169 410 190C389 210 410 238 441 231C473 250 501 228 484 204C505 176 472 151 444 159Z" fill="#aac094"/>
+    <path d="M407 310H483M418 311V320M473 311V320"/>
+    <path d="M189 118C178 98 147 100 146 120C125 115 114 126 117 137H194C207 126 199 116 189 118Z" fill="#f7f5ed" stroke="none"/>
+    <circle class="dhh-sun" cx="412" cy="95" r="26" fill="#e9c86d" stroke="none"/>
+    <path d="M82 330Q69 314 78 306Q91 315 82 330M82 330V341M468 335Q452 316 463 309Q477 321 468 335M468 335V343" fill="#9bb482"/>
+  </g>
+  <g class="dhh-people" stroke="#234d3b" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="226" cy="323" rx="35" ry="8" fill="#b6c8a7" stroke="none"/><ellipse cx="335" cy="323" rx="37" ry="8" fill="#b6c8a7" stroke="none"/>
+    <path d="M205 270H234V303H205ZM200 301H241M208 303V323M235 303V323" fill="#d0d8bc"/>
+    <path d="M320 270H348V303H320ZM315 301H354M322 303V323M347 303V323" fill="#d0d8bc"/>
+    <circle cx="216" cy="207" r="17" fill="#edcfac"/><path d="M200 207C194 184 223 178 233 194" fill="#234d3b"/>
+    <path d="M198 239Q216 226 236 240L246 275H198Z" fill="#c45222"/><path d="M216 276L226 307L247 320M198 275L208 314L219 325"/>
+    <path d="M232 244L258 256L278 246"/><path d="M203 247L214 264L241 264"/>
+    <circle cx="340" cy="208" r="17" fill="#edcfac"/><path d="M324 205Q320 181 341 187Q361 184 357 208" fill="#234d3b"/>
+    <path d="M324 240Q340 229 354 242L354 275H314Z" fill="#74916a"/><path d="M338 276L328 313L312 324M354 276L347 309L335 322"/>
+    <path d="M326 248L305 264L282 254M351 247L340 269H318"/>
+    <path d="M241 272H317L330 281H228Z" fill="#f8f5eb"/><path d="M242 282L236 325M313 282L321 325"/>
+    <path d="M264 266L283 263L293 270L275 273Z" fill="#e9c86d" stroke-width="1.5"/>
+    <path d="M303 265V250H313V264" fill="#edddad"/><path d="M313 252Q321 252 319 257L313 260"/>
+    <path class="dhh-conversation" d="M243 209Q251 199 263 206M246 219Q257 212 269 216" stroke="#c45222"/>
+  </g>
+  <g class="dhh-support-layer" stroke="#6e8d60" stroke-width="1.7" stroke-linecap="round">
+    <path class="dhh-support-route" d="M134 157C141 60 312 32 385 123M141 299C183 356 380 357 445 269" stroke-dasharray="4 8"/>
+    <circle cx="241" cy="87" r="27" fill="#f7f5ed"/><path d="M223 82Q232 77 241 82Q250 77 259 82V99Q250 94 241 99Q232 94 223 99ZM241 82V99" fill="#edddad"/><path d="M228 86H236M247 86H254M228 91H235M247 91H254"/>
+    <circle cx="382" cy="355" r="23" fill="#f7f5ed"/><path d="M368 356H396M371 356V345H393V356M375 349V356M381 349V356M389 349V356M369 342L382 335L395 342Z" fill="#c6d4b7"/>
+    <circle cx="149" cy="301" r="4" fill="#6e8d60"/><circle cx="445" cy="269" r="4" fill="#6e8d60"/>
+  </g>
+  <g class="dhh-tech-layer" stroke="#234d3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path class="dhh-tech-route" d="M259 174C283 133 314 115 346 119M397 163C414 180 420 205 423 225" stroke="#c45222" stroke-dasharray="3 7"/>
+    <g class="dhh-transcript"><path d="M334 110H394Q404 110 404 121V145Q404 155 394 155H363L348 169V155H334Q324 155 324 145V121Q324 110 334 110Z" fill="#f7f5ed"/><path d="M335 123H391M335 132H383M335 141H369" stroke="#c45222"/><circle cx="395" cy="111" r="10" fill="#e9c86d"/><path d="M390 111L394 115L400 107" stroke-width="1.5"/></g>
+    <g class="dhh-alert"><rect x="476" y="248" width="30" height="45" rx="5" fill="#f7f5ed"/><path d="M482 258H500M482 265H495" stroke="#c45222"/><circle cx="491" cy="284" r="2" fill="#234d3b" stroke="none"/><path d="M510 257Q518 263 510 270M515 252Q530 263 515 275" stroke="#c45222"/></g>
+  </g>
+</svg>

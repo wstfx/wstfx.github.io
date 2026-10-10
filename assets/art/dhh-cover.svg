@@ -1,0 +1,16 @@
+<svg class="dhh-cover-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 250" fill="none" aria-hidden="true">
+  <ellipse cx="220" cy="178" rx="141" ry="26" fill="#d0d8bc"/>
+  <path d="M109 166C97 91 134 42 217 38C317 29 359 103 334 176" stroke="#b5c4a4" stroke-width="1.6" stroke-dasharray="4 8" class="dhh-cover-route"/>
+  <g stroke="#234d3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M92 162V110H137V162M84 110L114 83L146 110" fill="#f8f5eb"/><path d="M107 162V132H122V162" fill="#a6bc94"/><path d="M90 167H140"/>
+    <circle cx="324" cy="58" r="18" fill="#e9c86d" stroke="none"/>
+    <path d="M342 178V127M342 149L329 139"/><path d="M340 102C321 94 308 111 319 123C308 139 327 154 342 145C365 157 380 136 366 124C376 108 356 96 340 102Z" fill="#aac094"/>
+    <circle cx="190" cy="109" r="14" fill="#edcfac"/><path d="M177 107Q173 88 189 92Q203 88 204 103" fill="#234d3b"/>
+    <path d="M175 135Q191 124 204 135L211 164H175Z" fill="#c45222"/><path d="M199 141L216 149L230 140M180 144L191 156L213 156M176 165L183 185M200 165L211 184"/>
+    <circle cx="267" cy="110" r="14" fill="#edcfac"/><path d="M254 110Q246 86 267 92Q282 89 281 110" fill="#234d3b"/>
+    <path d="M254 134Q267 126 279 136L279 164H247Z" fill="#74916a"/><path d="M255 143L240 155H225M275 146L266 157H250M256 165L245 185M274 165L266 184"/>
+    <path d="M204 164H250L262 173H193ZM201 173L195 190M252 173L260 190" fill="#f8f5eb"/>
+    <path d="M216 161L227 157L237 161L225 165Z" fill="#e9c86d"/>
+    <g class="dhh-cover-bubble"><path d="M215 54H269Q277 54 277 63V78Q277 86 269 86H242L231 96V86H215Q207 86 207 78V63Q207 54 215 54Z" fill="#f8f5eb"/><path d="M216 64H267M216 73H253" stroke="#c45222"/></g>
+  </g>
+</svg>

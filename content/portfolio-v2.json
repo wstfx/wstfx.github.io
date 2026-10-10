@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updated": "2026-10-01",
+  "updated": "2026-10-10",
   "language": "en",
   "person": {
     "name": "Zebang Wu",
@@ -215,40 +215,56 @@
     },
     {
       "id": "dhh",
-      "title": "Listening to student well-being",
-      "subtitle": "A qualitative study with Deaf and Hard-of-Hearing students.",
+      "title": "DHH happiness & everyday access",
+      "subtitle": "What makes a happy life—and what helps people participate in it?",
       "category": "Research",
       "tags": [
         "Qualitative research",
         "Accessibility",
-        "Interview design",
-        "Thematic analysis"
+        "Social support",
+        "AI review"
       ],
       "period": "May 2024–present",
-      "status": "Manuscript under review",
+      "status": "Happiness manuscript under review · AI review accepted at ASHA 2026",
       "role": "Lead Student Researcher · Westlake University",
-      "summary": "A faculty-supervised study of Deaf and Hard-of-Hearing students’ well-being, from interview design and fieldwork coordination to thematic analysis and writing.",
+      "summary": "Led a qualitative study of DHH student happiness, organized school and community fieldwork, and co-authored a review of AI for everyday access.",
       "sections": [
         {
-          "title": "Understanding lived experience",
-          "body": "This study approaches student well-being through qualitative research. Working under faculty supervision, I helped turn a broad question about happiness into an interview-based study that could attend to participants’ own accounts."
+          "title": "Happiness in everyday life",
+          "body": "A graphic-elicitation study of 39 DHH students, analyzed through when, where, what, with whom, and why. Relatedness, serenity, competence, autonomy, and engagement connect everyday experiences to happiness."
         },
         {
-          "title": "My contribution",
-          "body": "I led the student research work, designed interviews, coordinated interview arrangements and fieldwork, organized research materials, and conducted thematic analysis. The work involved both keeping the research process moving and interpreting what emerged from it."
+          "title": "The support around participation",
+          "body": "Student-led school, household, and institutional fieldwork in Hangzhou and Jiaxing explored education, communication, employment, rehabilitation, and community support."
         },
         {
-          "title": "Writing the study",
-          "body": "I am the first author of the resulting manuscript. As recorded in my September 2026 résumé, it is under review at Applied Research in Quality of Life. This project is distinct from the related systematic review of AI for Deaf and Hard-of-Hearing people."
+          "title": "AI in context",
+          "body": "Co-authored a systematic review of AI for DHH people, connecting technical possibilities and limitations with communication preferences and everyday participation."
         }
       ],
       "featured": true,
       "placement": "Work",
       "relatedIds": [
-        "dhh-review"
+        "navix"
       ],
-      "mediaType": "research-process-or-thematic-map",
-      "dateNote": "Manuscript status reflects the September 29, 2026 résumé."
+      "mediaType": "fieldwork-photos-and-conceptual-illustration",
+      "dateNote": "Role and publication status follow the September 29, 2026 résumé. Study materials were collected in 2023–2024; the student-led fieldwork took place May–August 2024. Manuscript sample (39), broader fieldwork, and communication-preference survey (52) remain distinct.",
+      "publications": [
+        {
+          "title": "Happiness of Deaf and Hard-of-Hearing Students",
+          "authorship": "First author",
+          "venue": "Applied Research in Quality of Life",
+          "status": "Under review",
+          "href": "work/dhh.html#outcomes"
+        },
+        {
+          "title": "Landscape of Artificial Intelligence for the Deaf and Hard-of-Hearing: Applications, Challenges and Future Directions",
+          "authorship": "Second author",
+          "venue": "ASHA 2026",
+          "status": "Accepted · ASHA 2026",
+          "href": "work/dhh.html#ai-review"
+        }
+      ]
     },
     {
       "id": "active-learning",
@@ -500,38 +516,6 @@
       "mediaType": "site-capture",
       "detailLevel": "compact",
       "evidenceStatus": "Feature scope is intentionally not inferred from the name."
-    },
-    {
-      "id": "dhh-review",
-      "title": "AI for Deaf and Hard-of-Hearing people",
-      "subtitle": "A systematic review of applications, challenges, and future directions.",
-      "category": "Research",
-      "tags": [
-        "Systematic review",
-        "Accessibility",
-        "Artificial intelligence"
-      ],
-      "period": "Accepted for ASHA 2026",
-      "status": "Accepted · ASHA 2026",
-      "role": "Second author",
-      "summary": "Second author of “Landscape of Artificial Intelligence for the Deaf and Hard-of-Hearing: Applications, Challenges and Future Directions.”",
-      "sections": [
-        {
-          "title": "The review",
-          "body": "This systematic review considers the landscape of artificial intelligence for Deaf and Hard-of-Hearing people through its applications, challenges, and future directions."
-        },
-        {
-          "title": "A related research strand",
-          "body": "I am the second author, and my September 2026 résumé records acceptance at ASHA 2026. The review is a separate work from my qualitative study of student well-being, while sharing a sustained interest in accessibility."
-        }
-      ],
-      "featured": false,
-      "placement": "Work",
-      "relatedIds": [
-        "dhh"
-      ],
-      "mediaType": "publication-card",
-      "dateNote": "Acceptance status is recorded in the September 29, 2026 résumé; exact project dates are not established."
     },
     {
       "id": "materials-creep",
@@ -947,13 +931,13 @@
     {
       "year": "2024",
       "period": "May 2024–present",
-      "title": "Listening to student well-being",
-      "body": "A faculty-supervised study of Deaf and Hard-of-Hearing students’ well-being, from interview design and fieldwork coordination to thematic analysis and writing.",
+      "title": "DHH happiness & everyday access",
+      "body": "Led a faculty-supervised qualitative study of DHH student happiness, organized school and community fieldwork, and co-authored an AI systematic review. First-author manuscript under review; AI review accepted at ASHA 2026.",
       "tags": [
         "Qualitative research",
         "Accessibility",
-        "Interview design",
-        "Thematic analysis"
+        "Social support",
+        "AI review"
       ],
       "href": "work/dhh.html",
       "projectId": "dhh"
@@ -1176,20 +1160,6 @@
       ],
       "href": "work/evisa.html",
       "projectId": "evisa",
-      "undated": true
-    },
-    {
-      "year": "Alongside the timeline",
-      "period": "Accepted for ASHA 2026",
-      "title": "AI for Deaf and Hard-of-Hearing people",
-      "body": "Second author of “Landscape of Artificial Intelligence for the Deaf and Hard-of-Hearing: Applications, Challenges and Future Directions.”",
-      "tags": [
-        "Systematic review",
-        "Accessibility",
-        "Artificial intelligence"
-      ],
-      "href": "work/dhh-review.html",
-      "projectId": "dhh-review",
       "undated": true
     },
     {

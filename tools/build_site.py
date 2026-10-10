@@ -19,7 +19,6 @@ PROJECTS = DATA['projects']
 BY_ID = {p['id']: p for p in PROJECTS}
 STORY_THREADS = {
     'dhh': ('notice', 'Notice · Start with someone'),
-    'dhh-review': ('notice', 'Notice · Start with someone'),
     'feasypaste': ('notice', 'Notice · Start with someone'),
     'active-learning': ('test', 'Test · Give curiosity something to push against'),
     'reconstruction': ('test', 'Test · Give curiosity something to push against'),
@@ -38,8 +37,8 @@ STORY_THREADS = {
 RELATED_NEXT = {
     'fire-sim': 'reconstruction', 'involve': 'ai-coding-course',
     'dongfeng': 'involve', 'reconstruction': 'active-learning',
-    'active-learning': 'reconstruction', 'dhh': 'dhh-review',
-    'dhh-review': 'dhh', 'navix': 'involve', 'vr': 'fire-sim',
+    'active-learning': 'reconstruction', 'dhh': 'navix',
+    'navix': 'involve', 'vr': 'fire-sim',
     'ai-coding-course': 'vr', 'feasypaste': 'roadlaw', 'roadlaw': 'involve',
     'igem': 'feasypaste', 'crystal': 'materials-creep', 'materials-creep': 'fire-sim',
     'asr': 'dongfeng', 'evisa': 'feasypaste', 'westlake': 'cornell',
@@ -74,6 +73,7 @@ def page(path, title, body, active, prefix=''):
         story_assets = f'<link rel="stylesheet" href="{asset("assets/css/visual-system.css")}">'
     if path == 'work.html':
         story_assets += f'<link rel="stylesheet" href="{asset("assets/css/igem-cover.css")}">'
+        story_assets += f'<link rel="stylesheet" href="{asset("assets/css/dhh-cover.css")}">'
         story_assets += f'<link rel="stylesheet" href="{asset("assets/css/vr-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/active-learning-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/reconstruction-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/dongfeng-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/fire-sim-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/navix-cover.css")}">'
     if path in ('illustration-briefs.html', 'illustration-direction.html'):
         story_assets = f'<link rel="stylesheet" href="{asset("assets/css/illustration-briefs.css")}"><script defer src="{asset("assets/js/illustration-briefs.js")}"></script>'
@@ -104,7 +104,7 @@ def page(path, title, body, active, prefix=''):
 {f'<link rel="stylesheet" href="{prefix}{asset("assets/css/navix.css")}"><script defer src="{prefix}{asset("assets/js/navix.js")}"></script>' if path == 'work/navix.html' else ''}
 {f'<link rel="stylesheet" href="{prefix}{asset("assets/css/active-learning.css")}"><script defer src="{prefix}{asset("assets/js/active-learning.js")}"></script>' if path == 'work/active-learning.html' else ''}
 {f'<link rel="stylesheet" href="{prefix}{asset("assets/css/vr.css")}"><script defer src="{prefix}{asset("assets/js/vr.js")}"></script>' if path == 'work/vr.html' else ''}
-{f'<link rel="stylesheet" href="{prefix}{asset("assets/css/igem.css")}"><script defer src="{prefix}{asset("assets/js/igem.js")}"></script>' if path == 'work/igem.html' else ''}
+{f'<link rel="stylesheet" href="{prefix}{asset("assets/css/igem.css")}"><script defer src="{prefix}{asset("assets/js/igem.js")}"></script>' if path == 'work/igem.html' else ''}{f'<link rel="stylesheet" href="{prefix}{asset("assets/css/dhh.css")}"><script defer src="{prefix}{asset("assets/js/dhh.js")}"></script>' if path == 'work/dhh.html' else ''}
 </head>
 <body id="top" class="{'story-page' if path == 'index.html' else 'collection-page'}">
 <a class="skip" href="#main">Skip to content</a>
@@ -148,8 +148,9 @@ def artwork(project_id, number='01'):
         art = (ROOT / 'assets/art/fire-sim-house.svg').read_text(); label = 'Heat → material response → damage'
     elif project_id == 'navix':
         art = (ROOT / 'assets/art/navix-care.svg').read_text(); label = 'A companion / a routine / a little care'
-    elif project_id in ['dhh', 'dhh-review']:
-        art = '<div class="quote-art">“ ”</div>'; label = 'Start by listening'
+    elif project_id == 'dhh':
+        art = (ROOT / 'assets/art/dhh-cover.svg').read_text()
+        label = 'Happiness · support · everyday access'
     elif project_id == 'vr':
         art = (ROOT / 'assets/art/relativity-cover.svg').read_text()
         label = 'Length contraction · time dilation'
@@ -308,6 +309,10 @@ gallery = {
 }
 for index,p in enumerate(PROJECTS):
     id_ = p['id']
+    if id_ == 'dhh':
+        body = (ROOT / 'content/dhh-body.html').read_text().replace('{{DHH_LIFE_SVG}}', (ROOT / 'assets/art/dhh-life.svg').read_text())
+        page('work/dhh.html', p['title'], body, 'Work', '../')
+        continue
     if id_ == 'igem':
         body = (ROOT / 'content/igem-body.html').read_text().replace('{{IGEM_SYSTEM_SVG}}', (ROOT / 'assets/art/igem-system.svg').read_text())
         page('work/igem.html', p['title'], body, 'Work', '../')
@@ -367,7 +372,6 @@ for index,p in enumerate(PROJECTS):
     if id_=='feasypaste':
         body += '<a class="button outline" href="https://chromewebstore.google.com/detail/feasypaste-feishu-convert/ehdmffeifoiagjgnkaajpdmhicdfajhb">View the extension <span>↗</span></a>'
     if id_=='involve': body += '<a class="text-link" href="ai-coding-course.html">The course I taught with InVolve ↗</a>'
-    if id_=='dhh': body += '<a class="text-link" href="dhh-review.html">Related work: AI and accessibility ↗</a>'
     nxt=BY_ID[RELATED_NEXT[id_]]
     body += '</div></div>'+f'<nav class="case-next" aria-label="More projects"><a class="text-link" href="../work.html">Back to the collection</a><a href="{nxt["id"]}.html">{eyebrow("Keep exploring →")}<h3>{e(nxt["title"])}</h3></a></nav>'
     page(f'work/{id_}.html',p['title'],body,'Work' if p.get('placement')=='Work' else 'About','../')
@@ -381,17 +385,21 @@ page('sharing/abandon.html','Abandon',article,'Writing','../')
 
 cv = '<section class="page-top">'+eyebrow('A concise reference · September 2026')+'<h1>The short version.</h1><p class="lede">Education, research, and professional experience. Follow a project link for the longer story.</p></section><div class="cv-layout"><aside class="cv-aside"><h2>Zebang Wu</h2><p>吴泽邦<br>Hangzhou, China<br>Electronic Information Engineering</p><a class="text-link" href="mailto:wuzebang@westlake.edu.cn">Email ↗</a><br><button class="button outline cv-print" type="button">Print / Save as PDF ↗</button></aside><div>'
 cv += '<section class="cv-section"><h2>Education</h2><article class="cv-entry"><div class="cv-entry-top"><h3>Westlake University</h3><span class="period">Expected May 2027</span></div><p>B.S. in Electronic Information Engineering</p><p>GPA 4.06/4.3 · TOEFL iBT 107/120</p></article><article class="cv-entry"><div class="cv-entry-top"><h3>Cornell University</h3><span class="period">Aug–Dec 2025</span></div><p>Exchange student · Electrical & Computer Engineering</p></article></section>'
-for title,ids in [('Professional experience',['navix','dongfeng']),('Research',['reconstruction','active-learning','vr','dhh','dhh-review']),('Leadership',['student-union'])]:
+for title,ids in [('Professional experience',['navix','dongfeng']),('Research',['reconstruction','active-learning','vr','dhh']),('Leadership',['student-union'])]:
     cv+=f'<section class="cv-section"><h2>{title}</h2>'
     for id_ in ids:
         p=BY_ID[id_]
         cv+=f'<article class="cv-entry"><div class="cv-entry-top"><h3><a href="work/{id_}.html">{e(p["title"])} ↗</a></h3><span class="period">{e(p["period"])}</span></div><p>{e(p["role"])}</p><p>{e(p["summary"])}</p></article>'
     cv+='</section>'
+cv += '<section class="cv-section"><h2>DHH research publications</h2>'
+for publication in BY_ID['dhh']['publications']:
+    cv += f'<article class="cv-entry"><div class="cv-entry-top"><h3><a href="{e(publication["href"])}">{e(publication["title"])} ↗</a></h3><span class="period">{e(publication["status"])}</span></div><p>{e(publication["authorship"])} · {e(publication["venue"])}</p></article>'
+cv += '</section>'
 cv+='<section class="cv-section"><h2>Tools & languages</h2><p>Python · C++ · TypeScript · PyTorch · ONNX Runtime · MATLAB</p><p>CARLA · Vue · Git · Linux · Unity · Abaqus · LaTeX</p><p>Mandarin Chinese (native) · English (fluent)</p></section></div></div>'
 page('cv.html','CV',cv,'CV')
 
 # Keep old entry points usable while their content now has a clear home.
-for old,new in [('Educational.html','about.html'),('Professional.html','work.html'),('Amateurs.html','about.html#outside'),('Resume.html','cv.html'),('Sharing.html','writing.html')]:
+for old,new in [('Educational.html','about.html'),('Professional.html','work.html'),('Amateurs.html','about.html#outside'),('Resume.html','cv.html'),('Sharing.html','writing.html'),('work/dhh-review.html','dhh.html#ai-review')]:
     if SELECTED and old not in SELECTED:
         continue
     if old=='Amateurs.html': new='about.html'
