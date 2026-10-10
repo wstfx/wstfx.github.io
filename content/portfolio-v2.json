@@ -31,7 +31,7 @@
     {
       "id": "fire-sim",
       "title": "Fire, heat & structural damage",
-      "subtitle": "An interactive starting point for my graduation project.",
+      "subtitle": "From an inspectable fire simulation to evidence-based scene and state initialization.",
       "category": "Research",
       "tags": [
         "Graduation project",
@@ -39,21 +39,21 @@
         "Interactive simulation"
       ],
       "period": "From Sep 2026",
-      "status": "Planned graduation project · prototype in development",
+      "status": "Working prototype · research in progress",
       "role": "Graduation project student",
-      "summary": "Exploring how a thermal field, component temperature, and accumulated damage can be made inspectable in an interactive simulation.",
+      "summary": "Building an inspectable thermal-damage simulation, then asking how images and building documents can initialize a useful short-term forecast.",
       "sections": [
         {
-          "title": "From exploration to a graduation project",
-          "body": "This work is becoming my undergraduate graduation project. The current prototype brings a changing thermal field, component heating, and cumulative damage into one interactive environment, providing a starting point for a more rigorous investigation."
+          "title": "An inspectable simulation",
+          "body": "Built an interactive 3D workspace connecting heat diffusion, member temperatures, cumulative damage and failure events, with scenario controls and reproducible run records."
         },
         {
-          "title": "Making a process visible",
-          "body": "The prototype lets a viewer inspect how a thermal process develops over time and how components respond. Its purpose at this stage is to make relationships and behavior visible enough to explore, compare, and discuss."
+          "title": "Evidence-based initialization",
+          "body": "The graduation research direction studies how visual observations and building documents can reconstruct a scene and its current fire state for short-term simulation."
         },
         {
           "title": "Current scope",
-          "body": "The model currently uses simplified, uncalibrated demonstration parameters. Its visual behavior has not been physically validated, and it should be read as an exploratory prototype rather than a predictive engineering system."
+          "body": "A working prototype with simplified, uncalibrated parameters. Multi-source reconstruction and forecast validation remain planned research."
         }
       ],
       "featured": true,
@@ -106,7 +106,7 @@
     {
       "id": "dongfeng",
       "title": "VLA models in the driving loop",
-      "subtitle": "Connecting model inference to reliable autonomous-driving evaluation.",
+      "subtitle": "Making driving models testable in a feedback loop.",
       "category": "Engineering",
       "tags": [
         "Autonomous driving",
@@ -117,7 +117,7 @@
       "period": "Jul–Aug 2026",
       "status": "Completed internship",
       "role": "R&D Intern · Dongfeng Motor Corporation R&D Institute",
-      "summary": "Integrated a vision-language-action model into Bench2Drive/CARLA and worked on the performance and reliability of its closed-loop evaluation pipeline.",
+      "summary": "Built VLA inference bridges for Bench2Drive/CARLA and AlpaSim, made evaluation easier to diagnose and repeat, and tested commercial simulation workflows.",
       "sections": [
         {
           "title": "Integration is part of the experiment",
@@ -141,8 +141,8 @@
           "label": "R&D internship"
         },
         {
-          "value": "CARLA + Bench2Drive",
-          "label": "Closed-loop evaluation environment"
+          "value": "CARLA + AlpaSim",
+          "label": "Closed-loop model integrations"
         }
       ]
     },
@@ -182,8 +182,8 @@
     },
     {
       "id": "navix",
-      "title": "AI support for family care",
-      "subtitle": "Turning family needs into product requirements and interactive prototypes.",
+      "title": "AI support for everyday care",
+      "subtitle": "From product questions to inspectable AI interactions.",
       "category": "Product",
       "tags": [
         "Product design",
@@ -194,34 +194,24 @@
       "period": "Sep 2026–present",
       "status": "Ongoing internship",
       "role": "Product & Market Research Intern · Navix",
-      "summary": "Product exploration for a family-care robot, spanning requirements, account permissions, AI conversations, scheduling prototypes, and technology research.",
+      "summary": "Designing Xiaoqi’s companion experience, from everyday routines and user-controlled profiles to AI actions with verifiable results.",
       "sections": [
         {
-          "title": "Starting with the family",
-          "body": "I translate eldercare and family-support needs into product requirements and user journeys. The interaction work includes account permissions, AI conversations, and emergency-contact flows, connecting a family situation to the actions and information the product needs to support."
+          "title": "Product logic and interaction",
+          "body": "Connected family-care research, feature definitions and implementation traceability in the Xiaoqi design workbench."
         },
         {
-          "title": "Making workflows tangible",
-          "body": "I built Vue and TypeScript prototypes and a local scheduling service with seven MCP tools. Synthetic data, version-conflict checks, and retry handling allowed AI-assisted workflows to be demonstrated while exploring how the system should respond to changing or interrupted requests."
+          "title": "Runnable prototypes",
+          "body": "Built the Vue phone experience, recurring schedules, an independent profile module and shared web/CLI/MCP tool execution with receipt-based confirmations."
         },
         {
-          "title": "Research that informs decisions",
-          "body": "I evaluated health-sensing and audio-service vendors, and organized 27 health-management sources into a searchable reference library. This work supports product design and integration planning; the prototypes are described as prototypes, without implying that every capability has been deployed."
+          "title": "Research and scope",
+          "body": "Evaluated sensing and audio suppliers and organized health-management references. Local prototypes and synthetic demonstrations do not establish production deployment or health outcomes."
         }
       ],
       "featured": true,
       "placement": "Work",
-      "mediaType": "product-screens",
-      "metrics": [
-        {
-          "value": "7",
-          "label": "MCP tools in the scheduling prototype"
-        },
-        {
-          "value": "27",
-          "label": "Sources in the health-management reference library"
-        }
-      ]
+      "mediaType": "product-screens"
     },
     {
       "id": "dhh",
@@ -263,7 +253,7 @@
     {
       "id": "active-learning",
       "title": "Choosing what a model learns next",
-      "subtitle": "From neural query policies to self-supervised error-reduction sampling.",
+      "subtitle": "Learning to select useful examples—and learning when to rethink the selection strategy.",
       "category": "Research",
       "tags": [
         "Active learning",
@@ -274,53 +264,53 @@
       "period": "Dec 2024–Jul 2025",
       "status": "Research project completed",
       "role": "Independent Researcher · Westlake University",
-      "summary": "An investigation of sample selection for neural-operator learning, including neural query strategies and a later error-reduction approach.",
+      "summary": "Can better training examples make a model learn more from less? From neural query policies to error-reduction sampling and training-batch completion.",
       "sections": [
         {
-          "title": "Beginning with a query policy",
-          "body": "The early phase explored neural-network-based query strategies for selecting useful training samples in a continuous sample space. The work connected sample selection with the behavior of the model being trained, and exposed questions about data requirements and continual learning."
+          "title": "Learning a query policy",
+          "body": "I prototyped a neural-network / reinforcement-learning query strategy for continuous sample spaces, comparing its proposals with uniformly sampled candidates. Proposal rankings exposed instability, alongside data hunger and continual-learning limitations."
         },
         {
           "title": "Moving toward error reduction",
-          "body": "I subsequently developed self-supervised error-reduction sampling. My résumé documents evaluation on an MLP-based DeepONet for Burgers’ equation, with attention to how the sampling approach affected learning."
+          "body": "I developed self-supervised error-reduction sampling and compared it with random, uncertainty and diversity strategies. Archived figures cover an MLP toy problem and a Burgers’ equation experiment labeled FNO on the original website."
         },
         {
-          "title": "What the experiments asked",
-          "body": "The analysis considered sample efficiency alongside computational cost and continual-learning limitations. The two phases belong to one research trajectory: an initial strategy, the constraints it exposed, and a revised approach to choosing training data."
+          "title": "Completing a training batch",
+          "body": "I explored error-reduction sampling as a complement to an existing batch-selection strategy, with coreset as the preferred base in that investigation. I considered sample efficiency, computational cost and the limits of the recorded results."
         }
       ],
       "featured": false,
       "placement": "Work",
       "mediaType": "experiment-figures",
-      "dateNote": "The legacy site also contains toy-model and FNO figures; each figure should retain its own experimental context."
+      "dateNote": "Original figures retain their experimental contexts: query policy, MLP toy problem, FNO-labeled Burgers run and training-only batch-completion comparison. The resume separately names DeepONet; the available sources do not establish how these records relate, so the archived FNO figure is not relabeled."
     },
     {
       "id": "vr",
       "title": "Relativity you can interact with",
-      "subtitle": "Connecting scientific accuracy with a VR learning experience.",
+      "subtitle": "Helping a guided VR lesson stay physically accurate—and assess what learners understand.",
       "category": "Research",
       "tags": [
         "VR",
-        "Learning sciences",
-        "Interaction design",
-        "Physics education"
+        "Physics education",
+        "Learning assessment",
+        "Interaction design"
       ],
       "period": "Sep–Dec 2025",
       "status": "Research assistantship completed",
       "role": "Research Assistant · Cornell University",
-      "summary": "Research support for teaching special relativity through VR, combining literature review, instructional sequencing, and verification of simulation parameters.",
+      "summary": "A narrative VR lesson on special relativity. I reviewed the physics and helped extend the learning assessment; the team evaluated the experience with 28 participants.",
       "sections": [
         {
-          "title": "From an abstract concept to an experience",
-          "body": "The project explores how special relativity can be taught through an interactive virtual environment. My work drew on literature about embodiment, agency, and interactivity to inform the research design."
+          "title": "A guided encounter with relativity",
+          "body": "The team developed a beginner-friendly, narrative VR lesson built around a train, a platform and an Albert guide. Learners compare reference frames, investigate length contraction and time dilation, and resolve a train-and-platform version of the barn paradox."
         },
         {
           "title": "My contribution",
-          "body": "I helped refine the instructional sequence and VR interactions, and verified relativistic parameters in Unity simulations. This connected the intended learning experience with the physical behavior being represented."
+          "body": "I reviewed the physical correctness of the animations, verified relativistic parameters and helped adjust the Unity simulation. I also extended assessment questions to better probe conceptual understanding and the learning opportunities offered by VR, alongside literature review and instructional refinement."
         },
         {
-          "title": "A research contribution with a defined scope",
-          "body": "My contribution concerns research design support, instructional interaction, and scientific consistency. The work is presented on those terms, without claiming a measured improvement in learning outcomes."
+          "title": "Team evaluation",
+          "body": "The extended abstract reports an evaluation with 28 participants using pre- and posttests and interviews, finding learning on several special-relativity concepts. These are team-level findings, without a claim of superiority over other teaching formats."
         }
       ],
       "featured": false,
@@ -328,7 +318,8 @@
       "relatedIds": [
         "cornell"
       ],
-      "mediaType": "authentic-vr-capture"
+      "mediaType": "authentic-vr-capture",
+      "dateNote": "Period follows the existing resume. The user supplied the N=28 extended abstract, course design and assessment contribution on 2026-10-07. No publication venue, effect size or validated instrument name was supplied."
     },
     {
       "id": "feasypaste",
@@ -406,35 +397,74 @@
     },
     {
       "id": "igem",
-      "title": "Westlake iGEM 2024 wiki",
-      "subtitle": "A website for communicating a student science project.",
+      "title": "Westlake iGEM 2024",
+      "subtitle": "Connecting biological questions, mathematical models, and a public-facing research wiki.",
       "category": "Engineering",
       "tags": [
-        "Website development",
-        "Information design",
+        "Mathematical modeling",
+        "Wiki design & development",
+        "Dry-lab leadership",
         "Science communication"
       ],
       "period": "2024",
-      "status": "Original site completed · maintenance planned",
-      "role": "Solo website developer",
-      "summary": "Independent website development for Westlake’s 2024 iGEM project.",
+      "status": "2024 project completed",
+      "role": "Dry-lab group leader · Mathematical modeling & wiki development",
+      "summary": "I led the dry-lab group, developed mathematical models, and designed and built the wiki for Westlake’s 2024 iGEM project, alongside research writing and public engagement.",
       "sections": [
         {
-          "title": "A home for the project",
-          "body": "The wiki provides a web presentation for Westlake’s 2024 iGEM project. It sits at the intersection of website construction and the communication of scientific work."
+          "title": "A shared synthetic-biology project",
+          "body": "T-SAT explored engineered Salmonella as a delivery system for targeted cancer therapy. Our team combined biological design, laboratory experiments, mathematical modeling, and public engagement. My work connected the project’s quantitative questions with the website through which we explained our approach, methods, and findings."
         },
         {
-          "title": "My contribution",
-          "body": "I independently developed the website. This credit concerns the site itself; the wider iGEM research project is a team effort."
+          "title": "My role and contribution",
+          "body": "As dry-lab group leader, I coordinated the group’s work and project progress while contributing to conceptualization, literature review, experimental-data analysis, data curation, writing, and visualization. I was responsible for wiki design and development and for mathematical-model development. I also wrote research content for the wiki, particularly the model page, and contributed to public engagement."
         },
         {
-          "title": "An ongoing responsibility",
-          "body": "The existing site is due for fixes and a hosting review. Maintaining it is part of the project’s next chapter, alongside preserving the work it was built to communicate."
+          "title": "Developing the mathematical model",
+          "body": "I developed the mathematical-modeling work and documented its assumptions, equations, implementation, and interpretation. The framework follows three stages: bacterial transport from an injection point toward a tumor; bacterial growth, AHL signaling, and threshold-triggered lysis; and tumor-cell dynamics under the modeled Bax-mediated effect. It gave us a quantitative way to explore how the biological mechanisms relate to one another."
+        },
+        {
+          "title": "From equations to numerical analysis",
+          "body": "For the bacterial-transport component, I worked through both circular-plane and spherical tumor geometries, accounting for movement, distance, and immune clearance. The Python implementation documented in the wiki uses NumPy, SymPy, SciPy, and Matplotlib for symbolic expressions, numerical integration, root finding, and visualization. The later components describe population growth and signaling through differential equations. The model page also discusses parameter choices and simplifications. The simulations explore the behavior of the proposed system under these stated assumptions."
+        },
+        {
+          "title": "Designing and building the wiki",
+          "body": "I designed and developed the research wiki: its visual identity, page layouts, navigation, animated homepage, and presentation of scientific content. Built with Flask templates, HTML, CSS, and JavaScript, it connects project descriptions, experimental work, mathematical models, team information, and human-practice activities. My role included implementing and editing pages as well as turning technical material into explanations and visualizations for visitors."
+        },
+        {
+          "title": "Leading and communicating across disciplines",
+          "body": "I organized dry-lab activities, tracked progress, and coordinated project tasks with the team. Beyond coding and modeling, I contributed to science popularization, conversations with frontline doctors, and exchanges with other iGEM teams. These activities formed part of my human-practice and public-engagement work, alongside the literature research and writing that supported the project."
         }
       ],
       "featured": false,
       "placement": "Work",
-      "mediaType": "site-capture"
+      "mediaType": "site-capture",
+      "media": [
+        {
+          "src": "assets/images/igem/home-2026.jpg",
+          "alt": "Westlake iGEM homepage with cyan typography and the team emblem.",
+          "caption": "Wiki homepage — current site preview."
+        },
+        {
+          "src": "assets/images/igem/explore-2026.jpg",
+          "alt": "Project navigation grouped into science, evidence, and work beyond the lab.",
+          "caption": "Project navigation — current site preview."
+        }
+      ],
+      "links": [
+        {
+          "label": "Original model page",
+          "url": "https://2024.igem.wiki/westlake/model"
+        },
+        {
+          "label": "Team attribution page",
+          "url": "https://2024.igem.wiki/westlake/attributions"
+        },
+        {
+          "label": "GitHub source snapshot",
+          "url": "https://github.com/wstfx/IGEM-Wiki-Westlake-2024"
+        }
+      ]
     },
     {
       "id": "evisa",
@@ -944,12 +974,12 @@
     {
       "year": "2024",
       "period": "2024",
-      "title": "Westlake iGEM 2024 wiki",
-      "body": "Independent website development for Westlake’s 2024 iGEM project.",
+      "title": "Westlake iGEM 2024",
+      "body": "Led the dry-lab group, developed the mathematical model, and designed and built the research wiki; also contributed to writing, visualization, and public engagement.",
       "tags": [
-        "Website development",
-        "Information design",
-        "Science communication"
+        "Dry-lab leadership",
+        "Mathematical modeling",
+        "Wiki development"
       ],
       "href": "work/igem.html",
       "projectId": "igem",
@@ -972,7 +1002,7 @@
       "year": "2024",
       "period": "Dec 2024–Jul 2025",
       "title": "Choosing what a model learns next",
-      "body": "An investigation of sample selection for neural-operator learning, including neural query strategies and a later error-reduction approach.",
+      "body": "Can better training examples make a model learn more from less? From neural query policies to error-reduction sampling and training-batch completion.",
       "tags": [
         "Active learning",
         "Neural operators",
@@ -1012,7 +1042,7 @@
       "year": "2025",
       "period": "Sep–Dec 2025",
       "title": "Relativity you can interact with",
-      "body": "Research support for teaching special relativity through VR, combining literature review, instructional sequencing, and verification of simulation parameters.",
+      "body": "A narrative VR lesson on special relativity. I reviewed the physics and helped extend the learning assessment; the team evaluated the experience with 28 participants.",
       "tags": [
         "VR",
         "Learning sciences",

@@ -46,14 +46,63 @@
   });
   $('.cv-print')?.addEventListener('click', () => window.print());
 
-  const dialog = $('#image-viewer'); let opener;
-  $$('[data-lightbox]').forEach(button => button.addEventListener('click', () => {
-    opener = button; $('#viewer-image').src = button.dataset.lightbox; $('#viewer-image').alt = button.dataset.alt;
-    $('#viewer-caption').textContent = button.dataset.caption; dialog.showModal();
-  }));
-  $('#close-viewer')?.addEventListener('click', () => dialog.close());
-  dialog?.addEventListener('click', e => {if (e.target === dialog) {const r = dialog.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close();}});
-  dialog?.addEventListener('close', () => opener?.focus());
+  const dialog = $('#image-viewer');
+  let opener, openFrame, closeTimer;
+  let closing = false;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const finishClose = () => {
+    clearTimeout(closeTimer);
+    if (dialog?.open) dialog.close();
+  };
+  const closeViewer = () => {
+    if (!dialog?.open || closing) return;
+    closing = true;
+    cancelAnimationFrame(openFrame);
+    dialog.classList.remove('is-visible');
+    if (reducedMotion.matches) finishClose();
+    else closeTimer = setTimeout(finishClose, 260);
+  };
+  $$('[data-lightbox]').forEach(button => {
+    // A separate footer communicates the action without covering or moving the image.
+    if (!button.querySelector('.image-action')) {
+      const hint = document.createElement('span');
+      hint.className = 'image-action';
+      hint.textContent = 'View full size ↗';
+      hint.setAttribute('aria-hidden', 'true');
+      button.append(hint);
+    }
+    button.addEventListener('click', () => {
+      if (!dialog || dialog.open) return;
+      opener = button;
+      closing = false;
+      clearTimeout(closeTimer);
+      $('#viewer-image').src = button.dataset.lightbox;
+      $('#viewer-image').alt = button.dataset.alt || '';
+      $('#viewer-caption').textContent = button.dataset.caption || '';
+      dialog.showModal();
+      // Establish the start style before transitioning the dialog and backdrop together.
+      dialog.getBoundingClientRect();
+      if (reducedMotion.matches) dialog.classList.add('is-visible');
+      else openFrame = requestAnimationFrame(() => dialog.classList.add('is-visible'));
+    });
+  });
+  $('#close-viewer')?.addEventListener('click', closeViewer);
+  dialog?.addEventListener('cancel', e => { e.preventDefault(); closeViewer(); });
+  dialog?.addEventListener('click', e => {
+    if (e.target !== dialog) return;
+    const r = dialog.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closeViewer();
+  });
+  dialog?.addEventListener('transitionend', e => {
+    if (closing && e.target === dialog && e.propertyName === 'opacity') finishClose();
+  });
+  dialog?.addEventListener('close', () => {
+    clearTimeout(closeTimer);
+    cancelAnimationFrame(openFrame);
+    closing = false;
+    dialog.classList.remove('is-visible');
+    opener?.focus({preventScroll:true});
+  });
 
   const sections = $$('.case-section');
   if (sections.length && 'IntersectionObserver' in window) {

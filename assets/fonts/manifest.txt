@@ -21,4 +21,30 @@ a license for commercial use. Preserve that supplied notice with the font.
 The prototype uses the font supplied and explicitly requested by the owner;
 this manifest does not assert broader web-embedding or commercial rights.
 
-No font is fetched from an external host. No font binary has been modified.
+No font is fetched from an external host. The Latin font binaries remain unchanged.
+
+Yuanti SC / 圆体-简 — Changzhou SinoType Technology Co., Ltd.
+Source: macOS downloaded Yuanti.ttc (6 SC/TC faces, approx. 79 MB).
+Project web assets: yuanti/YuantiSC-{Light,Regular,Bold}.woff2.
+SC indices: Light 4, Regular 0, Bold 2. All original name/copyright metadata
+and fsType=8 are retained. Original glyph outlines are subsetted, not redesigned.
+CSS maps Light to 100–399, Regular to 400–599, and Bold to 600–1000.
+The Chinese-only unicode-range preserves Garet and Best Swashed for Latin text.
+No local() source is used: browser checks exercise the actual bundled webfonts.
+Coverage: all Chinese characters/punctuation in current HTML, content and scripts.
+Run tools/prepare_yuanti_fonts.py after adding new Chinese text; --check verifies
+coverage without fontTools. Detailed source hash, output hashes, and coverage
+are recorded in yuanti/provenance.json.
+
+Licensing status: the installed source is marked for editable document embedding.
+That flag alone is not asserted here to grant public webfont redistribution.
+No separate public webfont license was found. Verify the applicable authorization
+before distributing these derived assets publicly. Sources:
+https://www.apple.com/legal/sla/docs/macOSTahoe.pdf (section 2E)
+https://learn.microsoft.com/en-us/typography/opentype/spec/os2#fstype
+
+Coda signature: YuantiSC-Signature.woff2 is a Regular subset of the same
+Yuanti.ttc source (SC index 0), covering exactly “Zebang Wu｜吴泽邦”, including
+Latin letters. It retains source copyright/name metadata and fsType=8.
+Scoped to .coda-name; the CSS prefers locally installed YouYuan / 幼圆 when
+available and otherwise uses this bundled rounded face for both scripts.

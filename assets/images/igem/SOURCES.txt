@@ -1,0 +1,26 @@
+Westlake iGEM 2024 portfolio assets
+
+Original numerical figures from the team's model page:
+https://2024.igem.wiki/westlake/model
+
+model-transport.png
+https://static.igem.wiki/teams/5363/model/model1-3.png
+Spherical geometry, f3(r) = 1; the original figure labels its root at d0 = 6.8248.
+
+model-signaling.png
+https://static.igem.wiki/teams/5363/model/model2-1.png
+Original bacterial population and AHL time series across five epochs.
+
+model-tumor.png
+https://static.igem.wiki/teams/5363/model/model3.png
+Original numerical tumor population simulation.
+
+home-2026.jpg and explore-2026.jpg
+Captured from the user's locally revised wiki in October 2026.
+These are current preview captures, not the competition-era archive.
+
+The animated SVGs in assets/art/igem-*.svg are conceptual mechanism illustrations;
+they are not simulation outputs or laboratory measurements.
+
+Page source: content/igem-body.html
+Rebuild: python3 tools/build_site.py --only work/igem.html work.html

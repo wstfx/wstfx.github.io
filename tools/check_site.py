@@ -38,3 +38,8 @@ for path, page in pages.items():
             assert unquote(u.fragment) in pages[target].ids, f'Missing anchor: {path} → {ref}'
         count += 1
 print(f'PASS: {len(pages)} HTML pages, {count} local references, exact filename casing, anchors and image alt attributes.')
+
+# Font subset coverage must keep pace with newly authored Chinese copy.
+import subprocess
+import sys
+subprocess.run([sys.executable, str(ROOT / 'tools/prepare_yuanti_fonts.py'), '--check'], check=True)

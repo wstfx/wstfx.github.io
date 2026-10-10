@@ -1,4 +1,4 @@
-/* Seven roles, two families. Load after portfolio.css and story.css. */
+/* Seven roles, two Latin families and a Chinese companion. Load after portfolio.css and story.css. */
 @font-face {
   font-family: 'Garet';
   src: url('../garet/Garet-Book.woff2') format('woff2');
@@ -21,9 +21,36 @@
   font-display: swap;
 }
 
+/* Chinese glyphs only: bundled Yuanti SC subsets, independent of installed fonts.
+   Latin letters, numbers, and English punctuation continue to use the existing faces. */
+@font-face {
+  font-family: 'Portfolio Yuanti SC';
+  src: url('../fonts/yuanti/YuantiSC-Light.woff2?v=1a9eaaba7f') format('woff2');
+  font-style: normal;
+  font-weight: 100 399;
+  font-display: swap;
+  unicode-range: U+2E80-303F, U+31C0-31EF, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF, U+20000-3FFFF;
+}
+@font-face {
+  font-family: 'Portfolio Yuanti SC';
+  src: url('../fonts/yuanti/YuantiSC-Regular.woff2?v=0ee8eda260') format('woff2');
+  font-style: normal;
+  font-weight: 400 599;
+  font-display: swap;
+  unicode-range: U+2E80-303F, U+31C0-31EF, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF, U+20000-3FFFF;
+}
+@font-face {
+  font-family: 'Portfolio Yuanti SC';
+  src: url('../fonts/yuanti/YuantiSC-Bold.woff2?v=8368ff2c05') format('woff2');
+  font-style: normal;
+  font-weight: 600 1000;
+  font-display: swap;
+  unicode-range: U+2E80-303F, U+31C0-31EF, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF, U+20000-3FFFF;
+}
+
 :root {
-  --sans: 'Garet', 'Avenir Next', 'Segoe UI', sans-serif;
-  --accent: 'Best Swashed', Georgia, serif;
+  --sans: 'Portfolio Yuanti SC', 'Garet', 'Avenir Next', 'Segoe UI', sans-serif;
+  --accent: 'Portfolio Yuanti SC', 'Best Swashed', Georgia, serif;
   --serif: var(--accent);
   --type-display: clamp(2.625rem, 1.35rem + 3.8vw, 4.75rem);
   --type-title: clamp(1.875rem, 1.2rem + 2.1vw, 3rem);
@@ -304,7 +331,7 @@ figcaption,
   font-weight: 400;
   font-style: normal;
 }
-code, pre, kbd, samp { font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace; }
+code, pre, kbd, samp { font-family: 'Portfolio Yuanti SC', ui-monospace, 'SFMono-Regular', Consolas, monospace; }
 .article-body code { font-size: var(--type-small); }
 
 @media (max-width: 900px) {

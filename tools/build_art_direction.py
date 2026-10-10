@@ -24,8 +24,8 @@ def bilingual_list(values, ordered=False):
     ) + f'</{tag}>'
 
 
-def prompts(identity, value):
-    out = '<details class="brief-details direction-prompts"><summary>完整设计稿 / Full copyable brief</summary><div class="direction-prompt-grid">'
+def prompts(identity, value, summary='完整设计稿 / Full copyable brief'):
+    out = f'<details class="brief-details direction-prompts"><summary>{e(summary)}</summary><div class="direction-prompt-grid">'
     for key, lang, label in [('zh', 'zh-CN', '中文设计稿'), ('en', 'en', 'English brief')]:
         field = f'direction-{identity}-{key}'
         out += f'<div class="brief-prompt"><label for="{field}">{label}</label><textarea id="{field}" lang="{lang}" readonly spellcheck="false">{e(value[key])}</textarea><button class="button outline brief-copy" type="button" data-copy-prompt="{field}" hidden>复制 / Copy ↗</button><p class="brief-copy-status" role="status" aria-live="polite"></p></div>'
@@ -67,11 +67,13 @@ def render_direction():
         out += '<h3>静态阅读检查 / Still-image check</h3>' + pair(s['staticRequirement']) + '</details>'
         out += prompts(s['id'], s['prompt']) + '</section>'
     coda = data['codaLineArt']
-    out += '<section class="brief-section" id="line-art"><p class="eyebrow">CODA / LINE-ART BACKGROUND</p><h2>以线织狐。<br><em>以纹续篇。</em></h2><p class="direction-english-title">A fox in the thread. A story in the weave.</p><blockquote class="direction-coda-quote">Understand more.<br>Make something useful.<br><em>Find the next question.</em></blockquote>' + pair(coda['principle'])
-    out += '<div class="brief-callout"><strong>线与文字共存 / Let line and type coexist</strong>' + pair(coda['typeSafeZone']) + '</div>' + bilingual_list(coda['renderRules'])
+    out += '<section class="brief-section" id="line-art"><p class="eyebrow">CODA / STROKE-ONLY ORNAMENT · 2026.10.07</p><h2>纯线成纹。<br><em>动势不减。</em></h2><p class="direction-english-title">Only strokes. All the gesture.</p><blockquote class="direction-coda-quote">Understand more.<br>Make something useful.<br><em>Find the next question.</em></blockquote>' + pair(coda['principle'])
+    out += '<div class="brief-callout" id="stroke-conversion"><strong>一张 mascot + 一条完整提示词 / One mascot + one complete prompt</strong><p lang="zh-CN">每组已合并造型、动作、横向构图与纯线条要求，直接复制即可。</p><p lang="en">Each prompt combines character, gesture, horizontal composition and stroke-only treatment. Copy one as-is.</p></div>'
+    out += '<nav class="brief-nav" aria-label="Line-art concepts">' + ''.join(f'<a href="#{e(option["id"])}">{e(option["title"]["zh"])}</a>' for option in coda['concepts']) + '</nav>'
     for option in coda['concepts']:
-        out += f'<article class="direction-line-option" id="{e(option["id"])}"><h3 lang="zh-CN">{e(option["title"]["zh"])}</h3><p class="direction-english-title">{e(option["title"]["en"])}</p>' + pair(option['composition']) + pair(option.get('why', option.get('tradeoff')))
-        out += '<details class="brief-details"><summary>线稿分组与动态 / Contour groups and motion</summary>' + layers(option['layers']) + pair(option['motion']) + '</details>' + prompts(option['id'], option['prompt']) + '</article>'
+        out += f'<article class="direction-line-option" id="{e(option["id"])}"><h3 lang="zh-CN">{e(option["title"]["zh"])}</h3><p class="direction-english-title">{e(option["title"]["en"])}</p>' + pair(option.get('why', option.get('tradeoff')))
+        out += prompts(option['id'], option['prompt'], '完整提示词 · 只需上传 mascot / Complete prompt · upload your mascot') + '</article>'
+    out += '<details class="brief-details"><summary>网站制作备注 · 生成时无需使用 / Website production notes · not needed for generation</summary>' + bilingual_list(coda['renderRules']) + pair(coda['typeSafeZone']) + '</details>'
     out += '</section><section class="brief-section" id="handoff"><p class="eyebrow">PRODUCTION / PARALLEL CONTENT WORK</p><h2>你把握主画面。<br>我把它带进网页。</h2><p class="direction-english-title">You direct the illustration. I bring it into the site.</p>' + bilingual_list(data['handoff'], True)
     out += '<div class="brief-callout"><strong>内容现在就能并行 / Content can start now</strong><p lang="zh-CN">Work 的内容与界面可以和首页插画同步开发。Work 代理负责项目内容、Work 页面与专用样式脚本；首页视觉代理负责 SVG、首页样式、动效和本设计稿。共享样式与构建脚本由一人整合，使用 --only 构建指定页面。</p><p lang="en">Work content and UI can proceed alongside homepage illustration. The Work agent owns project content and page-scoped styles and scripts; the homepage agent owns art, homepage styles, motion and this brief. One owner integrates shared CSS and build changes. Use --only to build selected pages.</p><ul>'
     for path in ['content/portfolio-v2.json', 'content/work-intro.html', 'content/about-intro.html']:

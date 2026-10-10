@@ -1,0 +1,12 @@
+/* Landscape art fits inside the card, leaving clear index and caption bands. */
+.cover-vr .vr-cover-art{display:block;width:calc(100% - 38px);height:calc(100% - 65px);max-width:390px;margin:0 0 -2px;overflow:visible;transform:rotate(-1deg);transition:transform .5s var(--ease)}
+.cover-vr .cover-caption{right:18px;font-size:9px;letter-spacing:.06em;bottom:12px}
+.cover-vr .vr-cover-train{transition:transform .5s var(--ease)}
+.cover-vr .vr-cover-clock-hand{transform:rotate(100deg);animation:vr-cover-tick 6s linear infinite;animation-play-state:paused;animation-delay:-1.667s}
+.cover-vr .vr-cover-clock-moving{transform:rotate(60deg);animation-duration:10s}
+.cover-vr:focus-visible .vr-cover-art{transform:rotate(0)}
+.cover-vr:focus-visible .vr-cover-train{transform:translateX(4px)}
+.cover-vr:focus-visible .vr-cover-clock-hand{animation-play-state:running}
+@keyframes vr-cover-tick{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@media(hover:hover){.project-card:hover .cover-vr .vr-cover-art{transform:rotate(0)}.project-card:hover .cover-vr .vr-cover-train{transform:translateX(4px)}.project-card:hover .cover-vr .vr-cover-clock-hand{animation-play-state:running}}
+@media(prefers-reduced-motion:reduce){.cover-vr .vr-cover-art,.cover-vr .vr-cover-train{transition:none;transform:none!important}.cover-vr .vr-cover-clock-hand{animation:none}}

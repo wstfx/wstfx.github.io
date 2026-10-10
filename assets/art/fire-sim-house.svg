@@ -1,0 +1,61 @@
+<svg class="fire-house-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" fill="none" aria-hidden="true">
+<!-- All house geometry is projected from tools/build_fire_art.py; do not nudge individual vertices. -->
+<polygon points="266.00,176.28 432.40,259.48 234.00,358.68 67.60,275.48" fill="#e4e9db" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
+<polygon points="266.00,181.60 406.80,252.00 234.00,338.40 93.20,268.00" fill="#eeeadd" stroke="#9dae94" stroke-width="1.8" stroke-linejoin="round" />
+<polygon points="406.80,252.00 234.00,338.40 234.00,344.52 406.80,258.12" fill="#c7d1ba" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
+<polygon points="93.20,268.00 234.00,338.40 234.00,344.52 93.20,274.12" fill="#d5ddc9" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
+<polyline points="250.00,195.32 378.00,259.32" fill="none" stroke="#d8d5c7" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="218.00,211.32 346.00,275.32" fill="none" stroke="#d8d5c7" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="186.00,227.32 314.00,291.32" fill="none" stroke="#d8d5c7" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="154.00,243.32 282.00,307.32" fill="none" stroke="#d8d5c7" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="122.00,259.32 250.00,323.32" fill="none" stroke="#d8d5c7" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
+<g class="fh-heat" opacity=".35">
+<polygon points="262.80,194.98 378.00,252.58 237.20,322.98 122.00,265.38" fill="#efdcba" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
+<polygon points="262.80,217.38 349.20,260.58 237.20,316.58 150.80,273.38" fill="#eab878" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
+<polygon points="253.20,244.58 310.80,273.38 237.20,310.18 179.60,281.38" fill="#df8d4a" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
+</g>
+<polygon points="266.00,188.00 394.00,252.00 394.00,143.20 330.00,60.20 266.00,79.20" fill="#e4e8d9" stroke="#91a285" stroke-width="1.5" stroke-linejoin="round" />
+<polygon points="266.00,188.00 106.00,268.00 106.00,159.20 266.00,79.20" fill="#eef0e5" stroke="#91a285" stroke-width="1.5" stroke-linejoin="round" />
+<polyline points="266.00,188.00 266.00,79.20 330.00,60.20 394.00,143.20 394.00,252.00" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="186.00,228.00 186.00,119.20 250.00,100.20 314.00,183.20 314.00,292.00" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="106.00,268.00 106.00,159.20 170.00,140.20 234.00,223.20 234.00,332.00" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="266.00,79.20 106.00,159.20" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="330.00,60.20 170.00,140.20" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="394.00,143.20 234.00,223.20" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="314.00,292.00 314.00,183.20" fill="none" stroke="#ce713b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" class="fh-warm-member"/>
+<g transform="translate(275.60 277.50)"><g class="fh-flame"><path d="M-15 -3C-34 -24-8 -36-8 -59C14 -46 1 -31 14 -26C21 -33 23 -41 22 -45C47 -13 23 5 6 5C-3 5-10 1-15 -3Z" fill="#dd7b35"/><path class="fh-flame-core" d="M-3 -4C-12 -15 6 -24 6 -35C26 -14 19 1 8 1Z" fill="#f7dca3"/></g></g>
+<g class="fh-plume" opacity=".45" stroke="#96a88d" stroke-width="2.5" stroke-linecap="round">
+<path d="M267.60 209.50c-16 -15 13 -24 1 -40s10 -24 2 -37"/>
+<path d="M287.60 209.50c-16 -15 13 -24 1 -40s10 -24 2 -37"/>
+</g>
+<g class="fh-shell">
+<polygon points="394.00,252.00 234.00,332.00 234.00,223.20 394.00,143.20" fill="#cfdbc3" stroke="#234d3b" stroke-width="1.8" stroke-linejoin="round" />
+<polygon points="371.60,220.70 331.60,240.70 331.60,199.90 371.60,179.90" fill="#f5e4bc" stroke="#6e8868" stroke-width="1.7" stroke-linejoin="round" />
+<polyline points="351.60,230.70 351.60,189.90" fill="none" stroke="#8a9d7c" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="371.60,200.30 331.60,220.30" fill="none" stroke="#8a9d7c" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
+<polygon points="298.00,257.50 258.00,277.50 258.00,236.70 298.00,216.70" fill="#f5e4bc" stroke="#6e8868" stroke-width="1.7" stroke-linejoin="round" />
+<polyline points="278.00,267.50 278.00,226.70" fill="none" stroke="#8a9d7c" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="298.00,237.10 258.00,257.10" fill="none" stroke="#8a9d7c" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
+</g>
+<path d="M106.00,268.00L234.00,332.00L234.00,223.20L170.00,140.20L106.00,159.20ZM186.00,308.00L218.00,324.00L218.00,252.60L186.00,236.60Z" fill="#f4f0e4" fill-rule="evenodd" stroke="#234d3b" stroke-width="1.8" stroke-linejoin="round"/>
+<polygon points="122.00,233.50 158.80,251.90 158.80,212.80 122.00,194.40" fill="#f0d5a0" stroke="#76916d" stroke-width="1.8" stroke-linejoin="round" />
+<polyline points="140.40,242.70 140.40,203.60" fill="none" stroke="#76916d" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="122.00,213.95 158.80,232.35" fill="none" stroke="#76916d" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" />
+<polygon points="156.56,187.88 183.44,201.32 183.44,182.62 156.56,169.18" fill="#cbd8bd" stroke="#76916d" stroke-width="1.4" stroke-linejoin="round" />
+<polyline points="170.00,194.60 170.00,175.90" fill="none" stroke="#76916d" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
+<g class="fh-shell">
+<polygon points="266.00,78.16 335.12,57.64 164.88,142.76 95.76,163.28" fill="#bfceb0" stroke="#234d3b" stroke-width="2.2" stroke-linejoin="round" />
+<polygon points="335.12,57.64 404.24,147.28 234.00,232.40 164.88,142.76" fill="#9eb28e" stroke="#234d3b" stroke-width="2.2" stroke-linejoin="round" />
+<polygon points="404.24,147.28 234.00,232.40 234.00,237.16 404.24,152.04" fill="#79946e" stroke="#234d3b" stroke-width="1.2" stroke-linejoin="round" />
+<polyline points="307.60,71.40 376.72,161.04" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="278.80,85.80 347.92,175.44" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="250.00,100.20 319.12,189.84" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="221.20,114.60 290.32,204.24" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="192.40,129.00 261.52,218.64" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="358.16,87.52 187.92,172.64" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="381.20,117.40 210.96,202.52" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+</g>
+<polyline points="95.76,163.28 164.88,142.76 234.00,232.40" fill="none" stroke="#234d3b" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
+<g transform="translate(24 68)"><rect width="116" height="64" rx="9" fill="#f8f5eb" stroke="#234d3b" stroke-width="1.8"/><path d="M15 48H102M15 15V48" stroke="#c4cfb9"/><path d="M18 44L32 40 46 33 60 20 75 18 89 26 101 31" stroke="#d5753d" stroke-width="2.8" stroke-linecap="round"/><circle cx="101" cy="31" r="3" fill="#d5753d"/></g>
+<path d="M314.00 237.60H448V312" stroke="#9eaf95" stroke-width="1.2" stroke-dasharray="3 5" opacity=".6"/><circle cx="314.00" cy="237.60" r="4" fill="#f8f5eb" stroke="#d5753d" stroke-width="1.8"/>
+<g transform="translate(351 312)"><rect width="123" height="60" rx="9" fill="#f8f5eb" stroke="#234d3b" stroke-width="1.8"/><path d="M16 45H108M16 13V45" stroke="#c4cfb9"/><path d="M19 42L36 36 52 25 74 17H106" stroke="#234d3b" stroke-width="2.8" stroke-linecap="round"/></g></svg>

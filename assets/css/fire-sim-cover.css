@@ -1,0 +1,8 @@
+.cover-fire-sim .fire-house-art{width:70%;max-width:275px;height:auto;margin-top:-24px;transform:rotate(0deg);transition:transform .65s var(--ease)}
+.cover-fire-sim .fh-shell{transition:opacity .65s ease}
+.cover-fire-sim .fh-heat{transition:opacity .65s ease}
+.cover-fire-sim:focus-visible .fire-house-art{transform:rotate(-2deg)}
+.cover-fire-sim:focus-visible .fh-shell{opacity:0}
+.cover-fire-sim:focus-visible .fh-heat{opacity:.9}
+@media(hover:hover){.project-card:hover .cover-fire-sim .fire-house-art{transform:rotate(-2deg)}.project-card:hover .cover-fire-sim .fh-shell{opacity:0}.project-card:hover .cover-fire-sim .fh-heat{opacity:.9}}
+@media(prefers-reduced-motion:reduce){.cover-fire-sim .fire-house-art,.cover-fire-sim .fh-shell,.cover-fire-sim .fh-heat{transition:none}.project-card .cover-fire-sim .fire-house-art{transform:rotate(0deg)}.project-card .cover-fire-sim .fh-shell{transform:none}}

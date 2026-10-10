@@ -1,0 +1,62 @@
+/* Layout and type follow the VLA case study and shared portfolio system. */
+.ig-heading{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,1fr);gap:38px;align-items:center;max-width:none}
+.ig-heading h1{font-size:clamp(42px,5.1vw,76px)}
+.ig-heading .lede{font-size:clamp(17px,1.6vw,22px)}
+.ig-illustration{margin:0;position:relative;text-align:center;min-width:0}
+.ig-system-art{display:block;width:100%;height:auto;overflow:visible}
+.ig-illustration figcaption{font-size:16px;line-height:1.5;color:var(--ink)}
+.ig-illustration figcaption small{display:block;color:var(--muted);font-size:10px;line-height:1.7;margin-top:9px}
+.ig-motion{appearance:none;font:inherit;font-size:11px;color:var(--muted);background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:8px 2px;margin-top:12px;cursor:pointer}
+.ig-motion:focus-visible,.ig-results-tabs button:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+.ig-delivery-route,.ig-analysis-link{animation:ig-flow 3s linear infinite}
+.ig-bacteria{animation:ig-swim 6s ease-in-out infinite}
+.ig-bacteria-late{animation-delay:-3s}
+.ig-signal-ring{animation:ig-signal 4s ease-out infinite;transform-origin:0 0}
+.ig-payload,.ig-model-point{animation:ig-pulse 4s ease-in-out infinite}
+.ig-model-window{animation:ig-float 6s ease-in-out infinite}
+.ig-wiki-window{animation:ig-float 6s ease-in-out infinite;animation-delay:-3s}
+.ig-illustration.is-paused *{animation-play-state:paused!important}
+@keyframes ig-flow{to{stroke-dashoffset:-44}}
+@keyframes ig-swim{50%{transform:translate(10px,-2px)}}
+@keyframes ig-signal{0%{transform:scale(.85);opacity:.5}100%{transform:scale(1.2);opacity:0}}
+@keyframes ig-pulse{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes ig-float{50%{transform:translateY(-3px)}}
+.ig-layout .case-copy{max-width:960px}
+.ig-layout .case-section>.eyebrow{color:var(--orange);font-size:10px;margin-bottom:14px}
+.ig-contributions{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:30px 0 8px}
+.ig-contributions article{border-top:2px solid var(--line);padding-top:17px}
+.ig-contributions span{font:11px ui-monospace,monospace;color:var(--orange)}
+.ig-contributions h3{font-size:17px;margin:12px 0 8px}
+.ig-contributions p{font-size:13px;margin:0}
+.ig-results{margin-top:28px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+.ig-results-tabs{display:flex;border-bottom:1px solid var(--line);background:var(--sage);padding:8px;gap:6px}
+.ig-results-tabs button{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:12px;line-height:1.7;padding:12px 8px;border-radius:6px;cursor:pointer;color:var(--ink)}
+.ig-results-tabs button[aria-selected=true]{background:var(--green);color:var(--paper)}
+.ig-panel{padding:26px}
+.ig-panel[hidden]{display:none}
+.ig-panel h3{font-size:22px;line-height:1.4;margin:0 0 12px}
+.ig-panel p{font-size:14px}
+.ig-equation{font-family:Georgia,serif;font-size:23px;line-height:1.8;color:var(--green);padding:15px 20px;background:var(--sage);border-left:3px solid var(--line);margin:20px 0;overflow-x:auto}
+.ig-figure{margin:26px 0}
+.ig-figure .image-button{display:block;border:1px solid var(--line);border-radius:7px;padding:8px;overflow:hidden}
+.ig-figure .image-button img{width:100%;height:auto;display:block;transform:none!important}
+.ig-figure figcaption{font-size:12px;line-height:1.8;color:var(--muted);margin-top:12px}
+.ig-panel .ig-figure{margin-bottom:0}
+.ig-panel .ig-figure .image-button{max-width:700px;margin-inline:auto}
+.ig-note{font-size:12px;color:var(--muted);margin-top:17px}
+.ig-browser{border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--sage)}
+.ig-browser-bar{display:flex;gap:5px;align-items:center;padding:11px 13px;border-bottom:1px solid var(--line)}
+.ig-browser-bar i{width:6px;height:6px;background:var(--muted);border-radius:50%}
+.ig-browser-bar span{margin-left:9px;font:10px ui-monospace,monospace;color:var(--muted)}
+.ig-browser .image-button{padding:0;border:0;border-radius:0}
+.ig-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0}
+.ig-pair h3{font-size:18px;margin:0 0 10px}
+.ig-pair p{font-size:14px}
+.ig-links{display:flex;flex-wrap:wrap;gap:18px;margin:22px 0}
+.ig-links a{font-size:12px}
+.ig-bridge{display:flex;align-items:center;justify-content:space-between;gap:10px;border-block:1px solid var(--line);padding:25px 0;margin:25px 0;color:var(--green);font-size:13px}
+.ig-bridge i{font-style:normal;color:var(--orange)}
+@media(min-width:1250px){.ig-layout{gap:45px}}
+@media(max-width:900px){.ig-heading{grid-template-columns:1fr;gap:10px}.ig-heading h1{max-width:760px}.ig-illustration{width:100%;max-width:440px;justify-self:center}}
+@media(max-width:600px){.ig-heading h1{font-size:clamp(39px,10vw,58px)}.ig-illustration{max-width:360px}.ig-contributions,.ig-pair{grid-template-columns:1fr;gap:18px}.ig-panel{padding:18px 14px}.ig-results-tabs button{font-size:10px;padding:10px 4px}.ig-equation{font-size:20px;padding:12px}.ig-bridge{font-size:11px;gap:5px}}
+@media(prefers-reduced-motion:reduce){.ig-illustration *{animation:none!important;transition:none!important}.ig-motion{display:none}}

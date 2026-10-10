@@ -7,14 +7,21 @@
 <title>VLA models in the driving loop · Zebang Wu</title>
 <link rel="icon" type="image/svg+xml" href="../assets/art/geometric-mark.svg">
 <link rel="stylesheet" href="../assets/css/privacy-gate.css">
-<link rel="stylesheet" href="../assets/css/portfolio.css?v=9492ae1359">
+<link rel="stylesheet" href="../assets/css/portfolio.css?v=17e915f82f">
 <script defer src="../assets/js/privacy-gate.js"></script>
-<script defer src="../assets/js/portfolio.js?v=e6f92f06c3"></script>
+<script defer src="../assets/js/portfolio.js?v=6a34f978ac"></script>
 
 <link rel="preload" href="../assets/garet/Garet-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/garet/Garet-Book.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/best_swashed/BestSwashed_PERSONAL_USE_ONLY.otf" as="font" type="font/otf" crossorigin>
-<link rel="stylesheet" href="../assets/css/type-system.css?v=a8b579f2b1">
+<link rel="stylesheet" href="../assets/css/type-system.css?v=f17c0ea0f3">
+
+<link rel="stylesheet" href="../assets/css/dongfeng-art.css?v=e05d3acb4f"><link rel="stylesheet" href="../assets/css/dongfeng.css?v=4b1f1d76bf"><script defer src="../assets/js/dongfeng.js?v=57606705c8"></script>
+
+
+
+
+
 </head>
 <body id="top" class="collection-page">
 <a class="skip" href="#main">Skip to content</a>
@@ -23,7 +30,209 @@
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu +</button>
 <nav class="main-nav" id="main-nav" aria-label="Main navigation"><a href="../index.html">Home</a><a href="../work.html" aria-current="page">Work</a><a href="../about.html">About</a><a href="../writing.html">Writing</a><a href="../cv.html">CV</a></nav>
 </div></header>
-<main class="wrap" id="main" tabindex="-1"><div class="case-top"><a class="breadcrumb" href="../work.html">← All work</a></div><section class="case-heading"><p class="eyebrow">Engineering</p><h1>VLA models in the driving loop</h1><p class="lede">Integrated a vision-language-action model into Bench2Drive/CARLA and worked on the performance and reliability of its closed-loop evaluation pipeline.</p><div class="tags"><span class="tag">Autonomous driving</span><span class="tag">Systems integration</span><span class="tag">Inference optimization</span><span class="tag">Evaluation</span></div></section><div class="case-meta"><div><span>My role</span>R&amp;D Intern · Dongfeng Motor Corporation R&amp;D Institute</div><div><span>Period</span>Jul–Aug 2026</div><div><span>Status</span>Completed internship</div></div><a class="case-story-thread" href="../index.html#build"><img src="../assets/art/geometric-mark.svg" width="30" height="30" alt=""><span><small>PART OF THE STORY</small>Build · Let the world push back</span><span aria-hidden="true">↗</span></a><div class="case-layout"><nav class="case-nav" aria-label="On this page"><p class="eyebrow">On this page</p><a href="#section-0">Integration is part of the experiment</a><a href="#section-1">Tracing inference overhead</a><a href="#section-2">Making evaluation recoverable</a></nav><div class="case-copy"><aside class="case-callout"><p class="eyebrow">The idea</p><p>Connecting model inference to reliable autonomous-driving evaluation.</p></aside><div class="evidence-grid"><div class="evidence-box"><strong>Jul–Aug 2026</strong><span>R&amp;D internship</span></div><div class="evidence-box"><strong>CARLA + Bench2Drive</strong><span>Closed-loop evaluation environment</span></div></div><section class="case-section" id="section-0"><h2>Integration is part of the experiment</h2><p>I integrated a vision-language-action model with Bench2Drive and CARLA for closed-loop evaluation. This required correcting trajectory coordinates and navigation mappings, and synchronizing camera inputs with ego-vehicle history so the model and simulator described the same state.</p></section><section class="case-section" id="section-1"><h2>Tracing inference overhead</h2><p>I identified and removed redundant multi-gigabyte array copies in the ONNX inference path. A route-level benchmark recorded approximately 68 seconds of baseline mean latency and 5.7 seconds of optimized warm-state median latency. These use different summary statistics and operating conditions, so they are reported as observations rather than a universal speedup ratio.</p></section><section class="case-section" id="section-2"><h2>Making evaluation recoverable</h2><p>I built a persistent PyTorch inference service and a resumable evaluation pipeline. Isolating simulator and model dependencies helped make the system easier to operate and diagnose, while distinguishing driving failures from simulator and evaluation faults made the resulting evidence more interpretable.</p></section></div></div><nav class="case-next" aria-label="More projects"><a class="text-link" href="../work.html">Back to the collection</a><a href="involve.html"><p class="eyebrow">Keep exploring →</p><h3>InVolve</h3></a></nav></main>
+<main class="wrap" id="main" tabindex="-1"><div class="case-top"><a class="breadcrumb" href="../work.html">← All work</a></div>
+<section class="case-heading dongfeng-heading">
+  <div>
+    <p class="eyebrow">Engineering · Dongfeng R&amp;D</p>
+    <h1>VLA models in the driving loop</h1>
+    <p class="lede">Connecting driving models to simulated worlds—so their decisions become actions we can observe, evaluate, and debug.</p>
+    <div class="tags"><span class="tag">Autonomous driving</span><span class="tag">Closed-loop simulation</span><span class="tag">Systems integration</span></div>
+  </div>
+  <figure class="dongfeng-illustration">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 520" fill="none" role="img" aria-labelledby="dongfeng-art-title dongfeng-art-desc">
+  <title id="dongfeng-art-title">A model meets the road</title>
+  <desc id="dongfeng-art-desc">An orange car travels through a simulated road scene. Camera views flow to a VLA model; a predicted trajectory returns to the car, completing the next simulation step. Conceptual illustration, not a driving performance result.</desc>
+  <defs>
+    <clipPath id="dongfeng-ground-clip">
+      <path d="M83 89C169 43 301 34 425 75L481 337C448 436 311 483 103 450L42 271Z"/>
+    </clipPath>
+    <marker id="dongfeng-arrow-sage" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L6 4L1 7" fill="none" stroke="#91aa98" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="dongfeng-arrow-orange" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L6 4L1 7" fill="none" stroke="#d86526" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- The road and car are the visual anchor; the loop sits around them. -->
+  <path d="M83 89C169 43 301 34 425 75L481 337C448 436 311 483 103 450L42 271Z" fill="#e4e9db"/>
+  <g clip-path="url(#dongfeng-ground-clip)">
+    <path d="M93 492C117 417 190 394 202 315S181 209 258 164S336 90 333 21" stroke="#b9c7ae" stroke-width="118"/>
+    <path d="M93 492C117 417 190 394 202 315S181 209 258 164S336 90 333 21" stroke="#f7f5ed" stroke-width="108"/>
+    <path class="df-road-markings" d="M93 492C117 417 190 394 202 315S181 209 258 164S336 90 333 21" stroke="#bbc6b5" stroke-width="2.5" stroke-dasharray="13 17"/>
+    <path d="M224 351C244 302 217 233 268 204C302 184 341 162 353 135" stroke="#f47b20" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 8"/>
+    <g fill="#f47b20">
+      <circle cx="224" cy="351" r="3.6"/>
+      <circle cx="268" cy="204" r="3.6"/>
+      <circle cx="353" cy="135" r="3.6"/>
+    </g>
+    <path d="M174 78L151 114M187 84L166 124" stroke="#c9d2bf" stroke-width="2" stroke-linecap="round"/>
+    <path d="M389 395L408 371M401 400L420 376" stroke="#c9d2bf" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Spare landscape details keep the simulator legible as a place. -->
+  <g stroke="#6d8b70" stroke-width="1.6" stroke-linecap="round">
+    <path d="M91 316V291"/><path d="M91 306L83 299M91 300L100 289"/>
+    <path d="M358 417V389"/><path d="M358 407L349 399M358 403L368 393"/>
+  </g>
+  <g fill="#a6b99a">
+    <ellipse cx="85" cy="291" rx="10" ry="15" transform="rotate(-32 85 291)"/>
+    <ellipse cx="98" cy="283" rx="9" ry="13" transform="rotate(28 98 283)"/>
+    <ellipse cx="351" cy="390" rx="10" ry="15" transform="rotate(-32 351 390)"/>
+    <ellipse cx="366" cy="387" rx="10" ry="15" transform="rotate(32 366 387)"/>
+  </g>
+
+  <!-- The dashed line carries observations into the model. -->
+  <path class="df-observation-link" d="M204 343C123 340 104 287 119 220" stroke="#91aa98" stroke-width="2" stroke-dasharray="4 7" marker-end="url(#dongfeng-arrow-sage)"/>
+  <path class="df-observation-link" d="M184 132C238 87 317 84 380 109" stroke="#91aa98" stroke-width="2" stroke-dasharray="4 7" marker-end="url(#dongfeng-arrow-sage)"/>
+
+  <!-- Camera frames: a little stack of three views, with a clear road horizon. -->
+  <g transform="translate(56 127) rotate(-9 68 43)">
+    <g class="df-camera-stack">
+      <rect x="15" y="-17" width="129" height="84" rx="9" fill="#d8e0ce" stroke="#91aa98" stroke-width="1.6"/>
+      <rect x="8" y="-8" width="129" height="84" rx="9" fill="#edf0e5" stroke="#91aa98" stroke-width="1.6"/>
+      <rect width="129" height="84" rx="9" fill="#f7f5ed" stroke="#234d3b" stroke-width="2"/>
+      <path d="M10 31H119V70H10Z" fill="#e4e9db"/>
+      <path d="M23 70L57 31H73L108 70" fill="#b9c7ae"/>
+      <path d="M36 70L60 31H70L95 70" fill="#f7f5ed"/>
+      <path d="M65 36V42M65 49V59M65 67V70" stroke="#91aa98" stroke-width="1.7" stroke-linecap="round"/>
+      <path d="M20 42L27 27L34 42ZM91 39L99 22L107 39Z" fill="#91aa98"/>
+      <circle class="df-camera-light" cx="13" cy="14" r="3" fill="#f47b20"/>
+      <path d="M23 14H43" stroke="#b2c1ab" stroke-width="2" stroke-linecap="round"/>
+      <path d="M110 11H117V18" stroke="#91aa98" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- The model window floats beside, rather than obscuring, the road. -->
+  <g transform="translate(377 92) rotate(7 67 55)">
+    <g class="df-model-window">
+      <rect x="5" y="7" width="133" height="115" rx="14" fill="#cbd6bf"/>
+      <rect width="133" height="115" rx="14" fill="#f7f5ed" stroke="#234d3b" stroke-width="2"/>
+      <path d="M1 25H132" stroke="#c9d2bf" stroke-width="1.5"/>
+      <g fill="#a5b89b"><circle cx="14" cy="13" r="2.5"/><circle cx="24" cy="13" r="2.5"/><circle cx="34" cy="13" r="2.5"/></g>
+      <g stroke="#91aa98" stroke-width="1.6">
+        <path d="M25 49L47 65L25 84M25 49L47 87M47 43L72 54L47 65L72 78L47 87M72 54L97 43M72 54L97 65L72 78L97 87"/>
+      </g>
+      <g fill="#f7f5ed" stroke="#234d3b" stroke-width="1.7">
+        <circle cx="25" cy="49" r="4"/><circle cx="25" cy="84" r="4"/>
+        <circle cx="47" cy="43" r="4"/><circle cx="47" cy="65" r="4"/><circle cx="47" cy="87" r="4"/>
+        <circle cx="72" cy="54" r="4"/><circle cx="72" cy="78" r="4"/>
+        <circle cx="97" cy="43" r="4"/><circle cx="97" cy="65" r="4"/><circle cx="97" cy="87" r="4"/>
+      </g>
+      <g class="df-model-signal" fill="#f47b20"><circle cx="47" cy="65" r="3"/><circle cx="72" cy="54" r="3"/><circle cx="97" cy="65" r="3"/></g>
+      <text x="112" y="105" fill="#577461" text-anchor="end" font-family="Arial, sans-serif" font-size="9" letter-spacing="1.8">VLA</text>
+    </g>
+  </g>
+
+  <!-- The returned trajectory feeds back to the ego vehicle. -->
+  <path class="df-action-link" d="M455 225C473 268 469 315 437 335" stroke="#d86526" stroke-width="2" stroke-dasharray="5 7" marker-end="url(#dongfeng-arrow-orange)"/>
+  <path class="df-action-link" d="M351 373C308 397 272 396 244 382" stroke="#d86526" stroke-width="2" stroke-dasharray="5 7" marker-end="url(#dongfeng-arrow-orange)"/>
+  <g transform="translate(348 309) rotate(-8 54 35)">
+    <rect width="107" height="72" rx="10" fill="#fff0da" stroke="#234d3b" stroke-width="2"/>
+    <path d="M18 55V17M18 55H92" stroke="#d8c5a6" stroke-width="1.4" stroke-linecap="round"/>
+    <path class="df-trajectory-line" d="M23 47C43 47 39 27 57 30S70 18 87 17" stroke="#d86526" stroke-width="2.8" stroke-linecap="round"/>
+    <g fill="#d86526"><circle cx="23" cy="47" r="3.1"/><circle cx="57" cy="30" r="3.1"/><circle cx="87" cy="17" r="3.1"/></g>
+  </g>
+
+  <!-- Static orientation lives outside the animated local car group. -->
+  <g transform="translate(213 372) rotate(23)">
+    <path class="df-camera-cone" d="M0 -40L-41 -111Q0 -132 41 -111Z" fill="#f47b20" opacity=".1"/>
+    <g class="df-ego-car">
+      <ellipse cx="3" cy="8" rx="29" ry="48" fill="#193d30" opacity=".09"/>
+      <g fill="#193d30"><rect x="-27" y="-25" width="7" height="18" rx="3"/><rect x="20" y="-25" width="7" height="18" rx="3"/><rect x="-27" y="22" width="7" height="17" rx="3"/><rect x="20" y="22" width="7" height="17" rx="3"/></g>
+      <path d="M-22 -27Q-22 -44 -9 -45H9Q22 -44 22 -27V35Q22 46 11 47H-11Q-22 46 -22 35Z" fill="#f47b20" stroke="#234d3b" stroke-width="2"/>
+      <path d="M-15 -15Q0 -22 15 -15L12 -1H-12Z" fill="#234d3b"/>
+      <path d="M-12 24H12L15 34Q0 39 -15 34Z" fill="#234d3b"/>
+      <rect x="-12" y="3" width="24" height="18" rx="4" fill="#fba75d"/>
+      <path d="M-17 -32H-10M10 -32H17" stroke="#fff0da" stroke-width="3" stroke-linecap="round"/>
+      <path d="M-17 41H-11M11 41H17" stroke="#b75424" stroke-width="2.7" stroke-linecap="round"/>
+      <path d="M-17 2V23M17 2V23" stroke="#d76725" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="0" cy="-26" r="3.5" fill="#f7f5ed" stroke="#234d3b" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>
+
+    <figcaption>A model meets the road.<small>Conceptual illustration · observe → infer → act → observe again</small></figcaption>
+    <button class="dongfeng-motion" type="button" aria-pressed="false" hidden>Pause animation</button>
+  </figure>
+</section>
+<div class="case-meta"><div><span>My role</span>R&amp;D Intern · Dongfeng Motor Corporation R&amp;D Institute</div><div><span>Period</span>Jul–Aug 2026</div><div><span>Status</span>Completed internship</div></div>
+<a class="case-story-thread" href="../index.html#build"><img src="../assets/art/geometric-mark.svg" width="30" height="30" alt=""><span><small>PART OF THE STORY</small>Build · Let the world push back</span><span aria-hidden="true">↗</span></a>
+<div class="case-layout dongfeng-layout">
+  <nav class="case-nav" aria-label="On this page"><p class="eyebrow">On this page</p><a href="#loop">The driving loop</a><a href="#onnx">Repairing the interface</a><a href="#pytorch">Native PyTorch inference</a><a href="#alpasim">T3 meets AlpaSim</a><a href="#platforms">Commercial platforms</a><a href="#handoff">A reusable workflow</a></nav>
+  <div class="case-copy">
+    <section class="case-section" id="loop">
+      <p class="eyebrow">01 / From a checkpoint to a moving vehicle</p>
+      <h2>The loop is part of the experiment.</h2>
+      <p>A vision-language-action (VLA) model takes visual observations and driving context and predicts what the vehicle should do next. Testing it in a simulator requires every part of that exchange to agree: what the cameras see, when history is sampled, how a trajectory is represented, and how the controller executes it.</p>
+      <p>At Dongfeng, I worked on that connection. I debugged the ONNX integration in Bench2Drive/CARLA, built a driver for direct PyTorch inference, and connected the T3 model to AlpaSim and OmniDreams. I also tested Apollo and 51Sim to explore commercial simulation workflows.</p>
+      <div class="driving-loop" aria-label="Closed-loop data flow"><span>Camera views<br><small>+ vehicle history</small></span><b aria-hidden="true">→</b><span>VLA model<br><small>future trajectory</small></span><b aria-hidden="true">→</b><span>Vehicle control<br><small>next observation</small></span></div>
+      <div class="dongfeng-videos b2d-videos">
+        <figure class="simulation-film">
+          <video controls playsinline muted preload="none" width="1728" height="1024" poster="../assets/images/dongfeng/b2d-run-01-poster.jpg" aria-label="Bench2Drive CARLA connected-model recording one" aria-describedby="b2d-01-caption"><source src="../assets/videos/dongfeng/b2d-run-01.mp4" type="video/mp4"><a href="../assets/videos/dongfeng/b2d-run-01.mp4">Watch the B2D recording</a></video>
+          <figcaption id="b2d-01-caption"><span class="film-label">Bench2Drive / CARLA · 01</span>Multi-camera views and predicted trajectories after connecting the ego-vehicle model.</figcaption>
+        </figure>
+        <figure class="simulation-film">
+          <video controls playsinline muted preload="none" width="1728" height="1024" poster="../assets/images/dongfeng/b2d-run-02-poster.jpg" aria-label="Bench2Drive CARLA connected-model recording two" aria-describedby="b2d-02-caption"><source src="../assets/videos/dongfeng/b2d-run-02.mp4" type="video/mp4"><a href="../assets/videos/dongfeng/b2d-run-02.mp4">Watch the B2D recording</a></video>
+          <figcaption id="b2d-02-caption"><span class="film-label">Bench2Drive / CARLA · 02</span>A second rollout makes the model’s decisions and their consequences visible.</figcaption>
+        </figure>
+      </div>
+      <p class="media-context">These recordings document the connected observation–inference–control loop. The checkpoint still showed substantial driving limitations; the clips are integration evidence, rather than demonstrations of mature driving performance.</p>
+    </section>
+    <section class="case-section" id="onnx">
+      <p class="eyebrow">02 / Make the inputs and outputs mean the same thing</p>
+      <h2>Repairing the interface.</h2>
+      <p>I traced problems in the ONNX path across trajectory shapes, coordinate conventions, navigation commands, and temporal sampling. A trajectory can be numerically valid and still tell a controller to move in the wrong direction. I corrected those mappings and aligned camera history with ego-vehicle history in simulation time.</p>
+      <p>I also found redundant multi-gigabyte array copies in the inference path. Removing them reduced a major source of overhead and made repeated evaluation more practical.</p>
+      <details class="dongfeng-details"><summary>What the recorded latency measurements show</summary><p>The route-level records report approximately <strong>68 seconds of baseline mean latency</strong> and <strong>5.7 seconds of optimized warm-state median latency</strong>. The statistics and operating conditions differ, so these describe the measured runs rather than a universal speedup ratio.</p></details>
+    </section>
+    <section class="case-section" id="pytorch">
+      <p class="eyebrow">03 / Keep the model ready for the next step</p>
+      <h2>Native inference. A synchronized loop.</h2>
+      <p>To run the model directly in PyTorch, I separated the simulator and model into their own Python environments. A persistent inference service loads the checkpoint once, while a bridge handles the exchange with CARLA. Images and metadata travel through a shared directory; Unix Socket messages coordinate each request and response.</p>
+      <figure class="dongfeng-figure">
+        <button class="image-button" type="button" data-lightbox="../assets/images/dongfeng/pytorch-carla-loop.png" data-alt="Architecture diagram of the synchronous PyTorch VLA and CARLA loop" data-caption="My PyTorch–CARLA integration: separate simulator and model environments, shared image data, request/response synchronization, trajectory validation, and vehicle control." aria-label="Enlarge the PyTorch CARLA architecture diagram"><img src="../assets/images/dongfeng/pytorch-carla-loop.png" width="2200" height="1500" alt="CARLA collects seven cameras with three frames each, sends metadata to a persistent PyTorch model service, validates the returned trajectory and applies vehicle control" loading="lazy" decoding="async"></button>
+        <figcaption>My PyTorch–CARLA integration. The bridge keeps observation collection, inference, trajectory validation, and control in one synchronized loop. The ONNX route remains a separate baseline.</figcaption>
+      </figure>
+      <p>Each model request combines <strong>seven cameras × three frames</strong> with ego history and navigation. The bridge checks request IDs, timestamps, and the returned 32-point trajectory before converting coordinates for the controller. When a new action is needed, simulation waits for inference; intermediate ticks hold the previous control.</p>
+      <p>I made evaluation restartable and separated driving outcomes from infrastructure faults. In one documented 20-route subset, 17 routes produced scores and videos; three failed in rendering before the first frame. That distinction prevents a simulator failure from being mistaken for a model result.</p>
+    </section>
+    <section class="case-section" id="alpasim">
+      <p class="eyebrow">04 / A second simulation environment</p>
+      <h2>Connecting T3 to AlpaSim.</h2>
+      <p>I then built the T3 adapter and gRPC Driver connection for AlpaSim. OmniDreams renders the scene, AlpaSim assembles image and vehicle history, and T3 predicts future trajectory points. The controller and physics update the vehicle’s pose, which determines the next rendered view.</p>
+      <div class="dongfeng-videos alpasim-videos">
+        <figure class="simulation-film">
+          <video controls playsinline muted preload="none" width="900" height="1000" poster="../assets/images/dongfeng/alpasim-pass-poster.jpg" aria-label="T3 AlpaSim OmniDreams daytime scene" aria-describedby="alpasim-01-caption"><source src="../assets/videos/dongfeng/alpasim-pass.mp4" type="video/mp4"><a href="../assets/videos/dongfeng/alpasim-pass.mp4">Watch the daytime scene</a></video>
+          <figcaption id="alpasim-01-caption"><span class="film-label">AlpaSim / OmniDreams · Scene 01</span>A daytime scene with the rendered front view, vehicle trajectory, and evaluation output.</figcaption>
+        </figure>
+        <figure class="simulation-film">
+          <video controls playsinline muted preload="none" width="900" height="1000" poster="../assets/images/dongfeng/alpasim-offroad-poster.jpg" aria-label="T3 AlpaSim OmniDreams nighttime scene with off-road behavior" aria-describedby="alpasim-02-caption"><source src="../assets/videos/dongfeng/alpasim-offroad.mp4" type="video/mp4"><a href="../assets/videos/dongfeng/alpasim-offroad.mp4">Watch the nighttime scene</a></video>
+          <figcaption id="alpasim-02-caption"><span class="film-label">AlpaSim / OmniDreams · Scene 02</span>A nighttime scene exposes off-road behavior—a useful trace for examining what the connected model does.</figcaption>
+        </figure>
+      </div>
+      <p class="media-context">These approximately 20-second recordings use a single front camera, while the checkpoint was trained with seven cameras. They validate the engineering connection under that input mismatch; they are not a final model-quality benchmark.</p>
+      <p>I documented how to replace compatible checkpoints, start the Driver, run a closed-loop scene, and generate videos and metrics. The guide also makes the model’s image-history, trajectory, and coordinate requirements explicit, so a checkpoint change can be checked before a long run begins.</p>
+    </section>
+    <section class="case-section" id="platforms">
+      <p class="eyebrow">05 / Looking beyond the custom pipeline</p>
+      <h2>Testing commercial simulation workflows.</h2>
+      <p>Alongside the model integrations, I tested Baidu’s Apollo platform and 51Sim. These gave me another view of the simulation workflow: inspecting multi-camera playback and evaluation traces in Apollo, and working with scenario construction and traffic-participant behavior in 51Sim.</p>
+      <div class="platform-gallery">
+        <figure class="dongfeng-figure"><button class="image-button" type="button" data-lightbox="../assets/images/dongfeng/apollo-platform.png" data-alt="Baidu Apollo simulation platform with six camera views, a trajectory map and evaluation traces" data-caption="Platform testing · Baidu Apollo. Multi-camera playback sits alongside trajectory context and speed and acceleration traces." aria-label="Enlarge Apollo platform screenshot"><img src="../assets/images/dongfeng/apollo-platform.png" width="2940" height="1602" alt="Apollo platform showing multi-camera urban replay, bounding boxes, speed and acceleration plots, and a planned path" loading="lazy" decoding="async"></button><figcaption><span class="film-label">Baidu Apollo</span>Multi-camera playback, trajectory context, and evaluation traces.</figcaption></figure>
+        <figure class="dongfeng-figure"><button class="image-button" type="button" data-lightbox="../assets/images/dongfeng/51sim-platform.png" data-alt="51Sim scenario editor with traffic participants and a vehicle behavior graph" data-caption="Platform testing · 51Sim. The scenario editor connects traffic participants and map context with behavior sequences." aria-label="Enlarge 51Sim platform screenshot"><img src="../assets/images/dongfeng/51sim-platform.png" width="2940" height="1434" alt="51Sim scenario editor with a road network, traffic participants, vehicle parameters, and a follow-target behavior graph" loading="lazy" decoding="async"></button><figcaption><span class="film-label">51Sim</span>Scenario construction and traffic-participant behavior.</figcaption></figure>
+      </div>
+    </section>
+    <section class="case-section" id="handoff">
+      <p class="eyebrow">06 / Leave behind something others can run</p>
+      <h2>From a working demo to a reusable workflow.</h2>
+      <p>I consolidated the work into the team’s VLA development Wiki: ONNX debugging and integration notes, a Bench2Drive/CARLA guide for native PyTorch inference, and a T3–AlpaSim checkpoint and Driver guide. Together with resumable evaluation and recorded rollouts, these gave the team a path to repeat the experiments and investigate failures.</p>
+      <aside class="case-callout"><p class="eyebrow">What I took from the work</p><p>A useful evaluation system makes a model’s behavior inspectable. Correct inputs, synchronized execution, and clear failure records are what let the next experiment answer a real question.</p></aside>
+    </section>
+  </div>
+</div>
+<nav class="case-next" aria-label="More projects"><a class="text-link" href="../work.html">Back to the collection</a><a href="involve.html"><p class="eyebrow">Keep exploring →</p><h3>InVolve</h3></a></nav>
+</main>
 <footer class="site-footer"><div class="wrap"><div class="footer-top"><div><p class="eyebrow">Always curious about the next question.</p><h2>Let’s make something meaningful.</h2><p>Research, projects, and good conversations.</p></div><div class="footer-contact"><a class="text-link" href="mailto:wuzebang@westlake.edu.cn">wuzebang@westlake.edu.cn ↗</a><button class="copy-email" type="button" aria-label="Copy email address" title="Copy email address">⧉</button></div></div><div class="footer-bottom"><span>© 2026 Zebang Wu · 吴泽邦</span><span>A curious mind. A fox at heart.</span><a href="#top">Back to top ↑</a></div></div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <dialog class="lightbox" id="image-viewer" aria-label="Expanded project image"><div class="lightbox-head"><span>From the project archive</span><button type="button" id="close-viewer">Close ×</button></div><img id="viewer-image" alt=""><p id="viewer-caption"></p></dialog>

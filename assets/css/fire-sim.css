@@ -1,0 +1,50 @@
+/* Fire Sandbox: project evidence and a conceptual, inspectable house. */
+.fire-heading{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,1fr);align-items:center;gap:40px;max-width:none}
+.fire-heading h1{font-size:clamp(42px,5.2vw,74px)}
+.fire-heading .lede{font-size:clamp(17px,1.6vw,22px)}
+.fire-illustration{margin:0;text-align:center;min-width:0}
+.fire-house-art{display:block;width:100%;height:auto;overflow:visible;animation:fire-float 6s ease-in-out infinite}
+.fire-illustration figcaption{font-size:16px;margin-top:12px}
+.fire-illustration figcaption small{display:block;color:var(--muted);font-size:10px;line-height:1.8;margin-top:8px}
+.fire-art-controls{display:flex;justify-content:center;gap:18px;margin-top:12px}
+.fire-art-controls button{font:inherit;font-size:11px;color:var(--muted);border:0;border-bottom:1px solid var(--line);padding:8px 0;background:transparent;cursor:pointer}
+.fire-art-controls button:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+.fire-art-controls [aria-pressed=true]{color:var(--ink)}
+.fh-shell{transition:opacity .6s ease}
+.fh-heat{transition:opacity .6s ease}
+.fire-illustration.is-thermal .fh-shell{opacity:0}
+.fire-illustration.is-thermal .fh-heat{opacity:.9}
+.fh-flame{transform-origin:0px 0px;animation:fire-breathe 1.7s ease-in-out infinite}
+.fh-flame-core{transform-origin:0px 0px;animation:fire-core 1.15s ease-in-out infinite}
+.fh-plume{animation:fire-plume 4.5s ease-in-out infinite}
+.fh-warm-member{animation:fire-member 5s ease-in-out infinite}
+.fire-illustration.is-paused *{animation-play-state:paused!important}
+@keyframes fire-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes fire-breathe{0%,100%{transform:scale(1.05,1.06)}35%{transform:scale(.98,1.18) skewX(-2deg)}70%{transform:scale(1.1,1.02) skewX(1deg)}}
+@keyframes fire-core{0%,100%{opacity:1;transform:scale(1,1)}50%{opacity:.8;transform:scale(.92,1.13)}}
+@keyframes fire-plume{50%{transform:translateY(-5px);opacity:.4}}
+@keyframes fire-member{50%{stroke:#b84f2b}}
+.fire-layout .case-copy{max-width:960px}
+.fire-layout .case-section>.eyebrow{color:var(--orange);font-size:10px;margin-bottom:14px}
+.fire-figure{margin:30px 0}
+.fire-figure img{display:block;width:100%;height:auto}
+.fire-figure figcaption{font-size:12px;line-height:1.8;color:var(--muted);margin-top:12px}
+.fire-gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fire-gallery .fire-figure{margin:15px 0 28px;min-width:0}
+.fire-pipeline{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:12px;margin:30px 0;padding:22px 0}
+.fire-pipeline div{padding:0 18px;border-right:1px solid var(--line)}
+.fire-pipeline div:last-child{border:0}
+.fire-pipeline small{display:block;color:var(--orange);font-size:10px;margin-bottom:12px}
+.fire-pipeline b{display:block;font-size:13px;font-weight:400;margin-bottom:7px}
+.fire-pipeline span{font-size:11px;color:var(--muted);line-height:1.6;display:block}
+.fire-layout .fire-note{font-size:13px;border-left:2px solid var(--line);padding-left:18px}
+.fire-chart{padding:20px;border:1px solid var(--line);border-radius:12px;background:#faf9f3}
+.fire-chart img{max-width:100%}
+.fire-chart a{color:var(--ink)}
+.fire-plan{margin:28px 0;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.fire-plan article{border-top:1px solid var(--line);padding-top:20px}
+.fire-plan h3{font-size:18px;margin-bottom:12px}
+.fire-plan p{font-size:14px!important}
+@media(max-width:900px){.fire-heading{grid-template-columns:1fr;gap:8px}.fire-illustration{width:100%;max-width:420px;justify-self:center}}
+@media(max-width:600px){.fire-heading h1{font-size:clamp(40px,10vw,58px)}.fire-pipeline{grid-template-columns:1fr 1fr;gap:22px}.fire-pipeline div:nth-child(2){border:0}.fire-gallery,.fire-plan{grid-template-columns:1fr;gap:0}.fire-chart{padding:8px}.fire-gallery .fire-figure{margin:15px 0}.fire-illustration{max-width:350px}}
+@media(prefers-reduced-motion:reduce){.fire-illustration *{animation:none!important;transition:none!important}.fire-motion{display:none}}

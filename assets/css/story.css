@@ -1,3 +1,11 @@
+/* Both Latin and Chinese signature glyphs use the same rounded font. */
+@font-face {
+  font-family:'Coda Yuanti';
+  src:url('../fonts/yuanti/YuantiSC-Signature.woff2') format('woff2');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
 /* One continuous reading space. The fox and its world share the same stage. */
 .story-page { --story-accent:#c8612b; }
 html:has(.story-page) { scroll-padding-top:0; }
@@ -169,9 +177,10 @@ html:has(.story-page) { scroll-padding-top:0; }
 .next-question a { font-size:13px; }
 .next-question small { display:block; font-size:10px; color:#747662; margin-top:22px; }
 .story-chapter:last-child { padding-bottom:60px; }
-.story-coda { position:relative; isolation:isolate; padding:118px 0 100px; margin-top:25px; text-align:center; }
+.story-coda { position:relative; isolation:isolate; overflow:clip; scroll-margin-top:88px; padding:118px 0 100px; margin-top:25px; text-align:center; }
 .coda-thread { width:1px; height:100px; position:absolute; top:-15px; left:50%; background:linear-gradient(#c4cdb8,#c4cdb800); }
-.coda-fox-line { position:absolute; width:260px; height:auto; bottom:120px; right:0; opacity:.18; pointer-events:none; z-index:-1; }
+/* Supplied placeholder: the full-width ornament sits behind live, selectable type. */
+.coda-fox-line { position:absolute; width:min(1200px,112%); max-width:none; height:auto; top:18px; left:50%; transform:translateX(-50%); opacity:.18; pointer-events:none; user-select:none; z-index:-1; }
 .story-coda>.eyebrow { justify-content:center; font-size:9px; margin-bottom:30px; }
 .story-coda h2 { font-size:clamp(40px,5.3vw,76px); line-height:1.1; letter-spacing:-.05em; margin-bottom:30px; }
 .story-coda h2 em { color:#63815e; }
@@ -179,9 +188,10 @@ html:has(.story-page) { scroll-padding-top:0; }
 .coda-links { display:flex; align-items:center; justify-content:center; gap:34px; margin:40px 0; }
 .coda-links a { display:flex; gap:20px; align-items:center; font-size:13px; text-decoration:none; padding:10px 0; border-bottom:1px solid #c9d1bd; }
 .coda-links a span { color:var(--orange); }
-.coda-signature { display:flex; justify-content:center; align-items:center; gap:14px; font:italic 23px var(--serif); margin-top:65px; }
-.coda-signature i { font:12px var(--sans); color:var(--muted); }
-.coda-signature img { margin-left:4px; }
+.coda-signature { display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:10px; font:italic 23px var(--serif); margin-top:65px; }
+.coda-signature .coda-name { white-space:nowrap; font-family:'YouYuan','幼圆','Coda Yuanti',sans-serif; font-size:var(--type-body); font-weight:400; font-style:normal; line-height:1.75; letter-spacing:-.012em; }
+.coda-signature .coda-name em { font:inherit; color:inherit; }
+.coda-signature img { display:block; margin:0; }
 .coda-contact { display:inline-block; font-size:12px; color:var(--muted); margin-top:20px; text-decoration:none; padding:8px; }
 .story-page .site-footer { margin-top:0; }
 .story-page .footer-top { display:none; }
@@ -292,7 +302,7 @@ html:has(.story-page.motion-paused) { scroll-behavior:auto; }
   .story-bridge { padding:45px 0 65px; }
   .next-question { padding:28px 23px; }
   .next-question h3 { font-size:30px; }
-  .coda-fox-line { width:160px; bottom:35px; opacity:.1; }
+  .coda-fox-line { width:720px; top:58px; }
   .story-coda { margin-top:0; padding:100px 0 65px; }
   .story-coda h2 { font-size:clamp(37px,6vw,58px); }
   .coda-links { flex-direction:column; gap:9px; margin:30px 0; }

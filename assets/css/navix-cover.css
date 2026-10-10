@@ -1,0 +1,6 @@
+.cover-navix .navix-care-art{width:78%;max-width:300px;height:auto;margin-top:-22px;transform:rotate(-4deg);transition:transform .6s var(--ease)}
+.cover-navix .nx-head{transform-origin:150px 96px;transition:transform .6s ease}
+.cover-navix:focus-visible .navix-care-art{transform:rotate(0)}
+.cover-navix:focus-visible .nx-head{transform:rotate(5deg)}
+@media(hover:hover){.project-card:hover .cover-navix .navix-care-art{transform:rotate(0)}.project-card:hover .cover-navix .nx-head{transform:rotate(5deg)}}
+@media(prefers-reduced-motion:reduce){.cover-navix .navix-care-art,.cover-navix .nx-head{transition:none}.project-card .cover-navix .navix-care-art{transform:rotate(-4deg)}.project-card .cover-navix .nx-head{transform:none}}

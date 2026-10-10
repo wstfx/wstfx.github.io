@@ -1,0 +1,90 @@
+<div class="case-top"><a class="breadcrumb" href="../work.html">← All work</a></div>
+<section class="case-heading dongfeng-heading">
+  <div>
+    <p class="eyebrow">Engineering · Dongfeng R&amp;D</p>
+    <h1>VLA models in the driving loop</h1>
+    <p class="lede">Connecting driving models to simulated worlds—so their decisions become actions we can observe, evaluate, and debug.</p>
+    <div class="tags"><span class="tag">Autonomous driving</span><span class="tag">Closed-loop simulation</span><span class="tag">Systems integration</span></div>
+  </div>
+  <figure class="dongfeng-illustration">
+    {{DONGFENG_LOOP_SVG}}
+    <figcaption>A model meets the road.<small>Conceptual illustration · observe → infer → act → observe again</small></figcaption>
+    <button class="dongfeng-motion" type="button" aria-pressed="false" hidden>Pause animation</button>
+  </figure>
+</section>
+<div class="case-meta"><div><span>My role</span>R&amp;D Intern · Dongfeng Motor Corporation R&amp;D Institute</div><div><span>Period</span>Jul–Aug 2026</div><div><span>Status</span>Completed internship</div></div>
+<a class="case-story-thread" href="../index.html#build"><img src="../assets/art/geometric-mark.svg" width="30" height="30" alt=""><span><small>PART OF THE STORY</small>Build · Let the world push back</span><span aria-hidden="true">↗</span></a>
+<div class="case-layout dongfeng-layout">
+  <nav class="case-nav" aria-label="On this page"><p class="eyebrow">On this page</p><a href="#loop">The driving loop</a><a href="#onnx">Repairing the interface</a><a href="#pytorch">Native PyTorch inference</a><a href="#alpasim">T3 meets AlpaSim</a><a href="#platforms">Commercial platforms</a><a href="#handoff">A reusable workflow</a></nav>
+  <div class="case-copy">
+    <section class="case-section" id="loop">
+      <p class="eyebrow">01 / From a checkpoint to a moving vehicle</p>
+      <h2>The loop is part of the experiment.</h2>
+      <p>A vision-language-action (VLA) model takes visual observations and driving context and predicts what the vehicle should do next. Testing it in a simulator requires every part of that exchange to agree: what the cameras see, when history is sampled, how a trajectory is represented, and how the controller executes it.</p>
+      <p>At Dongfeng, I worked on that connection. I debugged the ONNX integration in Bench2Drive/CARLA, built a driver for direct PyTorch inference, and connected the T3 model to AlpaSim and OmniDreams. I also tested Apollo and 51Sim to explore commercial simulation workflows.</p>
+      <div class="driving-loop" aria-label="Closed-loop data flow"><span>Camera views<br><small>+ vehicle history</small></span><b aria-hidden="true">→</b><span>VLA model<br><small>future trajectory</small></span><b aria-hidden="true">→</b><span>Vehicle control<br><small>next observation</small></span></div>
+      <div class="dongfeng-videos b2d-videos">
+        <figure class="simulation-film">
+          <video controls playsinline muted preload="none" width="1728" height="1024" poster="../assets/images/dongfeng/b2d-run-01-poster.jpg" aria-label="Bench2Drive CARLA connected-model recording one" aria-describedby="b2d-01-caption"><source src="../assets/videos/dongfeng/b2d-run-01.mp4" type="video/mp4"><a href="../assets/videos/dongfeng/b2d-run-01.mp4">Watch the B2D recording</a></video>
+          <figcaption id="b2d-01-caption"><span class="film-label">Bench2Drive / CARLA · 01</span>Multi-camera views and predicted trajectories after connecting the ego-vehicle model.</figcaption>
+        </figure>
+        <figure class="simulation-film">
+          <video controls playsinline muted preload="none" width="1728" height="1024" poster="../assets/images/dongfeng/b2d-run-02-poster.jpg" aria-label="Bench2Drive CARLA connected-model recording two" aria-describedby="b2d-02-caption"><source src="../assets/videos/dongfeng/b2d-run-02.mp4" type="video/mp4"><a href="../assets/videos/dongfeng/b2d-run-02.mp4">Watch the B2D recording</a></video>
+          <figcaption id="b2d-02-caption"><span class="film-label">Bench2Drive / CARLA · 02</span>A second rollout makes the model’s decisions and their consequences visible.</figcaption>
+        </figure>
+      </div>
+      <p class="media-context">These recordings document the connected observation–inference–control loop. The checkpoint still showed substantial driving limitations; the clips are integration evidence, rather than demonstrations of mature driving performance.</p>
+    </section>
+    <section class="case-section" id="onnx">
+      <p class="eyebrow">02 / Make the inputs and outputs mean the same thing</p>
+      <h2>Repairing the interface.</h2>
+      <p>I traced problems in the ONNX path across trajectory shapes, coordinate conventions, navigation commands, and temporal sampling. A trajectory can be numerically valid and still tell a controller to move in the wrong direction. I corrected those mappings and aligned camera history with ego-vehicle history in simulation time.</p>
+      <p>I also found redundant multi-gigabyte array copies in the inference path. Removing them reduced a major source of overhead and made repeated evaluation more practical.</p>
+      <details class="dongfeng-details"><summary>What the recorded latency measurements show</summary><p>The route-level records report approximately <strong>68 seconds of baseline mean latency</strong> and <strong>5.7 seconds of optimized warm-state median latency</strong>. The statistics and operating conditions differ, so these describe the measured runs rather than a universal speedup ratio.</p></details>
+    </section>
+    <section class="case-section" id="pytorch">
+      <p class="eyebrow">03 / Keep the model ready for the next step</p>
+      <h2>Native inference. A synchronized loop.</h2>
+      <p>To run the model directly in PyTorch, I separated the simulator and model into their own Python environments. A persistent inference service loads the checkpoint once, while a bridge handles the exchange with CARLA. Images and metadata travel through a shared directory; Unix Socket messages coordinate each request and response.</p>
+      <figure class="dongfeng-figure">
+        <button class="image-button" type="button" data-lightbox="../assets/images/dongfeng/pytorch-carla-loop.png" data-alt="Architecture diagram of the synchronous PyTorch VLA and CARLA loop" data-caption="My PyTorch–CARLA integration: separate simulator and model environments, shared image data, request/response synchronization, trajectory validation, and vehicle control." aria-label="Enlarge the PyTorch CARLA architecture diagram"><img src="../assets/images/dongfeng/pytorch-carla-loop.png" width="2200" height="1500" alt="CARLA collects seven cameras with three frames each, sends metadata to a persistent PyTorch model service, validates the returned trajectory and applies vehicle control" loading="lazy" decoding="async"></button>
+        <figcaption>My PyTorch–CARLA integration. The bridge keeps observation collection, inference, trajectory validation, and control in one synchronized loop. The ONNX route remains a separate baseline.</figcaption>
+      </figure>
+      <p>Each model request combines <strong>seven cameras × three frames</strong> with ego history and navigation. The bridge checks request IDs, timestamps, and the returned 32-point trajectory before converting coordinates for the controller. When a new action is needed, simulation waits for inference; intermediate ticks hold the previous control.</p>
+      <p>I made evaluation restartable and separated driving outcomes from infrastructure faults. In one documented 20-route subset, 17 routes produced scores and videos; three failed in rendering before the first frame. That distinction prevents a simulator failure from being mistaken for a model result.</p>
+    </section>
+    <section class="case-section" id="alpasim">
+      <p class="eyebrow">04 / A second simulation environment</p>
+      <h2>Connecting T3 to AlpaSim.</h2>
+      <p>I then built the T3 adapter and gRPC Driver connection for AlpaSim. OmniDreams renders the scene, AlpaSim assembles image and vehicle history, and T3 predicts future trajectory points. The controller and physics update the vehicle’s pose, which determines the next rendered view.</p>
+      <div class="dongfeng-videos alpasim-videos">
+        <figure class="simulation-film">
+          <video controls playsinline muted preload="none" width="900" height="1000" poster="../assets/images/dongfeng/alpasim-pass-poster.jpg" aria-label="T3 AlpaSim OmniDreams daytime scene" aria-describedby="alpasim-01-caption"><source src="../assets/videos/dongfeng/alpasim-pass.mp4" type="video/mp4"><a href="../assets/videos/dongfeng/alpasim-pass.mp4">Watch the daytime scene</a></video>
+          <figcaption id="alpasim-01-caption"><span class="film-label">AlpaSim / OmniDreams · Scene 01</span>A daytime scene with the rendered front view, vehicle trajectory, and evaluation output.</figcaption>
+        </figure>
+        <figure class="simulation-film">
+          <video controls playsinline muted preload="none" width="900" height="1000" poster="../assets/images/dongfeng/alpasim-offroad-poster.jpg" aria-label="T3 AlpaSim OmniDreams nighttime scene with off-road behavior" aria-describedby="alpasim-02-caption"><source src="../assets/videos/dongfeng/alpasim-offroad.mp4" type="video/mp4"><a href="../assets/videos/dongfeng/alpasim-offroad.mp4">Watch the nighttime scene</a></video>
+          <figcaption id="alpasim-02-caption"><span class="film-label">AlpaSim / OmniDreams · Scene 02</span>A nighttime scene exposes off-road behavior—a useful trace for examining what the connected model does.</figcaption>
+        </figure>
+      </div>
+      <p class="media-context">These approximately 20-second recordings use a single front camera, while the checkpoint was trained with seven cameras. They validate the engineering connection under that input mismatch; they are not a final model-quality benchmark.</p>
+      <p>I documented how to replace compatible checkpoints, start the Driver, run a closed-loop scene, and generate videos and metrics. The guide also makes the model’s image-history, trajectory, and coordinate requirements explicit, so a checkpoint change can be checked before a long run begins.</p>
+    </section>
+    <section class="case-section" id="platforms">
+      <p class="eyebrow">05 / Looking beyond the custom pipeline</p>
+      <h2>Testing commercial simulation workflows.</h2>
+      <p>Alongside the model integrations, I tested Baidu’s Apollo platform and 51Sim. These gave me another view of the simulation workflow: inspecting multi-camera playback and evaluation traces in Apollo, and working with scenario construction and traffic-participant behavior in 51Sim.</p>
+      <div class="platform-gallery">
+        <figure class="dongfeng-figure"><button class="image-button" type="button" data-lightbox="../assets/images/dongfeng/apollo-platform.png" data-alt="Baidu Apollo simulation platform with six camera views, a trajectory map and evaluation traces" data-caption="Platform testing · Baidu Apollo. Multi-camera playback sits alongside trajectory context and speed and acceleration traces." aria-label="Enlarge Apollo platform screenshot"><img src="../assets/images/dongfeng/apollo-platform.png" width="2940" height="1602" alt="Apollo platform showing multi-camera urban replay, bounding boxes, speed and acceleration plots, and a planned path" loading="lazy" decoding="async"></button><figcaption><span class="film-label">Baidu Apollo</span>Multi-camera playback, trajectory context, and evaluation traces.</figcaption></figure>
+        <figure class="dongfeng-figure"><button class="image-button" type="button" data-lightbox="../assets/images/dongfeng/51sim-platform.png" data-alt="51Sim scenario editor with traffic participants and a vehicle behavior graph" data-caption="Platform testing · 51Sim. The scenario editor connects traffic participants and map context with behavior sequences." aria-label="Enlarge 51Sim platform screenshot"><img src="../assets/images/dongfeng/51sim-platform.png" width="2940" height="1434" alt="51Sim scenario editor with a road network, traffic participants, vehicle parameters, and a follow-target behavior graph" loading="lazy" decoding="async"></button><figcaption><span class="film-label">51Sim</span>Scenario construction and traffic-participant behavior.</figcaption></figure>
+      </div>
+    </section>
+    <section class="case-section" id="handoff">
+      <p class="eyebrow">06 / Leave behind something others can run</p>
+      <h2>From a working demo to a reusable workflow.</h2>
+      <p>I consolidated the work into the team’s VLA development Wiki: ONNX debugging and integration notes, a Bench2Drive/CARLA guide for native PyTorch inference, and a T3–AlpaSim checkpoint and Driver guide. Together with resumable evaluation and recorded rollouts, these gave the team a path to repeat the experiments and investigate failures.</p>
+      <aside class="case-callout"><p class="eyebrow">What I took from the work</p><p>A useful evaluation system makes a model’s behavior inspectable. Correct inputs, synchronized execution, and clear failure records are what let the next experiment answer a real question.</p></aside>
+    </section>
+  </div>
+</div>
+<nav class="case-next" aria-label="More projects"><a class="text-link" href="../work.html">Back to the collection</a><a href="involve.html"><p class="eyebrow">Keep exploring →</p><h3>InVolve</h3></a></nav>

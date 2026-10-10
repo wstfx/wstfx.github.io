@@ -19,6 +19,15 @@ EDITING
   assets/css/story.css       Story stage, editorial layout and mobile companion
   assets/js/story.js         Scroll-linked fox, chapter state and motion control
   content/abandon-body.html  Preserved existing AI conversation, attributed in page
+  content/dongfeng-body.html Dongfeng case study; builder inlines dongfeng-loop.svg
+  assets/css/dongfeng*.css   Scoped Dongfeng layout and illustration animation
+  assets/js/dongfeng.js      Illustration pause and one-video-at-a-time playback
+
+TARGETED CASE-STUDY BUILD
+  python3 tools/build_site.py --only work/dongfeng.html work.html
+Dongfeng videos and posters are local assets under assets/videos/dongfeng/ and
+assets/images/dongfeng/. The four recordings are integration evidence; preserve
+their experimental context and captions when reusing them.
 
 Static HTML is committed for GitHub Pages; no runtime packages required.
 Home, Work, About, Writing and CV share navigation and page components.
@@ -67,3 +76,73 @@ ILLUSTRATION WORKSHOP
 Story startup is progressive: a static first illustration precedes motion, and
 interactive motion controls appear after initialization. A 1.2s font wait cap
 keeps enhancement available if a font response is slow; no page-wide loader.
+
+CHINESE TYPOGRAPHY
+  assets/fonts/yuanti/             Chinese-only Yuanti SC Light/Regular/Bold WOFF2
+  tools/prepare_yuanti_fonts.py    Rebuild subsets from the owner's Yuanti.ttc
+  python3 tools/prepare_yuanti_fonts.py --check
+Conversion requires fonttools[woff]; verification requires Python standard library.
+When new Chinese characters are added, regenerate before publishing. Keep the
+font copyright and embedding flags. Public webfont authorization is not established
+by the conversion; see assets/fonts/manifest.txt and yuanti/provenance.json.
+
+FIRE SANDBOX CASE STUDY
+  content/fire-sim-body.html  Authored prototype-to-research narrative
+  assets/art/fire-sim-house.svg  Shared native hero/card illustration
+  assets/css/fire-sim*.css    Scoped layout, cutaway interaction and cover
+  assets/js/fire-sim.js       Cutaway toggle and visibility-aware pause
+  assets/images/fire-sim/    Unmodified prototype captures and run plot
+  assets/data/fire-sim/      Plotted CSV and run provenance/configuration
+  python3 tools/build_site.py --only work/fire-sim.html work.html
+Screenshots come from fire-sim-prototype/artifacts. The cooling plot uses a fresh
+run of its cooling preset (engine 1.0.0), sampled once per simulation second.
+Keep the distinction between the working demonstration and planned multi-source
+scene/state initialization; no physical calibration or forecast validation claimed.
+
+The fire house geometry is generated from a shared 3D orthographic projection.
+Run python3 tools/build_fire_art.py before the targeted case-study build when
+changing architectural dimensions. Do not adjust individual projected vertices.
+Cutaway views fade the near wall and roof in place; structural points stay fixed.
+
+NAVIX CASE STUDY
+  content/navix-body.html     Product journey, implementation and evidence scope
+  assets/art/navix-care.svg   Native illustration based on the existing Xiaoqi shape
+  assets/css/navix*.css       Scoped case layout and Work cover treatment
+  assets/js/navix.js          Visibility-aware animation pause
+  assets/images/navix/        Original product sketch and functional architecture
+  python3 tools/build_site.py --only work/navix.html work.html
+The source project is ../wzb_Navix (a sibling of the application workspace).
+The latest records reviewed are dated 2026-10-05. Keep local prototypes, synthetic
+health data, model evaluation batches and actual hardware integration distinct.
+
+ACTIVE LEARNING CASE STUDY
+  content/active-learning-body.html  Query policy, error reduction and batch completion
+  assets/art/active-learning.svg     Shared conceptual sampling-loop illustration
+  assets/css/active-learning*.css    Scoped case layout and interactive Work cover
+  assets/js/active-learning.js       Three-step explanation and animation pause
+  python3 tools/build_site.py --only work/active-learning.html work.html about.html
+Original images remain under images/Educational/ActiveLearning1–8. Preserve the
+separate MLP toy, FNO Burgers and training-only batch-completion contexts. The
+resume names DeepONet; its relationship to the FNO-labeled figure is unresolved.
+Do not relabel that figure or assert a separate experiment without confirmation.
+
+RELATIVITY / VR CASE STUDY
+  content/vr-body.html       Course narrative, personal contribution and team study
+  assets/art/relativity-frames.svg  Quantitative length / clock-rate sketch; not a VR capture
+  assets/art/relativity-cover.svg   Separate landscape Work-card composition
+  assets/css/vr*.css         Scoped layout, animation and Work cover
+  assets/js/vr.js            Frame selection, deselection and visibility-aware pause
+  assets/images/vr/          Two unmodified, user-supplied application captures
+  python3 tools/build_site.py --only work/vr.html work.html about.html
+N=28 is the team study reported in the supplied extended abstract. Do not invent
+scores, effect sizes, a venue or psychometric validation. The supplied summary
+screenshot contains an incorrect definition of simultaneity and is not published.
+Assessment goals in the case study are paraphrases, not actual questionnaire items.
+
+RELATIVITY ILLUSTRATION
+Speed slider uses beta=v/c and sqrt(1-beta^2) for moving/rest length and moving/local
+clock-rate ratios, default beta=.8. Each frame has its own clock-rate comparison;
+the two panels do not depict a shared synchronization convention. Dials show rates,
+not cumulative readings when changing speed. Translation is slowed and looped for
+legibility. Fade/loop is illustrative, not a simulation of acceleration or optics.
+Work cover fixes beta=.8 and reserves index/caption space around landscape artwork.

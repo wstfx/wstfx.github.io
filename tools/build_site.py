@@ -72,6 +72,9 @@ def page(path, title, body, active, prefix=''):
     story_assets = f'<link rel="stylesheet" href="{asset("assets/css/story.css")}"><link rel="stylesheet" href="{asset("assets/css/opening-decor.css")}"><script defer src="{asset("assets/js/story.js")}"></script><script defer src="{asset("assets/js/test-journey.js")}"></script>' if path == 'index.html' else ''
     if path == 'visual-system.html':
         story_assets = f'<link rel="stylesheet" href="{asset("assets/css/visual-system.css")}">'
+    if path == 'work.html':
+        story_assets += f'<link rel="stylesheet" href="{asset("assets/css/igem-cover.css")}">'
+        story_assets += f'<link rel="stylesheet" href="{asset("assets/css/vr-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/active-learning-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/reconstruction-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/dongfeng-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/fire-sim-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/navix-cover.css")}">'
     if path in ('illustration-briefs.html', 'illustration-direction.html'):
         story_assets = f'<link rel="stylesheet" href="{asset("assets/css/illustration-briefs.css")}"><script defer src="{asset("assets/js/illustration-briefs.js")}"></script>'
         if path == 'illustration-direction.html':
@@ -95,6 +98,13 @@ def page(path, title, body, active, prefix=''):
 <link rel="preload" href="{prefix}assets/garet/Garet-Book.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{prefix}assets/best_swashed/BestSwashed_PERSONAL_USE_ONLY.otf" as="font" type="font/otf" crossorigin>
 <link rel="stylesheet" href="{prefix}{asset('assets/css/type-system.css')}">
+{f'<link rel="stylesheet" href="{prefix}{asset("assets/css/reconstruction.css")}"><script defer src="{prefix}{asset("assets/js/reconstruction.js")}"></script>' if path == 'work/reconstruction.html' else ''}
+{f'<link rel="stylesheet" href="{prefix}{asset("assets/css/dongfeng-art.css")}"><link rel="stylesheet" href="{prefix}{asset("assets/css/dongfeng.css")}"><script defer src="{prefix}{asset("assets/js/dongfeng.js")}"></script>' if path == 'work/dongfeng.html' else ''}
+{f'<link rel="stylesheet" href="{prefix}{asset("assets/css/fire-sim.css")}"><script defer src="{prefix}{asset("assets/js/fire-sim.js")}"></script>' if path == 'work/fire-sim.html' else ''}
+{f'<link rel="stylesheet" href="{prefix}{asset("assets/css/navix.css")}"><script defer src="{prefix}{asset("assets/js/navix.js")}"></script>' if path == 'work/navix.html' else ''}
+{f'<link rel="stylesheet" href="{prefix}{asset("assets/css/active-learning.css")}"><script defer src="{prefix}{asset("assets/js/active-learning.js")}"></script>' if path == 'work/active-learning.html' else ''}
+{f'<link rel="stylesheet" href="{prefix}{asset("assets/css/vr.css")}"><script defer src="{prefix}{asset("assets/js/vr.js")}"></script>' if path == 'work/vr.html' else ''}
+{f'<link rel="stylesheet" href="{prefix}{asset("assets/css/igem.css")}"><script defer src="{prefix}{asset("assets/js/igem.js")}"></script>' if path == 'work/igem.html' else ''}
 </head>
 <body id="top" class="{'story-page' if path == 'index.html' else 'collection-page'}">
 <a class="skip" href="#main">Skip to content</a>
@@ -121,22 +131,28 @@ def artwork(project_id, number='01'):
         art = '<div class="orbit-diagram"><span>Design</span><i>→</i><span>Teach</span><i>→</i><span>Assess</span></div>'
         label = 'A teaching workflow · concept diagram'
     elif project_id == 'dongfeng':
-        art = '<svg class="path-art" viewBox="0 0 430 210" fill="none" aria-hidden="true"><path d="M0 168H116Q170 168 170 112V94Q170 45 225 45H440" stroke="#aec09d" stroke-width="53"/><path d="M0 168H116Q170 168 170 112V94Q170 45 225 45H440" stroke="#e9efdf" stroke-width="36"/><path d="M0 168H116Q170 168 170 112V94Q170 45 225 45H440" stroke="#879b7b" stroke-width="1.5" stroke-dasharray="8 9"/><rect x="196" y="30" width="36" height="28" rx="7" fill="#d5753d"/><circle cx="213" cy="44" r="39" stroke="#c7744280"/><circle cx="213" cy="44" r="61" stroke="#c7744233"/><path d="M57 71L66 53L76 71M331 147L340 129L350 147" stroke="#6a8663" stroke-width="2"/></svg>'
-        label = 'Model → simulator → evaluation'
+        art = (ROOT / 'assets/art/dongfeng-cover.svg').read_text()
+        label = 'Observe → predict → drive → repeat'
+    elif project_id == 'active-learning':
+        art = (ROOT / 'assets/art/active-learning.svg').read_text()
+        label = 'Choose a sample → learn → choose again'
     elif project_id == 'reconstruction':
-        cells = ''.join(f'<i style="--v:{.22 + .72 * abs(math.sin(i * .26 + (i // 12) * .32)):.3f}"></i>' for i in range(84))
-        art = '<div class="field-art">' + cells + '</div>'
-        label = 'Sparse observations / wider questions'
+        art = f'<img class="field-art reconstruction-cover-art" src="{asset("assets/art/reconstruction-cover.svg")}" alt="" width="360" height="150" loading="lazy" decoding="async">'
+        label = 'Sparse observations → a whole flow field'
+    elif project_id == 'igem':
+        art = (ROOT / 'assets/art/igem-cover.svg').read_text()
+        label = 'Bacterial delivery · modeling · wiki'
     elif project_id == 'feasypaste':
         art = '<div class="type-transfer"><span>∑</span><b>→</b><span>∑</span></div>'; label = 'Keep the meaning. Keep the formatting.'
     elif project_id == 'fire-sim':
-        art = '<div class="thermal-art"><span></span></div>'; label = 'Heat / time / material response'
+        art = (ROOT / 'assets/art/fire-sim-house.svg').read_text(); label = 'Heat → material response → damage'
     elif project_id == 'navix':
-        art = '<div class="care-art">❋</div>'; label = 'Technology, with care'
+        art = (ROOT / 'assets/art/navix-care.svg').read_text(); label = 'A companion / a routine / a little care'
     elif project_id in ['dhh', 'dhh-review']:
         art = '<div class="quote-art">“ ”</div>'; label = 'Start by listening'
     elif project_id == 'vr':
-        art = '<div class="vr-art"><span>t</span>↔<span>t′</span></div>'; label = 'A different frame of reference'
+        art = (ROOT / 'assets/art/relativity-cover.svg').read_text()
+        label = 'Length contraction · time dilation'
     else:
         symbols = {'active-learning': 'ƒ(x)', 'crystal': '◇', 'materials-creep': 'σ', 'asr': '∿', 'roadlaw': '↗', 'igem': '✳', 'evisa': '↗', 'ai-coding-course': '{ }', 'student-union': '∴', 'culture': 'Aa', 'ambassador': '↔', 'westlake': 'W', 'cornell': 'C', 'writing': '…', 'website': 'Zw'}
         art = f'<div class="symbol-art">{e(symbols.get(project_id, "✳"))}</div>'
@@ -292,6 +308,33 @@ gallery = {
 }
 for index,p in enumerate(PROJECTS):
     id_ = p['id']
+    if id_ == 'igem':
+        body = (ROOT / 'content/igem-body.html').read_text().replace('{{IGEM_SYSTEM_SVG}}', (ROOT / 'assets/art/igem-system.svg').read_text())
+        page('work/igem.html', p['title'], body, 'Work', '../')
+        continue
+    if id_ == 'vr':
+        body = (ROOT / 'content/vr-body.html').read_text().replace('{{RELATIVITY_FRAMES_SVG}}', (ROOT / 'assets/art/relativity-frames.svg').read_text())
+        page('work/vr.html', p['title'], body, 'Work', '../')
+        continue
+    if id_ == 'active-learning':
+        body = (ROOT / 'content/active-learning-body.html').read_text().replace('{{ACTIVE_LEARNING_SVG}}', (ROOT / 'assets/art/active-learning.svg').read_text())
+        page('work/active-learning.html', p['title'], body, 'Work', '../')
+        continue
+    if id_ == 'navix':
+        body = (ROOT / 'content/navix-body.html').read_text().replace('{{NAVIX_CARE_SVG}}', (ROOT / 'assets/art/navix-care.svg').read_text())
+        page('work/navix.html', p['title'], body, 'Work', '../')
+        continue
+    if id_ == 'fire-sim':
+        body = (ROOT / 'content/fire-sim-body.html').read_text().replace('{{FIRE_HOUSE_SVG}}', (ROOT / 'assets/art/fire-sim-house.svg').read_text())
+        page('work/fire-sim.html', p['title'], body, 'Work', '../')
+        continue
+    if id_ == 'reconstruction':
+        page('work/reconstruction.html', p['title'], (ROOT / 'content/reconstruction-body.html').read_text(), 'Work', '../')
+        continue
+    if id_ == 'dongfeng':
+        body = (ROOT / 'content/dongfeng-body.html').read_text().replace('{{DONGFENG_LOOP_SVG}}', (ROOT / 'assets/art/dongfeng-loop.svg').read_text())
+        page('work/dongfeng.html', p['title'], body, 'Work', '../')
+        continue
     body = f'<div class="case-top"><a class="breadcrumb" href="../{ "work.html" if p.get("placement")=="Work" else "about.html"}">← {"All work" if p.get("placement")=="Work" else "About me"}</a></div><section class="case-heading">{eyebrow(p["category"])}<h1>{e(p["title"])}</h1><p class="lede">{e(p["summary"])}</p>{tags(p["tags"])}</section>'
     body += f'<div class="case-meta"><div><span>My role</span>{e(p["role"])}</div><div><span>{"Period" if re.search(r"20[0-9]{2}",p["period"]) else "Context"}</span>{e(p["period"])}</div><div><span>Status</span>{e(p["status"])}</div></div>'
     if id_ in STORY_THREADS:
@@ -302,11 +345,19 @@ for index,p in enumerate(PROJECTS):
         body += '<aside class="case-callout">'+eyebrow('The idea')+f'<p>{e(p["subtitle"])}</p></aside>'
     if p.get('metrics'):
         body += '<div class="evidence-grid">' + ''.join(f'<div class="evidence-box"><strong>{e(m["value"])}</strong><span>{e(m["label"])}</span></div>' for m in p['metrics']) + '</div>'
-    if id_ in ['involve','navix','fire-sim','igem']:
+    if id_ in ['involve','navix','fire-sim','igem'] and not p.get('media'):
         media_labels = {'involve': 'The original classroom interface', 'navix': 'Product journeys & interactions', 'fire-sim': 'The simulation in motion', 'igem': 'The wiki, in detail'}
         body += '<figure class="media-reserved"><div class="media-outline"><span class="media-icon" aria-hidden="true">↗</span><span class="eyebrow">Screenshots & film</span><strong>'+media_labels[id_]+'</strong><span class="media-pending">Original project visuals to be added.</span></div><figcaption>A space for original captures from the project.</figcaption></figure>'
     for i,s in enumerate(p['sections']):
         body += f'<section class="case-section" id="section-{i}"><h2>{e(s["title"])}</h2><p>{e(s["body"])}</p></section>'
+    if p.get('media'):
+        body += '<div class="case-gallery">'
+        for media in p['media']:
+            src = '../' + media['src']
+            body += f'<figure><button class="image-button" type="button" data-lightbox="{e(src)}" data-alt="{e(media["alt"])}" data-caption="{e(media["caption"])}" aria-label="Enlarge: {e(media["alt"])}"><img loading="lazy" src="{e(src)}" alt="{e(media["alt"])}"></button><figcaption>{e(media["caption"])} Click to enlarge.</figcaption></figure>'
+        body += '</div>'
+    if p.get('links'):
+        body += '<section class="case-section"><h2>Explore the project</h2><ul>' + ''.join(f'<li><a class="text-link" href="{e(link["url"])}">{e(link["label"])} ↗</a></li>' for link in p['links']) + '</ul></section>'
     if id_ in gallery:
         body += '<div class="case-gallery">'
         for image,caption in gallery[id_]:

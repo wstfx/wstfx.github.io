@@ -1,0 +1,65 @@
+.vr-heading{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,1fr);align-items:center;gap:36px;max-width:none}
+.vr-heading h1{font-size:clamp(42px,5.1vw,74px)}
+.vr-heading .lede{font-size:clamp(17px,1.6vw,22px)}
+.vr-illustration{margin:0;text-align:center;min-width:0}
+.vr-illustration .vr-frame-art{display:block;width:100%;max-width:440px;height:auto;margin:auto}
+.vr-frame-controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.vr-frame-controls button{font:inherit;font-size:12px;padding:9px 14px;border:1px solid var(--line);border-radius:24px;background:transparent;color:var(--ink);cursor:pointer;min-height:44px}
+.vr-frame-controls button[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:var(--paper)}
+.vr-frame-controls button:focus-visible,.vr-motion:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+.vr-illustration figcaption{font-size:13px;line-height:1.7;max-width:350px;margin:16px auto 0;min-height:95px}
+.vr-illustration figcaption small{display:block;font-size:10px;color:var(--muted);margin-top:8px}
+.vr-motion{background:transparent;border:0;border-bottom:1px solid var(--line);padding:7px 0;font:inherit;font-size:11px;color:var(--muted);cursor:pointer}
+.vr-illustration{--vr-length:.6;--vr-clock-period:10s;--vr-travel:38px;--vr-platform-travel:22px}
+.vr-illustration .vr-contract-train{transform-origin:207px 150px;transform:scaleX(var(--vr-length))}
+.vr-illustration .vr-contract-platform{transform-origin:222px 130px;transform:scaleX(var(--vr-length))}
+.vr-illustration .vr-train-world{animation:vr-train-pass 8s linear infinite}
+.vr-illustration .vr-platform-world{animation:vr-station-pass 8s linear infinite}
+.vr-illustration .vr-clock-hand{animation:vr-clock-tick 6s linear infinite;animation-delay:-1.5s}
+.vr-illustration .vr-clock-moving{animation-duration:var(--vr-clock-period)}
+.vr-platform-scene,.vr-train-scene{transition:opacity .35s ease}
+.vr-illustration[data-frame="platform"] .vr-train-scene,.vr-illustration[data-frame="train"] .vr-platform-scene{opacity:.25}
+.vr-illustration.is-paused *{animation-play-state:paused!important}
+.vr-illustration.is-at-rest .vr-train-world,.vr-illustration.is-at-rest .vr-platform-world{animation:none}
+.vr-illustration.is-at-rest .vr-direction{opacity:0}
+.vr-speed-control{max-width:350px;margin:18px auto 0;text-align:left}
+.vr-speed-label{display:flex;align-items:center;justify-content:space-between;font-size:12px;gap:10px}
+.vr-speed-label output{font-variant-numeric:tabular-nums;color:var(--orange)}
+.vr-speed-control input{display:block;width:100%;height:28px;margin:6px 0;accent-color:var(--green);cursor:pointer}
+.vr-speed-control input:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.vr-speed-control p{font-size:11px;line-height:1.7;color:var(--muted);margin:2px 0}
+.vr-illustration figcaption{min-height:115px}
+@keyframes vr-train-pass{0%{transform:translateX(calc(-1 * var(--vr-travel)));opacity:0}8%{opacity:1}92%{opacity:1}100%{transform:translateX(var(--vr-travel));opacity:0}}
+@keyframes vr-station-pass{0%{transform:translateX(var(--vr-platform-travel));opacity:0}8%{opacity:1}92%{opacity:1}100%{transform:translateX(calc(-1 * var(--vr-platform-travel)));opacity:0}}
+@keyframes vr-clock-tick{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.vr-layout .case-copy{max-width:940px;min-width:0}
+.vr-layout .case-section>.eyebrow{font-size:11px;color:var(--orange);margin-bottom:12px}
+.vr-figure{margin:30px 0 36px}
+.vr-figure img{display:block;width:100%;height:auto;transform:none!important}
+.vr-figure figcaption{font-size:12px;color:var(--muted);line-height:1.8;margin-top:12px}
+.vr-lesson{list-style:none;padding:0;margin:30px 0;counter-reset:lesson}
+.vr-lesson>li{counter-increment:lesson;position:relative;border-top:1px solid var(--line);padding:24px 0 8px 56px}
+.vr-lesson>li::before{content:'0' counter(lesson);position:absolute;left:0;top:25px;color:var(--orange);font-size:15px}
+.vr-lesson h3{font-size:21px;margin:0 0 12px}
+.vr-lesson .vr-prompt{font-size:14px;border-left:2px solid #d3a177;padding-left:16px;color:var(--muted)}
+.vr-contributions{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:30px 0}
+.vr-contributions article{border-top:2px solid var(--line);padding-top:20px}
+.vr-contributions h3{font-size:20px;margin:0 0 12px}
+.vr-contributions p{font-size:15px}
+.vr-assessment{margin:25px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.vr-assessment-row{display:grid;grid-template-columns:1fr 1.25fr;gap:24px;padding:20px 24px;border-bottom:1px solid var(--line)}
+.vr-assessment-row:last-child{border-bottom:0}
+.vr-assessment-row h3{font-size:16px;margin:0 0 8px}
+.vr-assessment-row p{font-size:14px;margin:0}
+.vr-assessment-row small{display:block;color:var(--muted);font-size:11px;margin-bottom:7px}
+.vr-study{display:grid;grid-template-columns:140px 1fr;gap:30px;border-block:1px solid var(--line);padding:28px 0;margin:28px 0}
+.vr-study-number strong{display:block;font-size:68px;line-height:1.2;color:var(--green)}
+.vr-study-number span{font-size:12px;color:var(--muted)}
+.vr-study p{margin:0 0 12px}
+.vr-layout .vr-note{font-size:13px;line-height:1.8;color:var(--muted)}
+.vr-layout details{border-block:1px solid var(--line);padding:18px 0;margin:25px 0}
+.vr-layout summary{cursor:pointer;font-size:14px;line-height:1.7}
+.vr-layout details p{margin-top:16px}
+@media(max-width:850px){.vr-heading{grid-template-columns:1fr;gap:12px}.vr-illustration{width:100%;max-width:430px;justify-self:center}}
+@media(max-width:600px){.vr-heading h1{font-size:clamp(40px,10vw,58px)}.vr-contributions{grid-template-columns:1fr;gap:12px}.vr-assessment-row{grid-template-columns:1fr;gap:15px;padding:20px}.vr-study{grid-template-columns:1fr;gap:18px}.vr-study-number{display:flex;gap:14px;align-items:baseline}.vr-lesson>li{padding-left:38px}.vr-illustration figcaption{min-height:0}}
+@media(prefers-reduced-motion:reduce){.vr-illustration *{animation:none!important;transition:none!important}.vr-motion{display:none}}

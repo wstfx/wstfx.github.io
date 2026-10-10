@@ -1,0 +1,6 @@
+.cover-active-learning .al-art{display:block;width:78%;max-width:270px;height:auto;margin-top:-18px;transform:rotate(-7deg);transition:transform .6s var(--ease)}
+.cover-active-learning .al-halo{transform-origin:218px 174px;transition:transform .6s var(--ease)}
+.cover-active-learning:focus-visible .al-art{transform:rotate(-1deg)}
+.cover-active-learning:focus-visible .al-halo{transform:scale(1.2)}
+@media(hover:hover){.project-card:hover .cover-active-learning .al-art{transform:rotate(-1deg)}.project-card:hover .cover-active-learning .al-halo{transform:scale(1.2)}}
+@media(prefers-reduced-motion:reduce){.cover-active-learning .al-art,.cover-active-learning .al-halo{transition:none}.project-card .cover-active-learning .al-art{transform:rotate(-7deg)}.project-card .cover-active-learning .al-halo{transform:none}}
