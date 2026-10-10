@@ -1,6 +1,7 @@
-/* Shared source-coordinate pivots keep the portrait and life motifs connected. */
-.dhh-wellbeing-art .dhh-touch{transform-origin:440px 740px}
-.dhh-wellbeing-art .dhh-happiness{transform-origin:728px 168px}
-.dhh-wellbeing-art .dhh-family{transform-origin:814px 394px}
-.dhh-wellbeing-art .dhh-ai{transform-origin:945px 414px}
-.dhh-illustration:focus-visible{outline:2px solid var(--orange);outline-offset:6px;border-radius:12px}
+/* Both crops use the same drawing coordinates, with the whole sleeve at the shoulder. */
+.dhh-wellbeing-art .dhh-touch{transform-origin:282px 320px;transform:rotate(-5deg)}
+.dhh-wellbeing-art .dhh-head{transform-origin:220px 276px}
+.dhh-wellbeing-art .dhh-family{transform-origin:426px 280px}
+.dhh-wellbeing-art .dhh-happiness{transform-origin:363px 120px}
+.dhh-wellbeing-art .dhh-ai{transform-origin:518px 298px}
+.dhh-stage:focus-visible{outline:2px solid var(--orange);outline-offset:6px;border-radius:12px}

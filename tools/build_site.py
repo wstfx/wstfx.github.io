@@ -75,7 +75,7 @@ def page(path, title, body, active, prefix=''):
         story_assets += f'<link rel="stylesheet" href="{prefix}{asset("assets/css/dhh-art.css")}">'
     if path == 'work.html':
         story_assets += f'<link rel="stylesheet" href="{asset("assets/css/igem-cover.css")}">'
-        story_assets += f'<link rel="stylesheet" href="{asset("assets/css/dhh-cover.css")}"><script defer src="{asset("assets/js/dhh.js")}"></script>'
+        story_assets += f'<link rel="stylesheet" href="{asset("assets/css/dhh-cover.css")}">'
         story_assets += f'<link rel="stylesheet" href="{asset("assets/css/vr-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/active-learning-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/reconstruction-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/dongfeng-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/fire-sim-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/navix-cover.css")}">'
     if path in ('illustration-briefs.html', 'illustration-direction.html'):
         story_assets = f'<link rel="stylesheet" href="{asset("assets/css/illustration-briefs.css")}"><script defer src="{asset("assets/js/illustration-briefs.js")}"></script>'

@@ -3,6 +3,9 @@
 .dhh-heading .lede{font-size:clamp(17px,1.6vw,21px);max-width:530px}
 .dhh-heading .eyebrow{font-size:10px;letter-spacing:.12em}
 .dhh-illustration{margin:0;min-width:0;text-align:center}
+.dhh-motion{font:inherit;font-size:11px;color:var(--muted);background:transparent;border:0;border-bottom:1px solid var(--line);padding:8px 0;cursor:pointer;margin-top:6px}
+.dhh-motion:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){.dhh-motion{display:none}}
 .dhh-life-art{display:block;width:100%;height:auto;max-width:600px;margin:0 auto}
 .dhh-layout .case-copy{max-width:920px;min-width:0}
 .dhh-layout .case-section{margin-bottom:35px;padding-bottom:26px}
