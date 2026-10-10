@@ -85,3 +85,15 @@
 @media(max-width:600px){.dhh-heading .eyebrow{line-height:1.8;max-width:260px}.dhh-heading h1{font-size:clamp(39px,10.5vw,58px)}.dhh-layout .case-section{margin-bottom:24px}.dhh-photo-pair{grid-template-columns:1fr;gap:24px}.dhh-method,.dhh-ai-areas{grid-template-columns:1fr;gap:19px}.dhh-method article,.dhh-ai-areas article{padding-top:14px}.dhh-method p{margin-bottom:0}.dhh-finding{padding:23px 20px}.dhh-mechanisms{grid-template-columns:1fr 1fr;gap:23px 18px}.dhh-mechanisms article,.dhh-mechanisms article:nth-last-child(-n+2){grid-column:span 1}.dhh-mechanisms article:last-child{grid-column:1/-1;max-width:70%}.dhh-mechanisms h3{font-size:17px}.dhh-fieldwork{gap:13px}.dhh-fieldwork span{font-size:11px}.dhh-support-map{padding:23px 20px}.dhh-support-settings,.dhh-design-lessons{grid-template-columns:1fr;gap:23px}.dhh-survey{padding:23px 20px}.dhh-bar-label{gap:12px}.dhh-bar-label strong{font-size:14px}.dhh-bar-label small{display:block;text-align:right;margin:0}.dhh-publications article{padding:21px 20px}.dhh-publications h3{font-size:19px}}
 @media(prefers-reduced-motion:reduce){.dhh-illustration *{animation:none!important;transition:none!important}}
 @media print{.dhh-illustration *{animation:none!important}.dhh-method,.dhh-mechanisms,.dhh-publications article{break-inside:avoid}}
+
+/* The case study keeps the fan visible and lets each element drift gently in place. */
+.dhh-life-art .dhh-happiness{animation:dhh-float-smile 6.5s ease-in-out infinite}
+.dhh-life-art .dhh-family{animation:dhh-float-family 7.8s ease-in-out infinite}
+.dhh-life-art .dhh-ai{animation:dhh-float-ai 7s ease-in-out infinite}
+.dhh-life-art .dhh-star{transform-box:fill-box;transform-origin:center;animation:dhh-star-glimmer 5s ease-in-out infinite}
+.dhh-life-art .dhh-stars>g:nth-child(2n) .dhh-star{animation-delay:-2s}
+.dhh-illustration.is-paused *{animation-play-state:paused!important}
+@keyframes dhh-float-smile{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-12px) rotate(2deg)}}
+@keyframes dhh-float-family{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes dhh-float-ai{0%,100%{transform:translateY(-4px) rotate(3deg)}50%{transform:translateY(7px) rotate(-2deg)}}
+@keyframes dhh-star-glimmer{0%,100%{opacity:.45;transform:scale(.85)}50%{opacity:1;transform:scale(1)}}

@@ -149,11 +149,11 @@ Work cover fixes beta=.8 and reserves index/caption space around landscape artwo
 
 DHH HAPPINESS / SUPPORT / AI CASE STUDY
   content/dhh-body.html      Graphic elicitation, findings, fieldwork, AI and outcomes
-  assets/art/dhh-life.svg    Restored hearing-aid portrait; coordinated happiness/family/AI group
-  assets/art/dhh-cover.svg   Matching portrait; concise reversible hover/focus response
+  assets/art/dhh-life.svg    Hearing-aid portrait; permanent floating fan and small positive ornaments
+  assets/art/dhh-cover.svg   Icons reveal from behind the portrait; hearing aid lights on hover/focus
   assets/css/dhh*.css        Scoped layouts and shared illustration transform origins
-  assets/js/dhh.js           Case-study cycle; in-place reversal on exit; pause/visibility/reduced motion
-  tools/check_dhh_motion.cjs Interrupted entry/exit, re-entry, pause and suspension checks
+  assets/js/dhh.js           Ambient motion pause/visibility/reduced-motion management
+  tools/check_dhh_motion.cjs User pause, visibility and reduced-motion suspension checks
   assets/images/dhh/         Original, supplied 52-response preference chart
   assets/pictures/DHH*       Supplied, identity-obscured fieldwork photographs
   python3 tools/build_site.py --only work/dhh.html work/dhh-review.html work.html about.html cv.html index.html

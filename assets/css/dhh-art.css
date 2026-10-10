@@ -1,7 +1,4 @@
-/* Preserve the portrait; the life motifs share one center and move as a composition. */
-.dhh-wellbeing-art .dhh-world{transform-origin:814px 320px}
-.dhh-wellbeing-art .dhh-family{transform-origin:814px 394px}
+/* Pivots are local to each icon; outer SVG groups place the fan above the portrait. */
+.dhh-wellbeing-art .dhh-family{transform-origin:814px 280px}
 .dhh-wellbeing-art .dhh-happiness{transform-origin:728px 168px}
 .dhh-wellbeing-art .dhh-ai{transform-origin:945px 414px}
-.dhh-wellbeing-art .dhh-ai-core{transform-origin:945px 415px}
-.dhh-stage:focus-visible{outline:2px solid var(--orange);outline-offset:6px;border-radius:12px}

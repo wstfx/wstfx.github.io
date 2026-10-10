@@ -1,19 +1,26 @@
 .cover-dhh{background:#ecebdd}
 .cover-dhh .dhh-cover-art{display:block;width:94%;height:calc(100% - 24px);max-width:360px}
-/* One gently unfolding group. Exit transitions start at the current pose. */
-.dhh-cover-art :is(.dhh-world,.dhh-family,.dhh-happiness,.dhh-ai,.dhh-ai-core){transition:transform .8s cubic-bezier(.22,.61,.36,1);transform:none}
-.project-card:focus-within .dhh-cover-art .dhh-world{transform:translate(-6px,-3px) scale(1.025)}
-.project-card:focus-within .dhh-cover-art .dhh-family{transform:scale(1.015)}
-.project-card:focus-within .dhh-cover-art .dhh-happiness{transform:translate(-7px,-9px) rotate(-2deg)}
-.project-card:focus-within .dhh-cover-art .dhh-ai{transform:translate(-10px,-5px) rotate(2deg)}
-.project-card:focus-within .dhh-cover-art .dhh-ai-core{transform:scale(1.08)}
+/* Icons sit behind the portrait in SVG paint order. Reversible transitions keep rapid exits smooth. */
+.dhh-cover-art :is(.dhh-family,.dhh-happiness,.dhh-ai){opacity:0;transition:transform .9s cubic-bezier(.22,.61,.36,1),opacity .65s ease}
+.dhh-cover-art .dhh-happiness{transform:translate(140px,210px) scale(.45)}
+.dhh-cover-art .dhh-family{transform:translate(-117px,382px) scale(.45)}
+.dhh-cover-art .dhh-ai{transform:translate(-290px,201px) scale(.45)}
+.dhh-cover-art .dhh-device{transition:stroke .5s ease,filter .5s ease}
+.dhh-cover-art .dhh-device-glow{transition:opacity .6s ease}
+.project-card:focus-within .dhh-cover-art :is(.dhh-family,.dhh-happiness,.dhh-ai){transform:none;opacity:1}
+.project-card:focus-within .dhh-cover-art .dhh-device{stroke:#e9c86d;filter:drop-shadow(0 0 7px #e9c86d99)}
+.project-card:focus-within .dhh-cover-art .dhh-device-glow{opacity:.32}
 @media(hover:hover){
-  .project-card:hover .dhh-cover-art .dhh-world{transform:translate(-6px,-3px) scale(1.025)}
-  .project-card:hover .dhh-cover-art .dhh-family{transform:scale(1.015)}
-  .project-card:hover .dhh-cover-art .dhh-happiness{transform:translate(-7px,-9px) rotate(-2deg)}
-  .project-card:hover .dhh-cover-art .dhh-ai{transform:translate(-10px,-5px) rotate(2deg)}
-  .project-card:hover .dhh-cover-art .dhh-ai-core{transform:scale(1.08)}
+  .project-card:hover .dhh-cover-art :is(.dhh-family,.dhh-happiness,.dhh-ai){transform:none;opacity:1}
+  .project-card:hover .dhh-cover-art .dhh-happiness{transition-delay:.06s}
+  .project-card:hover .dhh-cover-art .dhh-family{transition-delay:.12s}
+  .project-card:hover .dhh-cover-art .dhh-ai{transition-delay:.18s}
+  .project-card:hover .dhh-cover-art .dhh-device{stroke:#e9c86d;filter:drop-shadow(0 0 7px #e9c86d99)}
+  .project-card:hover .dhh-cover-art .dhh-device-glow{opacity:.32}
 }
-@media(prefers-reduced-motion:reduce){
-  .project-card .dhh-cover-art :is(.dhh-world,.dhh-family,.dhh-happiness,.dhh-ai,.dhh-ai-core){transition:none;transform:none}
+/* Touch screens and reduced-motion users get the full, readable static composition. */
+@media(hover:none),(prefers-reduced-motion:reduce){
+  .project-card .dhh-cover-art :is(.dhh-family,.dhh-happiness,.dhh-ai){transition:none;transform:none;opacity:1}
+  .project-card .dhh-cover-art .dhh-device{transition:none;filter:none}
+  .project-card .dhh-cover-art .dhh-device-glow{transition:none}
 }

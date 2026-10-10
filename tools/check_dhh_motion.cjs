@@ -1,4 +1,4 @@
-/* Exercise interruption/reversal and suspension without depending on wall-clock timing. */
+/* Verify ambient motion suspension and user pause ownership without timers. */
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
@@ -7,107 +7,48 @@ const target = () => ({
   handlers: {}, attrs: {},
   addEventListener(type, fn) { this.handlers[type] = fn; },
   setAttribute(name, value) { this.attrs[name] = value; },
-  emit(type, extra = {}) { this.handlers[type]?.({ pointerType: 'mouse', ...extra }); },
-  contains() { return false; }
+  emit(type) { this.handlers[type]?.(); }
 });
-const stage = target();
+const stage = {};
 const button = target();
 const document = target();
 const reduced = { ...target(), matches: false };
-const animations = [];
-const art = { animate() {}, querySelector() { return {
-  animate() {
-    const animation = {
-      currentTime: 0, playbackRate: 1, playState: 'running',
-      pause() { this.playState = 'paused'; },
-      play() { this.playState = 'running'; },
-      cancel() { this.currentTime = null; this.playState = 'idle'; }
-    };
-    animations.push(animation);
-    return animation;
-  }
-}; } };
-stage.querySelector = () => art;
-const figure = { querySelector: selector => selector === '.dhh-stage' ? stage : button };
-document.querySelector = () => figure;
-const timers = new Map();
+let suspended;
 let observer;
-let counter = 0;
-const source = fs.readFileSync(path.join(__dirname, '../assets/js/dhh.js'), 'utf8');
-vm.runInNewContext(source, {
+const figure = {
+  querySelector: selector => selector === '.dhh-stage' ? stage : button,
+  classList: { toggle(name, value) { assert.equal(name, 'is-paused'); suspended = value; } }
+};
+document.querySelector = () => figure;
+vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../assets/js/dhh.js'), 'utf8'), {
   document, matchMedia: () => reduced,
   window: { IntersectionObserver: true },
-  IntersectionObserver: class { constructor(fn) { observer = fn; } observe() {} },
-  setTimeout: fn => { const id = ++counter; timers.set(id, fn); return id; },
-  clearTimeout: id => timers.delete(id)
+  IntersectionObserver: class { constructor(fn) { observer = fn; } observe(element) { assert.equal(element, stage); } }
 });
-const tick = () => { const [id, fn] = timers.entries().next().value; timers.delete(id); fn(); };
-const time = value => animations.forEach(animation => { animation.currentTime = value; });
-const state = value => animations.forEach(animation => assert.equal(animation.playState, value));
-const rate = value => animations.forEach(animation => assert.equal(animation.playbackRate, value));
-assert.equal(animations.length, 5);
-state('paused');
-assert.equal(timers.size, 0, 'offscreen scene does not start');
+assert.equal(suspended, true, 'wait for visibility before playing');
 observer([{ isIntersecting: true }]);
-tick();
-state('running');
-rate(1);
-time(700);
-stage.emit('pointerenter');
-stage.emit('pointerleave');
-rate(-1);
-animations.forEach(animation => assert.equal(animation.currentTime, 700, 'leave preserves the unfinished pose'));
-stage.emit('pointerenter');
-rate(1);
-animations.forEach(animation => assert.equal(animation.currentTime, 700, 're-entry preserves the return pose'));
-time(2200);
-animations[0].onfinish();
-assert.equal(timers.size, 0, 'hover holds the completed pose');
-stage.emit('pointerleave');
-rate(-1);
-time(1800);
+assert.equal(suspended, false);
 button.emit('click');
-state('paused');
+assert.equal(suspended, true);
 assert.equal(button.attrs['aria-pressed'], 'true');
-button.emit('click');
-state('running');
-rate(-1);
 observer([{ isIntersecting: false }]);
-state('paused');
-assert.equal(timers.size, 0);
 observer([{ isIntersecting: true }]);
-state('running');
-rate(-1);
-stage.emit('focusin');
-rate(1);
-stage.emit('pointerleave');
-rate(1);
-stage.emit('focusout');
-rate(-1);
+assert.equal(suspended, true, 'visibility cannot override user pause');
+button.emit('click');
+assert.equal(suspended, false);
+assert.equal(button.attrs['aria-pressed'], 'false');
 document.hidden = true;
 document.emit('visibilitychange');
-state('paused');
+assert.equal(suspended, true);
 document.hidden = false;
 document.emit('visibilitychange');
-state('running');
+assert.equal(suspended, false);
 reduced.matches = true;
 reduced.emit('change');
-state('paused');
+assert.equal(suspended, true);
 assert.equal(button.hidden, true);
-assert.equal(timers.size, 0);
-animations.forEach(animation => assert.equal(animation.currentTime, 0));
 reduced.matches = false;
 reduced.emit('change');
+assert.equal(suspended, false);
 assert.equal(button.hidden, false);
-tick();
-state('running');
-rate(1);
-time(2200);
-animations[0].onfinish();
-tick();
-rate(-1);
-time(0);
-animations[0].onfinish();
-tick();
-rate(1);
-console.log('PASS: DHH scene reverses interrupted gestures, holds on hover/focus, resumes in place, and suspends for pause, visibility and reduced motion.');
+console.log('PASS: DHH ambient motion respects user pause, visibility and reduced motion.');
