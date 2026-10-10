@@ -1,5 +1,6 @@
-/* The hands pivot with their sleeves so the gesture remains anatomically connected. */
-.dhh-conversation-art .dhh-hand-high{transform-origin:190px 215px}
-.dhh-conversation-art .dhh-hand-low{transform-origin:128px 220px}
-.dhh-conversation-art .dhh-listener-head{transform-origin:419px 184px}
-.dhh-conversation-art .dhh-conversation-marks{opacity:.5}
+/* Shared source-coordinate pivots keep the portrait and life motifs connected. */
+.dhh-wellbeing-art .dhh-touch{transform-origin:440px 740px}
+.dhh-wellbeing-art .dhh-happiness{transform-origin:728px 168px}
+.dhh-wellbeing-art .dhh-family{transform-origin:814px 394px}
+.dhh-wellbeing-art .dhh-ai{transform-origin:945px 414px}
+.dhh-illustration:focus-visible{outline:2px solid var(--orange);outline-offset:6px;border-radius:12px}

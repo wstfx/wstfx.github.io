@@ -149,10 +149,10 @@ Work cover fixes beta=.8 and reserves index/caption space around landscape artwo
 
 DHH HAPPINESS / SUPPORT / AI CASE STUDY
   content/dhh-body.html      Graphic elicitation, findings, fieldwork, AI and outcomes
-  assets/art/dhh-life.svg    Original editorial illustration of two people conversing in sign language
-  assets/art/dhh-cover.svg   Compact version of the same conversation for the Work card
+  assets/art/dhh-life.svg    Portrait touching a hearing aid, with happiness, family and AI motifs
+  assets/art/dhh-cover.svg   Same portrait composition for the Work card
   assets/css/dhh*.css        Scoped layouts and shared illustration transform origins
-  assets/js/dhh.js           One restrained exchange on hover/focus; respects reduced motion
+  assets/js/dhh.js           One touch-and-unfold sequence on hover/focus; respects reduced motion
   assets/images/dhh/         Original, supplied 52-response preference chart
   assets/pictures/DHH*       Supplied, identity-obscured fieldwork photographs
   python3 tools/build_site.py --only work/dhh.html work/dhh-review.html work.html about.html cv.html index.html

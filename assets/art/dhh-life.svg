@@ -1,106 +1,64 @@
-<svg class="dhh-life-art dhh-conversation-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 470" fill="none" role="img" aria-label="Two young adults sharing a conversation in sign language, seated facing one another">
-  <!-- Original editorial illustration. Expressive signing poses, not a transcription of a particular sign. -->
-  <path d="M106 334V214C106 113 186 49 291 49C404 49 501 127 501 234V334Z" fill="#e8eadc"/>
-  <path d="M106 334H501" stroke="#c6ceba" stroke-width="1.4"/>
-  <circle cx="372" cy="116" r="48" fill="#e8c779"/>
-  <path d="M350 70A48 48 0 0 1 419 126" stroke="#f7f5ed" stroke-width="1.5"/>
-  <path d="M111 390C203 407 409 411 512 386" stroke="#c5cbb8" stroke-width="1.5" stroke-linecap="round"/>
-  <!-- Slender seats keep the scene grounded without framing it as an interface. -->
-  <g stroke="#526a53" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M145 316L130 394M208 319L226 394M381 324L365 393M453 324L471 392"/>
+<svg class="dhh-life-art dhh-wellbeing-art" xmlns="http://www.w3.org/2000/svg" viewBox="30 55 1040 780" fill="none" role="img" aria-label="A smiling person touching their hearing aid, with family, happiness and AI gathered beside them">
+  <!-- Locally authored vector drawing based on the user's supplied illustration and approved composition. -->
+  <!-- The life motifs form one overlapping group; no orbital connector. -->
+  <g class="dhh-life-motifs" transform="translate(-40 25)">
+  <g class="dhh-happiness">
+    <circle cx="728" cy="168" r="80" fill="#c45222"/>
+    <g stroke="#f7f5ed" stroke-width="4" stroke-linecap="round">
+      <path d="M693 156Q704 146 715 156M745 156Q756 146 767 156"/>
+      <path d="M680 173C695 216 753 223 778 178"/>
+    </g>
   </g>
-  <path d="M133 305H222Q228 305 227 313Q226 321 218 321H137Q130 321 129 314Q127 306 133 305Z" fill="#b0bea0"/>
-  <path d="M370 310H464Q471 310 470 319Q469 327 461 327H375Q367 327 367 318Q366 311 370 310Z" fill="#b0bea0"/>
-  <!-- The listener, on the right. -->
-  <g class="dhh-listener">
-    <path d="M410 292C403 315 411 339 429 359L459 388L478 376L448 330L450 297Z" fill="#bebb9d"/>
-    <path d="M459 382L478 374L488 388L474 401L460 396Z" fill="#d49b76"/>
-    <path d="M472 393Q482 389 487 384L502 391Q510 393 515 401L514 406L469 406Q464 402 472 393Z" fill="#234735"/>
-    <path d="M470 403H513" stroke="#7b906d" stroke-width="1.5"/>
-    <path d="M397 289C382 290 369 300 368 316C367 329 377 339 397 347L425 358L393 385L407 401C431 386 453 372 453 356C453 341 434 325 419 313L449 304Z" fill="#dbd8bd"/>
-    <path d="M395 308Q379 316 400 329L433 346" stroke="#aaa98d" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M394 382L409 397L401 406L384 397Z" fill="#d49b76"/>
-    <path d="M386 393L402 406L397 419L353 419Q349 414 356 410L373 405Z" fill="#234735"/>
-    <path d="M354 416H397" stroke="#7b906d" stroke-width="1.5"/>
-    <path d="M402 182C377 192 366 211 365 239L363 295C385 307 428 315 458 301L468 250C474 216 452 197 433 190Z" fill="#31513d"/>
-    <path d="M410 191C404 213 408 237 414 257L422 307" stroke="#9aa984" stroke-width="1.3"/>
-    <path d="M441 246L449 288M373 287L389 293" stroke="#607a58" stroke-width="1.3" stroke-linecap="round"/>
-    <g class="dhh-listener-head">
-      <path d="M404 163L401 189Q413 207 432 191L431 157Z" fill="#cf946d"/>
-      <path d="M402 164L403 180Q419 189 431 171V157Z" fill="#b77956"/>
-      <path d="M391 116C385 127 386 140 379 150Q374 155 382 158L388 159L389 172Q391 184 405 184C425 185 441 169 443 148L442 126Z" fill="#e1ac82"/>
-      <path d="M389 136C378 124 380 104 397 95C415 85 439 91 447 109C457 128 448 151 439 159L431 148L429 128Q409 132 397 116L391 135Z" fill="#243f31"/>
-      <path d="M431 144Q433 132 440 136Q446 139 441 149Q438 155 432 155" fill="#e1ac82"/>
-      <path d="M435 145L438 142" stroke="#b97751" stroke-width="1.3" stroke-linecap="round"/>
-      <ellipse cx="392.5" cy="139" rx="1.65" ry="2.2" fill="#243f31"/>
-      <path d="M393 161Q398 166 403 161" stroke="#874f36" stroke-width="1.5" stroke-linecap="round"/>
-      <path d="M388 131Q393 128 399 131" stroke="#243f31" stroke-width="1.5" stroke-linecap="round"/>
-      <ellipse cx="402" cy="152" rx="5" ry="3" fill="#cd8e65"/>
-      <path d="M401 100Q420 95 434 106" stroke="#55705a" stroke-width="1.5" stroke-linecap="round"/>
-    </g>
-    <!-- A relaxed bent arm: continuous silhouette from sleeve to wrist. -->
-    <path d="M447 208C460 211 469 226 471 245L476 276Q477 291 464 297C450 303 422 296 401 289L405 271L445 276L433 239Z" fill="#42634a"/>
-    <path d="M447 274L453 281M442 218Q452 225 454 240" stroke="#78906b" stroke-width="1.4" stroke-linecap="round"/>
-    <path d="M403 273L383 272Q377 268 373 262Q369 258 366 261Q364 264 367 270L372 276L353 276Q346 276 347 280Q347 283 354 283L369 285L356 285Q351 285 352 289Q353 292 360 293L381 296Q394 296 403 290Z" fill="#e1ac82"/>
-    <path d="M400 270L408 272L404 294L396 292Z" fill="#d9ddc8"/>
-    <path d="M369 285L380 288" stroke="#b87b55" stroke-width="1.2" stroke-linecap="round"/>
-    <path d="M379 210Q362 214 353 237L343 267L361 278L381 247" fill="#31513d"/>
-    <path d="M345 267L338 278Q335 284 341 289L354 299Q360 302 365 297Q369 293 363 289L354 281L362 277Z" fill="#d49b76"/>
-    <path d="M346 284L358 295M350 281L363 292" stroke="#b87b55" stroke-width="1.15" stroke-linecap="round"/>
+  <g class="dhh-family">
+    <!-- Slightly uneven heights and shared shoulders keep the family silhouette warm. -->
+    <circle cx="753" cy="272" r="27" fill="#b5c4a4"/>
+    <path d="M710 381V331C710 310 726 302 750 302C776 302 791 314 791 336V381Z" fill="#b5c4a4"/>
+    <circle cx="875" cy="288" r="25" fill="#a5b89c"/>
+    <path d="M840 390V341C840 320 854 315 875 315C899 315 918 326 918 348V390Z" fill="#a5b89c"/>
+    <circle cx="814" cy="242" r="32" fill="#8da68b"/>
+    <path d="M766 394V314C766 288 784 282 810 282C843 282 862 295 862 322V394Z" fill="#8da68b" stroke="#f7f5ed" stroke-width="3.5"/>
   </g>
-  <!-- The signer, on the left. The two hands have open space around their silhouettes. -->
-  <g class="dhh-signer">
-    <path d="M157 285C143 306 150 328 169 344L191 365L193 396L211 397L220 355C222 347 216 338 207 329L194 313L227 310Z" fill="#365440"/>
-    <path d="M194 390L212 391L210 407L193 408Z" fill="#e0ad86"/>
-    <path d="M191 402L210 402Q218 414 231 416Q237 418 237 424H183L181 419Z" fill="#253e30"/>
-    <path d="M184 421H234" stroke="#76876c" stroke-width="1.5"/>
-    <path d="M171 281C180 290 207 293 230 294Q253 296 255 315L259 390L240 394L224 330L174 331Q150 328 150 306Z" fill="#46634a"/>
-    <path d="M174 310L230 316L247 380" stroke="#748b67" stroke-width="1.4" stroke-linecap="round"/>
-    <path d="M240 387L260 384L263 401L245 406Z" fill="#e0ad86"/>
-    <path d="M244 400L262 397Q272 407 291 407Q299 408 301 416L298 420H243Q239 416 244 400Z" fill="#253e30"/>
-    <path d="M246 417H297" stroke="#76876c" stroke-width="1.5"/>
-    <path d="M162 180C138 186 121 204 119 230L112 282Q137 302 175 307L223 295L216 229Q213 200 190 187Z" fill="#c46c42"/>
-    <path d="M121 271Q132 282 153 284M188 203L199 231M143 295Q177 310 216 296" stroke="#e3a279" stroke-width="1.5" stroke-linecap="round"/>
-    <g class="dhh-signer-head">
-      <path d="M156 153L158 183Q168 198 189 187L184 158Z" fill="#e7b68f"/>
-      <path d="M157 154L159 172Q171 181 187 173L184 156Z" fill="#cf9672"/>
-      <path d="M152 112C145 128 148 150 157 163Q166 179 182 174L194 168L198 153L206 152Q212 150 207 145L199 136L198 119Z" fill="#edc4a1"/>
-      <path d="M154 148C135 152 132 128 139 109Q148 87 173 88C194 88 207 101 205 119Q190 129 176 111Q171 129 158 132L158 147Z" fill="#293e31"/>
-      <path d="M143 104C130 88 111 101 115 116Q118 129 138 123Z" fill="#293e31"/>
-      <path d="M138 110L133 121" stroke="#e4bd73" stroke-width="3" stroke-linecap="round"/>
-      <path d="M156 137Q148 131 145 139Q143 148 153 153L158 151" fill="#edc4a1"/>
-      <path d="M150 140L154 145" stroke="#c28d69" stroke-width="1.2" stroke-linecap="round"/>
-      <circle cx="153" cy="155" r="4" stroke="#d5a448" stroke-width="2.5"/>
-      <ellipse cx="191" cy="135.5" rx="1.65" ry="2.2" fill="#293e31"/>
-      <path d="M185 128Q190 125 195 129" stroke="#293e31" stroke-width="1.4" stroke-linecap="round"/>
-      <path d="M192 155Q187 161 183 158" stroke="#965e43" stroke-width="1.5" stroke-linecap="round"/>
-      <ellipse cx="178" cy="148" rx="5.5" ry="3.4" fill="#dca37e"/>
-      <path d="M151 103Q163 93 177 96" stroke="#5a6f55" stroke-width="1.5" stroke-linecap="round"/>
+  <g class="dhh-ai">
+    <rect x="884" y="353" width="122" height="122" rx="28" fill="#e9c86d"/>
+    <g stroke="#f7f5ed" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="921" y="391" width="48" height="48" rx="14"/>
+      <path d="M931 374V381M945 374V381M959 374V381M931 449V456M945 449V456M959 449V456M905 401H912M905 415H912M905 429H912M978 401H985M978 415H985M978 429H985"/>
     </g>
-    <!-- Far arm and the receptive, upward-facing palm. -->
-    <g class="dhh-hand-low">
-      <path d="M127 208C114 212 108 227 108 245L106 273Q106 289 121 293L158 296L220 275L214 254L157 268L148 237Z" fill="#c46c42"/>
-      <path d="M119 240L119 275Q119 282 129 283L155 284" stroke="#e5a77d" stroke-width="1.5" stroke-linecap="round"/>
-      <path d="M211 255L229 251Q240 245 246 235Q249 230 253 233Q256 236 252 242L245 253L269 250L285 246Q291 245 292 249Q292 253 286 255L269 260L283 258Q288 258 288 262Q287 266 281 267L259 273Q248 276 237 273L218 277Z" fill="#edc4a1"/>
-      <path d="M246 260L259 263L275 260M254 267L269 265" stroke="#c18d6a" stroke-width="1.2" stroke-linecap="round"/>
-      <path d="M211 253L219 251L227 277L219 280Z" fill="#ecc59f"/>
+  </g>
+  </g>
+  <g class="dhh-person" transform="translate(-60 0)">
+    <!-- One connected torso silhouette and a generous crop at the lower edge. -->
+    <path d="M151 796C169 714 240 669 326 655C380 646 437 632 499 632C551 633 602 630 647 642C725 662 781 717 805 796Z" fill="#234d3b"/>
+    <path d="M424 516L423 653C430 690 479 711 521 678C542 662 547 643 548 617L548 526Z" fill="#d99076"/>
+    <!-- Hair at the nape is behind the face and raised hand. -->
+    <path d="M350 421C333 481 348 531 389 557C423 579 477 582 546 634L552 525L438 404Z" fill="#102a24"/>
+    <path d="M473 376C481 347 503 328 538 329L601 336C628 365 645 417 653 465C663 506 654 543 625 567C600 589 558 597 522 584C484 571 466 548 447 526L383 464L380 422Z" fill="#d99076"/>
+    <!-- Hairline follows the supplied reference instead of adding facial detail. -->
+    <path d="M347 470C329 443 329 401 342 365C362 316 412 286 469 286C522 286 574 303 601 337C582 350 558 352 538 350C504 347 480 365 478 397L477 423C477 444 462 455 447 449L422 434C399 420 377 427 369 448L365 480Z" fill="#102a24"/>
+    <!-- Ear stays visible between the device and fingertips. -->
+    <path d="M379 443C388 428 411 433 428 453C440 466 448 487 436 501L424 515C410 537 389 534 379 514C369 495 366 462 379 443Z" fill="#d99076"/>
+    <g stroke="#17362b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M383 481C378 455 399 445 416 462M404 477C410 470 425 473 428 483L417 486L418 494L428 501"/>
+      <path d="M510 407Q545 384 580 400M603 402Q616 391 635 390"/>
+      <path d="M522 440Q551 457 581 439M606 433Q622 443 644 434"/>
+      <path d="M607 407C600 421 596 442 610 457L634 479Q641 488 614 496"/>
+      <path d="M547 509Q586 547 628 512"/>
     </g>
-    <!-- Near sleeve, then the expressive open hand, kept as one connected gesture. -->
-    <g class="dhh-hand-high">
-      <path d="M184 200C201 196 213 207 214 223L212 252L235 235L248 253L216 281Q204 292 191 284Q181 278 181 262L177 230Z" fill="#d47d4f"/>
-      <path d="M192 213L195 259Q194 271 202 271" stroke="#eab28b" stroke-width="1.5" stroke-linecap="round"/>
-      <g transform="translate(241 247) scale(.82) translate(-241 -247)">
-      <path d="M233 238L243 222L246 203L243 182Q243 177 247 176Q251 175 253 181L257 197L263 181L267 162Q268 157 272 158Q276 159 274 165L271 184L268 199L277 184L286 170Q289 166 292 169Q295 171 291 176L283 191L277 204L288 195L297 188Q301 185 304 188Q306 191 301 195L289 205L281 216L292 211Q299 207 301 211Q303 215 297 218L279 231Q271 237 257 239L248 253Z" fill="#edc4a1"/>
-      <path d="M253 212Q260 218 264 229M263 207L270 213M272 203L278 208" stroke="#c18d6a" stroke-width="1.2" stroke-linecap="round"/>
+    <!-- A compact orange body sits over the ear; its slim tube follows the ear contour. -->
+    <g class="dhh-device" stroke="#c45222" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M448 432L419 414C394 397 369 416 367 440V458" stroke-width="12"/>
+      <path d="M367 443L365 473" stroke-width="20"/>
+      <path d="M371 471Q370 487 380 490" stroke-width="4"/>
+    </g>
+    <!-- The raised forearm and touching fingers share a single continuous silhouette. -->
+    <g class="dhh-touch">
+      <path d="M346 796L400 702C403 690 400 681 387 673L338 642C309 624 294 598 290 566C286 543 288 528 296 509L320 465C324 456 330 451 336 455C342 459 341 467 337 477L328 499L345 463C349 454 355 449 361 454C368 459 366 470 362 481L345 523C340 537 341 551 349 569L385 602L414 620L411 559C410 541 413 531 421 530C433 529 442 543 447 557L474 620C485 648 491 673 486 702L467 796Z" fill="#d99076" stroke="#17362b" stroke-width="2.5" stroke-linejoin="round"/>
+      <g stroke="#17362b" stroke-width="2.5" stroke-linecap="round">
+        <path d="M328 499L312 536C305 559 309 582 320 601M345 523C333 551 334 567 345 587"/>
+        <path d="M385 602C419 615 455 635 475 658C487 673 489 685 486 702"/>
       </g>
-      <path d="M231 237L237 232L252 251L246 256Z" fill="#ecc59f"/>
+      <!-- Skin masks the crop-edge outline, preserving a clean flat baseline. -->
+      <path d="M348 795H466" stroke="#d99076" stroke-width="4"/>
     </g>
   </g>
-  <!-- A small exchange of marks suggests the rhythm of a conversation. -->
-  <g class="dhh-conversation-marks" stroke="#c46c42" stroke-width="2.2" stroke-linecap="round">
-    <path d="M300 145L307 137M313 157L324 153"/>
-    <path d="M325 191L331 191" stroke="#607a58"/>
-  </g>
-  <path d="M73 334V307M73 319C58 320 54 308 56 298C68 300 74 307 73 319M74 328C87 329 92 317 91 308C80 309 74 316 74 328" fill="#a9b99a"/>
-  <path d="M72 333L66 307M75 327L86 317" stroke="#778f69" stroke-width="1.2" stroke-linecap="round"/>
 </svg>
