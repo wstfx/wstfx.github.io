@@ -323,6 +323,7 @@
     24179,
     24180,
     24182,
+    24184,
     24188,
     24202,
     24207,
@@ -632,6 +633,7 @@
     31034,
     31070,
     31077,
+    31119,
     31163,
     31169,
     31181,
@@ -961,24 +963,24 @@
       "style": "Light",
       "source_index": 4,
       "fsType": 8,
-      "bytes": 198704,
-      "sha256": "1a9eaaba7ff3c0f4b7df4943bfd5d410326648eca5dd27e410311cbd44ad6718"
+      "bytes": 199284,
+      "sha256": "32d11fc87cffc981b1d5898a7612897fab579e38a06382b32c67048a5871cd3f"
     },
     {
       "file": "YuantiSC-Regular.woff2",
       "style": "Regular",
       "source_index": 0,
       "fsType": 8,
-      "bytes": 198572,
-      "sha256": "0ee8eda26043b96ff2d9d991e445c157da98de7145fe2a3ed0834acc22befbb7"
+      "bytes": 198888,
+      "sha256": "ea261a74171a7bcea4db9224c772866eb353376d8ab3e31dd3829b3288d0d274"
     },
     {
       "file": "YuantiSC-Bold.woff2",
       "style": "Bold",
       "source_index": 2,
       "fsType": 8,
-      "bytes": 208520,
-      "sha256": "8368ff2c059503b6d36c6524817eb67f6576139946537199bcd4ff3e28d9e982"
+      "bytes": 208720,
+      "sha256": "645c9e0b139c7bb7565095b4551b174a1afa637fe721e5e077f727d2279d707e"
     }
   ]
 }

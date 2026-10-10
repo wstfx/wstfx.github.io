@@ -25,7 +25,7 @@
    Latin letters, numbers, and English punctuation continue to use the existing faces. */
 @font-face {
   font-family: 'Portfolio Yuanti SC';
-  src: url('../fonts/yuanti/YuantiSC-Light.woff2?v=1a9eaaba7f') format('woff2');
+  src: url('../fonts/yuanti/YuantiSC-Light.woff2?v=32d11fc87c') format('woff2');
   font-style: normal;
   font-weight: 100 399;
   font-display: swap;
@@ -33,7 +33,7 @@
 }
 @font-face {
   font-family: 'Portfolio Yuanti SC';
-  src: url('../fonts/yuanti/YuantiSC-Regular.woff2?v=0ee8eda260') format('woff2');
+  src: url('../fonts/yuanti/YuantiSC-Regular.woff2?v=ea261a7417') format('woff2');
   font-style: normal;
   font-weight: 400 599;
   font-display: swap;
@@ -41,7 +41,7 @@
 }
 @font-face {
   font-family: 'Portfolio Yuanti SC';
-  src: url('../fonts/yuanti/YuantiSC-Bold.woff2?v=8368ff2c05') format('woff2');
+  src: url('../fonts/yuanti/YuantiSC-Bold.woff2?v=645c9e0b13') format('woff2');
   font-style: normal;
   font-weight: 600 1000;
   font-display: swap;

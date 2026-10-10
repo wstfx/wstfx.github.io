@@ -1,8 +1,6 @@
-.cover-dhh{background:#e8dfcb}
-.cover-dhh .dhh-cover-art{display:block;width:92%;max-width:365px;height:auto;margin-top:-12px}
-.cover-dhh .dhh-cover-bubble{transform-box:fill-box;transform-origin:50% 100%;transition:transform .5s var(--ease)}
-.cover-dhh .dhh-cover-route{transition:stroke .4s}
-.cover-dhh:focus-visible .dhh-cover-bubble{transform:translateY(-5px) rotate(-3deg)}
-.cover-dhh:focus-visible .dhh-cover-route{stroke:#c45222}
-@media(hover:hover){.project-card:hover .cover-dhh .dhh-cover-bubble{transform:translateY(-5px) rotate(-3deg)}.project-card:hover .cover-dhh .dhh-cover-route{stroke:#c45222}}
-@media(prefers-reduced-motion:reduce){.cover-dhh .dhh-cover-bubble,.cover-dhh .dhh-cover-route{transition:none!important;transform:none!important}}
+.cover-dhh{background:#e5eadb}
+.cover-dhh .dhh-cover-art{display:block;width:77%;height:190px;max-width:310px;margin-top:-31px;overflow:visible}
+.cover-dhh .dhh-sign-trace{opacity:.7}
+.cover-dhh .dhh-sign-word{transition:opacity .4s ease}
+@media(hover:hover){.project-card:hover .cover-dhh .dhh-sign-word{opacity:1}}
+@media(prefers-reduced-motion:reduce){.cover-dhh *{transition:none!important}}

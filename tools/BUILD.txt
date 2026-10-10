@@ -149,10 +149,10 @@ Work cover fixes beta=.8 and reserves index/caption space around landscape artwo
 
 DHH HAPPINESS / SUPPORT / AI CASE STUDY
   content/dhh-body.html      Graphic elicitation, findings, fieldwork, AI and outcomes
-  assets/art/dhh-life.svg    Native everyday-life illustration with three perspectives
-  assets/art/dhh-cover.svg   Separate landscape composition for the Work card
+  assets/art/dhh-life.svg    Single signer composition: Chinese X handshape, one circle at the chest
+  assets/art/dhh-cover.svg   Compact version of the same signer for the Work card
   assets/css/dhh*.css        Scoped case-study and Work-card styles
-  assets/js/dhh.js           Perspective selection and visibility-aware motion pause
+  assets/js/dhh.js           Complete hover/focus gesture; visibility-aware hero loop and pause
   assets/images/dhh/         Original, supplied 52-response preference chart
   assets/pictures/DHH*       Supplied, identity-obscured fieldwork photographs
   python3 tools/build_site.py --only work/dhh.html work/dhh-review.html work.html about.html cv.html index.html

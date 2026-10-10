@@ -4,29 +4,9 @@
 .dhh-heading .eyebrow{font-size:10px;letter-spacing:.12em}
 .dhh-illustration{margin:0;min-width:0;text-align:center}
 .dhh-life-art{display:block;width:100%;height:auto;max-width:520px;margin:0 auto}
-.dhh-lenses{display:flex;justify-content:center;flex-wrap:wrap;gap:7px;margin-top:-10px}
-.dhh-lenses[hidden]{display:none}
-.dhh-lenses button{font:inherit;font-size:12px;line-height:1.4;min-height:38px;padding:9px 13px;background:transparent;border:1px solid #b7c4a9;border-radius:22px;color:var(--ink);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
-.dhh-lenses button[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:var(--paper)}
-.dhh-lenses button:focus-visible,.dhh-motion:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
-.dhh-illustration figcaption{font-size:13px;color:var(--muted);line-height:1.7;max-width:385px;margin:16px auto 0}
-.dhh-illustration [data-dhh-description]{display:block;min-height:67px}
-.dhh-illustration figcaption small{display:block;font-size:10px;margin-top:8px}
-.dhh-motion{font:inherit;font-size:11px;background:transparent;color:var(--muted);border:0;border-bottom:1px solid var(--line);padding:7px 0;margin-top:10px;cursor:pointer}
-.dhh-support-layer,.dhh-tech-layer,.dhh-garden,.dhh-people{transition:opacity .5s ease}
-.dhh-support-layer{opacity:.7}
-.dhh-illustration[data-lens="happiness"] .dhh-support-layer,.dhh-illustration[data-lens="happiness"] .dhh-tech-layer{opacity:.16}
-.dhh-illustration[data-lens="support"] .dhh-support-layer,.dhh-illustration[data-lens="technology"] .dhh-tech-layer{opacity:1}
-.dhh-illustration[data-lens="support"] .dhh-tech-layer{opacity:.2}
-.dhh-illustration[data-lens="technology"] .dhh-support-layer{opacity:.25}
-.dhh-support-route{animation:dhh-flow 28s linear infinite}
-.dhh-tech-route{animation:dhh-flow 18s linear infinite}
-.dhh-conversation{animation:dhh-converse 5s ease-in-out infinite}
-.dhh-leaves{transform-box:fill-box;transform-origin:50% 100%;animation:dhh-sway 9s ease-in-out infinite}
-.dhh-illustration.is-paused *{animation-play-state:paused!important}
-@keyframes dhh-flow{to{stroke-dashoffset:-120}}
-@keyframes dhh-converse{0%,100%{opacity:.3}50%{opacity:1}}
-@keyframes dhh-sway{50%{transform:rotate(2deg)}}
+.dhh-heading .dhh-illustration figcaption{font:13px/1.6 var(--sans);color:#5b7353;letter-spacing:0;margin:18px auto 0}
+.dhh-motion{font:inherit;font-size:10px;background:transparent;color:var(--muted);border:0;border-bottom:1px solid var(--line);padding:6px 0;margin-top:7px;cursor:pointer}
+.dhh-motion:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
 .dhh-layout .case-copy{max-width:920px;min-width:0}
 .dhh-layout .case-section{margin-bottom:35px;padding-bottom:26px}
 .dhh-layout .case-section>.eyebrow{font-size:11px;color:var(--orange);margin-bottom:14px}
@@ -101,7 +81,7 @@
 .dhh-coda{margin:34px 0 0}
 .dhh-layout .dhh-coda p:last-child{font-size:21px;line-height:1.65}
 @media(max-width:950px){.dhh-heading{gap:22px}.dhh-heading h1{font-size:clamp(42px,5.5vw,63px)}.dhh-layout .case-nav{width:auto}.dhh-method,.dhh-ai-areas{gap:16px}.dhh-method h3,.dhh-ai-areas h3{font-size:17px}}
-@media(max-width:800px){.dhh-heading{grid-template-columns:1fr;gap:8px}.dhh-heading h1{font-size:clamp(42px,8vw,66px)}.dhh-illustration{width:100%;max-width:490px;justify-self:center}.dhh-heading .lede{max-width:620px}.dhh-illustration [data-dhh-description]{min-height:0}}
-@media(max-width:600px){.dhh-heading .eyebrow{line-height:1.8;max-width:260px}.dhh-heading h1{font-size:clamp(39px,10.5vw,58px)}.dhh-layout .case-section{margin-bottom:24px}.dhh-photo-pair{grid-template-columns:1fr;gap:24px}.dhh-method,.dhh-ai-areas{grid-template-columns:1fr;gap:19px}.dhh-method article,.dhh-ai-areas article{padding-top:14px}.dhh-method p{margin-bottom:0}.dhh-finding{padding:23px 20px}.dhh-mechanisms{grid-template-columns:1fr 1fr;gap:23px 18px}.dhh-mechanisms article,.dhh-mechanisms article:nth-last-child(-n+2){grid-column:span 1}.dhh-mechanisms article:last-child{grid-column:1/-1;max-width:70%}.dhh-mechanisms h3{font-size:17px}.dhh-fieldwork{gap:13px}.dhh-fieldwork span{font-size:11px}.dhh-support-map{padding:23px 20px}.dhh-support-settings,.dhh-design-lessons{grid-template-columns:1fr;gap:23px}.dhh-survey{padding:23px 20px}.dhh-bar-label{gap:12px}.dhh-bar-label strong{font-size:14px}.dhh-bar-label small{display:block;text-align:right;margin:0}.dhh-publications article{padding:21px 20px}.dhh-publications h3{font-size:19px}.dhh-lenses button{min-height:44px;padding-inline:11px}}
+@media(max-width:800px){.dhh-heading{grid-template-columns:1fr;gap:8px}.dhh-heading h1{font-size:clamp(42px,8vw,66px)}.dhh-illustration{width:100%;max-width:490px;justify-self:center}.dhh-heading .lede{max-width:620px}}
+@media(max-width:600px){.dhh-heading .eyebrow{line-height:1.8;max-width:260px}.dhh-heading h1{font-size:clamp(39px,10.5vw,58px)}.dhh-layout .case-section{margin-bottom:24px}.dhh-photo-pair{grid-template-columns:1fr;gap:24px}.dhh-method,.dhh-ai-areas{grid-template-columns:1fr;gap:19px}.dhh-method article,.dhh-ai-areas article{padding-top:14px}.dhh-method p{margin-bottom:0}.dhh-finding{padding:23px 20px}.dhh-mechanisms{grid-template-columns:1fr 1fr;gap:23px 18px}.dhh-mechanisms article,.dhh-mechanisms article:nth-last-child(-n+2){grid-column:span 1}.dhh-mechanisms article:last-child{grid-column:1/-1;max-width:70%}.dhh-mechanisms h3{font-size:17px}.dhh-fieldwork{gap:13px}.dhh-fieldwork span{font-size:11px}.dhh-support-map{padding:23px 20px}.dhh-support-settings,.dhh-design-lessons{grid-template-columns:1fr;gap:23px}.dhh-survey{padding:23px 20px}.dhh-bar-label{gap:12px}.dhh-bar-label strong{font-size:14px}.dhh-bar-label small{display:block;text-align:right;margin:0}.dhh-publications article{padding:21px 20px}.dhh-publications h3{font-size:19px}}
 @media(prefers-reduced-motion:reduce){.dhh-illustration *{animation:none!important;transition:none!important}.dhh-motion{display:none}}
-@media print{.dhh-lenses,.dhh-motion{display:none!important}.dhh-illustration *{animation:none!important}.dhh-support-layer,.dhh-tech-layer{opacity:1!important}.dhh-method,.dhh-mechanisms,.dhh-publications article{break-inside:avoid}}
+@media print{.dhh-motion{display:none!important}.dhh-illustration *{animation:none!important}.dhh-method,.dhh-mechanisms,.dhh-publications article{break-inside:avoid}}
