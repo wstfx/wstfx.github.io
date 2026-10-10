@@ -1,6 +1,2 @@
-.cover-dhh{background:#e5eadb}
-.cover-dhh .dhh-cover-art{display:block;width:77%;height:190px;max-width:310px;margin-top:-31px;overflow:visible}
-.cover-dhh .dhh-sign-trace{opacity:.7}
-.cover-dhh .dhh-sign-word{transition:opacity .4s ease}
-@media(hover:hover){.project-card:hover .cover-dhh .dhh-sign-word{opacity:1}}
-@media(prefers-reduced-motion:reduce){.cover-dhh *{transition:none!important}}
+.cover-dhh{background:#ecebdd}
+.cover-dhh .dhh-cover-art{display:block;width:94%;height:calc(100% - 24px);max-width:360px}

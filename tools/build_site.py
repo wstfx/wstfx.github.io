@@ -71,6 +71,8 @@ def page(path, title, body, active, prefix=''):
     story_assets = f'<link rel="stylesheet" href="{asset("assets/css/story.css")}"><link rel="stylesheet" href="{asset("assets/css/opening-decor.css")}"><script defer src="{asset("assets/js/story.js")}"></script><script defer src="{asset("assets/js/test-journey.js")}"></script>' if path == 'index.html' else ''
     if path == 'visual-system.html':
         story_assets = f'<link rel="stylesheet" href="{asset("assets/css/visual-system.css")}">'
+    if path in ('work.html', 'work/dhh.html'):
+        story_assets += f'<link rel="stylesheet" href="{prefix}{asset("assets/css/dhh-art.css")}">'
     if path == 'work.html':
         story_assets += f'<link rel="stylesheet" href="{asset("assets/css/igem-cover.css")}">'
         story_assets += f'<link rel="stylesheet" href="{asset("assets/css/dhh-cover.css")}"><script defer src="{asset("assets/js/dhh.js")}"></script>'
@@ -150,14 +152,14 @@ def artwork(project_id, number='01'):
         art = (ROOT / 'assets/art/navix-care.svg').read_text(); label = 'A companion / a routine / a little care'
     elif project_id == 'dhh':
         art = (ROOT / 'assets/art/dhh-cover.svg').read_text()
-        label = 'Happiness, in our own words'
+        label = ''
     elif project_id == 'vr':
         art = (ROOT / 'assets/art/relativity-cover.svg').read_text()
         label = 'Length contraction · time dilation'
     else:
         symbols = {'active-learning': 'ƒ(x)', 'crystal': '◇', 'materials-creep': 'σ', 'asr': '∿', 'roadlaw': '↗', 'igem': '✳', 'evisa': '↗', 'ai-coding-course': '{ }', 'student-union': '∴', 'culture': 'Aa', 'ambassador': '↔', 'westlake': 'W', 'cornell': 'C', 'writing': '…', 'website': 'Zw'}
         art = f'<div class="symbol-art">{e(symbols.get(project_id, "✳"))}</div>'
-    return f'<span class="cover-index">{number} /</span>{art}<span class="cover-caption">{label}</span>'
+    return f'<span class="cover-index">{number} /</span>{art}' + (f'<span class="cover-caption">{label}</span>' if label else '')
 
 
 def card(p, index=1):

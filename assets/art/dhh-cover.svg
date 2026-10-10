@@ -1,43 +1,106 @@
-<svg class="dhh-cover-art dhh-sign-art" xmlns="http://www.w3.org/2000/svg" viewBox="55 25 415 375" fill="none" aria-hidden="true">
-  <circle cx="262" cy="215" r="170" fill="#e5eadb"/>
-  <path d="M87 285C57 188 100 93 183 58" stroke="#b5c4a4" stroke-width="1.4" stroke-linecap="round"/>
-  <path d="M407 98C459 163 459 244 424 298" stroke="#b5c4a4" stroke-width="1.4" stroke-linecap="round"/>
-  <circle cx="393" cy="99" r="5" fill="#c45222"/>
-  <g stroke="#234d3b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M211 155L205 184L181 193L186 218L277 229L284 196L252 182L254 149" fill="#e7bc91"/>
-    <path d="M149 207L202 185Q224 208 254 183L301 201Q329 219 337 267L352 383Q263 414 118 383L125 255Q127 221 149 207Z" fill="#f7f5ed"/>
-    <path d="M202 185Q219 218 254 183M160 248L149 357M299 249L313 367" stroke="#bcc9af"/>
-    <path d="M190 100C188 56 251 47 270 80Q281 99 270 133L255 160Q245 174 225 166L203 152Q188 139 190 100Z" fill="#edcfac"/>
-    <path d="M191 113Q175 99 184 77C189 54 220 46 242 53Q272 55 279 83Q263 78 247 65Q227 95 195 96L196 115" fill="#234d3b"/>
-    <path d="M198 111Q185 100 183 114Q181 128 196 133" fill="#edcfac"/>
-    <path d="M214 113Q221 108 227 112M252 111Q258 107 264 111"/>
-    <path d="M239 117L237 131L242 132M228 141Q239 151 250 140" stroke-width="1.8"/>
-    <path d="M202 108L205 107M254 105L261 106" stroke-width="1.5"/>
-    <ellipse cx="214" cy="131" rx="7" ry="3.5" fill="#d79973" stroke="none" opacity=".45"/>
-    <ellipse cx="257" cy="128" rx="5" ry="3" fill="#d79973" stroke="none" opacity=".4"/>
+<svg class="dhh-cover-art dhh-conversation-art" xmlns="http://www.w3.org/2000/svg" viewBox="43 37 494 402" fill="none" aria-hidden="true">
+  <!-- Original editorial illustration. Expressive signing poses, not a transcription of a particular sign. -->
+  <path d="M106 334V214C106 113 186 49 291 49C404 49 501 127 501 234V334Z" fill="#e8eadc"/>
+  <path d="M106 334H501" stroke="#c6ceba" stroke-width="1.4"/>
+  <circle cx="372" cy="116" r="48" fill="#e8c779"/>
+  <path d="M350 70A48 48 0 0 1 419 126" stroke="#f7f5ed" stroke-width="1.5"/>
+  <path d="M111 390C203 407 409 411 512 386" stroke="#c5cbb8" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Slender seats keep the scene grounded without framing it as an interface. -->
+  <g stroke="#526a53" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M145 316L130 394M208 319L226 394M381 324L365 393M453 324L471 392"/>
   </g>
-  <circle cx="236" cy="266" r="31" stroke="#b5c4a4" stroke-width="1.5" stroke-dasharray="2 7"/>
-  <path class="dhh-sign-trace" d="M236 235A31 31 0 1 1 235.99 235" stroke="#c45222" stroke-width="2" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0"/>
-  <g stroke="#234d3b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M148 213Q128 213 121 241L99 328Q94 357 112 373Q131 388 151 372L183 330L156 307L137 325L163 252" fill="#c45222"/>
-    <path d="M108 342Q108 361 122 365M150 221L147 250" stroke="#f1b47e" stroke-width="1.4"/>
-    <path class="dhh-sign-arm" d="M153 353Q175 344 220 285L246 306Q188 381 155 376Q136 371 153 353Z" fill="#edcfac"/>
-    <g class="dhh-sign-hand" transform="translate(236 235)">
-      <!-- Chinese finger alphabet X: middle finger crosses the index; ring and little fingers folded. -->
-      <path d="M-16 52L-22 27Q-29 11-19-5L-11-9L7-9Q23-5 28 9L28 25Q29 38 18 48L15 56Z" fill="#edcfac"/>
-      <path d="M-14 4L-4-44Q-2-51 4-50Q10-49 8-41L0 2" fill="#edcfac"/>
-      <path d="M8 1Q11-10 1-23L-16-38Q-21-44-16-48Q-11-52-6-46L15-27Q24-15 21-3" fill="#edcfac"/>
-      <path d="M-3-37L4-36M-12-41L-8-45" stroke="#bc8b66" stroke-width="1.2"/>
-      <path d="M17-1Q25-5 29 2L29 16Q27 24 20 22L12 20Q8 16 10 9L12 3Q13 0 17-1Z" fill="#e7bc91"/>
-      <path d="M24 20Q32 17 33 25L30 33Q26 39 19 35L13 32Q10 29 13 24L16 21" fill="#e7bc91"/>
-      <path d="M-21 13Q-21 4-15 3Q-10 2-7 9L-2 17L15 18Q22 19 21 25Q20 31 13 31L-4 30Q-12 27-14 21" fill="#edcfac"/>
-      <path d="M-8 36Q-2 40 6 39" stroke="#bc8b66" stroke-width="1.2"/>
-      <path d="M-18 50L17 56L18 66L-17 60Z" fill="#f7f5ed"/>
+  <path d="M133 305H222Q228 305 227 313Q226 321 218 321H137Q130 321 129 314Q127 306 133 305Z" fill="#b0bea0"/>
+  <path d="M370 310H464Q471 310 470 319Q469 327 461 327H375Q367 327 367 318Q366 311 370 310Z" fill="#b0bea0"/>
+  <!-- The listener, on the right. -->
+  <g class="dhh-listener">
+    <path d="M410 292C403 315 411 339 429 359L459 388L478 376L448 330L450 297Z" fill="#bebb9d"/>
+    <path d="M459 382L478 374L488 388L474 401L460 396Z" fill="#d49b76"/>
+    <path d="M472 393Q482 389 487 384L502 391Q510 393 515 401L514 406L469 406Q464 402 472 393Z" fill="#234735"/>
+    <path d="M470 403H513" stroke="#7b906d" stroke-width="1.5"/>
+    <path d="M397 289C382 290 369 300 368 316C367 329 377 339 397 347L425 358L393 385L407 401C431 386 453 372 453 356C453 341 434 325 419 313L449 304Z" fill="#dbd8bd"/>
+    <path d="M395 308Q379 316 400 329L433 346" stroke="#aaa98d" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M394 382L409 397L401 406L384 397Z" fill="#d49b76"/>
+    <path d="M386 393L402 406L397 419L353 419Q349 414 356 410L373 405Z" fill="#234735"/>
+    <path d="M354 416H397" stroke="#7b906d" stroke-width="1.5"/>
+    <path d="M402 182C377 192 366 211 365 239L363 295C385 307 428 315 458 301L468 250C474 216 452 197 433 190Z" fill="#31513d"/>
+    <path d="M410 191C404 213 408 237 414 257L422 307" stroke="#9aa984" stroke-width="1.3"/>
+    <path d="M441 246L449 288M373 287L389 293" stroke="#607a58" stroke-width="1.3" stroke-linecap="round"/>
+    <g class="dhh-listener-head">
+      <path d="M404 163L401 189Q413 207 432 191L431 157Z" fill="#cf946d"/>
+      <path d="M402 164L403 180Q419 189 431 171V157Z" fill="#b77956"/>
+      <path d="M391 116C385 127 386 140 379 150Q374 155 382 158L388 159L389 172Q391 184 405 184C425 185 441 169 443 148L442 126Z" fill="#e1ac82"/>
+      <path d="M389 136C378 124 380 104 397 95C415 85 439 91 447 109C457 128 448 151 439 159L431 148L429 128Q409 132 397 116L391 135Z" fill="#243f31"/>
+      <path d="M431 144Q433 132 440 136Q446 139 441 149Q438 155 432 155" fill="#e1ac82"/>
+      <path d="M435 145L438 142" stroke="#b97751" stroke-width="1.3" stroke-linecap="round"/>
+      <ellipse cx="392.5" cy="139" rx="1.65" ry="2.2" fill="#243f31"/>
+      <path d="M393 161Q398 166 403 161" stroke="#874f36" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M388 131Q393 128 399 131" stroke="#243f31" stroke-width="1.5" stroke-linecap="round"/>
+      <ellipse cx="402" cy="152" rx="5" ry="3" fill="#cd8e65"/>
+      <path d="M401 100Q420 95 434 106" stroke="#55705a" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    <!-- A relaxed bent arm: continuous silhouette from sleeve to wrist. -->
+    <path d="M447 208C460 211 469 226 471 245L476 276Q477 291 464 297C450 303 422 296 401 289L405 271L445 276L433 239Z" fill="#42634a"/>
+    <path d="M447 274L453 281M442 218Q452 225 454 240" stroke="#78906b" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M403 273L383 272Q377 268 373 262Q369 258 366 261Q364 264 367 270L372 276L353 276Q346 276 347 280Q347 283 354 283L369 285L356 285Q351 285 352 289Q353 292 360 293L381 296Q394 296 403 290Z" fill="#e1ac82"/>
+    <path d="M400 270L408 272L404 294L396 292Z" fill="#d9ddc8"/>
+    <path d="M369 285L380 288" stroke="#b87b55" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M379 210Q362 214 353 237L343 267L361 278L381 247" fill="#31513d"/>
+    <path d="M345 267L338 278Q335 284 341 289L354 299Q360 302 365 297Q369 293 363 289L354 281L362 277Z" fill="#d49b76"/>
+    <path d="M346 284L358 295M350 281L363 292" stroke="#b87b55" stroke-width="1.15" stroke-linecap="round"/>
+  </g>
+  <!-- The signer, on the left. The two hands have open space around their silhouettes. -->
+  <g class="dhh-signer">
+    <path d="M157 285C143 306 150 328 169 344L191 365L193 396L211 397L220 355C222 347 216 338 207 329L194 313L227 310Z" fill="#365440"/>
+    <path d="M194 390L212 391L210 407L193 408Z" fill="#e0ad86"/>
+    <path d="M191 402L210 402Q218 414 231 416Q237 418 237 424H183L181 419Z" fill="#253e30"/>
+    <path d="M184 421H234" stroke="#76876c" stroke-width="1.5"/>
+    <path d="M171 281C180 290 207 293 230 294Q253 296 255 315L259 390L240 394L224 330L174 331Q150 328 150 306Z" fill="#46634a"/>
+    <path d="M174 310L230 316L247 380" stroke="#748b67" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M240 387L260 384L263 401L245 406Z" fill="#e0ad86"/>
+    <path d="M244 400L262 397Q272 407 291 407Q299 408 301 416L298 420H243Q239 416 244 400Z" fill="#253e30"/>
+    <path d="M246 417H297" stroke="#76876c" stroke-width="1.5"/>
+    <path d="M162 180C138 186 121 204 119 230L112 282Q137 302 175 307L223 295L216 229Q213 200 190 187Z" fill="#c46c42"/>
+    <path d="M121 271Q132 282 153 284M188 203L199 231M143 295Q177 310 216 296" stroke="#e3a279" stroke-width="1.5" stroke-linecap="round"/>
+    <g class="dhh-signer-head">
+      <path d="M156 153L158 183Q168 198 189 187L184 158Z" fill="#e7b68f"/>
+      <path d="M157 154L159 172Q171 181 187 173L184 156Z" fill="#cf9672"/>
+      <path d="M152 112C145 128 148 150 157 163Q166 179 182 174L194 168L198 153L206 152Q212 150 207 145L199 136L198 119Z" fill="#edc4a1"/>
+      <path d="M154 148C135 152 132 128 139 109Q148 87 173 88C194 88 207 101 205 119Q190 129 176 111Q171 129 158 132L158 147Z" fill="#293e31"/>
+      <path d="M143 104C130 88 111 101 115 116Q118 129 138 123Z" fill="#293e31"/>
+      <path d="M138 110L133 121" stroke="#e4bd73" stroke-width="3" stroke-linecap="round"/>
+      <path d="M156 137Q148 131 145 139Q143 148 153 153L158 151" fill="#edc4a1"/>
+      <path d="M150 140L154 145" stroke="#c28d69" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="153" cy="155" r="4" stroke="#d5a448" stroke-width="2.5"/>
+      <ellipse cx="191" cy="135.5" rx="1.65" ry="2.2" fill="#293e31"/>
+      <path d="M185 128Q190 125 195 129" stroke="#293e31" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M192 155Q187 161 183 158" stroke="#965e43" stroke-width="1.5" stroke-linecap="round"/>
+      <ellipse cx="178" cy="148" rx="5.5" ry="3.4" fill="#dca37e"/>
+      <path d="M151 103Q163 93 177 96" stroke="#5a6f55" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    <!-- Far arm and the receptive, upward-facing palm. -->
+    <g class="dhh-hand-low">
+      <path d="M127 208C114 212 108 227 108 245L106 273Q106 289 121 293L158 296L220 275L214 254L157 268L148 237Z" fill="#c46c42"/>
+      <path d="M119 240L119 275Q119 282 129 283L155 284" stroke="#e5a77d" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M211 255L229 251Q240 245 246 235Q249 230 253 233Q256 236 252 242L245 253L269 250L285 246Q291 245 292 249Q292 253 286 255L269 260L283 258Q288 258 288 262Q287 266 281 267L259 273Q248 276 237 273L218 277Z" fill="#edc4a1"/>
+      <path d="M246 260L259 263L275 260M254 267L269 265" stroke="#c18d6a" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M211 253L219 251L227 277L219 280Z" fill="#ecc59f"/>
+    </g>
+    <!-- Near sleeve, then the expressive open hand, kept as one connected gesture. -->
+    <g class="dhh-hand-high">
+      <path d="M184 200C201 196 213 207 214 223L212 252L235 235L248 253L216 281Q204 292 191 284Q181 278 181 262L177 230Z" fill="#d47d4f"/>
+      <path d="M192 213L195 259Q194 271 202 271" stroke="#eab28b" stroke-width="1.5" stroke-linecap="round"/>
+      <g transform="translate(241 247) scale(.82) translate(-241 -247)">
+      <path d="M233 238L243 222L246 203L243 182Q243 177 247 176Q251 175 253 181L257 197L263 181L267 162Q268 157 272 158Q276 159 274 165L271 184L268 199L277 184L286 170Q289 166 292 169Q295 171 291 176L283 191L277 204L288 195L297 188Q301 185 304 188Q306 191 301 195L289 205L281 216L292 211Q299 207 301 211Q303 215 297 218L279 231Q271 237 257 239L248 253Z" fill="#edc4a1"/>
+      <path d="M253 212Q260 218 264 229M263 207L270 213M272 203L278 208" stroke="#c18d6a" stroke-width="1.2" stroke-linecap="round"/>
+      </g>
+      <path d="M231 237L237 232L252 251L246 256Z" fill="#ecc59f"/>
     </g>
   </g>
-  <g class="dhh-sign-word" fill="#234d3b" text-anchor="middle">
-    <text x="382" y="210" font-family="Portfolio Yuanti SC, sans-serif" font-size="47">幸</text>
-    <text x="382" y="261" font-family="Portfolio Yuanti SC, sans-serif" font-size="47">福</text>
-    <path d="M365 278Q382 285 399 278" stroke="#c45222" stroke-width="2" stroke-linecap="round"/>
+  <!-- A small exchange of marks suggests the rhythm of a conversation. -->
+  <g class="dhh-conversation-marks" stroke="#c46c42" stroke-width="2.2" stroke-linecap="round">
+    <path d="M300 145L307 137M313 157L324 153"/>
+    <path d="M325 191L331 191" stroke="#607a58"/>
   </g>
+  <path d="M73 334V307M73 319C58 320 54 308 56 298C68 300 74 307 73 319M74 328C87 329 92 317 91 308C80 309 74 316 74 328" fill="#a9b99a"/>
+  <path d="M72 333L66 307M75 327L86 317" stroke="#778f69" stroke-width="1.2" stroke-linecap="round"/>
 </svg>
