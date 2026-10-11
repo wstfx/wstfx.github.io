@@ -69,11 +69,14 @@ def page(path, title, body, active, prefix=''):
     if SELECTED and path not in SELECTED:
         return
     story_assets = f'<link rel="stylesheet" href="{asset("assets/css/story.css")}"><link rel="stylesheet" href="{asset("assets/css/opening-decor.css")}"><script defer src="{asset("assets/js/story.js")}"></script><script defer src="{asset("assets/js/test-journey.js")}"></script>' if path == 'index.html' else ''
+    if path == 'work/involve.html':
+        story_assets += f'<link rel="stylesheet" href="{prefix}{asset("assets/css/involve.css")}"><script defer src="{prefix}{asset("assets/js/involve.js")}"></script>'
     if path == 'visual-system.html':
         story_assets = f'<link rel="stylesheet" href="{asset("assets/css/visual-system.css")}">'
     if path in ('work.html', 'work/dhh.html'):
         story_assets += f'<link rel="stylesheet" href="{prefix}{asset("assets/css/dhh-art.css")}">'
     if path == 'work.html':
+        story_assets += f'<link rel="stylesheet" href="{asset("assets/css/involve-cover.css")}">'
         story_assets += f'<link rel="stylesheet" href="{asset("assets/css/igem-cover.css")}">'
         story_assets += f'<link rel="stylesheet" href="{asset("assets/css/dhh-cover.css")}">'
         story_assets += f'<link rel="stylesheet" href="{asset("assets/css/vr-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/active-learning-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/reconstruction-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/dongfeng-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/fire-sim-cover.css")}"><link rel="stylesheet" href="{asset("assets/css/navix-cover.css")}">'
@@ -130,8 +133,8 @@ def page(path, title, body, active, prefix=''):
 def artwork(project_id, number='01'):
     label = 'An idea, in outline'
     if project_id == 'involve':
-        art = '<div class="orbit-diagram"><span>Design</span><i>→</i><span>Teach</span><i>→</i><span>Assess</span></div>'
-        label = 'A teaching workflow · concept diagram'
+        art = (ROOT / 'assets/art/involve-lesson.svg').read_text().replace('viewBox="0 0 600 440"', 'viewBox="40 35 525 380"')
+        label = ''
     elif project_id == 'dongfeng':
         art = (ROOT / 'assets/art/dongfeng-cover.svg').read_text()
         label = 'Observe → predict → drive → repeat'
@@ -311,6 +314,10 @@ gallery = {
 }
 for index,p in enumerate(PROJECTS):
     id_ = p['id']
+    if id_ == 'involve':
+        body = (ROOT / 'content/involve-body.html').read_text().replace('{{INVOLVE_LESSON_SVG}}', (ROOT / 'assets/art/involve-lesson.svg').read_text())
+        page('work/involve.html', p['title'], body, 'Work', '../')
+        continue
     if id_ == 'dhh':
         body = (ROOT / 'content/dhh-body.html').read_text().replace('{{DHH_LIFE_SVG}}', (ROOT / 'assets/art/dhh-life.svg').read_text())
         page('work/dhh.html', p['title'], body, 'Work', '../')

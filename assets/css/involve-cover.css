@@ -1,0 +1,13 @@
+.cover-involve{background:#e8ece0}
+.cover-involve>div{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.cover-involve .involve-art{display:block;width:85%;height:94%;max-width:400px;transform:rotate(-3deg);transition:transform var(--card-motion-duration) var(--ease)}
+.cover-involve .iv-reply{transform-box:fill-box;transform-origin:center;opacity:.7;transition:transform var(--card-motion-duration) var(--ease),opacity var(--card-motion-duration) var(--ease)}
+.cover-involve .iv-reply-question{transform:translate(14px,32px) scale(.88)}
+.cover-involve .iv-reply-idea{transform:translate(0,38px) scale(.88)}
+.cover-involve .iv-reply-answer{transform:translate(-18px,26px) scale(.88)}
+.project-card:has(.cover-involve):focus-within{transform:translateY(-5px);box-shadow:0 15px 30px #193d300a;border-color:#aebda5}
+.project-card:focus-within .cover-involve .involve-art{transform:rotate(0)}
+.project-card:focus-within .cover-involve .iv-reply{transform:none;opacity:1}
+@media(hover:hover){.project-card:hover .cover-involve .involve-art{transform:rotate(0)}.project-card:hover .cover-involve .iv-reply{transform:none;opacity:1}}
+@media(hover:none),(prefers-reduced-motion:reduce){.cover-involve .involve-art{transform:none;transition:none}.cover-involve .iv-reply{transform:none;opacity:1;transition:none}}
+@media(prefers-reduced-motion:reduce){.project-card:has(.cover-involve):focus-within{transform:none}}

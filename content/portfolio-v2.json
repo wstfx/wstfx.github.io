@@ -65,7 +65,7 @@
     {
       "id": "involve",
       "title": "InVolve",
-      "subtitle": "Designing the interaction between a lesson, a teacher, and a classroom.",
+      "subtitle": "A lesson becomes a conversation.",
       "category": "Product",
       "tags": [
         "Interaction design",
@@ -75,23 +75,23 @@
       "period": "Collaborative project",
       "status": "In development · used in teaching",
       "role": "Frontend development, UI & interaction design",
-      "summary": "Classroom interaction software for higher education. I lead the frontend, UI, and interaction design; my collaborator develops the backend.",
+      "summary": "I design and build the frontend of InVolve, connecting lesson preparation, classroom activities, and student responses in one teaching workflow.",
       "sections": [
         {
-          "title": "A workflow built around teaching",
-          "body": "InVolve brings lesson preparation, live classroom interaction, and response review into a connected workflow. The teacher interface is organized around Design, Teach, and Assess, with Prepare, Engage, and Practice phases within the lesson."
+          "title": "Two kinds of progress",
+          "body": "Design / Teach / Assess organizes the teacher’s work, while Prepare / Engage / Practice organizes the learning material."
         },
         {
-          "title": "My contribution",
-          "body": "I am primarily responsible for the frontend, UI, and interaction design. My work includes the teaching interface, question and question-set organization, student preview, and the transitions between preparing and distributing classroom content. A collaborator is responsible for backend development."
+          "title": "Compose once. See it from both sides.",
+          "body": "An ordered block editor combines text, images and questions. Student preview and a dedicated teaching mode keep preparation and participation connected."
         },
         {
-          "title": "Keeping classroom state understandable",
-          "body": "Draft questions stay out of the student lesson view until they are distributed. Student preview gives teachers a way to inspect the receiving experience, while question organization and statistics entry points help connect preparation, participation, and review."
+          "title": "Readable classroom states",
+          "body": "Draft, open and closed question states make availability and the next action visible, while preserving context for discussion."
         },
         {
-          "title": "Used in my own course",
-          "body": "I created and delivered an introductory course on coding with AI agents through InVolve for people with no previous coding experience. This provided a real teaching context for the product, connecting my interface work with the task of helping beginners take their first steps."
+          "title": "Teaching with what I built",
+          "body": "I created and taught an introduction to AI coding through InVolve. The saved lesson provides an original teaching artifact, without claiming measured learning gains."
         }
       ],
       "featured": true,
@@ -100,7 +100,7 @@
         "ai-coding-course"
       ],
       "mediaType": "authentic-product-capture",
-      "presentationNote": "Show original application screenshots or recordings. Do not recreate or imitate the application UI.",
+      "presentationNote": "Original Vue application captures using the bundled author-created coding course. Conceptual notebook artwork is separate from the product UI.",
       "dateNote": "Development dates are not yet established. A saved course record is from spring 2026."
     },
     {
