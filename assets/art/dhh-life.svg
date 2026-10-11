@@ -1,4 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dhh-life-art dhh-wellbeing-art" viewBox="30 20 1040 815" fill="none" role="img" aria-label="A smiling person touching their hearing aid, with family, happiness and AI gathered beside them">
+<svg xmlns="http://www.w3.org/2000/svg" class="dhh-life-art dhh-wellbeing-art" viewBox="-60 20 1040 815" fill="none" role="img" aria-label="A smiling person touching their hearing aid, with family, happiness and AI gathered beside them">
+  <g class="dhh-backdrop" aria-hidden="true">
+    <path d="M141 760C116 679 120 605 145 519C168 426 200 309 305 271C394 237 507 252 595 311C710 386 769 490 761 599C757 679 720 746 685 796H154Z" fill="#e3e8d8" />
+    <circle cx="172" cy="627" r="65" fill="#eee0b3" />
+    <path d="M658 428C701 459 728 503 730 549M665 417L678 426" stroke="#a7b89a" stroke-width="2.5" stroke-linecap="round" />
+    <path d="M123 460Q131 469 123 478M139 450Q147 459 139 468" stroke="#c89970" stroke-width="3" stroke-linecap="round" />
+    <g transform="translate(756 617)">
+      <path d="M0 -12Q2 -2 12 0Q2 2 0 12Q-2 2 -12 0Q-2 -2 0 -12Z" fill="#caa15a" />
+    </g>
+    <g transform="translate(110 526)">
+      <path d="M0 -9Q2 -2 9 0Q2 2 0 9Q-2 2 -9 0Q-2 -2 0 -9Z" fill="#9bad8b" />
+    </g>
+    <g transform="translate(688 728)">
+      <path d="M0 -8Q2 -2 8 0Q2 2 0 8Q-2 2 -8 0Q-2 -2 0 -8Z" fill="#b5c4a4" />
+    </g>
+  </g>
   <g class="dhh-life-motifs">
     <g transform="translate(-458 32)">
       <g class="dhh-happiness">
