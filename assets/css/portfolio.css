@@ -13,6 +13,7 @@
   --yellow:#ead074;
   --sage:#e5eadb;
   --ease:cubic-bezier(.2,.8,.2,1);
+  --card-motion-duration:.35s;
   --serif:Georgia,'Times New Roman',serif;
   --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 }
@@ -383,7 +384,7 @@ p {
   border-radius:13px;
   overflow:hidden;
   background:var(--card);
-  transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s;
+  transition:transform var(--card-motion-duration) var(--ease),box-shadow var(--card-motion-duration) var(--ease),border-color var(--card-motion-duration);
 }
 .project-card:hover {
   transform:translateY(-5px);
