@@ -1,5 +1,31 @@
 (() => {
   'use strict';
+  const illustration = document.querySelector('.fp-illustration');
+  const motion = illustration?.querySelector('.fp-motion');
+  if (motion) {
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    let paused = false;
+    let visible = !('IntersectionObserver' in window);
+    const update = () => {
+      motion.hidden = reduced.matches;
+      illustration.classList.toggle('is-paused', paused || !visible || document.hidden || reduced.matches);
+    };
+    motion.addEventListener('click', () => {
+      paused = !paused;
+      motion.textContent = paused ? 'Play animation' : 'Pause animation';
+      motion.setAttribute('aria-pressed', String(paused));
+      update();
+    });
+    reduced.addEventListener('change', update);
+    document.addEventListener('visibilitychange', update);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(entries => {
+        visible = entries[0].isIntersecting;
+        update();
+      }).observe(illustration);
+    }
+    update();
+  }
   const proof = document.querySelector('.fp-proof');
   if (proof) {
     const tabs = [...proof.querySelectorAll('[role=tab]')];
