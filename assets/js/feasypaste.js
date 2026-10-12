@@ -35,15 +35,16 @@
     play.addEventListener('click', () => {
       const player = video.querySelector('.fp-video-player');
       const iframe = document.createElement('iframe');
-      iframe.src = 'https://player.bilibili.com/player.html?bvid=BV1eVLi6PEMj&p=1&autoplay=0';
+      iframe.src = 'https://player.bilibili.com/player.html?bvid=BV1eVLi6PEMj&p=1&autoplay=1';
       iframe.title = 'FeasyPaste promotional video on Bilibili (Chinese)';
       iframe.allowFullscreen = true;
-      iframe.allow = 'fullscreen; picture-in-picture';
+      iframe.allow = 'autoplay; fullscreen; picture-in-picture';
       iframe.referrerPolicy = 'no-referrer';
       player.append(iframe);
       player.hidden = false;
-      play.hidden = true;
-      video.classList.add('is-loaded');
+      video.querySelector('.fp-video-poster').hidden = true;
+      iframe.tabIndex = 0;
+      iframe.focus();
     }, { once: true });
   }
 })();
