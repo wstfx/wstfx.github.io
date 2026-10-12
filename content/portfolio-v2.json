@@ -340,7 +340,7 @@
     {
       "id": "feasypaste",
       "title": "FeasyPaste",
-      "subtitle": "Keep the ideas. Keep the formatting.",
+      "subtitle": "Keep the ideas. Lose the cleanup.",
       "category": "Product",
       "tags": [
         "Independent development",
@@ -351,19 +351,19 @@
       "period": "Released by Mar 2026",
       "status": "Public browser extension",
       "role": "Solo developer",
-      "summary": "A browser extension for moving LLM responses into Feishu while preserving equations, code blocks, and lists.",
+      "summary": "A rule-based browser extension that bridges the formatting gap between AI answers and Feishu documents—without repeated manual cleanup.",
       "sections": [
         {
-          "title": "A small but persistent frustration",
-          "body": "An answer can be useful and still become difficult to use when copying it into another editor breaks its equations, numbering, or code. FeasyPaste addresses this handoff between an LLM response and a Feishu document."
+          "title": "A recurring formatting gap",
+          "body": "Rich AI responses can lose equations, numbering, code, and list structure when pasted into Feishu. I built FeasyPaste to remove this repeated formatting work."
         },
         {
-          "title": "The product",
-          "body": "I independently developed the extension to convert LLM output into Feishu-compatible formatting. Its focus is a short, practical workflow: copy an answer and preserve the structure that makes it readable."
+          "title": "Inspect, map, convert",
+          "body": "Clipboard format probes and an inspector informed a rule-based converter. It maps source content to Feishu-compatible semantic records and writes them into clipboard HTML alongside plain text."
         },
         {
-          "title": "Designed around a concrete task",
-          "body": "The project is intentionally focused on a recurring task. It reflects my interest in building small tools that remove repeated friction from learning and working with AI."
+          "title": "Copy. Convert. Paste.",
+          "body": "A floating button and customizable shortcut keep the conversion inside a familiar workflow. Published on Chrome Web Store, with source on GitHub and a humorous launch video on Bilibili."
         }
       ],
       "featured": true,
@@ -372,6 +372,14 @@
         {
           "label": "Chrome Web Store",
           "url": "https://chromewebstore.google.com/detail/feasypaste-feishu-convert/ehdmffeifoiagjgnkaajpdmhicdfajhb"
+        },
+        {
+          "label": "GitHub source",
+          "url": "https://github.com/wstfx/FeasyPaste"
+        },
+        {
+          "label": "Bilibili promotional video",
+          "url": "https://www.bilibili.com/video/BV1eVLi6PEMj/"
         }
       ],
       "dateNote": "March 2026 is a store-version reference, not a confirmed development start date.",

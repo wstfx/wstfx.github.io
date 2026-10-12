@@ -1,0 +1,15 @@
+.cover-feasypaste{background:#e8ecdf}
+.cover-feasypaste>div{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+.cover-feasypaste .fp-art{display:block;width:96%;height:100%;max-width:430px}
+.cover-feasypaste .fp-token,.cover-feasypaste .fp-check,.cover-feasypaste .fp-source,.cover-feasypaste .fp-destination{transform-box:fill-box;transform-origin:center;transition:transform var(--card-motion-duration) var(--ease),opacity var(--card-motion-duration) var(--ease)}
+.cover-feasypaste .fp-source{transform:rotate(-4deg)}
+.cover-feasypaste .fp-destination{transform:rotate(3deg)}
+.cover-feasypaste .fp-token-code{transform:translate(-13px,6px) rotate(-13deg)}
+.cover-feasypaste .fp-token-math{transform:translate(-8px,9px) rotate(8deg)}
+.cover-feasypaste .fp-token-list{transform:translate(-9px,7px) rotate(-8deg)}
+.cover-feasypaste .fp-check{transform:scale(.86);opacity:.65}
+.project-card:has(.cover-feasypaste):focus-within{transform:translateY(-5px);box-shadow:0 15px 30px #193d300a;border-color:#aebda5}
+.project-card:focus-within .cover-feasypaste :is(.fp-token,.fp-check,.fp-source,.fp-destination){transform:none;opacity:1}
+@media(hover:hover){.project-card:hover .cover-feasypaste :is(.fp-token,.fp-check,.fp-source,.fp-destination){transform:none;opacity:1}}
+@media(hover:none),(prefers-reduced-motion:reduce){.cover-feasypaste :is(.fp-token,.fp-check,.fp-source,.fp-destination){transform:none;opacity:1;transition:none}}
+@media(prefers-reduced-motion:reduce){.project-card:has(.cover-feasypaste):focus-within{transform:none}}

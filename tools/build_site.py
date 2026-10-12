@@ -71,11 +71,14 @@ def page(path, title, body, active, prefix=''):
     story_assets = f'<link rel="stylesheet" href="{asset("assets/css/story.css")}"><link rel="stylesheet" href="{asset("assets/css/opening-decor.css")}"><script defer src="{asset("assets/js/story.js")}"></script><script defer src="{asset("assets/js/test-journey.js")}"></script>' if path == 'index.html' else ''
     if path == 'work/involve.html':
         story_assets += f'<link rel="stylesheet" href="{prefix}{asset("assets/css/involve.css")}"><script defer src="{prefix}{asset("assets/js/involve.js")}"></script>'
+    if path == 'work/feasypaste.html':
+        story_assets += f'<link rel="stylesheet" href="{prefix}{asset("assets/css/feasypaste.css")}"><script defer src="{prefix}{asset("assets/js/feasypaste.js")}"></script>'
     if path == 'visual-system.html':
         story_assets = f'<link rel="stylesheet" href="{asset("assets/css/visual-system.css")}">'
     if path in ('work.html', 'work/dhh.html'):
         story_assets += f'<link rel="stylesheet" href="{prefix}{asset("assets/css/dhh-art.css")}">'
     if path == 'work.html':
+        story_assets += f'<link rel="stylesheet" href="{asset("assets/css/feasypaste-cover.css")}">'
         story_assets += f'<link rel="stylesheet" href="{asset("assets/css/involve-cover.css")}">'
         story_assets += f'<link rel="stylesheet" href="{asset("assets/css/igem-cover.css")}">'
         story_assets += f'<link rel="stylesheet" href="{asset("assets/css/dhh-cover.css")}">'
@@ -148,7 +151,7 @@ def artwork(project_id, number='01'):
         art = (ROOT / 'assets/art/igem-cover.svg').read_text()
         label = 'Bacterial delivery · modeling · wiki'
     elif project_id == 'feasypaste':
-        art = '<div class="type-transfer"><span>∑</span><b>→</b><span>∑</span></div>'; label = 'Keep the meaning. Keep the formatting.'
+        art = (ROOT / 'assets/art/feasypaste-transfer.svg').read_text(); label = ''
     elif project_id == 'fire-sim':
         art = (ROOT / 'assets/art/fire-sim-house.svg').read_text(); label = 'Heat → material response → damage'
     elif project_id == 'navix':
@@ -314,6 +317,10 @@ gallery = {
 }
 for index,p in enumerate(PROJECTS):
     id_ = p['id']
+    if id_ == 'feasypaste':
+        body = (ROOT / 'content/feasypaste-body.html').read_text().replace('{{FEASYPASTE_SVG}}', (ROOT / 'assets/art/feasypaste-transfer.svg').read_text())
+        page('work/feasypaste.html', p['title'], body, 'Work', '../')
+        continue
     if id_ == 'involve':
         body = (ROOT / 'content/involve-body.html').read_text().replace('{{INVOLVE_LESSON_SVG}}', (ROOT / 'assets/art/involve-lesson.svg').read_text())
         page('work/involve.html', p['title'], body, 'Work', '../')
