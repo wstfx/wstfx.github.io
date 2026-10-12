@@ -1042,6 +1042,21 @@ p {
   object-fit:contain;
   background:#fff;
 }
+/* Keep complete case-study images within a comfortable reading viewport. */
+.case-copy figure .image-button {
+  width:fit-content;
+  max-width:100%;
+  margin-inline:auto;
+}
+.case-copy figure .image-button > img {
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:min(600px,calc(100svh - 190px));
+  object-fit:contain;
+  margin-inline:auto;
+}
 .image-button:hover,.image-button:focus-visible {
   border-color:var(--green);
   box-shadow:0 0 0 2px #234d3b14;
