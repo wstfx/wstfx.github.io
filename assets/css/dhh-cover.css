@@ -1,0 +1,25 @@
+.cover-dhh{background:#ecebdd}
+.cover-dhh .dhh-cover-art{display:block;width:94%;height:calc(100% - 24px);max-width:360px}
+/* The reveal and return share the card lift’s duration and easing; no delayed sequence. */
+.dhh-cover-art :is(.dhh-family,.dhh-happiness,.dhh-ai){opacity:0;transition:transform var(--card-motion-duration) var(--ease),opacity var(--card-motion-duration) var(--ease)}
+.dhh-cover-art .dhh-happiness{transform:translate(140px,210px) scale(.45)}
+.dhh-cover-art .dhh-family{transform:translate(-117px,382px) scale(.45)}
+.dhh-cover-art .dhh-ai{transform:translate(-290px,201px) scale(.45)}
+.dhh-cover-art .dhh-device{transition:stroke var(--card-motion-duration) var(--ease),filter var(--card-motion-duration) var(--ease)}
+.dhh-cover-art .dhh-device-glow{transition:opacity var(--card-motion-duration) var(--ease)}
+.project-card:focus-within .dhh-cover-art :is(.dhh-family,.dhh-happiness,.dhh-ai){transform:none;opacity:1}
+.project-card:focus-within .dhh-cover-art .dhh-device{stroke:#e9c86d;filter:drop-shadow(0 0 7px #e9c86d99)}
+.project-card:focus-within .dhh-cover-art .dhh-device-glow{opacity:.32}
+.project-card:has(.cover-dhh):focus-within{transform:translateY(-5px);box-shadow:0 15px 30px #193d300a;border-color:#aebda5}
+@media(hover:hover){
+  .project-card:hover .dhh-cover-art :is(.dhh-family,.dhh-happiness,.dhh-ai){transform:none;opacity:1}
+  .project-card:hover .dhh-cover-art .dhh-device{stroke:#e9c86d;filter:drop-shadow(0 0 7px #e9c86d99)}
+  .project-card:hover .dhh-cover-art .dhh-device-glow{opacity:.32}
+}
+/* Touch screens and reduced-motion users get the full, readable static composition. */
+@media(hover:none),(prefers-reduced-motion:reduce){
+  .project-card .dhh-cover-art :is(.dhh-family,.dhh-happiness,.dhh-ai){transition:none;transform:none;opacity:1}
+  .project-card .dhh-cover-art .dhh-device{transition:none;filter:none}
+  .project-card .dhh-cover-art .dhh-device-glow{transition:none}
+}
+@media(prefers-reduced-motion:reduce){.project-card:has(.cover-dhh):focus-within{transform:none}}

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Elegant fox — sit — filled">
+<title>Elegant fox — sit — filled</title>
+<g transform="translate(0 0)">
+<g class="fox-tail" style="transform-origin:227px 250px">
+<path d="M228 252C168 250 101 267 76 218C59 184 72 144 95 126C79 164 99 185 130 197C173 213 189 240 228 252Z" fill="#f47b20"/>
+<path d="M95 126C64 159 91 188 130 197C170 207 188 241 228 252C177 246 139 222 105 213C76 205 60 164 95 126Z" fill="#ffaf6a"/>
+<path d="M79 211C98 249 166 238 228 252C172 260 105 267 79 228Z" fill="#d84b12"/>
+<path d="M95 126C84 153 91 173 108 185C80 181 73 154 95 126Z" fill="#fff1db"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:219px 246px">
+<path d="M210 255C184 252 166 244 165 222C164 201 181 179 201 153C219 129 219 102 238 91C258 101 269 126 262 153C257 172 247 191 244 211C242 228 247 243 258 256Z" fill="#f47b20"/>
+<path d="M210 255C184 252 166 244 165 222C164 201 181 179 201 153C202 181 181 209 190 231C195 245 208 251 221 255Z" fill="#ffaf6a"/>
+<path d="M238 91C234 129 256 128 246 154C236 180 220 206 221 225C225 215 232 204 241 201C245 182 257 172 262 153C269 126 258 101 238 91Z" fill="#d84b12"/>
+<path d="M246 111C265 132 254 157 244 178C235 197 236 217 241 238C222 224 224 205 232 184C241 162 250 141 246 111Z" fill="#fff1db"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:234px 179px">
+<path d="M237 165C228 198 234 229 253 254Q270 253 271 260L251 260C236 251 226 230 219 210C213 194 219 176 225 167Z" fill="#30483e"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:247px 177px">
+<path d="M247 164C241 195 246 230 264 254Q280 253 282 260L263 260C248 251 238 230 232 210C226 194 233 176 239 167Z" fill="#f47b20"/>
+</g>
+</g>
+<path d="M258 245 264 254Q280 253 282 260L263 260Q258 256 255 252Z" fill="#30483e"/>
+<g transform="translate(247 89) rotate(-6) scale(0.83 0.83)">
+<g class="fox-head" style="transform-origin:0px 32px">
+<path d="M-5-36 4-59Q12-48 15-28Z" fill="#d84b12"/>
+<path d="M-41 59C-16 36-19 4-24-14C-31-30-25-55-18-66L-4-40Q1-33 9-32C23-35 30-18 43-16L62-18C59-6 44-4 31 1C20 5 10 13 7 27C2 48-11 60-41 59Z" fill="#f47b20"/>
+<path d="M62-16C45-12 34-18 24-16C7-11-1 10-2 29C-3 44-14 56-41 59C-11 60 2 48 7 27C10 13 20 5 31 1C44-4 59-6 62-16Z" fill="#fff1db"/>
+<path d="M-18-61C-18-44-10-37-4-35L-15-23C-24-36-23-49-18-61Z" fill="#fff1db"/>
+<path d="M-18-66C-23-56-27-46-26-36L-17-34C-19-45-20-55-18-66Z" fill="#30483e"/>
+<path d="M-41 59C-16 36-19 4-24-14C-21 6-9 20-2 29C-3 44-14 56-41 59Z" fill="#d84b12"/>
+<path d="M56-17 62-18Q61-11 58-9Z" fill="#30483e"/>
+<g transform="translate(0 0)">
+<g class="fox-eyes" style="transform-origin:28px -23px">
+<path d="M23-23Q28-27 33-23" fill="none" stroke="#30483e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</svg>

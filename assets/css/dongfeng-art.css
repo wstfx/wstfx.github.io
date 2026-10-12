@@ -1,0 +1,124 @@
+/* A small, self-contained motion system for the inline driving-loop illustration. */
+.dongfeng-illustration {
+  margin: 0;
+  position: relative;
+  text-align: center;
+}
+
+.dongfeng-illustration svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.dongfeng-illustration figcaption {
+  color: var(--ink, #193d30);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.dongfeng-illustration figcaption small {
+  display: block;
+  color: var(--muted, #718174);
+  font-size: 10px;
+  line-height: 1.7;
+  margin-top: 9px;
+}
+
+.dongfeng-illustration .dongfeng-motion {
+  appearance: none;
+  background: transparent;
+  color: var(--muted, #718174);
+  border: 0;
+  border-bottom: 1px solid var(--line, #dce2d3);
+  border-radius: 0;
+  padding: 8px 2px;
+  margin-top: 12px;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.dongfeng-illustration .dongfeng-motion:focus-visible {
+  outline: 2px solid var(--orange, #f47b20);
+  outline-offset: 5px;
+}
+
+.dongfeng-illustration .df-road-markings {
+  animation: df-road-motion 3s linear infinite;
+}
+
+.dongfeng-illustration .df-observation-link {
+  animation: df-observation-motion 2.2s linear infinite;
+}
+
+.dongfeng-illustration .df-action-link {
+  animation: df-action-motion 2.4s linear infinite;
+}
+
+.dongfeng-illustration .df-camera-stack {
+  animation: df-camera-float 6s ease-in-out infinite;
+}
+
+.dongfeng-illustration .df-model-window {
+  animation: df-model-float 6s ease-in-out infinite;
+}
+
+.dongfeng-illustration .df-camera-light,
+.dongfeng-illustration .df-model-signal {
+  animation: df-signal-pulse 4s ease-in-out infinite;
+}
+
+.dongfeng-illustration .df-model-signal {
+  animation-delay: 1s;
+}
+
+.dongfeng-illustration .df-camera-cone {
+  animation: df-camera-pulse 4s ease-in-out infinite;
+}
+
+@keyframes df-road-motion {
+  to { stroke-dashoffset: 30; }
+}
+
+@keyframes df-observation-motion {
+  to { stroke-dashoffset: -22; }
+}
+
+@keyframes df-action-motion {
+  to { stroke-dashoffset: -24; }
+}
+
+@keyframes df-camera-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes df-model-float {
+  0%, 100% { transform: translateY(-2px); }
+  50% { transform: translateY(2px); }
+}
+
+@keyframes df-signal-pulse {
+  0%, 100% { opacity: .45; }
+  35%, 65% { opacity: 1; }
+}
+
+@keyframes df-camera-pulse {
+  0%, 100% { opacity: .08; }
+  50% { opacity: .17; }
+}
+
+.dongfeng-illustration.is-paused * {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dongfeng-illustration * {
+    animation: none !important;
+  }
+  .dongfeng-illustration .dongfeng-motion {
+    display: none;
+  }
+}

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 520" fill="none" role="img" aria-labelledby="dongfeng-art-title dongfeng-art-desc">
+  <title id="dongfeng-art-title">A model meets the road</title>
+  <desc id="dongfeng-art-desc">An orange car travels through a simulated road scene. Camera views flow to a VLA model; a predicted trajectory returns to the car, completing the next simulation step. Conceptual illustration, not a driving performance result.</desc>
+  <defs>
+    <clipPath id="dongfeng-ground-clip">
+      <path d="M83 89C169 43 301 34 425 75L481 337C448 436 311 483 103 450L42 271Z"/>
+    </clipPath>
+    <marker id="dongfeng-arrow-sage" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L6 4L1 7" fill="none" stroke="#91aa98" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="dongfeng-arrow-orange" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L6 4L1 7" fill="none" stroke="#d86526" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- The road and car are the visual anchor; the loop sits around them. -->
+  <path d="M83 89C169 43 301 34 425 75L481 337C448 436 311 483 103 450L42 271Z" fill="#e4e9db"/>
+  <g clip-path="url(#dongfeng-ground-clip)">
+    <path d="M93 492C117 417 190 394 202 315S181 209 258 164S336 90 333 21" stroke="#b9c7ae" stroke-width="118"/>
+    <path d="M93 492C117 417 190 394 202 315S181 209 258 164S336 90 333 21" stroke="#f7f5ed" stroke-width="108"/>
+    <path class="df-road-markings" d="M93 492C117 417 190 394 202 315S181 209 258 164S336 90 333 21" stroke="#bbc6b5" stroke-width="2.5" stroke-dasharray="13 17"/>
+    <path d="M224 351C244 302 217 233 268 204C302 184 341 162 353 135" stroke="#f47b20" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 8"/>
+    <g fill="#f47b20">
+      <circle cx="224" cy="351" r="3.6"/>
+      <circle cx="268" cy="204" r="3.6"/>
+      <circle cx="353" cy="135" r="3.6"/>
+    </g>
+    <path d="M174 78L151 114M187 84L166 124" stroke="#c9d2bf" stroke-width="2" stroke-linecap="round"/>
+    <path d="M389 395L408 371M401 400L420 376" stroke="#c9d2bf" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Spare landscape details keep the simulator legible as a place. -->
+  <g stroke="#6d8b70" stroke-width="1.6" stroke-linecap="round">
+    <path d="M91 316V291"/><path d="M91 306L83 299M91 300L100 289"/>
+    <path d="M358 417V389"/><path d="M358 407L349 399M358 403L368 393"/>
+  </g>
+  <g fill="#a6b99a">
+    <ellipse cx="85" cy="291" rx="10" ry="15" transform="rotate(-32 85 291)"/>
+    <ellipse cx="98" cy="283" rx="9" ry="13" transform="rotate(28 98 283)"/>
+    <ellipse cx="351" cy="390" rx="10" ry="15" transform="rotate(-32 351 390)"/>
+    <ellipse cx="366" cy="387" rx="10" ry="15" transform="rotate(32 366 387)"/>
+  </g>
+
+  <!-- The dashed line carries observations into the model. -->
+  <path class="df-observation-link" d="M204 343C123 340 104 287 119 220" stroke="#91aa98" stroke-width="2" stroke-dasharray="4 7" marker-end="url(#dongfeng-arrow-sage)"/>
+  <path class="df-observation-link" d="M184 132C238 87 317 84 380 109" stroke="#91aa98" stroke-width="2" stroke-dasharray="4 7" marker-end="url(#dongfeng-arrow-sage)"/>
+
+  <!-- Camera frames: a little stack of three views, with a clear road horizon. -->
+  <g transform="translate(56 127) rotate(-9 68 43)">
+    <g class="df-camera-stack">
+      <rect x="15" y="-17" width="129" height="84" rx="9" fill="#d8e0ce" stroke="#91aa98" stroke-width="1.6"/>
+      <rect x="8" y="-8" width="129" height="84" rx="9" fill="#edf0e5" stroke="#91aa98" stroke-width="1.6"/>
+      <rect width="129" height="84" rx="9" fill="#f7f5ed" stroke="#234d3b" stroke-width="2"/>
+      <path d="M10 31H119V70H10Z" fill="#e4e9db"/>
+      <path d="M23 70L57 31H73L108 70" fill="#b9c7ae"/>
+      <path d="M36 70L60 31H70L95 70" fill="#f7f5ed"/>
+      <path d="M65 36V42M65 49V59M65 67V70" stroke="#91aa98" stroke-width="1.7" stroke-linecap="round"/>
+      <path d="M20 42L27 27L34 42ZM91 39L99 22L107 39Z" fill="#91aa98"/>
+      <circle class="df-camera-light" cx="13" cy="14" r="3" fill="#f47b20"/>
+      <path d="M23 14H43" stroke="#b2c1ab" stroke-width="2" stroke-linecap="round"/>
+      <path d="M110 11H117V18" stroke="#91aa98" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- The model window floats beside, rather than obscuring, the road. -->
+  <g transform="translate(377 92) rotate(7 67 55)">
+    <g class="df-model-window">
+      <rect x="5" y="7" width="133" height="115" rx="14" fill="#cbd6bf"/>
+      <rect width="133" height="115" rx="14" fill="#f7f5ed" stroke="#234d3b" stroke-width="2"/>
+      <path d="M1 25H132" stroke="#c9d2bf" stroke-width="1.5"/>
+      <g fill="#a5b89b"><circle cx="14" cy="13" r="2.5"/><circle cx="24" cy="13" r="2.5"/><circle cx="34" cy="13" r="2.5"/></g>
+      <g stroke="#91aa98" stroke-width="1.6">
+        <path d="M25 49L47 65L25 84M25 49L47 87M47 43L72 54L47 65L72 78L47 87M72 54L97 43M72 54L97 65L72 78L97 87"/>
+      </g>
+      <g fill="#f7f5ed" stroke="#234d3b" stroke-width="1.7">
+        <circle cx="25" cy="49" r="4"/><circle cx="25" cy="84" r="4"/>
+        <circle cx="47" cy="43" r="4"/><circle cx="47" cy="65" r="4"/><circle cx="47" cy="87" r="4"/>
+        <circle cx="72" cy="54" r="4"/><circle cx="72" cy="78" r="4"/>
+        <circle cx="97" cy="43" r="4"/><circle cx="97" cy="65" r="4"/><circle cx="97" cy="87" r="4"/>
+      </g>
+      <g class="df-model-signal" fill="#f47b20"><circle cx="47" cy="65" r="3"/><circle cx="72" cy="54" r="3"/><circle cx="97" cy="65" r="3"/></g>
+      <text x="112" y="105" fill="#577461" text-anchor="end" font-family="Arial, sans-serif" font-size="9" letter-spacing="1.8">VLA</text>
+    </g>
+  </g>
+
+  <!-- The returned trajectory feeds back to the ego vehicle. -->
+  <path class="df-action-link" d="M455 225C473 268 469 315 437 335" stroke="#d86526" stroke-width="2" stroke-dasharray="5 7" marker-end="url(#dongfeng-arrow-orange)"/>
+  <path class="df-action-link" d="M351 373C308 397 272 396 244 382" stroke="#d86526" stroke-width="2" stroke-dasharray="5 7" marker-end="url(#dongfeng-arrow-orange)"/>
+  <g transform="translate(348 309) rotate(-8 54 35)">
+    <rect width="107" height="72" rx="10" fill="#fff0da" stroke="#234d3b" stroke-width="2"/>
+    <path d="M18 55V17M18 55H92" stroke="#d8c5a6" stroke-width="1.4" stroke-linecap="round"/>
+    <path class="df-trajectory-line" d="M23 47C43 47 39 27 57 30S70 18 87 17" stroke="#d86526" stroke-width="2.8" stroke-linecap="round"/>
+    <g fill="#d86526"><circle cx="23" cy="47" r="3.1"/><circle cx="57" cy="30" r="3.1"/><circle cx="87" cy="17" r="3.1"/></g>
+  </g>
+
+  <!-- Static orientation lives outside the animated local car group. -->
+  <g transform="translate(213 372) rotate(23)">
+    <path class="df-camera-cone" d="M0 -40L-41 -111Q0 -132 41 -111Z" fill="#f47b20" opacity=".1"/>
+    <g class="df-ego-car">
+      <ellipse cx="3" cy="8" rx="29" ry="48" fill="#193d30" opacity=".09"/>
+      <g fill="#193d30"><rect x="-27" y="-25" width="7" height="18" rx="3"/><rect x="20" y="-25" width="7" height="18" rx="3"/><rect x="-27" y="22" width="7" height="17" rx="3"/><rect x="20" y="22" width="7" height="17" rx="3"/></g>
+      <path d="M-22 -27Q-22 -44 -9 -45H9Q22 -44 22 -27V35Q22 46 11 47H-11Q-22 46 -22 35Z" fill="#f47b20" stroke="#234d3b" stroke-width="2"/>
+      <path d="M-15 -15Q0 -22 15 -15L12 -1H-12Z" fill="#234d3b"/>
+      <path d="M-12 24H12L15 34Q0 39 -15 34Z" fill="#234d3b"/>
+      <rect x="-12" y="3" width="24" height="18" rx="4" fill="#fba75d"/>
+      <path d="M-17 -32H-10M10 -32H17" stroke="#fff0da" stroke-width="3" stroke-linecap="round"/>
+      <path d="M-17 41H-11M11 41H17" stroke="#b75424" stroke-width="2.7" stroke-linecap="round"/>
+      <path d="M-17 2V23M17 2V23" stroke="#d76725" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="0" cy="-26" r="3.5" fill="#f7f5ed" stroke="#234d3b" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

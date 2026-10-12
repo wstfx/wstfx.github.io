@@ -1,0 +1,46 @@
+<svg class="ig-system-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 520" fill="none" role="img" aria-labelledby="ig-art-title ig-art-desc">
+<title id="ig-art-title">Modeling a living delivery system</title>
+<desc id="ig-art-desc">Engineered bacteria approach a cluster of tumor cells and release a signal. A mathematical model and a research wiki connect the biological mechanism with analysis and communication. Conceptual illustration.</desc>
+<defs>
+  <g id="ig-bacterium"><path d="M-25 0Q-34-15-42-5T-57-8M-24 5Q-32 18-44 14" stroke="#6d8b70" stroke-width="1.8" stroke-linecap="round"/><rect x="-25" y="-12" width="50" height="24" rx="12" fill="#f7f5ed" stroke="#234d3b" stroke-width="2"/><path d="M-12 0q5-8 11 0t11 0" stroke="#6d8b70" stroke-width="1.6"/><circle cx="14" cy="-3" r="2.5" fill="#f47b20"/></g>
+  <g id="ig-cell"><path d="M-22-7Q-24-25-6-28Q15-31 25-13Q32 7 16 24Q-4 33-22 17Q-29 8-22-7Z" fill="#e4e9db" stroke="#6d8b70" stroke-width="1.8"/><path d="M-8-4Q-5-15 7-11Q18-5 10 7Q3 15-8 6Z" fill="#a6b99a" stroke="#6d8b70" stroke-width="1.2"/></g>
+</defs>
+<path d="M83 89C169 43 301 34 425 75L481 337C448 436 311 483 103 450L42 271Z" fill="#e4e9db"/>
+<!-- A dish anchors the biology; the two small documents give it a model and a public explanation. -->
+<ellipse cx="211" cy="302" rx="135" ry="106" fill="#193d30" opacity=".06"/>
+<circle cx="208" cy="271" r="132" fill="#f7f5ed" stroke="#91aa98" stroke-width="2"/>
+<circle cx="208" cy="271" r="122" stroke="#c9d2bf" stroke-width="1.5"/>
+<path d="M100 222a116 116 0 0 1 65-58M291 352a116 116 0 0 1-49 27" stroke="#fffef8" stroke-width="5" stroke-linecap="round"/>
+<path class="ig-delivery-route" d="M130 241Q164 210 222 241M165 324Q202 318 238 282" stroke="#91aa98" stroke-width="1.7" stroke-dasharray="4 7"/>
+<g transform="translate(151 238) rotate(-15)"><g class="ig-bacteria"><use href="#ig-bacterium"/></g></g>
+<g transform="translate(176 326) rotate(-42)"><g class="ig-bacteria ig-bacteria-late"><use href="#ig-bacterium" transform="scale(.8)"/></g></g>
+<g transform="translate(258 259)">
+  <circle class="ig-signal-ring" r="58" stroke="#d86526" stroke-width="1.5" opacity=".5"/>
+  <g class="ig-tumor"><use href="#ig-cell" transform="translate(-13 -22) scale(.8)"/><use href="#ig-cell" transform="translate(20 -9) scale(.85)"/><use href="#ig-cell" transform="translate(-15 14) scale(.8)"/><use href="#ig-cell" transform="translate(16 27) scale(.7)"/></g>
+</g>
+<g class="ig-payload" fill="#f47b20"><circle cx="213" cy="233" r="3"/><circle cx="225" cy="215" r="3.5"/><circle cx="214" cy="279" r="3"/><circle cx="228" cy="299" r="2.5"/></g>
+<text x="109" y="116" fill="#577461" font-family="inherit" font-size="10" letter-spacing="1.3">BACTERIAL DELIVERY</text>
+<path class="ig-analysis-link" d="M284 153C307 121 332 111 359 116" stroke="#91aa98" stroke-width="2" stroke-dasharray="4 7"/>
+<path class="ig-analysis-link" d="M455 230Q483 269 453 316" stroke="#91aa98" stroke-width="2" stroke-dasharray="4 7"/>
+<!-- The plotted line is a conceptual model glyph, not a numerical result. -->
+<g transform="translate(353 96) rotate(7 70 59)"><g class="ig-model-window">
+  <rect x="5" y="7" width="139" height="122" rx="12" fill="#cbd6bf"/>
+  <rect width="139" height="122" rx="12" fill="#f7f5ed" stroke="#234d3b" stroke-width="2"/>
+  <path d="M1 27H138" stroke="#c9d2bf" stroke-width="1.5"/><g fill="#a5b89b"><circle cx="14" cy="14" r="2.5"/><circle cx="24" cy="14" r="2.5"/><circle cx="34" cy="14" r="2.5"/></g>
+  <path d="M22 43V93H118" stroke="#b9c7ae" stroke-width="1.5"/>
+  <path d="M28 49C41 81 61 82 81 85S101 88 113 91" stroke="#d86526" stroke-width="2.5" stroke-linecap="round"/>
+  <circle class="ig-model-point" cx="61" cy="81" r="4" fill="#f47b20"/>
+  <text x="113" y="111" text-anchor="end" fill="#577461" font-family="inherit" font-size="9" letter-spacing="1.5">MODEL</text>
+</g></g>
+<path class="ig-analysis-link" d="M369 411Q307 442 254 410" stroke="#91aa98" stroke-width="2" stroke-dasharray="4 7"/>
+<g transform="translate(349 319) rotate(-7 70 60)"><g class="ig-wiki-window">
+  <rect x="5" y="7" width="137" height="112" rx="10" fill="#cbd6bf"/>
+  <rect width="137" height="112" rx="10" fill="#f7f5ed" stroke="#234d3b" stroke-width="2"/>
+  <path d="M1 23H136" stroke="#c9d2bf" stroke-width="1.5"/>
+  <circle cx="13" cy="12" r="3" fill="#f47b20"/><path d="M23 12H48" stroke="#b2c1ab" stroke-width="2" stroke-linecap="round"/>
+  <rect x="13" y="36" width="38" height="48" rx="4" fill="#e4e9db"/>
+  <g transform="translate(32 60) scale(.5)"><use href="#ig-cell"/></g>
+  <path d="M63 40H121M63 49H108M63 64H118M63 73H112M63 82H95" stroke="#91aa98" stroke-width="2" stroke-linecap="round"/>
+  <text x="117" y="101" text-anchor="end" fill="#577461" font-family="inherit" font-size="9" letter-spacing="1.5">WIKI</text>
+</g></g>
+</svg>

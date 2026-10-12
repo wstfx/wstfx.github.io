@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.pyc
+# Keep the supplied desktop font formats and specimen posters locally.
+# The WOFF2 faces and the supplied Best Swashed OTF are the web assets.
+assets/garet/*.ttf
+assets/garet/*.otf
+assets/garet/*.woff
+assets/best_swashed/img/
+# Original HEIC portraits stay local; the site serves converted WebP copies.
+assets/images/about/IMG_8157.HEIC.HEIC
+assets/images/about/IMG_3807.HEIC.HEIC
+assets/images/about/IMG_4412.HEIC.HEIC
+assets/images/about/IMG_4482.HEIC.HEIC

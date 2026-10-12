@@ -1,0 +1,40 @@
+<svg class="vr-frame-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 510" fill="none" font-family="inherit">
+<defs>
+    <g id="vr-locomotive">
+      <path d="M142 126H181V156H142Z" fill="#8ca28b" stroke="#234d3b" stroke-width="1.5"/>
+      <path d="M183 120H220V158H183Z" fill="#345d45"/>
+      <path d="M178 119H223L219 112H181Z" fill="#193d30"/>
+      <rect x="190" y="122" width="19" height="17" rx="2" fill="#f7e7c9"/>
+      <path d="M220 132H256Q267 132 267 144V156H220Z" fill="#d8763e" stroke="#234d3b" stroke-width="1.5"/>
+      <path d="M247 132V119H244V115H258V119H255V132" fill="#234d3b"/>
+      <path d="M139 157H269L276 164H138Z" fill="#193d30"/>
+      <g fill="#f7f5ed" stroke="#234d3b" stroke-width="3"><circle cx="152" cy="164" r="8"/><circle cx="173" cy="164" r="8"/><circle cx="204" cy="161" r="12"/><circle cx="236" cy="162" r="10"/><circle cx="260" cy="164" r="8"/></g>
+      <path d="M204 161H260" stroke="#234d3b" stroke-width="2"/>
+      <circle cx="269" cy="141" r="3" fill="#f4ce87"/>
+    </g>
+    <g id="vr-station">
+      <path d="M74 103H370V116H74Z" fill="#b3c1a6"/>
+      <path d="M62 103L82 89H365L382 103Z" fill="#64856a"/>
+      <path d="M83 116V174M363 116V174" stroke="#64856a" stroke-width="5"/>
+    </g>
+  </defs>
+<g transform="translate(0 0)"><g class="vr-platform-scene">
+ <path d="M35 29Q224 8 440 39L454 233Q245 263 27 238L19 125Z" fill="#e5eadb"/>
+ <text x="44" y="54" fill="#607066" font-size="11" letter-spacing="1">PLATFORM FRAME</text>
+ <text x="264" y="54" fill="#c45222" font-size="11">Train length <tspan data-vr-length>0.60 L₀</tspan></text>
+ <use href="#vr-station"/>
+ <path d="M50 175H421M50 181H421" stroke="#9cab90" stroke-width="2"/><path d="M58 178H412" stroke="#9cab90" stroke-width="9" stroke-dasharray="2 15"/>
+ <g class="vr-train-world"><use href="#vr-locomotive" opacity=".16"/><g class="vr-contract-train"><use href="#vr-locomotive"/></g></g>
+ <path class="vr-direction" d="M327 151H356M350 145L356 151L350 157" stroke="#c45222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+ <g transform="translate(74 213)"><circle r="20" fill="#fffef8" stroke="#234d3b" stroke-width="1.8"/><path d="M0-16V-13M16 0H13M0 16V13M-16 0H-13" stroke="#91a28a"/><g class="vr-clock-hand"><path d="M0 3V-13" stroke="#234d3b" stroke-width="2.5" stroke-linecap="round"/></g><circle r="2.5" fill="#234d3b"/><text x="29" y="-3" fill="#607066" font-size="11">Platform clock</text><text x="29" y="15" fill="#193d30" font-size="16">1.00×</text></g><g transform="translate(290 213)"><circle r="20" fill="#fffef8" stroke="#c45222" stroke-width="1.8"/><path d="M0-16V-13M16 0H13M0 16V13M-16 0H-13" stroke="#91a28a"/><g class="vr-clock-hand vr-clock-moving"><path d="M0 3V-13" stroke="#c45222" stroke-width="2.5" stroke-linecap="round"/></g><circle r="2.5" fill="#234d3b"/><text x="29" y="-3" fill="#607066" font-size="11">Train clock</text><text x="29" y="15" fill="#193d30" font-size="16"><tspan data-vr-rate>0.60×</tspan></text></g>
+ </g></g><g transform="translate(0 255)"><g class="vr-train-scene">
+ <path d="M35 29Q224 8 440 39L454 233Q245 263 27 238L19 125Z" fill="#f1e5d1"/>
+ <text x="44" y="54" fill="#607066" font-size="11" letter-spacing="1">TRAIN FRAME</text>
+ <text x="264" y="54" fill="#c45222" font-size="11">Platform length <tspan data-vr-length>0.60 L₀</tspan></text>
+ <g class="vr-platform-world"><use href="#vr-station" opacity=".16"/><g class="vr-contract-platform"><use href="#vr-station"/></g></g>
+ <path d="M50 175H421M50 181H421" stroke="#9cab90" stroke-width="2"/><path d="M58 178H412" stroke="#9cab90" stroke-width="9" stroke-dasharray="2 15"/>
+ <use href="#vr-locomotive"/>
+ <path class="vr-direction" d="M335 78H305M311 72L305 78L311 84" stroke="#c45222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+ <g transform="translate(74 213)"><circle r="20" fill="#fffef8" stroke="#234d3b" stroke-width="1.8"/><path d="M0-16V-13M16 0H13M0 16V13M-16 0H-13" stroke="#91a28a"/><g class="vr-clock-hand"><path d="M0 3V-13" stroke="#234d3b" stroke-width="2.5" stroke-linecap="round"/></g><circle r="2.5" fill="#234d3b"/><text x="29" y="-3" fill="#607066" font-size="11">Train clock</text><text x="29" y="15" fill="#193d30" font-size="16">1.00×</text></g><g transform="translate(290 213)"><circle r="20" fill="#fffef8" stroke="#c45222" stroke-width="1.8"/><path d="M0-16V-13M16 0H13M0 16V13M-16 0H-13" stroke="#91a28a"/><g class="vr-clock-hand vr-clock-moving"><path d="M0 3V-13" stroke="#c45222" stroke-width="2.5" stroke-linecap="round"/></g><circle r="2.5" fill="#234d3b"/><text x="29" y="-3" fill="#607066" font-size="11">Platform clock</text><text x="29" y="15" fill="#193d30" font-size="16"><tspan data-vr-rate>0.60×</tspan></text></g>
+ </g></g>
+</svg>

@@ -1,0 +1,34 @@
+.direction-pair { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:28px; }
+.direction-pair p { margin:0 0 20px; font-size:var(--type-body); line-height:1.85; }
+.direction-pair [lang="zh-CN"] { letter-spacing:.02em; }
+.direction-english-title { font-size:var(--type-lead); max-width:900px; margin:14px 0 30px; }
+.direction-list { padding-left:24px; }
+.direction-list>li { padding:12px 0; }
+.direction-list>li::marker { color:var(--orange); }
+.direction-overview { display:grid; gap:0; border-top:1px solid var(--line); margin-top:30px; }
+.direction-overview>a { display:grid; grid-template-columns:1fr 1fr; gap:8px 28px; padding:23px 0; border-bottom:1px solid var(--line); text-decoration:none; }
+.direction-overview .eyebrow { grid-column:1/-1; }
+.direction-overview strong { font-size:var(--type-subhead); font-weight:500; }
+.direction-overview>a:hover { color:var(--orange); }
+.direction-palette { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; margin:30px 0; }
+.direction-palette>div>span { display:block; height:58px; border-radius:2px 18px 2px 2px; margin-bottom:12px; }
+.direction-palette .direction-pair { display:block; }
+.direction-palette p { font-size:var(--type-small); margin-bottom:8px; }
+.direction-prompt-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:20px; margin-top:22px; }
+.direction-prompt-grid textarea { min-height:400px; }
+.direction-layers article { padding:20px 0 2px; border-bottom:1px solid var(--line); }
+.direction-layers code { display:inline-block; margin-bottom:12px; overflow-wrap:anywhere; }
+.direction-layer-state { float:right; font-size:var(--type-label); color:var(--muted); }
+.direction-chapter>h2 { max-width:1000px; }
+.direction-coda-quote { margin:30px 0; padding:22px 28px; border-left:2px solid var(--orange); font-size:var(--type-lead); }
+.direction-coda-quote em { color:var(--sage-dark,#59765b); }
+.direction-line-option { padding:32px 0 22px; border-top:1px solid var(--line); }
+.direction-downloads { display:flex; flex-wrap:wrap; gap:24px; align-items:center; margin-top:36px; }
+@media(max-width:760px) {
+  .direction-pair,.direction-prompt-grid,.direction-overview>a { grid-template-columns:1fr; gap:0; }
+  .direction-pair p[lang="en"] { font-size:var(--type-small); }
+  .direction-palette { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .direction-overview strong { margin-bottom:12px; }
+  .direction-prompt-grid { gap:20px; }
+  .direction-layer-state { display:block; float:none; margin-bottom:12px; }
+}

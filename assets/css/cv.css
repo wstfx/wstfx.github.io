@@ -1,0 +1,89 @@
+.cv-email-print { display: none; }
+
+@media print {
+  @page { size: A4; margin: 13mm 14mm; }
+
+  .cv-page {
+    margin: 0;
+    color: #172b23;
+    background: #fff;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  .cv-page .page-top,
+  .cv-page .cv-email-screen,
+  .cv-page .cv-aside > br,
+  .cv-page .toast,
+  .cv-page .lightbox { display: none !important; }
+  .cv-page .cv-email-print { display: inline; }
+  .cv-page .wrap { width: 100%; max-width: none; margin: 0; }
+  .cv-page .cv-layout { display: block; }
+  .cv-page .cv-aside {
+    position: static;
+    margin: 0 0 10pt;
+    break-inside: avoid;
+  }
+  .cv-page .cv-aside h2 {
+    margin: 0 0 3pt;
+    font-size: 22pt;
+    line-height: 1.15;
+    letter-spacing: -.025em;
+  }
+  .cv-page .cv-aside p,
+  .cv-page .cv-aside .text-link {
+    margin: 0 0 3pt;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  .cv-page .cv-aside p br { display: none; }
+  .cv-page .cv-aside p br + span::before { content: ' · '; }
+  .cv-page .cv-section {
+    padding: 7pt 0 0;
+    margin: 0 0 7pt;
+    border-top: .5pt solid #c9cec7;
+    break-inside: auto;
+  }
+  .cv-page .cv-section h2 {
+    margin: 0 0 5pt;
+    font-size: 12pt;
+    line-height: 1.25;
+    break-after: avoid;
+  }
+  .cv-page .cv-entry {
+    margin: 0 0 6pt;
+    break-inside: avoid;
+  }
+  .cv-page .cv-entry:last-child { margin-bottom: 0; }
+  .cv-page .cv-entry-top {
+    display: flex;
+    gap: 12pt;
+    justify-content: space-between;
+    align-items: baseline;
+    break-after: avoid;
+  }
+  .cv-page .cv-entry h3 {
+    min-width: 0;
+    margin: 0 0 2pt;
+    font-size: 10pt;
+    font-weight: 900;
+    line-height: 1.3;
+    letter-spacing: -.015em;
+  }
+  .cv-page .cv-entry .period {
+    flex-shrink: 0;
+    font-size: 8.5pt;
+    line-height: 1.3;
+    color: #515c55;
+    white-space: nowrap;
+  }
+  .cv-page .cv-entry p,
+  .cv-page .cv-section > p {
+    margin: 0 0 2pt;
+    font-size: 9.5pt;
+    line-height: 1.35;
+    color: #37433c;
+    orphans: 2;
+    widows: 2;
+  }
+  .cv-page a { color: inherit; text-decoration: none; }
+}

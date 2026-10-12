@@ -1,0 +1,44 @@
+.navix-heading{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,1fr);gap:40px;align-items:center;max-width:none}
+.navix-heading h1{font-size:clamp(42px,5.2vw,74px)}
+.navix-heading .lede{font-size:clamp(17px,1.6vw,22px)}
+.navix-illustration{margin:0;text-align:center}
+.navix-care-art{display:block;width:100%;height:auto}
+.navix-illustration figcaption{font-size:16px;line-height:1.6}
+.navix-illustration figcaption small{display:block;font-size:10px;color:var(--muted);margin-top:7px}
+.navix-motion{font:inherit;font-size:11px;color:var(--muted);background:transparent;border:0;border-bottom:1px solid var(--line);padding:8px 0;cursor:pointer;margin-top:12px}
+.navix-motion:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+.navix-illustration .nx-head{transform-origin:150px 96px;animation:nx-nod 7s ease-in-out infinite}
+.navix-illustration .nx-light{animation:nx-pulse 4s ease-in-out infinite}
+.navix-illustration .nx-link{animation:nx-flow 10s linear infinite}
+.navix-illustration.is-paused *{animation-play-state:paused!important}
+@keyframes nx-nod{0%,40%,80%,100%{transform:rotate(0deg)}55%,65%{transform:rotate(4deg)}}
+@keyframes nx-pulse{50%{opacity:.35}}
+@keyframes nx-flow{to{stroke-dashoffset:-52}}
+.navix-layout .case-copy{max-width:960px}
+.navix-layout .case-section>.eyebrow{color:var(--orange);font-size:10px;margin-bottom:14px}
+.navix-figure{margin:30px 0}
+.navix-figure img{display:block;width:100%;height:auto}
+.navix-figure figcaption{font-size:12px;line-height:1.8;color:var(--muted);margin-top:12px}
+.navix-principles{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:30px 0}
+.navix-principles article{border-top:1px solid var(--line);padding-top:18px}
+.navix-principles h3{font-size:18px;margin-bottom:12px}
+.navix-principles p{font-size:14px}
+.navix-flow{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:12px;padding:20px 0;margin:26px 0}
+.navix-flow div{padding:0 16px;border-right:1px solid var(--line);font-size:13px;line-height:1.7}
+.navix-flow div:last-child{border:0}
+.navix-flow small{display:block;font-size:10px;color:var(--muted);margin-top:6px}
+.navix-layout .navix-note{font-size:13px;border-left:2px solid var(--line);padding-left:18px}
+@media(max-width:900px){.navix-heading{grid-template-columns:1fr}.navix-illustration{max-width:430px;justify-self:center}}
+@media(max-width:600px){.navix-heading h1{font-size:clamp(40px,10vw,58px)}.navix-principles{grid-template-columns:1fr;gap:8px}.navix-flow{grid-template-columns:1fr 1fr;gap:20px}.navix-flow div:nth-child(2){border:0}}
+@media(prefers-reduced-motion:reduce){.navix-illustration *{animation:none!important}.navix-motion{display:none}}
+.navix-validation{border-block:1px solid var(--line);margin:24px 0;padding:18px 0}
+.navix-validation summary{font-size:14px;cursor:pointer;line-height:1.8}
+.navix-validation p{font-size:14px;margin-top:16px}
+/* Original demo captures: full aspect ratio, with no hover cropping. */
+.navix-demo-showcase{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:center;margin:32px 0}
+.navix-demo-showcase .navix-figure{margin:0;min-width:0}
+.navix-demo-showcase .navix-principles{grid-template-columns:1fr;margin:0;gap:20px}
+.navix-phone-capture{width:100%;max-width:430px;justify-self:center}
+.navix-phone-capture .image-button{background:#f8f6fc}
+.navix-playground-capture .image-button{background:#f8f6fc}
+@media(max-width:650px){.navix-demo-showcase{grid-template-columns:1fr;gap:28px}.navix-phone-capture{max-width:430px}}

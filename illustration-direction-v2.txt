@@ -1,0 +1,1068 @@
+schemaVersion:
+2
+updated:
+2026-10-07
+title:
+让同一只狐狸，经历不同的时刻
+One fox, different moments
+
+status:
+线条花纹提示词已合并：上传一张自己的 mascot，任选下面一组，复制完整提示词即可生成。每组已经包含角色、姿态、构图和纯线条要求。
+The ornament prompts are now self-contained: upload one mascot image, choose a concept and copy its complete prompt. Each includes identity, pose, composition and stroke-only treatment.
+
+premise:
+用景别、视点、动作方向和主角权重制造变化，而不靠换一批道具。五幕依次是展开世界、靠近一个人的细节、俯看并选择、进入约束、退后让别人尝试。狐狸始终是同一个角色，但不必每次占据画面中心。
+Create variety through framing, viewpoint, action direction and who holds the visual focus—not by swapping props around the same pose. The five beats are opening a world, attending to one person’s detail, looking down and choosing, entering constraints, and stepping aside for someone to try. The fox stays the same character without always occupying the centre.
+
+sourceReferences:
+  path:
+assets/IllustratorWorkspace/FoxHomepage_0.svg
+  role:
+角色造型、配色和曲面语言的最高优先级原稿；保持原文件不变。
+Authoritative character, palette and curve language; preserve the source file unchanged.
+
+  path:
+assets/IllustratorWorkspace/FoxHomepage_0.ai
+  role:
+作者的可编辑母版。
+The author’s editable master.
+
+  path:
+assets/art/fox-reference-detail.svg
+  role:
+核对眼睛、鼻口、耳朵和面部高光。
+Check the eye, muzzle, ears and facial highlight against this detail.
+
+  path:
+assets/art/fox-reference-reaching.svg
+  role:
+核对完整身体、腿和尾巴比例；不要求复制同一侧视姿势。
+Check the complete body, leg and tail proportions; do not repeat the same side-view pose.
+
+sharedRules:
+固定身份，不固定机位：小而尖的头、长腿、窄腰、挺立三角耳、细长鼻口、宽阔奶油色尾尖。改变透视时按同一个三维身体转动，不能把狐狸变成大头短腿吉祥物。
+Lock the identity, not the camera: a small pointed head, long legs, narrow waist, upright triangular ears, tapered muzzle, and a broad cream-tipped brush tail. Rotate one coherent body in perspective rather than turning it into a big-headed, short-legged mascot.
+
+眼睛沿用原稿：小而睁开的有棱角水滴形，桃色虹膜、深色斜瞳、细小奶油色反光及原有额头高光。侧面可复用原路径；三分之四与俯视需要重新投影，不把一枚侧面眼贴在所有角度，也不强求背影视角露出眼睛。
+Preserve the original small open angular teardrop eye, peach iris, dark angled pupil, tiny cream catchlights and forehead highlight. The original paths work in profile; three-quarter and overhead views need a perspective-aware redraw. Do not paste a profile eye onto every angle or force an eye into a rear view.
+
+用少量大曲面组织橙色、杏色、焦橙和奶油色，腿与耳背保持深绿。沿用原稿的柔和过渡可以，但不要增加碎面、毛发纹理、玻璃高光或金属质感。
+Organize orange, apricot, burnt orange and cream into a few broad curved planes; keep the legs and ear backs dark green. Subtle transitions from the master are welcome, but do not add tiny facets, fur texture, glass highlights or metallic finishes.
+
+尾巴是动作的反向配重：抬头时向后舒展，前倾时向外展开，停下来时沿身体回卷。必须从身体自然长出并有完整根部，不能像一条孤立丝带；不要靠把尾巴越画越大来制造动感。
+Treat the tail as a counterweight: extend it behind a lifted head, open it against a forward lean, and curl it around a resting body. Give it a complete natural root rather than a detached ribbon; do not manufacture energy by enlarging it in every scene.
+
+每张只保留一个主要动作和一个明确的视觉问题；通过不对称重心、身体倾角、前后遮挡产生动势。除开场外，不再连续使用“狐狸在左、桌子在右”的并排舞台。
+Give each image one main action and one legible visual question. Use an asymmetric centre of gravity, body tilt and overlap to create energy. After the opening, avoid a sequence of “fox on the left, table on the right” stages.
+
+场景应与真实项目相连，但都是编辑插画：不虚构参与者外貌、听力辅助设备、手语姿势、访谈笔记、产品界面、模型成绩或课程成效。界面与真实证据另用获准的截图呈现。
+Connect the scenes to real work while keeping them editorial illustrations. Do not invent participant appearances, hearing devices, signed gestures, interview notes, product interfaces, model scores or teaching outcomes. Approved screenshots carry actual interface evidence elsewhere.
+
+装饰围绕动作生长：纸路旁的细线、样本之间的短轨迹、路弯的切线、人物前倾形成的弧线。控制为一条主引导线、两簇次要纹样，不用每张都重复轨道圆、星星或漂浮图标。
+Let decoration grow from the action: fine lines beside the paper road, short sampling traces, a tangent at a bend, or an arc echoing a learner’s forward lean. Limit a scene to one guiding line and two small decorative clusters; do not repeat orbital circles, stars or floating icons everywhere.
+
+动态图只是加强已经清晰的静态姿势。每幕最多三处独立运动，主要动作完成后留出明显停顿；避免人物嘴部或手部无休止摆动。关闭动画、移动端和首次加载时仍显示完整故事。
+Motion reinforces an already legible still. Use at most three independent moving parts per scene, with an obvious rest after the main action; avoid endlessly moving mouths or hands. The full story must remain visible with motion off, on mobile and during initial loading.
+
+palette:
+  hex:
+#FB7926
+  role:
+主橙，取自角色原稿
+Primary orange from the character master
+
+  hex:
+#CB4E13
+  role:
+焦橙暗面，取自原稿
+Burnt-orange shadow from the master
+
+  hex:
+#FDC894
+  role:
+杏色亮面，取自原稿
+Apricot light plane from the master
+
+  hex:
+#F7E7C9
+  role:
+奶油色胸口、鼻口和尾尖，取自原稿
+Cream chest, muzzle and tail tip from the master
+
+  hex:
+#314132
+  role:
+角色深绿腿与小细节，取自原稿
+Dark-green character legs and details from the master
+
+  hex:
+#B7C4A5
+  role:
+场景辅助鼠尾草绿；不能与狐狸争夺焦点
+Supporting sage for the setting; subordinate to the fox
+
+  hex:
+#F7F5ED
+  role:
+网页纸色；SVG 本身透明，不烧入背景色
+Website paper; leave the SVG transparent rather than baking in a background
+
+format:
+  canvas:
+新作主稿建议 1200 × 1120，并使用一致 viewBox；开场保留原始 1298 × 1212 坐标。除有意安排的近景裁切外，主要动作放在画布中间约 80%，尾尖与耳尖周围预留安全边。Notice 的半身近景可裁切身体，完整画出脸、手与笔记本的关系。
+Use a consistent 1200 × 1120 viewBox for new artwork; retain the opening’s original 1298 × 1212 coordinates. Outside deliberate close-ups, keep the key action within roughly the central 80%, with safe space around ears and tail. Notice may crop the body while preserving the complete relationship between face, hand and notebook.
+
+  screenSize:
+先在约 520 × 485 的桌面舞台检查，再在 320 px 宽检查。两个尺寸都应能一眼分出狐狸、主要物件和正在发生的动作。
+Review first at approximately 520 × 485 on desktop, then at 320 px wide. The fox, main object and action should remain distinguishable at both sizes.
+
+  surface:
+真透明背景，无文字；标题与说明仍由 HTML 排版。主色块、轮廓装饰、运动部件分别成组。
+Real transparency, no lettering; headings and explanations remain HTML. Separate filled artwork, line decoration and moving parts into named groups.
+
+chapterBriefs:
+  id:
+beginning
+  chapter:
+00
+  heading:
+Follow a question. See where it leads.
+  title:
+展开一条路：保留原稿，唤醒周围的空间
+Unroll a path: preserve the original, enliven its surroundings
+
+  status:
+preserve-source-and-add-decoration
+  projectAnchors:
+Personal portfolio
+Dongfeng driving integration — foreshadowing only
+  story:
+原稿已经把“一个小动作，打开一条可探索的路”讲得很清楚。保留狐狸、工作台、纸路和小车，不再重新生成。新增细线应使空白像有空气流过，而不是重新建一个装饰舞台。
+The original already makes a small gesture opening an explorable route clear. Keep its fox, workbench, paper road and car. New line work should suggest air and continuity in the open space rather than build another decorative stage.
+
+  framing:
+原有中远景与斜向纸路不变。这是五幕中唯一完整展示工作台的全景，用它建立世界，再让后面的画面走近或换视角。
+Retain the existing medium-wide framing and diagonal paper road. This is the only full workbench view in the sequence: establish the world here, then move closer or change perspective.
+
+  composition:
+    foreground:
+纸路下缘加一至两条断续的细弧线，沿卷纸的已有方向延伸，前段可稍深，尾部渐轻。线不能穿过狐狸或小车。
+Add one or two interrupted fine arcs beneath the paper road, following its existing curve, slightly stronger near the action and lighter at the ends. Keep them clear of fox and car.
+
+    midground:
+原稿几何全部保留。狐狸尾巴、小车、卷纸沿已有完整部件运动，不切开头颈。
+Preserve all supplied geometry. Animate the already separated complete tail, car and paper curl; do not cut the connected head and neck.
+
+    background:
+画布边缘两簇纤细芽叶，一簇低、一簇高，呼应原稿植物而不增加新花盆。再用一段稀疏弧线引导视线回到纸路，保持上方留白。
+Place two slender sprout clusters at different heights near the canvas edges, echoing the existing plant without adding pots. One sparse arc brings the eye back to the paper road; leave the upper area open.
+
+  layers:
+    id:
+source-opening
+    description:
+原稿完整场景；不重绘
+Complete supplied scene; do not redraw
+
+    movable:
+False
+    id:
+decor-route-under
+    description:
+位于纸路下方的细弧线
+Fine arcs behind the paper road
+
+    movable:
+False
+    id:
+decor-sprout-a
+    description:
+第一簇完整芽叶
+First complete sprout cluster
+
+    movable:
+True
+    id:
+decor-sprout-b
+    description:
+第二簇完整芽叶
+Second complete sprout cluster
+
+    movable:
+True
+    id:
+decor-route-trace
+    description:
+沿已有道路边缘的一小段运动线
+One short moving line along the existing road
+
+    movable:
+True
+  motion:
+    target:
+decor-route-trace
+    direction:
+一段短线在 10–14 秒内缓慢行进，不围绕全图循环；不得成为加载指示器。
+A short line advances slowly over 10–14 seconds without circling the scene; it must not resemble a loading indicator.
+
+    target:
+decor-sprout-a / decor-sprout-b
+    direction:
+绕各自根部摆动约 3–5 度，错开节奏，根部固定。与原有运动一起检查总量，最多三处能被同时明显感知。
+Sway about 3–5 degrees around fixed roots with staggered timing. Review together with existing motion; no more than three movements should be conspicuous at once.
+
+  staticRequirement:
+去掉所有动画时，新线条仍能连接纸路和植物；不能用移动粒子填补构图空洞。
+With all motion removed, the line work still connects the paper road and plant forms; moving particles cannot fill compositional gaps.
+
+  prompt:
+在提供的 FoxHomepage_0.svg 原稿周围设计一层独立的稀疏线条装饰，不修改狐狸、眼睛、工作台、纸路、小车或原有色块。两条纤细、断续的弧线顺着纸路底缘延伸；画面边缘出现两簇不对称的小芽叶，呼应现有植物；一小段路线线条可单独用于运动。线条采用低对比鼠尾草绿，极少量焦橙用于一个落点。现代、克制、有空气感；曲线从场景动作中生长，不用星星、光斑、轨道圆、散点雨或漂浮图标。真透明背景，装饰与原稿分层，完整保留可运动形状及其根部。
+Design a separate sparse line-decoration layer around the supplied FoxHomepage_0.svg. Do not change the fox, eye, workbench, paper road, car or existing filled shapes. Two fine interrupted arcs extend along the underside of the paper road; two asymmetrically placed sprout clusters near the edges echo the existing plant; isolate a short route trace for possible motion. Use low-contrast sage line work and a tiny burnt-orange landing accent. Modern, restrained and airy, with curves arising from the action. No stars, glows, orbital diagrams, particle rain or floating icons. Real transparency; separate the decoration from the master and retain complete moving shapes and their roots.
+
+  id:
+notice
+  chapter:
+01
+  heading:
+Start with someone.
+  title:
+先靠近：一个人的细节值得停下来
+Come closer: stop for one person’s detail
+
+  status:
+supplied-png-converted-to-native-svg-and-framed
+  projectAnchors:
+DHH student well-being research — attentive inquiry, not a participant portrait
+  story:
+不再画两个人物隔桌交谈。把镜头推近到狐狸的三分之四侧脸、前胸和一只前爪；一位成年人的前臂从画外把打开的素色笔记本轻轻推近。狐狸从纸页抬眼朝向画外的人，耳朵朝向对方。重点是“我愿意靠近你的经验”，不是狐狸在阅读一份研究结论。
+Replace the across-the-table conversation with a close three-quarter view of the fox’s face, chest and one forepaw. An adult’s forearm enters from outside the frame, bringing an open plain notebook closer. The fox lifts its gaze from the page toward the person beyond the frame, with ears attending in that direction. The moment says “your experience deserves attention,” not “the fox has read a research finding.”
+
+  framing:
+近景，视点接近人的桌面高度，狐狸朝画面左上方微转约三分之四。头部占画面约四分之一，不改变头身真实比例；身体只是被景别自然裁掉。与开场完整侧身拉开距离。
+Close view near desk height, with the fox turning three-quarter toward the upper left. The head occupies about a quarter of the picture through framing, not altered anatomy; the body continues naturally outside the crop. This deliberately differs from the opening’s complete side silhouette.
+
+  composition:
+    foreground:
+打开的笔记本横切左下角，成人袖口与手只出现必要部分。纸页空白，无假笔记；保留一条干净书脊弧线。
+An open notebook cuts diagonally into the lower-left corner, with only the necessary adult sleeve and hand visible. Pages are blank, with no invented notes; retain one clear spine curve.
+
+    midground:
+狐狸面部与胸口在中右侧形成大而连贯的橙色体块，一只自然落下的前爪靠近书页但不压住它。视线离开笔记本，回到画外的人。
+The fox’s face and chest make one large continuous orange mass at centre-right; a naturally resting forepaw sits near, not on, the page. Its gaze returns from the notebook to the person outside the frame.
+
+    background:
+对方面部所在的左上方留白。仅用一条低对比、敞开的弧线呼应耳朵与书页，不画声波、气泡或“理解了”的符号。
+Leave the upper-left area open where the other person’s face would be. One low-contrast open curve echoes ear and page; no sound waves, speech bubbles or symbols claiming understanding.
+
+  layers:
+    id:
+notebook-back-pages
+    description:
+后页与书脊，静态
+Back pages and spine, static
+
+    movable:
+False
+    id:
+adult-forearm
+    description:
+完整成人前臂与手，保持静态
+Complete adult forearm and hand, static
+
+    movable:
+False
+    id:
+fox-head-body
+    description:
+连贯头颈胸口，不拆动
+Connected head, neck and chest, not rigged
+
+    movable:
+False
+    id:
+fox-eye
+    description:
+按三分之四视角重绘的原设计眼睛
+Original eye design redrawn for the three-quarter view
+
+    movable:
+True
+    id:
+notebook-page-corner
+    description:
+带完整遮挡底面的单页边角
+One page corner with its underlying surface complete
+
+    movable:
+True
+    id:
+decor-attention-arc
+    description:
+绕开脸与眼睛的敞开弧线
+Open curve clear of face and eye
+
+    movable:
+False
+  motion:
+    target:
+fox-eye
+    direction:
+一次短而自然的眨眼，10–14 秒一次；不改变虹膜样式。
+One brief natural blink every 10–14 seconds; preserve the iris design.
+
+    target:
+notebook-page-corner
+    direction:
+纸角轻抬 2–3 度后落回，动作后长停顿。人物手部保持静态，不模拟访谈手势。
+Lift the page corner 2–3 degrees and settle into a long rest. Keep the hand static rather than simulating an interview gesture.
+
+  staticRequirement:
+缩到 320 px 宽，仍应先看到倾听的面孔，再看到笔记本；狐狸眼神不可落在错误位置。无须呈现完整尾巴来证明它是同一只狐狸。
+At 320 px wide, the attentive face should read before the notebook, with a correctly directed gaze. A complete tail is not needed to prove the character’s identity.
+
+  prompt:
+为“Start with someone”创作一张现代几何编辑插画。沿用所附 FoxHomepage_0.svg 的橙色狐狸身份与眼睛设计，但不要复制侧身全景：采用桌面高度的近景三分之四视角，狐狸头部、胸口与一只前爪占中右侧，头向左上方的画外成年人轻转。画面左下角，一只穿简洁鼠尾草绿袖子的成年人的手将打开的空白笔记本轻推过来；只显示前臂，不画第二张完整面孔。狐狸的视线从纸页回到人，耳朵表现专注，神态温和而敏锐。保留小尖头、长鼻口、三角耳、原稿有棱角的睁开水滴眼、桃色虹膜与小反光；大曲面橙色、焦橙、杏色、奶油色与深绿。保持充足上方留白，一条稀疏弧线呼应纸页。无文字、假访谈记录、听力设备、手语、声波、气泡或临床符号。不是实际参与者肖像。透明底；静态姿势本身清楚，页面角与眼睛分别成组。
+Create a modern geometric editorial illustration for “Start with someone.” Use the supplied FoxHomepage_0.svg as the fox and eye authority, but do not repeat its full-body side view. Use a close three-quarter view at desk height: the fox’s head, chest and one forepaw occupy centre-right, gently turned toward an off-frame adult at upper left. At lower left, an adult hand in a simple sage sleeve brings an open blank notebook closer; show only the forearm, not another complete face. The fox’s gaze returns from page to person, ears attentive, expression warm and alert. Preserve its small pointed head, tapered muzzle, triangular ears and original open angular teardrop eye, peach iris and tiny catchlights. Use broad orange, burnt-orange, apricot, cream and dark-green planes. Keep generous space above and one sparse curve echoing the page. No lettering, invented interview notes, hearing devices, signed gestures, sound waves, speech bubbles or clinical symbols. This is not a portrait of a participant. Transparent background; make the still pose legible and separate the eye and page corner into groups.
+
+  currentArtwork:
+    source:
+assets/art/chapter-sources/notice-closeup.png
+    vector:
+assets/art/scene-notice-closeup.svg
+    web:
+assets/art/scene-notice-framed.svg
+  id:
+test
+  chapter:
+02
+  heading:
+Give curiosity something to push against.
+  title:
+换一个高度：下一次测量放在哪里
+Change the viewpoint: where to measure next
+
+  status:
+supplied-png-converted-to-native-svg-with-sampling-motion
+  projectAnchors:
+Active learning — selecting the next sample
+Physical-field reconstruction — comparing sampling paths
+  story:
+俯视一片铺在地面的折展地形，狐狸绕到它尚未被描述清楚的一侧，前爪停在下一枚橙色取样点上方。已取样的几枚深绿小钉与一段短路径留在另一边。我们看见的是一次有依据的选择，不是狐狸隔着放大镜看玩具。
+Look down onto a folded-out terrain surface on the ground. The fox curves around toward its less-described side, holding a forepaw just above the next orange sampling point. A few dark-green sample pegs and a short path remain on the other side. The picture shows a deliberate choice, rather than a fox peering through a lens at a toy.
+
+  framing:
+约 60 度鸟瞰；狐狸从右下向左上斜切画面，背部、耳尖和弯曲身体形成近似逗号的姿态。尾巴反向展开，构成与上一幕近景完全不同的平面轮廓。
+A roughly 60-degree bird’s-eye view. The fox crosses from lower right toward upper left, its back, ears and bent torso forming a comma-like silhouette. The tail opens the other way, creating a distinctly different shape from the preceding close-up.
+
+  composition:
+    foreground:
+狐狸的后背和完整尾巴在右下，四肢透视要清楚；前爪伸向中央，不能多生一只爪。
+The fox’s back and complete tail sit at lower right with coherent four-limb perspective; one forepaw reaches toward the centre without an extra limb.
+
+    midground:
+不规则奶油色折展面横过画面，用三条宽阔鼠尾草绿等高带建立“场”。四枚以内已有样本，加一枚不同颜色的候选点；不是准确地图或实测结果。
+An irregular cream fold-out surface crosses the frame. Three broad sage contour bands establish a field; use at most four existing samples and one differently coloured candidate. This is neither a precise map nor a measured result.
+
+    background:
+让未取样区域安静留白；仅一条断续取样轨迹靠近已知点，不加坐标轴、网络、数据标签或大量等高线。
+Keep the unsampled area calm and open. One interrupted trace stays near the existing points; no axes, networks, data labels or dense contours.
+
+  layers:
+    id:
+terrain-base
+    description:
+完整地形底面与宽等高带
+Complete terrain base and broad contour bands
+
+    movable:
+False
+    id:
+known-samples
+    description:
+少量已取样的静态钉
+A few static known-sample pegs
+
+    movable:
+False
+    id:
+sample-path
+    description:
+短而明确的已有取样轨迹
+Short defined sampling trace
+
+    movable:
+True
+    id:
+next-sample
+    description:
+完整橙色候选点及其底面
+Complete orange candidate with the ground beneath it
+
+    movable:
+True
+    id:
+fox-body-limbs
+    description:
+完整俯视身体与四肢，保持静态
+Complete overhead body and four limbs, static
+
+    movable:
+False
+    id:
+fox-tail
+    description:
+带遮挡余量的完整尾巴
+Complete tail with overlap allowance
+
+    movable:
+True
+  motion:
+    target:
+next-sample
+    direction:
+上移约画布高度的 0.5% 后落到候选位置，入场一次；停留后只保留轻微呼吸，不闪烁。
+Rise about 0.5% of canvas height and settle into the candidate location once on entry; afterwards retain only a restrained pulse, without flashing.
+
+    target:
+sample-path
+    direction:
+入场时短路径逐段出现一次，随后固定，不不断重画研究过程。
+Reveal the short trace once on entry, then leave it still rather than repeatedly replaying research.
+
+    target:
+fox-tail
+    direction:
+低幅度约 3–4 度的配重摆动；俯视根部必须保持重叠。
+A restrained 3–4-degree counterbalancing sweep, retaining overlap at the overhead tail root.
+
+  staticRequirement:
+候选点与已有点依靠形状、位置和色彩同时区分；不靠脉冲才能被发现。最后一个采样点不能被误读成“已经证明最优”。
+Distinguish the candidate from known samples through shape, position and colour together, not animation alone. The selected point must not imply a proven optimum.
+
+  prompt:
+创作“Give curiosity something to push against”的单幅现代几何插画。用约 60 度鸟瞰视角，优雅橙色狐狸从右下向左上弯身探看地上展开的一片不规则奶油色地形纸。背部、耳朵、长腿与反向舒展的宽尾巴形成鲜明的逗号式轮廓；前爪停在一枚橙色候选取样点上方，四肢结构准确。纸面只有三条宽的鼠尾草绿等高带、最多四枚深绿已知点与一段短的断续采样轨迹；另一边留白，表达还需要了解的区域。没有桌子、放大镜或第二个人物。沿用作者狐狸原稿的比例、大曲面配色、奶油尾尖与深绿腿；适应俯视角度重画面部，眼睛看不见也无需强行添加。行动明确，斜向重心，留出空气。场景是主动学习与采样选择的编辑比喻，不是科学数据、实测地形或验证结果。无文字、数字、坐标、曲线图、网络、魔法或结果徽章。真透明背景，采样点、轨迹、尾巴独立成组。
+Create one modern geometric illustration for “Give curiosity something to push against.” Use a roughly 60-degree bird’s-eye view: an elegant orange fox bends diagonally from lower right toward upper left around an irregular cream terrain sheet unfolded on the ground. Its back, ears, long legs and broad tail extending the other way form a strong comma-like silhouette. One forepaw pauses above an orange candidate sampling point; show anatomically correct limbs. The sheet contains only three broad sage contour bands, at most four dark-green known points and one short interrupted sampling trace. Leave the other side open to suggest what is not yet understood. No table, magnifying glass or second figure. Preserve the author’s fox proportions, broad colour planes, cream tail tip and dark-green legs; redraw the head for the elevated view without forcing a visible eye. Use a decisive diagonal and generous air. This is an editorial metaphor for active learning and sampling choices, not scientific data, measured terrain or validation. No text, numbers, axes, charts, networks, magic or result badges. Real transparency; group the candidate, trace and complete tail separately.
+
+  currentArtwork:
+    source:
+assets/art/chapter-sources/test-overhead.png
+    vector:
+assets/art/scene-test-overhead.svg
+    web:
+assets/art/scene-test-overhead.svg
+  id:
+build
+  chapter:
+03
+  heading:
+Then, let the world push back.
+  title:
+进入弯道：让约束占据前景
+Into the bend: bring the constraint forward
+
+  status:
+written-concept-for-user-svg
+  projectAnchors:
+Dongfeng — simulator integration, driving loop and recoverable evaluation
+  story:
+把小车和弯道推到近前，狐狸退到中景。一个路锥使直行路线不再成立；狐狸四肢着地、身体前倾，认真观察小车即将转弯的那一瞬。空间中的阻力比“狐爪扶着试验台”更直接。
+Bring the car and bend into the foreground and move the fox into the middle distance. A cone makes a straight route impossible. With four grounded paws and a forward-leaning body, the fox watches the moment before the model turns. The constraint becomes spatially tangible rather than another paw resting on a test tray.
+
+  framing:
+低机位、三分之四斜视；路面从左下近处斜向右上，再转向画面内部。狐狸位于弯道外侧、朝观众偏三分之四，不再是水平侧身。车在透视中明显比之前大，但仍是模型路面。
+Low, oblique three-quarter view. The road starts close at lower left, runs toward upper right and bends back inward. Place the fox outside the bend, angled three-quarter toward the viewer instead of horizontally in profile. Perspective makes the car more prominent while the scene remains a miniature simulation metaphor.
+
+  composition:
+    foreground:
+完整无品牌小车、一个路锥和宽而清晰的路弯形成近大远小。只保留一段简洁路面，不加城市。
+A complete unbranded model car, one cone and a broad readable bend establish depth. Use one concise road segment, not a city.
+
+    midground:
+狐狸越过弯道看向车辆，前肢一前一后稳定支撑；尾巴向外舒展平衡前倾。狐狸不驾驶、不拿方向盘、不做类人机械师。
+The fox watches the vehicle across the bend with forelegs planted at slightly different depths; its tail opens outward against the lean. It does not drive, hold a steering wheel or act as a human mechanic.
+
+    background:
+低对比的短路线引导车头；弯道外侧两三段短切线呼应“需要调整方向”，不要速度爆炸线、撞击符号或大片网格。
+A short low-contrast route guides the car. Two or three short tangential lines outside the bend suggest adjustment; no explosive speed lines, collision marks or grid fields.
+
+  layers:
+    id:
+road-base
+    description:
+完整浅路面及必要背面
+Complete shallow road surface and visible underside
+
+    movable:
+False
+    id:
+road-guidance
+    description:
+转弯前的一小段引导线
+Short guidance segment before the bend
+
+    movable:
+True
+    id:
+cone
+    description:
+静态单个路锥及底面
+One static cone and its ground
+
+    movable:
+False
+    id:
+car
+    description:
+整辆小车，车轮可另分但本版不必转动
+Complete car; wheels may be separate but need not turn
+
+    movable:
+True
+    id:
+fox-body-limbs
+    description:
+完整三分之四狐狸身体与四肢
+Complete three-quarter fox body and limbs
+
+    movable:
+False
+    id:
+fox-tail
+    description:
+完整配重尾巴，保留根部遮挡
+Complete counterweight tail with root overlap
+
+    movable:
+True
+    id:
+decor-bend-tangents
+    description:
+短切线装饰，静态
+Short static bend-tangent decoration
+
+    movable:
+False
+  motion:
+    target:
+car
+    direction:
+沿路前进画布宽度的 5–7%，在路锥前停顿再转约 6–10 度；一次入场动作后长停留。避免倒车瞬移或无休止绕圈。
+Move forward 5–7% of canvas width, pause before the cone, then turn approximately 6–10 degrees. Use one entry action followed by a long rest; no teleporting backwards or endless laps.
+
+    target:
+road-guidance
+    direction:
+随小车前进显示一小段路线，完成后保持静止；不能出现虚构传感器数值。
+Reveal a short route segment with the car, then leave it still; show no invented sensor values.
+
+    target:
+fox-tail
+    direction:
+随车转向做一次轻微配重，之后慢速休息；头颈不必拆开追踪。
+Give the tail one small counterbalancing response to the turn, then a slow resting motion; the connected head and neck need not track it.
+
+  staticRequirement:
+小车静止时，也必须清楚看到前方的弯道和路锥。装饰线不应让它看起来像赛车、急刹或撞车。
+Even with the car still, the approaching bend and cone must be clear. Decorative lines must not imply racing, emergency braking or a crash.
+
+  prompt:
+为“Then, let the world push back”画一幅低机位、强斜向构图的现代几何插画。一段浅的奶油与鼠尾草绿模型道路从画面左下近处延伸到右上并转弯；完整无品牌小车在前景接近一个小路锥，直行会遇到约束。弯道外侧中景，原稿中的优雅橙色狐狸以三分之四面向观众的角度前倾观察，四爪踏稳地面，长腿、窄腰、尖耳与自然舒展的宽奶油尾尖保持一致。狐狸不扶桌、不驾驶，也没有人手。眼睛沿用原设计并按新角度透视。车与路面比狐狸更靠近观众，制造空间张力，动作克制可信。宽阔橙色曲面、焦橙、杏色、奶油、深绿与鼠尾草绿；弯道旁只有短切线与一段路面引导线。不要桌子、完整城市、数据面板、产品界面、速度爆炸线、撞击、文字、标志或性能结论。这是驾驶仿真集成的编辑比喻，不是实车测试记录。透明底，车辆、路面、路锥与完整尾巴可分层。
+Illustrate “Then, let the world push back” with a low viewpoint and a strong diagonal. A shallow cream-and-sage model road runs from close lower left toward upper right and bends inward. A complete unbranded car approaches one small cone in the foreground, where going straight is constrained. Outside the bend in the middle distance, the author’s elegant orange fox leans forward to observe at a three-quarter angle toward the viewer, all four paws grounded. Preserve long legs, narrow waist, pointed ears and the naturally spreading broad cream-tipped tail. No paw on a table, driving pose or human hands. Adapt the original eye design correctly to this view. Bring car and road closer than the fox for spatial tension; keep the action controlled and plausible. Use broad orange, burnt-orange, apricot, cream, dark-green and sage planes, with only short tangents beside the bend and one road-guidance segment. No table, cityscape, dashboards, interfaces, explosive speed lines, crash, lettering, logos or performance claims. This is an editorial metaphor for driving-simulator integration, not a physical testing record. Transparent background; separate complete car, road, cone and tail groups.
+
+  id:
+return
+  chapter:
+04
+  heading:
+Bring it back to people.
+  title:
+把位置让出来：这一刻由使用者主导
+Make room: the learner takes the lead
+
+  status:
+written-concept-for-user-svg
+  projectAnchors:
+Introductory AI-agent coding course delivered through InVolve
+InVolve — the author’s frontend and interaction-design work
+  story:
+狐狸在右下近景露出后背和侧转的耳朵，向后让出空间；中景的一位成年初学者前倾，双手正准备尝试键盘。焦点从狐狸转到人的行动，画面没有“狐狸和人互相讲话”的第二次演出。读者像站在陪伴者身后，看到工具真正进入一个人的使用过程。
+Show the fox’s back and slightly turned ears close at lower right as it makes room. In the middle distance, an adult beginner leans forward, hands about to try the keyboard. The visual focus passes from fox to human action instead of staging a second conversation. The reader stands behind the companion and sees a tool entering someone’s actual process of use.
+
+  framing:
+从狐狸肩背后看向使用者，三分之四背影视角；人物为画面中最大的完整主体，狐狸约占四分之一至三分之一。只出现一位使用者，避免人群合影与旧的双人聊天构图。
+Look over the fox’s shoulder toward the learner in a rear three-quarter view. The person is the largest complete subject; the fox occupies roughly a quarter to a third of the frame. Use one learner rather than a group portrait or the previous two-person conversation.
+
+  composition:
+    foreground:
+狐狸肩背、耳朵与松弛回卷的尾巴构成右侧开放框景，不挡住手和电脑。背影无需刻意露出眼睛，身份靠耳形、色块与比例建立。
+Fox shoulders, ears and a loosely returning tail form an open frame at right without obscuring hands or laptop. Do not force an eye into the rear view; ears, colour planes and proportions establish identity.
+
+    midground:
+成年人位于中左，身体主动向键盘倾斜，一手落在键盘上，另一手自然停在旁边；笔记本屏幕背面主要朝向观众。焦点是姿态和动作，不是显示器内容。
+Place the adult at centre-left, actively leaning toward the keyboard, one hand resting on it and the other naturally nearby. The back of the laptop screen mostly faces the viewer. Posture and action, not screen content, carry the story.
+
+    background:
+一段简洁桌缘形成对角线，一张空白折页作为课程线索。让使用者前方有开放空间；不加课堂装饰、成果徽章、灯泡或机器人。
+A concise desk edge makes a diagonal, with one blank folded sheet suggesting the lesson. Leave open space ahead of the learner; no classroom decoration, achievement badge, lightbulb or robot.
+
+  layers:
+    id:
+desk-laptop
+    description:
+静态桌面与电脑，不制作虚构屏幕
+Static desk and laptop; no fictional screen
+
+    movable:
+False
+    id:
+adult-learner
+    description:
+完整成年使用者，姿态静态
+Complete adult learner in a static pose
+
+    movable:
+False
+    id:
+lesson-sheet
+    description:
+完整空白折页及其底面
+Complete blank folded sheet and surface underneath
+
+    movable:
+True
+    id:
+fox-rear-body
+    description:
+完整后背三分之四狐狸，头颈连贯
+Complete rear three-quarter fox with connected head and neck
+
+    movable:
+False
+    id:
+fox-tail
+    description:
+前景完整回卷尾巴
+Complete curling foreground tail
+
+    movable:
+True
+    id:
+decor-open-arc
+    description:
+呼应前倾动作的开放轮廓弧线
+Open contour arc echoing the forward lean
+
+    movable:
+False
+  motion:
+    target:
+lesson-sheet
+    direction:
+一个纸角轻抬后静止，像工作过程中刚放下的纸；不模拟学习者成功或回答。
+Lift and settle one corner as a recently placed sheet; do not simulate a learner’s success or response.
+
+    target:
+fox-tail
+    direction:
+尾尖以约 3 度轻摆并停顿，动作向画外舒展，给人物更多空间。
+Sway the tail tip about 3 degrees with a pause, opening outward to give the person more room.
+
+  staticRequirement:
+一眼先读到“人正在尝试”，其次才发现狐狸在旁陪伴。人物的年龄、手部结构和键盘接触要合理；不能把笔记本空白面画成软件证据。
+The first reading is “a person is trying”; only then does the accompanying fox emerge. Keep adult proportions, hands and keyboard contact plausible, and do not present a blank screen as product evidence.
+
+  prompt:
+为“Bring it back to people”创作现代几何编辑插画，采用从狐狸肩背后看向一位成年使用者的三分之四背影视角。狐狸只占画面右下约四分之一至三分之一，露出橙色肩背、尖耳、细长身体与宽阔奶油尾尖，身体略向后让出空间，眼睛不必可见。中左方，一位成年初学者成为最大的完整主体，专注而主动地向笔记本键盘前倾，一手开始尝试、另一手自然停在旁边；电脑屏幕背面主要朝向观众，不出现任何应用界面。简洁桌缘斜穿画面，桌面只有一张空白折页。人物看向自己的操作，狐狸陪伴观看，二者不相对交谈，没有举手问答。用原稿狐狸的流动几何色块和固定比例，人物以鼠尾草绿和奶油色呈现，留白自然温暖。不要文字、代码、成功标志、虚构 InVolve 界面、儿童、机器人、灯泡或假课程成果。这是受真实初学者课程启发的编辑场景，不是课堂实录。透明背景，人物静态，纸角和完整狐狸尾巴独立成组。
+Create a modern geometric editorial illustration for “Bring it back to people,” looking over the fox’s shoulder in a rear three-quarter view toward one adult learner. The fox occupies only the lower-right quarter to third, showing orange shoulders, pointed ears, a slender body and broad cream-tipped tail as it makes room; an eye need not be visible. At centre-left, an adult beginner is the largest complete subject, leaning forward with focused agency toward a laptop keyboard, one hand beginning to try and the other naturally nearby. The back of the screen mostly faces the viewer; show no application interface. A simple diagonal desk edge and one blank folded sheet are the only setting. The person watches their own action while the fox accompanies them; no face-to-face conversation or raised-hand exchange. Retain the master fox’s flowing geometric planes and fixed proportions, with sage and cream for the adult and warm open space. No lettering, code, success marks, invented InVolve UI, children, robots, lightbulbs or claimed course outcomes. This is editorial art inspired by a real beginner course, not a documentary classroom image. Transparent background; keep the adult static and separate the page corner and complete fox tail.
+
+codaLineArt:
+  heading:
+Understand more. Make something useful. Find the next question.
+  recommendedId:
+woven-fox
+  principle:
+使用方法：上传你的 mascot 图片，再复制下方任意一组完整提示词。中文、英文任选一种。五组均用简单的圆弧、椭圆、三角折线与菱形回环编织成纯线条花纹，保留角色与动势。建议先试 01「回旋舒展」。
+Upload your mascot image and copy one complete prompt below, in either Chinese or English. All five concepts use simple circular and elliptical arcs, triangular turns and diamond loops to weave a stroke-only ornament while preserving identity and gesture. Start with 01, Open spiral.
+
+  typeSafeZone:
+先完成无文字横幅，再把网页原有三行深绿标题叠在上层。建议首页母版 1440×680；身体保持集中、尾势向两侧打开，线纹可穿过行间与字后，不设矩形空洞。优先让肩胯、爪子和尾根等密集交接避开最密的字群；试排后只局部减线。手机版围绕主体重新构图，不将整张宽幅等比缩成细丝。
+Finish a text-free banner before overlaying the existing three dark-green headline lines. Use a 1440×680 coda master, keeping the body cohesive and opening the tail sweep sideways. Ornament may pass behind and between words without a rectangular exclusion zone. Place dense shoulder, paw and tail-root junctions away from dense letter clusters, then simplify locally after testing. Recompose around the body for mobile instead of shrinking the entire banner.
+
+  renderRules:
+几何语言与生成稿一致：以少量圆弧、椭圆弧、三角折线和菱形回环构成主体与纹样，保留较大的单元和线间留白。矢量整理不重新添加碎毛或繁密花丝。
+Retain the generated geometric vocabulary: a small set of circular and elliptical arcs, triangular turns and diamond loops across figure and ornament. Keep larger units and clear gaps; vector cleanup should not reintroduce fur marks or intricate filigree.
+
+成稿只用一种描边色 #CF9768；所有闭合区域无填色，无渐变、投影、排线明暗或第二种颜色。透明背景；生成工具不支持透明时先用纯白底，不画纸纹、棋盘格或环境。网页纸色由 CSS 提供。
+Final artwork uses a single stroke colour, #CF9768. Leave all enclosed areas unfilled; no gradients, shadows, tonal hatching or second colour. Use transparency; if the generator cannot provide it, draft on plain white without paper texture, checkerboard or scenery. CSS supplies the page background.
+
+矢量整理时，1440 px 宽母版先统一约 1.8 px 线宽；必要的关节和识别线可轻调至约 2.0 px，少量内纹可降至约 1.4 px。避免粗外框与细内纹的强对比，线间空隙在实际显示尺寸下仍可分辨。路径原则上 fill="none"，只设单色 stroke；位图提示词不要求精确执行这些数值。
+For vector cleanup on a 1440 px-wide master, start around 1.8 px throughout, optionally adjusting essential joints to around 2.0 px and selected internal strands to around 1.4 px. Avoid a strong thick-outline/thin-interior contrast and retain visible gaps at display size. Use fill="none" with a single stroke colour for paths. These values are production guidance, not exact bitmap-generation requirements.
+
+交叠处通过终止被遮住的线或短断口说明前后，断口大小按线宽与交叠角度调整；不用白色填块遮盖。保留姿态需要的肩胯与尾根线，不逐一描出 mascot 的所有色块边界。
+Show overlap by ending hidden lines or inserting short gaps sized for the stroke weight and crossing angle. Avoid white cover shapes. Preserve shoulder, hip and tail-root articulation without tracing every colour-plane boundary of the mascot.
+
+先以完整浓度检查静态线稿，再在网页上以整体透明度约 0.7 试排，按文字和背景微调。动感必须由静态姿态成立；可选动效只轻摆独立的外侧纹线，12–16 秒一周期并有停顿。主体、关节和尾根不拆开漂浮。
+Inspect the still at full strength, then trial roughly 0.7 overall opacity against the actual page and type. Movement must already read in the still. Optional animation affects only independent outer ornament, with a 12–16-second cycle and pauses. Do not detach or float the body, joints or tail root.
+
+交付检查：把透明线稿叠在两种不同底色上，狐狸身体内部应和外部一起变色，确认没有隐藏的白色底块。若交付 SVG，检查可见图形均为描边路径，没有用于身体的填色面、嵌入位图或用遮盖色假装透明的区域。
+Delivery check: place the transparent artwork on two different background colours. The fox interior and exterior should change together, revealing any hidden white backing. For SVG delivery, check that visible artwork consists of stroked paths, without body fills, embedded bitmaps or cover-colour regions pretending to be transparent.
+
+  concepts:
+    id:
+woven-fox
+    title:
+01 / 推荐：回旋舒展
+01 / Recommended: Open spiral
+
+    composition:
+横向约 2:1，一只狐狸轻盈地在空中回旋。头胸向左上提起，鼻口微向右转，窄腰扭向右下的骨盆；两只前爪在胸前高低错开地收拢，后腿折向腹下。单根大尾巴从髋后向下绕过后爪，向左扫出宽阔椭圆弧，尾尖向上回挑。尾部的回环纹线向左右自然延伸，让整幅花纹横向舒展，头、爪和尾尖完整入画。
+A roughly 2:1 horizontal ornament with one fox spiralling lightly in the air. Lift head and chest toward the upper left, turn the muzzle slightly right and twist the narrow waist toward a lower-right pelvis. Tuck the forepaws at different heights before the chest and fold the hind legs beneath the belly. One broad tail curves from behind the hip below the hind paws, sweeps left in a wide ellipse and turns upward at the tip. Extend looping tail ornament naturally sideways, keeping head, paws and tail tip in frame.
+
+    why:
+回旋收爪，尾纹横向展开。推荐用于首页结尾。
+A tucked spiral with a wide tail sweep. Recommended for the homepage coda.
+
+    layers:
+      id:
+woven-fox-structure
+      description:
+身体轮廓、面部、关节和前后遮挡，作为完整静态主体。
+Body contours, face, joints and overlaps, retained as one complete still subject.
+
+      movable:
+False
+      id:
+woven-fox-weave
+      description:
+胸腹、肩胯、尾部与外侧回环的单色细线；不含任何填色区域。
+Single-colour fine strokes through chest, belly, shoulder, hip, tail and outer loops; no filled regions.
+
+      movable:
+False
+      id:
+woven-fox-terminals
+      description:
+独立于解剖结构的外侧呼应曲线，可选轻动；尾根和肢体留在主体。
+Outer echo curves independent of anatomy, optionally animated; tail root and limbs stay with the subject.
+
+      movable:
+True
+    motion:
+静态动势先成立；可选只让一小簇外侧纹线轻摆，主体、尾根和四肢保持完整静止。
+Establish the gesture in the still; optionally sway a small outer ornament cluster while keeping body, tail root and limbs intact and still.
+
+    prompt:
+以我上传的 mascot 为唯一角色参考，保留它的小尖头、窄鼻口、三角耳、细长腿、窄腰和丰厚尾巴，按下面的动作重新构图。生成一幅用简单几何线形编织的单色装饰花纹。
+
+横向约 2:1，一只狐狸轻盈地在空中回旋。头胸向左上提起，鼻口微向右转，窄腰扭向右下的骨盆；两只前爪在胸前高低错开地收拢，后腿折向腹下。单根大尾巴从髋后向下绕过后爪，向左扫出宽阔椭圆弧，尾尖向上回挑。尾部的回环纹线向左右自然延伸，让整幅花纹横向舒展，头、爪和尾尖完整入画。
+
+用少量、容易辨认的基础几何线形编织整个画面：圆弧、椭圆弧、三角折线和菱形回环。头与耳用简洁三角形轮廓，胸腹和髋部用相接的椭圆弧，腿用有节奏的折线，宽尾用嵌套的大弧线；外围花纹沿用这些形状，通过重复、旋转、缩放和少量穿插形成整体。身体与花纹自然共享线段，优先用较大的几何单元和清楚的留白；减少碎曲线、写实毛发与繁密花丝。保留原有扭身、收爪和尾部回旋的动势，避免僵硬对称。所有几何形都只是平面的空心线形，不画实体几何块、三维线框或细碎三角网格。
+
+全图只用暖橙 #CF9768 的清晰细线，线宽基本一致。身体内外都透出同一背景，眼鼻、耳内、胸口、爪子和尾尖也只描线。无填色、实心块、阴影、渐变、粗色带、密集排线或文字；不沿用参考图的色面。透明背景优先，不支持则用纯白背景。
+
+请在工具允许的单次生成数量上限内，尽可能多地生成独立候选图片，供我挑选最佳方案。各张保持上述角色、姿态方向与纯线条风格，在曲线走向、纹样疏密和细节上适度变化；每张单独输出，不要拼成多宫格。如果一次只能生成一张，就先生成一张。
+Use my uploaded mascot as the only character reference. Preserve its small pointed head, tapered muzzle, triangular ears, slender legs, narrow waist and generous tail, and recompose it in the pose below. Create a monochrome decorative ornament woven entirely from simple geometric line shapes.
+
+A roughly 2:1 horizontal ornament with one fox spiralling lightly in the air. Lift head and chest toward the upper left, turn the muzzle slightly right and twist the narrow waist toward a lower-right pelvis. Tuck the forepaws at different heights before the chest and fold the hind legs beneath the belly. One broad tail curves from behind the hip below the hind paws, sweeps left in a wide ellipse and turns upward at the tip. Extend looping tail ornament naturally sideways, keeping head, paws and tail tip in frame.
+
+Weave the whole composition from a small, recognizable vocabulary of simple geometric line shapes: circular arcs, elliptical arcs, triangular turns and diamond-shaped loops. Use simple triangular contours for head and ears, joined elliptical arcs for chest, belly and hips, rhythmic angled lines for legs and nested broad arcs for the tail. Repeat, rotate, scale and selectively interlace the same shapes in the surrounding ornament. Let figure and pattern naturally share line segments. Prefer larger geometric units and clear negative spaces; reduce fragmented curves, realistic fur and intricate filigree. Preserve the twisting body, tucked paws and sweeping tail without rigid symmetry. Every geometric form is a flat, unfilled line shape: no solid geometric blocks, 3D wireframes or finely triangulated meshes.
+
+Use only crisp, fine warm-orange #CF9768 strokes of approximately uniform width. The same background shows through every interior, including eyes, nose, inner ears, chest, paws and tail tip: outlines only. No fills, solid patches, shading, gradients, broad bands, dense hatching or lettering; do not copy the reference’s colour planes. Prefer transparency, otherwise plain white.
+
+Within the tool’s per-request image limit, generate as many separate candidate images as possible so I can choose the best. Keep the specified character, pose direction and stroke-only style consistent, with subtle variations in curves, ornament spacing and details. Output each image separately, not as a collage or contact sheet. If only one image per request is supported, generate one.
+
+    id:
+wind-frieze
+    title:
+02 / 掠风腾跃
+02 / A leap through the wind
+
+    composition:
+横向约 2.4:1，一只狐狸由左下向右上腾跃，胸部领先，头微抬，背部轻弓。一只前腿向前伸，另一只略弯；一条后腿向后蹬，另一条收在腹下。单根大尾巴从后髋向左下扫出，再向左上翻起，与身体前冲方向形成反向 S 弧。腹下和尾外延伸少量疏朗曲线，保留向前的空隙，整个身体完整入画。
+A roughly 2.4:1 horizontal ornament with one fox leaping from lower left to upper right, chest leading, head slightly raised and back gently arched. Extend one foreleg and bend the other; kick one hind leg backward while tucking the other beneath the belly. One broad tail sweeps from the rear hip down-left, then curls up-left in an S curve opposing the forward motion. Add sparse flowing curves beneath the belly and outside the tail, with open space ahead. Keep the full animal in frame.
+
+    why:
+四肢伸缩错开，身体向前腾跃。适合宽幅过渡。
+Staggered limbs in a forward leap. For wide transitions.
+
+    layers:
+      id:
+wind-frieze-structure
+      description:
+身体轮廓、面部、关节和前后遮挡，作为完整静态主体。
+Body contours, face, joints and overlaps, retained as one complete still subject.
+
+      movable:
+False
+      id:
+wind-frieze-weave
+      description:
+胸腹、肩胯、尾部与外侧回环的单色细线；不含任何填色区域。
+Single-colour fine strokes through chest, belly, shoulder, hip, tail and outer loops; no filled regions.
+
+      movable:
+False
+      id:
+wind-frieze-terminals
+      description:
+独立于解剖结构的外侧呼应曲线，可选轻动；尾根和肢体留在主体。
+Outer echo curves independent of anatomy, optionally animated; tail root and limbs stay with the subject.
+
+      movable:
+True
+    motion:
+静态动势先成立；可选只让一小簇外侧纹线轻摆，主体、尾根和四肢保持完整静止。
+Establish the gesture in the still; optionally sway a small outer ornament cluster while keeping body, tail root and limbs intact and still.
+
+    prompt:
+以我上传的 mascot 为唯一角色参考，保留它的小尖头、窄鼻口、三角耳、细长腿、窄腰和丰厚尾巴，按下面的动作重新构图。生成一幅用简单几何线形编织的单色装饰花纹。
+
+横向约 2.4:1，一只狐狸由左下向右上腾跃，胸部领先，头微抬，背部轻弓。一只前腿向前伸，另一只略弯；一条后腿向后蹬，另一条收在腹下。单根大尾巴从后髋向左下扫出，再向左上翻起，与身体前冲方向形成反向 S 弧。腹下和尾外延伸少量疏朗曲线，保留向前的空隙，整个身体完整入画。
+
+用少量、容易辨认的基础几何线形编织整个画面：圆弧、椭圆弧、三角折线和菱形回环。头与耳用简洁三角形轮廓，胸腹和髋部用相接的椭圆弧，腿用有节奏的折线，宽尾用嵌套的大弧线；外围花纹沿用这些形状，通过重复、旋转、缩放和少量穿插形成整体。身体与花纹自然共享线段，优先用较大的几何单元和清楚的留白；减少碎曲线、写实毛发与繁密花丝。保留原有扭身、收爪和尾部回旋的动势，避免僵硬对称。所有几何形都只是平面的空心线形，不画实体几何块、三维线框或细碎三角网格。
+
+全图只用暖橙 #CF9768 的清晰细线，线宽基本一致。身体内外都透出同一背景，眼鼻、耳内、胸口、爪子和尾尖也只描线。无填色、实心块、阴影、渐变、粗色带、密集排线或文字；不沿用参考图的色面。透明背景优先，不支持则用纯白背景。
+
+请在工具允许的单次生成数量上限内，尽可能多地生成独立候选图片，供我挑选最佳方案。各张保持上述角色、姿态方向与纯线条风格，在曲线走向、纹样疏密和细节上适度变化；每张单独输出，不要拼成多宫格。如果一次只能生成一张，就先生成一张。
+Use my uploaded mascot as the only character reference. Preserve its small pointed head, tapered muzzle, triangular ears, slender legs, narrow waist and generous tail, and recompose it in the pose below. Create a monochrome decorative ornament woven entirely from simple geometric line shapes.
+
+A roughly 2.4:1 horizontal ornament with one fox leaping from lower left to upper right, chest leading, head slightly raised and back gently arched. Extend one foreleg and bend the other; kick one hind leg backward while tucking the other beneath the belly. One broad tail sweeps from the rear hip down-left, then curls up-left in an S curve opposing the forward motion. Add sparse flowing curves beneath the belly and outside the tail, with open space ahead. Keep the full animal in frame.
+
+Weave the whole composition from a small, recognizable vocabulary of simple geometric line shapes: circular arcs, elliptical arcs, triangular turns and diamond-shaped loops. Use simple triangular contours for head and ears, joined elliptical arcs for chest, belly and hips, rhythmic angled lines for legs and nested broad arcs for the tail. Repeat, rotate, scale and selectively interlace the same shapes in the surrounding ornament. Let figure and pattern naturally share line segments. Prefer larger geometric units and clear negative spaces; reduce fragmented curves, realistic fur and intricate filigree. Preserve the twisting body, tucked paws and sweeping tail without rigid symmetry. Every geometric form is a flat, unfilled line shape: no solid geometric blocks, 3D wireframes or finely triangulated meshes.
+
+Use only crisp, fine warm-orange #CF9768 strokes of approximately uniform width. The same background shows through every interior, including eyes, nose, inner ears, chest, paws and tail tip: outlines only. No fills, solid patches, shading, gradients, broad bands, dense hatching or lettering; do not copy the reference’s colour planes. Prefer transparency, otherwise plain white.
+
+Within the tool’s per-request image limit, generate as many separate candidate images as possible so I can choose the best. Keep the specified character, pose direction and stroke-only style consistent, with subtle variations in curves, ornament spacing and details. Output each image separately, not as a collage or contact sheet. If only one image per request is supported, generate one.
+
+    id:
+tail-rosette
+    title:
+03 / 盘旋未合
+03 / An open coil
+
+    composition:
+横向约 1.3:1，一只狐狸在转身瞬间蜷成倾斜的 C 形。头胸从左上抬起，鼻口朝右上，骨盆落在右下；前爪错位收在胸腹之间，后爪在下方露出不同长度。单根宽尾沿身体下缘向左环抱，再向上回挑，与耳尖之间留出开口。尾内弧线形成宽窄相间的回环，整体是略横向展开、不对称的椭圆花结，神情清醒灵动。
+A roughly 1.3:1 horizontal ornament with one fox turning into a tilted C-shaped coil. Lift head and chest from the upper left, point the muzzle upper-right and lower the pelvis to the bottom right. Stagger tucked forepaws between chest and belly, with hind paws showing at different lengths below. One broad tail wraps left along the lower body and turns upward, leaving an opening below the ears. Vary the spacing of inner tail loops to form a slightly widened, asymmetric oval knot. Keep the fox alert and lively.
+
+    why:
+身体与尾巴盘成开放椭圆。适合较紧凑的装饰。
+Body and tail form an open oval coil. For compact decoration.
+
+    layers:
+      id:
+tail-rosette-structure
+      description:
+身体轮廓、面部、关节和前后遮挡，作为完整静态主体。
+Body contours, face, joints and overlaps, retained as one complete still subject.
+
+      movable:
+False
+      id:
+tail-rosette-weave
+      description:
+胸腹、肩胯、尾部与外侧回环的单色细线；不含任何填色区域。
+Single-colour fine strokes through chest, belly, shoulder, hip, tail and outer loops; no filled regions.
+
+      movable:
+False
+      id:
+tail-rosette-terminals
+      description:
+独立于解剖结构的外侧呼应曲线，可选轻动；尾根和肢体留在主体。
+Outer echo curves independent of anatomy, optionally animated; tail root and limbs stay with the subject.
+
+      movable:
+True
+    motion:
+静态动势先成立；可选只让一小簇外侧纹线轻摆，主体、尾根和四肢保持完整静止。
+Establish the gesture in the still; optionally sway a small outer ornament cluster while keeping body, tail root and limbs intact and still.
+
+    prompt:
+以我上传的 mascot 为唯一角色参考，保留它的小尖头、窄鼻口、三角耳、细长腿、窄腰和丰厚尾巴，按下面的动作重新构图。生成一幅用简单几何线形编织的单色装饰花纹。
+
+横向约 1.3:1，一只狐狸在转身瞬间蜷成倾斜的 C 形。头胸从左上抬起，鼻口朝右上，骨盆落在右下；前爪错位收在胸腹之间，后爪在下方露出不同长度。单根宽尾沿身体下缘向左环抱，再向上回挑，与耳尖之间留出开口。尾内弧线形成宽窄相间的回环，整体是略横向展开、不对称的椭圆花结，神情清醒灵动。
+
+用少量、容易辨认的基础几何线形编织整个画面：圆弧、椭圆弧、三角折线和菱形回环。头与耳用简洁三角形轮廓，胸腹和髋部用相接的椭圆弧，腿用有节奏的折线，宽尾用嵌套的大弧线；外围花纹沿用这些形状，通过重复、旋转、缩放和少量穿插形成整体。身体与花纹自然共享线段，优先用较大的几何单元和清楚的留白；减少碎曲线、写实毛发与繁密花丝。保留原有扭身、收爪和尾部回旋的动势，避免僵硬对称。所有几何形都只是平面的空心线形，不画实体几何块、三维线框或细碎三角网格。
+
+全图只用暖橙 #CF9768 的清晰细线，线宽基本一致。身体内外都透出同一背景，眼鼻、耳内、胸口、爪子和尾尖也只描线。无填色、实心块、阴影、渐变、粗色带、密集排线或文字；不沿用参考图的色面。透明背景优先，不支持则用纯白背景。
+
+请在工具允许的单次生成数量上限内，尽可能多地生成独立候选图片，供我挑选最佳方案。各张保持上述角色、姿态方向与纯线条风格，在曲线走向、纹样疏密和细节上适度变化；每张单独输出，不要拼成多宫格。如果一次只能生成一张，就先生成一张。
+Use my uploaded mascot as the only character reference. Preserve its small pointed head, tapered muzzle, triangular ears, slender legs, narrow waist and generous tail, and recompose it in the pose below. Create a monochrome decorative ornament woven entirely from simple geometric line shapes.
+
+A roughly 1.3:1 horizontal ornament with one fox turning into a tilted C-shaped coil. Lift head and chest from the upper left, point the muzzle upper-right and lower the pelvis to the bottom right. Stagger tucked forepaws between chest and belly, with hind paws showing at different lengths below. One broad tail wraps left along the lower body and turns upward, leaving an opening below the ears. Vary the spacing of inner tail loops to form a slightly widened, asymmetric oval knot. Keep the fox alert and lively.
+
+Weave the whole composition from a small, recognizable vocabulary of simple geometric line shapes: circular arcs, elliptical arcs, triangular turns and diamond-shaped loops. Use simple triangular contours for head and ears, joined elliptical arcs for chest, belly and hips, rhythmic angled lines for legs and nested broad arcs for the tail. Repeat, rotate, scale and selectively interlace the same shapes in the surrounding ornament. Let figure and pattern naturally share line segments. Prefer larger geometric units and clear negative spaces; reduce fragmented curves, realistic fur and intricate filigree. Preserve the twisting body, tucked paws and sweeping tail without rigid symmetry. Every geometric form is a flat, unfilled line shape: no solid geometric blocks, 3D wireframes or finely triangulated meshes.
+
+Use only crisp, fine warm-orange #CF9768 strokes of approximately uniform width. The same background shows through every interior, including eyes, nose, inner ears, chest, paws and tail tip: outlines only. No fills, solid patches, shading, gradients, broad bands, dense hatching or lettering; do not copy the reference’s colour planes. Prefer transparency, otherwise plain white.
+
+Within the tool’s per-request image limit, generate as many separate candidate images as possible so I can choose the best. Keep the specified character, pose direction and stroke-only style consistent, with subtle variations in curves, ornament spacing and details. Output each image separately, not as a collage or contact sheet. If only one image per request is supported, generate one.
+
+    id:
+forest-filigree
+    title:
+04 / 回身听风
+04 / Turning into the breeze
+
+    composition:
+横向约 1.8:1，一只狐狸朝右迈步，却抬头从肩上向左后方回望。近侧前爪抬起弯曲，远侧前腿支撑，后腿前后错开，腰部扭转清楚。单根宽尾从后髋向左低扫后抬起，与回望方向呼应。胸腹和尾部纹线自然延伸为低矮、疏落的叶形回环，脚与纹样保持可辨的间隙，呈现迈步中突然听到动静的瞬间。
+A roughly 1.8:1 horizontal ornament with one fox stepping right while lifting its head to look back over the left shoulder. Raise and bend the near forepaw, support weight on the far foreleg and stagger the hind legs with a clear waist twist. One broad tail sweeps low to the left from the rear hip and then rises, echoing the backward glance. Extend chest, belly and tail lines into low, sparse leaf-shaped loops, keeping clear gaps around the paws. Capture a moment of noticing something mid-step.
+
+    why:
+向前迈步、向后回望。适合 About 与章节间隔。
+Step forward and glance back. For About and chapter transitions.
+
+    layers:
+      id:
+forest-filigree-structure
+      description:
+身体轮廓、面部、关节和前后遮挡，作为完整静态主体。
+Body contours, face, joints and overlaps, retained as one complete still subject.
+
+      movable:
+False
+      id:
+forest-filigree-weave
+      description:
+胸腹、肩胯、尾部与外侧回环的单色细线；不含任何填色区域。
+Single-colour fine strokes through chest, belly, shoulder, hip, tail and outer loops; no filled regions.
+
+      movable:
+False
+      id:
+forest-filigree-terminals
+      description:
+独立于解剖结构的外侧呼应曲线，可选轻动；尾根和肢体留在主体。
+Outer echo curves independent of anatomy, optionally animated; tail root and limbs stay with the subject.
+
+      movable:
+True
+    motion:
+静态动势先成立；可选只让一小簇外侧纹线轻摆，主体、尾根和四肢保持完整静止。
+Establish the gesture in the still; optionally sway a small outer ornament cluster while keeping body, tail root and limbs intact and still.
+
+    prompt:
+以我上传的 mascot 为唯一角色参考，保留它的小尖头、窄鼻口、三角耳、细长腿、窄腰和丰厚尾巴，按下面的动作重新构图。生成一幅用简单几何线形编织的单色装饰花纹。
+
+横向约 1.8:1，一只狐狸朝右迈步，却抬头从肩上向左后方回望。近侧前爪抬起弯曲，远侧前腿支撑，后腿前后错开，腰部扭转清楚。单根宽尾从后髋向左低扫后抬起，与回望方向呼应。胸腹和尾部纹线自然延伸为低矮、疏落的叶形回环，脚与纹样保持可辨的间隙，呈现迈步中突然听到动静的瞬间。
+
+用少量、容易辨认的基础几何线形编织整个画面：圆弧、椭圆弧、三角折线和菱形回环。头与耳用简洁三角形轮廓，胸腹和髋部用相接的椭圆弧，腿用有节奏的折线，宽尾用嵌套的大弧线；外围花纹沿用这些形状，通过重复、旋转、缩放和少量穿插形成整体。身体与花纹自然共享线段，优先用较大的几何单元和清楚的留白；减少碎曲线、写实毛发与繁密花丝。保留原有扭身、收爪和尾部回旋的动势，避免僵硬对称。所有几何形都只是平面的空心线形，不画实体几何块、三维线框或细碎三角网格。
+
+全图只用暖橙 #CF9768 的清晰细线，线宽基本一致。身体内外都透出同一背景，眼鼻、耳内、胸口、爪子和尾尖也只描线。无填色、实心块、阴影、渐变、粗色带、密集排线或文字；不沿用参考图的色面。透明背景优先，不支持则用纯白背景。
+
+请在工具允许的单次生成数量上限内，尽可能多地生成独立候选图片，供我挑选最佳方案。各张保持上述角色、姿态方向与纯线条风格，在曲线走向、纹样疏密和细节上适度变化；每张单独输出，不要拼成多宫格。如果一次只能生成一张，就先生成一张。
+Use my uploaded mascot as the only character reference. Preserve its small pointed head, tapered muzzle, triangular ears, slender legs, narrow waist and generous tail, and recompose it in the pose below. Create a monochrome decorative ornament woven entirely from simple geometric line shapes.
+
+A roughly 1.8:1 horizontal ornament with one fox stepping right while lifting its head to look back over the left shoulder. Raise and bend the near forepaw, support weight on the far foreleg and stagger the hind legs with a clear waist twist. One broad tail sweeps low to the left from the rear hip and then rises, echoing the backward glance. Extend chest, belly and tail lines into low, sparse leaf-shaped loops, keeping clear gaps around the paws. Capture a moment of noticing something mid-step.
+
+Weave the whole composition from a small, recognizable vocabulary of simple geometric line shapes: circular arcs, elliptical arcs, triangular turns and diamond-shaped loops. Use simple triangular contours for head and ears, joined elliptical arcs for chest, belly and hips, rhythmic angled lines for legs and nested broad arcs for the tail. Repeat, rotate, scale and selectively interlace the same shapes in the surrounding ornament. Let figure and pattern naturally share line segments. Prefer larger geometric units and clear negative spaces; reduce fragmented curves, realistic fur and intricate filigree. Preserve the twisting body, tucked paws and sweeping tail without rigid symmetry. Every geometric form is a flat, unfilled line shape: no solid geometric blocks, 3D wireframes or finely triangulated meshes.
+
+Use only crisp, fine warm-orange #CF9768 strokes of approximately uniform width. The same background shows through every interior, including eyes, nose, inner ears, chest, paws and tail tip: outlines only. No fills, solid patches, shading, gradients, broad bands, dense hatching or lettering; do not copy the reference’s colour planes. Prefer transparency, otherwise plain white.
+
+Within the tool’s per-request image limit, generate as many separate candidate images as possible so I can choose the best. Keep the specified character, pose direction and stroke-only style consistent, with subtle variations in curves, ornament spacing and details. Output each image separately, not as a collage or contact sheet. If only one image per request is supported, generate one.
+
+    id:
+fox-repeat
+    title:
+05 / 双势交织
+05 / Interwoven gestures
+
+    composition:
+横向约 2:1，两只同一 mascot 的狐狸构成一段完整花纹。左侧狐狸腾跃舒展，前腿前伸、后腿错位；右侧狐狸扭身回旋，头胸抬起、四肢收拢。两只尺寸相近、高低错开，各自有一根连接身体的完整尾巴。两条尾弧在中央反向呼应，用空隙和断线区分前后，之间形成开放的叶瓣形留白；少量曲线延伸至两端。姿态明显不同，避免镜像复制。
+A roughly 2:1 horizontal ornament featuring two foxes based on the same mascot. The left fox stretches into a leap with reaching forelegs and staggered hind legs; the right fox twists into a spiral with raised chest and tucked limbs. Use similar sizes at different heights, each with one complete attached tail. Their tail arcs counter-curve near the centre, separated by gaps and line interruptions around an open petal-shaped negative space. Extend a few curves toward both ends. Make the poses distinct rather than mirrored copies.
+
+    why:
+一只伸展、一只收拢，尾弧相互呼应。适合装饰横带。
+One extended fox and one curled fox, with echoing tail arcs. For decorative bands.
+
+    layers:
+      id:
+fox-repeat-structure
+      description:
+身体轮廓、面部、关节和前后遮挡，作为完整静态主体。
+Body contours, face, joints and overlaps, retained as one complete still subject.
+
+      movable:
+False
+      id:
+fox-repeat-weave
+      description:
+胸腹、肩胯、尾部与外侧回环的单色细线；不含任何填色区域。
+Single-colour fine strokes through chest, belly, shoulder, hip, tail and outer loops; no filled regions.
+
+      movable:
+False
+      id:
+fox-repeat-terminals
+      description:
+独立于解剖结构的外侧呼应曲线，可选轻动；尾根和肢体留在主体。
+Outer echo curves independent of anatomy, optionally animated; tail root and limbs stay with the subject.
+
+      movable:
+False
+    motion:
+保持静态；后期重复接边先通过平铺检查，再用于背景。
+Keep static; inspect tiled edge continuity before using the later repeat as a background.
+
+    prompt:
+以我上传的 mascot 为唯一角色参考，保留它的小尖头、窄鼻口、三角耳、细长腿、窄腰和丰厚尾巴，按下面的动作重新构图。生成一幅用简单几何线形编织的单色装饰花纹。
+
+横向约 2:1，两只同一 mascot 的狐狸构成一段完整花纹。左侧狐狸腾跃舒展，前腿前伸、后腿错位；右侧狐狸扭身回旋，头胸抬起、四肢收拢。两只尺寸相近、高低错开，各自有一根连接身体的完整尾巴。两条尾弧在中央反向呼应，用空隙和断线区分前后，之间形成开放的叶瓣形留白；少量曲线延伸至两端。姿态明显不同，避免镜像复制。
+
+用少量、容易辨认的基础几何线形编织整个画面：圆弧、椭圆弧、三角折线和菱形回环。头与耳用简洁三角形轮廓，胸腹和髋部用相接的椭圆弧，腿用有节奏的折线，宽尾用嵌套的大弧线；外围花纹沿用这些形状，通过重复、旋转、缩放和少量穿插形成整体。身体与花纹自然共享线段，优先用较大的几何单元和清楚的留白；减少碎曲线、写实毛发与繁密花丝。保留原有扭身、收爪和尾部回旋的动势，避免僵硬对称。所有几何形都只是平面的空心线形，不画实体几何块、三维线框或细碎三角网格。
+
+全图只用暖橙 #CF9768 的清晰细线，线宽基本一致。身体内外都透出同一背景，眼鼻、耳内、胸口、爪子和尾尖也只描线。无填色、实心块、阴影、渐变、粗色带、密集排线或文字；不沿用参考图的色面。透明背景优先，不支持则用纯白背景。
+
+请在工具允许的单次生成数量上限内，尽可能多地生成独立候选图片，供我挑选最佳方案。各张保持上述角色、姿态方向与纯线条风格，在曲线走向、纹样疏密和细节上适度变化；每张单独输出，不要拼成多宫格。如果一次只能生成一张，就先生成一张。
+Use my uploaded mascot as the only character reference. Preserve its small pointed head, tapered muzzle, triangular ears, slender legs, narrow waist and generous tail, and recompose it in the pose below. Create a monochrome decorative ornament woven entirely from simple geometric line shapes.
+
+A roughly 2:1 horizontal ornament featuring two foxes based on the same mascot. The left fox stretches into a leap with reaching forelegs and staggered hind legs; the right fox twists into a spiral with raised chest and tucked limbs. Use similar sizes at different heights, each with one complete attached tail. Their tail arcs counter-curve near the centre, separated by gaps and line interruptions around an open petal-shaped negative space. Extend a few curves toward both ends. Make the poses distinct rather than mirrored copies.
+
+Weave the whole composition from a small, recognizable vocabulary of simple geometric line shapes: circular arcs, elliptical arcs, triangular turns and diamond-shaped loops. Use simple triangular contours for head and ears, joined elliptical arcs for chest, belly and hips, rhythmic angled lines for legs and nested broad arcs for the tail. Repeat, rotate, scale and selectively interlace the same shapes in the surrounding ornament. Let figure and pattern naturally share line segments. Prefer larger geometric units and clear negative spaces; reduce fragmented curves, realistic fur and intricate filigree. Preserve the twisting body, tucked paws and sweeping tail without rigid symmetry. Every geometric form is a flat, unfilled line shape: no solid geometric blocks, 3D wireframes or finely triangulated meshes.
+
+Use only crisp, fine warm-orange #CF9768 strokes of approximately uniform width. The same background shows through every interior, including eyes, nose, inner ears, chest, paws and tail tip: outlines only. No fills, solid patches, shading, gradients, broad bands, dense hatching or lettering; do not copy the reference’s colour planes. Prefer transparency, otherwise plain white.
+
+Within the tool’s per-request image limit, generate as many separate candidate images as possible so I can choose the best. Keep the specified character, pose direction and stroke-only style consistent, with subtle variations in curves, ornament spacing and details. Output each image separately, not as a collage or contact sheet. If only one image per request is supported, generate one.
+
+handoff:
+先做五张黑白剪影缩略图，按本稿顺序并排检查。把细节盖住后，五张仍应在景别、轮廓和行动方向上明显不同；如果看起来像同一张换了道具，先改构图。
+Start with five black-and-white silhouette thumbnails and compare them in sequence. With detail removed, framing, silhouette and direction should still differ clearly; if they look like one scene with different props, revise composition first.
+
+确认第一张新的三分之四脸部与原稿一致，再完成 Notice。之后单独确认 Test 的俯视身体和 Return 的背影，避免一套错误透视扩散到全部章节。
+Approve the first new three-quarter face against the master before finishing Notice. Then check Test’s overhead body and Return’s rear view separately so an incorrect perspective does not spread through the set.
+
+交付每幕的完整合成 SVG 与可编辑 AI 母版，并附一张无动画预览。可运动部件用本稿 layer id 命名；所有部件共用 viewBox，保留原始坐标。
+Deliver a complete composite SVG and editable AI master per scene, plus a still preview. Name movable parts with this brief’s layer IDs; share one viewBox and preserve original coordinates.
+
+尾巴、纸角、小车必须是完整形状；被遮挡的根部与底面应补齐，提供 pivot 标记或坐标。无需拆开每个色块，也不必给相连头颈做人偶式骨骼。
+Tails, page corners and cars must be complete shapes. Finish hidden roots and underlying surfaces and provide pivot marks or coordinates. Do not split every colour plane or rig the connected head and neck like a puppet.
+
+装饰线与主体分层，由网站整合阶段调整线宽、透明度和密度。桌面动效完成后生成同构图静态版，移动端与减少动态效果模式直接使用；动画尚未初始化时，插画和文字仍应完整呈现。
+Separate decoration from the main art so web integration can tune weight, opacity and density. Retain a same-composition still for mobile and reduced motion; art and text remain complete before the animation code initializes.
+
+未来 Work/About 内容补充可并行进行：内容代理负责履历事实、项目叙述、证据与标签；视觉工作负责本分镜、SVG、样式与动效。约定一次只由一个代理运行全站生成脚本并提交，避免覆盖生成页面。
+Work/About content can proceed in parallel: a content agent owns experience facts, project narratives, evidence and tags; visual work owns these briefs, SVGs, styles and motion. Assign one integration owner at a time to run the site generator and commit, preventing generated-page overwrites.
+
+reviewChecklist:
+去掉标题和动画，陌生读者仍能分别说出：展开、专注、选择、应对约束、让人尝试。
+Without headlines or motion, an unfamiliar reader can distinguish unfolding, attending, choosing, meeting a constraint and making room to try.
+
+五幕分别是中远景、近景、鸟瞰、低机位斜视、越肩背视，不是五张水平侧视狐狸。
+The sequence uses a medium-wide, close-up, bird’s-eye, low oblique and over-the-shoulder rear view—not five horizontal fox profiles.
+
+人与狐狸对话不再出现两次；Return 的主体是主动尝试的人。
+There are no two repeated fox-and-person conversations; Return centres a person actively trying.
+
+眼睛、耳形、鼻口、深绿长腿、色块衔接和奶油尾尖与作者原稿一致。背影视角不强行补眼。
+Eyes, ears, muzzle, long dark-green legs, colour-plane transitions and cream tail tip agree with the master; rear views do not force an eye into view.
+
+没有多出的腿爪，动作接触点合理，运动后不会露出空洞或断根。
+No extra limbs, plausible contact points, and no holes or detached roots after motion.
+
+插画能帮助理解标题，并提供项目线索，但不冒充真实界面、受访者、研究结果或课程成果。
+The illustration clarifies its heading and hints at the work without posing as actual UI, participants, research findings or teaching outcomes.
+
+大屏与 320 px 宽下动作都清楚；结尾橙色织纹可以穿过字后，但叠上真实标题检查后，字形与链接仍然一眼可读。
+Actions remain clear on desktop and at 320 px. Orange coda filigree may cross behind type, but the actual heading and links must remain immediately legible.
+
+动画暂停、系统减少动态效果、页面不可见和离屏时有正确静态或暂停状态；主文不会等待图片或脚本才出现。
+Motion pause, reduced-motion preferences, page visibility and offscreen states produce a correct still or paused state; primary text never waits for imagery or scripts to appear.

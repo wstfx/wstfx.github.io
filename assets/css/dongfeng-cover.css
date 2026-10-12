@@ -1,0 +1,28 @@
+/* A readable still illustration, with motion only while the card is explored. */
+.cover-dongfeng .dongfeng-cover-art{display:block;width:84%;max-width:320px;height:auto;margin-top:-22px;overflow:visible;transform:rotate(-5deg);transition:transform .65s var(--ease);filter:drop-shadow(0 6px 4px #234d3b12)}
+.cover-dongfeng .cover-caption{letter-spacing:.07em}
+.cover-dongfeng .dfc-car,.cover-dongfeng .dfc-camera,.cover-dongfeng .dfc-model{transition:transform .65s var(--ease)}
+.cover-dongfeng .dfc-cone{transition:opacity .6s ease}
+.cover-dongfeng .dfc-data,.cover-dongfeng .dfc-return,.cover-dongfeng .dfc-plan,.cover-dongfeng .dfc-lane{animation:dfc-flow 1.5s linear infinite;animation-play-state:paused}
+.cover-dongfeng:focus-visible .dongfeng-cover-art{transform:rotate(-1deg) translateY(-2px)}
+.cover-dongfeng:focus-visible .dfc-car{transform:translateX(6px)}
+.cover-dongfeng:focus-visible .dfc-camera{transform:translateY(-3px)}
+.cover-dongfeng:focus-visible .dfc-cone{opacity:.3}
+.cover-dongfeng:focus-visible :is(.dfc-data,.dfc-return,.dfc-plan,.dfc-lane){animation-play-state:running}
+@media(hover:hover){
+  .project-card:hover .dongfeng-cover-art{transform:rotate(-1deg) translateY(-2px)}
+  .project-card:hover .dfc-car{transform:translateX(6px)}
+  .project-card:hover .dfc-camera{transform:translateY(-3px)}
+  .project-card:hover .dfc-model{transform:translateY(2px)}
+  .project-card:hover .dfc-cone{opacity:.3}
+  .project-card:hover .cover-dongfeng :is(.dfc-data,.dfc-return,.dfc-plan,.dfc-lane){animation-play-state:running}
+}
+@keyframes dfc-plan-flow{to{stroke-dashoffset:-54}}
+.cover-dongfeng .dfc-plan{animation-name:dfc-plan-flow}
+@keyframes dfc-flow{to{stroke-dashoffset:-56}}
+@media(prefers-reduced-motion:reduce){
+  .cover-dongfeng .dongfeng-cover-art,.cover-dongfeng .dfc-car,.cover-dongfeng .dfc-camera,.cover-dongfeng .dfc-model,.cover-dongfeng .dfc-cone{transition:none}
+  .cover-dongfeng :is(.dfc-data,.dfc-return,.dfc-plan,.dfc-lane){animation:none}
+  .project-card .cover-dongfeng .dongfeng-cover-art{transform:rotate(-5deg)}
+  .project-card .cover-dongfeng :is(.dfc-car,.dfc-camera,.dfc-model){transform:none}
+}

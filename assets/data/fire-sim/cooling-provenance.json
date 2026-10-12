@@ -1,0 +1,131 @@
+{
+  "source": "Fire Sandbox cooling preset",
+  "engineVersion": "1.0.0",
+  "member": "column-left",
+  "dt": 0.1,
+  "initialConfig": {
+    "schemaVersion": 1,
+    "name": "\u7184\u706b\u51b7\u5374 \u00b7 \u6b8b\u4f59\u635f\u4f24",
+    "seed": 42,
+    "room": {
+      "sizeM": [
+        6,
+        3,
+        4
+      ],
+      "ambientC": 20,
+      "initialC": 20
+    },
+    "thermal": {
+      "gridCells": [
+        24,
+        12,
+        16
+      ],
+      "diffusivityM2PerSecond": 0.08,
+      "ambientLossPerSecond": 0.003,
+      "effectiveVolumetricHeatCapacityJPerM3K": 1200,
+      "maxStepSeconds": 0.1
+    },
+    "fire": {
+      "positionM": [
+        2,
+        0.25,
+        2
+      ],
+      "powerKW": 150,
+      "sourceRadiusM": 0.6,
+      "growthSeconds": 20,
+      "enabled": true,
+      "offAtSeconds": 120
+    },
+    "materials": {
+      "demoSteel": {
+        "label": "\u6f14\u793a\u94a2\u6784\u4ef6\uff08\u7ecf\u9a8c\u53c2\u6570\uff0c\u975e\u6807\u5b9a\uff09",
+        "thermalTimeConstantSeconds": 15,
+        "softenC": 120,
+        "severeC": 350,
+        "damageRatePerSecond": 0.008,
+        "damageExponent": 1.5
+      }
+    },
+    "members": [
+      {
+        "id": "column-left",
+        "kind": "column",
+        "startM": [
+          1,
+          0,
+          2
+        ],
+        "endM": [
+          1,
+          2.7,
+          2
+        ],
+        "sectionM": [
+          0.15,
+          0.15
+        ],
+        "materialId": "demoSteel"
+      },
+      {
+        "id": "column-right",
+        "kind": "column",
+        "startM": [
+          5,
+          0,
+          2
+        ],
+        "endM": [
+          5,
+          2.7,
+          2
+        ],
+        "sectionM": [
+          0.15,
+          0.15
+        ],
+        "materialId": "demoSteel"
+      },
+      {
+        "id": "beam-main",
+        "kind": "beam",
+        "startM": [
+          1,
+          2.7,
+          2
+        ],
+        "endM": [
+          5,
+          2.7,
+          2
+        ],
+        "sectionM": [
+          0.15,
+          0.25
+        ],
+        "materialId": "demoSteel"
+      }
+    ],
+    "coolingFailure": {
+      "enabled": false,
+      "activationPeakC": 100,
+      "minDamage": 0.1,
+      "coolingEpsilonCPerSecond": 0.01,
+      "referenceCoolingRateCPerSecond": 1,
+      "baseHazardPerSecond": 0.03
+    },
+    "recording": {
+      "sampleIntervalSeconds": 1,
+      "maxDurationSeconds": 600
+    },
+    "visualization": {
+      "showSmoke": true,
+      "showHeatSlice": true,
+      "deformationScale": 5
+    }
+  },
+  "generated": "2026-10-05",
+  "note": "Uncalibrated demonstration model; SVG derived from cooling-history.csv."
+}

@@ -1,0 +1,4 @@
+/* Pivots are local to each icon; outer SVG groups place the fan above the portrait. */
+.dhh-wellbeing-art .dhh-family{transform-origin:814px 280px}
+.dhh-wellbeing-art .dhh-happiness{transform-origin:728px 168px}
+.dhh-wellbeing-art .dhh-ai{transform-origin:945px 414px}

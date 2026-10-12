@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Elegant fox — inspect — line">
+<title>Elegant fox — inspect — line</title>
+<g transform="translate(0 0)">
+<g class="fox-tail" style="transform-origin:176px 143px">
+<path d="M178 146C134 145 143 93 99 66C66 46 40 62 21 79C53 72 45 120 79 137C105 151 143 159 178 146Z" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21 79C69 56 115 149 178 146" fill="none" stroke="#d56528" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M69 84C89 112 89 139 133 150" fill="none" stroke="#d56528" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-back" style="transform-origin:185px 163px">
+<path d="M192 183C191 201 183 211 183 219C183 231 190 248 202 258Q217 258 219 265L200 265C186 249 173 234 172 218L177 202" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:222px 169px">
+<path d="M171 139C202 132 228 145 247 149C265 152 275 159 287 164" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M279 192C280 207 291 225 309 233L328 241Q341 240 342 248L325 250C313 247 303 242 294 237" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(294 175) rotate(52) scale(0.76 0.76)">
+<g class="fox-head" style="transform-origin:0px 32px">
+<path d="M-24-14C-31-30-25-55-18-66L-4-40Q1-33 9-32C23-35 30-18 43-16L62-18C59-6 44-4 31 1C20 5 10 13 7 27C2 48-11 70-35 84" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-5-40 4-59Q12-48 15-32" fill="none" stroke="#d56528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-18-61C-18-44-10-37-4-35" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24-16C7-11-1 10-2 29" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(0 0)">
+<g class="fox-eyes" style="transform-origin:28px -23px">
+<path d="M23-23Q28-27 33-23" fill="none" stroke="#d56528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<path d="M56-17 62-18Q61-11 58-9Z" fill="#d56528"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:222px 169px">
+<path d="M260 198C266 218 267 231 278 245L300 254Q312 253 315 261L295 262C277 257 262 245 254 224L243 198C233 186 214 176 202 180C186 198 164 207 143 211C132 228 130 245 120 258Q135 256 138 265L117 265C111 260 114 253 116 245C120 222 133 197 147 186L171 139" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<path d="M174 145C201 141 219 155 230 168" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg class="ig-cover-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 175" fill="none">
+<path d="M25 76Q78 12 191 74T391 76" stroke="#8d9c7b" stroke-width="1.5" stroke-dasharray="4 7" class="ig-cover-route"/>
+<g class="ig-cover-bacteria" stroke="#234d3b" stroke-width="2"><g transform="translate(80 79) rotate(-20)"><rect x="-23" y="-10" width="46" height="20" rx="10" fill="#f7f5ed"/><path d="M-23 0q-10-14-18-3t-18-2M-8 0H9"/></g><g transform="translate(134 49) rotate(12)"><rect x="-15" y="-7" width="30" height="14" rx="7" fill="#f7f5ed"/><path d="M-15 0q-8-9-13-2"/></g></g>
+<g transform="translate(230 80)"><circle class="ig-cover-pulse" r="36" stroke="#d86526" stroke-width="1.5"/><circle r="27" fill="#e4e9db" stroke="#6d8b70" stroke-width="1.5"/><path d="M-8-12Q8-20 15-4T-3 15Q-19 12-8-12Z" fill="#a6b99a"/><circle cx="51" cy="-8" r="3" fill="#d86526"/><circle cx="65" cy="9" r="4" fill="#d86526"/></g>
+<g transform="translate(333 46)"><rect width="61" height="64" rx="4" fill="#f7f5ed" stroke="#7b9075" stroke-width="1.5"/><path d="M8 13H53M9 26h18m-18 8h26m-26 8h15M41 26h12v27H41Z" stroke="#7b9075" stroke-width="1.4"/><circle cx="7" cy="7" r="1.5" fill="#d86526"/></g>
+<g fill="#617366" font-family="inherit" font-size="10" text-anchor="middle"><text x="100" y="143">MODEL</text><text x="230" y="143">UNDERSTAND</text><text x="363" y="143">COMMUNICATE</text></g>
+</svg>

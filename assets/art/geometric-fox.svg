@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 808.290376865" role="img" aria-labelledby="geometric-fox-title geometric-fox-desc">
+  <title id="geometric-fox-title">Zebang Wu’s geometric fox</title>
+  <desc id="geometric-fox-desc">An orange fox composed of precise triangular forms, with pale cream ears, an upright peach tail and a cream tip.</desc>
+  <!--
+    Zebang Wu's original geometric fox, reconstructed from the supplied logo
+    image (codex-clipboard-10291df3-6f2c-45ed-8e23-7a8f29edb524.png).
+    Coordinates use a triangular lattice: u = 100; h = u / sqrt(3).
+    Every oblique edge has slope +/-1/sqrt(3), hence an angle of 30 degrees.
+    Integer lattice vertices preserve the original silhouette and proportions:
+    ears (1,0)-(3,2)-(1,4), mirrored at x=3;
+    face (1,4)-(3,2)-(5,4)-(3,6);
+    tail (0,7)-(2,5)-(2,9)-(0,11);
+    body (0,11)-(3,8)-(6,11)-(3,14); tip at (5,10)-(6,11)-(5,12).
+    Colors sampled from the supplied image: #fd7e14, #ffe5d0, #feb272.
+    This is a mathematical reconstruction from a raster, not the original vector.
+    No strokes, rounded corners, eyes, or altered angles have been introduced.
+  -->
+  <g id="fox-tail" class="fox-tail" fill="#feb272">
+    <polygon points="0,404.145188433 200,288.675134595 200,519.615242271 0,635.085296109" />
+  </g>
+  <g id="fox-body" class="fox-body">
+    <polygon class="fox-body-diamond" fill="#fd7e14" points="0,635.085296109 300,461.880215352 600,635.085296109 300,808.290376865" />
+    <polygon class="fox-body-tip" fill="#ffe5d0" points="500,577.350269190 600,635.085296109 500,692.820323028" />
+  </g>
+  <g id="fox-ears" class="fox-ears" fill="#ffe5d0">
+    <polygon id="fox-ear-left" class="fox-ear fox-ear-left" points="100,0.000000000 300,115.470053838 100,230.940107676" />
+    <polygon id="fox-ear-right" class="fox-ear fox-ear-right" points="500,0.000000000 500,230.940107676 300,115.470053838" />
+  </g>
+  <g id="fox-head" class="fox-head" fill="#fd7e14">
+    <polygon points="100,230.940107676 300,115.470053838 500,230.940107676 300,346.410161514" />
+  </g>
+</svg>

@@ -1,0 +1,57 @@
+.iv-heading{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:44px;align-items:center;max-width:none}
+.iv-heading h1{font-size:clamp(42px,5.2vw,74px)}
+.iv-heading .lede{font-size:clamp(17px,1.6vw,22px);max-width:520px}
+.iv-illustration{margin:0;min-width:0;text-align:center}
+.iv-illustration .involve-art{display:block;width:100%;max-width:550px;height:auto;margin:auto}
+.iv-illustration figcaption{font-size:13px;color:var(--muted);line-height:1.7;margin-top:8px}
+.iv-motion{font:inherit;font-size:11px;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;padding:7px 0;margin-top:6px}
+.iv-illustration .iv-reply-question{animation:iv-question-drift 7s ease-in-out infinite}
+.iv-illustration .iv-reply-idea{animation:iv-idea-drift 8s ease-in-out infinite}
+.iv-illustration .iv-reply-answer{animation:iv-answer-drift 7.6s ease-in-out infinite}
+.iv-illustration.is-paused .iv-reply{animation-play-state:paused}
+@keyframes iv-question-drift{50%{transform:translate(-3px,-8px)}}
+@keyframes iv-idea-drift{50%{transform:translate(3px,-11px)}}
+@keyframes iv-answer-drift{50%{transform:translate(4px,-7px)}}
+.iv-layout .case-copy{max-width:950px;min-width:0}
+.iv-layout .case-section>.eyebrow{font-size:10px;color:var(--orange);margin-bottom:14px}
+.iv-layout .case-section>p{max-width:76ch}
+.iv-layout .case-section h2{font-size:clamp(28px,2.8vw,36px);line-height:1.3}
+.iv-layout .case-section{margin-bottom:38px;padding-bottom:32px}
+.iv-roles{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:28px 0}
+.iv-roles article{border-top:2px solid #92a795;padding-top:18px}
+.iv-roles h3{font-size:19px;margin:0 0 12px}
+.iv-roles p{font-size:14px!important;line-height:1.85!important;margin-bottom:0}
+.iv-workflow{margin:30px 0;border:1px solid #d2dacb;background:#eef1e6;border-radius:12px;padding:26px 28px}
+.iv-workflow-row+.iv-workflow-row{margin-top:23px;padding-top:23px;border-top:1px solid #d2dacb}
+.iv-workflow-row>p{font-size:11px!important;letter-spacing:.05em;color:var(--muted);margin:0 0 15px}
+.iv-workflow-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.iv-workflow-steps h3{font-size:20px;margin:0 0 6px}
+.iv-workflow-steps p{font-size:12px!important;line-height:1.7!important;margin:0}
+.iv-workflow-row:first-child h3{color:#4f756e}
+.iv-workflow-row:last-child h3{color:#8b7340}
+.iv-gallery{margin:30px 0}
+.iv-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.iv-tabs button{font:inherit;font-size:12px;line-height:1.5;background:transparent;border:1px solid #bbc9b0;border-radius:30px;padding:10px 15px;color:var(--ink);cursor:pointer}
+.iv-tabs button[aria-selected=true]{background:var(--green);border-color:var(--green);color:var(--paper)}
+.iv-tabs button:focus-visible,.iv-motion:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+.iv-panel{margin:0;outline-offset:5px}
+.iv-panel+.iv-panel{margin-top:28px}
+.iv-panel[hidden]{display:none}
+.iv-figure{margin:28px 0}
+.iv-figure .image-button,.iv-panel .image-button{display:block;background:#f6f7ef;border:1px solid #d9e0d2;border-radius:12px;overflow:hidden;padding:0;width:100%}
+.iv-figure img,.iv-panel img{display:block;width:100%;height:auto;transform:none!important}
+.iv-figure figcaption,.iv-panel figcaption{font-size:12px;line-height:1.85;color:var(--muted);margin-top:12px}
+.iv-state-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:28px 0}
+.iv-state-flow article{border-top:1px solid var(--line);padding-top:20px}
+.iv-state-flow span{font:10px ui-monospace,monospace;color:var(--orange)}
+.iv-state-flow h3{font-size:19px;margin:12px 0}
+.iv-state-flow p{font-size:14px!important;line-height:1.85!important;margin:0}
+.iv-course-artifact{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:28px 0;align-items:center}
+.iv-course-artifact .iv-figure{margin:0}
+.iv-course-artifact h3{font-size:21px;margin-bottom:15px}
+.iv-course-artifact p{font-size:14px!important;line-height:1.85!important}
+.iv-layout .iv-note{font-size:12px;border-left:2px solid var(--line);padding-left:18px;color:var(--muted);line-height:1.9}
+.iv-source-link{margin-top:25px;display:inline-block}
+@media(max-width:900px){.iv-heading{grid-template-columns:1fr;gap:20px}.iv-illustration{width:100%;max-width:460px;justify-self:center}}
+@media(max-width:600px){.iv-heading h1{font-size:clamp(38px,10vw,56px)}.iv-workflow{padding:21px 18px}.iv-workflow-steps{gap:14px}.iv-workflow-steps h3{font-size:16px}.iv-workflow-steps p{font-size:11px!important}.iv-roles,.iv-course-artifact,.iv-state-flow{grid-template-columns:1fr;gap:23px}.iv-course-artifact .iv-figure{max-width:360px}.iv-tabs button{font-size:11px;padding:9px 12px}}
+@media(prefers-reduced-motion:reduce){.iv-illustration .iv-reply{animation:none}.iv-motion{display:none}}

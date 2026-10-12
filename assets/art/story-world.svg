@@ -1,0 +1,209 @@
+<svg class="world-drawing" viewBox="0 0 600 560" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <!--
+    Five visual verbs: follow, listen, compare, iterate, return.
+    The separate fox lives in the open foreground; these scenes explain titles.
+    Motion: .motion-token uses the motion-path custom property, offset-distance:0..100%.
+    Its translated parent anchors a relative path; the static state is the path start.
+    .motion-orbit rotates about 300px 280px; .motion-response has transform-box:fill-box
+    and transform-origin:center; .motion-membrane has transform-origin:350px 248px.
+    .motion-feedback and .motion-comparison can animate stroke-dashoffset.
+    All ideas remain readable when motion is paused.
+  -->
+  <defs>
+    <linearGradient id="world-ribbon" x1="90" y1="300" x2="500" y2="150" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f5b575"/><stop offset=".55" stop-color="#ed843e"/><stop offset="1" stop-color="#dc632a"/>
+    </linearGradient>
+    <linearGradient id="world-paper" x1="300" y1="120" x2="380" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#eef0df"/><stop offset="1" stop-color="#c7d4c0"/>
+    </linearGradient>
+    <linearGradient id="world-thought" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f6c28c"/><stop offset="1" stop-color="#ef8a42"/>
+    </linearGradient>
+    <radialGradient id="world-halo">
+      <stop stop-color="#eddba7" stop-opacity=".46"/><stop offset="1" stop-color="#eddba7" stop-opacity="0"/>
+    </radialGradient>
+    <g id="world-cross" stroke="#9eafa2" stroke-width=".85">
+      <path d="M-7 0H7M0-7V7"/>
+    </g>
+    <g id="world-arrow" stroke="#d77d43" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-5-4L0 0L-5 4"/>
+    </g>
+  </defs>
+
+  <!-- One continuous route under all five chapters. -->
+  <path class="world-route" d="M78 430C124 487 231 481 311 431S551 319 504 191S260 65 193 171S341 259 504 105"/>
+  <path class="world-route route-ink" id="route-ink" d="M78 430C124 487 231 481 311 431S551 319 504 191S260 65 193 171S341 259 504 105" pathLength="1"/>
+  <path class="shared-ground" d="M62 474H540" stroke="#a9b6a2" stroke-width=".7" opacity=".4"/>
+
+  <!-- 00 / Follow a question: an opening, a loose path, an unexpected direction. -->
+  <g class="world-scene scene-0">
+    <circle cx="448" cy="122" r="101" fill="url(#world-halo)"/>
+    <path d="M126 328A191 191 0 1 1 488 310" stroke="#bccabd" stroke-width=".9"/>
+    <path d="M165 173A174 174 0 0 1 457 172" stroke="#b9c8b9" stroke-width=".8" stroke-dasharray="1 8" stroke-linecap="round"/>
+    <path d="M300 75V117M101 280H141M461 280H514" stroke="#c4cfc0" stroke-width=".8"/>
+    <g class="motion-orbit" stroke="#a1b9a6" stroke-width="1">
+      <path d="M129 233A178 178 0 0 1 155 184"/>
+      <circle cx="155" cy="184" r="3" fill="#a1b9a6" stroke="none"/>
+    </g>
+    <path d="M111 361C105 278 136 208 208 178C270 152 317 177 350 189C388 202 418 177 455 126C428 190 393 231 346 221C299 211 267 180 213 200C159 220 127 287 111 361Z" fill="url(#world-ribbon)" opacity=".73"/>
+    <path d="M111 361C125 275 155 222 210 196C268 169 309 200 351 209C394 218 428 181 455 126" stroke="#c26d3d" stroke-width=".8"/>
+    <path d="M455 126C444 152 429 175 412 192C423 170 425 144 422 124C433 130 444 130 455 126Z" fill="#f6d8b5"/>
+    <path d="M84 416C124 465 206 466 259 433" stroke="#adbea7" stroke-width="1"/>
+    <path d="M107 430C147 463 211 455 241 438" stroke="#adbea7" stroke-width=".7" stroke-dasharray="2 6"/>
+    <circle cx="455" cy="126" r="11" fill="#fff5db" stroke="#d5a66c" stroke-width=".8"/>
+    <circle cx="455" cy="126" r="4" fill="#e59c51"/>
+    <g transform="translate(111 361)">
+      <g class="motion-token motion-question" style="--motion-path:path('M0 0C14 -86 44 -139 99 -165C157 -192 198 -161 240 -152C283 -143 317 -180 344 -235')">
+        <circle r="5" fill="#fff6de" stroke="#d46e31" stroke-width="1.4"/>
+      </g>
+    </g>
+    <path d="M381 410A88 88 0 0 0 462 338" stroke="#becbb6" stroke-width=".8"/>
+    <path d="M389 433A111 111 0 0 0 486 341" stroke="#becbb6" stroke-width=".7" stroke-dasharray="1 7"/>
+    <use href="#world-cross" x="91" y="233"/><use href="#world-cross" x="493" y="377"/>
+    <text x="86" y="396">a little curiosity</text>
+    <text x="369" y="94">an open question</text>
+  </g>
+
+  <!-- 01 / Start with someone: the person is the origin of the inquiry. -->
+  <g class="world-scene scene-1">
+    <path d="M423 242L158 129C100 194 87 274 124 341Z" fill="#e7ecdf"/>
+    <path d="M423 242L158 129M423 242L124 341" stroke="#aaba9f" stroke-width=".85"/>
+    <path d="M191 146A200 200 0 0 0 163 323M236 165A153 153 0 0 0 212 308M282 184A102 102 0 0 0 265 288" stroke="#b5c5ac" stroke-width=".8" fill="none"/>
+    <path d="M329 203A58 58 0 0 0 318 270" stroke="#a0b798" stroke-width="1.2" fill="none"/>
+    <path d="M375 233C324 204 274 211 256 245C238 279 193 288 159 263" stroke="#e19b64" stroke-width="2"/>
+    <path d="M373 256C325 282 293 286 263 270" stroke="#c4a776" stroke-width=".9" stroke-dasharray="3 6"/>
+    <g transform="translate(375 233)">
+      <g class="motion-token motion-listen" style="--motion-path:path('M0 0C-51 -29 -101 -22 -119 12C-137 46 -182 55 -216 30')">
+        <circle r="5" fill="#e88742" stroke="#f7f5ed" stroke-width="2"/>
+      </g>
+    </g>
+    <path d="M145 135C123 156 110 182 103 213" stroke="#9eb198" stroke-width="1.2"/>
+    <path d="M98 225V248M99 260L103 278" stroke="#9eb198" stroke-width=".9"/>
+    <circle cx="423" cy="199" r="26" fill="#d3dec9"/>
+    <path d="M410 184C421 177 431 180 438 190" stroke="#8ba280" stroke-width="1"/>
+    <path d="M414 233C392 244 389 275 391 306C393 337 410 363 410 400H451C451 367 476 338 469 293C464 261 448 240 438 235" fill="url(#world-paper)"/>
+    <path d="M438 235C458 247 468 267 469 293C473 333 451 367 451 400" stroke="#7f9b76" stroke-width="1.2"/>
+    <path d="M409 250C392 258 390 282 372 297C359 308 349 309 336 307" stroke="#789873" stroke-width="2" stroke-linecap="round"/>
+    <path d="M441 267C435 289 423 302 406 309" stroke="#94ad86" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M429 339V402M402 403H461" stroke="#93ab88" stroke-width="1"/>
+    <g class="motion-response">
+      <circle cx="380" cy="205" r="5" fill="#f1c58c"/>
+      <path d="M375 192C378 188 383 187 388 188M366 187C373 177 384 173 395 177" stroke="#c79864" stroke-width=".9" stroke-linecap="round"/>
+    </g>
+    <path d="M327 431H468" stroke="#b1c0a6" stroke-width=".8"/>
+    <path d="M342 446H443" stroke="#c5cebc" stroke-width=".8"/>
+    <circle cx="159" cy="263" r="16" stroke="#d8a777" stroke-width=".8"/>
+    <circle cx="159" cy="263" r="3" fill="#dd965d"/>
+    <use href="#world-cross" x="290" y="112"/><use href="#world-cross" x="509" y="311"/>
+    <text x="354" y="156">listen</text>
+    <text x="123" y="107">understand</text>
+    <text x="353" y="465">a person's perspective</text>
+  </g>
+
+  <!-- 02 / Give curiosity something to push against: a claim meets comparison. -->
+  <g class="world-scene scene-2">
+    <path d="M307 123L370 140L417 358L351 385Z" fill="#e3e9db" opacity=".65"/>
+    <path d="M308 121L371 137M351 386L419 359M318 147L318 167M405 336L409 351" stroke="#b1bea7" stroke-width=".8"/>
+    <g class="motion-membrane">
+      <path d="M344 125C316 178 372 205 373 250C374 299 323 324 351 387L392 363C373 321 413 289 414 248C415 203 366 174 382 137Z" fill="url(#world-paper)"/>
+      <path d="M344 125C316 178 372 205 373 250C374 299 323 324 351 387" stroke="#779771" stroke-width="1.4"/>
+      <path d="M358 129C332 179 385 205 386 250C387 297 338 325 365 379M371 133C348 180 399 206 399 250C399 295 352 326 378 372" stroke="#a3b497" stroke-width=".75"/>
+      <path d="M337 169L376 179M353 205L397 209M373 250L414 248M353 297L396 292M339 338L379 328" stroke="#b8c5ab" stroke-width=".75"/>
+    </g>
+    <path d="M110 243C177 215 230 217 279 243C307 258 336 259 369 249C344 218 330 184 365 158C409 125 462 152 490 180" stroke="#e5a46b" stroke-width="13" stroke-linecap="round" opacity=".16"/>
+    <path d="M110 243C177 215 230 217 279 243C307 258 336 259 369 249C344 218 330 184 365 158C409 125 462 152 490 180" stroke="#da7a3a" stroke-width="1.7"/>
+    <path class="motion-comparison" d="M110 277C180 249 236 256 285 277C340 301 429 293 491 251" stroke="#8da284" stroke-width="1.1" stroke-dasharray="3 7"/>
+    <path d="M369 249L409 250M384 242L392 250L384 258" stroke="#cc7946" stroke-width="1"/>
+    <circle cx="369" cy="249" r="9" fill="#f4c799" stroke="#c88951" stroke-width=".9"/>
+    <circle cx="490" cy="180" r="13" fill="#f5d9aa"/>
+    <circle cx="490" cy="180" r="4" fill="#d98b44"/>
+    <g transform="translate(110 243)">
+      <g class="motion-token motion-evidence" style="--motion-path:path('M0 0C67 -28 120 -26 169 0C197 15 226 16 259 6C234 -25 220 -59 255 -85C299 -118 352 -91 380 -63')">
+        <circle r="5" fill="#e07830" stroke="#fff3dd" stroke-width="2"/>
+      </g>
+    </g>
+    <path d="M107 182V305M100 194H114M100 291H114" stroke="#c1cbb8" stroke-width=".8"/>
+    <path d="M440 346V404M432 351H448M432 397H448M436 364H444M436 377H444M436 389H444" stroke="#a9b99f" stroke-width=".9"/>
+    <path d="M270 418H406M282 413V423M394 413V423" stroke="#b9c5ad" stroke-width=".8"/>
+    <use href="#world-cross" x="255" y="139"/>
+    <text x="116" y="205">an idea</text>
+    <text x="155" y="305">a comparison</text>
+    <text x="397" y="119">a better question</text>
+    <text x="338" y="451">tested, not assumed</text>
+  </g>
+
+  <!-- 03 / Let the world push back: try, encounter a threshold, take a new route. -->
+  <g class="world-scene scene-3">
+    <path d="M86 393C134 351 169 341 218 350L244 373C179 362 138 385 103 418Z" fill="#d8e1ce"/>
+    <path d="M387 348C433 335 482 352 526 392L511 419C469 378 423 366 372 375Z" fill="#d8e1ce"/>
+    <path d="M87 393C135 351 171 342 218 350M388 348C433 335 482 352 526 392" stroke="#93ab87" stroke-width="1"/>
+    <path d="M221 153C257 180 268 222 246 258M381 153C345 180 334 222 356 258" stroke="#bdc9b1" stroke-width="1"/>
+    <path d="M235 164C263 191 266 220 253 244M367 164C339 191 337 221 349 244" stroke="#d0d9c4" stroke-width=".8"/>
+    <g class="motion-response">
+      <path d="M252 228L262 241L264 225M348 228L338 241L336 225" stroke="#a1b793" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <path d="M109 368C154 342 191 317 218 276C262 209 317 203 363 265C393 305 444 334 497 360" stroke="#e6ad74" stroke-width="18" opacity=".12"/>
+    <path d="M109 368C154 342 191 317 218 276C262 209 317 203 363 265C393 305 444 334 497 360" stroke="#cf8b51" stroke-width="1.5"/>
+    <path class="motion-feedback" d="M497 389C521 449 441 475 360 450C289 428 231 447 181 459C119 474 79 443 109 402" stroke="#819b78" stroke-width="1.1" stroke-dasharray="3 6"/>
+    <path d="M104 410L109 402L110 412" stroke="#819b78" stroke-width="1.1"/>
+    <circle cx="497" cy="360" r="9" fill="#edbd84"/>
+    <circle cx="109" cy="368" r="4" fill="#da8a48"/>
+    <g transform="translate(109 368)">
+      <g class="motion-token motion-trial" style="--motion-path:path('M0 0C45 -26 82 -51 109 -92C153 -159 208 -165 254 -103C284 -63 335 -34 388 -8')">
+        <circle r="5" fill="#e6873d" stroke="#f9f2dc" stroke-width="2"/>
+      </g>
+    </g>
+    <path d="M218 376V395M372 376V395M232 388H358" stroke="#c1cbb3" stroke-width=".85"/>
+    <path d="M239 385L231 388L239 391M352 385L360 388L352 391" stroke="#c1cbb3" stroke-width=".85"/>
+    <circle cx="301" cy="144" r="5" stroke="#bdac83" stroke-width=".85"/>
+    <path d="M301 115V125M301 164V174M272 144H282M321 144H331" stroke="#c4ba99" stroke-width=".7"/>
+    <use href="#world-cross" x="146" y="210"/><use href="#world-cross" x="466" y="216"/>
+    <text x="89" y="338">try</text>
+    <text x="474" y="338">observe</text>
+    <text x="290" y="483">revise</text>
+  </g>
+
+  <!-- 04 / Bring it back to people: make → use → learn, and begin again. -->
+  <g class="world-scene scene-4">
+    <path d="M171 218C240 150 353 140 428 189C471 217 474 265 457 305L428 293C444 258 438 231 406 211C341 171 249 179 187 236Z" fill="#e7ead7"/>
+    <path d="M171 218C240 150 353 140 428 189" stroke="#bac6aa" stroke-width=".8"/>
+    <path d="M186 234C250 176 342 170 406 211" stroke="#ced5bb" stroke-width=".8"/>
+    <circle cx="405" cy="242" r="20" fill="#a8bd9b"/>
+    <path d="M389 268C365 293 373 330 381 349C385 361 385 382 385 401H421C421 365 443 341 431 307C426 290 416 277 410 271" fill="#d1dec5"/>
+    <path d="M389 268C373 282 370 301 374 321M422 401C422 364 443 339 431 307" stroke="#8aa47b" stroke-width="1.15"/>
+    <path d="M390 291C380 311 363 320 344 319" stroke="#718f64" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M407 348L405 402M379 402H430" stroke="#95ad84" stroke-width=".9"/>
+    <circle cx="490" cy="273" r="17" fill="#d1b97e"/>
+    <path d="M480 296C460 309 452 328 455 351C458 371 468 386 466 408H503C501 386 516 366 512 343C509 321 498 304 494 299" fill="#ebe0b9"/>
+    <path d="M494 299C505 311 512 327 512 343C516 366 501 386 503 408" stroke="#b3a472" stroke-width="1"/>
+    <path d="M478 317C469 331 453 336 436 330" stroke="#ae9b67" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M487 365V409M461 409H511" stroke="#b6a779" stroke-width=".8"/>
+    <path d="M141 288C192 252 232 257 272 286C294 302 316 316 344 319" stroke="#d98c51" stroke-width="1.8"/>
+    <path d="M141 288C192 252 232 257 272 286C294 302 316 316 344 319" stroke="#eca568" stroke-width="17" opacity=".1"/>
+    <path d="M295 286L312 274L330 288L313 303Z" fill="url(#world-thought)"/>
+    <path d="M295 286L313 293L330 288M313 293V303" stroke="#cb8147" stroke-width=".8"/>
+    <path d="M295 271L291 265M312 262V255M329 271L335 266" stroke="#dab588" stroke-width=".9" stroke-linecap="round"/>
+    <g class="motion-response">
+      <path d="M421 215C427 203 440 201 450 207M427 221C431 213 439 212 446 216" stroke="#b9a170" stroke-width="1" stroke-linecap="round"/>
+    </g>
+    <path class="motion-feedback" d="M484 432C446 485 320 487 259 447C210 415 243 366 294 367" stroke="#829a75" stroke-width="1.1" stroke-dasharray="3 6"/>
+    <path d="M287 363L295 367L287 371" stroke="#829a75" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M307 367C324 367 327 352 318 346C311 341 304 345 304 351M310 376V377" stroke="#d49551" stroke-width="1.6" stroke-linecap="round"/>
+    <g transform="translate(141 288)">
+      <g class="motion-token motion-use" style="--motion-path:path('M0 0C51 -36 91 -31 131 -2C153 14 175 28 203 31')">
+        <circle r="5" fill="#e58d44" stroke="#fff1d6" stroke-width="2"/>
+      </g>
+    </g>
+    <g transform="translate(484 432)">
+      <g class="motion-token motion-learn" style="--motion-path:path('M0 0C-38 53 -164 55 -225 15C-274 -17 -241 -66 -190 -65')">
+        <circle r="4" fill="#9eaf86" stroke="#f7f5ed" stroke-width="1.5"/>
+      </g>
+    </g>
+    <circle cx="141" cy="288" r="10" stroke="#dfbd91" stroke-width=".8"/>
+    <use href="#world-cross" x="134" y="177"/><use href="#world-cross" x="524" y="213"/>
+    <text x="121" y="250">make</text>
+    <text x="438" y="256">use</text>
+    <text x="341" y="490">learn</text>
+    <text x="243" y="132">what happens in someone's hands?</text>
+  </g>
+</svg>

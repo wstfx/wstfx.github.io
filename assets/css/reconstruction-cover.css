@@ -1,0 +1,27 @@
+/* Keep the original field's gentle rotation, with a legible sparse-to-dense scene. */
+.cover-reconstruction .field-art.reconstruction-cover-art {
+  display:block;
+  width:min(84%, 320px);
+  height:auto;
+  aspect-ratio:12 / 5;
+  margin-top:-8px;
+  filter:drop-shadow(0 8px 8px #10291f24);
+}
+
+.cover-reconstruction:focus-visible .field-art {
+  transform:rotate(-8deg) skew(4deg);
+}
+
+.cover-reconstruction .cover-caption {
+  letter-spacing:.08em;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .cover-reconstruction .field-art {
+    transition:none;
+  }
+  .project-card:hover .cover-reconstruction .field-art,
+  .cover-reconstruction:focus-visible .field-art {
+    transform:rotate(-13deg) skew(7deg);
+  }
+}

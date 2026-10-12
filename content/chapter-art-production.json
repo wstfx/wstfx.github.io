@@ -1,0 +1,228 @@
+{
+  "date": "2026-10-05",
+  "tool": "Initial concepts: built-in image_gen. Current supplied chapter artwork: user-supplied PNGs converted locally with VTracer and native SVG gradient fitting.",
+  "reference": "Original chapter studies referenced the user-supplied FoxHomepage_0.svg and eye detail. The current Notice close-up and Test overhead composition each use the supplied PNG itself as authoritative pose, face and scene geometry.",
+  "status": "All four supplied chapter scenes are integrated. Notice eyes now animate in the live SVG tree, with stationary hand/book. Test retains the sampling journey. Owner-cleaned Build and Return SVGs now use small native vector motion rigs.",
+  "scenes": [
+    {
+      "id": "notice",
+      "source": "assets/art/chapter-sources/notice-closeup.png",
+      "vector": "assets/art/scene-notice-closeup.svg",
+      "homepageVector": "assets/art/scene-notice-framed.svg",
+      "origin": "PNG illustration supplied by the user on 2026-10-03; no image-generation or external conversion API used for this replacement.",
+      "sourceSha256": "108816e319f8800492c61e9588661fbbab14621ec34049074ddb4a03c4358016",
+      "sourcePreservation": "The supplied PNG is retained byte-for-byte unchanged; raw vector and framed homepage derivative are separate files.",
+      "description": "An attentive three-quarter-view fox looks toward a person holding an open notebook. The arm enters from the left edge; the homepage frame makes the crop part of an intentional close-up composition.",
+      "conversion": {
+        "script": "tools/prepare_notice_art.py",
+        "method": "Local VTracer 0.6.15 spline tracing with a 50% alpha contour, followed by native linear-gradient fitting to visible source pixels. Sharp rasterizes path IDs only for source-color sampling. No embedded raster image in the SVG.",
+        "viewBox": "0 0 1298 1212",
+        "paths": 114,
+        "linearGradients": 6,
+        "rawVectorBytes": 127441,
+        "eye": "Both incoming three-quarter eyes retain their supplied geometry, pupil, iris and catchlights. They are not replaced by older profile-eye paths.",
+        "motion": "Raw conversion is unchanged. Web derivative keeps the original hand and notebook still, removes page-corner decorations, and animates only tail and eye blink.",
+        "visualLimit": "The traced artwork has cleaner, flatter color planes; fitted gradients retain selected shading, without claiming pixel-identical reconstruction."
+      },
+      "history": [
+        {
+          "status": "Superseded homepage Notice study; original PNG, SVG and exact generation prompt retained for provenance.",
+          "record": {
+            "id": "notice",
+            "source": "assets/art/chapter-sources/notice.png",
+            "vector": "assets/art/scene-notice.svg",
+            "prompt": "Use case: illustration-story. Create ONE finished editorial illustration for a portfolio chapter titled \"Start with someone\", with NO text drawn. Reference image 1 is the approved fox illustration, for precise character, palette and flowing geometric style ONLY, not its workbench/car composition. Reference image 2 is the authoritative CLOSE-UP EYE AND FACE reference: copy the small OPEN angular teardrop eye with warm peach iris, a dark angled pupil, tiny cream catchlights and sharp forest-dark outline; NOT a closed crescent, not a generic smiling eye. Keep this face identity.\nScene: a dignified adult university student at the right sits on a simple sage chair, relaxed, gently leaning toward an elegant orange fox at the left. The fox sits upright on a low sage platform, their faces at similar heights, both looking attentively toward one another. Fox has long graceful forelegs, tall sharp ears, small tapered head, cream chest, dark forest legs, a broad flowing orange/cream brush tail resting in clear open space to the far left. One small side table between them carries an open blank cream notebook. Mutual attention and the open space between their faces are the main action. One adult only, simple forest/sage clothing, restrained adult facial detail. Student is a conceptual figure, not an actual research participant.\nProduction style: crisp clean FLAT vector-like color planes, a few elegant decisive curves, shallow side/three-quarter view, minimal geometric forms, no texture/no gradients/no glow. Orange #fb7926, burnt orange #cb4e13, apricot #fdc894, cream #f7e7c9; forest #193d30 and sage #b7c4a5 for surroundings. Match reference proportions; no chibi/cartoon baby head. Deliberately keep the fox tail, notebook top and person's silhouette separate and readable. No excessive overlaps.\nComposition: single near-square scene, complete bodies and furniture, generous transparent space above, below and between subjects. All artwork inside canvas with at least 6% clear edge padding. TRANSPARENT BACKGROUND; no paper rectangle, no painted checkerboard, no scenery. No text, labels, symbols, speech bubbles, sound waves, headphones, disability markers, sign-language gestures, invented interface, grid or contact sheet."
+          }
+        }
+      ],
+      "homepagePreparation": {
+        "script": "tools/frame_notice_art.py",
+        "output": "assets/art/scene-notice-framed.svg",
+        "motion": "Tail ±3 degrees over 9 seconds; native incoming-eye blink. Original stationary book/hand paint retained; no offering rig or moving decoration. Hidden tail continuation follows native contour curves.",
+        "blinkFix": "2026-10-05: native paint inserted directly into the visible SVG tree instead of <use>; eye groups receive a 6.5-second two-blink cycle. Hand/book remain still."
+      }
+    },
+    {
+      "id": "test",
+      "source": "assets/art/chapter-sources/test-overhead.png",
+      "vector": "assets/art/scene-test-overhead.svg",
+      "homepageVector": "assets/art/scene-test-journey.svg",
+      "origin": "Overhead illustration supplied by the user on 2026-10-03; converted locally without image generation or an external conversion API.",
+      "sourceSha256": "d534a98d6b0bd187c738af3314ff41839b5ad53b28aa82e1d8d4b93931bc0f22",
+      "sourcePreservation": "The original 1254×1254 PNG remains byte-for-byte unchanged. The SVG retains source coordinates while trimming unused lower canvas.",
+      "description": "Viewed from above, the fox reaches toward an orange next-measurement point on a cream and sage contour map. Four original route dashes connect the selected point to an earlier sample; the sweeping tail frames the composition.",
+      "conversion": {
+        "script": "tools/prepare_test_art.py",
+        "method": "Local VTracer 0.6.15 spline tracing, using the existing 50% alpha contour and native linear-gradient fitting. No raster image embedded in the SVG.",
+        "sourceSize": [
+          1254,
+          1254
+        ],
+        "viewBox": "0 0 1254 1110",
+        "artworkPaths": 80,
+        "vectorMaskPaths": 1,
+        "linearGradients": 4,
+        "vectorBytes": 87575,
+        "crop": "All artwork ends at or above source y=1071; the export keeps 39 source units below the lowest contour while reducing empty lower canvas.",
+        "cleanup": "The faint semitransparent band between the legs and tail falls below the established alpha threshold. A vector mask removes orange hidden underpaint at the cream map perimeter; the source PNG is untouched.",
+        "face": "The supplied overhead pose and face are preserved; no older profile eye is transplanted and no hidden anatomy is invented.",
+        "visualLimit": "The conversion produces cleaner, flatter color planes with selected fitted gradients rather than a pixel-identical reconstruction."
+      },
+      "motion": {
+        "selectedSample": "Each destination turns orange only when the travelling marker arrives. The prior source returns green on the next hop.",
+        "route": "Five source sample positions, eight reviewed map curves, changing destinations with no immediate backtracking. Route draws with a moving marker; destination turns orange on arrival; completed route fades before next hop. Fox and map stay still.",
+        "fox": "Fox, face, tail and map remain still."
+      },
+      "history": [
+        {
+          "status": "Superseded generated Test study; original PNG, SVG, generation prompt and anatomy-correction prompt retained for provenance.",
+          "record": {
+            "id": "test",
+            "source": "assets/art/chapter-sources/test.png",
+            "vector": "assets/art/scene-test.svg",
+            "prompt": "Use case: illustration-story. ONE finished portfolio editorial illustration, not a screenshot, with NO text. Reference image 1 is the approved fox character and flat flowing geometric style, not a composition to repeat. Reference image 2 is the authoritative face and eye detail. Preserve the small OPEN angular teardrop eye, warm peach iris, dark angled pupil, tiny cream catchlights and sharp forest-dark outline. NO closed smiling eye or generic dark crescent. Same elegant slender orange fox with long forest-green legs, tall triangular ears, small tapered muzzle and cream chest. Large flowing cream-tipped orange brush tail. Crisp CLEAN FLAT color planes, restrained curves, no textures or gradients or airbrushed shading. Orange #fb7926, burnt #cb4e13, apricot #fdc894, cream #f7e7c9, forest #193d30 and sage #b7c4a5. Single near-square scene, complete subjects within canvas, at least 6% empty edge padding and generous upper negative space. TRUE TRANSPARENT background, no background rectangle, no painted checkerboard. No lettering, numbers, logos, symbols, interface UI, plots, arrows, diagrams, board, collage, photorealism or chibi anatomy. Clearly separated silhouettes and props allow later vector cleanup. Scene: choosing the next place to measure. An attentive orange fox stands at left, leaning its head slightly toward a simple freestanding circular magnifying lens. At right is a low round examination table holding a shallow miniature landscape made from three large sage contour terraces. Three tiny dark measurement pegs already sit on one side; one prominent orange measurement peg is on the far unexplored terrace, directly beneath the lens. The fox rests a front paw on the table edge and looks toward this chosen peg through the lens. Keep lens and selected peg clearly legible and visually separated, do not cover the face with the lens. Broad tail balances the forward lean, isolated to far left. The scene must read as careful observation and choosing a next measurement, an editorial metaphor for active learning and physical-field reconstruction, not a scientific result. No other props, no mountain vista, no giant glass eye, no equations. Fox remains main focus. The orange peg must be separated from neighboring objects for a small rise-and-settle animation.",
+            "correctionPrompt": "Edit this illustration very precisely. Correct ONLY the fox's extra fifth paw. It currently has two rear legs on the ground, one near front leg extending vertically to the ground, one far front leg lifted onto the table rim, AND an erroneous additional near front paw projecting right onto the near-left edge of the tabletop (roughly 59% canvas width, 59% canvas height). REMOVE that small extra horizontal near-side table paw and smoothly reconnect the silhouette of that near front leg straight down to its existing foot on the ground. The fox must have exactly FOUR legs: two hind feet grounded, one near front foot grounded, and one far front paw lifted to rest on the far table rim near the magnifier stand. No branching limbs. Preserve the entire rest of the image faithfully: exact fox head and open angular eye, flowing geometric orange planes, tail, table, magnifying glass, all markers, leaves, composition, colors. TRUE TRANSPARENT background.",
+            "correction": "Removed an extra branching front paw before tracing."
+          }
+        }
+      ],
+      "homepagePreparation": {
+        "script": "tools/build_test_journey.py",
+        "runtime": "assets/js/test-journey.js",
+        "motion": "Five source sample positions, eight reviewed map curves, changing destinations with no immediate backtracking. Route draws with a moving marker; destination turns orange on arrival; completed route fades before next hop. Fox and map stay still.",
+        "timingMs": {
+          "rest": 650,
+          "travel": 2400,
+          "hold": 900,
+          "fade": 850
+        },
+        "fallback": "The unchanged static source composition remains visible before JS enhancement, in mobile images, and without JS."
+      }
+    },
+    {
+      "id": "build",
+      "source": "assets/IllustratorWorkspace/FoxIllustration_P3.svg",
+      "sourceSha256": "8af3f91ad2d7c19e351900d092c6e5bc17a6bcaff94512a30c4a3bdeebb2a8c3",
+      "vector": "assets/art/scene-build-authored.svg",
+      "origin": "Owner-cleaned Illustrator SVG supplied 2026-10-05; no retracing or image generation.",
+      "homepagePreparation": {
+        "script": "tools/prepare_supplied_scenes.py",
+        "preservation": "Original input bytes retained. Original path palette is scoped to this scene; only hidden underpaint is repaired for movement.",
+        "motion": "Car travels -45/+19 source units over 12 seconds; tail +3/-2.5 degrees over 9 seconds; original eye blinks."
+      },
+      "history": [
+        {
+          "status": "Superseded generated study",
+          "record": {
+            "id": "build",
+            "source": "assets/art/chapter-sources/build.png",
+            "vector": "assets/art/scene-build.svg",
+            "prompt": "Use case: illustration-story. ONE finished portfolio editorial illustration, not a screenshot, with NO text. Reference image 1 is the approved fox character and flat flowing geometric style, not a composition to repeat. Reference image 2 is the authoritative face and eye detail. Preserve the small OPEN angular teardrop eye, warm peach iris, dark angled pupil, tiny cream catchlights and sharp forest-dark outline. NO closed smiling eye or generic dark crescent. Same elegant slender orange fox with long forest-green legs, tall triangular ears, small tapered muzzle and cream chest. Large flowing cream-tipped orange brush tail. Crisp CLEAN FLAT color planes, restrained curves, no textures or gradients or airbrushed shading. Orange #fb7926, burnt #cb4e13, apricot #fdc894, cream #f7e7c9, forest #193d30 and sage #b7c4a5. Single near-square scene, complete subjects within canvas, at least 6% empty edge padding and generous upper negative space. TRUE TRANSPARENT background, no background rectangle, no painted checkerboard. No lettering, numbers, logos, symbols, interface UI, plots, arrows, diagrams, board, collage, photorealism or chibi anatomy. Clearly separated silhouettes and props allow later vector cleanup. Scene: testing a working system against constraints. Orange fox at left leans attentively over the rim of a low broad shallow rectangular sage test tray at right. On the tray is a compact cream road with one obvious curved bend. One small orange model car with dark forest wheels approaches the curve, and a single burnt-orange traffic cone stands beside the inside of the bend. The fox looks directly at the car and curve, one paw on the tray edge. Their relationship is unmistakable: the small vehicle must navigate the curve and obstacle. Show ample flat road around the car so it can move a short distance later. Keep the cone separated from the car, no orange planned-path line needed. Broad fox tail clear at left, no overlap with road. This is a conceptual miniature for driving-simulator integration, not physical hardware documentation. Keep the tray shallow and the composition simple, no surrounding city, no driver, no crash or speed effects. Fox and testing setup receive equal visual weight."
+          }
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "source": "assets/IllustratorWorkspace/FoxIllustration_P4.svg",
+      "sourceSha256": "98f9cca488a35c8a17517edcff44a49b96bb09e2b36f5e22392823e59bbe05dc",
+      "vector": "assets/art/scene-return-authored.svg",
+      "origin": "Owner-cleaned Illustrator SVG supplied 2026-10-05; no retracing or image generation.",
+      "homepagePreparation": {
+        "script": "tools/prepare_supplied_scenes.py",
+        "preservation": "Original input bytes retained. Original path palette is scoped to this scene; only hidden underpaint is repaired for movement.",
+        "motion": "Tail +2.5/-2 degrees over 10 seconds; hand has two small typing taps then rests over 6 seconds. Learner head, torso and fox body remain still."
+      },
+      "history": [
+        {
+          "status": "Superseded generated study",
+          "record": {
+            "id": "return",
+            "source": "assets/art/chapter-sources/return.png",
+            "vector": "assets/art/scene-return.svg",
+            "prompt": "Use case: illustration-story. ONE finished portfolio editorial illustration, not a screenshot, with NO text. Reference image 1 is the approved fox character and flat flowing geometric style, not a composition to repeat. Reference image 2 is the authoritative face and eye detail. Preserve the small OPEN angular teardrop eye, warm peach iris, dark angled pupil, tiny cream catchlights and sharp forest-dark outline. NO closed smiling eye or generic dark crescent. Same elegant slender orange fox with long forest-green legs, tall triangular ears, small tapered muzzle and cream chest. Large flowing cream-tipped orange brush tail. Crisp CLEAN FLAT color planes, restrained curves, no textures or gradients or airbrushed shading. Orange #fb7926, burnt #cb4e13, apricot #fdc894, cream #f7e7c9, forest #193d30 and sage #b7c4a5. Single near-square scene, complete subjects within canvas, at least 6% empty edge padding and generous upper negative space. TRUE TRANSPARENT background, no background rectangle, no painted checkerboard. No lettering, numbers, logos, symbols, interface UI, plots, arrows, diagrams, board, collage, photorealism or chibi anatomy. Clearly separated silhouettes and props allow later vector cleanup. Scene: a tool becomes a learning moment. Orange fox seated upright on a low sage platform at LEFT faces RIGHT toward two adult university-age learners at a single modest shared sage desk. One learner at far right uses the keyboard of one open laptop, mostly viewed from the back so NO interface is visible. The second learner, seated nearer the fox, turns attentively toward it and raises one open hand just slightly in a natural question gesture, relaxed at chest level. Fox meets this learner's gaze. Two dignified ADULTS, simple contemporary forest/sage clothing and modest facial detail, same restrained editorial style as fox. One blank cream folded lesson sheet lies on desk, with its outer corner unobstructed for later subtle motion. Keep the human exchange open and legible; NO waving enthusiastically or lecturing. The fox has a full large flowing tail resting to far left, separate from chairs and table, long graceful front legs. Laptop should be small supporting object. Concept inspired by an introductory AI-agent coding course taught through InVolve, not a depiction of actual people or the software interface. Exactly two adults, one fox, one laptop, one desk, chairs/plinth, one lesson sheet; no extra props. Make reciprocity and curiosity immediately readable."
+          }
+        }
+      ]
+    }
+  ],
+  "conversion": {
+    "tool": "VTracer 0.6.15, local conversion",
+    "script": "tools/prepare_chapter_art.py",
+    "method": "Unmodified PNGs retained. Alpha contour threshold 128/255 removes invisible fringe during vector conversion. Paths are grouped manually for a small set of motions; this is not a complete character rig.",
+    "eye": "Original source SVG eye paths are reused for generated Build and Return and the historical Notice/Test studies. Current Notice preserves its supplied three-quarter eyes; current Test preserves the supplied overhead face without eye transplantation.",
+    "scope": "Generated Build and Return studies, plus the retained historical Notice and Test studies. Current supplied Notice and Test replacements have their own conversion and homepage-preparation records above."
+  },
+  "motion": {
+    "common": "Existing translation and rotation ranges increased 1.5×; timing retained. Blinks retain their complete natural closure. New Test journey replaces the old opacity-only sample emphasis.",
+    "notice": "Only native-eye blink and tail ±3 degrees over 9 seconds. Hand, book and decorative arc/leaf are stationary. Page corner ticks removed.",
+    "test": "Five source sample positions, eight reviewed map curves, changing destinations with no immediate backtracking. Route draws with a moving marker; destination turns orange on arrival; completed route fades before next hop. Fox and map stay still.",
+    "build": "Car travels -45/+19 source units over 12 seconds; tail +3/-2.5 degrees over 9 seconds; original eye blinks.",
+    "return": "Tail +2.5/-2 degrees over 10 seconds; hand has two small typing taps then rests over 6 seconds. Learner head, torso and fox body remain still.",
+    "guards": "Only the active desktop chapter animates. Paused during startup, off-screen, hidden document, user pause or reduced-motion preference. Mobile shows complete static scenes."
+  },
+  "manualCleanup": {
+    "folder": "assets/IllustratorWorkspace/ChapterCleanup/",
+    "policy": "Stable original tracing drafts, never overwritten. The owner supplied newer cleaned P3/P4 files in IllustratorWorkspace; those files now drive the homepage derivatives.",
+    "files": [
+      {
+        "id": "P1",
+        "editable": "assets/IllustratorWorkspace/ChapterCleanup/P1-Notice.svg",
+        "convertedSource": "assets/art/scene-notice-closeup.svg",
+        "png": "assets/art/chapter-sources/notice-closeup.png"
+      },
+      {
+        "id": "P2",
+        "editable": "assets/IllustratorWorkspace/ChapterCleanup/P2-Test.svg",
+        "convertedSource": "assets/art/scene-test-overhead.svg",
+        "png": "assets/art/chapter-sources/test-overhead.png"
+      },
+      {
+        "id": "P3",
+        "editable": "assets/IllustratorWorkspace/ChapterCleanup/P3-Build.svg",
+        "convertedSource": "assets/art/scene-build-road.svg",
+        "png": "assets/art/chapter-sources/build-road.png"
+      },
+      {
+        "id": "P4",
+        "editable": "assets/IllustratorWorkspace/ChapterCleanup/P4-Return.svg",
+        "convertedSource": "assets/art/scene-return-learning.svg",
+        "png": "assets/art/chapter-sources/return-learning.png"
+      }
+    ]
+  },
+  "pendingSuppliedScenes": [
+    {
+      "source": "assets/art/chapter-sources/build-road.png",
+      "sourceSha256": "a5f91829f04e3c596484ae2108921c08b5d833ea557d9638676a6eef07b26ec7",
+      "vector": "assets/art/scene-build-road.svg",
+      "paths": 154,
+      "gradients": 6,
+      "viewBox": "0 0 1254 1254",
+      "script": "tools/prepare_remaining_art.py",
+      "status": "Historical conversion draft; superseded by owner-cleaned FoxIllustration_P3/P4.svg for homepage production."
+    },
+    {
+      "source": "assets/art/chapter-sources/return-learning.png",
+      "sourceSha256": "27fa0a084174c500f36ac4ddd989f0df1e05f48b141adfd82e85da2735be629b",
+      "vector": "assets/art/scene-return-learning.svg",
+      "paths": 127,
+      "gradients": 10,
+      "viewBox": "0 0 1254 1254",
+      "script": "tools/prepare_remaining_art.py",
+      "status": "Historical conversion draft; superseded by owner-cleaned FoxIllustration_P3/P4.svg for homepage production."
+    }
+  ],
+  "motionRefinement": {
+    "date": "2026-10-05",
+    "tail": "P3/P4 keep attachment control points fixed; only the free tail bends. Shared colour planes have 0.8-unit matching under-strokes to prevent anti-alias cracks. The P4 desk continues behind the entire tail motion envelope.",
+    "decoration": "Separate warm-orange open arcs, travelling ink segments, softly pulsing nodes, leaf-shaped sprigs and current lines. Decorative layers sit behind source artwork and share existing pause, offscreen and reduced-motion controls.",
+    "verification": "Rest/up/down vector renders inspected; fixed-root geometry checked for both extrema; browser path interpolation and pause verified. P1 original hand/book remain still; its two tail extrema were inspected."
+  },
+  "detailCorrections": {
+    "date": "2026-10-06",
+    "build": "Blink compression uses the eye’s -49-degree major axis. Native car shadow path 30 now travels in the car group with the other contact shadows.",
+    "return": "Extract visible skin with the native keyboard contour as a moving mask; retain every original finger shadow above the stationary keyboard, add hidden keyboard/attachment underpaint, and move the complete sprig into clear space below the desk.",
+    "sources": "Original Illustrator SVGs remain unchanged."
+  }
+}

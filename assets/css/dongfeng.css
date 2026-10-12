@@ -1,0 +1,28 @@
+/* Project-specific layout; colors and type follow the shared portfolio. */
+.dongfeng-heading{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,1fr);gap:38px;align-items:center;max-width:none}
+.dongfeng-heading h1{font-size:clamp(42px,5.1vw,76px)}
+.dongfeng-heading .lede{font-size:clamp(17px,1.6vw,22px)}
+.dongfeng-layout .case-copy{max-width:960px}
+.dongfeng-layout .case-section>.eyebrow{font-size:10px;color:var(--orange);margin-bottom:14px}
+.driving-loop{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:25px 28px;border:1px solid var(--line);border-radius:12px;margin:28px 0;font-size:14px;line-height:1.5}
+.driving-loop small{font-size:11px;color:var(--muted)}
+.driving-loop b{font-weight:400;color:var(--orange)}
+.dongfeng-videos{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:32px 0 20px}
+.simulation-film{min-width:0;margin:0}
+.simulation-film video{display:block;width:100%;height:auto;aspect-ratio:1728/1024;object-fit:contain;background:#12271f;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.alpasim-videos video{aspect-ratio:9/10;background:#fff}
+.simulation-film video:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+.simulation-film figcaption,.dongfeng-figure figcaption{font-size:12px;line-height:1.8;color:var(--muted);margin-top:12px}
+.film-label{display:block;font-size:11px;letter-spacing:.025em;color:var(--ink);margin-bottom:6px}
+.dongfeng-layout .media-context{font-size:13px;line-height:1.8;border-left:2px solid var(--line);padding-left:18px;margin-top:20px}
+.dongfeng-figure{margin:30px 0}
+.dongfeng-figure img{display:block;width:100%;height:auto}
+.dongfeng-details{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;margin-top:26px}
+.dongfeng-details summary{cursor:pointer;font-size:14px;line-height:1.7}
+.dongfeng-details p{margin:18px 0 0}
+.platform-gallery{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.platform-gallery .dongfeng-figure{min-width:0;margin:18px 0 0}
+.platform-gallery img{aspect-ratio:1.84;object-fit:contain;background:#fff}
+@media(min-width:1250px){.dongfeng-layout{gap:45px}}
+@media(max-width:900px){.dongfeng-heading{grid-template-columns:1fr;gap:10px}.dongfeng-heading h1{max-width:760px}.dongfeng-illustration{max-width:440px;justify-self:center}.dongfeng-videos,.platform-gallery{gap:16px}}
+@media(max-width:600px){.dongfeng-heading h1{font-size:clamp(39px,10vw,58px)}.dongfeng-videos,.platform-gallery{grid-template-columns:1fr;gap:28px}.dongfeng-illustration{max-width:360px}.driving-loop{padding:18px 14px;gap:9px;font-size:11px}.driving-loop small{font-size:9px}.alpasim-videos{max-width:460px;margin-inline:auto}}

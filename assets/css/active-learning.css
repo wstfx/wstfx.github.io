@@ -1,0 +1,39 @@
+.al-heading{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,1fr);gap:38px;align-items:center;max-width:none}
+.al-heading h1{font-size:clamp(42px,5.1vw,74px)}
+.al-heading .lede{font-size:clamp(17px,1.6vw,22px)}
+.al-illustration{margin:0;text-align:center;min-width:0}
+.al-illustration .al-art{display:block;width:100%;height:auto;max-width:470px;margin:auto}
+.al-controls{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:-15px}
+.al-controls button{font:inherit;font-size:12px;padding:8px 12px;border:1px solid var(--line);border-radius:24px;background:transparent;color:var(--ink);cursor:pointer}
+.al-controls button[aria-pressed="true"]{background:var(--green);color:var(--paper);border-color:var(--green)}
+.al-controls button:focus-visible,.al-motion:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+.al-illustration figcaption{font-size:13px;line-height:1.7;margin:16px auto 0;max-width:350px;min-height:88px}
+.al-illustration figcaption small{display:block;font-size:10px;color:var(--muted);margin-top:8px}
+.al-motion{font:inherit;font-size:11px;padding:6px 0;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--muted);cursor:pointer}
+.al-illustration .al-halo{transform-origin:218px 174px;animation:al-pulse 4s ease-in-out infinite}
+.al-illustration .al-route,.al-illustration .al-feedback>path:first-child{animation:al-flow 8s linear infinite}
+.al-illustration .al-signal{animation:al-light 4s ease-in-out infinite}
+.al-illustration[data-step="choose"] .al-learner,.al-illustration[data-step="choose"] .al-feedback,.al-illustration[data-step="learn"] .al-pool,.al-illustration[data-step="learn"] .al-feedback,.al-illustration[data-step="check"] .al-pool,.al-illustration[data-step="check"] .al-learner{opacity:.38}
+.al-pool,.al-learner,.al-feedback{transition:opacity .35s ease}
+.al-illustration.is-paused *{animation-play-state:paused!important}
+@keyframes al-pulse{50%{transform:scale(1.18);opacity:.45}}
+@keyframes al-flow{to{stroke-dashoffset:-48}}
+@keyframes al-light{50%{opacity:.3}}
+.al-layout .case-copy{max-width:940px;min-width:0}
+.al-layout .case-section>.eyebrow{font-size:11px;color:var(--orange);margin-bottom:12px}
+.al-figure{margin:30px 0 36px}
+.al-figure img{display:block;width:100%;height:auto;transform:none!important}
+.al-figure figcaption{font-size:12px;color:var(--muted);line-height:1.8;margin-top:12px}
+.al-figure figcaption strong{color:var(--ink)}
+.al-layout details{border-block:1px solid var(--line);padding:18px 0;margin:25px 0}
+.al-layout summary{font-size:14px;line-height:1.7;cursor:pointer}
+.al-map{max-width:560px;margin-inline:auto}
+.al-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:30px 0}
+.al-steps article{border-top:2px solid var(--line);padding-top:18px}
+.al-steps span{color:var(--orange);font-size:12px}
+.al-steps h3{font-size:18px;margin:10px 0}
+.al-steps p,.al-layout .al-note{font-size:13px;line-height:1.8}
+.al-layout .al-note{border-left:2px solid var(--line);padding-left:18px}
+@media(max-width:850px){.al-heading{grid-template-columns:1fr;gap:10px}.al-illustration{width:100%;max-width:430px;justify-self:center}}
+@media(max-width:600px){.al-heading h1{font-size:clamp(40px,10vw,58px)}.al-steps{grid-template-columns:1fr;gap:12px}.al-illustration figcaption{min-height:0}.al-figure{margin:24px 0}}
+@media(prefers-reduced-motion:reduce){.al-illustration *{animation:none!important;transition:none!important}.al-motion{display:none}}

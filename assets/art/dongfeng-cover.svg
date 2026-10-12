@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="dongfeng-cover-art" viewBox="0 0 360 170" fill="none" aria-hidden="true">
+  <title>A driving model in the loop</title>
+  <desc>Camera observations reach a VLA model. Its predicted trajectory guides an orange car along a simulated road, returning new observations.</desc>
+  <path d="M28 28C91 7 173 10 213 28L222 121C166 166 68 165 20 139Z" fill="#cbd9c1"/>
+  <path d="M6 146C60 158 109 112 136 90S178 36 223 23" stroke="#91aa88" stroke-width="44"/>
+  <path d="M6 146C60 158 109 112 136 90S178 36 223 23" stroke="#f7f5ed" stroke-width="38"/>
+  <path class="dfc-lane" d="M6 146C60 158 109 112 136 90S178 36 223 23" stroke="#a4b69c" stroke-width="1.5" stroke-dasharray="6 8"/>
+  <!-- The model's planned path lies on the same road as the vehicle. -->
+  <path class="dfc-plan" d="M136 90C157 73 178 36 223 23" stroke="#e67b2d" stroke-width="2.7" stroke-linecap="round" stroke-dasharray="3 6"/>
+  <g fill="#e67b2d"><circle cx="136" cy="90" r="3"/><circle cx="170.5" cy="55" r="3"/><circle cx="223" cy="23" r="3"/></g>
+  <!-- Observations travel from the camera stack to the model. -->
+  <path class="dfc-data" d="M108 42C156 6 200 13 250 48" stroke="#64866c" stroke-width="1.5" stroke-dasharray="3 5"/>
+  <path d="M243 42L250 48L242 49" stroke="#64866c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- A distinct return arc makes the feedback loop visible. -->
+  <path class="dfc-return" d="M296 96C330 158 213 166 155 115" stroke="#d47734" stroke-width="1.7" stroke-dasharray="3 5"/>
+  <path d="M157 123L155 115L163 117" stroke="#d47734" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(27 31) rotate(-8 38 29)">
+    <g class="dfc-camera">
+      <rect x="8" y="-8" width="77" height="54" rx="6" fill="#c3d1b9" stroke="#809a7d" stroke-width="1.4"/>
+      <rect x="4" y="-4" width="77" height="54" rx="6" fill="#e7eddf" stroke="#809a7d" stroke-width="1.4"/>
+      <rect width="77" height="54" rx="6" fill="#f7f5ed" stroke="#234d3b" stroke-width="1.7"/>
+      <circle cx="9" cy="9" r="2" fill="#ed842e"/><path d="M16 9H30" stroke="#adbea5" stroke-width="1.5"/>
+      <path d="M7 23H70V47H7Z" fill="#dce6d3"/>
+      <path d="M15 47L33 22H44L64 47" fill="#afc1a4"/>
+      <path d="M26 47L36 22H41L53 47" fill="#f7f5ed"/>
+      <path d="M38 28V31M39 37L40 44" stroke="#7c9879" stroke-width="1.3"/>
+      <path d="M12 32L18 20L24 32M55 29L60 19L65 29" fill="#8da784"/>
+    </g>
+  </g>
+  <g transform="translate(252 30) rotate(7 44 34)">
+    <g class="dfc-model">
+      <rect x="4" y="5" width="84" height="67" rx="9" fill="#b9cbae"/>
+      <rect width="84" height="67" rx="9" fill="#f7f5ed" stroke="#234d3b" stroke-width="1.7"/>
+      <path d="M1 16H83" stroke="#c9d5c1" stroke-width="1.3"/>
+      <g fill="#9caf90"><circle cx="10" cy="8" r="1.7"/><circle cx="17" cy="8" r="1.7"/><circle cx="24" cy="8" r="1.7"/></g>
+      <g stroke="#91aa88" stroke-width="1.3"><path d="M18 29L40 37L18 49M18 29L40 52L65 42L40 26L18 49M40 37L65 42"/></g>
+      <g fill="#f7f5ed" stroke="#234d3b" stroke-width="1.5"><circle cx="18" cy="29" r="3"/><circle cx="18" cy="49" r="3"/><circle cx="40" cy="26" r="3"/><circle cx="40" cy="37" r="3"/><circle cx="40" cy="52" r="3"/><circle cx="65" cy="42" r="3.5"/></g>
+      <g class="dfc-signal" fill="#ed842e"><circle cx="40" cy="37" r="2"/><circle cx="65" cy="42" r="2.4"/></g>
+      <text x="72" y="60" text-anchor="end" fill="#234d3b" font-size="7" font-family="Arial,sans-serif" letter-spacing="1">VLA</text>
+    </g>
+  </g>
+  <g transform="translate(128 97) rotate(-39)">
+    <g class="dfc-car">
+      <path class="dfc-cone" d="M17 0L63 -26Q73 0 63 26Z" fill="#ef9e47" opacity=".16"/>
+      <rect x="-20" y="-15" width="12" height="5" rx="2" fill="#234d3b"/><rect x="9" y="-15" width="12" height="5" rx="2" fill="#234d3b"/>
+      <rect x="-20" y="10" width="12" height="5" rx="2" fill="#234d3b"/><rect x="9" y="10" width="12" height="5" rx="2" fill="#234d3b"/>
+      <rect x="-24" y="-12" width="49" height="24" rx="8" fill="#ec842f" stroke="#234d3b" stroke-width="1.6"/>
+      <path d="M4 -9L11 -7V7L4 9Z" fill="#234d3b"/><path d="M-17 -7L-11 -9V9L-17 7Z" fill="#3f6550"/>
+      <rect x="-8" y="-8" width="10" height="16" rx="2" fill="#f1a34d"/>
+      <path d="M20 -7V-4M20 4V7" stroke="#fff2d5" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M-20 -6V-4M-20 4V6" stroke="#b75323" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+  <path d="M42 102V113M39 108H45M209 123V134M206 129H212" stroke="#8fa785" stroke-width="1.4" stroke-linecap="round"/>
+</svg>

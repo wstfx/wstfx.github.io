@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Elegant fox companion">
+<title>Elegant fox companion</title>
+<desc>An original orange fox built from long, interlocking curves: a sweeping brush tail, poised legs and a pointed profile. Five poses trace curiosity, attention, investigation, action and return.</desc>
+<style>.mascot-pose{display:none}.pose-0{display:inline}</style>
+<!-- Original SVG artwork. Static pose transforms wrap animation hooks. Tail / head / body pivots are local SVG coordinates, defined on each group. All poses share a 400×300 artboard; no external assets, symbols or IDs. -->
+<g class="mascot-pose pose-0" data-pose="stand">
+<g transform="translate(0 0)">
+<g class="fox-tail" style="transform-origin:182px 150px">
+<path d="M183 151C137 155 132 95 83 81C53 72 28 82 14 94C53 88 56 139 96 158C122 171 155 166 183 151Z" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 94C60 78 109 141 183 151" fill="none" stroke="#d56528" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M63 103C89 113 91 135 109 151C123 166 151 176 183 151" fill="none" stroke="#d56528" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-back" style="transform-origin:190px 178px">
+<path d="M196 190C201 201 190 216 190 223C190 235 198 248 207 256Q224 258 223 265L206 265C190 251 176 236 181 222C185 212 184 204 180 198" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:268px 170px">
+<path d="M281 170C282 189 294 195 299 202C314 211 313 227 303 237Q298 238 299 229C305 213 290 214 280 207C270 200 266 192 264 186" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:234px 166px">
+<path d="M174 145C205 142 234 155 260 136C275 124 282 111 279 98" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(299 109) rotate(0) scale(0.82 0.82)">
+<g class="fox-head" style="transform-origin:0px 32px">
+<path d="M-24-14C-31-30-25-55-18-66L-4-40Q1-33 9-32C23-35 30-18 43-16L62-18C59-6 44-4 31 1C20 5 10 13 7 27C2 48-11 70-35 84" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-5-40 4-59Q12-48 15-32" fill="none" stroke="#d56528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-18-61C-18-44-10-37-4-35" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24-16C7-11-1 10-2 29" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(0 0)">
+<g class="fox-eyes" style="transform-origin:28px -23px">
+<path d="M23-23Q28-27 33-23" fill="none" stroke="#d56528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<path d="M56-17 62-18Q61-11 58-9Z" fill="#d56528"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:234px 166px">
+<path d="M270 178C266 198 266 201 271 220C275 236 284 247 296 258C311 256 317 261 316 266L295 266C281 255 271 245 263 227C252 203 245 190 234 184C221 177 212 176 202 181C186 198 168 210 146 214C135 226 123 245 113 257Q125 257 123 267L103 267C101 262 104 253 108 246C121 221 135 197 151 184C160 163 166 154 174 145" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<path d="M174 145C198 145 212 156 221 166" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M244 157C257 157 266 166 270 178" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g class="mascot-pose pose-1" data-pose="sit">
+<g transform="translate(0 0)">
+<g class="fox-tail" style="transform-origin:227px 250px">
+<path d="M95 126C79 164 99 185 130 197C144 202 154 209 165 220M95 126C72 144 59 184 76 218C101 267 168 250 228 252" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M95 126C68 184 107 201 145 216C167 226 182 240 208 247" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:219px 246px">
+<path d="M165 220C164 201 181 179 201 153C214 136 224 113 226 79" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M215 244C195 241 188 224 197 207C204 195 209 189 219 189" fill="none" stroke="#d56528" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(247 89) rotate(-6) scale(0.83 0.83)">
+<g class="fox-head" style="transform-origin:0px 32px">
+<path d="M-24-14C-31-30-25-55-18-66L-4-40Q1-33 9-32C23-35 30-18 43-16L62-18C59-6 44-4 31 1C20 5 10 13 7 27C2 48-11 70-35 84" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-5-40 4-59Q12-48 15-32" fill="none" stroke="#d56528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-18-61C-18-44-10-37-4-35" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24-16C7-11-1 10-2 29" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(0 0)">
+<g class="fox-eyes" style="transform-origin:28px -23px">
+<path d="M23-23Q28-27 33-23" fill="none" stroke="#d56528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<path d="M56-17 62-18Q61-11 58-9Z" fill="#d56528"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:234px 179px">
+<path d="M222 160C214 177 211 194 219 210C226 230 236 251 251 260L271 260Q270 253 253 254C239 236 232 211 235 190" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:247px 177px">
+<path d="M252 159C241 195 246 230 264 254Q280 253 282 260L263 260C248 251 238 230 232 210" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<path d="M208 247Q225 255 244 255" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g class="mascot-pose pose-2" data-pose="inspect">
+<g transform="translate(0 0)">
+<g class="fox-tail" style="transform-origin:176px 143px">
+<path d="M178 146C134 145 143 93 99 66C66 46 40 62 21 79C53 72 45 120 79 137C105 151 143 159 178 146Z" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21 79C69 56 115 149 178 146" fill="none" stroke="#d56528" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M69 84C89 112 89 139 133 150" fill="none" stroke="#d56528" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-back" style="transform-origin:185px 163px">
+<path d="M192 183C191 201 183 211 183 219C183 231 190 248 202 258Q217 258 219 265L200 265C186 249 173 234 172 218L177 202" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:222px 169px">
+<path d="M171 139C202 132 228 145 247 149C265 152 275 159 287 164" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M279 192C280 207 291 225 309 233L328 241Q341 240 342 248L325 250C313 247 303 242 294 237" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(294 175) rotate(52) scale(0.76 0.76)">
+<g class="fox-head" style="transform-origin:0px 32px">
+<path d="M-24-14C-31-30-25-55-18-66L-4-40Q1-33 9-32C23-35 30-18 43-16L62-18C59-6 44-4 31 1C20 5 10 13 7 27C2 48-11 70-35 84" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-5-40 4-59Q12-48 15-32" fill="none" stroke="#d56528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-18-61C-18-44-10-37-4-35" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24-16C7-11-1 10-2 29" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(0 0)">
+<g class="fox-eyes" style="transform-origin:28px -23px">
+<path d="M23-23Q28-27 33-23" fill="none" stroke="#d56528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<path d="M56-17 62-18Q61-11 58-9Z" fill="#d56528"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:222px 169px">
+<path d="M260 198C266 218 267 231 278 245L300 254Q312 253 315 261L295 262C277 257 262 245 254 224L243 198C233 186 214 176 202 180C186 198 164 207 143 211C132 228 130 245 120 258Q135 256 138 265L117 265C111 260 114 253 116 245C120 222 133 197 147 186L171 139" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<path d="M174 145C201 141 219 155 230 168" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g class="mascot-pose pose-3" data-pose="leap">
+<g transform="translate(0 0)">
+<g class="fox-tail" style="transform-origin:176px 154px">
+<path d="M177 154C130 157 119 117 76 111C47 107 23 121 9 139C42 127 65 171 102 170C130 170 152 164 177 154Z" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 139C55 108 103 161 177 154" fill="none" stroke="#d56528" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M66 133C94 158 104 177 145 165" fill="none" stroke="#d56528" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-back" style="transform-origin:190px 176px">
+<path d="M194 183C190 193 181 200 169 204C169 220 180 229 188 238Q201 240 201 247L186 246C170 235 156 220 154 203" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:266px 170px">
+<path d="M281 176C289 181 295 187 306 190L338 194Q346 202 344 208C326 207 307 204 293 198" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:235px 167px">
+<path d="M170 149C202 138 226 164 249 152C267 140 271 121 283 108" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(300 121) rotate(9) scale(0.79 0.79)">
+<g class="fox-head" style="transform-origin:0px 32px">
+<path d="M-24-14C-31-30-25-55-18-66L-4-40Q1-33 9-32C23-35 30-18 43-16L62-18C59-6 44-4 31 1C20 5 10 13 7 27C2 48-11 70-35 84" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-5-40 4-59Q12-48 15-32" fill="none" stroke="#d56528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-18-61C-18-44-10-37-4-35" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24-16C7-11-1 10-2 29" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(0 0)">
+<g class="fox-eyes" style="transform-origin:28px -23px">
+<path d="M23-23Q28-27 33-23" fill="none" stroke="#d56528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<path d="M56-17 62-18Q61-11 58-9Z" fill="#d56528"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:235px 167px">
+<path d="M262 182C270 189 279 194 289 198C310 208 324 221 337 236Q350 239 355 247C346 250 338 247 332 241C317 230 304 223 285 216C263 210 252 192 236 181C220 171 209 166 192 180C173 196 157 198 143 202C124 216 108 222 93 233Q89 244 81 245C79 236 85 228 93 222C115 206 129 193 150 186C157 173 158 160 170 149" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<path d="M171 149C196 146 207 158 221 167" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g class="mascot-pose pose-4" data-pose="return">
+<g transform="translate(0 0)">
+<g class="fox-tail" style="transform-origin:182px 150px">
+<path d="M183 151C137 155 132 95 83 81C53 72 28 82 14 94C53 88 56 139 96 158C122 171 155 166 183 151Z" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 94C60 78 109 141 183 151" fill="none" stroke="#d56528" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M63 103C89 113 91 135 109 151C123 166 151 176 183 151" fill="none" stroke="#d56528" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-back" style="transform-origin:190px 178px">
+<path d="M196 190C201 201 190 216 190 223C190 235 198 248 207 256Q224 258 223 265L206 265C190 251 176 236 181 222C185 212 184 204 180 198" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-leg-front" style="transform-origin:268px 170px">
+<path d="M281 170C282 189 294 195 299 202C314 211 313 227 303 237Q298 238 299 229C305 213 290 214 280 207C270 200 266 192 264 186" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:234px 166px">
+<path d="M174 145C205 142 234 155 260 136C275 140 286 159 295 155" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M303 98C316 133 286 171 270 178" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g transform="translate(283 109) rotate(0) scale(-0.82 0.82)">
+<g class="fox-head" style="transform-origin:0px 32px">
+<path d="M-24-14C-31-30-25-55-18-66L-4-40Q1-33 9-32C23-35 30-18 43-16L62-18C59-6 44-4 31 1C20 5 10 13 7 27C2 48-6 56-15 56" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-5-40 4-59Q12-48 15-32" fill="none" stroke="#d56528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-18-61C-18-44-10-37-4-35" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24-16C7-11-1 10-2 29" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(0 0)">
+<g class="fox-eyes" style="transform-origin:28px -23px">
+<path d="M23-23Q28-27 33-23" fill="none" stroke="#d56528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<path d="M56-17 62-18Q61-11 58-9Z" fill="#d56528"/>
+</g>
+</g>
+<g transform="translate(0 0)">
+<g class="fox-body" style="transform-origin:234px 166px">
+<path d="M270 178C266 198 266 201 271 220C275 236 284 247 296 258C311 256 317 261 316 266L295 266C281 255 271 245 263 227C252 203 245 190 234 184C221 177 212 176 202 181C186 198 168 210 146 214C135 226 123 245 113 257Q125 257 123 267L103 267C101 262 104 253 108 246C121 221 135 197 151 184C160 163 166 154 174 145" fill="none" stroke="#d56528" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<path d="M174 145C198 145 212 156 221 166" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M244 157C257 157 266 166 270 178" fill="none" stroke="#d56528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

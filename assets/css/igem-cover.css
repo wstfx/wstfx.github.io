@@ -1,0 +1,17 @@
+/* Match other Work cards: a still composition, activated on hover or keyboard focus. */
+.cover-igem{background:var(--sage)}
+.cover-igem .ig-cover-art{display:block;width:calc(100% - 34px);height:calc(100% - 66px);max-width:420px;overflow:visible;transform:rotate(-3deg);transition:transform .65s var(--ease)}
+.cover-igem .cover-caption{right:18px;font-size:9px;letter-spacing:.07em}
+.cover-igem .ig-cover-route{animation:ig-cover-flow 3s linear infinite;animation-play-state:paused}
+.cover-igem .ig-cover-pulse{animation:ig-cover-pulse 3s ease-in-out infinite;animation-play-state:paused}
+.cover-igem .ig-cover-bacteria{animation:ig-cover-swim 4s ease-in-out infinite;animation-play-state:paused}
+.cover-igem:focus-visible .ig-cover-art{transform:rotate(0) translateY(-2px)}
+.cover-igem:focus-visible :is(.ig-cover-route,.ig-cover-pulse,.ig-cover-bacteria){animation-play-state:running}
+@media(hover:hover){
+  .project-card:hover .cover-igem .ig-cover-art{transform:rotate(0) translateY(-2px)}
+  .project-card:hover .cover-igem :is(.ig-cover-route,.ig-cover-pulse,.ig-cover-bacteria){animation-play-state:running}
+}
+@keyframes ig-cover-flow{to{stroke-dashoffset:-44}}
+@keyframes ig-cover-pulse{50%{r:43;opacity:.3}}
+@keyframes ig-cover-swim{50%{transform:translate(7px,-3px)}}
+@media(prefers-reduced-motion:reduce){.cover-igem *{animation:none!important;transition:none!important}.project-card .cover-igem .ig-cover-art{transform:rotate(-3deg)}}

@@ -1,0 +1,103 @@
+{
+  "title": "Fox mascot — source and concept references",
+  "date": "2026-10-05",
+  "source": {
+    "svg": "assets/IllustratorWorkspace/FoxHomepage_0.svg",
+    "illustrator": "assets/IllustratorWorkspace/FoxHomepage_0.ai",
+    "conceptImage": "assets/IllustratorWorkspace/Fox and the Unrolling Paper Path.png",
+    "treatment": "Preserve supplied originals unchanged; derive namespaced web vectors from SVG."
+  },
+  "production": {
+    "scene": "assets/art/fox-workbench.svg",
+    "prepare": "python3 tools/prepare_fox_art.py",
+    "references": "python3 tools/build_fox_references.py",
+    "build": "python3 tools/build_site.py",
+    "referenceVariants": [
+      "fox-reference-reaching.svg",
+      "fox-reference-reaching-left.svg",
+      "fox-reference-contour.svg",
+      "fox-reference-detail.svg"
+    ],
+    "geometry": "All 176 scene paths and the ellipse preserve original painter order and geometry; 42 fox paths plus the highlight ellipse are isolated for references.",
+    "motion": "Independent tail, eye, paper curl, car and leaf groups; connected head, neck and body remain static. Pause/reduced-motion/startup guards apply. Mobile uses a full still illustration and a compact source fox companion.",
+    "homepageStatus": "All four supplied scenes integrated. Notice blink repaired through direct SVG paint; owner-cleaned P3/P4 sources animate the road/car and learner/fox scenes.",
+    "headlineTail": "assets/art/tail-punctuation.svg: a complete upright brush tail with a smooth closed root, source orange/cream color planes, and no flat cut edge.",
+    "motionAmplitude": {
+      "tail": "9-second +4.5/-3.75 degree sweep, 6 source-unit inward X compensation at extrema",
+      "car": "12-second cycle, -82.5,+27 source-unit travel with resting pauses",
+      "paperCurl": "7-second cycle, 9 degrees",
+      "leaves": "6-second staggered cycle, -9 to +9 degrees",
+      "guards": "Existing pause control, delayed startup, off-screen/hidden-page pause and reduced-motion preference preserved."
+    },
+    "chapterRecord": "content/chapter-art-production.json",
+    "openingDecoration": {
+      "svg": "assets/art/opening-decor.svg",
+      "css": "assets/css/opening-decor.css",
+      "treatment": "Separate transparent layer behind the unmodified supplied scene: paper-road continuation, growing-line motif and foliage. Static companion layer on mobile; desktop motion respects all existing guards."
+    },
+    "nextDirection": "content/illustration-direction-v2.json: bilingual written briefs for user-authored SVGs, with varied viewpoints and a coda contour background.",
+    "noticeReplacement": {
+      "date": "2026-10-03",
+      "source": "assets/art/chapter-sources/notice-closeup.png",
+      "rawVector": "assets/art/scene-notice-closeup.svg",
+      "homepageVector": "assets/art/scene-notice-framed.svg",
+      "prepare": "tools/prepare_notice_art.py (local VTracer 0.6.15 and Sharp)",
+      "sourcePreservation": "Original PNG remains byte-for-byte unchanged; raw SVG and framed homepage composition are separate derivatives.",
+      "geometry": "1298×1212 source coordinates; 114 spline paths and 6 fitted native linear gradients; no raster image embedded in either vector artwork.",
+      "eyeTreatment": "Preserve both supplied three-quarter eyes, including iris, pupil and catchlights. Do not transplant the older side-profile eye onto this pose.",
+      "motion": "Tail ±3 degrees/9 seconds and two brief eye closures per 6.5 seconds. Eyes live directly in the painted SVG tree; hand, book and decoration stay still.",
+      "history": "The former generated Notice PNG/SVG and its original prompt remain recorded in content/chapter-art-production.json.",
+      "framePrepare": "tools/frame_notice_art.py",
+      "rawMotion": "The raw converted SVG retains its incoming-eye blink groups, with connected tail/body, hand and book unrigged; this file is unchanged by the homepage motion preparation.",
+      "frameTreatment": "Vector clips and masks isolate the complete tail. Hidden curved underlaps continue native tail contours at its root; the original hand/book paint remains stationary. The open frame receives the cropped arm; page-corner ticks are removed. Original PNG and raw SVG remain unchanged."
+    },
+    "testReplacement": {
+      "date": "2026-10-03",
+      "source": "assets/art/chapter-sources/test-overhead.png",
+      "vector": "assets/art/scene-test-overhead.svg",
+      "prepare": "tools/prepare_test_art.py (local VTracer 0.6.15 and Sharp)",
+      "sourcePreservation": "The supplied 1254×1254 PNG remains byte-for-byte unchanged. Source-space SVG coordinates are retained in export viewBox 0 0 1254 1110.",
+      "geometry": "80 artwork spline paths, 1 vector-mask path and 4 native linear gradients; no embedded raster image. All artwork stays above source y=1071, inside the cropped export.",
+      "faceTreatment": "Preserve the supplied overhead pose and face. No profile-eye replacement or anatomy reconstruction.",
+      "cleanup": "The established 50% alpha contour excludes faint transparent residue between legs and tail; a vector mask removes the hidden orange map-edge underpaint.",
+      "motion": "Five original map points are connected by eight reviewed curves. A marker follows each drawing route; the destination turns orange only on arrival, then the completed route fades. Destinations vary without immediate backtracking. The fox and map stay still.",
+      "guards": "Only the active desktop scene animates; startup, user pause, hidden/off-screen and reduced-motion safeguards apply. Mobile displays the complete static scene.",
+      "history": "The former generated Test source, vector, original prompt and anatomy correction remain recorded in content/chapter-art-production.json.",
+      "homepageVector": "assets/art/scene-test-journey.svg",
+      "homepagePrepare": "tools/build_test_journey.py",
+      "runtime": "assets/js/test-journey.js"
+    },
+    "manualCleanup": "assets/IllustratorWorkspace/ChapterCleanup/READ-ME.txt",
+    "cleanedChapterSources": [
+      "assets/IllustratorWorkspace/FoxIllustration_P3.svg",
+      "assets/IllustratorWorkspace/FoxIllustration_P4.svg"
+    ],
+    "codaDirection": "Five bilingual single-orange fox filigree briefs in illustration-direction.html#line-art; artwork crosses behind the type without a rectangular exclusion zone."
+  },
+  "conceptSheet": {
+    "file": "assets/art/fox-pose-concepts-v1.png",
+    "status": "New raster pose concepts for user review; not production vectors or animation frames.",
+    "tool": "Built-in image_gen via imagegen skill",
+    "referenceRole": "Reference image for character identity and style; not an edit target.",
+    "prompt": "Use case: stylized-concept. Asset type: a polished mascot reference concept sheet for this existing personal portfolio. Input image is a REFERENCE IMAGE, not an edit target. Develop four NEW poses of exactly the same elegant orange fox illustrated in the reference. Preserve the fox identity closely: long slender dark-forest-green legs, pointed tall ears with dark backs and cream interiors, small tapered muzzle and dark nose, almond dark eye, slender neck, cream chest, huge broad flame-shaped tail built from flowing orange/peach/cream geometric color planes. Animal anatomy, agile and graceful; NOT humanoid, NOT chibi, NOT a dog or red panda. Modern succinct vector-like editorial illustration; clean precise curves, layered simple color planes, very restrained soft shading; no noisy texture. Four distinct full-body foxes evenly spaced in a 2 by 2 arrangement, on solid warm ivory background #f7f5ec, generous blank space separating all bodies and tails. Top left: listening, sitting tall in side view, head slightly tilted toward an unseen person, tail swept around feet. Top right: investigating, standing side view with one paw raised and nose lowered toward an unseen detail, tail lifted into a broad flowing plume. Bottom left: a light horizontal bounding leap, stretched graceful torso, elegant front and back leg silhouettes, broad tail flowing behind. Bottom right: calm seated resting pose, tail curled loosely around body, head turned attentively over shoulder. Do not include workbench, car, plant, tools, props, construction lines, shadows under figures, border, text, labels, or watermark. Consistency across all four: exact reference fox palette, proportion of small head to long legs, same triangular ear geometry and pointed cream tail tip. This is a concept art sheet for design review, not an animation spritesheet.",
+    "poses": [
+      "Listen — seated attentive",
+      "Investigate — raised paw, lowered head",
+      "Move — bounding leap",
+      "Return — seated looking back"
+    ],
+    "nextStep": "Select successful poses and fix anatomy before tracing and preparing complete overlapped layers. Do not auto-trace or rig the whole sheet without selection.",
+    "review": {
+      "date": "2026-10-03",
+      "direction": "User considers the reference sheet generally good.",
+      "requiredRefinement": "The generated eyes differ from the original design. Preserve the original SVG eye shape, iris/pupil and highlight geometry in production poses, using fox-reference-detail.svg as the close reference; do not replace it with a generic almond eye.",
+      "subsequentProductionNote": "Later supplied artwork is authoritative for its own pose and face geometry: Notice retains the incoming three-quarter eyes and Test retains its overhead face. Neither receives the earlier profile-eye transplant; the concept-sheet review above remains historical feedback on that generated sheet."
+    }
+  },
+  "type": {
+    "garetDisplayWeight": 900,
+    "garetHeadingLineHeight": 1.15,
+    "bestSwashedLineHeight": 1.4,
+    "bestSwashedColor": "#59765b"
+  }
+}
