@@ -17,6 +17,8 @@ GENERATED = []
 DATA = json.loads((ROOT / 'content/portfolio-v2.json').read_text())
 PROJECTS = DATA['projects']
 BY_ID = {p['id']: p for p in PROJECTS}
+# Detailed pages belong to selected work and the two major education experiences.
+DETAIL_IDS = {p['id'] for p in PROJECTS if p.get('placement') == 'Work'} | {'westlake', 'cornell'}
 STORY_THREADS = {
     'dhh': ('notice', 'Notice · Start with someone'),
     'feasypaste': ('notice', 'Notice · Start with someone'),
@@ -68,6 +70,8 @@ def page(path, title, body, active, prefix=''):
         story_assets += f'<link rel="stylesheet" href="{prefix}{asset("assets/css/feasypaste.css")}"><script defer src="{prefix}{asset("assets/js/feasypaste.js")}"></script>'
     if path == 'visual-system.html':
         story_assets = f'<link rel="stylesheet" href="{asset("assets/css/visual-system.css")}">'
+    if path == 'about.html':
+        story_assets += f'<link rel="stylesheet" href="{asset("assets/css/about.css")}"><script defer src="{asset("assets/js/about.js")}"></script>'
     if path in ('work.html', 'work/dhh.html'):
         story_assets += f'<link rel="stylesheet" href="{prefix}{asset("assets/css/dhh-art.css")}">'
     if path == 'work.html':
@@ -84,7 +88,7 @@ def page(path, title, body, active, prefix=''):
     nav = ''.join(f'<a href="{prefix}{href}"' + (' aria-current="page"' if label == active else '') + f'>{label}</a>' for label, href in links)
     footer_top = '' if path == 'index.html' else f'<div class="footer-top"><div>{eyebrow("Always curious about the next question.")}<h2>Let’s make something meaningful.</h2><p>Research, projects, and good conversations.</p></div><div class="footer-contact"><a class="text-link" href="mailto:wuzebang@westlake.edu.cn">wuzebang@westlake.edu.cn ↗</a><button class="copy-email" type="button" aria-label="Copy email address" title="Copy email address">⧉</button></div></div>'
     html = f'''<!doctype html>
-<html lang="en" class="privacy-locked">
+<html lang="en" class="privacy-locked{' about-page' if path == 'about.html' else ''}">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#234d3b">
@@ -100,6 +104,7 @@ def page(path, title, body, active, prefix=''):
 <link rel="preload" href="{prefix}assets/garet/Garet-Book.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{prefix}assets/best_swashed/BestSwashed_PERSONAL_USE_ONLY.otf" as="font" type="font/otf" crossorigin>
 <link rel="stylesheet" href="{prefix}{asset('assets/css/type-system.css')}">
+{f'<link rel="stylesheet" href="{asset("assets/css/cv.css")}">' if path == 'cv.html' else ''}
 {f'<link rel="stylesheet" href="{prefix}{asset("assets/css/reconstruction.css")}"><script defer src="{prefix}{asset("assets/js/reconstruction.js")}"></script>' if path == 'work/reconstruction.html' else ''}
 {f'<link rel="stylesheet" href="{prefix}{asset("assets/css/dongfeng-art.css")}"><link rel="stylesheet" href="{prefix}{asset("assets/css/dongfeng.css")}"><script defer src="{prefix}{asset("assets/js/dongfeng.js")}"></script>' if path == 'work/dongfeng.html' else ''}
 {f'<link rel="stylesheet" href="{prefix}{asset("assets/css/fire-sim.css")}"><script defer src="{prefix}{asset("assets/js/fire-sim.js")}"></script>' if path == 'work/fire-sim.html' else ''}
@@ -108,7 +113,7 @@ def page(path, title, body, active, prefix=''):
 {f'<link rel="stylesheet" href="{prefix}{asset("assets/css/vr.css")}"><script defer src="{prefix}{asset("assets/js/vr.js")}"></script>' if path == 'work/vr.html' else ''}
 {f'<link rel="stylesheet" href="{prefix}{asset("assets/css/igem.css")}"><script defer src="{prefix}{asset("assets/js/igem.js")}"></script>' if path == 'work/igem.html' else ''}{f'<link rel="stylesheet" href="{prefix}{asset("assets/css/dhh.css")}"><script defer src="{prefix}{asset("assets/js/dhh.js")}"></script>' if path == 'work/dhh.html' else ''}
 </head>
-<body id="top" class="{'story-page' if path == 'index.html' else 'collection-page'}">
+<body id="top" class="{'story-page' if path == 'index.html' else 'collection-page'}{' cv-page' if path == 'cv.html' else ''}">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap header-inner">
 <a class="brand" href="{prefix}index.html" aria-label="Zebang Wu, home"><img src="{prefix}assets/art/geometric-mark.svg" width="34" height="36" alt=""><span class="brand-name">Zebang Wu<small>ENGINEERING & A LITTLE CURIOSITY</small></span></a>
@@ -286,21 +291,35 @@ work += '<div class="toolbar"><div class="filter-tabs" role="group" aria-label="
 work += f'<div class="result-meta"><span id="result-count" role="status" aria-live="polite">{len(work_projects)} experiences</span><span>Explore at your own pace ↘</span></div><div class="project-grid work-grid" id="work-grid">'+''.join(card(p,i+1) for i,p in enumerate(work_projects))+'</div><div class="empty-state" id="no-results" hidden><h2>No matching projects.</h2><p>Try another topic, or explore the whole collection.</p><button type="button" id="reset-filters">Clear filters</button></div>'
 page('work.html','Work',work,'Work')
 
-about = (ROOT / 'content/about-intro.html').read_text()
-about += '<section class="section">' + section_head('A timeline, with a few detours.','How I got here.')
+portraits = json.loads((ROOT / 'content/about-portraits.json').read_text())
+portrait = '<figure class="portrait portrait-carousel" role="region" aria-roledescription="carousel" aria-label="A few moments away from the desk" tabindex="0"><div class="portrait-slides">'
+for i, photo in enumerate(portraits):
+    portrait += f'<div class="portrait-slide{" is-current" if i == 0 else ""}" role="group" aria-roledescription="slide" aria-label="{i+1} of {len(portraits)}" aria-hidden="{str(i != 0).lower()}"><img src="{e(photo["src"])}" width="{photo["width"]}" height="{photo["height"]}" alt="{e(photo["alt"])}" decoding="async"><p class="portrait-caption"><span class="portrait-sentence" lang="{e(photo.get("lang", "en"))}">{e(photo["sentence"])}</span><span class="portrait-place">(<time datetime="{photo["datetime"]}">{e(photo["date"])}</time> · {e(photo["place"])})</span></p></div>'
+portrait += '</div><div class="portrait-controls" hidden><button class="portrait-prev" type="button" aria-label="Previous photo">←</button><span class="portrait-counter" aria-hidden="true">1 / '+str(len(portraits))+'</span><button class="portrait-next" type="button" aria-label="Next photo">→</button><button class="portrait-play" type="button" aria-label="Pause photo slideshow">Pause</button><span class="portrait-progress" aria-hidden="true"><span class="portrait-progress-fill"></span></span></div><figcaption class="sr-only portrait-announcement" aria-live="off">'+e(portraits[0]['sentence'])+'</figcaption></figure>'
+about = (ROOT / 'content/about-intro.html').read_text().replace('{{PORTRAIT_CAROUSEL}}', portrait)
+about += '<section class="section timeline-section">' + section_head('A timeline, with a few detours.','How I got here.')
 groups = OrderedDict()
 for item in DATA['timeline']:
     groups.setdefault(item['year'], []).append(item)
-about += '<nav class="year-nav" aria-label="Timeline years">' + ''.join(f'<a href="#year-{i}">{e(year)}</a>' for i,year in enumerate(groups)) + '</nav><div class="timeline">'
+about += '<div class="timeline-layout"><nav class="year-nav" aria-label="Timeline years">' + ''.join(f'<a href="#year-{i}">{e(year)}</a>' for i,year in enumerate(groups)) + '</nav><div class="timeline">'
 for i,(year,items) in enumerate(groups.items()):
     about += f'<section class="timeline-year" id="year-{i}"><h3>{e(year)}</h3><div class="timeline-items">'
     for item in items:
         href = item.get('href','')
-        if href == 'about.html#background': href = '#background'
+        if Path(href.split('#')[0]).stem not in DETAIL_IDS:
+            href = ''
         title = f'<a href="{e(href)}">{e(item["title"])} ↗</a>' if href else e(item['title'])
-        about += f'<article class="timeline-item"><span class="period">{e(item["period"])}</span><h4>{title}</h4><p>{e(item["body"])}</p>{tags(item["tags"])}</article>'
+        item_id = f' id="experience-{e(item["projectId"])}"' if item.get('projectId') else ''
+        about += f'<article class="timeline-item"{item_id}><span class="period">{e(item["period"])}</span><h4>{title}</h4><p>{e(item["body"])}</p>{tags(item["tags"])}'
+        if item.get('photos'):
+            columns = ' '.join(f'{photo["width"] / photo["height"]:.4f}fr' for photo in item['photos'])
+            about += f'<div class="timeline-photos" style="--photo-columns:{columns}">'
+            for photo in item['photos']:
+                about += f'<figure class="timeline-photo"><button class="image-button" type="button" data-lightbox="{e(photo["original"])}" data-alt="{e(photo["alt"])}" data-caption="{e(photo["caption"])}" aria-label="Enlarge: {e(photo["alt"])}"><img src="{e(photo["src"])}" width="{photo["width"]}" height="{photo["height"]}" alt="{e(photo["alt"])}" loading="lazy" decoding="async"></button><figcaption>{e(photo["caption"])}</figcaption></figure>'
+            about += '</div>'
+        about += '</article>'
     about += '</div></section>'
-about += '</div></section><section class="section">' + section_head('The other tabs in my head.','Outside the work.') + '<div class="personal-grid">'
+about += '</div></div></section><section class="section">' + section_head('The other tabs in my head.','Outside the work.') + '<div class="personal-grid">'
 for i,item in enumerate(DATA['interests']):
     about += f'<article class="personal-card"><span class="small-symbol" aria-hidden="true">{["✳","Aa","↗"][i]}</span><h3>{e(item["title"])}</h3><p>{e(item["body"])}</p></article>'
 about += '</div></section>'
@@ -314,6 +333,13 @@ gallery = {
 }
 for index,p in enumerate(PROJECTS):
     id_ = p['id']
+    if id_ not in DETAIL_IDS:
+        path = f'work/{id_}.html'
+        if not SELECTED or path in SELECTED:
+            destination = f'../about.html#experience-{id_}'
+            (ROOT / path).write_text(f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="0;url={destination}"><title>Page moved · Zebang Wu</title><p>This experience is part of <a href="{destination}">the About timeline</a>.</p></html>')
+            GENERATED.append(path)
+        continue
     if id_ == 'feasypaste':
         body = (ROOT / 'content/feasypaste-body.html').read_text().replace('{{FEASYPASTE_SVG}}', (ROOT / 'assets/art/feasypaste-transfer.svg').read_text())
         page('work/feasypaste.html', p['title'], body, 'Work', '../')
@@ -395,17 +421,20 @@ article_body = (ROOT/'content/abandon-body.html').read_text()
 article = '<section class="page-top"><a class="breadcrumb" href="../writing.html">← All writing</a>'+eyebrow('An exchange with AI')+'<h1>Abandon</h1><p class="lede">On continuity, purpose, and what remains.</p></section><div class="article-body"><aside class="case-callout"><p>The opening passage is my question. The response that follows was generated by an AI assistant; it is preserved here as a conversation, not presented as my own essay.</p></aside>'+article_body+'</div>'
 page('sharing/abandon.html','Abandon',article,'Writing','../')
 
-cv = '<section class="page-top">'+eyebrow('A concise reference · September 2026')+'<h1>The short version.</h1><p class="lede">Education, research, and professional experience. Follow a project link for the longer story.</p></section><div class="cv-layout"><aside class="cv-aside"><h2>Zebang Wu</h2><p>吴泽邦<br>Hangzhou, China<br>Electronic Information Engineering</p><a class="text-link" href="mailto:wuzebang@westlake.edu.cn">Email ↗</a><br><button class="button outline cv-print" type="button">Print / Save as PDF ↗</button></aside><div>'
-cv += '<section class="cv-section"><h2>Education</h2><article class="cv-entry"><div class="cv-entry-top"><h3>Westlake University</h3><span class="period">Expected May 2027</span></div><p>B.S. in Electronic Information Engineering</p><p>GPA 4.06/4.3 · TOEFL iBT 107/120</p></article><article class="cv-entry"><div class="cv-entry-top"><h3>Cornell University</h3><span class="period">Aug–Dec 2025</span></div><p>Exchange student · Electrical & Computer Engineering</p></article></section>'
+cv = '<section class="page-top">'+eyebrow('A concise reference · September 2026')+'<h1>The short version.</h1><p class="lede">Education, research, and professional experience. Follow a project link for the longer story.</p></section><div class="cv-layout"><aside class="cv-aside"><h2>Zebang Wu</h2><p><span>吴泽邦</span><br><span>Hangzhou, China</span><br><span>Electronic Information Engineering</span></p><a class="text-link" href="mailto:wuzebang@westlake.edu.cn"><span class="cv-email-screen">Email ↗</span><span class="cv-email-print">wuzebang@westlake.edu.cn</span></a><br><button class="button outline cv-print" type="button">Print / Save as PDF ↗</button></aside><div>'
+cv += '<section class="cv-section"><h2>Education</h2><article class="cv-entry"><div class="cv-entry-top"><h3><a href="work/westlake.html">Westlake University ↗</a></h3><span class="period">Expected May 2027</span></div><p>B.S. in Electronic Information Engineering</p><p>GPA 4.06/4.3 · TOEFL iBT 107/120</p></article><article class="cv-entry"><div class="cv-entry-top"><h3><a href="work/cornell.html">Cornell University ↗</a></h3><span class="period">Aug–Dec 2025</span></div><p>Exchange student · Electrical & Computer Engineering</p></article></section>'
 for title,ids in [('Professional experience',['navix','dongfeng']),('Research',['reconstruction','active-learning','vr','dhh']),('Leadership',['student-union'])]:
     cv+=f'<section class="cv-section"><h2>{title}</h2>'
     for id_ in ids:
         p=BY_ID[id_]
-        cv+=f'<article class="cv-entry"><div class="cv-entry-top"><h3><a href="work/{id_}.html">{e(p["title"])} ↗</a></h3><span class="period">{e(p["period"])}</span></div><p>{e(p["role"])}</p><p>{e(p["summary"])}</p></article>'
+        heading = f'<a href="work/{id_}.html">{e(p["title"])} ↗</a>' if id_ in DETAIL_IDS else e(p['title'])
+        cv+=f'<article class="cv-entry"><div class="cv-entry-top"><h3>{heading}</h3><span class="period">{e(p["period"])}</span></div><p>{e(p["role"])}</p><p>{e(p["summary"])}</p></article>'
     cv+='</section>'
-cv += '<section class="cv-section"><h2>DHH research publications</h2>'
-for publication in BY_ID['dhh']['publications']:
-    cv += f'<article class="cv-entry"><div class="cv-entry-top"><h3><a href="{e(publication["href"])}">{e(publication["title"])} ↗</a></h3><span class="period">{e(publication["status"])}</span></div><p>{e(publication["authorship"])} · {e(publication["venue"])}</p></article>'
+cv += '<section class="cv-section"><h2>Research Publications</h2>'
+for id_ in ['reconstruction', 'dhh']:
+    for publication in BY_ID[id_]['publications']:
+        details = ' · '.join(e(publication[key]) for key in ['authorship', 'venue'] if publication.get(key))
+        cv += f'<article class="cv-entry"><div class="cv-entry-top"><h3><a href="{e(publication["href"])}">{e(publication["title"])} ↗</a></h3><span class="period">{e(publication["status"])}</span></div><p>{details}</p></article>'
 cv += '</section>'
 cv+='<section class="cv-section"><h2>Tools & languages</h2><p>Python · C++ · TypeScript · PyTorch · ONNX Runtime · MATLAB</p><p>CARLA · Vue · Git · Linux · Unity · Abaqus · LaTeX</p><p>Mandarin Chinese (native) · English (fluent)</p></section></div></div>'
 page('cv.html','CV',cv,'CV')

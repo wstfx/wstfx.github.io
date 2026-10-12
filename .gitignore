@@ -7,3 +7,8 @@ assets/garet/*.ttf
 assets/garet/*.otf
 assets/garet/*.woff
 assets/best_swashed/img/
+# Original HEIC portraits stay local; the site serves converted WebP copies.
+assets/images/about/IMG_8157.HEIC.HEIC
+assets/images/about/IMG_3807.HEIC.HEIC
+assets/images/about/IMG_4412.HEIC.HEIC
+assets/images/about/IMG_4482.HEIC.HEIC

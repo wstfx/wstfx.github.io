@@ -178,7 +178,15 @@
       "featured": true,
       "placement": "Work",
       "mediaType": "comparison-figure",
-      "evidenceStatus": "Personal contribution: baseline comparisons; paper status and authorship not asserted"
+      "evidenceStatus": "Personal contribution: baseline comparisons; ICLR 2027 submission confirmed by the owner and the authored case study. Author position is not specified.",
+      "publications": [
+        {
+          "title": "Trajectory Translator for Amortized Field Reconstructors under Observation-Interface Shift",
+          "venue": "ICLR 2027",
+          "status": "Under review",
+          "href": "work/reconstruction.html#paper"
+        }
+      ]
     },
     {
       "id": "navix",
@@ -458,7 +466,7 @@
     },
     {
       "id": "student-union",
-      "title": "Making a student organization work",
+      "title": "President · College Student Union",
       "subtitle": "Events, coordination, and practices that survive a handover.",
       "category": "Leadership",
       "tags": [
@@ -469,7 +477,7 @@
       "period": "Aug 2024–Aug 2025",
       "status": "Completed term",
       "role": "President · College Student Union, Westlake University",
-      "summary": "Organized six campus events for 30–300 attendees each and introduced recurring reports and handover summaries.",
+      "summary": "Organized six campus events for 30–300 attendees each and introduced biweekly reports and term-end handover summaries.",
       "sections": [
         {
           "title": "From planning to participation",
@@ -496,7 +504,7 @@
     },
     {
       "id": "culture",
-      "title": "Visual work for campus life",
+      "title": "Section chief · Cultural Construction Department",
       "subtitle": "Posters, video, and the organization behind an event.",
       "category": "Leadership",
       "tags": [
@@ -508,7 +516,7 @@
       "period": "Aug 2023–Aug 2024",
       "status": "Completed term",
       "role": "Section Chief · Cultural Construction Department",
-      "summary": "Campus creative and organizational work spanning poster design, filming, video editing, and event coordination.",
+      "summary": "Created posters, filmed and edited videos, and helped coordinate campus events in the Cultural Construction Department.",
       "sections": [
         {
           "title": "Making an event visible",
@@ -526,7 +534,7 @@
     },
     {
       "id": "ambassador",
-      "title": "Introducing Westlake",
+      "title": "Student ambassador",
       "subtitle": "Helping visitors understand the university through a student’s perspective.",
       "category": "Leadership",
       "tags": [
@@ -537,7 +545,7 @@
       "period": "Aug 2023–Aug 2024",
       "status": "Completed term",
       "role": "Student Ambassador · Westlake University",
-      "summary": "Campus tours and visitor communication, including sharing the experience of choosing and studying at Westlake.",
+      "summary": "Guided campus tours, answered visitors’ questions, and shared my experience of choosing and studying at Westlake University.",
       "sections": [
         {
           "title": "A student’s point of view",
@@ -681,14 +689,13 @@
     {
       "year": "Before university",
       "period": "Before university",
-      "title": "Learning through physics, art, and independent choices",
+      "title": "Physics, art & learning independently",
       "body": "Drawing and calligraphy, physics-competition study, and independent preparation helped shape how I learn. Choosing Westlake grew from an interest in a research environment where I could explore across boundaries.",
       "tags": [
         "Personal background",
         "Physics",
         "Self-directed learning"
-      ],
-      "href": "about.html#background"
+      ]
     },
     {
       "year": "2023",
@@ -701,33 +708,49 @@
       ],
       "href": "work/westlake.html",
       "projectId": "westlake",
-      "sortNote": "The exact enrollment month is not established."
+      "sortNote": "The exact enrollment month is not established.",
+      "photos": [
+        {
+          "src": "assets/images/about/westlake1.webp",
+          "original": "images/Educational/Westlake1.jpeg",
+          "width": 1000,
+          "height": 750,
+          "alt": "Westlake campus buildings and trees reflected in the water beneath an afternoon sky.",
+          "caption": "An afternoon on campus. / Westlake"
+        },
+        {
+          "src": "assets/images/about/westlake3.webp",
+          "original": "images/Educational/Westlake3.png",
+          "width": 750,
+          "height": 1000,
+          "alt": "Zebang standing beside a blue and orange mascot on the Westlake campus.",
+          "caption": "A moment on campus. / Westlake"
+        }
+      ]
     },
     {
       "year": "2023",
       "period": "Aug 2023–Aug 2024",
-      "title": "Visual work for campus life",
-      "body": "Campus creative and organizational work spanning poster design, filming, video editing, and event coordination.",
+      "title": "Section chief · Cultural Construction Department",
+      "body": "Created posters, filmed and edited videos, and helped coordinate campus events in the Cultural Construction Department.",
       "tags": [
         "Visual design",
         "Video",
         "Campus community",
         "Organization"
       ],
-      "href": "work/culture.html",
       "projectId": "culture"
     },
     {
       "year": "2023",
       "period": "Aug 2023–Aug 2024",
-      "title": "Introducing Westlake",
-      "body": "Campus tours and visitor communication, including sharing the experience of choosing and studying at Westlake.",
+      "title": "Student ambassador",
+      "body": "Guided campus tours, answered visitors’ questions, and shared my experience of choosing and studying at Westlake University.",
       "tags": [
         "Public service",
         "Communication",
         "Campus community"
       ],
-      "href": "work/ambassador.html",
       "projectId": "ambassador"
     },
     {
@@ -785,14 +808,13 @@
     {
       "year": "2024",
       "period": "Aug 2024–Aug 2025",
-      "title": "Making a student organization work",
-      "body": "Organized six campus events for 30–300 attendees each and introduced recurring reports and handover summaries.",
+      "title": "President · College Student Union",
+      "body": "Organized six campus events for 30–300 attendees each and introduced biweekly reports and term-end handover summaries.",
       "tags": [
         "Leadership",
         "Campus community",
         "Team coordination"
       ],
-      "href": "work/student-union.html",
       "projectId": "student-union"
     },
     {
@@ -832,7 +854,25 @@
         "Interdisciplinary learning"
       ],
       "href": "work/cornell.html",
-      "projectId": "cornell"
+      "projectId": "cornell",
+      "photos": [
+        {
+          "src": "assets/images/about/cornell1.webp",
+          "original": "images/Educational/Cornell1.jpeg",
+          "width": 750,
+          "height": 1000,
+          "alt": "Zebang standing in front of Cornell’s McGraw Tower.",
+          "caption": "A semester in Ithaca. / Cornell"
+        },
+        {
+          "src": "assets/images/about/cornell2.webp",
+          "original": "images/Educational/Cornell2.png",
+          "width": 750,
+          "height": 1000,
+          "alt": "A drink held in front of the Cornell Tech campus sign in New York.",
+          "caption": "A stop at Cornell Tech. / New York"
+        }
+      ]
     },
     {
       "year": "2025",
@@ -982,7 +1022,6 @@
         "Visual design",
         "Literature"
       ],
-      "href": "work/writing.html",
       "projectId": "writing",
       "undated": true
     },
@@ -996,7 +1035,6 @@
         "Information architecture",
         "Personal expression"
       ],
-      "href": "work/website.html",
       "projectId": "website",
       "undated": true
     }

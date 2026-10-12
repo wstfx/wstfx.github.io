@@ -14,14 +14,20 @@
 .fh-heat{transition:opacity .6s ease}
 .fire-illustration.is-thermal .fh-shell{opacity:0}
 .fire-illustration.is-thermal .fh-heat{opacity:.9}
-.fh-flame{transform-origin:0px 0px;animation:fire-breathe 1.7s ease-in-out infinite}
-.fh-flame-core{transform-origin:0px 0px;animation:fire-core 1.15s ease-in-out infinite}
+.fh-flame{transform-origin:0px 0px;animation:fire-breathe 2.3s ease-in-out infinite}
+.fh-flame-tongue,.fh-flame-core,.fh-flame-hot{transform-origin:0px 0px}
+.fh-flame-left{animation:fire-tongue 1.3s ease-in-out -.4s infinite alternate}
+.fh-flame-main{animation:fire-tongue 1.7s ease-in-out -.9s infinite alternate-reverse}
+.fh-flame-right{animation:fire-tongue 1.1s ease-in-out -.2s infinite alternate}
+.fh-flame-core{animation:fire-core 1.15s ease-in-out infinite}
+.fh-flame-hot{animation:fire-core .85s ease-in-out -.3s infinite reverse}
 .fh-plume{animation:fire-plume 4.5s ease-in-out infinite}
 .fh-warm-member{animation:fire-member 5s ease-in-out infinite}
 .fire-illustration.is-paused *{animation-play-state:paused!important}
 @keyframes fire-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-@keyframes fire-breathe{0%,100%{transform:scale(1.05,1.06)}35%{transform:scale(.98,1.18) skewX(-2deg)}70%{transform:scale(1.1,1.02) skewX(1deg)}}
-@keyframes fire-core{0%,100%{opacity:1;transform:scale(1,1)}50%{opacity:.8;transform:scale(.92,1.13)}}
+@keyframes fire-breathe{0%,100%{transform:scale(1,1)}35%{transform:scale(.98,1.04)}70%{transform:scale(1.02,.98)}}
+@keyframes fire-tongue{from{transform:skewX(-2deg) scale(.97,1.03);opacity:.85}to{transform:skewX(2deg) scale(1.02,.97);opacity:1}}
+@keyframes fire-core{0%,100%{opacity:1;transform:scale(1,1)}50%{opacity:.85;transform:scale(.95,1.06)}}
 @keyframes fire-plume{50%{transform:translateY(-5px);opacity:.4}}
 @keyframes fire-member{50%{stroke:#b84f2b}}
 .fire-layout .case-copy{max-width:960px}

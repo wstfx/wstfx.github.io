@@ -12,6 +12,12 @@ def line(v,stroke='#234d3b',width=2,extra=''):
 def facepath(v): return 'M'+'L'.join(xy(p(*a)) for a in v)+'Z'
 def roof(x): return 4.7-.75*abs(x)
 s=['<svg class="fire-house-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" fill="none" aria-hidden="true">', '<!-- All house geometry is projected from tools/build_fire_art.py; do not nudge individual vertices. -->']
+s.append('''<defs>
+<linearGradient id="fh-fire-outer" x1="0" y1="5" x2="0" y2="-83" gradientUnits="userSpaceOnUse"><stop stop-color="#d95728"/><stop offset=".36" stop-color="#f08232"/><stop offset=".72" stop-color="#efa743"/><stop offset="1" stop-color="#efbc69" stop-opacity=".35"/></linearGradient>
+<linearGradient id="fh-fire-inner" x1="0" y1="3" x2="0" y2="-62" gradientUnits="userSpaceOnUse"><stop stop-color="#ffe9ac"/><stop offset=".42" stop-color="#ffd06a"/><stop offset="1" stop-color="#f8b04a" stop-opacity=".65"/></linearGradient>
+<linearGradient id="fh-fire-core" x1="0" y1="2" x2="0" y2="-36" gradientUnits="userSpaceOnUse"><stop stop-color="#fff8de"/><stop offset=".55" stop-color="#fff0b8"/><stop offset="1" stop-color="#ffe3a0" stop-opacity=".2"/></linearGradient>
+<radialGradient id="fh-fire-glow"><stop stop-color="#f9ae50" stop-opacity=".48"/><stop offset="1" stop-color="#f9ae50" stop-opacity="0"/></radialGradient>
+</defs>''')
 s += [poly([(-2.6,-3.1,-.22),(2.6,-3.1,-.22),(2.6,3.1,-.22),(-2.6,3.1,-.22)],'#e4e9db','none'),poly([(-2.2,-2.7,0),(2.2,-2.7,0),(2.2,2.7,0),(-2.2,2.7,0)],'#eeeadd','#9dae94'),poly([(2.2,-2.7,0),(2.2,2.7,0),(2.2,2.7,-.18),(2.2,-2.7,-.18)],'#c7d1ba','none'),poly([(-2.2,2.7,0),(2.2,2.7,0),(2.2,2.7,-.18),(-2.2,2.7,-.18)],'#d5ddc9','none')]
 # Floor boards and heat footprint stay coplanar with the slab.
 for y in [-2,-1,0,1,2]: s.append(line([(-2,y,.02),(2,y,.02)],'#d8d5c7',.8))
@@ -27,9 +33,18 @@ for y in [-2.5,0,2.5]:
  s.append(line([(-2,y,0),(-2,y,3.2),(0,y,4.7),(2,y,3.2),(2,y,0)],'#526e53',3.2))
 for x,z in [(-2,3.2),(0,4.7),(2,3.2)]: s.append(line([(x,-2.5,z),(x,2.5,z)],'#526e53',3.2))
 s.append(line([(2,0,0),(2,0,3.2)],'#ce713b',4,'class="fh-warm-member"'))
-# Flame is a pictogram on a vertical billboard inside the room, not building geometry.
+# Overlapping, tapered flame sheets share a floor-level source inside the room.
+# Their uneven tips and translucent gradients avoid a single solid icon silhouette.
 fx,fy=p(1,.2,.05)
-s.append(f'<g transform="translate({fx:.2f} {fy:.2f})"><g class="fh-flame"><path d="M-15 -3C-34 -24-8 -36-8 -59C14 -46 1 -31 14 -26C21 -33 23 -41 22 -45C47 -13 23 5 6 5C-3 5-10 1-15 -3Z" fill="#dd7b35"/><path class="fh-flame-core" d="M-3 -4C-12 -15 6 -24 6 -35C26 -14 19 1 8 1Z" fill="#f7dca3"/></g></g>')
+s.append(f'''<g transform="translate({fx:.2f} {fy:.2f})">
+<ellipse cx="0" cy="-4" rx="43" ry="19" fill="url(#fh-fire-glow)"/>
+<g class="fh-flame">
+<path class="fh-flame-tongue fh-flame-left" d="M-4 3C-20 4-27-5-25-17C-24-28-15-33-18-51C-9-44-7-36-10-27C-13-17-4-15-4-5Z" fill="url(#fh-fire-outer)" opacity=".82"/>
+<path class="fh-flame-tongue fh-flame-main" d="M-12 2C-25-12-12-28-8-40C-3-54-12-62-3-83C-5-66 9-61 9-49C9-40 2-34 4-27C8-18 17-24 19-35C27-20 26-7 15 1C8 6-5 7-12 2Z" fill="url(#fh-fire-outer)"/>
+<path class="fh-flame-tongue fh-flame-right" d="M5 4C19 6 30-5 27-19C24-33 14-39 22-59C8-48 10-37 13-28C18-16 7-13 5-4Z" fill="url(#fh-fire-outer)" opacity=".78"/>
+<path class="fh-flame-core" d="M-9 0C-17-10-8-22-5-31C-2-42-5-48 1-62C0-49 8-44 6-33C4-24 0-22 4-15C8-10 12-18 13-25C20-12 16-1 7 3C1 5-5 4-9 0Z" fill="url(#fh-fire-inner)"/>
+<path class="fh-flame-hot" d="M-5 1C-11-8-3-14-1-22C1-28-1-30 2-36C2-26 8-22 6-15C4-9 10-6 6 0C3 3-2 4-5 1Z" fill="url(#fh-fire-core)"/>
+</g></g>''')
 s.append('<g class="fh-plume" opacity=".45" stroke="#96a88d" stroke-width="2.5" stroke-linecap="round">')
 for dx in [-8,12]:
  x=fx+dx;s.append(f'<path d="M{x:.2f} {fy-68:.2f}c-16 -15 13 -24 1 -40s10 -24 2 -37"/>')

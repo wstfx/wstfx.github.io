@@ -1,0 +1,68 @@
+[
+  {
+    "id": "paris",
+    "source": "images/Selfie1.jpg",
+    "sentence": "Un petit détour à Notre-Dame.",
+    "date": "November 2024",
+    "datetime": "2024-11",
+    "place": "Paris, France",
+    "alt": "Zebang in front of Notre-Dame Cathedral in Paris.",
+    "dateSource": "Date and trip context confirmed by the owner on 12 October 2026.",
+    "src": "assets/images/about/portrait-paris.webp",
+    "width": 1051,
+    "height": 1400,
+    "lang": "fr"
+  },
+  {
+    "id": "niagara",
+    "source": "IMG_3807.HEIC.HEIC",
+    "sentence": "Trying to eat a rainbow at Niagara Falls.",
+    "date": "31 August 2025",
+    "datetime": "2025-08-31",
+    "place": "Niagara Falls, Canada",
+    "alt": "Zebang looking toward Niagara Falls with a rainbow over the water.",
+    "src": "assets/images/about/portrait-niagara.webp",
+    "width": 1050,
+    "height": 1400,
+    "dateSource": "Capture date from embedded EXIF, cross-checked against GPS date; place identified from GPS and the visible scene. Exact clock time omitted because EXIF and GPS timestamps disagree on the three 2025 photographs."
+  },
+  {
+    "id": "new-york-bull",
+    "source": "IMG_4412.HEIC.HEIC",
+    "sentence": "A stop by the Charging Bull in Lower Manhattan.",
+    "date": "19 September 2025",
+    "datetime": "2025-09-19",
+    "place": "New York, USA",
+    "alt": "Zebang standing beside the Charging Bull in Lower Manhattan.",
+    "src": "assets/images/about/portrait-new-york-bull.webp",
+    "width": 1050,
+    "height": 1400,
+    "dateSource": "Capture date from embedded EXIF, cross-checked against GPS date; place identified from GPS and the visible scene. Exact clock time omitted because EXIF and GPS timestamps disagree on the three 2025 photographs."
+  },
+  {
+    "id": "new-york-skyline",
+    "source": "IMG_4482.HEIC.HEIC",
+    "sentence": "Manhattan from above, in the late-afternoon sun.",
+    "date": "19 September 2025",
+    "datetime": "2025-09-19",
+    "place": "One World Observatory, New York",
+    "alt": "Zebang above the Manhattan skyline at One World Observatory.",
+    "src": "assets/images/about/portrait-new-york-skyline.webp",
+    "width": 1400,
+    "height": 1050,
+    "dateSource": "Capture date from embedded EXIF, cross-checked against GPS date; place identified from GPS and the visible scene. Exact clock time omitted because EXIF and GPS timestamps disagree on the three 2025 photographs."
+  },
+  {
+    "id": "spring-flowers",
+    "source": "IMG_8157.HEIC.HEIC",
+    "sentence": "A spring afternoon among the rapeseed flowers.",
+    "date": "15 March 2026",
+    "datetime": "2026-03-15",
+    "place": "Hangzhou, China",
+    "alt": "Zebang smiling in a field of yellow rapeseed flowers near Hangzhou.",
+    "src": "assets/images/about/portrait-spring-flowers.webp",
+    "width": 1400,
+    "height": 1050,
+    "dateSource": "Capture date from embedded EXIF, cross-checked against GPS date; place identified from GPS and the visible scene. Exact clock time omitted because EXIF and GPS timestamps disagree on the three 2025 photographs."
+  }
+]

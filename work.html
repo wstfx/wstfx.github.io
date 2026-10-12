@@ -22,6 +22,7 @@
 
 
 
+
 </head>
 <body id="top" class="collection-page">
 <a class="skip" href="#main">Skip to content</a>
@@ -274,6 +275,12 @@
 <div class="card-body"><div class="card-meta"><span>Product</span><span>Released by Mar 2026</span></div><h3><a href="work/feasypaste.html">FeasyPaste</a></h3><p>A rule-based browser extension that bridges the formatting gap between AI answers and Feishu documents—without repeated manual cleanup.</p><div class="card-bottom"><div class="tags"><span class="tag">Independent development</span><span class="tag">Browser extension</span></div><a class="round-arrow" href="work/feasypaste.html" aria-label="Read FeasyPaste">↗</a></div></div></article><article class="project-card" data-category="Research">
 <a class="card-cover cover-fire-sim" href="work/fire-sim.html" aria-label="Explore Fire, heat &amp; structural damage"><div aria-hidden="true"><span class="cover-index">05 /</span><svg class="fire-house-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" fill="none" aria-hidden="true">
 <!-- All house geometry is projected from tools/build_fire_art.py; do not nudge individual vertices. -->
+<defs>
+<linearGradient id="fh-fire-outer" x1="0" y1="5" x2="0" y2="-83" gradientUnits="userSpaceOnUse"><stop stop-color="#d95728"/><stop offset=".36" stop-color="#f08232"/><stop offset=".72" stop-color="#efa743"/><stop offset="1" stop-color="#efbc69" stop-opacity=".35"/></linearGradient>
+<linearGradient id="fh-fire-inner" x1="0" y1="3" x2="0" y2="-62" gradientUnits="userSpaceOnUse"><stop stop-color="#ffe9ac"/><stop offset=".42" stop-color="#ffd06a"/><stop offset="1" stop-color="#f8b04a" stop-opacity=".65"/></linearGradient>
+<linearGradient id="fh-fire-core" x1="0" y1="2" x2="0" y2="-36" gradientUnits="userSpaceOnUse"><stop stop-color="#fff8de"/><stop offset=".55" stop-color="#fff0b8"/><stop offset="1" stop-color="#ffe3a0" stop-opacity=".2"/></linearGradient>
+<radialGradient id="fh-fire-glow"><stop stop-color="#f9ae50" stop-opacity=".48"/><stop offset="1" stop-color="#f9ae50" stop-opacity="0"/></radialGradient>
+</defs>
 <polygon points="266.00,176.28 432.40,259.48 234.00,358.68 67.60,275.48" fill="#e4e9db" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
 <polygon points="266.00,181.60 406.80,252.00 234.00,338.40 93.20,268.00" fill="#eeeadd" stroke="#9dae94" stroke-width="1.8" stroke-linejoin="round" />
 <polygon points="406.80,252.00 234.00,338.40 234.00,344.52 406.80,258.12" fill="#c7d1ba" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
@@ -297,7 +304,15 @@
 <polyline points="330.00,60.20 170.00,140.20" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
 <polyline points="394.00,143.20 234.00,223.20" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
 <polyline points="314.00,292.00 314.00,183.20" fill="none" stroke="#ce713b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" class="fh-warm-member"/>
-<g transform="translate(275.60 277.50)"><g class="fh-flame"><path d="M-15 -3C-34 -24-8 -36-8 -59C14 -46 1 -31 14 -26C21 -33 23 -41 22 -45C47 -13 23 5 6 5C-3 5-10 1-15 -3Z" fill="#dd7b35"/><path class="fh-flame-core" d="M-3 -4C-12 -15 6 -24 6 -35C26 -14 19 1 8 1Z" fill="#f7dca3"/></g></g>
+<g transform="translate(275.60 277.50)">
+<ellipse cx="0" cy="-4" rx="43" ry="19" fill="url(#fh-fire-glow)"/>
+<g class="fh-flame">
+<path class="fh-flame-tongue fh-flame-left" d="M-4 3C-20 4-27-5-25-17C-24-28-15-33-18-51C-9-44-7-36-10-27C-13-17-4-15-4-5Z" fill="url(#fh-fire-outer)" opacity=".82"/>
+<path class="fh-flame-tongue fh-flame-main" d="M-12 2C-25-12-12-28-8-40C-3-54-12-62-3-83C-5-66 9-61 9-49C9-40 2-34 4-27C8-18 17-24 19-35C27-20 26-7 15 1C8 6-5 7-12 2Z" fill="url(#fh-fire-outer)"/>
+<path class="fh-flame-tongue fh-flame-right" d="M5 4C19 6 30-5 27-19C24-33 14-39 22-59C8-48 10-37 13-28C18-16 7-13 5-4Z" fill="url(#fh-fire-outer)" opacity=".78"/>
+<path class="fh-flame-core" d="M-9 0C-17-10-8-22-5-31C-2-42-5-48 1-62C0-49 8-44 6-33C4-24 0-22 4-15C8-10 12-18 13-25C20-12 16-1 7 3C1 5-5 4-9 0Z" fill="url(#fh-fire-inner)"/>
+<path class="fh-flame-hot" d="M-5 1C-11-8-3-14-1-22C1-28-1-30 2-36C2-26 8-22 6-15C4-9 10-6 6 0C3 3-2 4-5 1Z" fill="url(#fh-fire-core)"/>
+</g></g>
 <g class="fh-plume" opacity=".45" stroke="#96a88d" stroke-width="2.5" stroke-linecap="round">
 <path d="M267.60 209.50c-16 -15 13 -24 1 -40s10 -24 2 -37"/>
 <path d="M287.60 209.50c-16 -15 13 -24 1 -40s10 -24 2 -37"/>
