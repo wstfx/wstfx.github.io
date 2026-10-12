@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updated": "2026-10-10",
+  "updated": "2026-10-12",
   "language": "en",
   "person": {
     "name": "Zebang Wu",
@@ -386,40 +386,6 @@
       "mediaType": "before-and-after"
     },
     {
-      "id": "roadlaw",
-      "title": "RoadLaw",
-      "subtitle": "A learning map for the rules of the road.",
-      "category": "Product",
-      "tags": [
-        "Independent development",
-        "Information design",
-        "Interactive learning"
-      ],
-      "period": "Independent project",
-      "status": "Public learning tool",
-      "role": "Solo developer",
-      "summary": "A free, structured, interactive learning map for mainland China’s C1/C2 Subject One traffic-law examination.",
-      "sections": [
-        {
-          "title": "Organizing a body of rules",
-          "body": "RoadLaw approaches preparation for the C1/C2 Subject One examination as a learning map. It organizes traffic regulations into a structured, interactive resource that learners can navigate."
-        },
-        {
-          "title": "My contribution",
-          "body": "I independently developed the site. The project brings together website development, information organization, and a learning-oriented presentation of the material."
-        }
-      ],
-      "featured": false,
-      "placement": "Work",
-      "links": [
-        {
-          "label": "Visit RoadLaw",
-          "url": "https://wstfx.github.io/RoadLaw/"
-        }
-      ],
-      "mediaType": "site-capture"
-    },
-    {
       "id": "igem",
       "title": "Westlake iGEM 2024",
       "subtitle": "Connecting biological questions, mathematical models, and a public-facing research wiki.",
@@ -489,165 +455,6 @@
           "url": "https://github.com/wstfx/IGEM-Wiki-Westlake-2024"
         }
       ]
-    },
-    {
-      "id": "evisa",
-      "title": "eVisaHelper",
-      "subtitle": "An independently developed web project.",
-      "category": "Product",
-      "tags": [
-        "Independent development",
-        "Web development"
-      ],
-      "period": "Independent project",
-      "status": "Project in portfolio inventory",
-      "role": "Solo developer",
-      "summary": "An independently developed web project, included alongside my other practical software tools.",
-      "sections": [
-        {
-          "title": "The project",
-          "body": "eVisaHelper is one of my independently developed web projects. It forms part of the broader set of tools I build around practical tasks."
-        },
-        {
-          "title": "My contribution",
-          "body": "I developed the site myself, taking responsibility for its implementation as an independent project."
-        }
-      ],
-      "featured": false,
-      "placement": "Work",
-      "links": [
-        {
-          "label": "Visit eVisaHelper",
-          "url": "https://evisa-helper.vercel.app/"
-        }
-      ],
-      "mediaType": "site-capture",
-      "detailLevel": "compact",
-      "evidenceStatus": "Feature scope is intentionally not inferred from the name."
-    },
-    {
-      "id": "materials-creep",
-      "title": "Material behavior under constraints",
-      "subtitle": "Learning to build mechanical simulations around physical boundary conditions.",
-      "category": "Research",
-      "tags": [
-        "Computational mechanics",
-        "Abaqus",
-        "Materials"
-      ],
-      "period": "From Jul 2025",
-      "status": "Early research experience",
-      "role": "Undergraduate Researcher",
-      "summary": "Research exploration of material creep and mechanics, including Abaqus and crystal-symmetry boundary conditions.",
-      "sections": [
-        {
-          "title": "Working with a physical model",
-          "body": "This work introduced me to mechanical simulation at the lattice scale and to the practical use of Abaqus. It expanded my research experience beyond model training into setting up physically constrained simulations."
-        },
-        {
-          "title": "My contribution",
-          "body": "I worked on applying crystal-symmetry boundary conditions through coupling constraints. The experience emphasized how the definition of a simulation, including its boundaries, shapes the behavior it can meaningfully represent."
-        }
-      ],
-      "featured": false,
-      "placement": "Work",
-      "mediaType": "simulation-figure",
-      "dateNote": "The legacy site records work beginning in July 2025; an end date is not established."
-    },
-    {
-      "id": "asr",
-      "title": "Wav2Vec ASR experiments",
-      "subtitle": "Preparing data for a model is part of building the model.",
-      "category": "Research",
-      "tags": [
-        "Speech recognition",
-        "Data preparation",
-        "Model fine-tuning"
-      ],
-      "period": "Jul–Aug 2024",
-      "status": "Early research experience",
-      "role": "Undergraduate Researcher",
-      "summary": "Deployment and fine-tuning experiments with Wav2Vec, including Python-based data cleaning and relabeling.",
-      "sections": [
-        {
-          "title": "The experiment",
-          "body": "I worked on deploying and fine-tuning an automatic speech-recognition model. The experience involved understanding the model’s expectations and preparing data to fit its training setup."
-        },
-        {
-          "title": "My contribution",
-          "body": "I used Python to clean and relabel data and worked through the experimental pipeline. This was an early encounter with the close relationship between data preparation and model behavior."
-        }
-      ],
-      "featured": false,
-      "placement": "Work",
-      "mediaType": "process-diagram",
-      "dateNote": "Dates come from the legacy résumé page. No accuracy figure is asserted."
-    },
-    {
-      "id": "crystal",
-      "title": "Diffusion for inverse crystal design",
-      "subtitle": "My first steps into AI-for-materials research.",
-      "category": "Research",
-      "tags": [
-        "AI for science",
-        "Materials",
-        "Research foundations"
-      ],
-      "period": "Dec 2023–Feb 2024",
-      "status": "Early research experience",
-      "role": "Undergraduate Researcher",
-      "summary": "An introduction to AI-for-materials literature and experimental workflows through a crystal inverse-design project.",
-      "sections": [
-        {
-          "title": "Entering research",
-          "body": "This early experience introduced me to literature at the intersection of artificial intelligence and materials. It provided a starting point for understanding how a research question becomes an experimental workflow."
-        },
-        {
-          "title": "My contribution",
-          "body": "I participated in literature study and experimental-pipeline work, and learned the tools needed for remote research, including Conda, Git, and SSH. My contribution was early research training and pipeline participation, rather than ownership of the diffusion-model method."
-        }
-      ],
-      "featured": false,
-      "placement": "Work",
-      "mediaType": "research-note",
-      "dateNote": "Dates come from the legacy résumé page."
-    },
-    {
-      "id": "ai-coding-course",
-      "title": "A first encounter with AI coding",
-      "subtitle": "Teaching beginners to take their first steps with coding agents.",
-      "category": "Teaching",
-      "tags": [
-        "Course design",
-        "Teaching",
-        "AI literacy",
-        "Learning by doing"
-      ],
-      "period": "Spring 2026 course record",
-      "status": "Delivered through InVolve",
-      "role": "Course creator & instructor",
-      "summary": "I created and taught an introduction to coding with AI agents for people with no prior programming experience, using InVolve.",
-      "sections": [
-        {
-          "title": "Starting from zero",
-          "body": "The course was designed for people who had no prior coding experience. Its focus was using an AI coding agent to begin working with code, with explanations and exercises delivered through InVolve."
-        },
-        {
-          "title": "Teaching with a tool I helped build",
-          "body": "I created the course and taught it through InVolve. This joined two responsibilities: shaping the learning material, and using the classroom interactions that I had worked on as the product’s frontend and interaction designer."
-        },
-        {
-          "title": "A concrete teaching artifact",
-          "body": "The saved lesson includes written explanations, an exercise, and illustrated material. It provides a real teaching case alongside the software project, without treating sample classroom responses as evidence of actual student outcomes."
-        }
-      ],
-      "featured": false,
-      "placement": "About / InVolve case study",
-      "relatedIds": [
-        "involve"
-      ],
-      "mediaType": "authentic-course-capture",
-      "dateNote": "The stored lesson is in a Spring 2026 record and carries a May 12 date. The actual delivery date is not confirmed. The user described one hour; the stored title says three hours, so no exact duration is asserted in body copy."
     },
     {
       "id": "student-union",
@@ -933,7 +740,6 @@
         "Materials",
         "Research foundations"
       ],
-      "href": "work/crystal.html",
       "projectId": "crystal"
     },
     {
@@ -960,7 +766,6 @@
         "Data preparation",
         "Model fine-tuning"
       ],
-      "href": "work/asr.html",
       "projectId": "asr"
     },
     {
@@ -1014,7 +819,6 @@
         "Abaqus",
         "Materials"
       ],
-      "href": "work/materials-creep.html",
       "projectId": "materials-creep"
     },
     {
@@ -1084,7 +888,7 @@
         "AI literacy",
         "Learning by doing"
       ],
-      "href": "work/ai-coding-course.html",
+      "href": "work/involve.html#teaching",
       "projectId": "ai-coding-course",
       "sortNote": "Saved lesson record; actual delivery date is not confirmed."
     },
@@ -1153,7 +957,6 @@
         "Information design",
         "Interactive learning"
       ],
-      "href": "work/roadlaw.html",
       "projectId": "roadlaw",
       "undated": true
     },
@@ -1166,7 +969,6 @@
         "Independent development",
         "Web development"
       ],
-      "href": "work/evisa.html",
       "projectId": "evisa",
       "undated": true
     },
@@ -1230,5 +1032,17 @@
   "sourceNotes": {
     "primary": "September 29, 2026 updated résumé; existing website; experience inventory; author clarifications in this conversation.",
     "publicStatus": "A draft content foundation for the portfolio prototype. Dates and publication statuses are preserved at the precision supported by these materials."
-  }
+  },
+  "workOrder": [
+    "dhh",
+    "involve",
+    "dongfeng",
+    "feasypaste",
+    "fire-sim",
+    "navix",
+    "reconstruction",
+    "vr",
+    "active-learning",
+    "igem"
+  ]
 }

@@ -172,7 +172,7 @@
       "concept": "A tool becomes a learning moment",
       "intent": "Show the transition from building an interface to teaching with it: adult beginners gather around a laptop, one tries something, another asks a question, and the fox turns toward that person. The human exchange is the point of the picture.",
       "anchors": [
-        { "projectId": "ai-coding-course", "name": "A first encounter with AI coding", "why": "The author taught people with no prior coding experience using InVolve; this supplies a real context for learning by doing." },
+        { "projectId": "involve", "name": "A first encounter with AI coding", "why": "The author taught people with no prior coding experience using InVolve; this supplies a real context for learning by doing." },
         { "projectId": "involve", "name": "InVolve", "why": "The author designs the frontend and interactions, then uses the tool in teaching. The scene conveys that relationship without inventing the product's actual interface." }
       ],
       "recognizableElements": ["Two adult learners at one modest worktable", "One open laptop viewed mainly from behind", "A fox turning toward the learner who is asking a question"],

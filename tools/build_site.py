@@ -22,26 +22,19 @@ STORY_THREADS = {
     'feasypaste': ('notice', 'Notice · Start with someone'),
     'active-learning': ('test', 'Test · Give curiosity something to push against'),
     'reconstruction': ('test', 'Test · Give curiosity something to push against'),
-    'crystal': ('test', 'Test · Give curiosity something to push against'),
-    'materials-creep': ('test', 'Test · Give curiosity something to push against'),
     'involve': ('build', 'Build · Let the world push back'),
     'dongfeng': ('build', 'Build · Let the world push back'),
-    'asr': ('build', 'Build · Let the world push back'),
     'igem': ('build', 'Build · Let the world push back'),
-    'ai-coding-course': ('return', 'Return · Bring it back to people'),
     'fire-sim': ('return', 'Return · Bring it back to people'),
     'navix': ('return', 'Return · Bring it back to people'),
     'vr': ('return', 'Return · Bring it back to people'),
-    'roadlaw': ('return', 'Return · Bring it back to people'),
 }
 RELATED_NEXT = {
-    'fire-sim': 'reconstruction', 'involve': 'ai-coding-course',
+    'fire-sim': 'reconstruction', 'involve': 'feasypaste',
     'dongfeng': 'involve', 'reconstruction': 'active-learning',
     'active-learning': 'reconstruction', 'dhh': 'navix',
     'navix': 'involve', 'vr': 'fire-sim',
-    'ai-coding-course': 'vr', 'feasypaste': 'roadlaw', 'roadlaw': 'involve',
-    'igem': 'feasypaste', 'crystal': 'materials-creep', 'materials-creep': 'fire-sim',
-    'asr': 'dongfeng', 'evisa': 'feasypaste', 'westlake': 'cornell',
+    'feasypaste': 'involve', 'igem': 'feasypaste', 'westlake': 'cornell',
     'cornell': 'vr', 'culture': 'student-union', 'student-union': 'ambassador',
     'ambassador': 'culture', 'writing': 'website', 'website': 'involve',
 }
@@ -89,6 +82,7 @@ def page(path, title, body, active, prefix=''):
             story_assets += f'<link rel="stylesheet" href="{asset("assets/css/illustration-direction.css")}">'
     links = [('Home', 'index.html'), ('Work', 'work.html'), ('About', 'about.html'), ('Writing', 'writing.html'), ('CV', 'cv.html')]
     nav = ''.join(f'<a href="{prefix}{href}"' + (' aria-current="page"' if label == active else '') + f'>{label}</a>' for label, href in links)
+    footer_top = '' if path == 'index.html' else f'<div class="footer-top"><div>{eyebrow("Always curious about the next question.")}<h2>Let’s make something meaningful.</h2><p>Research, projects, and good conversations.</p></div><div class="footer-contact"><a class="text-link" href="mailto:wuzebang@westlake.edu.cn">wuzebang@westlake.edu.cn ↗</a><button class="copy-email" type="button" aria-label="Copy email address" title="Copy email address">⧉</button></div></div>'
     html = f'''<!doctype html>
 <html lang="en" class="privacy-locked">
 <head>
@@ -122,7 +116,7 @@ def page(path, title, body, active, prefix=''):
 <nav class="main-nav" id="main-nav" aria-label="Main navigation">{nav}</nav>
 </div></header>
 <main class="wrap" id="main" tabindex="-1">{body}</main>
-<footer class="site-footer"><div class="wrap"><div class="footer-top"><div>{eyebrow('Always curious about the next question.')}<h2>Let’s make something meaningful.</h2><p>Research, projects, and good conversations.</p></div><div class="footer-contact"><a class="text-link" href="mailto:wuzebang@westlake.edu.cn">wuzebang@westlake.edu.cn ↗</a><button class="copy-email" type="button" aria-label="Copy email address" title="Copy email address">⧉</button></div></div><div class="footer-bottom"><span>© 2026 Zebang Wu · 吴泽邦</span><span>A curious mind. A fox at heart.</span><a href="#top">Back to top ↑</a></div></div></footer>
+<footer class="site-footer"><div class="wrap">{footer_top}<div class="footer-bottom"><span>© 2026 Zebang Wu · 吴泽邦</span><span>A curious mind. A fox at heart.</span><a href="#top">Back to top ↑</a></div></div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <dialog class="lightbox" id="image-viewer" aria-label="Expanded project image"><div class="lightbox-head"><span>From the project archive</span><button type="button" id="close-viewer">Close ×</button></div><img id="viewer-image" alt=""><p id="viewer-caption"></p></dialog>
 <noscript><div class="noscript-note"><h1>A small introduction.</h1><p>This portfolio’s existing access gate requires JavaScript. Please enable JavaScript to continue.</p><a href="mailto:wuzebang@westlake.edu.cn">Contact Zebang</a></div></noscript>
@@ -283,7 +277,10 @@ if not SELECTED or 'illustration-direction.html' in SELECTED:
 if not SELECTED or 'illustration-briefs.html' in SELECTED:
     (ROOT/'illustration-prompts.txt').write_text(BRIEFS['title']+'\n\n'+BRIEFS['purpose']+'\n\n'+'\n\n'.join(s['chapter']+' / '+s['heading']+'\n\n'+s['prompt'] for s in BRIEFS['scenes']))
 
-work_projects = [p for p in PROJECTS if p.get('placement') == 'Work']
+work_order = DATA['workOrder']
+assert len(work_order) == len(set(work_order)), 'Duplicate project in workOrder'
+assert set(work_order) == {p['id'] for p in PROJECTS if p.get('placement') == 'Work'}, 'workOrder must include each Work project exactly once'
+work_projects = [BY_ID[id_] for id_ in work_order]
 work = (ROOT / 'content/work-intro.html').read_text()
 work += '<div class="toolbar"><div class="filter-tabs" role="group" aria-label="Filter work by category">'+''.join(f'<button type="button" data-filter="{c}" aria-pressed="{str(c=="All").lower()}">{c}</button>' for c in ['All','Research','Engineering','Product'])+'</div><label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search projects</span><input type="search" id="project-search" placeholder="Find a project or interest…" autocomplete="off"></label></div>'
 work += f'<div class="result-meta"><span id="result-count" role="status" aria-live="polite">{len(work_projects)} experiences</span><span>Explore at your own pace ↘</span></div><div class="project-grid work-grid" id="work-grid">'+''.join(card(p,i+1) for i,p in enumerate(work_projects))+'</div><div class="empty-state" id="no-results" hidden><h2>No matching projects.</h2><p>Try another topic, or explore the whole collection.</p><button type="button" id="reset-filters">Clear filters</button></div>'
@@ -387,7 +384,6 @@ for index,p in enumerate(PROJECTS):
         body += '</div>'
     if id_=='feasypaste':
         body += '<a class="button outline" href="https://chromewebstore.google.com/detail/feasypaste-feishu-convert/ehdmffeifoiagjgnkaajpdmhicdfajhb">View the extension <span>↗</span></a>'
-    if id_=='involve': body += '<a class="text-link" href="ai-coding-course.html">The course I taught with InVolve ↗</a>'
     nxt=BY_ID[RELATED_NEXT[id_]]
     body += '</div></div>'+f'<nav class="case-next" aria-label="More projects"><a class="text-link" href="../work.html">Back to the collection</a><a href="{nxt["id"]}.html">{eyebrow("Keep exploring →")}<h3>{e(nxt["title"])}</h3></a></nav>'
     page(f'work/{id_}.html',p['title'],body,'Work' if p.get('placement')=='Work' else 'About','../')

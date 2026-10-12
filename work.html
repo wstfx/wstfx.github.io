@@ -31,70 +31,85 @@
 <nav class="main-nav" id="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="work.html" aria-current="page">Work</a><a href="about.html">About</a><a href="writing.html">Writing</a><a href="cv.html">CV</a></nav>
 </div></header>
 <main class="wrap" id="main" tabindex="-1"><section class="page-top"><p class="eyebrow">Projects / Research / Practice</p><h1>Things I’ve worked on.<br><em>Questions I’m still asking.</em></h1><p class="lede">A collection of research, systems, and useful little tools. Some are long investigations; others began with a small everyday frustration.</p><a class="text-link collection-story-link" href="index.html#notice">Follow the thread through the work ↗</a></section>
-<div class="toolbar"><div class="filter-tabs" role="group" aria-label="Filter work by category"><button type="button" data-filter="All" aria-pressed="true">All</button><button type="button" data-filter="Research" aria-pressed="false">Research</button><button type="button" data-filter="Engineering" aria-pressed="false">Engineering</button><button type="button" data-filter="Product" aria-pressed="false">Product</button></div><label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search projects</span><input type="search" id="project-search" placeholder="Find a project or interest…" autocomplete="off"></label></div><div class="result-meta"><span id="result-count" role="status" aria-live="polite">15 experiences</span><span>Explore at your own pace ↘</span></div><div class="project-grid work-grid" id="work-grid"><article class="project-card" data-category="Research">
-<a class="card-cover cover-fire-sim" href="work/fire-sim.html" aria-label="Explore Fire, heat &amp; structural damage"><div aria-hidden="true"><span class="cover-index">01 /</span><svg class="fire-house-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" fill="none" aria-hidden="true">
-<!-- All house geometry is projected from tools/build_fire_art.py; do not nudge individual vertices. -->
-<polygon points="266.00,176.28 432.40,259.48 234.00,358.68 67.60,275.48" fill="#e4e9db" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
-<polygon points="266.00,181.60 406.80,252.00 234.00,338.40 93.20,268.00" fill="#eeeadd" stroke="#9dae94" stroke-width="1.8" stroke-linejoin="round" />
-<polygon points="406.80,252.00 234.00,338.40 234.00,344.52 406.80,258.12" fill="#c7d1ba" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
-<polygon points="93.20,268.00 234.00,338.40 234.00,344.52 93.20,274.12" fill="#d5ddc9" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
-<polyline points="250.00,195.32 378.00,259.32" fill="none" stroke="#d8d5c7" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="218.00,211.32 346.00,275.32" fill="none" stroke="#d8d5c7" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="186.00,227.32 314.00,291.32" fill="none" stroke="#d8d5c7" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="154.00,243.32 282.00,307.32" fill="none" stroke="#d8d5c7" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="122.00,259.32 250.00,323.32" fill="none" stroke="#d8d5c7" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
-<g class="fh-heat" opacity=".35">
-<polygon points="262.80,194.98 378.00,252.58 237.20,322.98 122.00,265.38" fill="#efdcba" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
-<polygon points="262.80,217.38 349.20,260.58 237.20,316.58 150.80,273.38" fill="#eab878" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
-<polygon points="253.20,244.58 310.80,273.38 237.20,310.18 179.60,281.38" fill="#df8d4a" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
-</g>
-<polygon points="266.00,188.00 394.00,252.00 394.00,143.20 330.00,60.20 266.00,79.20" fill="#e4e8d9" stroke="#91a285" stroke-width="1.5" stroke-linejoin="round" />
-<polygon points="266.00,188.00 106.00,268.00 106.00,159.20 266.00,79.20" fill="#eef0e5" stroke="#91a285" stroke-width="1.5" stroke-linejoin="round" />
-<polyline points="266.00,188.00 266.00,79.20 330.00,60.20 394.00,143.20 394.00,252.00" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="186.00,228.00 186.00,119.20 250.00,100.20 314.00,183.20 314.00,292.00" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="106.00,268.00 106.00,159.20 170.00,140.20 234.00,223.20 234.00,332.00" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="266.00,79.20 106.00,159.20" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="330.00,60.20 170.00,140.20" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="394.00,143.20 234.00,223.20" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="314.00,292.00 314.00,183.20" fill="none" stroke="#ce713b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" class="fh-warm-member"/>
-<g transform="translate(275.60 277.50)"><g class="fh-flame"><path d="M-15 -3C-34 -24-8 -36-8 -59C14 -46 1 -31 14 -26C21 -33 23 -41 22 -45C47 -13 23 5 6 5C-3 5-10 1-15 -3Z" fill="#dd7b35"/><path class="fh-flame-core" d="M-3 -4C-12 -15 6 -24 6 -35C26 -14 19 1 8 1Z" fill="#f7dca3"/></g></g>
-<g class="fh-plume" opacity=".45" stroke="#96a88d" stroke-width="2.5" stroke-linecap="round">
-<path d="M267.60 209.50c-16 -15 13 -24 1 -40s10 -24 2 -37"/>
-<path d="M287.60 209.50c-16 -15 13 -24 1 -40s10 -24 2 -37"/>
-</g>
-<g class="fh-shell">
-<polygon points="394.00,252.00 234.00,332.00 234.00,223.20 394.00,143.20" fill="#cfdbc3" stroke="#234d3b" stroke-width="1.8" stroke-linejoin="round" />
-<polygon points="371.60,220.70 331.60,240.70 331.60,199.90 371.60,179.90" fill="#f5e4bc" stroke="#6e8868" stroke-width="1.7" stroke-linejoin="round" />
-<polyline points="351.60,230.70 351.60,189.90" fill="none" stroke="#8a9d7c" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="371.60,200.30 331.60,220.30" fill="none" stroke="#8a9d7c" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
-<polygon points="298.00,257.50 258.00,277.50 258.00,236.70 298.00,216.70" fill="#f5e4bc" stroke="#6e8868" stroke-width="1.7" stroke-linejoin="round" />
-<polyline points="278.00,267.50 278.00,226.70" fill="none" stroke="#8a9d7c" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="298.00,237.10 258.00,257.10" fill="none" stroke="#8a9d7c" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
-</g>
-<path d="M106.00,268.00L234.00,332.00L234.00,223.20L170.00,140.20L106.00,159.20ZM186.00,308.00L218.00,324.00L218.00,252.60L186.00,236.60Z" fill="#f4f0e4" fill-rule="evenodd" stroke="#234d3b" stroke-width="1.8" stroke-linejoin="round"/>
-<polygon points="122.00,233.50 158.80,251.90 158.80,212.80 122.00,194.40" fill="#f0d5a0" stroke="#76916d" stroke-width="1.8" stroke-linejoin="round" />
-<polyline points="140.40,242.70 140.40,203.60" fill="none" stroke="#76916d" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="122.00,213.95 158.80,232.35" fill="none" stroke="#76916d" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" />
-<polygon points="156.56,187.88 183.44,201.32 183.44,182.62 156.56,169.18" fill="#cbd8bd" stroke="#76916d" stroke-width="1.4" stroke-linejoin="round" />
-<polyline points="170.00,194.60 170.00,175.90" fill="none" stroke="#76916d" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
-<g class="fh-shell">
-<polygon points="266.00,78.16 335.12,57.64 164.88,142.76 95.76,163.28" fill="#bfceb0" stroke="#234d3b" stroke-width="2.2" stroke-linejoin="round" />
-<polygon points="335.12,57.64 404.24,147.28 234.00,232.40 164.88,142.76" fill="#9eb28e" stroke="#234d3b" stroke-width="2.2" stroke-linejoin="round" />
-<polygon points="404.24,147.28 234.00,232.40 234.00,237.16 404.24,152.04" fill="#79946e" stroke="#234d3b" stroke-width="1.2" stroke-linejoin="round" />
-<polyline points="307.60,71.40 376.72,161.04" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="278.80,85.80 347.92,175.44" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="250.00,100.20 319.12,189.84" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="221.20,114.60 290.32,204.24" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="192.40,129.00 261.52,218.64" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="358.16,87.52 187.92,172.64" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
-<polyline points="381.20,117.40 210.96,202.52" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
-</g>
-<polyline points="95.76,163.28 164.88,142.76 234.00,232.40" fill="none" stroke="#234d3b" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
-<g transform="translate(24 68)"><rect width="116" height="64" rx="9" fill="#f8f5eb" stroke="#234d3b" stroke-width="1.8"/><path d="M15 48H102M15 15V48" stroke="#c4cfb9"/><path d="M18 44L32 40 46 33 60 20 75 18 89 26 101 31" stroke="#d5753d" stroke-width="2.8" stroke-linecap="round"/><circle cx="101" cy="31" r="3" fill="#d5753d"/></g>
-<path d="M314.00 237.60H448V312" stroke="#9eaf95" stroke-width="1.2" stroke-dasharray="3 5" opacity=".6"/><circle cx="314.00" cy="237.60" r="4" fill="#f8f5eb" stroke="#d5753d" stroke-width="1.8"/>
-<g transform="translate(351 312)"><rect width="123" height="60" rx="9" fill="#f8f5eb" stroke="#234d3b" stroke-width="1.8"/><path d="M16 45H108M16 13V45" stroke="#c4cfb9"/><path d="M19 42L36 36 52 25 74 17H106" stroke="#234d3b" stroke-width="2.8" stroke-linecap="round"/></g></svg>
-<span class="cover-caption">Heat → material response → damage</span></div></a>
-<div class="card-body"><div class="card-meta"><span>Research</span><span>From Sep 2026</span></div><h3><a href="work/fire-sim.html">Fire, heat &amp; structural damage</a></h3><p>Building an inspectable thermal-damage simulation, then asking how images and building documents can initialize a useful short-term forecast.</p><div class="card-bottom"><div class="tags"><span class="tag">Graduation project</span><span class="tag">Scientific computing</span></div><a class="round-arrow" href="work/fire-sim.html" aria-label="Read Fire, heat &amp; structural damage">↗</a></div></div></article><article class="project-card" data-category="Product">
+<div class="toolbar"><div class="filter-tabs" role="group" aria-label="Filter work by category"><button type="button" data-filter="All" aria-pressed="true">All</button><button type="button" data-filter="Research" aria-pressed="false">Research</button><button type="button" data-filter="Engineering" aria-pressed="false">Engineering</button><button type="button" data-filter="Product" aria-pressed="false">Product</button></div><label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search projects</span><input type="search" id="project-search" placeholder="Find a project or interest…" autocomplete="off"></label></div><div class="result-meta"><span id="result-count" role="status" aria-live="polite">10 experiences</span><span>Explore at your own pace ↘</span></div><div class="project-grid work-grid" id="work-grid"><article class="project-card" data-category="Research">
+<a class="card-cover cover-dhh" href="work/dhh.html" aria-label="Explore DHH happiness &amp; everyday access"><div aria-hidden="true"><span class="cover-index">01 /</span><svg xmlns="http://www.w3.org/2000/svg" class="dhh-cover-art dhh-wellbeing-art" viewBox="-60 20 1040 815" fill="none" role="img" aria-label="A smiling person touching their hearing aid, with family, happiness and AI gathered beside them">
+  <g class="dhh-backdrop" aria-hidden="true">
+    <path d="M141 760C116 679 120 605 145 519C168 426 200 309 305 271C394 237 507 252 595 311C710 386 769 490 761 599C757 679 720 746 685 796H154Z" fill="#e3e8d8" />
+    <circle cx="172" cy="627" r="65" fill="#eee0b3" />
+    <path d="M658 428C701 459 728 503 730 549M665 417L678 426" stroke="#a7b89a" stroke-width="2.5" stroke-linecap="round" />
+    <path d="M123 460Q131 469 123 478M139 450Q147 459 139 468" stroke="#c89970" stroke-width="3" stroke-linecap="round" />
+    <g transform="translate(756 617)">
+      <path d="M0 -12Q2 -2 12 0Q2 2 0 12Q-2 2 -12 0Q-2 -2 0 -12Z" fill="#caa15a" />
+    </g>
+    <g transform="translate(110 526)">
+      <path d="M0 -9Q2 -2 9 0Q2 2 0 9Q-2 2 -9 0Q-2 -2 0 -9Z" fill="#9bad8b" />
+    </g>
+    <g transform="translate(688 728)">
+      <path d="M0 -8Q2 -2 8 0Q2 2 0 8Q-2 2 -8 0Q-2 -2 0 -8Z" fill="#b5c4a4" />
+    </g>
+  </g>
+  <g class="dhh-life-motifs">
+    <g transform="translate(-458 32)">
+      <g class="dhh-happiness">
+        <circle cx="728" cy="168" r="80" fill="#c45222" />
+        <g stroke="#f7f5ed" stroke-width="4" stroke-linecap="round">
+          <path d="M693 156Q704 146 715 156M745 156Q756 146 767 156" />
+          <path d="M680 173C695 216 753 223 778 178" />
+        </g>
+      </g>
+    </g>
+    <g transform="translate(-63.5 -50.4) scale(.68)">
+      <g class="dhh-family">
+        <circle cx="753" cy="272" r="27" fill="#b5c4a4" />
+        <path d="M710 381V331C710 310 726 302 750 302C776 302 791 314 791 336V381Z" fill="#b5c4a4" />
+        <circle cx="875" cy="288" r="25" fill="#a5b89c" />
+        <path d="M840 390V341C840 320 854 315 875 315C899 315 918 326 918 348V390Z" fill="#a5b89c" />
+        <circle cx="814" cy="242" r="32" fill="#8da68b" />
+        <path d="M766 394V314C766 288 784 282 810 282C843 282 862 295 862 322V394Z" fill="#8da68b" stroke="#f7f5ed" stroke-width="3.5" />
+      </g>
+    </g>
+    <g transform="translate(-225 -205)">
+      <g class="dhh-ai">
+        <rect x="884" y="353" width="122" height="122" rx="28" fill="#e9c86d" />
+        <g stroke="#f7f5ed" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="921" y="391" width="48" height="48" rx="14" />
+          <path d="M931 374V381M945 374V381M959 374V381M931 449V456M945 449V456M959 449V456M905 401H912M905 415H912M905 429H912M978 401H985M978 415H985M978 429H985" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="dhh-person" transform="translate(-60 0)">
+    <path d="M151 796C169 714 240 669 326 655C380 646 437 632 499 632C551 633 602 630 647 642C725 662 781 717 805 796Z" fill="#234d3b" />
+    <path d="M424 516L423 653C430 690 479 711 521 678C542 662 547 643 548 617L548 526Z" fill="#d99076" />
+    <path d="M350 421C333 481 348 531 389 557C423 579 477 582 546 634L552 525L438 404Z" fill="#102a24" />
+    <path d="M473 376C481 347 503 328 538 329L601 336C628 365 645 417 653 465C663 506 654 543 625 567C600 589 558 597 522 584C484 571 466 548 447 526L383 464L380 422Z" fill="#d99076" />
+    <path d="M347 470C329 443 329 401 342 365C362 316 412 286 469 286C522 286 574 303 601 337C582 350 558 352 538 350C504 347 480 365 478 397L477 423C477 444 462 455 447 449L422 434C399 420 377 427 369 448L365 480Z" fill="#102a24" />
+    <path d="M379 443C388 428 411 433 428 453C440 466 448 487 436 501L424 515C410 537 389 534 379 514C369 495 366 462 379 443Z" fill="#d99076" />
+    <g stroke="#17362b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M383 481C378 455 399 445 416 462M404 477C410 470 425 473 428 483L417 486L418 494L428 501" />
+      <path d="M510 407Q545 384 580 400M603 402Q616 391 635 390" />
+      <path d="M522 440Q551 457 581 439M606 433Q622 443 644 434" />
+      <path d="M607 407C600 421 596 442 610 457L634 479Q641 488 614 496" />
+      <path d="M547 509Q586 547 628 512" />
+    </g>
+    <ellipse class="dhh-device-glow" cx="375" cy="441" rx="34" ry="39" fill="#e9c86d" opacity="0" />
+    <g class="dhh-device" stroke="#c45222" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M448 432L419 414C394 397 369 416 367 440V458" stroke-width="12" />
+      <path d="M367 443L365 473" stroke-width="20" />
+      <path d="M371 471Q370 487 380 490" stroke-width="4" />
+    </g>
+    <g class="dhh-touch">
+      <path d="M346 796L400 702C403 690 400 681 387 673L338 642C309 624 294 598 290 566C286 543 288 528 296 509L320 465C324 456 330 451 336 455C342 459 341 467 337 477L328 499L345 463C349 454 355 449 361 454C368 459 366 470 362 481L345 523C340 537 341 551 349 569L385 602L414 620L411 559C410 541 413 531 421 530C433 529 442 543 447 557L474 620C485 648 491 673 486 702L467 796Z" fill="#d99076" stroke="#17362b" stroke-width="2.5" stroke-linejoin="round" />
+      <g stroke="#17362b" stroke-width="2.5" stroke-linecap="round">
+        <path d="M328 499L312 536C305 559 309 582 320 601M345 523C333 551 334 567 345 587" />
+        <path d="M385 602C419 615 455 635 475 658C487 673 489 685 486 702" />
+      </g>
+      <path d="M348 795H466" stroke="#d99076" stroke-width="4" />
+    </g>
+  </g>
+</svg>
+</div></a>
+<div class="card-body"><div class="card-meta"><span>Research</span><span>May 2024–present</span></div><h3><a href="work/dhh.html">DHH happiness &amp; everyday access</a></h3><p>Led a qualitative study of DHH student happiness, organized school and community fieldwork, and co-authored a review of AI for everyday access.</p><div class="card-bottom"><div class="tags"><span class="tag">Qualitative research</span><span class="tag">Accessibility</span></div><a class="round-arrow" href="work/dhh.html" aria-label="Read DHH happiness &amp; everyday access">↗</a></div></div></article><article class="project-card" data-category="Product">
 <a class="card-cover cover-involve" href="work/involve.html" aria-label="Explore InVolve"><div aria-hidden="true"><span class="cover-index">02 /</span><svg class="involve-art" xmlns="http://www.w3.org/2000/svg" viewBox="40 35 525 380" fill="none" role="img" aria-labelledby="involve-art-title involve-art-desc">
   <title id="involve-art-title">A lesson opens into a conversation</title>
   <desc id="involve-art-desc">An open lesson notebook and pencil, with three floating response cards showing a question, an idea and a shared answer.</desc>
@@ -222,163 +237,8 @@
   <path d="M42 102V113M39 108H45M209 123V134M206 129H212" stroke="#8fa785" stroke-width="1.4" stroke-linecap="round"/>
 </svg>
 <span class="cover-caption">Observe → predict → drive → repeat</span></div></a>
-<div class="card-body"><div class="card-meta"><span>Engineering</span><span>Jul–Aug 2026</span></div><h3><a href="work/dongfeng.html">VLA models in the driving loop</a></h3><p>Built VLA inference bridges for Bench2Drive/CARLA and AlpaSim, made evaluation easier to diagnose and repeat, and tested commercial simulation workflows.</p><div class="card-bottom"><div class="tags"><span class="tag">Autonomous driving</span><span class="tag">Systems integration</span></div><a class="round-arrow" href="work/dongfeng.html" aria-label="Read VLA models in the driving loop">↗</a></div></div></article><article class="project-card" data-category="Research">
-<a class="card-cover cover-reconstruction" href="work/reconstruction.html" aria-label="Explore Reconstruction beyond one sensor path"><div aria-hidden="true"><span class="cover-index">04 /</span><img class="field-art reconstruction-cover-art" src="assets/art/reconstruction-cover.svg?v=1a4833c1f1" alt="" width="360" height="150" loading="lazy" decoding="async"><span class="cover-caption">Sparse observations → a whole flow field</span></div></a>
-<div class="card-body"><div class="card-meta"><span>Research</span><span>Jan 2026–present</span></div><h3><a href="work/reconstruction.html">Reconstruction beyond one sensor path</a></h3><p>Comparing physical-field reconstruction baselines when sensors follow trajectories different from the original sensing distribution.</p><div class="card-bottom"><div class="tags"><span class="tag">AI for science</span><span class="tag">Baseline evaluation</span></div><a class="round-arrow" href="work/reconstruction.html" aria-label="Read Reconstruction beyond one sensor path">↗</a></div></div></article><article class="project-card" data-category="Product">
-<a class="card-cover cover-navix" href="work/navix.html" aria-label="Explore AI support for everyday care"><div aria-hidden="true"><span class="cover-index">05 /</span><svg class="navix-care-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 390" fill="none" aria-hidden="true">
-<ellipse cx="246" cy="205" rx="183" ry="147" fill="#e7ebde"/>
-<path class="nx-link" d="M112 130C144 104 179 109 211 146M287 170C327 140 357 156 378 189M355 275C308 313 242 319 181 287" stroke="#a6b899" stroke-width="2" stroke-dasharray="5 8"/>
-<g class="nx-calendar" transform="translate(31 65) rotate(-6 65 60)"><rect width="132" height="121" rx="15" fill="#f8f5eb" stroke="#234d3b" stroke-width="2"/><path d="M0 32H132M31 -7V11M101 -7V11" stroke="#234d3b" stroke-width="2" stroke-linecap="round"/><g fill="#dbe3ce"><rect x="17" y="48" width="25" height="23" rx="5"/><rect x="54" y="48" width="25" height="23" rx="5"/><rect x="91" y="48" width="25" height="23" rx="5"/><rect x="17" y="83" width="25" height="23" rx="5"/><rect x="54" y="83" width="25" height="23" rx="5"/></g><rect x="91" y="83" width="25" height="23" rx="5" fill="#df8547"/><path d="M97 94L102 99 111 88" stroke="#fff6e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
-<ellipse cx="250" cy="311" rx="75" ry="10" fill="#becdb1" opacity=".5"/>
-<g transform="translate(77 79) scale(1.15)">
-<path d="M113 89Q92 102 91 132Q92 167 150 168Q208 167 209 132Q208 102 187 89Z" fill="#f8f5eb" stroke="#234d3b" stroke-width="2"/>
-<path d="M112 98Q98 116 96 145M188 98Q202 116 204 145" stroke="#b9c7ac" stroke-width="1.5"/>
-<ellipse cx="150" cy="94" rx="38" ry="7" fill="#c8d4bd" stroke="#234d3b" stroke-width="1.5"/>
-<path d="M138 105Q150 100 162 105L157 116Q150 123 143 116Z" fill="#d7e0cb"/>
-<path class="nx-light" d="M145 108H155" stroke="#d5753d" stroke-width="3" stroke-linecap="round"/>
-<g class="nx-head"><path d="M107 62C107 6 190 6 193 61Q195 94 178 96Q150 102 122 96Q106 93 107 62Z" fill="#f8f5eb" stroke="#234d3b" stroke-width="2"/><path d="M109 62Q150 65 191 62" stroke="#c3ceb8"/>
-<g fill="#234d3b"><ellipse cx="126" cy="62" rx="4" ry="5.5"/><ellipse cx="174" cy="62" rx="4" ry="5.5"/></g><g fill="#fff"><circle cx="125" cy="60" r="1.2"/><circle cx="173" cy="60" r="1.2"/></g><path d="M150 62Q162 65 159 75Q151 84 142 75Q139 67 150 62Z" fill="#df8547" stroke="#bd6537"/><ellipse cx="150" cy="74" rx="2.4" ry="1.8" fill="#234d3b"/></g></g>
-<g class="nx-note" transform="translate(345 161) rotate(5 57 71)"><rect width="114" height="148" rx="15" fill="#f8f5eb" stroke="#234d3b" stroke-width="2"/><rect x="35" y="-5" width="44" height="14" rx="6" fill="#bacbaa" stroke="#234d3b" stroke-width="1.5"/><path d="M22 44C22 30 41 27 47 41C53 27 72 30 72 44C72 56 47 72 47 72S22 56 22 44Z" fill="#e7b389"/><path d="M22 96H91M22 110H82M22 124H63" stroke="#9eb48f" stroke-width="3" stroke-linecap="round"/></g>
-<path d="M177 330h11m-5.5-5.5v11M374 104h11m-5.5-5.5v11" stroke="#9aac8b" stroke-width="2" stroke-linecap="round"/>
-</svg>
-<span class="cover-caption">A companion / a routine / a little care</span></div></a>
-<div class="card-body"><div class="card-meta"><span>Product</span><span>Sep 2026–present</span></div><h3><a href="work/navix.html">AI support for everyday care</a></h3><p>Designing Xiaoqi’s companion experience, from everyday routines and user-controlled profiles to AI actions with verifiable results.</p><div class="card-bottom"><div class="tags"><span class="tag">Product design</span><span class="tag">Human–robot interaction</span></div><a class="round-arrow" href="work/navix.html" aria-label="Read AI support for everyday care">↗</a></div></div></article><article class="project-card" data-category="Research">
-<a class="card-cover cover-dhh" href="work/dhh.html" aria-label="Explore DHH happiness &amp; everyday access"><div aria-hidden="true"><span class="cover-index">06 /</span><svg xmlns="http://www.w3.org/2000/svg" class="dhh-cover-art dhh-wellbeing-art" viewBox="-60 20 1040 815" fill="none" role="img" aria-label="A smiling person touching their hearing aid, with family, happiness and AI gathered beside them">
-  <g class="dhh-backdrop" aria-hidden="true">
-    <path d="M141 760C116 679 120 605 145 519C168 426 200 309 305 271C394 237 507 252 595 311C710 386 769 490 761 599C757 679 720 746 685 796H154Z" fill="#e3e8d8" />
-    <circle cx="172" cy="627" r="65" fill="#eee0b3" />
-    <path d="M658 428C701 459 728 503 730 549M665 417L678 426" stroke="#a7b89a" stroke-width="2.5" stroke-linecap="round" />
-    <path d="M123 460Q131 469 123 478M139 450Q147 459 139 468" stroke="#c89970" stroke-width="3" stroke-linecap="round" />
-    <g transform="translate(756 617)">
-      <path d="M0 -12Q2 -2 12 0Q2 2 0 12Q-2 2 -12 0Q-2 -2 0 -12Z" fill="#caa15a" />
-    </g>
-    <g transform="translate(110 526)">
-      <path d="M0 -9Q2 -2 9 0Q2 2 0 9Q-2 2 -9 0Q-2 -2 0 -9Z" fill="#9bad8b" />
-    </g>
-    <g transform="translate(688 728)">
-      <path d="M0 -8Q2 -2 8 0Q2 2 0 8Q-2 2 -8 0Q-2 -2 0 -8Z" fill="#b5c4a4" />
-    </g>
-  </g>
-  <g class="dhh-life-motifs">
-    <g transform="translate(-458 32)">
-      <g class="dhh-happiness">
-        <circle cx="728" cy="168" r="80" fill="#c45222" />
-        <g stroke="#f7f5ed" stroke-width="4" stroke-linecap="round">
-          <path d="M693 156Q704 146 715 156M745 156Q756 146 767 156" />
-          <path d="M680 173C695 216 753 223 778 178" />
-        </g>
-      </g>
-    </g>
-    <g transform="translate(-63.5 -50.4) scale(.68)">
-      <g class="dhh-family">
-        <circle cx="753" cy="272" r="27" fill="#b5c4a4" />
-        <path d="M710 381V331C710 310 726 302 750 302C776 302 791 314 791 336V381Z" fill="#b5c4a4" />
-        <circle cx="875" cy="288" r="25" fill="#a5b89c" />
-        <path d="M840 390V341C840 320 854 315 875 315C899 315 918 326 918 348V390Z" fill="#a5b89c" />
-        <circle cx="814" cy="242" r="32" fill="#8da68b" />
-        <path d="M766 394V314C766 288 784 282 810 282C843 282 862 295 862 322V394Z" fill="#8da68b" stroke="#f7f5ed" stroke-width="3.5" />
-      </g>
-    </g>
-    <g transform="translate(-225 -205)">
-      <g class="dhh-ai">
-        <rect x="884" y="353" width="122" height="122" rx="28" fill="#e9c86d" />
-        <g stroke="#f7f5ed" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="921" y="391" width="48" height="48" rx="14" />
-          <path d="M931 374V381M945 374V381M959 374V381M931 449V456M945 449V456M959 449V456M905 401H912M905 415H912M905 429H912M978 401H985M978 415H985M978 429H985" />
-        </g>
-      </g>
-    </g>
-  </g>
-  <g class="dhh-person" transform="translate(-60 0)">
-    <path d="M151 796C169 714 240 669 326 655C380 646 437 632 499 632C551 633 602 630 647 642C725 662 781 717 805 796Z" fill="#234d3b" />
-    <path d="M424 516L423 653C430 690 479 711 521 678C542 662 547 643 548 617L548 526Z" fill="#d99076" />
-    <path d="M350 421C333 481 348 531 389 557C423 579 477 582 546 634L552 525L438 404Z" fill="#102a24" />
-    <path d="M473 376C481 347 503 328 538 329L601 336C628 365 645 417 653 465C663 506 654 543 625 567C600 589 558 597 522 584C484 571 466 548 447 526L383 464L380 422Z" fill="#d99076" />
-    <path d="M347 470C329 443 329 401 342 365C362 316 412 286 469 286C522 286 574 303 601 337C582 350 558 352 538 350C504 347 480 365 478 397L477 423C477 444 462 455 447 449L422 434C399 420 377 427 369 448L365 480Z" fill="#102a24" />
-    <path d="M379 443C388 428 411 433 428 453C440 466 448 487 436 501L424 515C410 537 389 534 379 514C369 495 366 462 379 443Z" fill="#d99076" />
-    <g stroke="#17362b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M383 481C378 455 399 445 416 462M404 477C410 470 425 473 428 483L417 486L418 494L428 501" />
-      <path d="M510 407Q545 384 580 400M603 402Q616 391 635 390" />
-      <path d="M522 440Q551 457 581 439M606 433Q622 443 644 434" />
-      <path d="M607 407C600 421 596 442 610 457L634 479Q641 488 614 496" />
-      <path d="M547 509Q586 547 628 512" />
-    </g>
-    <ellipse class="dhh-device-glow" cx="375" cy="441" rx="34" ry="39" fill="#e9c86d" opacity="0" />
-    <g class="dhh-device" stroke="#c45222" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M448 432L419 414C394 397 369 416 367 440V458" stroke-width="12" />
-      <path d="M367 443L365 473" stroke-width="20" />
-      <path d="M371 471Q370 487 380 490" stroke-width="4" />
-    </g>
-    <g class="dhh-touch">
-      <path d="M346 796L400 702C403 690 400 681 387 673L338 642C309 624 294 598 290 566C286 543 288 528 296 509L320 465C324 456 330 451 336 455C342 459 341 467 337 477L328 499L345 463C349 454 355 449 361 454C368 459 366 470 362 481L345 523C340 537 341 551 349 569L385 602L414 620L411 559C410 541 413 531 421 530C433 529 442 543 447 557L474 620C485 648 491 673 486 702L467 796Z" fill="#d99076" stroke="#17362b" stroke-width="2.5" stroke-linejoin="round" />
-      <g stroke="#17362b" stroke-width="2.5" stroke-linecap="round">
-        <path d="M328 499L312 536C305 559 309 582 320 601M345 523C333 551 334 567 345 587" />
-        <path d="M385 602C419 615 455 635 475 658C487 673 489 685 486 702" />
-      </g>
-      <path d="M348 795H466" stroke="#d99076" stroke-width="4" />
-    </g>
-  </g>
-</svg>
-</div></a>
-<div class="card-body"><div class="card-meta"><span>Research</span><span>May 2024–present</span></div><h3><a href="work/dhh.html">DHH happiness &amp; everyday access</a></h3><p>Led a qualitative study of DHH student happiness, organized school and community fieldwork, and co-authored a review of AI for everyday access.</p><div class="card-bottom"><div class="tags"><span class="tag">Qualitative research</span><span class="tag">Accessibility</span></div><a class="round-arrow" href="work/dhh.html" aria-label="Read DHH happiness &amp; everyday access">↗</a></div></div></article><article class="project-card" data-category="Research">
-<a class="card-cover cover-active-learning" href="work/active-learning.html" aria-label="Explore Choosing what a model learns next"><div aria-hidden="true"><span class="cover-index">07 /</span><svg class="al-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 440" fill="none">
-  <path d="M52 92Q174 25 352 71Q454 105 437 250Q415 382 264 389L96 368Q22 279 52 92Z" fill="#e7eadc"/>
-  <g class="al-pool">
-    <path d="M69 130L252 98L293 244L110 281Z" fill="#f7f5ed" stroke="#9eaf96" stroke-width="1.5"/>
-    <path d="M78 162L261 131M88 198L273 166M99 240L283 205M112 123L153 273M159 115L200 263M205 107L246 254" stroke="#dce2d2"/>
-    <g fill="#8fa58d"><circle cx="112" cy="158" r="6"/><circle cx="153" cy="147" r="6"/><circle cx="201" cy="138" r="6"/><circle cx="137" cy="232" r="6"/><circle cx="183" cy="224" r="6"/><circle cx="232" cy="214" r="6"/><circle cx="124" cy="193" r="6"/><circle cx="170" cy="183" r="6"/></g>
-    <circle class="al-halo" cx="218" cy="174" r="28" stroke="#ee7a35" stroke-width="1.5"/>
-    <circle cx="218" cy="174" r="11" fill="#ee7a35" stroke="#f7f5ed" stroke-width="4"/>
-  </g>
-  <path class="al-route" d="M237 175C321 124 340 159 350 213" stroke="#ee7a35" stroke-width="2" stroke-dasharray="5 7"/>
-  <path d="M343 206L351 216L356 203" stroke="#ee7a35" stroke-width="2" stroke-linecap="round"/>
-  <g class="al-learner">
-    <path d="M294 237L375 217L417 257L336 279Z" fill="#527762" stroke="#234d3b" stroke-width="1.5"/>
-    <path d="M294 237L336 279V319L294 279Z" fill="#234d3b"/>
-    <path d="M336 279L417 257V297L336 319Z" fill="#345d45"/>
-    <g stroke="#e7eadc" stroke-width="1.5"><path d="M318 241L344 236L355 252L385 247M344 236L365 232M355 252L345 264"/></g>
-    <g fill="#f7e7c9"><circle cx="318" cy="241" r="4"/><circle cx="344" cy="236" r="4"/><circle cx="365" cy="232" r="4"/><circle cx="355" cy="252" r="4"/><circle cx="385" cy="247" r="4"/><circle cx="345" cy="264" r="4"/></g>
-    <circle class="al-signal" cx="378" cy="288" r="5" fill="#f7ad72"/>
-  </g>
-  <g class="al-feedback">
-    <path d="M324 321C237 391 160 349 152 299" stroke="#66886b" stroke-width="2" stroke-dasharray="5 7"/>
-    <path d="M146 307L151 295L160 304" stroke="#66886b" stroke-width="2" stroke-linecap="round"/>
-    <circle cx="233" cy="348" r="20" fill="#f7f5ed" stroke="#9eaf96"/>
-    <path d="M224 349L231 355L243 340" stroke="#234d3b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-</svg>
-<span class="cover-caption">Choose a sample → learn → choose again</span></div></a>
-<div class="card-body"><div class="card-meta"><span>Research</span><span>Dec 2024–Jul 2025</span></div><h3><a href="work/active-learning.html">Choosing what a model learns next</a></h3><p>Can better training examples make a model learn more from less? From neural query policies to error-reduction sampling and training-batch completion.</p><div class="card-bottom"><div class="tags"><span class="tag">Active learning</span><span class="tag">Neural operators</span></div><a class="round-arrow" href="work/active-learning.html" aria-label="Read Choosing what a model learns next">↗</a></div></div></article><article class="project-card" data-category="Research">
-<a class="card-cover cover-vr" href="work/vr.html" aria-label="Explore Relativity you can interact with"><div aria-hidden="true"><span class="cover-index">08 /</span><svg class="vr-cover-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 170" fill="none" font-family="inherit">
-<defs><g id="vr-cover-engine">
-      <path d="M142 126H181V156H142Z" fill="#8ca28b" stroke="#234d3b" stroke-width="1.5"/>
-      <path d="M183 120H220V158H183Z" fill="#345d45"/>
-      <path d="M178 119H223L219 112H181Z" fill="#193d30"/>
-      <rect x="190" y="122" width="19" height="17" rx="2" fill="#f7e7c9"/>
-      <path d="M220 132H256Q267 132 267 144V156H220Z" fill="#d8763e" stroke="#234d3b" stroke-width="1.5"/>
-      <path d="M247 132V119H244V115H258V119H255V132" fill="#234d3b"/>
-      <path d="M139 157H269L276 164H138Z" fill="#193d30"/>
-      <g fill="#f7f5ed" stroke="#234d3b" stroke-width="3"><circle cx="152" cy="164" r="8"/><circle cx="173" cy="164" r="8"/><circle cx="204" cy="161" r="12"/><circle cx="236" cy="162" r="10"/><circle cx="260" cy="164" r="8"/></g>
-      <path d="M204 161H260" stroke="#234d3b" stroke-width="2"/>
-      <circle cx="269" cy="141" r="3" fill="#f4ce87"/></g></defs>
-<text x="24" y="24" fill="#607066" font-size="11" letter-spacing="1.3">LENGTH</text>
-<text x="256" y="24" fill="#607066" font-size="11" letter-spacing="1.3">TIME</text>
-<path d="M232 36V147" stroke="#bcc8b1"/>
-<g class="vr-cover-train">
-  <g transform="translate(-126 -68) scale(1.16 1)"><use href="#vr-cover-engine" opacity=".18"/><g transform="translate(138 0) scale(.6 1) translate(-138 0)"><use href="#vr-cover-engine"/></g></g>
-  <path d="M34 116H195M34 112V120M195 112V120" stroke="#8fa185" stroke-width="1.5" stroke-dasharray="3 3"/>
-  <path d="M34 132H131M34 127V137M131 127V137" stroke="#c45222" stroke-width="2"/>
-  <text x="148" y="137" fill="#c45222" font-size="12">0.60 L₀</text>
-</g>
-<g transform="translate(282 69)"><circle r="24" fill="#f7f5ed" stroke="#234d3b" stroke-width="2"/><path d="M0-19V-16M19 0H16M0 19V16M-19 0H-16" stroke="#8fa185"/><g class="vr-cover-clock-hand"><path d="M0 3V-17" stroke="#234d3b" stroke-width="2.5" stroke-linecap="round"/></g><circle r="3" fill="#234d3b"/></g>
-<g transform="translate(365 69)"><circle r="24" fill="#f7f5ed" stroke="#c45222" stroke-width="2"/><path d="M0-19V-16M19 0H16M0 19V16M-19 0H-16" stroke="#d3a178"/><g class="vr-cover-clock-hand vr-cover-clock-moving"><path d="M0 3V-17" stroke="#c45222" stroke-width="2.5" stroke-linecap="round"/></g><circle r="3" fill="#c45222"/></g>
-<text x="282" y="111" text-anchor="middle" fill="#234d3b" font-size="12">1.00×</text><text x="365" y="111" text-anchor="middle" fill="#c45222" font-size="12">0.60×</text>
-<text x="282" y="129" text-anchor="middle" fill="#607066" font-size="9">LOCAL</text><text x="365" y="129" text-anchor="middle" fill="#607066" font-size="9">MOVING</text>
-<text x="322" y="155" text-anchor="middle" fill="#607066" font-size="11">v = 0.8c</text>
-</svg>
-<span class="cover-caption">Length contraction · time dilation</span></div></a>
-<div class="card-body"><div class="card-meta"><span>Research</span><span>Sep–Dec 2025</span></div><h3><a href="work/vr.html">Relativity you can interact with</a></h3><p>A narrative VR lesson on special relativity. I reviewed the physics and helped extend the learning assessment; the team evaluated the experience with 28 participants.</p><div class="card-bottom"><div class="tags"><span class="tag">VR</span><span class="tag">Physics education</span></div><a class="round-arrow" href="work/vr.html" aria-label="Read Relativity you can interact with">↗</a></div></div></article><article class="project-card" data-category="Product">
-<a class="card-cover cover-feasypaste" href="work/feasypaste.html" aria-label="Explore FeasyPaste"><div aria-hidden="true"><span class="cover-index">09 /</span><svg class="fp-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" fill="none" aria-hidden="true">
+<div class="card-body"><div class="card-meta"><span>Engineering</span><span>Jul–Aug 2026</span></div><h3><a href="work/dongfeng.html">VLA models in the driving loop</a></h3><p>Built VLA inference bridges for Bench2Drive/CARLA and AlpaSim, made evaluation easier to diagnose and repeat, and tested commercial simulation workflows.</p><div class="card-bottom"><div class="tags"><span class="tag">Autonomous driving</span><span class="tag">Systems integration</span></div><a class="round-arrow" href="work/dongfeng.html" aria-label="Read VLA models in the driving loop">↗</a></div></div></article><article class="project-card" data-category="Product">
+<a class="card-cover cover-feasypaste" href="work/feasypaste.html" aria-label="Explore FeasyPaste"><div aria-hidden="true"><span class="cover-index">04 /</span><svg class="fp-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" fill="none" aria-hidden="true">
   <ellipse cx="310" cy="361" rx="239" ry="23" fill="#d6ddc9"/>
   <path d="M85 102C129 50 217 61 280 92C343 123 388 59 465 91C543 124 550 274 485 321C414 374 324 336 237 342C127 350 46 278 64 193C70 159 65 126 85 102Z" fill="#e2e8d5"/>
   <g stroke="#8a9c83" stroke-width="2" stroke-linecap="round"><path d="M65 101V119M56 110H74M515 290V306M507 298H523"/><path d="M461 53L465 64L477 68L465 72L461 83L457 72L445 68Z" fill="#e7c884" stroke="#b59457"/></g>
@@ -411,10 +271,148 @@
   <circle cx="318" cy="89" r="5" fill="#b0c29b"/><circle cx="78" cy="288" r="4" fill="#b99b61"/>
 </svg>
 </div></a>
-<div class="card-body"><div class="card-meta"><span>Product</span><span>Released by Mar 2026</span></div><h3><a href="work/feasypaste.html">FeasyPaste</a></h3><p>A rule-based browser extension that bridges the formatting gap between AI answers and Feishu documents—without repeated manual cleanup.</p><div class="card-bottom"><div class="tags"><span class="tag">Independent development</span><span class="tag">Browser extension</span></div><a class="round-arrow" href="work/feasypaste.html" aria-label="Read FeasyPaste">↗</a></div></div></article><article class="project-card" data-category="Product">
-<a class="card-cover cover-roadlaw" href="work/roadlaw.html" aria-label="Explore RoadLaw"><div aria-hidden="true"><span class="cover-index">10 /</span><div class="symbol-art">↗</div><span class="cover-caption">An idea, in outline</span></div></a>
-<div class="card-body"><div class="card-meta"><span>Product</span><span>Independent project</span></div><h3><a href="work/roadlaw.html">RoadLaw</a></h3><p>A free, structured, interactive learning map for mainland China’s C1/C2 Subject One traffic-law examination.</p><div class="card-bottom"><div class="tags"><span class="tag">Independent development</span><span class="tag">Information design</span></div><a class="round-arrow" href="work/roadlaw.html" aria-label="Read RoadLaw">↗</a></div></div></article><article class="project-card" data-category="Engineering">
-<a class="card-cover cover-igem" href="work/igem.html" aria-label="Explore Westlake iGEM 2024"><div aria-hidden="true"><span class="cover-index">11 /</span><svg class="ig-cover-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 175" fill="none">
+<div class="card-body"><div class="card-meta"><span>Product</span><span>Released by Mar 2026</span></div><h3><a href="work/feasypaste.html">FeasyPaste</a></h3><p>A rule-based browser extension that bridges the formatting gap between AI answers and Feishu documents—without repeated manual cleanup.</p><div class="card-bottom"><div class="tags"><span class="tag">Independent development</span><span class="tag">Browser extension</span></div><a class="round-arrow" href="work/feasypaste.html" aria-label="Read FeasyPaste">↗</a></div></div></article><article class="project-card" data-category="Research">
+<a class="card-cover cover-fire-sim" href="work/fire-sim.html" aria-label="Explore Fire, heat &amp; structural damage"><div aria-hidden="true"><span class="cover-index">05 /</span><svg class="fire-house-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" fill="none" aria-hidden="true">
+<!-- All house geometry is projected from tools/build_fire_art.py; do not nudge individual vertices. -->
+<polygon points="266.00,176.28 432.40,259.48 234.00,358.68 67.60,275.48" fill="#e4e9db" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
+<polygon points="266.00,181.60 406.80,252.00 234.00,338.40 93.20,268.00" fill="#eeeadd" stroke="#9dae94" stroke-width="1.8" stroke-linejoin="round" />
+<polygon points="406.80,252.00 234.00,338.40 234.00,344.52 406.80,258.12" fill="#c7d1ba" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
+<polygon points="93.20,268.00 234.00,338.40 234.00,344.52 93.20,274.12" fill="#d5ddc9" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
+<polyline points="250.00,195.32 378.00,259.32" fill="none" stroke="#d8d5c7" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="218.00,211.32 346.00,275.32" fill="none" stroke="#d8d5c7" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="186.00,227.32 314.00,291.32" fill="none" stroke="#d8d5c7" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="154.00,243.32 282.00,307.32" fill="none" stroke="#d8d5c7" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="122.00,259.32 250.00,323.32" fill="none" stroke="#d8d5c7" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" />
+<g class="fh-heat" opacity=".35">
+<polygon points="262.80,194.98 378.00,252.58 237.20,322.98 122.00,265.38" fill="#efdcba" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
+<polygon points="262.80,217.38 349.20,260.58 237.20,316.58 150.80,273.38" fill="#eab878" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
+<polygon points="253.20,244.58 310.80,273.38 237.20,310.18 179.60,281.38" fill="#df8d4a" stroke="none" stroke-width="1.8" stroke-linejoin="round" />
+</g>
+<polygon points="266.00,188.00 394.00,252.00 394.00,143.20 330.00,60.20 266.00,79.20" fill="#e4e8d9" stroke="#91a285" stroke-width="1.5" stroke-linejoin="round" />
+<polygon points="266.00,188.00 106.00,268.00 106.00,159.20 266.00,79.20" fill="#eef0e5" stroke="#91a285" stroke-width="1.5" stroke-linejoin="round" />
+<polyline points="266.00,188.00 266.00,79.20 330.00,60.20 394.00,143.20 394.00,252.00" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="186.00,228.00 186.00,119.20 250.00,100.20 314.00,183.20 314.00,292.00" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="106.00,268.00 106.00,159.20 170.00,140.20 234.00,223.20 234.00,332.00" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="266.00,79.20 106.00,159.20" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="330.00,60.20 170.00,140.20" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="394.00,143.20 234.00,223.20" fill="none" stroke="#526e53" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="314.00,292.00 314.00,183.20" fill="none" stroke="#ce713b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" class="fh-warm-member"/>
+<g transform="translate(275.60 277.50)"><g class="fh-flame"><path d="M-15 -3C-34 -24-8 -36-8 -59C14 -46 1 -31 14 -26C21 -33 23 -41 22 -45C47 -13 23 5 6 5C-3 5-10 1-15 -3Z" fill="#dd7b35"/><path class="fh-flame-core" d="M-3 -4C-12 -15 6 -24 6 -35C26 -14 19 1 8 1Z" fill="#f7dca3"/></g></g>
+<g class="fh-plume" opacity=".45" stroke="#96a88d" stroke-width="2.5" stroke-linecap="round">
+<path d="M267.60 209.50c-16 -15 13 -24 1 -40s10 -24 2 -37"/>
+<path d="M287.60 209.50c-16 -15 13 -24 1 -40s10 -24 2 -37"/>
+</g>
+<g class="fh-shell">
+<polygon points="394.00,252.00 234.00,332.00 234.00,223.20 394.00,143.20" fill="#cfdbc3" stroke="#234d3b" stroke-width="1.8" stroke-linejoin="round" />
+<polygon points="371.60,220.70 331.60,240.70 331.60,199.90 371.60,179.90" fill="#f5e4bc" stroke="#6e8868" stroke-width="1.7" stroke-linejoin="round" />
+<polyline points="351.60,230.70 351.60,189.90" fill="none" stroke="#8a9d7c" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="371.60,200.30 331.60,220.30" fill="none" stroke="#8a9d7c" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
+<polygon points="298.00,257.50 258.00,277.50 258.00,236.70 298.00,216.70" fill="#f5e4bc" stroke="#6e8868" stroke-width="1.7" stroke-linejoin="round" />
+<polyline points="278.00,267.50 278.00,226.70" fill="none" stroke="#8a9d7c" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="298.00,237.10 258.00,257.10" fill="none" stroke="#8a9d7c" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
+</g>
+<path d="M106.00,268.00L234.00,332.00L234.00,223.20L170.00,140.20L106.00,159.20ZM186.00,308.00L218.00,324.00L218.00,252.60L186.00,236.60Z" fill="#f4f0e4" fill-rule="evenodd" stroke="#234d3b" stroke-width="1.8" stroke-linejoin="round"/>
+<polygon points="122.00,233.50 158.80,251.90 158.80,212.80 122.00,194.40" fill="#f0d5a0" stroke="#76916d" stroke-width="1.8" stroke-linejoin="round" />
+<polyline points="140.40,242.70 140.40,203.60" fill="none" stroke="#76916d" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="122.00,213.95 158.80,232.35" fill="none" stroke="#76916d" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" />
+<polygon points="156.56,187.88 183.44,201.32 183.44,182.62 156.56,169.18" fill="#cbd8bd" stroke="#76916d" stroke-width="1.4" stroke-linejoin="round" />
+<polyline points="170.00,194.60 170.00,175.90" fill="none" stroke="#76916d" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
+<g class="fh-shell">
+<polygon points="266.00,78.16 335.12,57.64 164.88,142.76 95.76,163.28" fill="#bfceb0" stroke="#234d3b" stroke-width="2.2" stroke-linejoin="round" />
+<polygon points="335.12,57.64 404.24,147.28 234.00,232.40 164.88,142.76" fill="#9eb28e" stroke="#234d3b" stroke-width="2.2" stroke-linejoin="round" />
+<polygon points="404.24,147.28 234.00,232.40 234.00,237.16 404.24,152.04" fill="#79946e" stroke="#234d3b" stroke-width="1.2" stroke-linejoin="round" />
+<polyline points="307.60,71.40 376.72,161.04" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="278.80,85.80 347.92,175.44" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="250.00,100.20 319.12,189.84" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="221.20,114.60 290.32,204.24" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="192.40,129.00 261.52,218.64" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="358.16,87.52 187.92,172.64" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+<polyline points="381.20,117.40 210.96,202.52" fill="none" stroke="#839e77" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+</g>
+<polyline points="95.76,163.28 164.88,142.76 234.00,232.40" fill="none" stroke="#234d3b" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" />
+<g transform="translate(24 68)"><rect width="116" height="64" rx="9" fill="#f8f5eb" stroke="#234d3b" stroke-width="1.8"/><path d="M15 48H102M15 15V48" stroke="#c4cfb9"/><path d="M18 44L32 40 46 33 60 20 75 18 89 26 101 31" stroke="#d5753d" stroke-width="2.8" stroke-linecap="round"/><circle cx="101" cy="31" r="3" fill="#d5753d"/></g>
+<path d="M314.00 237.60H448V312" stroke="#9eaf95" stroke-width="1.2" stroke-dasharray="3 5" opacity=".6"/><circle cx="314.00" cy="237.60" r="4" fill="#f8f5eb" stroke="#d5753d" stroke-width="1.8"/>
+<g transform="translate(351 312)"><rect width="123" height="60" rx="9" fill="#f8f5eb" stroke="#234d3b" stroke-width="1.8"/><path d="M16 45H108M16 13V45" stroke="#c4cfb9"/><path d="M19 42L36 36 52 25 74 17H106" stroke="#234d3b" stroke-width="2.8" stroke-linecap="round"/></g></svg>
+<span class="cover-caption">Heat → material response → damage</span></div></a>
+<div class="card-body"><div class="card-meta"><span>Research</span><span>From Sep 2026</span></div><h3><a href="work/fire-sim.html">Fire, heat &amp; structural damage</a></h3><p>Building an inspectable thermal-damage simulation, then asking how images and building documents can initialize a useful short-term forecast.</p><div class="card-bottom"><div class="tags"><span class="tag">Graduation project</span><span class="tag">Scientific computing</span></div><a class="round-arrow" href="work/fire-sim.html" aria-label="Read Fire, heat &amp; structural damage">↗</a></div></div></article><article class="project-card" data-category="Product">
+<a class="card-cover cover-navix" href="work/navix.html" aria-label="Explore AI support for everyday care"><div aria-hidden="true"><span class="cover-index">06 /</span><svg class="navix-care-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 390" fill="none" aria-hidden="true">
+<ellipse cx="246" cy="205" rx="183" ry="147" fill="#e7ebde"/>
+<path class="nx-link" d="M112 130C144 104 179 109 211 146M287 170C327 140 357 156 378 189M355 275C308 313 242 319 181 287" stroke="#a6b899" stroke-width="2" stroke-dasharray="5 8"/>
+<g class="nx-calendar" transform="translate(31 65) rotate(-6 65 60)"><rect width="132" height="121" rx="15" fill="#f8f5eb" stroke="#234d3b" stroke-width="2"/><path d="M0 32H132M31 -7V11M101 -7V11" stroke="#234d3b" stroke-width="2" stroke-linecap="round"/><g fill="#dbe3ce"><rect x="17" y="48" width="25" height="23" rx="5"/><rect x="54" y="48" width="25" height="23" rx="5"/><rect x="91" y="48" width="25" height="23" rx="5"/><rect x="17" y="83" width="25" height="23" rx="5"/><rect x="54" y="83" width="25" height="23" rx="5"/></g><rect x="91" y="83" width="25" height="23" rx="5" fill="#df8547"/><path d="M97 94L102 99 111 88" stroke="#fff6e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<ellipse cx="250" cy="311" rx="75" ry="10" fill="#becdb1" opacity=".5"/>
+<g transform="translate(77 79) scale(1.15)">
+<path d="M113 89Q92 102 91 132Q92 167 150 168Q208 167 209 132Q208 102 187 89Z" fill="#f8f5eb" stroke="#234d3b" stroke-width="2"/>
+<path d="M112 98Q98 116 96 145M188 98Q202 116 204 145" stroke="#b9c7ac" stroke-width="1.5"/>
+<ellipse cx="150" cy="94" rx="38" ry="7" fill="#c8d4bd" stroke="#234d3b" stroke-width="1.5"/>
+<path d="M138 105Q150 100 162 105L157 116Q150 123 143 116Z" fill="#d7e0cb"/>
+<path class="nx-light" d="M145 108H155" stroke="#d5753d" stroke-width="3" stroke-linecap="round"/>
+<g class="nx-head"><path d="M107 62C107 6 190 6 193 61Q195 94 178 96Q150 102 122 96Q106 93 107 62Z" fill="#f8f5eb" stroke="#234d3b" stroke-width="2"/><path d="M109 62Q150 65 191 62" stroke="#c3ceb8"/>
+<g fill="#234d3b"><ellipse cx="126" cy="62" rx="4" ry="5.5"/><ellipse cx="174" cy="62" rx="4" ry="5.5"/></g><g fill="#fff"><circle cx="125" cy="60" r="1.2"/><circle cx="173" cy="60" r="1.2"/></g><path d="M150 62Q162 65 159 75Q151 84 142 75Q139 67 150 62Z" fill="#df8547" stroke="#bd6537"/><ellipse cx="150" cy="74" rx="2.4" ry="1.8" fill="#234d3b"/></g></g>
+<g class="nx-note" transform="translate(345 161) rotate(5 57 71)"><rect width="114" height="148" rx="15" fill="#f8f5eb" stroke="#234d3b" stroke-width="2"/><rect x="35" y="-5" width="44" height="14" rx="6" fill="#bacbaa" stroke="#234d3b" stroke-width="1.5"/><path d="M22 44C22 30 41 27 47 41C53 27 72 30 72 44C72 56 47 72 47 72S22 56 22 44Z" fill="#e7b389"/><path d="M22 96H91M22 110H82M22 124H63" stroke="#9eb48f" stroke-width="3" stroke-linecap="round"/></g>
+<path d="M177 330h11m-5.5-5.5v11M374 104h11m-5.5-5.5v11" stroke="#9aac8b" stroke-width="2" stroke-linecap="round"/>
+</svg>
+<span class="cover-caption">A companion / a routine / a little care</span></div></a>
+<div class="card-body"><div class="card-meta"><span>Product</span><span>Sep 2026–present</span></div><h3><a href="work/navix.html">AI support for everyday care</a></h3><p>Designing Xiaoqi’s companion experience, from everyday routines and user-controlled profiles to AI actions with verifiable results.</p><div class="card-bottom"><div class="tags"><span class="tag">Product design</span><span class="tag">Human–robot interaction</span></div><a class="round-arrow" href="work/navix.html" aria-label="Read AI support for everyday care">↗</a></div></div></article><article class="project-card" data-category="Research">
+<a class="card-cover cover-reconstruction" href="work/reconstruction.html" aria-label="Explore Reconstruction beyond one sensor path"><div aria-hidden="true"><span class="cover-index">07 /</span><img class="field-art reconstruction-cover-art" src="assets/art/reconstruction-cover.svg?v=1a4833c1f1" alt="" width="360" height="150" loading="lazy" decoding="async"><span class="cover-caption">Sparse observations → a whole flow field</span></div></a>
+<div class="card-body"><div class="card-meta"><span>Research</span><span>Jan 2026–present</span></div><h3><a href="work/reconstruction.html">Reconstruction beyond one sensor path</a></h3><p>Comparing physical-field reconstruction baselines when sensors follow trajectories different from the original sensing distribution.</p><div class="card-bottom"><div class="tags"><span class="tag">AI for science</span><span class="tag">Baseline evaluation</span></div><a class="round-arrow" href="work/reconstruction.html" aria-label="Read Reconstruction beyond one sensor path">↗</a></div></div></article><article class="project-card" data-category="Research">
+<a class="card-cover cover-vr" href="work/vr.html" aria-label="Explore Relativity you can interact with"><div aria-hidden="true"><span class="cover-index">08 /</span><svg class="vr-cover-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 170" fill="none" font-family="inherit">
+<defs><g id="vr-cover-engine">
+      <path d="M142 126H181V156H142Z" fill="#8ca28b" stroke="#234d3b" stroke-width="1.5"/>
+      <path d="M183 120H220V158H183Z" fill="#345d45"/>
+      <path d="M178 119H223L219 112H181Z" fill="#193d30"/>
+      <rect x="190" y="122" width="19" height="17" rx="2" fill="#f7e7c9"/>
+      <path d="M220 132H256Q267 132 267 144V156H220Z" fill="#d8763e" stroke="#234d3b" stroke-width="1.5"/>
+      <path d="M247 132V119H244V115H258V119H255V132" fill="#234d3b"/>
+      <path d="M139 157H269L276 164H138Z" fill="#193d30"/>
+      <g fill="#f7f5ed" stroke="#234d3b" stroke-width="3"><circle cx="152" cy="164" r="8"/><circle cx="173" cy="164" r="8"/><circle cx="204" cy="161" r="12"/><circle cx="236" cy="162" r="10"/><circle cx="260" cy="164" r="8"/></g>
+      <path d="M204 161H260" stroke="#234d3b" stroke-width="2"/>
+      <circle cx="269" cy="141" r="3" fill="#f4ce87"/></g></defs>
+<text x="24" y="24" fill="#607066" font-size="11" letter-spacing="1.3">LENGTH</text>
+<text x="256" y="24" fill="#607066" font-size="11" letter-spacing="1.3">TIME</text>
+<path d="M232 36V147" stroke="#bcc8b1"/>
+<g class="vr-cover-train">
+  <g transform="translate(-126 -68) scale(1.16 1)"><use href="#vr-cover-engine" opacity=".18"/><g transform="translate(138 0) scale(.6 1) translate(-138 0)"><use href="#vr-cover-engine"/></g></g>
+  <path d="M34 116H195M34 112V120M195 112V120" stroke="#8fa185" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <path d="M34 132H131M34 127V137M131 127V137" stroke="#c45222" stroke-width="2"/>
+  <text x="148" y="137" fill="#c45222" font-size="12">0.60 L₀</text>
+</g>
+<g transform="translate(282 69)"><circle r="24" fill="#f7f5ed" stroke="#234d3b" stroke-width="2"/><path d="M0-19V-16M19 0H16M0 19V16M-19 0H-16" stroke="#8fa185"/><g class="vr-cover-clock-hand"><path d="M0 3V-17" stroke="#234d3b" stroke-width="2.5" stroke-linecap="round"/></g><circle r="3" fill="#234d3b"/></g>
+<g transform="translate(365 69)"><circle r="24" fill="#f7f5ed" stroke="#c45222" stroke-width="2"/><path d="M0-19V-16M19 0H16M0 19V16M-19 0H-16" stroke="#d3a178"/><g class="vr-cover-clock-hand vr-cover-clock-moving"><path d="M0 3V-17" stroke="#c45222" stroke-width="2.5" stroke-linecap="round"/></g><circle r="3" fill="#c45222"/></g>
+<text x="282" y="111" text-anchor="middle" fill="#234d3b" font-size="12">1.00×</text><text x="365" y="111" text-anchor="middle" fill="#c45222" font-size="12">0.60×</text>
+<text x="282" y="129" text-anchor="middle" fill="#607066" font-size="9">LOCAL</text><text x="365" y="129" text-anchor="middle" fill="#607066" font-size="9">MOVING</text>
+<text x="322" y="155" text-anchor="middle" fill="#607066" font-size="11">v = 0.8c</text>
+</svg>
+<span class="cover-caption">Length contraction · time dilation</span></div></a>
+<div class="card-body"><div class="card-meta"><span>Research</span><span>Sep–Dec 2025</span></div><h3><a href="work/vr.html">Relativity you can interact with</a></h3><p>A narrative VR lesson on special relativity. I reviewed the physics and helped extend the learning assessment; the team evaluated the experience with 28 participants.</p><div class="card-bottom"><div class="tags"><span class="tag">VR</span><span class="tag">Physics education</span></div><a class="round-arrow" href="work/vr.html" aria-label="Read Relativity you can interact with">↗</a></div></div></article><article class="project-card" data-category="Research">
+<a class="card-cover cover-active-learning" href="work/active-learning.html" aria-label="Explore Choosing what a model learns next"><div aria-hidden="true"><span class="cover-index">09 /</span><svg class="al-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 440" fill="none">
+  <path d="M52 92Q174 25 352 71Q454 105 437 250Q415 382 264 389L96 368Q22 279 52 92Z" fill="#e7eadc"/>
+  <g class="al-pool">
+    <path d="M69 130L252 98L293 244L110 281Z" fill="#f7f5ed" stroke="#9eaf96" stroke-width="1.5"/>
+    <path d="M78 162L261 131M88 198L273 166M99 240L283 205M112 123L153 273M159 115L200 263M205 107L246 254" stroke="#dce2d2"/>
+    <g fill="#8fa58d"><circle cx="112" cy="158" r="6"/><circle cx="153" cy="147" r="6"/><circle cx="201" cy="138" r="6"/><circle cx="137" cy="232" r="6"/><circle cx="183" cy="224" r="6"/><circle cx="232" cy="214" r="6"/><circle cx="124" cy="193" r="6"/><circle cx="170" cy="183" r="6"/></g>
+    <circle class="al-halo" cx="218" cy="174" r="28" stroke="#ee7a35" stroke-width="1.5"/>
+    <circle cx="218" cy="174" r="11" fill="#ee7a35" stroke="#f7f5ed" stroke-width="4"/>
+  </g>
+  <path class="al-route" d="M237 175C321 124 340 159 350 213" stroke="#ee7a35" stroke-width="2" stroke-dasharray="5 7"/>
+  <path d="M343 206L351 216L356 203" stroke="#ee7a35" stroke-width="2" stroke-linecap="round"/>
+  <g class="al-learner">
+    <path d="M294 237L375 217L417 257L336 279Z" fill="#527762" stroke="#234d3b" stroke-width="1.5"/>
+    <path d="M294 237L336 279V319L294 279Z" fill="#234d3b"/>
+    <path d="M336 279L417 257V297L336 319Z" fill="#345d45"/>
+    <g stroke="#e7eadc" stroke-width="1.5"><path d="M318 241L344 236L355 252L385 247M344 236L365 232M355 252L345 264"/></g>
+    <g fill="#f7e7c9"><circle cx="318" cy="241" r="4"/><circle cx="344" cy="236" r="4"/><circle cx="365" cy="232" r="4"/><circle cx="355" cy="252" r="4"/><circle cx="385" cy="247" r="4"/><circle cx="345" cy="264" r="4"/></g>
+    <circle class="al-signal" cx="378" cy="288" r="5" fill="#f7ad72"/>
+  </g>
+  <g class="al-feedback">
+    <path d="M324 321C237 391 160 349 152 299" stroke="#66886b" stroke-width="2" stroke-dasharray="5 7"/>
+    <path d="M146 307L151 295L160 304" stroke="#66886b" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="233" cy="348" r="20" fill="#f7f5ed" stroke="#9eaf96"/>
+    <path d="M224 349L231 355L243 340" stroke="#234d3b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
+<span class="cover-caption">Choose a sample → learn → choose again</span></div></a>
+<div class="card-body"><div class="card-meta"><span>Research</span><span>Dec 2024–Jul 2025</span></div><h3><a href="work/active-learning.html">Choosing what a model learns next</a></h3><p>Can better training examples make a model learn more from less? From neural query policies to error-reduction sampling and training-batch completion.</p><div class="card-bottom"><div class="tags"><span class="tag">Active learning</span><span class="tag">Neural operators</span></div><a class="round-arrow" href="work/active-learning.html" aria-label="Read Choosing what a model learns next">↗</a></div></div></article><article class="project-card" data-category="Engineering">
+<a class="card-cover cover-igem" href="work/igem.html" aria-label="Explore Westlake iGEM 2024"><div aria-hidden="true"><span class="cover-index">10 /</span><svg class="ig-cover-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 175" fill="none">
 <path d="M25 76Q78 12 191 74T391 76" stroke="#8d9c7b" stroke-width="1.5" stroke-dasharray="4 7" class="ig-cover-route"/>
 <g class="ig-cover-bacteria" stroke="#234d3b" stroke-width="2"><g transform="translate(80 79) rotate(-20)"><rect x="-23" y="-10" width="46" height="20" rx="10" fill="#f7f5ed"/><path d="M-23 0q-10-14-18-3t-18-2M-8 0H9"/></g><g transform="translate(134 49) rotate(12)"><rect x="-15" y="-7" width="30" height="14" rx="7" fill="#f7f5ed"/><path d="M-15 0q-8-9-13-2"/></g></g>
 <g transform="translate(230 80)"><circle class="ig-cover-pulse" r="36" stroke="#d86526" stroke-width="1.5"/><circle r="27" fill="#e4e9db" stroke="#6d8b70" stroke-width="1.5"/><path d="M-8-12Q8-20 15-4T-3 15Q-19 12-8-12Z" fill="#a6b99a"/><circle cx="51" cy="-8" r="3" fill="#d86526"/><circle cx="65" cy="9" r="4" fill="#d86526"/></g>
@@ -422,15 +420,7 @@
 <g fill="#617366" font-family="inherit" font-size="10" text-anchor="middle"><text x="100" y="143">MODEL</text><text x="230" y="143">UNDERSTAND</text><text x="363" y="143">COMMUNICATE</text></g>
 </svg>
 <span class="cover-caption">Bacterial delivery · modeling · wiki</span></div></a>
-<div class="card-body"><div class="card-meta"><span>Engineering</span><span>2024</span></div><h3><a href="work/igem.html">Westlake iGEM 2024</a></h3><p>I led the dry-lab group, developed mathematical models, and designed and built the wiki for Westlake’s 2024 iGEM project, alongside research writing and public engagement.</p><div class="card-bottom"><div class="tags"><span class="tag">Mathematical modeling</span><span class="tag">Wiki design &amp; development</span></div><a class="round-arrow" href="work/igem.html" aria-label="Read Westlake iGEM 2024">↗</a></div></div></article><article class="project-card" data-category="Product">
-<a class="card-cover cover-evisa" href="work/evisa.html" aria-label="Explore eVisaHelper"><div aria-hidden="true"><span class="cover-index">12 /</span><div class="symbol-art">↗</div><span class="cover-caption">An idea, in outline</span></div></a>
-<div class="card-body"><div class="card-meta"><span>Product</span><span>Independent project</span></div><h3><a href="work/evisa.html">eVisaHelper</a></h3><p>An independently developed web project, included alongside my other practical software tools.</p><div class="card-bottom"><div class="tags"><span class="tag">Independent development</span><span class="tag">Web development</span></div><a class="round-arrow" href="work/evisa.html" aria-label="Read eVisaHelper">↗</a></div></div></article><article class="project-card" data-category="Research">
-<a class="card-cover cover-materials-creep" href="work/materials-creep.html" aria-label="Explore Material behavior under constraints"><div aria-hidden="true"><span class="cover-index">13 /</span><div class="symbol-art">σ</div><span class="cover-caption">An idea, in outline</span></div></a>
-<div class="card-body"><div class="card-meta"><span>Research</span><span>From Jul 2025</span></div><h3><a href="work/materials-creep.html">Material behavior under constraints</a></h3><p>Research exploration of material creep and mechanics, including Abaqus and crystal-symmetry boundary conditions.</p><div class="card-bottom"><div class="tags"><span class="tag">Computational mechanics</span><span class="tag">Abaqus</span></div><a class="round-arrow" href="work/materials-creep.html" aria-label="Read Material behavior under constraints">↗</a></div></div></article><article class="project-card" data-category="Research">
-<a class="card-cover cover-asr" href="work/asr.html" aria-label="Explore Wav2Vec ASR experiments"><div aria-hidden="true"><span class="cover-index">14 /</span><div class="symbol-art">∿</div><span class="cover-caption">An idea, in outline</span></div></a>
-<div class="card-body"><div class="card-meta"><span>Research</span><span>Jul–Aug 2024</span></div><h3><a href="work/asr.html">Wav2Vec ASR experiments</a></h3><p>Deployment and fine-tuning experiments with Wav2Vec, including Python-based data cleaning and relabeling.</p><div class="card-bottom"><div class="tags"><span class="tag">Speech recognition</span><span class="tag">Data preparation</span></div><a class="round-arrow" href="work/asr.html" aria-label="Read Wav2Vec ASR experiments">↗</a></div></div></article><article class="project-card" data-category="Research">
-<a class="card-cover cover-crystal" href="work/crystal.html" aria-label="Explore Diffusion for inverse crystal design"><div aria-hidden="true"><span class="cover-index">15 /</span><div class="symbol-art">◇</div><span class="cover-caption">An idea, in outline</span></div></a>
-<div class="card-body"><div class="card-meta"><span>Research</span><span>Dec 2023–Feb 2024</span></div><h3><a href="work/crystal.html">Diffusion for inverse crystal design</a></h3><p>An introduction to AI-for-materials literature and experimental workflows through a crystal inverse-design project.</p><div class="card-bottom"><div class="tags"><span class="tag">AI for science</span><span class="tag">Materials</span></div><a class="round-arrow" href="work/crystal.html" aria-label="Read Diffusion for inverse crystal design">↗</a></div></div></article></div><div class="empty-state" id="no-results" hidden><h2>No matching projects.</h2><p>Try another topic, or explore the whole collection.</p><button type="button" id="reset-filters">Clear filters</button></div></main>
+<div class="card-body"><div class="card-meta"><span>Engineering</span><span>2024</span></div><h3><a href="work/igem.html">Westlake iGEM 2024</a></h3><p>I led the dry-lab group, developed mathematical models, and designed and built the wiki for Westlake’s 2024 iGEM project, alongside research writing and public engagement.</p><div class="card-bottom"><div class="tags"><span class="tag">Mathematical modeling</span><span class="tag">Wiki design &amp; development</span></div><a class="round-arrow" href="work/igem.html" aria-label="Read Westlake iGEM 2024">↗</a></div></div></article></div><div class="empty-state" id="no-results" hidden><h2>No matching projects.</h2><p>Try another topic, or explore the whole collection.</p><button type="button" id="reset-filters">Clear filters</button></div></main>
 <footer class="site-footer"><div class="wrap"><div class="footer-top"><div><p class="eyebrow">Always curious about the next question.</p><h2>Let’s make something meaningful.</h2><p>Research, projects, and good conversations.</p></div><div class="footer-contact"><a class="text-link" href="mailto:wuzebang@westlake.edu.cn">wuzebang@westlake.edu.cn ↗</a><button class="copy-email" type="button" aria-label="Copy email address" title="Copy email address">⧉</button></div></div><div class="footer-bottom"><span>© 2026 Zebang Wu · 吴泽邦</span><span>A curious mind. A fox at heart.</span><a href="#top">Back to top ↑</a></div></div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <dialog class="lightbox" id="image-viewer" aria-label="Expanded project image"><div class="lightbox-head"><span>From the project archive</span><button type="button" id="close-viewer">Close ×</button></div><img id="viewer-image" alt=""><p id="viewer-caption"></p></dialog>
