@@ -100,7 +100,11 @@ def decorations(svg, scene):
             sub(g,'circle',cx=x,cy=y,r=r,fill='#f7f5ed',opacity='.8')
         sub(g,'circle',cx=445,cy=138,r=15,class_='ornament-pulse',style='transform-box:fill-box;transform-origin:center',opacity='.35')
         sprig=sub(g,'g',class_='ornament-sprig',style='transform-box:view-box;transform-origin:270px 719px')
-        sub(sprig,'path',d='M270 719C258 685 239 649 211 631M252 683C224 684 211 669 210 654C231 651 247 661 252 683M237 660C240 635 233 618 217 612C207 630 214 650 237 660',opacity='.6')
+        # Leaf bases share exact stem anchors; the stem continues as a midrib
+        # inside the terminal leaf instead of crossing its outer contour.
+        sub(sprig,'path',d='M270 719C264 702 258 689 252 679C245 665 239 653 234 644C226 632 221 620 217 612',opacity='.6')
+        sub(sprig,'path',d='M252 679C231 683 211 670 207 651C229 649 247 660 252 679Z',opacity='.6')
+        sub(sprig,'path',d='M234 644C216 643 205 627 217 612C233 617 242 634 234 644Z',opacity='.6')
         sub(g,'path',d='M771 858C829 821 859 789 863 750M786 873C846 835 881 791 884 758',opacity='.48',class_='ornament-current')
         sub(g,'path',d='M827 747L837 727L848 748M191 201V225M179 213H203',opacity='.55')
     else:
