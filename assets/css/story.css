@@ -193,7 +193,7 @@ html:has(.story-page) { scroll-padding-top:0; }
 .coda-signature img { display:block; margin:0; }
 .coda-contact-row { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:12px; margin-top:20px; }
 .coda-contact { display:inline-block; font-size:12px; color:var(--muted); text-decoration:none; padding:8px 0; }
-.coda-contact-row .copy-email { width:34px; height:34px; cursor:pointer; }
+.coda-contact-row .copy-email { width:24px; height:24px; min-width:24px; min-height:24px; padding:0; border:0; border-radius:0; background:transparent; color:var(--muted); cursor:pointer; }
 .story-page .site-footer { margin-top:0; padding:24px 0; }
 .story-page .footer-bottom { border-top:0; margin-top:0; padding-top:0; align-items:center; }
 @media(max-width:700px){.story-page .site-footer{padding:22px 0}.story-page .footer-bottom{display:grid;grid-template-columns:1fr auto;gap:10px 20px}.story-page .footer-bottom>span:nth-child(2){grid-column:1/-1;grid-row:2}.story-page .footer-bottom>a{grid-column:2;grid-row:1}}
