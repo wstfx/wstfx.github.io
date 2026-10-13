@@ -97,7 +97,7 @@ def page(path, title, body, active, prefix=''):
 <link rel="icon" type="image/svg+xml" href="{prefix}assets/art/geometric-mark.svg">
 <link rel="stylesheet" href="{prefix}assets/css/privacy-gate.css">
 <link rel="stylesheet" href="{prefix}{asset('assets/css/portfolio.css')}">
-<script defer src="{prefix}assets/js/privacy-gate.js"></script>
+<script defer src="{prefix}{asset('assets/js/privacy-gate.js')}"></script>
 <script defer src="{prefix}{asset('assets/js/portfolio.js')}"></script>
 {story_assets}
 <link rel="preload" href="{prefix}assets/garet/Garet-Heavy.woff2" as="font" type="font/woff2" crossorigin>
@@ -121,7 +121,7 @@ def page(path, title, body, active, prefix=''):
 <nav class="main-nav" id="main-nav" aria-label="Main navigation">{nav}</nav>
 </div></header>
 <main class="wrap" id="main" tabindex="-1">{body}</main>
-<footer class="site-footer"><div class="wrap">{footer_top}<div class="footer-bottom"><span>© 2026 Zebang Wu · 吴泽邦</span><span>A curious mind. A fox at heart.</span><a href="#top">Back to top ↑</a></div></div></footer>
+<footer class="site-footer"><div class="wrap">{footer_top}<div class="footer-bottom"><span>© 2026 Zebang Wu · 吴泽邦</span><span>May good things reach people with grace and quiet agility.</span><a href="#top">Back to top ↑</a></div></div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <dialog class="lightbox" id="image-viewer" aria-label="Expanded project image"><div class="lightbox-head"><span>From the project archive</span><button type="button" id="close-viewer">Close ×</button></div><img id="viewer-image" alt=""><p id="viewer-caption"></p></dialog>
 <noscript><div class="noscript-note"><h1>A small introduction.</h1><p>This portfolio’s existing access gate requires JavaScript. Please enable JavaScript to continue.</p><a href="mailto:wuzebang@westlake.edu.cn">Contact Zebang</a></div></noscript>

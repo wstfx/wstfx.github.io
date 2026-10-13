@@ -3,6 +3,8 @@
 
 	var storageKey = 'zebang-portfolio-access-v1';
 	var accessLifetime = 30 * 24 * 60 * 60 * 1000;
+	// Only the invitation digest is published. The shareable URL stays with the owner.
+	var invitationHash = 'b4281cdf74271f700710d8d76a7768becfbd83b1b95abc933bc08fcac25124dc';
 	var acceptedNameHashes = new Set([
 		'43ba2ff981d420e915076f2f11915edf906bd035bc930906483c2859110bae18',
 		'8a1de20d6c37c303b2303768d62013a6495c04fe546be635b3f1ad377e97cd9f',
@@ -40,12 +42,22 @@
 			.replace(/[^\p{L}\p{N}]+/gu, '');
 	}
 
-	async function hashAnswer(value) {
-		var bytes = new TextEncoder().encode(normalizeAnswer(value));
+	async function hashText(value) {
+		var bytes = new TextEncoder().encode(value);
 		var digest = await crypto.subtle.digest('SHA-256', bytes);
 		return Array.from(new Uint8Array(digest), function (byte) {
 			return byte.toString(16).padStart(2, '0');
 		}).join('');
+	}
+
+	function hashAnswer(value) {
+		return hashText(normalizeAnswer(value));
+	}
+
+	function rememberAccess() {
+		try {
+			localStorage.setItem(storageKey, String(Date.now() + accessLifetime));
+		} catch (_) {}
 	}
 
 	function renderGate() {
@@ -94,9 +106,7 @@
 			try {
 				var hashes = await Promise.all([hashAnswer(nameInput.value), hashAnswer(schoolInput.value)]);
 				if (acceptedNameHashes.has(hashes[0]) && acceptedSchoolHashes.has(hashes[1])) {
-					try {
-						localStorage.setItem(storageKey, String(Date.now() + accessLifetime));
-					} catch (_) {}
+					rememberAccess();
 					unlock();
 					return;
 				}
@@ -110,11 +120,34 @@
 		});
 	}
 
-	if (hasAccess()) {
-		document.documentElement.classList.remove('privacy-locked');
-	} else if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', renderGate, { once: true });
-	} else {
+	async function initialize() {
+		var fragment = location.hash;
+		var invitation = /^#invite=([A-Za-z0-9_-]{43})$/.exec(fragment);
+		// Fragments are not sent to the server; remove the code before further navigation.
+		if (fragment.indexOf('#invite=') === 0) {
+			try {
+				history.replaceState(history.state, '', location.pathname + location.search);
+			} catch (_) {}
+		}
+		if (hasAccess()) {
+			unlock();
+			return;
+		}
+		if (invitation) {
+			try {
+				if (await hashText(invitation[1]) === invitationHash) {
+					rememberAccess();
+					unlock();
+					return;
+				}
+			} catch (_) {}
+		}
 		renderGate();
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initialize, { once: true });
+	} else {
+		initialize();
 	}
 })();

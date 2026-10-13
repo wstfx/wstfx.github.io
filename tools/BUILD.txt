@@ -52,6 +52,14 @@ The subtle progress line follows the seven-second interval, preserving remaining
 time during pauses. French caption spans declare their language; both bundled
 Latin fonts cover the accented characters used in the Notre-Dame caption.
 The existing client-side access gate remains; it is not server-side access control.
+Invitation links use #invite=<random code> on any generated page. Only the SHA-256
+digest is committed in assets/js/privacy-gate.js; the owner's shareable URL stays
+outside this repository at ../website-planning/portfolio-invitation-link.txt.
+Valid invitations skip the questions and remember access for 30 days. The code is
+removed from the current history entry; fragments are not sent in HTTP requests.
+Invalid invitations fall back to the questions. Ordinary section anchors remain.
+To revoke the link, replace invitationHash and issue a new random code; previously
+remembered access keeps its original expiry. This remains a light privacy screen.
 Print / Save as PDF uses the current HTML CV. The old PDF is not promoted as current.
 The CV print stylesheet loads after the type system, uses A4 with 13/14 mm
 margins and compact point sizes, and hides the page introduction only in print.
