@@ -5,6 +5,11 @@
 	var accessLifetime = 30 * 24 * 60 * 60 * 1000;
 	// Only the invitation digest is published. The shareable URL stays with the owner.
 	var invitationHash = 'b4281cdf74271f700710d8d76a7768becfbd83b1b95abc933bc08fcac25124dc';
+	// These public names are a friendly introduction, not authentication secrets.
+	// Match them locally even in browsers without Web Crypto (e.g. some webviews).
+	var nameAliases = ['zeb', 'zebang', 'zebangwu', 'wuzebang', '吴泽邦', '吳澤邦', '泽邦', '澤邦'];
+	var schoolAliases = ['westlake', 'westlakeuniversity', 'westlakeuni', 'wlu', 'xihu', 'xihudaxue', '西湖', '西湖大学', '西湖大學'];
+	// Retain every previously accepted exact answer for compatibility.
 	var acceptedNameHashes = new Set([
 		'43ba2ff981d420e915076f2f11915edf906bd035bc930906483c2859110bae18',
 		'8a1de20d6c37c303b2303768d62013a6495c04fe546be635b3f1ad377e97cd9f',
@@ -54,6 +59,33 @@
 		return hashText(normalizeAnswer(value));
 	}
 
+	function isOneEditAway(value, expected) {
+		if (Math.abs(value.length - expected.length) > 1) return false;
+		var i = 0;
+		while (i < Math.min(value.length, expected.length) && value[i] === expected[i]) i++;
+		if (value.length === expected.length) {
+			return value.slice(i + 1) === expected.slice(i + 1) ||
+				(value[i] === expected[i + 1] && value[i + 1] === expected[i] && value.slice(i + 2) === expected.slice(i + 2));
+		}
+		if (value.length > expected.length) return value.slice(i + 1) === expected.slice(i);
+		return value.slice(i) === expected.slice(i + 1);
+	}
+
+	async function matchesAnswer(value, aliases, legacyHashes) {
+		var normalized = normalizeAnswer(value).normalize('NFKD').replace(/\p{M}/gu, '');
+		if (aliases.indexOf(normalized) !== -1) return true;
+		// One insertion, deletion, substitution or adjacent swap in longer Latin names.
+		// Keep short nicknames, abbreviations and Chinese names exact after normalization.
+		if (/^[a-z]{5,40}$/.test(normalized) && aliases.some(function (alias) {
+			return /^[a-z]{5,40}$/.test(alias) && isOneEditAway(normalized, alias);
+		})) return true;
+		try {
+			return legacyHashes.has(await hashAnswer(value));
+		} catch (_) {
+			return false;
+		}
+	}
+
 	function rememberAccess() {
 		try {
 			localStorage.setItem(storageKey, String(Date.now() + accessLifetime));
@@ -76,10 +108,10 @@
 			'<div class="privacy-gate-card">' +
 				'<p class="privacy-gate-kicker">Private portfolio</p>' +
 				'<h1 id="privacy-gate-title">A small introduction.</h1>' +
-				'<p class="privacy-gate-intro">This portfolio is intentionally shared with people who know me. Please answer two short questions to continue.</p>' +
+				'<p class="privacy-gate-intro" id="privacy-gate-hint">This portfolio is intentionally shared with people who know me. Please answer two short questions to continue. A first name or nickname and a university short name are fine.</p>' +
 				'<form id="privacy-gate-form" novalidate>' +
-					'<label class="privacy-gate-field"><span>What name do you know me by? / 你如何称呼我？</span><input id="privacy-name" name="name" type="text" autocomplete="off" autocapitalize="words" spellcheck="false" required /></label>' +
-					'<label class="privacy-gate-field"><span>My undergraduate university? / 我的本科院校是？</span><input id="privacy-school" name="school" type="text" autocomplete="off" autocapitalize="words" spellcheck="false" required /></label>' +
+					'<label class="privacy-gate-field"><span>What name do you know me by? / 你如何称呼我？</span><input id="privacy-name" name="name" type="text" autocomplete="off" autocapitalize="words" spellcheck="false" aria-describedby="privacy-gate-hint" required /></label>' +
+					'<label class="privacy-gate-field"><span>My undergraduate university? / 我的本科院校是？</span><input id="privacy-school" name="school" type="text" autocomplete="off" autocapitalize="words" spellcheck="false" aria-describedby="privacy-gate-hint" required /></label>' +
 					'<button class="privacy-gate-submit" type="submit">Continue / 进入</button>' +
 					'<p class="privacy-gate-error" id="privacy-gate-error" role="alert" aria-live="polite"></p>' +
 				'</form>' +
@@ -104,14 +136,17 @@
 
 			submit.disabled = true;
 			try {
-				var hashes = await Promise.all([hashAnswer(nameInput.value), hashAnswer(schoolInput.value)]);
-				if (acceptedNameHashes.has(hashes[0]) && acceptedSchoolHashes.has(hashes[1])) {
+				var matches = await Promise.all([
+					matchesAnswer(nameInput.value, nameAliases, acceptedNameHashes),
+					matchesAnswer(schoolInput.value, schoolAliases, acceptedSchoolHashes)
+				]);
+				if (matches[0] && matches[1]) {
 					rememberAccess();
 					unlock();
 					return;
 				}
-				error.textContent = 'Those details did not match. Please check the spelling and try again. / 信息未匹配，请检查后重试。';
-				schoolInput.select();
+				error.textContent = 'Please try a familiar name and the university’s name or abbreviation. / 请尝试常用称呼和学校名称或简称。';
+				(matches[0] ? schoolInput : nameInput).select();
 			} catch (_) {
 				error.textContent = 'Verification is unavailable in this browser. Please try a current browser.';
 			} finally {

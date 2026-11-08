@@ -2,6 +2,9 @@
 
 A static portfolio organized around research, engineering, products, and a personal timeline.
 
+Future agents should start with [AGENTS.md](AGENTS.md) for the source map, owner
+preferences, access-gate behavior, checks, release process and legacy-site archive.
+
 ## Build and preview
 
 ```sh
