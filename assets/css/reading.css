@@ -9,7 +9,11 @@
 }
 
 .reading-essay {
+  --reading-measure: 700px;
+  --sans: 'Garet', 'Yuanti SC', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif;
+  max-width: 1140px;
   padding-bottom: clamp(32px, 6vw, 76px);
+  font-family: var(--sans);
 }
 
 .reading-essay h1,
@@ -31,11 +35,16 @@
   color: var(--muted);
 }
 
-.reading-essay section {
-  margin-top: clamp(42px, 6vw, 70px);
+.reading-intro,
+.reading-prose {
+  max-width: var(--reading-measure);
 }
 
-.reading-essay h2 {
+.reading-section {
+  margin-top: clamp(42px, 6vw, 74px);
+}
+
+.reading-section h2 {
   font-size: var(--type-subheading);
   font-weight: 900;
   line-height: 1.45;
@@ -43,21 +52,134 @@
   margin-bottom: 18px;
 }
 
+.reading-row {
+  display: grid;
+  align-items: start;
+  gap: 16px;
+}
+
+.reading-row + .reading-row {
+  margin-top: 32px;
+}
+
 .reading-essay p {
   overflow-wrap: anywhere;
 }
 
-.reading-essay blockquote {
-  margin: 24px 0;
-  padding: 15px clamp(16px, 4vw, 26px);
+.reading-prose > :last-child {
+  margin-bottom: 0;
 }
 
-.reading-essay blockquote p {
+.reading-excerpts {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+}
+
+.reading-excerpts summary {
+  display: grid;
+  gap: 9px;
+  padding: 15px 18px;
+  border-radius: inherit;
+  list-style: none;
+  cursor: pointer;
+}
+
+.reading-excerpts summary::-webkit-details-marker {
+  display: none;
+}
+
+.reading-excerpts summary:hover {
+  background: var(--sage);
+}
+
+.excerpt-heading,
+.excerpt-action {
+  font-size: var(--type-small);
+  font-weight: 700;
+}
+
+.excerpt-preview {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.excerpt-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--green);
+}
+
+.excerpt-action::after {
+  content: "+";
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.reading-excerpts[open] .excerpt-action::after {
+  content: "−";
+}
+
+.reading-excerpts:not([open]) .excerpt-close,
+.reading-excerpts[open] :is(.excerpt-open, .excerpt-preview) {
+  display: none;
+}
+
+.excerpt-passages {
+  padding: 4px 18px 18px;
+}
+
+.excerpt-passages figure {
   margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
 }
 
-.reading-essay blockquote footer {
-  margin-top: 8px;
+.excerpt-passages figure + figure {
+  margin-top: 20px;
+}
+
+.excerpt-passages figcaption {
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.reading-essay .excerpt-passages blockquote {
+  margin: 0;
+  padding: 0 0 0 12px;
+  border-left: 2px solid var(--orange);
+  background: none;
+}
+
+.excerpt-passages blockquote p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.excerpt-passages blockquote p + p {
+  margin-top: .65em;
+}
+
+.excerpt-passages .excerpt-source {
+  margin: 8px 0 0 14px;
   font-size: var(--type-small);
   color: var(--muted);
+}
+
+@media (min-width: 850px) {
+  .reading-row {
+    grid-template-columns: minmax(0, var(--reading-measure)) minmax(270px, 1fr);
+    column-gap: clamp(26px, 4vw, 58px);
+  }
+}
+
+@media (max-width: 849px) {
+  .reading-essay {
+    max-width: var(--reading-measure);
+  }
 }

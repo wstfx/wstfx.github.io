@@ -20,7 +20,17 @@ def used_characters():
     paths = list(ROOT.glob('*.html')) + list((ROOT/'work').glob('*.html')) + list((ROOT/'sharing').glob('*.html'))
     for folder in ('content', 'assets/js', 'assets/css'):
         paths += [p for p in (ROOT/folder).rglob('*') if p.suffix in ('.html','.json','.js','.css')]
-    text = '\n'.join(html.unescape(p.read_text()) for p in paths)
+    copy = []
+    for path in paths:
+        # The long-form reading note sets its own system CJK font stack in reading.css.
+        # The surrounding site chrome and the Writing card still use the shared subset.
+        if path == ROOT / 'content/narrow-road-body.html':
+            continue
+        page = path.read_text()
+        if path == ROOT / 'sharing/narrow-road.html':
+            page = re.sub(r'<article\b[^>]*>.*?</article>', '', page, flags=re.S)
+        copy.append(html.unescape(page))
+    text = '\n'.join(copy)
     # JavaScript/JSON may contain escaped Chinese characters.
     text = re.sub(r'\\u([0-9a-fA-F]{4})', lambda m: chr(int(m[1],16)), text)
     return sorted({ord(c) for c in text if any(lo <= ord(c) <= hi for lo,hi in RANGES)})
