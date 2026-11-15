@@ -1,0 +1,63 @@
+.writing-list {
+  display: grid;
+  gap: 22px;
+}
+
+.reading-art {
+  color: #873649;
+  font: 78px/1 Georgia, serif;
+}
+
+.reading-essay {
+  padding-bottom: clamp(32px, 6vw, 76px);
+}
+
+.reading-essay h1,
+.writing-list [lang="zh-Hans"] h2 {
+  letter-spacing: normal;
+  line-height: 1.4;
+}
+
+.reading-essay .page-top h1 {
+  font-size: var(--type-title);
+  margin-bottom: 12px;
+}
+
+.reading-essay h1 span {
+  display: inline-block;
+}
+
+.reading-essay .lede {
+  color: var(--muted);
+}
+
+.reading-essay section {
+  margin-top: clamp(42px, 6vw, 70px);
+}
+
+.reading-essay h2 {
+  font-size: var(--type-subheading);
+  font-weight: 900;
+  line-height: 1.45;
+  letter-spacing: normal;
+  margin-bottom: 18px;
+}
+
+.reading-essay p {
+  overflow-wrap: anywhere;
+}
+
+.reading-essay blockquote {
+  margin: 24px 0;
+  padding: 15px clamp(16px, 4vw, 26px);
+}
+
+.reading-essay blockquote p {
+  margin: 0;
+}
+
+.reading-essay blockquote footer {
+  margin-top: 8px;
+  font-size: var(--type-small);
+  color: var(--muted);
+}
