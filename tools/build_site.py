@@ -72,7 +72,7 @@ def page(path, title, body, active, prefix=''):
         story_assets = f'<link rel="stylesheet" href="{asset("assets/css/visual-system.css")}">'
     if path == 'about.html':
         story_assets += f'<link rel="stylesheet" href="{asset("assets/css/about.css")}"><script defer src="{asset("assets/js/about.js")}"></script>'
-    if path in ('writing.html', 'sharing/narrow-road.html'):
+    if path in ('writing.html', 'sharing/narrow-road.html', 'sharing/countdown.html'):
         story_assets += f'<link rel="stylesheet" href="{prefix}{asset("assets/css/reading.css")}">'
     if path in ('work.html', 'work/dhh.html'):
         story_assets += f'<link rel="stylesheet" href="{prefix}{asset("assets/css/dhh-art.css")}">'
@@ -418,7 +418,14 @@ for index,p in enumerate(PROJECTS):
 
 writing = '<section class="page-top">'+eyebrow('Ideas with a little room to breathe.')+'<h1>Notes from<br><em>the in-between.</em></h1><p class="lede">Thoughts on learning, technology, and the human side of making things.</p></section>'
 narrow_road_book = '《深入北方的小路》'
+countdown_title = '在倒计时归零之前'
 writing += f'''<div class="writing-list">
+<a class="article-card countdown-card" href="sharing/countdown.html" lang="zh-Hans">
+  <div class="article-art countdown-cover"><img src="assets/images/countdown/office-dusk.webp" width="1200" height="1600" alt="" decoding="async"></div>
+  <div><p class="eyebrow">实习随笔</p><h2>{countdown_title}</h2>
+  <p>这是一个关于我为什么来到这里，又为什么要离开这里的故事。</p>
+  <span class="text-link">读全文 ↗</span></div>
+</a>
 <a class="article-card" href="sharing/narrow-road.html" lang="zh-Hans">
   <div class="article-art reading-art" aria-hidden="true">✳</div>
   <div><p class="eyebrow">读书笔记</p><h2>{narrow_road_book}</h2>
@@ -443,6 +450,16 @@ narrow_road = f'''<article class="article-body reading-essay" lang="zh-Hans">
 </header>
 {narrow_road_body}</article>'''
 page('sharing/narrow-road.html', narrow_road_title, narrow_road, 'Writing', '../')
+
+countdown_body = (ROOT / 'content/countdown-body.html').read_text()
+countdown = f'''<article class="article-body reading-essay countdown-essay" lang="zh-Hans">
+<header class="page-top">
+  <a class="breadcrumb" href="../writing.html" lang="en">← All writing</a>
+  <h1>{countdown_title}</h1>
+  <p class="lede">一段关于选择、创造、信任与告别的实习回忆</p>
+</header>
+{countdown_body}</article>'''
+page('sharing/countdown.html', countdown_title, countdown, 'Writing', '../')
 
 cv = '<section class="page-top">'+eyebrow('A concise reference · September 2026')+'<h1>The short version.</h1><p class="lede">Education, research, and professional experience. Follow a project link for the longer story.</p></section><div class="cv-layout"><aside class="cv-aside"><h2>Zebang Wu</h2><p><span>吴泽邦</span><br><span>Hangzhou, China</span><br><span>Electronic Information Engineering</span></p><a class="text-link" href="mailto:wuzebang@westlake.edu.cn"><span class="cv-email-screen">Email ↗</span><span class="cv-email-print">wuzebang@westlake.edu.cn</span></a><br><button class="button outline cv-print" type="button">Print / Save as PDF ↗</button></aside><div>'
 cv += '<section class="cv-section"><h2>Education</h2><article class="cv-entry"><div class="cv-entry-top"><h3><a href="work/westlake.html">Westlake University ↗</a></h3><span class="period">Expected May 2027</span></div><p>B.S. in Electronic Information Engineering</p><p>GPA 4.06/4.3 · TOEFL iBT 107/120</p></article><article class="cv-entry"><div class="cv-entry-top"><h3><a href="work/cornell.html">Cornell University ↗</a></h3><span class="period">Aug–Dec 2025</span></div><p>Exchange student · Electrical & Computer Engineering</p></article></section>'

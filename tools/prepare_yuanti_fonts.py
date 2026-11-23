@@ -22,13 +22,15 @@ def used_characters():
         paths += [p for p in (ROOT/folder).rglob('*') if p.suffix in ('.html','.json','.js','.css')]
     copy = []
     for path in paths:
-        # The long-form reading note sets its own system CJK font stack in reading.css.
-        # The surrounding site chrome and the Writing card still use the shared subset.
-        if path == ROOT / 'content/narrow-road-body.html':
+        # CJK essays and the photo card use installed fonts via reading.css.
+        if path in (ROOT / 'content/narrow-road-body.html', ROOT / 'content/countdown-body.html'):
             continue
         page = path.read_text()
-        if path == ROOT / 'sharing/narrow-road.html':
+        if path in (ROOT / 'sharing/narrow-road.html', ROOT / 'sharing/countdown.html'):
             page = re.sub(r'<article\b[^>]*>.*?</article>', '', page, flags=re.S)
+            page = re.sub(r'<title>[^<]*</title>', '', page)
+        if path == ROOT / 'writing.html':
+            page = re.sub(r'<a class="article-card countdown-card"[^>]*>.*?</a>', '', page, flags=re.S)
         copy.append(html.unescape(page))
     text = '\n'.join(copy)
     # JavaScript/JSON may contain escaped Chinese characters.
