@@ -74,6 +74,8 @@ def page(path, title, body, active, prefix=''):
         story_assets += f'<link rel="stylesheet" href="{asset("assets/css/about.css")}"><script defer src="{asset("assets/js/about.js")}"></script>'
     if path in ('writing.html', 'sharing/narrow-road.html', 'sharing/countdown.html'):
         story_assets += f'<link rel="stylesheet" href="{prefix}{asset("assets/css/reading.css")}">'
+    if path == 'sharing/countdown.html':
+        story_assets += f'<link rel="stylesheet" href="{prefix}{asset("assets/css/countdown-gate.css")}"><script defer src="{prefix}{asset("assets/js/countdown-gate.js")}"></script>'
     if path in ('work.html', 'work/dhh.html'):
         story_assets += f'<link rel="stylesheet" href="{prefix}{asset("assets/css/dhh-art.css")}">'
     if path == 'work.html':
@@ -90,7 +92,7 @@ def page(path, title, body, active, prefix=''):
     nav = ''.join(f'<a href="{prefix}{href}"' + (' aria-current="page"' if label == active else '') + f'>{label}</a>' for label, href in links)
     footer_top = '' if path == 'index.html' else f'<div class="footer-top"><div>{eyebrow("Always curious about the next question.")}<h2>Let’s make something meaningful.</h2><p>Research, projects, and good conversations.</p></div><div class="footer-contact"><a class="text-link" href="mailto:wuzebang@westlake.edu.cn">wuzebang@westlake.edu.cn ↗</a><button class="copy-email" type="button" aria-label="Copy email address" title="Copy email address">⧉</button></div></div>'
     html = f'''<!doctype html>
-<html lang="en" class="privacy-locked{' about-page' if path == 'about.html' else ''}">
+<html lang="en" class="privacy-locked{' about-page' if path == 'about.html' else ''}{' countdown-password-locked' if path == 'sharing/countdown.html' else ''}">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#234d3b">

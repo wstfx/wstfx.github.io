@@ -10,7 +10,7 @@
 
 .reading-essay,
 .countdown-card {
-  --sans: 'Garet', 'Yuanti SC', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif;
+  --sans: 'Portfolio Yuanti SC', 'Garet', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif;
   font-family: var(--sans);
 }
 

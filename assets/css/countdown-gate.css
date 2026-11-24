@@ -1,0 +1,140 @@
+html.countdown-password-locked {
+	min-height: 100%;
+	background: #17242f;
+}
+
+html.countdown-password-locked body > * {
+	visibility: hidden;
+}
+
+html.countdown-password-locked body > #countdown-password-gate {
+	visibility: visible;
+}
+
+#countdown-password-gate {
+	position: fixed;
+	inset: 0;
+	z-index: 100001;
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	min-height: 100dvh;
+	padding: 24px;
+	overflow-y: auto;
+	color: #f4f7f8;
+	background:
+		radial-gradient(circle at 18% 14%, rgba(118, 170, 164, 0.2), transparent 31rem),
+		radial-gradient(circle at 86% 86%, rgba(139, 119, 168, 0.22), transparent 28rem),
+		linear-gradient(145deg, #182832, #202432 56%, #18262d);
+	font-family: var(--sans);
+}
+
+.countdown-password-card {
+	width: min(100%, 480px);
+	padding: clamp(28px, 6vw, 48px);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 22px;
+	background: rgba(17, 26, 34, 0.88);
+	box-shadow: 0 30px 90px rgba(0, 0, 0, 0.38);
+	backdrop-filter: blur(18px);
+	-webkit-backdrop-filter: blur(18px);
+}
+
+.countdown-password-kicker {
+	margin: 0 0 12px;
+	color: #94c9bb;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.countdown-password-card h1 {
+	margin: 0 0 12px;
+	color: #fff;
+	font-size: clamp(1.8rem, 7vw, 2.5rem);
+	line-height: 1.4;
+	letter-spacing: normal;
+}
+
+.countdown-password-card > p:not(.countdown-password-kicker) {
+	color: #c8d2d5;
+	line-height: 1.7;
+}
+
+.countdown-password-card form label {
+	display: block;
+	margin: 22px 0 8px;
+	color: #eef4f3;
+	font-size: 0.88rem;
+	font-weight: 650;
+}
+
+.countdown-password-card input {
+	width: 100%;
+	min-height: 48px;
+	padding: 12px 14px;
+	border: 1px solid rgba(255, 255, 255, 0.22);
+	border-radius: 9px;
+	color: #fff;
+	background: rgba(255, 255, 255, 0.07);
+	font: inherit;
+}
+
+.countdown-password-card input:focus-visible,
+.countdown-password-card button:focus-visible {
+	outline: 3px solid rgba(192, 230, 219, 0.55);
+	outline-offset: 3px;
+}
+
+.countdown-password-card button {
+	width: 100%;
+	min-height: 48px;
+	margin-top: 14px;
+	border: 0;
+	border-radius: 9px;
+	color: #18312d;
+	background: #94c9bb;
+	font: inherit;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.countdown-password-card button:disabled {
+	opacity: 0.62;
+	cursor: wait;
+}
+
+.countdown-password-error {
+	min-height: 1.5em;
+	margin: 10px 0 0;
+	color: #ffb8b0;
+	font-size: 0.84rem;
+}
+
+.countdown-password-note {
+	margin: 18px 0 0;
+	padding-top: 14px;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	color: #91a1a7 !important;
+	font-size: 0.78rem;
+}
+
+@media (max-width: 520px) {
+	#countdown-password-gate {
+		align-items: start;
+		padding: 16px;
+	}
+
+	.countdown-password-card {
+		margin: max(18px, env(safe-area-inset-top)) 0 max(18px, env(safe-area-inset-bottom));
+		padding: 27px 20px;
+		border-radius: 17px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.countdown-password-card button {
+		transition: none;
+	}
+}
